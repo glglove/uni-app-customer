@@ -7,7 +7,7 @@ import './utils/http.js'
 
 Vue.use(MintUI);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.prototype.$axios = Axios
 
 App.mpType = 'app'

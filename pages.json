@@ -13,14 +13,14 @@
 			}
 		},
 		{
-            "path" : "pages/find/find",
-            "style" : {
+			"path" : "pages/find/find",
+			"style" : {
 				"navigationBarTitleText":"发现"
 			}
     },
 		{
-            "path" : "pages/my/my",
-            "style" : {
+			"path" : "pages/my/my",
+			"style" : {
 				"navigationBarTitleText":"我的"
 			}
     }
