@@ -1,4 +1,4 @@
-import config from './config'
+import configs from './config'
 import Axios from 'axios'
  
 // 创建axios实例
@@ -23,13 +23,13 @@ http.interceptors.request.use(
 
 
 export default class base {
-  static imgs_bg = config.baseUrlConfigs.imgs_bg; // 网络图片地址集合对象
-  static miniproConfings = config.miniproConfings;     // 小程序配置信息 （appid、secret）
-  static baseUrl = config.baseUrl;   // 基础地址
-  static baseInterfaceMap  = config.baseUrlConfigs;  // 所有请求接口的集合对象
-  static $http = http
-  // static get = http.httpGET.bind(http);          //get 请求
-  // static post = http.httpPOST.bind(http);      // post 请求
-  // static upload = http.httpUPLOAD.bind(http);   // 上传
-  // static delete = http.delete.bind(http);
+   imgs_bg = configs.baseUrlConfigs.imgs_bg; // 网络图片地址集合对象
+   miniproConfings = configs.miniproConfings;     // 小程序配置信息 （appid、secret）
+   baseUrl = configs.baseUrl;   // 基础地址
+   baseInterfaceMap  = configs.baseUrlConfigs;  // 所有请求接口的集合对象
+   $http = http
+  //  get = http.httpGET.bind(http);          //get 请求
+  //  post = http.httpPOST.bind(http);      // post 请求
+  //  upload = http.httpUPLOAD.bind(http);   // 上传
+  //  delete = http.delete.bind(http);
 }

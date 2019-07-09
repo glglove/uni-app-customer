@@ -82,9 +82,6 @@
       //"file"：file对象
       uploadSound: '/fileMappedApp/upload', //上传音频文件
       shareImg: '/customerApp/shareImg',  // 分享
-
-
-
 }
  export default {
   miniproConfings: miniproConfings,  // 小程序配置（appid、secret）
