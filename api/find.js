@@ -15,7 +15,7 @@ export default class find extends base {
 		  //  parmas: JSON.stringify(params)
 	   // }
 	   return this.$http({
-		   method: 'get',
+		   method: 'post',
 		   url,
 		   data: {
 			  ...params 

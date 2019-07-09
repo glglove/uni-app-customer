@@ -83,10 +83,29 @@
 		methods:{
 			// 获取list 列表数据
 			_getlistData () {
+				uni.showLoading()
 				findApi.getlistData().then(res => {
+					uni.hideLoading()
+					console.log(res)
 					if(res && res.data.state === 1){
+						debugger
 						this.contentData = res.data.Data
+					}else{
+						uni.hideLoading()
+						uni.showToast({
+							title:"数据获取失败",
+							mask:true,
+							duration:2000
+						})
+
 					}
+				}).catch(err => {
+					uni.hideLoading()
+					uni.showToast({
+						title:"数据获取失败,请重试",
+						mask:true,
+						duration:2000
+					})
 				})
 			}
 		}
