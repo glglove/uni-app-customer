@@ -1,6 +1,6 @@
 <template>
 	<view>
-<!-- 		<mt-header title="long long long long title">
+	<!--<mt-header title="long long long long title">
 		  <router-link to="/" slot="left">
 			<mt-button icon="back">back</mt-button>
 		  </router-link>

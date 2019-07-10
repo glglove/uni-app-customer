@@ -1,17 +1,19 @@
 {
-  "name": "gaol-ui-app",
+  "name": "customer",
   "version": "1.0.0",
-  "description": "gaolong-uni-app",
+  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glglove/uni-app-customer.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "less": "^3.9.0",
-    "mint-ui": "^2.2.13",
-    "vuex": "^3.1.1"
-  }
+  "bugs": {
+    "url": "https://github.com/glglove/uni-app-customer/issues"
+  },
+  "homepage": "https://github.com/glglove/uni-app-customer#readme"
 }
