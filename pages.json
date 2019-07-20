@@ -1,10 +1,10 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-				"path" : "pages/login/login",
-				"style" : {
-					"navigationBarTitleText":"登陆"
-				}
+			"path" : "pages/login/login",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
 		},	
 		{
 			"path": "pages/sign/sign",
@@ -18,17 +18,43 @@
 				"navigationBarTitleText":"发现"
 			}
     },
-		{
-			"path" : "pages/my/my",
-			"style" : {
-				"navigationBarTitleText":"我的"
-			}
-    }
+	{
+		"path" : "pages/my/my",
+		"style" : {
+			"navigationBarTitleText":"我的"
+		}
+	}
   ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "rgba(38,162,255,1)",
 		"backgroundColor": "#F8F8F8"
-	}
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+    "list": [
+		{
+		  "pagePath": "pages/find/find",
+		  "iconPath": "static/imgs/tab/find.png",
+		  "selectedIconPath": "static/imgs/tab/find_highlight.png",
+		  "text": "发现"
+		}, 
+		{
+		  "pagePath": "pages/sign/sign",
+		  "iconPath": "static/imgs/tab/sign.png",
+		  "selectedIconPath": "static/imgs/tab/sign_highlight.png",
+		  "text": "打卡"
+		},
+		{
+			"pagePath": "pages/my/my",
+			"iconPath": "static/imgs/tab/my.png",
+			"selectedIconPath": "static/imgs/tab/my_highlight.png",
+			"text": "我的"
+		}
+	]
+  }	
 }
