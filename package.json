@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/glglove/uni-app-customer/issues"
   },
-  "homepage": "https://github.com/glglove/uni-app-customer#readme"
+  "homepage": "https://github.com/glglove/uni-app-customer#readme",
+  "dependencies": {
+    "qs": "^6.7.0",
+    "vuex": "^3.1.1"
+  }
 }

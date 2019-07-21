@@ -1,34 +1,3 @@
-// import axios from 'axios'
-
-
- 
-// // 创建axios实例
-// const http = axios.create({
-// //   baseURL: process.env.BASE_API,
-//   baseURL: 'http://localhost:5000',
-//   timeout: 50000 ,// 请求超时时间
-  
-// })
- 
-// // request拦截器
-// http.interceptors.request.use(
-//   config => {
-//     config.headers['Content-Type'] = 'application/x-www-form-urlencoded' // 关键所在
-//     return config
-//   },
-//   error => {
-//     console.log(error) // for debug
-//     Promise.reject(error)
-//   }
-// )
-
-// export {http}
-
-//-------------up is axios ---------
-
-import qs from 'qs'
-import store from ''
-
 /**
  * 通用uni-app网络请求
  * 基于 Promise 对象实现更简单的 request 使用方式，支持请求和响应拦截
@@ -62,7 +31,7 @@ http.delete('user/1').then((res)=>{
 */
 export default {
 	config: {
-		baseUrl: "http://localhost:5000",
+		baseUrl: "https://unidemo.dcloud.net.cn/",
 		header: {
 			'Content-Type':'application/json;charset=UTF-8',
 			'Content-Type':'application/x-www-form-urlencoded'
@@ -74,38 +43,10 @@ export default {
 		success() {},
 		fail() {},
 		complete() {}
-  },
-  // 拦截器对象
+	},
 	interceptor: {
-    // 默认统一的请求拦截函数
-		request: (config) => {
-      // 将请求的参数中 默认增加 token
-      const data = config.data || {}
-      const globalCofigs = config.globalCofigs || {}
-      config.data = qs.stringify(Object.assign(data, {
-        'token': store.getters.userToken
-      }))
-      if(globalCofigs.loading){
-        uni.showLoadig({
-          title: '正在加载中',
-          mask: true,
-          success: ()=> {
-
-          },
-          fail: ()=>{
-
-          },
-          complete: ()=> {
-
-          }
-        })
-      }
-
-    },
-    // 默认统一的响应拦截函数
-		response: (config) => {
-
-    }
+		request: null,
+		response: null
 	},
 	request(options) {
 		if (!options) {
@@ -135,8 +76,7 @@ export default {
 					if (statusCode === 200) {
 						console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data))
 					}
-        }
-        // 如果有响应的回调
+				}
 				if (this.interceptor.response) {
 					let newResponse = this.interceptor.response(response)
 					if (newResponse) {
@@ -144,9 +84,7 @@ export default {
 					}
 				}
 				// 统一的响应日志记录
-        _reslog(response)
-        
-        // 
+				_reslog(response)
 				if (statusCode === 200) { //成功
 					resolve(response);
 				} else {
@@ -154,11 +92,9 @@ export default {
 				}
 			}
 
-      // 将传入的配置参数与默认的参数进行合并
 			_config = Object.assign({}, this.config, options)
 			_config.requestId = new Date().getTime()
 
-      // 如果有请求的回调函数
 			if (this.interceptor.request) {
 				this.interceptor.request(_config)
 			}
@@ -173,11 +109,9 @@ export default {
 				}
 			}
 
-      // 调用 uni.request 发起请求
 			uni.request(_config);
 		});
-  },
-  // get 请求
+	},
 	get(url, data, options) {
 		if (!options) {
 			options = {}
@@ -186,8 +120,7 @@ export default {
 		options.data = data
 		options.method = 'GET'  
 		return this.request(options)
-  },
-  // post 请求
+	},
 	post(url, data, options) {
 		if (!options) {
 			options = {}
@@ -196,8 +129,7 @@ export default {
 		options.data = data
 		options.method = 'POST'
 		return this.request(options)
-  },
-  // put请求
+	},
 	put(url, data, options) {
 		if (!options) {
 			options = {}
@@ -206,8 +138,7 @@ export default {
 		options.data = data
 		options.method = 'PUT'
 		return this.request(options)
-  },
-  // delete 请求
+	},
 	delete(url, data, options) {
 		if (!options) {
 			options = {}
@@ -257,5 +188,4 @@ function _reslog(res) {
 			break;
 	}
 }
-
 
