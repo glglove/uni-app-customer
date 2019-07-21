@@ -22,6 +22,7 @@ export const test = (data) => {
 		//判断返回状态 执行相应操作
 		return response;
 	}
+	
     return http.request({
 		baseUrl: 'https://unidemo.dcloud.net.cn/',
         url: 'ajax/echo/text?name=uni-app',

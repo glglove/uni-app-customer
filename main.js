@@ -8,7 +8,7 @@ import store from './store' // vuex状态管理
 // import './utils/http.js'
 // Vue.use(MintUI);
 
-import http from '@/utils/http/'
+import http from '@/utils/http.js'
 
 Vue.config.productionTip = false;
 // Vue.prototype.$axios = Axios
