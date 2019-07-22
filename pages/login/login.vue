@@ -1,12 +1,12 @@
 <template>
 	<view id="login">
 		<view class="loginBox">
-			<!-- <mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field> -->
+			<mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
 			<!-- <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="email"></mt-field> -->
-			<!-- <mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field> -->
+			<mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
 			<!-- <mt-field label="手机号" placeholder="请输入手机号" type="tel" v-model="phone"></mt-field> -->
-			<form @submit="formSubmit" @reset="formReset">
-				
+			
+<!-- 			<form @submit="formSubmit" @reset="formReset">
 				<view class="section">
 					<view class="section__title">input</view>
 					<input name="input" placeholder="please input here" />
@@ -15,16 +15,17 @@
 					<button formType="submit">Submit</button>
 					<button formType="reset">Reset</button>
 				</view>
-			</form>
+			</form> -->
+			
+			
 		</view>
 		<view class="loginBtnBox">
-			<!-- <mt-button type="primary" class="loginBtn" @click='login'>登陆</mt-button> -->
+			<mt-button type="primary" class="loginBtn" @click='login'>登陆</mt-button>
 		</view>
 	</view>
 </template>
 
 <script>
-	import {http} from '../../utils/http.js'
 	import { Indicator } from 'mint-ui';
 	export default {
 		data() {
@@ -45,11 +46,9 @@
 					// 	
 					// }
 					// http.get()
-					http.get('users/register',{
-							params: {
-								name: this.username,
-								pwd: this.password
-							}
+					this.$http.get('users/register',{
+							name: this.username,
+							pwd: this.password
 						}).then((res)=>{
 						console.log("调取注册接口后返回到数据-----》",res)
 						if(res && res.data.state === 1) {

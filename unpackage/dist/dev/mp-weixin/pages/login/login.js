@@ -124,8 +124,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _http = __webpack_require__(/*! ../../utils/http.js */ "../../../git-uni-app/node-customer/utils/http.js");
+
+
 var _mintUi = __webpack_require__(/*! mint-ui */ "../../../git-uni-app/node-customer/node_modules/mint-ui/lib/mint-ui.common.js"); //
+//
+//
 //
 //
 //
@@ -155,11 +158,7 @@ var _default = { data: function data() {return { username: '', email: '', passwo
         // 	
         // }
         // http.get()
-        _http.http.get('users/register', { params: { name: this.username, pwd: this.password } }).then(function (res) {console.log("调取注册接口后返回到数据-----》", res);if (res && res.data.state === 1) {_mintUi.Indicator.close();uni.redirectTo({ url: '../find/find',
-              success: function success() {
-                uni.showToast({
-                  title: "登陆成功" });
-
+        this.$http.get('users/register', { name: this.username, pwd: this.password }).then(function (res) {console.log("调取注册接口后返回到数据-----》", res);if (res && res.data.state === 1) {_mintUi.Indicator.close();uni.redirectTo({ url: '../find/find', success: function success() {uni.showToast({ title: "登陆成功" });
               },
               fail: function fail() {
 

@@ -59,7 +59,7 @@ http.delete('user/1').then((res)=>{
 */
 export default {
 	config: {
-		baseUrl: "http://localhost:5000",
+		baseUrl: "http://localhost:5000/",
 		header: {
 			'Content-Type':'application/json;charset=UTF-8',
 			'Content-Type':'application/x-www-form-urlencoded'
@@ -224,7 +224,9 @@ function _reqlog(req) {
 	if (process.env.NODE_ENV === 'development') {
 		console.log("【" + req.requestId + "】 地址：" + req.url)
 		if (req.data) {
+			debugger
 			console.log("【" + req.requestId + "】 请求参数：" + JSON.stringify(req.data))
+			debugger
 		}
 	}
 	//TODO 调接口异步写入日志数据库
