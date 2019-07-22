@@ -1,7 +1,4 @@
 // import axios from 'axios'
-
-
- 
 // // 创建axios实例
 // const http = axios.create({
 // //   baseURL: process.env.BASE_API,
@@ -27,7 +24,7 @@
 //-------------up is axios ---------
 
 import qs from 'qs'
-import store from ''
+import store from '@/store/index.js'
 
 /**
  * 通用uni-app网络请求

@@ -1,15 +1,15 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/api/base.js":
-/*!*******************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/api/base.js ***!
-  \*******************************************************/
+/***/ "../../../git-uni-app/node-customer/api/base.js":
+/*!************************************************!*\
+  !*** F:/git-uni-app/node-customer/api/base.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _config = _interopRequireDefault(__webpack_require__(/*! ./config */ "../../../../../git-nodeProgram/uni-app-customer/api/config.js"));
-var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _config = _interopRequireDefault(__webpack_require__(/*! ./config */ "../../../git-uni-app/node-customer/api/config.js"));
+var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "../../../git-uni-app/node-customer/node_modules/axios/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 // 创建axios实例
 var http = _axios.default.create({
@@ -120,10 +120,10 @@ http);
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/api/config.js":
-/*!*********************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/api/config.js ***!
-  \*********************************************************/
+/***/ "../../../git-uni-app/node-customer/api/config.js":
+/*!**************************************************!*\
+  !*** F:/git-uni-app/node-customer/api/config.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -223,16 +223,16 @@ var urlConfigs = (_urlConfigs = {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/api/find.js":
-/*!*******************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/api/find.js ***!
-  \*******************************************************/
+/***/ "../../../git-uni-app/node-customer/api/find.js":
+/*!************************************************!*\
+  !*** F:/git-uni-app/node-customer/api/find.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));var _base2 = _interopRequireDefault(__webpack_require__(/*! ./base */ "../../../../../git-nodeProgram/uni-app-customer/api/base.js"));
-var _axios = __webpack_require__(/*! axios */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/index.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));var _base2 = _interopRequireDefault(__webpack_require__(/*! ./base */ "../../../git-uni-app/node-customer/api/base.js"));
+var _axios = __webpack_require__(/*! axios */ "../../../git-uni-app/node-customer/node_modules/axios/index.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
 
 find = /*#__PURE__*/function (_base) {_inherits(find, _base);function find() {_classCallCheck(this, find);return _possibleConstructorReturn(this, _getPrototypeOf(find).apply(this, arguments));}_createClass(find, null, [{ key: "getlistData",
     /*
@@ -255,26 +255,32 @@ find = /*#__PURE__*/function (_base) {_inherits(find, _base);function find() {_c
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/main.js":
-/*!***************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/main.js ***!
-  \***************************************************/
+/***/ "../../../git-uni-app/node-customer/main.js":
+/*!********************************************!*\
+  !*** F:/git-uni-app/node-customer/main.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "../../../../../git-nodeProgram/uni-app-customer/pages.json");
+/* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ "../../../git-uni-app/node-customer/pages.json");
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "../../../../../git-nodeProgram/uni-app-customer/App.vue"));
-var _mintUi = _interopRequireDefault(__webpack_require__(/*! mint-ui */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/mint-ui/lib/mint-ui.common.js"));
-__webpack_require__(/*! mint-ui/lib/style.css */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/mint-ui/lib/style.css");
-var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/index.js"));
-__webpack_require__(/*! ./utils/http.js */ "../../../../../git-nodeProgram/uni-app-customer/utils/http.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "../../../git-uni-app/node-customer/App.vue"));
+var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "../../../git-uni-app/node-customer/store/index.js"));
 
-_vue.default.use(_mintUi.default);
+
+
+
+
+
+
+var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http.js */ "../../../git-uni-app/node-customer/utils/http.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
-_vue.default.prototype.$axios = _axios.default;
+// Vue.prototype.$axios = Axios
+
+_vue.default.prototype.$http = _http.default;
+_vue.default.prototype.$store = _store.default;
 
 _App.default.mpType = 'app';
 
@@ -286,78 +292,78 @@ createApp(app).$mount();
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/main.js?{\"page\":\"pages%2Ffind%2Ffind\"}":
-/*!**********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2Ffind%2Ffind"} ***!
-  \**********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/main.js?{\"page\":\"pages%2Ffind%2Ffind\"}":
+/*!***************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2Ffind%2Ffind"} ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../git-nodeProgram/uni-app-customer/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../git-uni-app/node-customer/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _find = _interopRequireDefault(__webpack_require__(/*! ./pages/find/find.vue */ "../../../../../git-nodeProgram/uni-app-customer/pages/find/find.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _find = _interopRequireDefault(__webpack_require__(/*! ./pages/find/find.vue */ "../../../git-uni-app/node-customer/pages/find/find.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_find.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/main.js?{\"page\":\"pages%2Flogin%2Flogin\"}":
-/*!************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
-  \************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/main.js?{\"page\":\"pages%2Flogin%2Flogin\"}":
+/*!*****************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2Flogin%2Flogin"} ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../git-nodeProgram/uni-app-customer/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../git-uni-app/node-customer/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ "../../../../../git-nodeProgram/uni-app-customer/pages/login/login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _login = _interopRequireDefault(__webpack_require__(/*! ./pages/login/login.vue */ "../../../git-uni-app/node-customer/pages/login/login.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_login.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/main.js?{\"page\":\"pages%2Fmy%2Fmy\"}":
-/*!******************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
-  \******************************************************************************/
+/***/ "../../../git-uni-app/node-customer/main.js?{\"page\":\"pages%2Fmy%2Fmy\"}":
+/*!***********************************************************************!*\
+  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../git-nodeProgram/uni-app-customer/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../git-uni-app/node-customer/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _my = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my.vue */ "../../../../../git-nodeProgram/uni-app-customer/pages/my/my.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _my = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my.vue */ "../../../git-uni-app/node-customer/pages/my/my.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_my.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/main.js?{\"page\":\"pages%2Fsign%2Fsign\"}":
-/*!**********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2Fsign%2Fsign"} ***!
-  \**********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/main.js?{\"page\":\"pages%2Fsign%2Fsign\"}":
+/*!***************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2Fsign%2Fsign"} ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../../../git-nodeProgram/uni-app-customer/pages.json");
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ "../../../git-uni-app/node-customer/pages.json");
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
-var _sign = _interopRequireDefault(__webpack_require__(/*! ./pages/sign/sign.vue */ "../../../../../git-nodeProgram/uni-app-customer/pages/sign/sign.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _sign = _interopRequireDefault(__webpack_require__(/*! ./pages/sign/sign.vue */ "../../../git-uni-app/node-customer/pages/sign/sign.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_sign.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["createPage"]))
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/array-find-index/index.js":
-/*!**********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/array-find-index/index.js ***!
-  \**********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/array-find-index/index.js":
+/*!***************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/array-find-index/index.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -390,34 +396,34 @@ module.exports = function (arr, predicate, ctx) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/index.js":
-/*!***********************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/index.js ***!
-  \***********************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/index.js":
+/*!****************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/index.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__(/*! ./lib/axios */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/axios.js");
+module.exports = __webpack_require__(/*! ./lib/axios */ "../../../git-uni-app/node-customer/node_modules/axios/lib/axios.js");
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/adapters/xhr.js":
-/*!**********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/adapters/xhr.js ***!
-  \**********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/adapters/xhr.js":
+/*!***************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/adapters/xhr.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
-var settle = __webpack_require__(/*! ./../core/settle */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/settle.js");
-var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/buildURL.js");
-var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/parseHeaders.js");
-var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js");
-var createError = __webpack_require__(/*! ../core/createError */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/createError.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
+var settle = __webpack_require__(/*! ./../core/settle */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/settle.js");
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/buildURL.js");
+var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/parseHeaders.js");
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js");
+var createError = __webpack_require__(/*! ../core/createError */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/createError.js");
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -509,7 +515,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(/*! ./../helpers/cookies */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/cookies.js");
+      var cookies = __webpack_require__(/*! ./../helpers/cookies */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/cookies.js");
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -587,21 +593,21 @@ module.exports = function xhrAdapter(config) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/axios.js":
-/*!***************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/axios.js ***!
-  \***************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/axios.js":
+/*!********************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/axios.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
-var bind = __webpack_require__(/*! ./helpers/bind */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/bind.js");
-var Axios = __webpack_require__(/*! ./core/Axios */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/Axios.js");
-var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/mergeConfig.js");
-var defaults = __webpack_require__(/*! ./defaults */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/defaults.js");
+var utils = __webpack_require__(/*! ./utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
+var bind = __webpack_require__(/*! ./helpers/bind */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/bind.js");
+var Axios = __webpack_require__(/*! ./core/Axios */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/Axios.js");
+var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/mergeConfig.js");
+var defaults = __webpack_require__(/*! ./defaults */ "../../../git-uni-app/node-customer/node_modules/axios/lib/defaults.js");
 
 /**
                                        * Create an instance of Axios
@@ -634,15 +640,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/Cancel.js");
-axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/CancelToken.js");
-axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/isCancel.js");
+axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/Cancel.js");
+axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/CancelToken.js");
+axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/isCancel.js");
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(/*! ./helpers/spread */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/spread.js");
+axios.spread = __webpack_require__(/*! ./helpers/spread */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/spread.js");
 
 module.exports = axios;
 
@@ -651,10 +657,10 @@ module.exports.default = axios;
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/Cancel.js":
-/*!***********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/Cancel.js ***!
-  \***********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/Cancel.js":
+/*!****************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/cancel/Cancel.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -681,17 +687,17 @@ module.exports = Cancel;
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/CancelToken.js":
-/*!****************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/CancelToken.js ***!
-  \****************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/CancelToken.js":
+/*!*********************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/cancel/CancelToken.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(/*! ./Cancel */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/Cancel.js");
+var Cancel = __webpack_require__(/*! ./Cancel */ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/Cancel.js");
 
 /**
                                    * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -749,10 +755,10 @@ module.exports = CancelToken;
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/isCancel.js":
-/*!*************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/isCancel.js ***!
-  \*************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/isCancel.js":
+/*!******************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/cancel/isCancel.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -765,21 +771,21 @@ module.exports = function isCancel(value) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/Axios.js":
-/*!********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/Axios.js ***!
-  \********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/Axios.js":
+/*!*************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/Axios.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
-var buildURL = __webpack_require__(/*! ../helpers/buildURL */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/buildURL.js");
-var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/InterceptorManager.js");
-var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/dispatchRequest.js");
-var mergeConfig = __webpack_require__(/*! ./mergeConfig */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/mergeConfig.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
+var buildURL = __webpack_require__(/*! ../helpers/buildURL */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/buildURL.js");
+var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/InterceptorManager.js");
+var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/dispatchRequest.js");
+var mergeConfig = __webpack_require__(/*! ./mergeConfig */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/mergeConfig.js");
 
 /**
                                              * Create a new instance of Axios
@@ -862,17 +868,17 @@ module.exports = Axios;
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/InterceptorManager.js":
-/*!*********************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/InterceptorManager.js ***!
-  \*********************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/InterceptorManager.js":
+/*!**************************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/InterceptorManager.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 function InterceptorManager() {
   this.handlers = [];
@@ -925,17 +931,17 @@ module.exports = InterceptorManager;
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/createError.js":
-/*!**************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/createError.js ***!
-  \**************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/createError.js":
+/*!*******************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/createError.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(/*! ./enhanceError */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/enhanceError.js");
+var enhanceError = __webpack_require__(/*! ./enhanceError */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/enhanceError.js");
 
 /**
                                                * Create an Error with the specified message, config, error code, request and response.
@@ -954,22 +960,22 @@ module.exports = function createError(message, config, code, request, response) 
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/dispatchRequest.js":
-/*!******************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/dispatchRequest.js ***!
-  \******************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/dispatchRequest.js":
+/*!***********************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/dispatchRequest.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
-var transformData = __webpack_require__(/*! ./transformData */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/transformData.js");
-var isCancel = __webpack_require__(/*! ../cancel/isCancel */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/isCancel.js");
-var defaults = __webpack_require__(/*! ../defaults */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/defaults.js");
-var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js");
-var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/combineURLs.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
+var transformData = __webpack_require__(/*! ./transformData */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/transformData.js");
+var isCancel = __webpack_require__(/*! ../cancel/isCancel */ "../../../git-uni-app/node-customer/node_modules/axios/lib/cancel/isCancel.js");
+var defaults = __webpack_require__(/*! ../defaults */ "../../../git-uni-app/node-customer/node_modules/axios/lib/defaults.js");
+var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js");
+var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/combineURLs.js");
 
 /**
                                                         * Throws a `Cancel` if cancellation has been requested.
@@ -1051,10 +1057,10 @@ module.exports = function dispatchRequest(config) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/enhanceError.js":
-/*!***************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/enhanceError.js ***!
-  \***************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/enhanceError.js":
+/*!********************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/enhanceError.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1104,17 +1110,17 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/mergeConfig.js":
-/*!**************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/mergeConfig.js ***!
-  \**************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/mergeConfig.js":
+/*!*******************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/mergeConfig.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 /**
                                   * Config-specific merge-function which creates a new config-object
@@ -1166,17 +1172,17 @@ module.exports = function mergeConfig(config1, config2) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/settle.js":
-/*!*********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/settle.js ***!
-  \*********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/settle.js":
+/*!**************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/settle.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(/*! ./createError */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/createError.js");
+var createError = __webpack_require__(/*! ./createError */ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/createError.js");
 
 /**
                                              * Resolve or reject a Promise based on response status.
@@ -1202,17 +1208,17 @@ module.exports = function settle(resolve, reject, response) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/transformData.js":
-/*!****************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/transformData.js ***!
-  \****************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/core/transformData.js":
+/*!*********************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/transformData.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 /**
                                     * Transform the data for a request or a response
@@ -1233,18 +1239,18 @@ module.exports = function transformData(data, headers, fns) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/defaults.js":
-/*!******************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/defaults.js ***!
-  \******************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/defaults.js":
+/*!***********************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/defaults.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(/*! ./utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
-var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js");
+var utils = __webpack_require__(/*! ./utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
+var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js");
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded' };
@@ -1261,10 +1267,10 @@ function getDefaultAdapter() {
   // Only Node.JS has a process variable that is of [[Class]] process
   if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(/*! ./adapters/http */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/adapters/xhr.js");
+    adapter = __webpack_require__(/*! ./adapters/http */ "../../../git-uni-app/node-customer/node_modules/axios/lib/adapters/xhr.js");
   } else if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(/*! ./adapters/xhr */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/adapters/xhr.js");
+    adapter = __webpack_require__(/*! ./adapters/xhr */ "../../../git-uni-app/node-customer/node_modules/axios/lib/adapters/xhr.js");
   }
   return adapter;
 }
@@ -1339,14 +1345,14 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 });
 
 module.exports = defaults;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ "./node_modules/node-libs-browser/mock/process.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ "./node_modules/node-libs-browser/mock/process.js")))
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/bind.js":
-/*!**********************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/bind.js ***!
-  \**********************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/bind.js":
+/*!***************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/bind.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1365,17 +1371,17 @@ module.exports = function bind(fn, thisArg) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/buildURL.js":
-/*!**************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/buildURL.js ***!
-  \**************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/buildURL.js":
+/*!*******************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/buildURL.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -1447,10 +1453,10 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/combineURLs.js":
-/*!*****************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/combineURLs.js ***!
-  \*****************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/combineURLs.js":
+/*!**********************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/combineURLs.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1472,17 +1478,17 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/cookies.js":
-/*!*************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/cookies.js ***!
-  \*************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/cookies.js":
+/*!******************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/cookies.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -1535,10 +1541,10 @@ function nonStandardBrowserEnv() {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js":
-/*!*******************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
-  \*******************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js":
+/*!************************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1560,17 +1566,17 @@ module.exports = function isAbsoluteURL(url) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js":
-/*!*********************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
-  \*********************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js":
+/*!**************************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -1638,17 +1644,17 @@ function nonStandardBrowserEnv() {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js":
-/*!*************************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
-  \*************************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js":
+/*!******************************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -1661,17 +1667,17 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/parseHeaders.js":
-/*!******************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/parseHeaders.js ***!
-  \******************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/parseHeaders.js":
+/*!***********************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js");
+var utils = __webpack_require__(/*! ./../utils */ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js");
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -1725,10 +1731,10 @@ module.exports = function parseHeaders(headers) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/spread.js":
-/*!************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/spread.js ***!
-  \************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/spread.js":
+/*!*****************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/spread.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1763,17 +1769,17 @@ module.exports = function spread(callback) {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js":
-/*!***************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js ***!
-  \***************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/axios/lib/utils.js":
+/*!********************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/utils.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(/*! ./helpers/bind */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/bind.js");
+var bind = __webpack_require__(/*! ./helpers/bind */ "../../../git-uni-app/node-customer/node_modules/axios/lib/helpers/bind.js");
 var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 
 /*global toString:true*/
@@ -2107,10 +2113,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/mint-ui/lib/mint-ui.common.js":
-/*!**************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/mint-ui/lib/mint-ui.common.js ***!
-  \**************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/mint-ui/lib/mint-ui.common.js":
+/*!*******************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/mint-ui/lib/mint-ui.common.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11990,19 +11996,19 @@ module.exports =
 /* 199 */
 /***/function (module, exports) {
 
-  module.exports = __webpack_require__(/*! array-find-index */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/array-find-index/index.js");
+  module.exports = __webpack_require__(/*! array-find-index */ "../../../git-uni-app/node-customer/node_modules/array-find-index/index.js");
 
   /***/},
 /* 200 */
 /***/function (module, exports) {
 
-  module.exports = __webpack_require__(/*! raf.js */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/raf.js/raf.js");
+  module.exports = __webpack_require__(/*! raf.js */ "../../../git-uni-app/node-customer/node_modules/raf.js/raf.js");
 
   /***/},
 /* 201 */
 /***/function (module, exports) {
 
-  module.exports = __webpack_require__(/*! vue-lazyload */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/vue-lazyload/vue-lazyload.js");
+  module.exports = __webpack_require__(/*! vue-lazyload */ "../../../git-uni-app/node-customer/node_modules/vue-lazyload/vue-lazyload.js");
 
   /***/},
 /* 202 */
@@ -12016,21 +12022,10 @@ module.exports =
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/mint-ui/lib/style.css":
-/*!******************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/mint-ui/lib/style.css ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/raf.js/raf.js":
-/*!**********************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/raf.js/raf.js ***!
-  \**********************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/raf.js/raf.js":
+/*!***************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/raf.js/raf.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12079,10 +12074,10 @@ module.exports =
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/node_modules/vue-lazyload/vue-lazyload.js":
-/*!*************************************************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/node_modules/vue-lazyload/vue-lazyload.js ***!
-  \*************************************************************************************/
+/***/ "../../../git-uni-app/node-customer/node_modules/vue-lazyload/vue-lazyload.js":
+/*!******************************************************************************!*\
+  !*** F:/git-uni-app/node-customer/node_modules/vue-lazyload/vue-lazyload.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12096,10 +12091,10 @@ module.exports =
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/pages.json":
-/*!******************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/pages.json ***!
-  \******************************************************/
+/***/ "../../../git-uni-app/node-customer/pages.json":
+/*!***********************************************!*\
+  !*** F:/git-uni-app/node-customer/pages.json ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12108,34 +12103,475 @@ module.exports =
 
 /***/ }),
 
-/***/ "../../../../../git-nodeProgram/uni-app-customer/utils/http.js":
+/***/ "../../../git-uni-app/node-customer/store/getters.js":
+/*!*****************************************************!*\
+  !*** F:/git-uni-app/node-customer/store/getters.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.userToken = void 0;var userToken = function userToken(state) {return state.app.userToken;};exports.userToken = userToken;
+
+/***/ }),
+
+/***/ "../../../git-uni-app/node-customer/store/index.js":
+/*!***************************************************!*\
+  !*** F:/git-uni-app/node-customer/store/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js"));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"));
+var _app = _interopRequireDefault(__webpack_require__(/*! ./modules/app */ "../../../git-uni-app/node-customer/store/modules/app.js"));
+var _find = _interopRequireDefault(__webpack_require__(/*! ./modules/find */ "../../../git-uni-app/node-customer/store/modules/find.js"));
+var _sign = _interopRequireDefault(__webpack_require__(/*! ./modules/sign */ "../../../git-uni-app/node-customer/store/modules/sign.js"));
+var _my = _interopRequireDefault(__webpack_require__(/*! ./modules/my */ "../../../git-uni-app/node-customer/store/modules/my.js"));
+var getters = _interopRequireWildcard(__webpack_require__(/*! ./getters */ "../../../git-uni-app/node-customer/store/getters.js"));
+var _logger = _interopRequireDefault(__webpack_require__(/*! vuex/dist/logger */ "./node_modules/vuex/dist/logger.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+_vue.default.use(_vuex.default);
+
+var debug = "development" !== 'production';
+
+var store = new _vuex.default.Store({
+  modules: {
+    app: _app.default,
+    find: _find.default,
+    sign: _sign.default,
+    my: _my.default },
+
+  getters: getters,
+  // strict: debug,  // 加了严格模式动态挂载路由会报错，但不影响功能
+  plugins: debug ? [(0, _logger.default)()] : [] });var _default =
+
+
+store;exports.default = _default;
+
+/***/ }),
+
+/***/ "../../../git-uni-app/node-customer/store/modules/app.js":
 /*!*********************************************************!*\
-  !*** D:/git-nodeProgram/uni-app-customer/utils/http.js ***!
+  !*** F:/git-uni-app/node-customer/store/modules/app.js ***!
   \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.http = void 0;var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/axios/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var types = _interopRequireWildcard(__webpack_require__(/*! ../mutation-types */ "../../../git-uni-app/node-customer/store/mutation-types.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
-// 创建axios实例
-var http = _axios.default.create({
-  //   baseURL: process.env.BASE_API,
-  baseURL: 'http://localhost:5000',
-  timeout: 50000 // 请求超时时间
-});
+var app = {
+  state: {
+    userToken: '' },
+
+  mutations: _defineProperty({},
+  types.SET_TOGGLE_SIDEBAR, function (state, sidebarStatus) {
+    state.sidebar.opened = sidebarStatus;
+  }),
+
+  actions: {
+    // 切换左侧导航栏
+    ToggleSideBar: function ToggleSideBar(_ref) {var commit = _ref.commit,state = _ref.state;
+      if (state.sidebar.opened) {
+        Cookies.set('sidebarStatus', 1);
+      } else {
+        Cookies.set('sidebarStatus', 0);
+      }
+      commit(types.SET_TOGGLE_SIDEBAR, !state.sidebar.opened);
+    } } };var _default =
 
 
-// request拦截器
-exports.http = http;http.interceptors.request.use(
-function (config) {
-  config.headers['Content-Type'] = 'application/x-www-form-urlencoded'; // 关键所在
-  return config;
-},
-function (error) {
-  console.log(error); // for debug
-  Promise.reject(error);
-});
+
+app;exports.default = _default;
+
+/***/ }),
+
+/***/ "../../../git-uni-app/node-customer/store/modules/find.js":
+/*!**********************************************************!*\
+  !*** F:/git-uni-app/node-customer/store/modules/find.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var types = _interopRequireWildcard(__webpack_require__(/*! ../mutation-types */ "../../../git-uni-app/node-customer/store/mutation-types.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var find = {
+  state: {},
+
+
+  mutations: _defineProperty({},
+  types.SET_TOGGLE_SIDEBAR, function (state, sidebarStatus) {
+    state.sidebar.opened = sidebarStatus;
+  }),
+
+  actions: {
+    // 切换左侧导航栏
+    ToggleSideBar: function ToggleSideBar(_ref) {var commit = _ref.commit,state = _ref.state;
+      if (state.sidebar.opened) {
+        Cookies.set('sidebarStatus', 1);
+      } else {
+        Cookies.set('sidebarStatus', 0);
+      }
+      commit(types.SET_TOGGLE_SIDEBAR, !state.sidebar.opened);
+    } } };var _default =
+
+
+
+find;exports.default = _default;
+
+/***/ }),
+
+/***/ "../../../git-uni-app/node-customer/store/modules/my.js":
+/*!********************************************************!*\
+  !*** F:/git-uni-app/node-customer/store/modules/my.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var types = _interopRequireWildcard(__webpack_require__(/*! ../mutation-types */ "../../../git-uni-app/node-customer/store/mutation-types.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var my = {
+  state: {},
+
+
+  mutations: _defineProperty({},
+  types.SET_TOGGLE_SIDEBAR, function (state, sidebarStatus) {
+    state.sidebar.opened = sidebarStatus;
+  }),
+
+  actions: {
+    // 切换左侧导航栏
+    ToggleSideBar: function ToggleSideBar(_ref) {var commit = _ref.commit,state = _ref.state;
+      if (state.sidebar.opened) {
+        Cookies.set('sidebarStatus', 1);
+      } else {
+        Cookies.set('sidebarStatus', 0);
+      }
+      commit(types.SET_TOGGLE_SIDEBAR, !state.sidebar.opened);
+    } } };var _default =
+
+
+
+my;exports.default = _default;
+
+/***/ }),
+
+/***/ "../../../git-uni-app/node-customer/store/modules/sign.js":
+/*!**********************************************************!*\
+  !*** F:/git-uni-app/node-customer/store/modules/sign.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var types = _interopRequireWildcard(__webpack_require__(/*! ../mutation-types */ "../../../git-uni-app/node-customer/store/mutation-types.js"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var sign = {
+  state: {},
+
+
+  mutations: _defineProperty({},
+  types.SET_TOGGLE_SIDEBAR, function (state, sidebarStatus) {
+    state.sidebar.opened = sidebarStatus;
+  }),
+
+  actions: {
+    // 切换左侧导航栏
+    ToggleSideBar: function ToggleSideBar(_ref) {var commit = _ref.commit,state = _ref.state;
+
+      commit(types.SET_TOGGLE_SIDEBAR, !state.sidebar.opened);
+    } } };var _default =
+
+
+
+sign;exports.default = _default;
+
+/***/ }),
+
+/***/ "../../../git-uni-app/node-customer/store/mutation-types.js":
+/*!************************************************************!*\
+  !*** F:/git-uni-app/node-customer/store/mutation-types.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.SET_TOGGLE_SIDEBAR = void 0;var SET_TOGGLE_SIDEBAR = 'SET_TOGGLE_SIDEBAR';exports.SET_TOGGLE_SIDEBAR = SET_TOGGLE_SIDEBAR;
+
+/***/ }),
+
+/***/ "../../../git-uni-app/node-customer/utils/http.js":
+/*!**************************************************!*\
+  !*** F:/git-uni-app/node-customer/utils/http.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _qs = _interopRequireDefault(__webpack_require__(/*! qs */ "./node_modules/qs/lib/index.js"));
+var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ "../../../git-uni-app/node-customer/store/index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+/**
+                                                                                                                                                                                                                                                                                                                                                                          * 通用uni-app网络请求
+                                                                                                                                                                                                                                                                                                                                                                          * 基于 Promise 对象实现更简单的 request 使用方式，支持请求和响应拦截
+                                                                                                                                                                                                                                                                                                                                                                          */
+
+/*
+                                                                                                                                                                                                                                                                                                                                                                             // 开放的接口
+                                                                                                                                                                                                                                                                                                                                                                             import http from './interface'
+                                                                                                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                             http.config.baseUrl = "http://localhost:8080/api/"
+                                                                                                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                             http.request(url:'user/list',method:'GET').then((res)=>{
+                                                                                                                                                                                                                                                                                                                                                                             	console.log(JSON.stringify(res))
+                                                                                                                                                                                                                                                                                                                                                                             })
+                                                                                                                                                                                                                                                                                                                                                                             http.get('user/list').then((res)=>{
+                                                                                                                                                                                                                                                                                                                                                                             	console.log(JSON.stringify(res))
+                                                                                                                                                                                                                                                                                                                                                                             })
+                                                                                                                                                                                                                                                                                                                                                                             http.get('user/list', {status: 1}).then((res)=>{
+                                                                                                                                                                                                                                                                                                                                                                             	console.log(JSON.stringify(res))
+                                                                                                                                                                                                                                                                                                                                                                             })
+                                                                                                                                                                                                                                                                                                                                                                             http.post('user', {id:1, status: 1}).then((res)=>{
+                                                                                                                                                                                                                                                                                                                                                                             	console.log(JSON.stringify(res))
+                                                                                                                                                                                                                                                                                                                                                                             })
+                                                                                                                                                                                                                                                                                                                                                                             http.put('user/1', {status: 2}).then((res)=>{
+                                                                                                                                                                                                                                                                                                                                                                             	console.log(JSON.stringify(res))
+                                                                                                                                                                                                                                                                                                                                                                             })
+                                                                                                                                                                                                                                                                                                                                                                             http.delete('user/1').then((res)=>{
+                                                                                                                                                                                                                                                                                                                                                                             	console.log(JSON.stringify(res))
+                                                                                                                                                                                                                                                                                                                                                                             }) 
+                                                                                                                                                                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                                                                                                                                                             */var _default =
+{
+  config: {
+    baseUrl: "http://localhost:5000",
+    header: _defineProperty({
+      'Content-Type': 'application/json;charset=UTF-8' }, "Content-Type",
+    'application/x-www-form-urlencoded'),
+
+    data: {},
+    method: "GET",
+    dataType: "json", /* 如设为json，会对返回的数据做一次 JSON.parse */
+    responseType: "text",
+    success: function success() {},
+    fail: function fail() {},
+    complete: function complete() {} },
+
+  // 拦截器对象
+  interceptor: {
+    // 默认统一的请求拦截函数
+    request: function request(config) {
+      // 将请求的参数中 默认增加 token
+      var data = config.data || {};
+      var globalCofigs = config.globalCofigs || {};
+      config.data = _qs.default.stringify(Object.assign(data, {
+        'token': _index.default.getters.userToken }));
+
+      if (globalCofigs.loading) {
+        uni.showLoadig({
+          title: '正在加载中',
+          mask: true,
+          success: function success() {
+
+          },
+          fail: function fail() {
+
+          },
+          complete: function complete() {
+
+          } });
+
+      }
+
+    },
+    // 默认统一的响应拦截函数
+    response: function response(config) {
+
+    } },
+
+  request: function request(options) {var _this = this;
+    if (!options) {
+      options = {};
+    }
+    options.baseUrl = options.baseUrl || this.config.baseUrl;
+    options.dataType = options.dataType || this.config.dataType;
+    options.url = options.baseUrl + options.url;
+    options.data = options.data || {};
+    options.method = options.method || this.config.method;
+    //TODO 加密数据
+
+    //TODO 数据签名
+    /* 
+    _token = {'token': getStorage(STOREKEY_LOGIN).token || 'undefined'},
+    _sign = {'sign': sign(JSON.stringify(options.data))}
+    options.header = Object.assign({}, options.header, _token,_sign) 
+    */
+
+    return new Promise(function (resolve, reject) {
+      var _config = null;
+
+      options.complete = function (response) {
+        var statusCode = response.statusCode;
+        response.config = _config;
+        if (true) {
+          if (statusCode === 200) {
+            console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data));
+          }
+        }
+        // 如果有响应的回调
+        if (_this.interceptor.response) {
+          var newResponse = _this.interceptor.response(response);
+          if (newResponse) {
+            response = newResponse;
+          }
+        }
+        // 统一的响应日志记录
+        _reslog(response);
+
+        // 
+        if (statusCode === 200) {//成功
+          resolve(response);
+        } else {
+          reject(response);
+        }
+      };
+
+      // 将传入的配置参数与默认的参数进行合并
+      _config = Object.assign({}, _this.config, options);
+      _config.requestId = new Date().getTime();
+
+      // 如果有请求的回调函数
+      if (_this.interceptor.request) {
+        _this.interceptor.request(_config);
+      }
+
+      // 统一的请求日志记录
+      _reqlog(_config);
+
+      if (true) {
+        console.log("【" + _config.requestId + "】 地址：" + _config.url);
+        if (_config.data) {
+          console.log("【" + _config.requestId + "】 参数：" + JSON.stringify(_config.data));
+        }
+      }
+
+      // 调用 uni.request 发起请求
+      uni.request(_config);
+    });
+  },
+  // get 请求
+  get: function get(url, data, options) {
+    if (!options) {
+      options = {};
+    }
+    options.url = url;
+    options.data = data;
+    options.method = 'GET';
+    return this.request(options);
+  },
+  // post 请求
+  post: function post(url, data, options) {
+    if (!options) {
+      options = {};
+    }
+    options.url = url;
+    options.data = data;
+    options.method = 'POST';
+    return this.request(options);
+  },
+  // put请求
+  put: function put(url, data, options) {
+    if (!options) {
+      options = {};
+    }
+    options.url = url;
+    options.data = data;
+    options.method = 'PUT';
+    return this.request(options);
+  },
+  // delete 请求
+  delete: function _delete(url, data, options) {
+    if (!options) {
+      options = {};
+    }
+    options.url = url;
+    options.data = data;
+    options.method = 'DELETE';
+    return this.request(options);
+  } };
+
+
+
+/**
+        * 请求接口日志记录
+        */exports.default = _default;
+function _reqlog(req) {
+  if (true) {
+    console.log("【" + req.requestId + "】 地址：" + req.url);
+    if (req.data) {
+      console.log("【" + req.requestId + "】 请求参数：" + JSON.stringify(req.data));
+    }
+  }
+  //TODO 调接口异步写入日志数据库
+}
+
+/**
+   * 响应接口日志记录
+   */
+function _reslog(res) {
+  var _statusCode = res.statusCode;
+  if (true) {
+    console.log("【" + res.config.requestId + "】 地址：" + res.config.url);
+    if (res.config.data) {
+      console.log("【" + res.config.requestId + "】 请求参数：" + JSON.stringify(res.config.data));
+    }
+    console.log("【" + res.config.requestId + "】 响应结果：" + JSON.stringify(res));
+  }
+  //TODO 除了接口服务错误外，其他日志调接口异步写入日志数据库
+  switch (_statusCode) {
+    case 200:
+      break;
+    case 401:
+      break;
+    case 404:
+      break;
+    default:
+      break;}
+
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),
 
@@ -12596,11 +13032,45 @@ function initMocks(vm, mocks) {
   });
 }
 
-function initHooks(mpOptions, hooks) {
+function hasHook(hook, vueOptions) {
+  if (!vueOptions) {
+    return true;
+  }
+
+  if (_vue.default.options && Array.isArray(_vue.default.options[hook])) {
+    return true;
+  }
+
+  vueOptions = vueOptions.default || vueOptions;
+
+  if (isFn(vueOptions)) {
+    if (isFn(vueOptions.extendOptions[hook])) {
+      return true;
+    }
+    if (vueOptions.super &&
+    vueOptions.super.options &&
+    Array.isArray(vueOptions.super.options[hook])) {
+      return true;
+    }
+    return false;
+  }
+
+  if (isFn(vueOptions[hook])) {
+    return true;
+  }
+  var mixins = vueOptions.mixins;
+  if (Array.isArray(mixins)) {
+    return !!mixins.find(function (mixin) {return hasHook(hook, mixin);});
+  }
+}
+
+function initHooks(mpOptions, hooks, vueOptions) {
   hooks.forEach(function (hook) {
-    mpOptions[hook] = function (args) {
-      return this.$vm && this.$vm.__call_hook(hook, args);
-    };
+    if (hasHook(hook, vueOptions)) {
+      mpOptions[hook] = function (args) {
+        return this.$vm && this.$vm.__call_hook(hook, args);
+      };
+    }
   });
 }
 
@@ -12646,7 +13116,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -12700,8 +13170,14 @@ function initBehaviors(vueOptions, initBehavior) {
           vueProps.push('name');
           vueProps.push('value');
         } else {
-          vueProps['name'] = String;
-          vueProps['value'] = null;
+          vueProps['name'] = {
+            type: String,
+            default: '' };
+
+          vueProps['value'] = {
+            type: [String, Number, Boolean, Array, Object, Date],
+            default: '' };
+
         }
       }
     });
@@ -12956,7 +13432,11 @@ function handleEvent(event) {var _this = this;
   event = wrapper$1(event);
 
   // [['tap',[['handle',[1,2,a]],['handle1',[1,2,a]]]]]
-  var eventOpts = (event.currentTarget || event.target).dataset.eventOpts;
+  var dataset = (event.currentTarget || event.target).dataset;
+  if (!dataset) {
+    return console.warn("\u4E8B\u4EF6\u4FE1\u606F\u4E0D\u5B58\u5728");
+  }
+  var eventOpts = dataset.eventOpts || dataset['event-opts']; // 支付宝 web-view 组件 dataset 非驼峰
   if (!eventOpts) {
     return console.warn("\u4E8B\u4EF6\u4FE1\u606F\u4E0D\u5B58\u5728");
   }
@@ -13048,6 +13528,9 @@ function parseBaseApp(vm, _ref3)
 
   var appOptions = {
     onLaunch: function onLaunch(args) {
+      if (this.$vm) {// 已经初始化过了，主要是为了百度，百度 onShow 在 onLaunch 之前
+        return;
+      }
       {
         if (!wx.canIUse('nextTick')) {// 事实 上2.2.3 即可，简单使用 2.3.0 的 nextTick 判断
           console.error('当前微信基础库版本过低，请将 微信开发者工具-详情-项目设置-调试基础库版本 更换为`2.3.0`以上');
@@ -13262,7 +13745,7 @@ function parseBasePage(vuePageOptions, _ref6)
     initRelation: initRelation });
 
 
-  initHooks(pageOptions.methods, hooks$1);
+  initHooks(pageOptions.methods, hooks$1, vuePageOptions);
 
   pageOptions.methods.onLoad = function (args) {
     this.$vm.$mp.query = args; // 兼容 mpvue
@@ -13305,7 +13788,7 @@ canIUses.forEach(function (canIUseApi) {
 
 var uni = {};
 
-if (typeof Proxy !== 'undefined') {
+if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
   uni = new Proxy({}, {
     get: function get(target, name) {
       if (name === 'upx2px') {
@@ -17934,8 +18417,22 @@ function initProps (vm, propsOptions) {
                 return
             }
             //fixed by xxxxxx __next_tick_pending,uni://form-field 时不告警
-            if(vm._getFormData || (vm.$parent && vm.$parent.__next_tick_pending)){
+            if(
+                key === 'value' && 
+                Array.isArray(vm.$options.behaviors) &&
+                vm.$options.behaviors.indexOf('uni://form-field') !== -1
+              ){
               return
+            }
+            if(vm._getFormData){
+              return
+            }
+            var $parent = vm.$parent;
+            while($parent){
+              if($parent.__next_tick_pending){
+                return  
+              }
+              $parent = $parent.$parent;
             }
           }
           warn(
@@ -18822,7 +19319,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -18843,14 +19340,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -18882,57 +19379,64 @@ function nextTick$1(vm, cb) {
 /*  */
 
 function cloneWithData(vm) {
-    // 确保当前 vm 所有数据被同步
-    var dataKeys = [].concat(
-        Object.keys(vm._data || {}),
-        Object.keys(vm._computedWatchers || {}));
+  // 确保当前 vm 所有数据被同步
+  var ret = Object.create(null);
+  var dataKeys = [].concat(
+    Object.keys(vm._data || {}),
+    Object.keys(vm._computedWatchers || {}));
 
-    var ret = dataKeys.reduce(function(ret, key) {
-        ret[key] = vm[key];
-        return ret
-    }, Object.create(null));
-    //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
-    Object.assign(ret, vm.$mp.data || {});
-    if (
-        Array.isArray(vm.$options.behaviors) &&
-        vm.$options.behaviors.indexOf('uni://form-field') !== -1
-    ) { //form-field
-        ret['name'] = vm.name;
-        ret['value'] = vm.value;
-    }
-    return JSON.parse(JSON.stringify(ret))
+  dataKeys.reduce(function(ret, key) {
+    ret[key] = vm[key];
+    return ret
+  }, ret);
+  //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
+  Object.assign(ret, vm.$mp.data || {});
+  if (
+    Array.isArray(vm.$options.behaviors) &&
+    vm.$options.behaviors.indexOf('uni://form-field') !== -1
+  ) { //form-field
+    ret['name'] = vm.name;
+    ret['value'] = vm.value;
+  }
+
+  return JSON.parse(JSON.stringify(ret))
 }
 
 var patch = function(oldVnode, vnode) {
-    var this$1 = this;
+  var this$1 = this;
 
-    if (vnode === null) { //destroy
-        return
+  if (vnode === null) { //destroy
+    return
+  }
+  if (this.mpType === 'page' || this.mpType === 'component') {
+    var mpInstance = this.$scope;
+    var data = Object.create(null);
+    try {
+      data = cloneWithData(this);
+    } catch (err) {
+      console.error(err);
     }
-    if (this.mpType === 'page' || this.mpType === 'component') {
-        var mpInstance = this.$scope;
-        var data = cloneWithData(this);
-        data.__webviewId__ = mpInstance.data.__webviewId__;
-        var mpData = Object.create(null);
-        Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
-            mpData[key] = mpInstance.data[key];
-        });
-        var diffData = diff(data, mpData);
-        if (Object.keys(diffData).length) {
-            if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
-                console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
-                    ']差量更新',
-                    JSON.stringify(diffData));
-            }
-            this.__next_tick_pending = true;
-            mpInstance.setData(diffData, function () {
-                this$1.__next_tick_pending = false;
-                flushCallbacks$1(this$1);
-            });
-        } else {
-            flushCallbacks$1(this);
-        }
+    data.__webviewId__ = mpInstance.data.__webviewId__;
+    var mpData = Object.create(null);
+    Object.keys(data).forEach(function (key) { //仅同步 data 中有的数据
+      mpData[key] = mpInstance.data[key];
+    });
+    var diffData = diff(data, mpData);
+    if (Object.keys(diffData).length) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
+          ']差量更新',
+          JSON.stringify(diffData));
+      }
+      this.__next_tick_pending = true;
+      mpInstance.setData(diffData, function () {
+        this$1.__next_tick_pending = false;
+        flushCallbacks$1(this$1);
+      });
+    } else {
+      flushCallbacks$1(this);
     }
+  }
 };
 
 /*  */
@@ -19078,111 +19582,136 @@ function normalizeStyleBinding (bindingStyle) {
 var MP_METHODS = ['createSelectorQuery', 'createIntersectionObserver', 'selectAllComponents', 'selectComponent'];
 
 function getTarget(obj, path) {
-    var parts = path.split('.');
-    var key = parts[0];
-    if (key.indexOf('__$n') === 0) { //number index
-        key = parseInt(key.replace('__$n', ''));
-    }
-    if (parts.length === 1) {
-        return obj[key]
-    }
-    return getTarget(obj[key], parts.slice(1).join('.'))
+  var parts = path.split('.');
+  var key = parts[0];
+  if (key.indexOf('__$n') === 0) { //number index
+    key = parseInt(key.replace('__$n', ''));
+  }
+  if (parts.length === 1) {
+    return obj[key]
+  }
+  return getTarget(obj[key], parts.slice(1).join('.'))
 }
 
 function internalMixin(Vue) {
 
-    var oldEmit = Vue.prototype.$emit;
+  Vue.config.errorHandler = function(err) {
+    console.error(err);
+  };
 
-    Vue.prototype.$emit = function(event) {
-        if (this.$scope && event) {
-            this.$scope['triggerEvent'](event, {
-                __args__: toArray(arguments, 1)
-            });
-        }
-        return oldEmit.apply(this, arguments)
+  var oldEmit = Vue.prototype.$emit;
+
+  Vue.prototype.$emit = function(event) {
+    if (this.$scope && event) {
+      this.$scope['triggerEvent'](event, {
+        __args__: toArray(arguments, 1)
+      });
+    }
+    return oldEmit.apply(this, arguments)
+  };
+
+  Vue.prototype.$nextTick = function(fn) {
+    return nextTick$1(this, fn)
+  };
+
+  MP_METHODS.forEach(function (method) {
+    Vue.prototype[method] = function(args) {
+      if (this.$scope) {
+        return this.$scope[method](args)
+      }
     };
-    
-    Vue.prototype.$nextTick = function (fn) {
-      return nextTick$1(this, fn)
-    };
+  });
 
-    MP_METHODS.forEach(function (method) {
-        Vue.prototype[method] = function(args) {
-            if (this.$scope) {
-                return this.$scope[method](args)
-            }
-        };
-    });
+  Vue.prototype.__init_provide = initProvide;
 
-    Vue.prototype.__init_provide = initProvide;
+  Vue.prototype.__init_injections = initInjections;
 
-    Vue.prototype.__init_injections = initInjections;
+  Vue.prototype.__call_hook = function(hook, args) {
+    var vm = this;
+    // #7573 disable dep collection when invoking lifecycle hooks
+    pushTarget();
+    var handlers = vm.$options[hook];
+    var info = hook + " hook";
+    var ret;
+    if (handlers) {
+      for (var i = 0, j = handlers.length; i < j; i++) {
+        ret = invokeWithErrorHandling(handlers[i], vm, args ? [args] : null, vm, info);
+      }
+    }
+    if (vm._hasHookEvent) {
+      vm.$emit('hook:' + hook);
+    }
+    popTarget();
+    return ret
+  };
 
-    Vue.prototype.__call_hook = function(hook, args) {
-        var vm = this;
-        // #7573 disable dep collection when invoking lifecycle hooks
-        pushTarget();
-        var handlers = vm.$options[hook];
-        var info = hook + " hook";
-        var ret;
-        if (handlers) {
-            for (var i = 0, j = handlers.length; i < j; i++) {
-                ret = invokeWithErrorHandling(handlers[i], vm, args ? [args] : null, vm, info);
-            }
-        }
-        if (vm._hasHookEvent) {
-            vm.$emit('hook:' + hook);
-        }
-        popTarget();
-        return ret
-    };
+  Vue.prototype.__set_model = function(target, key, value, modifiers) {
+    if (Array.isArray(modifiers)) {
+      if (modifiers.indexOf('trim') !== -1) {
+        value = value.trim();
+      }
+      if (modifiers.indexOf('number') !== -1) {
+        value = this._n(value);
+      }
+    }
+    if (!target) {
+      target = this;
+    }
+    target[key] = value;
+  };
 
-    Vue.prototype.__set_model = function(target, key, value, modifiers) {
-        if (Array.isArray(modifiers)) {
-            if (modifiers.indexOf('trim') !== -1) {
-                value = value.trim();
-            }
-            if (modifiers.indexOf('number') !== -1) {
-                value = this._n(value);
-            }
-        }
-        if(!target){
-            target = this;
-        }
-        target[key] = value;
-    };
+  Vue.prototype.__set_sync = function(target, key, value) {
+    if (!target) {
+      target = this;
+    }
+    target[key] = value;
+  };
 
-    Vue.prototype.__set_sync = function(target, key, value) {
-        if(!target){
-            target = this;
-        }
-        target[key] = value;
-    };
+  Vue.prototype.__get_orig = function(item) {
+    if (isPlainObject(item)) {
+      return item['$orig'] || item
+    }
+    return item
+  };
 
-    Vue.prototype.__get_orig = function(item) {
-        if (isPlainObject(item)) {
-            return item['$orig'] || item
-        }
-        return item
-    };
-
-    Vue.prototype.__get_value = function(dataPath, target) {
-        return getTarget(target || this, dataPath)
-    };
+  Vue.prototype.__get_value = function(dataPath, target) {
+    return getTarget(target || this, dataPath)
+  };
 
 
-    Vue.prototype.__get_class = function(dynamicClass, staticClass) {
-        return renderClass(staticClass, dynamicClass)
-    };
+  Vue.prototype.__get_class = function(dynamicClass, staticClass) {
+    return renderClass(staticClass, dynamicClass)
+  };
 
-    Vue.prototype.__get_style = function(dynamicStyle, staticStyle) {
-        if (!dynamicStyle && !staticStyle) {
-            return ''
-        }
-        var dynamicStyleObj = normalizeStyleBinding(dynamicStyle);
-        var styleObj = staticStyle ? extend(staticStyle, dynamicStyleObj) : dynamicStyleObj;
-        return Object.keys(styleObj).map(function (name) { return ((hyphenate(name)) + ":" + (styleObj[name])); }).join(';')
-    };
+  Vue.prototype.__get_style = function(dynamicStyle, staticStyle) {
+    if (!dynamicStyle && !staticStyle) {
+      return ''
+    }
+    var dynamicStyleObj = normalizeStyleBinding(dynamicStyle);
+    var styleObj = staticStyle ? extend(staticStyle, dynamicStyleObj) : dynamicStyleObj;
+    return Object.keys(styleObj).map(function (name) { return ((hyphenate(name)) + ":" + (styleObj[name])); }).join(';')
+  };
+
+  Vue.prototype.__map = function(val, iteratee) {
+    //TODO 暂不考虑 string,number
+    var ret, i, l, keys, key;
+    if (Array.isArray(val)) {
+      ret = new Array(val.length);
+      for (i = 0, l = val.length; i < l; i++) {
+        ret[i] = iteratee(val[i], i);
+      }
+      return ret
+    } else if (isObject(val)) {
+      keys = Object.keys(val);
+      ret = Object.create(null);
+      for (i = 0, l = keys.length; i < l; i++) {
+        key = keys[i];
+        ret[key] = iteratee(val[key], key, i);
+      }
+      return ret
+    }
+    return []
+  };
 
 }
 
@@ -19577,6 +20106,692 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ "./node_modules/node-libs-browser/mock/process.js")))
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/formats.js":
+/*!****************************************!*\
+  !*** ./node_modules/qs/lib/formats.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var replace = String.prototype.replace;
+var percentTwenties = /%20/g;
+
+module.exports = {
+    'default': 'RFC3986',
+    formatters: {
+        RFC1738: function (value) {
+            return replace.call(value, percentTwenties, '+');
+        },
+        RFC3986: function (value) {
+            return value;
+        }
+    },
+    RFC1738: 'RFC1738',
+    RFC3986: 'RFC3986'
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/index.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var stringify = __webpack_require__(/*! ./stringify */ "./node_modules/qs/lib/stringify.js");
+var parse = __webpack_require__(/*! ./parse */ "./node_modules/qs/lib/parse.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+
+module.exports = {
+    formats: formats,
+    parse: parse,
+    stringify: stringify
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/parse.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/parse.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
+
+var has = Object.prototype.hasOwnProperty;
+
+var defaults = {
+    allowDots: false,
+    allowPrototypes: false,
+    arrayLimit: 20,
+    decoder: utils.decode,
+    delimiter: '&',
+    depth: 5,
+    parameterLimit: 1000,
+    plainObjects: false,
+    strictNullHandling: false
+};
+
+var parseValues = function parseQueryStringValues(str, options) {
+    var obj = {};
+    var cleanStr = options.ignoreQueryPrefix ? str.replace(/^\?/, '') : str;
+    var limit = options.parameterLimit === Infinity ? undefined : options.parameterLimit;
+    var parts = cleanStr.split(options.delimiter, limit);
+
+    for (var i = 0; i < parts.length; ++i) {
+        var part = parts[i];
+
+        var bracketEqualsPos = part.indexOf(']=');
+        var pos = bracketEqualsPos === -1 ? part.indexOf('=') : bracketEqualsPos + 1;
+
+        var key, val;
+        if (pos === -1) {
+            key = options.decoder(part, defaults.decoder);
+            val = options.strictNullHandling ? null : '';
+        } else {
+            key = options.decoder(part.slice(0, pos), defaults.decoder);
+            val = options.decoder(part.slice(pos + 1), defaults.decoder);
+        }
+        if (has.call(obj, key)) {
+            obj[key] = [].concat(obj[key]).concat(val);
+        } else {
+            obj[key] = val;
+        }
+    }
+
+    return obj;
+};
+
+var parseObject = function (chain, val, options) {
+    var leaf = val;
+
+    for (var i = chain.length - 1; i >= 0; --i) {
+        var obj;
+        var root = chain[i];
+
+        if (root === '[]') {
+            obj = [];
+            obj = obj.concat(leaf);
+        } else {
+            obj = options.plainObjects ? Object.create(null) : {};
+            var cleanRoot = root.charAt(0) === '[' && root.charAt(root.length - 1) === ']' ? root.slice(1, -1) : root;
+            var index = parseInt(cleanRoot, 10);
+            if (
+                !isNaN(index)
+                && root !== cleanRoot
+                && String(index) === cleanRoot
+                && index >= 0
+                && (options.parseArrays && index <= options.arrayLimit)
+            ) {
+                obj = [];
+                obj[index] = leaf;
+            } else {
+                obj[cleanRoot] = leaf;
+            }
+        }
+
+        leaf = obj;
+    }
+
+    return leaf;
+};
+
+var parseKeys = function parseQueryStringKeys(givenKey, val, options) {
+    if (!givenKey) {
+        return;
+    }
+
+    // Transform dot notation to bracket notation
+    var key = options.allowDots ? givenKey.replace(/\.([^.[]+)/g, '[$1]') : givenKey;
+
+    // The regex chunks
+
+    var brackets = /(\[[^[\]]*])/;
+    var child = /(\[[^[\]]*])/g;
+
+    // Get the parent
+
+    var segment = brackets.exec(key);
+    var parent = segment ? key.slice(0, segment.index) : key;
+
+    // Stash the parent if it exists
+
+    var keys = [];
+    if (parent) {
+        // If we aren't using plain objects, optionally prefix keys
+        // that would overwrite object prototype properties
+        if (!options.plainObjects && has.call(Object.prototype, parent)) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+
+        keys.push(parent);
+    }
+
+    // Loop through children appending to the array until we hit depth
+
+    var i = 0;
+    while ((segment = child.exec(key)) !== null && i < options.depth) {
+        i += 1;
+        if (!options.plainObjects && has.call(Object.prototype, segment[1].slice(1, -1))) {
+            if (!options.allowPrototypes) {
+                return;
+            }
+        }
+        keys.push(segment[1]);
+    }
+
+    // If there's a remainder, just add whatever is left
+
+    if (segment) {
+        keys.push('[' + key.slice(segment.index) + ']');
+    }
+
+    return parseObject(keys, val, options);
+};
+
+module.exports = function (str, opts) {
+    var options = opts ? utils.assign({}, opts) : {};
+
+    if (options.decoder !== null && options.decoder !== undefined && typeof options.decoder !== 'function') {
+        throw new TypeError('Decoder has to be a function.');
+    }
+
+    options.ignoreQueryPrefix = options.ignoreQueryPrefix === true;
+    options.delimiter = typeof options.delimiter === 'string' || utils.isRegExp(options.delimiter) ? options.delimiter : defaults.delimiter;
+    options.depth = typeof options.depth === 'number' ? options.depth : defaults.depth;
+    options.arrayLimit = typeof options.arrayLimit === 'number' ? options.arrayLimit : defaults.arrayLimit;
+    options.parseArrays = options.parseArrays !== false;
+    options.decoder = typeof options.decoder === 'function' ? options.decoder : defaults.decoder;
+    options.allowDots = typeof options.allowDots === 'boolean' ? options.allowDots : defaults.allowDots;
+    options.plainObjects = typeof options.plainObjects === 'boolean' ? options.plainObjects : defaults.plainObjects;
+    options.allowPrototypes = typeof options.allowPrototypes === 'boolean' ? options.allowPrototypes : defaults.allowPrototypes;
+    options.parameterLimit = typeof options.parameterLimit === 'number' ? options.parameterLimit : defaults.parameterLimit;
+    options.strictNullHandling = typeof options.strictNullHandling === 'boolean' ? options.strictNullHandling : defaults.strictNullHandling;
+
+    if (str === '' || str === null || typeof str === 'undefined') {
+        return options.plainObjects ? Object.create(null) : {};
+    }
+
+    var tempObj = typeof str === 'string' ? parseValues(str, options) : str;
+    var obj = options.plainObjects ? Object.create(null) : {};
+
+    // Iterate over the keys and setup the new object
+
+    var keys = Object.keys(tempObj);
+    for (var i = 0; i < keys.length; ++i) {
+        var key = keys[i];
+        var newObj = parseKeys(key, tempObj[key], options);
+        obj = utils.merge(obj, newObj, options);
+    }
+
+    return utils.compact(obj);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/stringify.js":
+/*!******************************************!*\
+  !*** ./node_modules/qs/lib/stringify.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ./utils */ "./node_modules/qs/lib/utils.js");
+var formats = __webpack_require__(/*! ./formats */ "./node_modules/qs/lib/formats.js");
+
+var arrayPrefixGenerators = {
+    brackets: function brackets(prefix) { // eslint-disable-line func-name-matching
+        return prefix + '[]';
+    },
+    indices: function indices(prefix, key) { // eslint-disable-line func-name-matching
+        return prefix + '[' + key + ']';
+    },
+    repeat: function repeat(prefix) { // eslint-disable-line func-name-matching
+        return prefix;
+    }
+};
+
+var toISO = Date.prototype.toISOString;
+
+var defaults = {
+    delimiter: '&',
+    encode: true,
+    encoder: utils.encode,
+    encodeValuesOnly: false,
+    serializeDate: function serializeDate(date) { // eslint-disable-line func-name-matching
+        return toISO.call(date);
+    },
+    skipNulls: false,
+    strictNullHandling: false
+};
+
+var stringify = function stringify( // eslint-disable-line func-name-matching
+    object,
+    prefix,
+    generateArrayPrefix,
+    strictNullHandling,
+    skipNulls,
+    encoder,
+    filter,
+    sort,
+    allowDots,
+    serializeDate,
+    formatter,
+    encodeValuesOnly
+) {
+    var obj = object;
+    if (typeof filter === 'function') {
+        obj = filter(prefix, obj);
+    } else if (obj instanceof Date) {
+        obj = serializeDate(obj);
+    } else if (obj === null) {
+        if (strictNullHandling) {
+            return encoder && !encodeValuesOnly ? encoder(prefix, defaults.encoder) : prefix;
+        }
+
+        obj = '';
+    }
+
+    if (typeof obj === 'string' || typeof obj === 'number' || typeof obj === 'boolean' || utils.isBuffer(obj)) {
+        if (encoder) {
+            var keyValue = encodeValuesOnly ? prefix : encoder(prefix, defaults.encoder);
+            return [formatter(keyValue) + '=' + formatter(encoder(obj, defaults.encoder))];
+        }
+        return [formatter(prefix) + '=' + formatter(String(obj))];
+    }
+
+    var values = [];
+
+    if (typeof obj === 'undefined') {
+        return values;
+    }
+
+    var objKeys;
+    if (Array.isArray(filter)) {
+        objKeys = filter;
+    } else {
+        var keys = Object.keys(obj);
+        objKeys = sort ? keys.sort(sort) : keys;
+    }
+
+    for (var i = 0; i < objKeys.length; ++i) {
+        var key = objKeys[i];
+
+        if (skipNulls && obj[key] === null) {
+            continue;
+        }
+
+        if (Array.isArray(obj)) {
+            values = values.concat(stringify(
+                obj[key],
+                generateArrayPrefix(prefix, key),
+                generateArrayPrefix,
+                strictNullHandling,
+                skipNulls,
+                encoder,
+                filter,
+                sort,
+                allowDots,
+                serializeDate,
+                formatter,
+                encodeValuesOnly
+            ));
+        } else {
+            values = values.concat(stringify(
+                obj[key],
+                prefix + (allowDots ? '.' + key : '[' + key + ']'),
+                generateArrayPrefix,
+                strictNullHandling,
+                skipNulls,
+                encoder,
+                filter,
+                sort,
+                allowDots,
+                serializeDate,
+                formatter,
+                encodeValuesOnly
+            ));
+        }
+    }
+
+    return values;
+};
+
+module.exports = function (object, opts) {
+    var obj = object;
+    var options = opts ? utils.assign({}, opts) : {};
+
+    if (options.encoder !== null && options.encoder !== undefined && typeof options.encoder !== 'function') {
+        throw new TypeError('Encoder has to be a function.');
+    }
+
+    var delimiter = typeof options.delimiter === 'undefined' ? defaults.delimiter : options.delimiter;
+    var strictNullHandling = typeof options.strictNullHandling === 'boolean' ? options.strictNullHandling : defaults.strictNullHandling;
+    var skipNulls = typeof options.skipNulls === 'boolean' ? options.skipNulls : defaults.skipNulls;
+    var encode = typeof options.encode === 'boolean' ? options.encode : defaults.encode;
+    var encoder = typeof options.encoder === 'function' ? options.encoder : defaults.encoder;
+    var sort = typeof options.sort === 'function' ? options.sort : null;
+    var allowDots = typeof options.allowDots === 'undefined' ? false : options.allowDots;
+    var serializeDate = typeof options.serializeDate === 'function' ? options.serializeDate : defaults.serializeDate;
+    var encodeValuesOnly = typeof options.encodeValuesOnly === 'boolean' ? options.encodeValuesOnly : defaults.encodeValuesOnly;
+    if (typeof options.format === 'undefined') {
+        options.format = formats['default'];
+    } else if (!Object.prototype.hasOwnProperty.call(formats.formatters, options.format)) {
+        throw new TypeError('Unknown format option provided.');
+    }
+    var formatter = formats.formatters[options.format];
+    var objKeys;
+    var filter;
+
+    if (typeof options.filter === 'function') {
+        filter = options.filter;
+        obj = filter('', obj);
+    } else if (Array.isArray(options.filter)) {
+        filter = options.filter;
+        objKeys = filter;
+    }
+
+    var keys = [];
+
+    if (typeof obj !== 'object' || obj === null) {
+        return '';
+    }
+
+    var arrayFormat;
+    if (options.arrayFormat in arrayPrefixGenerators) {
+        arrayFormat = options.arrayFormat;
+    } else if ('indices' in options) {
+        arrayFormat = options.indices ? 'indices' : 'repeat';
+    } else {
+        arrayFormat = 'indices';
+    }
+
+    var generateArrayPrefix = arrayPrefixGenerators[arrayFormat];
+
+    if (!objKeys) {
+        objKeys = Object.keys(obj);
+    }
+
+    if (sort) {
+        objKeys.sort(sort);
+    }
+
+    for (var i = 0; i < objKeys.length; ++i) {
+        var key = objKeys[i];
+
+        if (skipNulls && obj[key] === null) {
+            continue;
+        }
+
+        keys = keys.concat(stringify(
+            obj[key],
+            key,
+            generateArrayPrefix,
+            strictNullHandling,
+            skipNulls,
+            encode ? encoder : null,
+            filter,
+            sort,
+            allowDots,
+            serializeDate,
+            formatter,
+            encodeValuesOnly
+        ));
+    }
+
+    var joined = keys.join(delimiter);
+    var prefix = options.addQueryPrefix === true ? '?' : '';
+
+    return joined.length > 0 ? prefix + joined : '';
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/qs/lib/utils.js":
+/*!**************************************!*\
+  !*** ./node_modules/qs/lib/utils.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var has = Object.prototype.hasOwnProperty;
+
+var hexTable = (function () {
+    var array = [];
+    for (var i = 0; i < 256; ++i) {
+        array.push('%' + ((i < 16 ? '0' : '') + i.toString(16)).toUpperCase());
+    }
+
+    return array;
+}());
+
+var compactQueue = function compactQueue(queue) {
+    var obj;
+
+    while (queue.length) {
+        var item = queue.pop();
+        obj = item.obj[item.prop];
+
+        if (Array.isArray(obj)) {
+            var compacted = [];
+
+            for (var j = 0; j < obj.length; ++j) {
+                if (typeof obj[j] !== 'undefined') {
+                    compacted.push(obj[j]);
+                }
+            }
+
+            item.obj[item.prop] = compacted;
+        }
+    }
+
+    return obj;
+};
+
+var arrayToObject = function arrayToObject(source, options) {
+    var obj = options && options.plainObjects ? Object.create(null) : {};
+    for (var i = 0; i < source.length; ++i) {
+        if (typeof source[i] !== 'undefined') {
+            obj[i] = source[i];
+        }
+    }
+
+    return obj;
+};
+
+var merge = function merge(target, source, options) {
+    if (!source) {
+        return target;
+    }
+
+    if (typeof source !== 'object') {
+        if (Array.isArray(target)) {
+            target.push(source);
+        } else if (typeof target === 'object') {
+            if (options.plainObjects || options.allowPrototypes || !has.call(Object.prototype, source)) {
+                target[source] = true;
+            }
+        } else {
+            return [target, source];
+        }
+
+        return target;
+    }
+
+    if (typeof target !== 'object') {
+        return [target].concat(source);
+    }
+
+    var mergeTarget = target;
+    if (Array.isArray(target) && !Array.isArray(source)) {
+        mergeTarget = arrayToObject(target, options);
+    }
+
+    if (Array.isArray(target) && Array.isArray(source)) {
+        source.forEach(function (item, i) {
+            if (has.call(target, i)) {
+                if (target[i] && typeof target[i] === 'object') {
+                    target[i] = merge(target[i], item, options);
+                } else {
+                    target.push(item);
+                }
+            } else {
+                target[i] = item;
+            }
+        });
+        return target;
+    }
+
+    return Object.keys(source).reduce(function (acc, key) {
+        var value = source[key];
+
+        if (has.call(acc, key)) {
+            acc[key] = merge(acc[key], value, options);
+        } else {
+            acc[key] = value;
+        }
+        return acc;
+    }, mergeTarget);
+};
+
+var assign = function assignSingleSource(target, source) {
+    return Object.keys(source).reduce(function (acc, key) {
+        acc[key] = source[key];
+        return acc;
+    }, target);
+};
+
+var decode = function (str) {
+    try {
+        return decodeURIComponent(str.replace(/\+/g, ' '));
+    } catch (e) {
+        return str;
+    }
+};
+
+var encode = function encode(str) {
+    // This code was originally written by Brian White (mscdex) for the io.js core querystring library.
+    // It has been adapted here for stricter adherence to RFC 3986
+    if (str.length === 0) {
+        return str;
+    }
+
+    var string = typeof str === 'string' ? str : String(str);
+
+    var out = '';
+    for (var i = 0; i < string.length; ++i) {
+        var c = string.charCodeAt(i);
+
+        if (
+            c === 0x2D // -
+            || c === 0x2E // .
+            || c === 0x5F // _
+            || c === 0x7E // ~
+            || (c >= 0x30 && c <= 0x39) // 0-9
+            || (c >= 0x41 && c <= 0x5A) // a-z
+            || (c >= 0x61 && c <= 0x7A) // A-Z
+        ) {
+            out += string.charAt(i);
+            continue;
+        }
+
+        if (c < 0x80) {
+            out = out + hexTable[c];
+            continue;
+        }
+
+        if (c < 0x800) {
+            out = out + (hexTable[0xC0 | (c >> 6)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        if (c < 0xD800 || c >= 0xE000) {
+            out = out + (hexTable[0xE0 | (c >> 12)] + hexTable[0x80 | ((c >> 6) & 0x3F)] + hexTable[0x80 | (c & 0x3F)]);
+            continue;
+        }
+
+        i += 1;
+        c = 0x10000 + (((c & 0x3FF) << 10) | (string.charCodeAt(i) & 0x3FF));
+        out += hexTable[0xF0 | (c >> 18)]
+            + hexTable[0x80 | ((c >> 12) & 0x3F)]
+            + hexTable[0x80 | ((c >> 6) & 0x3F)]
+            + hexTable[0x80 | (c & 0x3F)];
+    }
+
+    return out;
+};
+
+var compact = function compact(value) {
+    var queue = [{ obj: { o: value }, prop: 'o' }];
+    var refs = [];
+
+    for (var i = 0; i < queue.length; ++i) {
+        var item = queue[i];
+        var obj = item.obj[item.prop];
+
+        var keys = Object.keys(obj);
+        for (var j = 0; j < keys.length; ++j) {
+            var key = keys[j];
+            var val = obj[key];
+            if (typeof val === 'object' && val !== null && refs.indexOf(val) === -1) {
+                queue.push({ obj: obj, prop: key });
+                refs.push(val);
+            }
+        }
+    }
+
+    return compactQueue(queue);
+};
+
+var isRegExp = function isRegExp(obj) {
+    return Object.prototype.toString.call(obj) === '[object RegExp]';
+};
+
+var isBuffer = function isBuffer(obj) {
+    if (obj === null || typeof obj === 'undefined') {
+        return false;
+    }
+
+    return !!(obj.constructor && obj.constructor.isBuffer && obj.constructor.isBuffer(obj));
+};
+
+module.exports = {
+    arrayToObject: arrayToObject,
+    assign: assign,
+    compact: compact,
+    decode: decode,
+    encode: encode,
+    isBuffer: isBuffer,
+    isRegExp: isRegExp,
+    merge: merge
+};
+
 
 /***/ }),
 
@@ -20463,6 +21678,1089 @@ function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/vuex/dist/logger.js":
+/*!******************************************!*\
+  !*** ./node_modules/vuex/dist/logger.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+	 true ? module.exports = factory() :
+	undefined;
+}(this, (function () { 'use strict';
+
+/**
+ * Get the first item that pass the test
+ * by second argument function
+ *
+ * @param {Array} list
+ * @param {Function} f
+ * @return {*}
+ */
+function find (list, f) {
+  return list.filter(f)[0]
+}
+
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+function deepCopy (obj, cache) {
+  if ( cache === void 0 ) cache = [];
+
+  // just return if obj is immutable value
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+
+  // if obj is hit, it is in circular structure
+  var hit = find(cache, function (c) { return c.original === obj; });
+  if (hit) {
+    return hit.copy
+  }
+
+  var copy = Array.isArray(obj) ? [] : {};
+  // put the copy into cache at first
+  // because we want to refer it in recursive deepCopy
+  cache.push({
+    original: obj,
+    copy: copy
+  });
+
+  Object.keys(obj).forEach(function (key) {
+    copy[key] = deepCopy(obj[key], cache);
+  });
+
+  return copy
+}
+
+/**
+ * forEach for object
+ */
+
+// Credits: borrowed code from fcomb/redux-logger
+
+function createLogger (ref) {
+  if ( ref === void 0 ) ref = {};
+  var collapsed = ref.collapsed; if ( collapsed === void 0 ) collapsed = true;
+  var filter = ref.filter; if ( filter === void 0 ) filter = function (mutation, stateBefore, stateAfter) { return true; };
+  var transformer = ref.transformer; if ( transformer === void 0 ) transformer = function (state) { return state; };
+  var mutationTransformer = ref.mutationTransformer; if ( mutationTransformer === void 0 ) mutationTransformer = function (mut) { return mut; };
+  var logger = ref.logger; if ( logger === void 0 ) logger = console;
+
+  return function (store) {
+    var prevState = deepCopy(store.state);
+
+    store.subscribe(function (mutation, state) {
+      if (typeof logger === 'undefined') {
+        return
+      }
+      var nextState = deepCopy(state);
+
+      if (filter(mutation, prevState, nextState)) {
+        var time = new Date();
+        var formattedTime = " @ " + (pad(time.getHours(), 2)) + ":" + (pad(time.getMinutes(), 2)) + ":" + (pad(time.getSeconds(), 2)) + "." + (pad(time.getMilliseconds(), 3));
+        var formattedMutation = mutationTransformer(mutation);
+        var message = "mutation " + (mutation.type) + formattedTime;
+        var startMessage = collapsed
+          ? logger.groupCollapsed
+          : logger.group;
+
+        // render
+        try {
+          startMessage.call(logger, message);
+        } catch (e) {
+          console.log(message);
+        }
+
+        logger.log('%c prev state', 'color: #9E9E9E; font-weight: bold', transformer(prevState));
+        logger.log('%c mutation', 'color: #03A9F4; font-weight: bold', formattedMutation);
+        logger.log('%c next state', 'color: #4CAF50; font-weight: bold', transformer(nextState));
+
+        try {
+          logger.groupEnd();
+        } catch (e) {
+          logger.log('—— log end ——');
+        }
+      }
+
+      prevState = nextState;
+    });
+  }
+}
+
+function repeat (str, times) {
+  return (new Array(times + 1)).join(str)
+}
+
+function pad (num, maxLength) {
+  return repeat('0', maxLength - num.toString().length) + num
+}
+
+return createLogger;
+
+})));
+
+
+/***/ }),
+
+/***/ "./node_modules/vuex/dist/vuex.esm.js":
+/*!********************************************!*\
+  !*** ./node_modules/vuex/dist/vuex.esm.js ***!
+  \********************************************/
+/*! exports provided: Store, install, mapState, mapMutations, mapGetters, mapActions, createNamespacedHelpers, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
+/**
+ * vuex v3.0.1
+ * (c) 2017 Evan You
+ * @license MIT
+ */
+var applyMixin = function (Vue) {
+  var version = Number(Vue.version.split('.')[0]);
+
+  if (version >= 2) {
+    Vue.mixin({ beforeCreate: vuexInit });
+  } else {
+    // override init and inject vuex init procedure
+    // for 1.x backwards compatibility.
+    var _init = Vue.prototype._init;
+    Vue.prototype._init = function (options) {
+      if ( options === void 0 ) options = {};
+
+      options.init = options.init
+        ? [vuexInit].concat(options.init)
+        : vuexInit;
+      _init.call(this, options);
+    };
+  }
+
+  /**
+   * Vuex init hook, injected into each instances init hooks list.
+   */
+
+  function vuexInit () {
+    var options = this.$options;
+    // store injection
+    if (options.store) {
+      this.$store = typeof options.store === 'function'
+        ? options.store()
+        : options.store;
+    } else if (options.parent && options.parent.$store) {
+      this.$store = options.parent.$store;
+    }
+  }
+};
+
+var devtoolHook =
+  typeof window !== 'undefined' &&
+  window.__VUE_DEVTOOLS_GLOBAL_HOOK__;
+
+function devtoolPlugin (store) {
+  if (!devtoolHook) { return }
+
+  store._devtoolHook = devtoolHook;
+
+  devtoolHook.emit('vuex:init', store);
+
+  devtoolHook.on('vuex:travel-to-state', function (targetState) {
+    store.replaceState(targetState);
+  });
+
+  store.subscribe(function (mutation, state) {
+    devtoolHook.emit('vuex:mutation', mutation, state);
+  });
+}
+
+/**
+ * Get the first item that pass the test
+ * by second argument function
+ *
+ * @param {Array} list
+ * @param {Function} f
+ * @return {*}
+ */
+/**
+ * Deep copy the given object considering circular structure.
+ * This function caches all nested objects and its copies.
+ * If it detects circular structure, use cached copy to avoid infinite loop.
+ *
+ * @param {*} obj
+ * @param {Array<Object>} cache
+ * @return {*}
+ */
+
+
+/**
+ * forEach for object
+ */
+function forEachValue (obj, fn) {
+  Object.keys(obj).forEach(function (key) { return fn(obj[key], key); });
+}
+
+function isObject (obj) {
+  return obj !== null && typeof obj === 'object'
+}
+
+function isPromise (val) {
+  return val && typeof val.then === 'function'
+}
+
+function assert (condition, msg) {
+  if (!condition) { throw new Error(("[vuex] " + msg)) }
+}
+
+var Module = function Module (rawModule, runtime) {
+  this.runtime = runtime;
+  this._children = Object.create(null);
+  this._rawModule = rawModule;
+  var rawState = rawModule.state;
+  this.state = (typeof rawState === 'function' ? rawState() : rawState) || {};
+};
+
+var prototypeAccessors$1 = { namespaced: { configurable: true } };
+
+prototypeAccessors$1.namespaced.get = function () {
+  return !!this._rawModule.namespaced
+};
+
+Module.prototype.addChild = function addChild (key, module) {
+  this._children[key] = module;
+};
+
+Module.prototype.removeChild = function removeChild (key) {
+  delete this._children[key];
+};
+
+Module.prototype.getChild = function getChild (key) {
+  return this._children[key]
+};
+
+Module.prototype.update = function update (rawModule) {
+  this._rawModule.namespaced = rawModule.namespaced;
+  if (rawModule.actions) {
+    this._rawModule.actions = rawModule.actions;
+  }
+  if (rawModule.mutations) {
+    this._rawModule.mutations = rawModule.mutations;
+  }
+  if (rawModule.getters) {
+    this._rawModule.getters = rawModule.getters;
+  }
+};
+
+Module.prototype.forEachChild = function forEachChild (fn) {
+  forEachValue(this._children, fn);
+};
+
+Module.prototype.forEachGetter = function forEachGetter (fn) {
+  if (this._rawModule.getters) {
+    forEachValue(this._rawModule.getters, fn);
+  }
+};
+
+Module.prototype.forEachAction = function forEachAction (fn) {
+  if (this._rawModule.actions) {
+    forEachValue(this._rawModule.actions, fn);
+  }
+};
+
+Module.prototype.forEachMutation = function forEachMutation (fn) {
+  if (this._rawModule.mutations) {
+    forEachValue(this._rawModule.mutations, fn);
+  }
+};
+
+Object.defineProperties( Module.prototype, prototypeAccessors$1 );
+
+var ModuleCollection = function ModuleCollection (rawRootModule) {
+  // register root module (Vuex.Store options)
+  this.register([], rawRootModule, false);
+};
+
+ModuleCollection.prototype.get = function get (path) {
+  return path.reduce(function (module, key) {
+    return module.getChild(key)
+  }, this.root)
+};
+
+ModuleCollection.prototype.getNamespace = function getNamespace (path) {
+  var module = this.root;
+  return path.reduce(function (namespace, key) {
+    module = module.getChild(key);
+    return namespace + (module.namespaced ? key + '/' : '')
+  }, '')
+};
+
+ModuleCollection.prototype.update = function update$1 (rawRootModule) {
+  update([], this.root, rawRootModule);
+};
+
+ModuleCollection.prototype.register = function register (path, rawModule, runtime) {
+    var this$1 = this;
+    if ( runtime === void 0 ) runtime = true;
+
+  if (true) {
+    assertRawModule(path, rawModule);
+  }
+
+  var newModule = new Module(rawModule, runtime);
+  if (path.length === 0) {
+    this.root = newModule;
+  } else {
+    var parent = this.get(path.slice(0, -1));
+    parent.addChild(path[path.length - 1], newModule);
+  }
+
+  // register nested modules
+  if (rawModule.modules) {
+    forEachValue(rawModule.modules, function (rawChildModule, key) {
+      this$1.register(path.concat(key), rawChildModule, runtime);
+    });
+  }
+};
+
+ModuleCollection.prototype.unregister = function unregister (path) {
+  var parent = this.get(path.slice(0, -1));
+  var key = path[path.length - 1];
+  if (!parent.getChild(key).runtime) { return }
+
+  parent.removeChild(key);
+};
+
+function update (path, targetModule, newModule) {
+  if (true) {
+    assertRawModule(path, newModule);
+  }
+
+  // update target module
+  targetModule.update(newModule);
+
+  // update nested modules
+  if (newModule.modules) {
+    for (var key in newModule.modules) {
+      if (!targetModule.getChild(key)) {
+        if (true) {
+          console.warn(
+            "[vuex] trying to add a new module '" + key + "' on hot reloading, " +
+            'manual reload is needed'
+          );
+        }
+        return
+      }
+      update(
+        path.concat(key),
+        targetModule.getChild(key),
+        newModule.modules[key]
+      );
+    }
+  }
+}
+
+var functionAssert = {
+  assert: function (value) { return typeof value === 'function'; },
+  expected: 'function'
+};
+
+var objectAssert = {
+  assert: function (value) { return typeof value === 'function' ||
+    (typeof value === 'object' && typeof value.handler === 'function'); },
+  expected: 'function or object with "handler" function'
+};
+
+var assertTypes = {
+  getters: functionAssert,
+  mutations: functionAssert,
+  actions: objectAssert
+};
+
+function assertRawModule (path, rawModule) {
+  Object.keys(assertTypes).forEach(function (key) {
+    if (!rawModule[key]) { return }
+
+    var assertOptions = assertTypes[key];
+
+    forEachValue(rawModule[key], function (value, type) {
+      assert(
+        assertOptions.assert(value),
+        makeAssertionMessage(path, key, type, value, assertOptions.expected)
+      );
+    });
+  });
+}
+
+function makeAssertionMessage (path, key, type, value, expected) {
+  var buf = key + " should be " + expected + " but \"" + key + "." + type + "\"";
+  if (path.length > 0) {
+    buf += " in module \"" + (path.join('.')) + "\"";
+  }
+  buf += " is " + (JSON.stringify(value)) + ".";
+  return buf
+}
+
+var Vue; // bind on install
+
+var Store = function Store (options) {
+  var this$1 = this;
+  if ( options === void 0 ) options = {};
+
+  // Auto install if it is not done yet and `window` has `Vue`.
+  // To allow users to avoid auto-installation in some cases,
+  // this code should be placed here. See #731
+  if (!Vue && typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+  }
+
+  if (true) {
+    assert(Vue, "must call Vue.use(Vuex) before creating a store instance.");
+    assert(typeof Promise !== 'undefined', "vuex requires a Promise polyfill in this browser.");
+    assert(this instanceof Store, "Store must be called with the new operator.");
+  }
+
+  var plugins = options.plugins; if ( plugins === void 0 ) plugins = [];
+  var strict = options.strict; if ( strict === void 0 ) strict = false;
+
+  var state = options.state; if ( state === void 0 ) state = {};
+  if (typeof state === 'function') {
+    state = state() || {};
+  }
+
+  // store internal state
+  this._committing = false;
+  this._actions = Object.create(null);
+  this._actionSubscribers = [];
+  this._mutations = Object.create(null);
+  this._wrappedGetters = Object.create(null);
+  this._modules = new ModuleCollection(options);
+  this._modulesNamespaceMap = Object.create(null);
+  this._subscribers = [];
+  this._watcherVM = new Vue();
+
+  // bind commit and dispatch to self
+  var store = this;
+  var ref = this;
+  var dispatch = ref.dispatch;
+  var commit = ref.commit;
+  this.dispatch = function boundDispatch (type, payload) {
+    return dispatch.call(store, type, payload)
+  };
+  this.commit = function boundCommit (type, payload, options) {
+    return commit.call(store, type, payload, options)
+  };
+
+  // strict mode
+  this.strict = strict;
+
+  // init root module.
+  // this also recursively registers all sub-modules
+  // and collects all module getters inside this._wrappedGetters
+  installModule(this, state, [], this._modules.root);
+
+  // initialize the store vm, which is responsible for the reactivity
+  // (also registers _wrappedGetters as computed properties)
+  resetStoreVM(this, state);
+
+  // apply plugins
+  plugins.forEach(function (plugin) { return plugin(this$1); });
+
+  if (Vue.config.devtools) {
+    devtoolPlugin(this);
+  }
+};
+
+var prototypeAccessors = { state: { configurable: true } };
+
+prototypeAccessors.state.get = function () {
+  return this._vm._data.$$state
+};
+
+prototypeAccessors.state.set = function (v) {
+  if (true) {
+    assert(false, "Use store.replaceState() to explicit replace store state.");
+  }
+};
+
+Store.prototype.commit = function commit (_type, _payload, _options) {
+    var this$1 = this;
+
+  // check object-style commit
+  var ref = unifyObjectStyle(_type, _payload, _options);
+    var type = ref.type;
+    var payload = ref.payload;
+    var options = ref.options;
+
+  var mutation = { type: type, payload: payload };
+  var entry = this._mutations[type];
+  if (!entry) {
+    if (true) {
+      console.error(("[vuex] unknown mutation type: " + type));
+    }
+    return
+  }
+  this._withCommit(function () {
+    entry.forEach(function commitIterator (handler) {
+      handler(payload);
+    });
+  });
+  this._subscribers.forEach(function (sub) { return sub(mutation, this$1.state); });
+
+  if (
+     true &&
+    options && options.silent
+  ) {
+    console.warn(
+      "[vuex] mutation type: " + type + ". Silent option has been removed. " +
+      'Use the filter functionality in the vue-devtools'
+    );
+  }
+};
+
+Store.prototype.dispatch = function dispatch (_type, _payload) {
+    var this$1 = this;
+
+  // check object-style dispatch
+  var ref = unifyObjectStyle(_type, _payload);
+    var type = ref.type;
+    var payload = ref.payload;
+
+  var action = { type: type, payload: payload };
+  var entry = this._actions[type];
+  if (!entry) {
+    if (true) {
+      console.error(("[vuex] unknown action type: " + type));
+    }
+    return
+  }
+
+  this._actionSubscribers.forEach(function (sub) { return sub(action, this$1.state); });
+
+  return entry.length > 1
+    ? Promise.all(entry.map(function (handler) { return handler(payload); }))
+    : entry[0](payload)
+};
+
+Store.prototype.subscribe = function subscribe (fn) {
+  return genericSubscribe(fn, this._subscribers)
+};
+
+Store.prototype.subscribeAction = function subscribeAction (fn) {
+  return genericSubscribe(fn, this._actionSubscribers)
+};
+
+Store.prototype.watch = function watch (getter, cb, options) {
+    var this$1 = this;
+
+  if (true) {
+    assert(typeof getter === 'function', "store.watch only accepts a function.");
+  }
+  return this._watcherVM.$watch(function () { return getter(this$1.state, this$1.getters); }, cb, options)
+};
+
+Store.prototype.replaceState = function replaceState (state) {
+    var this$1 = this;
+
+  this._withCommit(function () {
+    this$1._vm._data.$$state = state;
+  });
+};
+
+Store.prototype.registerModule = function registerModule (path, rawModule, options) {
+    if ( options === void 0 ) options = {};
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if (true) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+    assert(path.length > 0, 'cannot register the root module by using registerModule.');
+  }
+
+  this._modules.register(path, rawModule);
+  installModule(this, this.state, path, this._modules.get(path), options.preserveState);
+  // reset store to update getters...
+  resetStoreVM(this, this.state);
+};
+
+Store.prototype.unregisterModule = function unregisterModule (path) {
+    var this$1 = this;
+
+  if (typeof path === 'string') { path = [path]; }
+
+  if (true) {
+    assert(Array.isArray(path), "module path must be a string or an Array.");
+  }
+
+  this._modules.unregister(path);
+  this._withCommit(function () {
+    var parentState = getNestedState(this$1.state, path.slice(0, -1));
+    Vue.delete(parentState, path[path.length - 1]);
+  });
+  resetStore(this);
+};
+
+Store.prototype.hotUpdate = function hotUpdate (newOptions) {
+  this._modules.update(newOptions);
+  resetStore(this, true);
+};
+
+Store.prototype._withCommit = function _withCommit (fn) {
+  var committing = this._committing;
+  this._committing = true;
+  fn();
+  this._committing = committing;
+};
+
+Object.defineProperties( Store.prototype, prototypeAccessors );
+
+function genericSubscribe (fn, subs) {
+  if (subs.indexOf(fn) < 0) {
+    subs.push(fn);
+  }
+  return function () {
+    var i = subs.indexOf(fn);
+    if (i > -1) {
+      subs.splice(i, 1);
+    }
+  }
+}
+
+function resetStore (store, hot) {
+  store._actions = Object.create(null);
+  store._mutations = Object.create(null);
+  store._wrappedGetters = Object.create(null);
+  store._modulesNamespaceMap = Object.create(null);
+  var state = store.state;
+  // init all modules
+  installModule(store, state, [], store._modules.root, true);
+  // reset vm
+  resetStoreVM(store, state, hot);
+}
+
+function resetStoreVM (store, state, hot) {
+  var oldVm = store._vm;
+
+  // bind store public getters
+  store.getters = {};
+  var wrappedGetters = store._wrappedGetters;
+  var computed = {};
+  forEachValue(wrappedGetters, function (fn, key) {
+    // use computed to leverage its lazy-caching mechanism
+    computed[key] = function () { return fn(store); };
+    Object.defineProperty(store.getters, key, {
+      get: function () { return store._vm[key]; },
+      enumerable: true // for local getters
+    });
+  });
+
+  // use a Vue instance to store the state tree
+  // suppress warnings just in case the user has added
+  // some funky global mixins
+  var silent = Vue.config.silent;
+  Vue.config.silent = true;
+  store._vm = new Vue({
+    data: {
+      $$state: state
+    },
+    computed: computed
+  });
+  Vue.config.silent = silent;
+
+  // enable strict mode for new vm
+  if (store.strict) {
+    enableStrictMode(store);
+  }
+
+  if (oldVm) {
+    if (hot) {
+      // dispatch changes in all subscribed watchers
+      // to force getter re-evaluation for hot reloading.
+      store._withCommit(function () {
+        oldVm._data.$$state = null;
+      });
+    }
+    Vue.nextTick(function () { return oldVm.$destroy(); });
+  }
+}
+
+function installModule (store, rootState, path, module, hot) {
+  var isRoot = !path.length;
+  var namespace = store._modules.getNamespace(path);
+
+  // register in namespace map
+  if (module.namespaced) {
+    store._modulesNamespaceMap[namespace] = module;
+  }
+
+  // set state
+  if (!isRoot && !hot) {
+    var parentState = getNestedState(rootState, path.slice(0, -1));
+    var moduleName = path[path.length - 1];
+    store._withCommit(function () {
+      Vue.set(parentState, moduleName, module.state);
+    });
+  }
+
+  var local = module.context = makeLocalContext(store, namespace, path);
+
+  module.forEachMutation(function (mutation, key) {
+    var namespacedType = namespace + key;
+    registerMutation(store, namespacedType, mutation, local);
+  });
+
+  module.forEachAction(function (action, key) {
+    var type = action.root ? key : namespace + key;
+    var handler = action.handler || action;
+    registerAction(store, type, handler, local);
+  });
+
+  module.forEachGetter(function (getter, key) {
+    var namespacedType = namespace + key;
+    registerGetter(store, namespacedType, getter, local);
+  });
+
+  module.forEachChild(function (child, key) {
+    installModule(store, rootState, path.concat(key), child, hot);
+  });
+}
+
+/**
+ * make localized dispatch, commit, getters and state
+ * if there is no namespace, just use root ones
+ */
+function makeLocalContext (store, namespace, path) {
+  var noNamespace = namespace === '';
+
+  var local = {
+    dispatch: noNamespace ? store.dispatch : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if ( true && !store._actions[type]) {
+          console.error(("[vuex] unknown local action type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      return store.dispatch(type, payload)
+    },
+
+    commit: noNamespace ? store.commit : function (_type, _payload, _options) {
+      var args = unifyObjectStyle(_type, _payload, _options);
+      var payload = args.payload;
+      var options = args.options;
+      var type = args.type;
+
+      if (!options || !options.root) {
+        type = namespace + type;
+        if ( true && !store._mutations[type]) {
+          console.error(("[vuex] unknown local mutation type: " + (args.type) + ", global type: " + type));
+          return
+        }
+      }
+
+      store.commit(type, payload, options);
+    }
+  };
+
+  // getters and state object must be gotten lazily
+  // because they will be changed by vm update
+  Object.defineProperties(local, {
+    getters: {
+      get: noNamespace
+        ? function () { return store.getters; }
+        : function () { return makeLocalGetters(store, namespace); }
+    },
+    state: {
+      get: function () { return getNestedState(store.state, path); }
+    }
+  });
+
+  return local
+}
+
+function makeLocalGetters (store, namespace) {
+  var gettersProxy = {};
+
+  var splitPos = namespace.length;
+  Object.keys(store.getters).forEach(function (type) {
+    // skip if the target getter is not match this namespace
+    if (type.slice(0, splitPos) !== namespace) { return }
+
+    // extract local getter type
+    var localType = type.slice(splitPos);
+
+    // Add a port to the getters proxy.
+    // Define as getter property because
+    // we do not want to evaluate the getters in this time.
+    Object.defineProperty(gettersProxy, localType, {
+      get: function () { return store.getters[type]; },
+      enumerable: true
+    });
+  });
+
+  return gettersProxy
+}
+
+function registerMutation (store, type, handler, local) {
+  var entry = store._mutations[type] || (store._mutations[type] = []);
+  entry.push(function wrappedMutationHandler (payload) {
+    handler.call(store, local.state, payload);
+  });
+}
+
+function registerAction (store, type, handler, local) {
+  var entry = store._actions[type] || (store._actions[type] = []);
+  entry.push(function wrappedActionHandler (payload, cb) {
+    var res = handler.call(store, {
+      dispatch: local.dispatch,
+      commit: local.commit,
+      getters: local.getters,
+      state: local.state,
+      rootGetters: store.getters,
+      rootState: store.state
+    }, payload, cb);
+    if (!isPromise(res)) {
+      res = Promise.resolve(res);
+    }
+    if (store._devtoolHook) {
+      return res.catch(function (err) {
+        store._devtoolHook.emit('vuex:error', err);
+        throw err
+      })
+    } else {
+      return res
+    }
+  });
+}
+
+function registerGetter (store, type, rawGetter, local) {
+  if (store._wrappedGetters[type]) {
+    if (true) {
+      console.error(("[vuex] duplicate getter key: " + type));
+    }
+    return
+  }
+  store._wrappedGetters[type] = function wrappedGetter (store) {
+    return rawGetter(
+      local.state, // local state
+      local.getters, // local getters
+      store.state, // root state
+      store.getters // root getters
+    )
+  };
+}
+
+function enableStrictMode (store) {
+  store._vm.$watch(function () { return this._data.$$state }, function () {
+    if (true) {
+      assert(store._committing, "Do not mutate vuex store state outside mutation handlers.");
+    }
+  }, { deep: true, sync: true });
+}
+
+function getNestedState (state, path) {
+  return path.length
+    ? path.reduce(function (state, key) { return state[key]; }, state)
+    : state
+}
+
+function unifyObjectStyle (type, payload, options) {
+  if (isObject(type) && type.type) {
+    options = payload;
+    payload = type;
+    type = type.type;
+  }
+
+  if (true) {
+    assert(typeof type === 'string', ("Expects string as the type, but found " + (typeof type) + "."));
+  }
+
+  return { type: type, payload: payload, options: options }
+}
+
+function install (_Vue) {
+  if (Vue && _Vue === Vue) {
+    if (true) {
+      console.error(
+        '[vuex] already installed. Vue.use(Vuex) should be called only once.'
+      );
+    }
+    return
+  }
+  Vue = _Vue;
+  applyMixin(Vue);
+}
+
+var mapState = normalizeNamespace(function (namespace, states) {
+  var res = {};
+  normalizeMap(states).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedState () {
+      var state = this.$store.state;
+      var getters = this.$store.getters;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapState', namespace);
+        if (!module) {
+          return
+        }
+        state = module.context.state;
+        getters = module.context.getters;
+      }
+      return typeof val === 'function'
+        ? val.call(this, state, getters)
+        : state[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+var mapMutations = normalizeNamespace(function (namespace, mutations) {
+  var res = {};
+  normalizeMap(mutations).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedMutation () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      var commit = this.$store.commit;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapMutations', namespace);
+        if (!module) {
+          return
+        }
+        commit = module.context.commit;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [commit].concat(args))
+        : commit.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+var mapGetters = normalizeNamespace(function (namespace, getters) {
+  var res = {};
+  normalizeMap(getters).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    val = namespace + val;
+    res[key] = function mappedGetter () {
+      if (namespace && !getModuleByNamespace(this.$store, 'mapGetters', namespace)) {
+        return
+      }
+      if ( true && !(val in this.$store.getters)) {
+        console.error(("[vuex] unknown getter: " + val));
+        return
+      }
+      return this.$store.getters[val]
+    };
+    // mark vuex getter for devtools
+    res[key].vuex = true;
+  });
+  return res
+});
+
+var mapActions = normalizeNamespace(function (namespace, actions) {
+  var res = {};
+  normalizeMap(actions).forEach(function (ref) {
+    var key = ref.key;
+    var val = ref.val;
+
+    res[key] = function mappedAction () {
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
+
+      var dispatch = this.$store.dispatch;
+      if (namespace) {
+        var module = getModuleByNamespace(this.$store, 'mapActions', namespace);
+        if (!module) {
+          return
+        }
+        dispatch = module.context.dispatch;
+      }
+      return typeof val === 'function'
+        ? val.apply(this, [dispatch].concat(args))
+        : dispatch.apply(this.$store, [val].concat(args))
+    };
+  });
+  return res
+});
+
+var createNamespacedHelpers = function (namespace) { return ({
+  mapState: mapState.bind(null, namespace),
+  mapGetters: mapGetters.bind(null, namespace),
+  mapMutations: mapMutations.bind(null, namespace),
+  mapActions: mapActions.bind(null, namespace)
+}); };
+
+function normalizeMap (map) {
+  return Array.isArray(map)
+    ? map.map(function (key) { return ({ key: key, val: key }); })
+    : Object.keys(map).map(function (key) { return ({ key: key, val: map[key] }); })
+}
+
+function normalizeNamespace (fn) {
+  return function (namespace, map) {
+    if (typeof namespace !== 'string') {
+      map = namespace;
+      namespace = '';
+    } else if (namespace.charAt(namespace.length - 1) !== '/') {
+      namespace += '/';
+    }
+    return fn(namespace, map)
+  }
+}
+
+function getModuleByNamespace (store, helper, namespace) {
+  var module = store._modulesNamespaceMap[namespace];
+  if ( true && !module) {
+    console.error(("[vuex] module namespace not found in " + helper + "(): " + namespace));
+  }
+  return module
+}
+
+var index_esm = {
+  Store: Store,
+  install: install,
+  version: '3.0.1',
+  mapState: mapState,
+  mapMutations: mapMutations,
+  mapGetters: mapGetters,
+  mapActions: mapActions,
+  createNamespacedHelpers: createNamespacedHelpers
+};
+
+
+/* harmony default export */ __webpack_exports__["default"] = (index_esm);
 
 
 /***/ }),
