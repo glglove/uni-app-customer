@@ -71,40 +71,42 @@ export default {
 		success() {},
 		fail() {},
 		complete() {}
-  },
-  // 拦截器对象
+	},
+	// 拦截器对象
 	interceptor: {
-    // 默认统一的请求拦截函数
+		// 默认统一的请求拦截函数
 		request: (config) => {
-      // 将请求的参数中 默认增加 token
-      const data = config.data || {}
-      const globalCofigs = config.globalCofigs || {}
-      config.data = qs.stringify(Object.assign(data, {
-        'token': store.getters.userToken
-      }))
-      if(globalCofigs.loading){
-        uni.showLoadig({
-          title: '正在加载中',
-          mask: true,
-          success: ()=> {
+		  // 将请求的参数中 默认增加 token
+		  debugger
+		  const data = config.data || {}
+		  const globalCofigs = config.globalCofigs || {}
+		  config.data = Object.assign(data, {
+			'token': store.getters.userToken
+		  })
+		  if(globalCofigs.loading){
+			uni.showLoadig({
+			  title: '正在加载中',
+			  mask: true,
+			  success: ()=> {
 
-          },
-          fail: ()=>{
+			  },
+			  fail: ()=>{
 
-          },
-          complete: ()=> {
+			  },
+			  complete: ()=> {
 
-          }
-        })
-      }
-
-    },
-    // 默认统一的响应拦截函数
+			  }
+			})
+		  }
+		},
+		// 默认统一的响应拦截函数
 		response: (config) => {
-
-    }
+			debugger
+			return config
+		}
 	},
 	request(options) {
+		debugger
 		if (!options) {
 			options = {}
 		}
@@ -123,6 +125,7 @@ export default {
 		*/
 	   
 		return new Promise((resolve, reject) => {
+			debugger
 			let _config = null
 			
 			options.complete = (response) => {
@@ -132,8 +135,8 @@ export default {
 					if (statusCode === 200) {
 						console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data))
 					}
-        }
-        // 如果有响应的回调
+				}
+				// 如果有响应的回调
 				if (this.interceptor.response) {
 					let newResponse = this.interceptor.response(response)
 					if (newResponse) {
@@ -141,9 +144,9 @@ export default {
 					}
 				}
 				// 统一的响应日志记录
-        _reslog(response)
+				_reslog(response)
         
-        // 
+				// 
 				if (statusCode === 200) { //成功
 					resolve(response);
 				} else {
@@ -151,18 +154,18 @@ export default {
 				}
 			}
 
-      // 将传入的配置参数与默认的参数进行合并
+			// 将传入的配置参数与默认的参数进行合并
 			_config = Object.assign({}, this.config, options)
 			_config.requestId = new Date().getTime()
 
-      // 如果有请求的回调函数
+			// 如果有请求的回调函数
 			if (this.interceptor.request) {
 				this.interceptor.request(_config)
 			}
 			
 			// 统一的请求日志记录
 			_reqlog(_config)
-
+			
 			if (process.env.NODE_ENV === 'development') {
 				console.log("【" + _config.requestId + "】 地址：" + _config.url)
 				if (_config.data) {
@@ -170,12 +173,14 @@ export default {
 				}
 			}
 
-      // 调用 uni.request 发起请求
+			// 调用 uni.request 发起请求
+			debugger
 			uni.request(_config);
 		});
-  },
-  // get 请求
+	},
+	// get 请求
 	get(url, data, options) {
+		debugger
 		if (!options) {
 			options = {}
 		}
@@ -183,9 +188,10 @@ export default {
 		options.data = data
 		options.method = 'GET'  
 		return this.request(options)
-  },
-  // post 请求
+	},
+	// post 请求
 	post(url, data, options) {
+		debugger
 		if (!options) {
 			options = {}
 		}
@@ -194,7 +200,7 @@ export default {
 		options.method = 'POST'
 		return this.request(options)
   },
-  // put请求
+	// put请求
 	put(url, data, options) {
 		if (!options) {
 			options = {}
@@ -203,8 +209,8 @@ export default {
 		options.data = data
 		options.method = 'PUT'
 		return this.request(options)
-  },
-  // delete 请求
+	},
+	// delete 请求
 	delete(url, data, options) {
 		if (!options) {
 			options = {}

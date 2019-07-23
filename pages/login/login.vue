@@ -52,8 +52,9 @@
 						}).then((res)=>{
 						console.log("调取注册接口后返回到数据-----》",res)
 						if(res && res.data.state === 1) {
+							debugger
 							Indicator.close();
-							uni.redirectTo({
+							uni.switchTab({
 								url:'../find/find',
 								success: () => {
 									uni.showToast({
