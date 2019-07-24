@@ -1,0 +1,51 @@
+.input {
+  display: inline-block;
+  background: #FFFFFF;
+  border-radius: 4rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #333;
+}
+.input-placeholder {
+  font-size: 28rpx;
+  color: #bcbcbc;
+}
+.form .form_row {
+  display: flex;
+  display: -webkit-flex;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+}
+.form .form_row .row_label {
+  padding-left: 8rpx;
+  padding-right: 24rpx;
+  font-size: 28rpx;
+}
+.form .form_row .radio {
+  line-height: 1;
+  margin-right: 30rpx;
+}
+.form .form_row .row_grid {
+  flex: 1;
+  -webkit-flex: 1;
+  -webkit-box-flex: 1;
+  font-size: 28rpx;
+  color: #333333;
+  align-items: center;
+  -webkit-align-items: center;
+  display: flex;
+  display: -webkit-flex;
+}
+.form .form_row .row_grid.item {
+  display: block;
+}
+.form .form_row:last-child::after {
+  background: transparent;
+}
