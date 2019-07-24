@@ -25,6 +25,7 @@
 
 import qs from 'qs'
 import store from '@/store/index.js'
+import configs from '@/api/config.js'
 
 /**
  * 通用uni-app网络请求
@@ -59,7 +60,7 @@ http.delete('user/1').then((res)=>{
 */
 export default {
 	config: {
-		baseUrl: "http://localhost:5000/",
+		baseUrl: configs.baseUrl,
 		header: {
 			'Content-Type':'application/json;charset=UTF-8',
 			'Content-Type':'application/x-www-form-urlencoded'
@@ -79,16 +80,21 @@ export default {
 		  // 将请求的参数中 默认增加 token
 		  debugger
 		  const data = config.data || {}
+		  // 主要控制 全局的属性
 		  const globalCofigs = config.globalCofigs || {}
+		  // 接口中 统一加上 token 属性（根据业务需求来定）
 		  config.data = Object.assign(data, {
-			'token': store.getters.userToken
+			// 'token': store.getters.userToken
+			token: "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM"	 // 万能token
 		  })
+		  // 全局属性中传入的 loading 为真，则需要显示
 		  if(globalCofigs.loading){
+			let title = globalConfigs.text? globalCofigs.text : '加载中...'
 			uni.showLoadig({
-			  title: '正在加载中',
+			  title: title,
 			  mask: true,
 			  success: ()=> {
-
+				
 			  },
 			  fail: ()=>{
 
@@ -102,6 +108,8 @@ export default {
 		// 默认统一的响应拦截函数
 		response: (config) => {
 			debugger
+			// 隐藏加载loading
+			// uni.hideLoading()			
 			return config
 		}
 	},
@@ -115,6 +123,7 @@ export default {
 		options.url = options.baseUrl + options.url
 		options.data = options.data || {}
 		options.method = options.method || this.config.method
+		
 		//TODO 加密数据
 		
 		//TODO 数据签名
@@ -128,16 +137,24 @@ export default {
 			debugger
 			let _config = null
 			
+			//注意：options.complerte 这个回调函数会在 uni.request() 调用介绍后自动执行（虽然位置现在放在了 uni.request()调用 之前），
+			//且uni.request()执行后的返回的数据response会自动传给 options.complate方法
 			options.complete = (response) => {
+				debugger
 				let statusCode = response.statusCode
 				response.config = _config
+				
 				if (process.env.NODE_ENV === 'development') {
+					debugger
+					// 开发环境
 					if (statusCode === 200) {
 						console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data))
 					}
 				}
-				// 如果有响应的回调
+				
+				// 如果有响应的回调 再执行响应的回调， 相当于请求结束后的 相应拦截
 				if (this.interceptor.response) {
+					debugger
 					let newResponse = this.interceptor.response(response)
 					if (newResponse) {
 						response = newResponse
@@ -146,36 +163,39 @@ export default {
 				// 统一的响应日志记录
 				_reslog(response)
         
-				// 
 				if (statusCode === 200) { //成功
-					resolve(response);
+					debugger
+					resolve(response)
 				} else {
 					reject(response)
 				}
 			}
 
+			debugger
 			// 将传入的配置参数与默认的参数进行合并
 			_config = Object.assign({}, this.config, options)
 			_config.requestId = new Date().getTime()
-
-			// 如果有请求的回调函数
+			
+			// 如果有请求的回调函数,先执行请求回调，相当于 请求拦截
 			if (this.interceptor.request) {
 				this.interceptor.request(_config)
 			}
 			
-			// 统一的请求日志记录
+			// 调取统一的请求日志的方法
 			_reqlog(_config)
 			
 			if (process.env.NODE_ENV === 'development') {
+				// 开发环境下 
 				console.log("【" + _config.requestId + "】 地址：" + _config.url)
 				if (_config.data) {
 					console.log("【" + _config.requestId + "】 参数：" + JSON.stringify(_config.data))
 				}
 			}
 
-			// 调用 uni.request 发起请求
+			// 调用 uni.request 发起请求，
 			debugger
-			uni.request(_config);
+			let a = uni.request(_config);
+			debugger
 		});
 	},
 	// get 请求
@@ -199,7 +219,7 @@ export default {
 		options.data = data
 		options.method = 'POST'
 		return this.request(options)
-  },
+	},
 	// put请求
 	put(url, data, options) {
 		if (!options) {

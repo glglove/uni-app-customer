@@ -1,7 +1,10 @@
 <template>
 	<view>
-		这是发现页面
-	<!--<mt-header title="long long long long title">
+		<view>
+			这是发现页面
+			{{contentData.rank}}
+		</view>
+		<!--<mt-header title="long long long long title">
 		  <router-link to="/" slot="left">
 			<mt-button icon="back">back</mt-button>
 		  </router-link>
@@ -25,7 +28,7 @@
 		<uni-card :title='title' :isFull="isFull" :note="note" :thumbnail="thumbnail" :extra="extra"></uni-card>
 		<uni-card :title='title' :isFull="isFull" :note="note" :thumbnail="thumbnail" :extra="extra"></uni-card> -->
 
-<!-- 		<uni-pagination
+		<!--<uni-pagination
 			:show-icon='false'
 			total=100 
 			pageSize=10
@@ -36,7 +39,7 @@
 			
 
 		
-	<!--<mt-tabbar v-model="selected" fixed>
+		<!--<mt-tabbar v-model="selected" fixed>
 		  <mt-tab-item id="tab1">
 			<img slot="icon" src="../../static/logo.png">
 			tab1
@@ -59,7 +62,7 @@
 
 <script>
 	import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
-	import findApi from '../../api/find.js'
+	import findApi from '@/api/find.js'
 	export default {
         components: {
             uniCard,
@@ -69,22 +72,19 @@
 			return {
 				selectedOption: 'optionB',
 				selected: 'tab1',
-				contentData: [],
-                // title: '快陪练',
-                // extra: '教育科技公司',
-                // note: '拓展钢琴陪练业务拓展钢琴陪练业务拓展钢琴陪练业务拓展钢琴陪练业务拓展钢琴陪练业务拓展钢琴陪练业务拓展钢琴陪练业务拓展钢琴陪练业务拓展钢琴陪练业务',
-                // thumbnail: require('../../static/logo.png'),
-                // isFull: true				
+				contentData: []		
 			};
 		},
 		onLoad () {
-			this._getlistData()
+			this._getRankDayData()
 		},
 		methods:{
 			// 获取list 列表数据
-			_getlistData () {
+			_getRankDayData () {
+				debugger
 				uni.showLoading()
-				findApi.getlistData().then(res => {
+				findApi.getRankDayData().then(res => {
+					debugger
 					uni.hideLoading()
 					console.log(res)
 					if(res && res.data.code === 1){

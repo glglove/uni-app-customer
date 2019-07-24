@@ -6,7 +6,7 @@
 			<mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
 			<!-- <mt-field label="手机号" placeholder="请输入手机号" type="tel" v-model="phone"></mt-field> -->
 			
-<!-- 			<form @submit="formSubmit" @reset="formReset">
+			<!--<form @submit="formSubmit" @reset="formReset">
 				<view class="section">
 					<view class="section__title">input</view>
 					<input name="input" placeholder="please input here" />
@@ -27,6 +27,7 @@
 
 <script>
 	import { Indicator } from 'mint-ui';
+	import loginApi from '@/api/login.js'
 	export default {
 		data() {
 			return {
@@ -41,17 +42,16 @@
 			login(){
 				Indicator.open('Loading...');
 				if(this.username && this.password){
-					// const option = {
-					// 	path: '/users/register',
-					// 	
-					// }
-					// http.get()
-					this.$http.get('users/register',{
-							name: this.username,
-							pwd: this.password
-						}).then((res)=>{
-						console.log("调取注册接口后返回到数据-----》",res)
-						if(res && res.data.state === 1) {
+					// 调取注册/登录接口
+					let params = {
+						name: this.username,
+						pwd: this.password
+					}
+					
+					loginApi.register(params).then((res)=>{
+						console.log("调取注册/登录接口后返回到数据-----》",res)
+						if(res && res.data.code === 1) {
+							// 成功后 
 							debugger
 							Indicator.close();
 							uni.switchTab({
@@ -70,11 +70,6 @@
 						}
 					})	
 				}else {
-					// uni.showToast({
-					// 	title:"用户名和密码为空",
-					// 	duration:2000,
-					// 	mask:truetrue
-					// })
 					Indicator.close();
 					uni.showModal({
 						title: '提示',

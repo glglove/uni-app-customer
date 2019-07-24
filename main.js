@@ -8,11 +8,13 @@ import 'mint-ui/lib/style.css'
 // import './utils/http.js'
 Vue.use(MintUI);
 
+// 引入 uni.request()
 import http from '@/utils/http.js'
 
 Vue.config.productionTip = false;
 // Vue.prototype.$axios = Axios
 
+// 挂载在 Vue实例的原型上
 Vue.prototype.$http = http
 Vue.prototype.$store = store
 
