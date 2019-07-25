@@ -1,5 +1,5 @@
 
-export getEnterType ( typeNum ) {
+export function getEnterType ( typeNum ) {
     // 判断场景值
     switch ( typeNum ) {
       case 1001:          //发现栏小程序主入口，「最近使用」列表（基础库2.2.4版本起包含「我的小程序」列表）
@@ -280,4 +280,4 @@ export getEnterType ( typeNum ) {
       return 2;           // 目前暂时定义 0是扫码，1是点击分享图，2.微信上搜索的，后续在调整
       break;         
     }
-  }	
+}	

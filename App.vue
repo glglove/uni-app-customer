@@ -1,4 +1,6 @@
 <script>
+	import getEnterType from '@/utils/miniProSceneType'
+
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
