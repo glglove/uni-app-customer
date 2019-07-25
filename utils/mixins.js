@@ -1,7 +1,8 @@
 
-import base from '../api/base.js'
-import commApi from '../api/comm.js'
+import base from '@/api/base.js'
+import commApi from '@/api/comm.js'
 // import { debug } from 'utils';
+import getEnterType from '@/utils/miniProSceneType'
 
 // 小程序页面跳转
 export const miniProApi = {
@@ -294,7 +295,35 @@ export const miniProApi = {
 				default:
 				break;
 			}
-		},
+    },
+    // 判断是否 isundefined
+    isUndefined(item) {
+      return typeof item === 'undefined';
+    },
+    // 判断是否是 非 undefined
+    isDefined(item) {
+      return !this.isUndefined(item);
+    },
+    // 判断是否是 string
+    isString(item) {
+      return typeof item === 'string';
+    },
+    //判断是数字
+    isNumber(item) {
+      return typeof item === 'number';
+    },
+    // 判断是数组
+    isArray(item) {
+      return Object.prototype.toString.apply(item) === '[object Array]';
+    },
+    // 判断是对象
+    isObject(item) {
+      return typeof item === 'object' && !this.isArray(item);
+    },
+    // 判断是函数
+    isFunction(item) {
+      return typeof item === 'function';
+    },     
 		// 授权成功后，进行登陆注册获取 token，并缓存 AuthorizeStatus ,token 等
 		async authorizeAfter_login(){
 			let that = this;
@@ -443,365 +472,109 @@ export const miniProApi = {
 				//   return false;
 				// }							
 			})		
-		},
-}
-
-
-
-
-
-export default {
-  data = {
-    mixin: 'This is mixin data.'
-  },
-  // methods = {
-  //   tap () {
-  //     this.mixin = 'mixin data was changed'
-  //     console.log('mixin method tap')
-  //   }
-  // }
-
-
-
-  /**
-   * [isXXX 基础方法]
-   * @param  {[type]}  item [description]
-   * @return {Boolean}      [description]
-   */
-  isUndefined(item) {
-    return typeof item === 'undefined';
-  }
-  isDefined(item) {
-    return !this.isUndefined(item);
-  }
-  isString(item) {
-    return typeof item === 'string';
-  }
-  isNumber(item) {
-    return typeof item === 'number';
-  }
-  isArray(item) {
-    return Object.prototype.toString.apply(item) === '[object Array]';
-  }
-  isObject(item) {
-    return typeof item === 'object' && !this.isArray(item);
-  }
-  isFunction(item) {
-    return typeof item === 'function';
-  }  
-
-  /**
-   * [getXXX 增强方法]
-   * @param  {[type]}  item [description]
-   * @return {Boolean}      [description]
-   */
-  getString(item, defaultStr) {
-    if (this.isString(item)) return item.trim();
-    if (this.isNumber(item)) return `${item}`.trim();
-    return defaultStr || '';
-  }
-  getNumber(item, defaultNum) {
-    var matches = this.getString(item).match(/\d+/);
-    return this.isNumber(matches && +matches[0]) ? +matches[0] : defaultNum;
-  }
-  getArray(item, defaultArr) {
-    return this.isArray(item) ? item : (defaultArr || []);
-  }
-  getObject(item, defaultObj) {
-    return this.isObject(item) ? item : (defaultObj || {});
-  }
-  getFunction(item) {
-    return this.isFunction(item) ? item : noop;
-  }
-
-
-
-
-	
-  
-
- 
-
-
-
-
-
-	/**
-	 * 转换场景值 typeNum 为场景值
-	*/
-
-
-
-	/**
-	 * 选择图片 在前端显示出来 params:{count,sizeType,sourceType}
-	 */
-  async chooseImg ( param ) {
-    let data = {
-      count: 9, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-    }
-
-    param = Object.assign(data, param);
-    // debugger;
-    let tempFilePaths = [];
-    let that = this;
-
-    return new Promise( (resolve , reject)=>{
-      that.getDeviceApi().chooseImage({
-        count: param.count, // 默认9
-        sizeType: param.sizeType, // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: param.sourceType, // 可以指定来源是相册还是相机，默认二者都有
-        success: res => {
-          that.getDeviceApi().showToast({
-            title: '正在上传...',
-            icon: 'loading',
-            mask: true,
-            duration: 2000
-          });
-          // that.toast("正在上传...",2000,false,'loading');
-          // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-          console.log("777----------",res.tempFilePaths)
-          // 返回选择的图片的临时地址
-          resolve( res.tempFilePaths );
-        },
-        fail: res => {
-          // debugger; 
-          that.getDeviceApi().showToast({
-            title: '取消选择',
-            // icon: 'loading',
-            image: '/assets/imgs/icon/error.png',
-            mask: true,
-            duration: 2000
-          });
-          reject( res )
-        }
-      });
-    })
-  }
-
-
-  /**
-   * 选择图片 预览 传入 urls ,index 的对象集合
-   * 
-   */
-  async previewImage (  param  ) {
-    let data = {
-      index: 0,  // 默认显示第一张开始
-      urls: [],  // 预览的图片地址的数组集合
-    }
-    // debugger;
-    param = Object.assign(data, param);
-    // let index = e.target.dataset.index;//预览图片的编号
-    let that = this;
-    let urls = param.urls;
-    let current = param.urls[param.index];
-    wx.previewImage({
-      current: current,//预览图片链接
-      urls: urls,//图片预览list列表
-      success: function (res) {
-        //console.log(res);
-        console.log(32444444444)
-      },
-      fail: function () {
-        //console.log('fail')
+    },
+	  // 选择图片 在前端显示出来 params:{count,sizeType,sourceType}
+    async chooseImg ( param ) {
+      let data = {
+        count: 9, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       }
-    })
-  }
 
-  /**
-   * 
-   *  给图片加一个水印
-   * 
-   */
-  async creatWatermark( myCanvasId , imageUrl="" , text="" ) {
-    // debugger;
-    var that = this;
-    // 画布的宽高
-    var width = "";
-    var height = "";
-    // 绘制完成后到处的图片临时地址集合
-    var res_imageUrl = "";
-    // 屏幕的宽 、 高
-    let screenWidth = "";
-    let screenHeight = "";    
-
-    // 屏幕的像素密度
-    let ratio = "";
-
-    // 获取系统的信息，设备信息等\
-    ratio = wx.getSystemInfoSync().pixelRatio;
-
-    if( myCanvasId  ) {
-      var ctx = wx.createCanvasContext( myCanvasId );
-    }
-
-    // return new Promise(async ( resolve , reject )=>{
-      // if( imageUrlArr && imageUrlArr.length ) {
-      //   for( var i = 0; i<imageUrlArr.length; i++  ) {   
-          return new Promise( async ( resolve , reject ) =>{
-            debugger;         
-            this.getDeviceApi().getImageInfo({
-              src: imageUrl,
-              success: async ( res )=>{
-                debugger;
-                width = res.width;
-                height = res.height;
-                //获取屏幕的宽度
-                screenWidth = this.getDeviceApi().getSystemInfoSync().windowWidth;
-                screenHeight = this.getDeviceApi().getSystemInfoSync().windowHeight;
-                //处理一下图片的宽高的比例
-                if( width >= height ) {
-                  // 宽图
-                  if( width > screenWidth ) {
-                    width = screenWidth;
-                  }
-                  height = res.height / res.width * width;
-                }else if( width < height ){
-                  // 长图
-                  if( width > screenWidth ) {
-                    width = screenWidth;
-                    if( height > 400 ) {
-                      height = 400;
-                      width = res.width/res.height * height;
-                    }else {
-                      height = res.height/res.width * screenWidth;
-                    }
-                  }else if ( width < screenWidth ) {
-                    width = res.width;
-                    height = res.height;
-                  }
-                }
-  
-                // 开始绘制
-                debugger;
-                ctx.drawImage( imageUrl, 0, 0, width, height);
-                // 逆时针旋转 30度
-                ctx.rotate( -30 * Math.PI / 180);
-
-                // 随机生成 x,y 的坐标（在画布内）
-
-                // function creatNum( min , max ){
-                //   max = max - 20;
-                //   min = min + 20;
-                //   return parseInt(Math.random()*(max-min+1)+min,10);
-                // }
-              
-                for ( let j = 1; j < 5; j++ ) {
-                  ctx.beginPath()
-                  ctx.setFontSize(14)
-                  ctx.setFillStyle('red')
-                  ctx.fillText('21天打卡', 0 ,  height/4 * j )
-                }  
-  
-                // 绘制成功后 一定要在 绘制成功后的 回调中 将其导出为图片
-                debugger;
-
-                //画布顺时针旋转20度
-                ctx.rotate( 20 * Math.PI / 180);
-
-                for ( let j = 1; j < 5; j++ ) {
-                  ctx.beginPath()
-                  ctx.setFontSize(14)
-                  ctx.setFillStyle('red')
-                  ctx.fillText('21天打卡', width-width/4*j ,  height/4 * j )
-                }                 
-
-                debugger;
-                return ctx.draw( false, async ( )=>{
-                //   debugger;
-
-                  await  saveCanvasTempFilePath().then(res=>{
-                    return (res);
-                  });
-                    // if( res && res.length == imageUrlArr.length ) {
-                      // debugger;
-                      // console.log("res_imageUrlArr的length--",res.length)
-                      // resolve( res_imageUrl )  
-                    // }
-                  });
-
-                // });/
-
-
-                // ctx.draw( false, saveCanvasTempFilePath );
-                  
-
-              },
-              fail: ( err )=> {
-                debugger;
-                console.log(err);
-              }
-            })
-          })
-      //   }      
-      // }
-    // });
-
-
-    function saveCanvasTempFilePath ( ){
-      debugger;
-      console.log("绘制成功后 准备导出绘制的图片存在临时路径中...")
+      param = Object.assign(data, param);
+      // debugger;
+      let tempFilePaths = [];
       let that = this;
-      // var unit = screenWidth / 375;
-      // var ratio = that.ratio;
 
-      return new Promise(( resolve , reject )=>{
-        debugger;
-        var count = 0;
-        wx.canvasToTempFilePath({
-          x: 0,
-          y: 0,
-          width: screenWidth,
-          height: screenHeight,
-          destWidth: ratio * width,
-          destHeight: ratio * height,        
-          canvasId: myCanvasId,
-          quality: 1,
-          success: (res) => {
-            // wx.previewImage({
-            //   urls: [res.tempFilePath],
-            // })
-            debugger;
-
-            res_imageUrl =  res.tempFilePath;
-
-            console.log('绘制的图片已成功导出为临时路径',res.tempFilePath)
-
-            console.log("导出临时地址的数组集合======》:", res_imageUrl)
-            // resolve( res_imageUrl )
-            return (  res_imageUrl );
+      return new Promise( (resolve , reject)=>{
+        that.getDeviceApi().chooseImage({
+          count: param.count, // 默认9
+          sizeType: param.sizeType, // 可以指定是原图还是压缩图，默认二者都有
+          sourceType: param.sourceType, // 可以指定来源是相册还是相机，默认二者都有
+          success: res => {
+            that.getDeviceApi().showToast({
+              title: '正在上传...',
+              icon: 'loading',
+              mask: true,
+              duration: 2000
+            });
+            // that.toast("正在上传...",2000,false,'loading');
+            // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+            console.log("777----------",res.tempFilePaths)
+            // 返回选择的图片的临时地址
+            resolve( res.tempFilePaths );
           },
-          fail: ( error )=>{
-            reject("绘制的图片保存为临时地址失败！")
-            console.log( error );
-            const { errMsg } = error;
-            // 可能会有其他报错 还是拦截一下吧
-  
-            if ( errMsg === "canvasToTempFilePath:fail no image" ) {
-              // 一次不行再试一遍 两次都不过就放弃吧
-              count += 1;
-              if ( count < 25) {
-                  saveCanvasTempFilePath( );
-                  console.log(`第${count}次重新将canvas绘制的图保存为临时地址`)
-              }
-              else {
-                  // 错了这么多遍基本没救了
-                  that.alert("生成海报图片失败！请重新生成",2000);
-              }
-            }
+          fail: res => {
+            // debugger; 
+            that.getDeviceApi().showToast({
+              title: '取消选择',
+              // icon: 'loading',
+              image: '/assets/imgs/icon/error.png',
+              mask: true,
+              duration: 2000
+            });
+            reject( res )
           }
-        })
-      })      
-    }
-    
-  }  
+        });
+      })
+    },
+    //   选择图片 预览 传入 urls ,index 的对象集合
+    async previewImage (  param  ) {
+      let data = {
+        index: 0,  // 默认显示第一张开始
+        urls: [],  // 预览的图片地址的数组集合
+      }
+      // debugger;
+      param = Object.assign(data, param);
+      // let index = e.target.dataset.index;//预览图片的编号
+      let that = this;
+      let urls = param.urls;
+      let current = param.urls[param.index];
+      wx.previewImage({
+        current: current,//预览图片链接
+        urls: urls,//图片预览list列表
+        success: function (res) {
+          //console.log(res);
+          console.log(32444444444)
+        },
+        fail: function () {
+          //console.log('fail')
+        }
+      })
+    },
+  // 转换时间
+  switchTimeForMart( value ) {
+    if( value ) {
+     let theTime = parseInt(value); 
+     let middle = 0; // 分
+     let hour = 0; //小时
+     middle= parseInt(theTime/60);
+     theTime = parseInt(theTime%60);
+     if( theTime<10 ) {
+         theTime = "0"+ theTime ;
+     }
 
+     if(middle> 60) {
+         hour= parseInt(middle/60);
+         middle= parseInt(middle%60);
+     }
 
-  /**
-   * 分享給好友/群,返回一个分享的对象
-   * 
-   */
+     if( middle<10 ) {
+         middle = "0"+middle + ":";
+     }
+
+     if( hour<10 ){
+         if( hour ==0 ) {
+             hour = "";
+         }else {
+             hour = "0"+hour + ":";
+         }
+     }
+     var result = ""+hour + middle  + theTime;
+     return result;           
+     } 
+  },
+  //   分享給好友/群,返回一个分享的对象
   async sharePic ( shareObj ) {
     let that = this;
     // debugger;
@@ -862,47 +635,8 @@ export default {
       // }
       resolve ( shareObj_res );
     })
-  }  
-
-
-  // 转换时间
-  switchTimeForMart( value ) {
-    if( value ) {
-     let theTime = parseInt(value); 
-     let middle = 0; // 分
-     let hour = 0; //小时
-     middle= parseInt(theTime/60);
-     theTime = parseInt(theTime%60);
-     if( theTime<10 ) {
-         theTime = "0"+ theTime ;
-     }
-
-     if(middle> 60) {
-         hour= parseInt(middle/60);
-         middle= parseInt(middle%60);
-     }
-
-     if( middle<10 ) {
-         middle = "0"+middle + ":";
-     }
-
-     if( hour<10 ){
-         if( hour ==0 ) {
-             hour = "";
-         }else {
-             hour = "0"+hour + ":";
-         }
-     }
-     var result = ""+hour + middle  + theTime;
-     return result;           
-     } 
- }   
-
-
-   /**
-   * 判断是否授权了 录音的权限
-   * 
-   */
+  },
+  //判断是否授权了 录音的权限
   async getAuthorize_recorder () {
     let that = this;
     return new Promise( async ( resolve , reject  )=>{
@@ -1000,14 +734,9 @@ export default {
         }
       })
     })
-  }
+  },
 
-
-   /**
-   * 判断是否授权了地理位置的权限
-   * 
-   */  
-
+  //判断是否授权了地理位置的权限
   async getAuthorize_location () {
     let that = this;
     return new Promise( async ( resolve , reject  )=>{
@@ -1106,5 +835,7 @@ export default {
       })
     })
   }   
+}
+
 }
 
