@@ -6,13 +6,15 @@ export default {
 	* 注册登录接口
 	* 
 	*/
-	async register (params) {
+	async register (params, loading = false, loadingText = "加载中...") {
 		debugger
 	   const url = `/users/register`;
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.get( url,{
-			...params 
+			...params,
+			 loading,
+			 loadingText
 	   })
 	}
 }

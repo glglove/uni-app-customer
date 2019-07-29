@@ -47,7 +47,7 @@
 						name: this.username,
 						pwd: this.password
 					}
-					
+				
 					loginApi.register(params).then((res)=>{
 						console.log("调取注册/登录接口后返回到数据-----》",res)
 						if(res && res.data.code === 1) {

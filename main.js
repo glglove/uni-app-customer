@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import store from './store' // vuex状态管理
+// import store from './store' // vuex状态管理
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
@@ -16,7 +16,7 @@ Vue.config.productionTip = false;
 
 // 挂载在 Vue实例的原型上
 Vue.prototype.$http = http
-Vue.prototype.$store = store
+// Vue.prototype.$store = store
 
 App.mpType = 'app'
 

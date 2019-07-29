@@ -1,26 +1,37 @@
-// import Cookies from 'js-cookie'
+
 import * as types from '../mutation-types'
 
 const app = {
   state: {
+	userName: '',// 用户名
+	userId: '', // 用户id
     userToken: ''
   },
   mutations: {
-    [types.SET_TOGGLE_SIDEBAR] (state, sidebarStatus) {
-      state.sidebar.opened = sidebarStatus
+	[types.setUserName] (state, str) {
+		state.userName = str
+	},
+	[types.setUserId] (state, str) {
+		state.userId = str
+	},	
+    [types.setUserToken] (state, str) {
+		state.userToken = str
     }
   },
   actions: {
-    // 切换左侧导航栏
-    ToggleSideBar ({ commit, state }) {
-      if (state.sidebar.opened) {
-        Cookies.set('sidebarStatus', 1)
-      } else {
-        Cookies.set('sidebarStatus', 0)
-      }
-      commit(types.SET_TOGGLE_SIDEBAR, !state.sidebar.opened)
+	// 设置 用户姓名
+	setUserName ({commit, state}, str){
+		commit(types.setUserName, str)
+	},
+	// 设置 用户id
+	setUserId ({commit, state}, str){
+		commit(types.setUserId, str)
+	},	
+    // 设置用户token
+    setUserToken ({ commit, state }) {
+      commit(types.setUserToken, str )
     }
   }
 }
 
-export default app
+export default app 

@@ -42,4 +42,5 @@ vd.Integer=function(val){
     }
     return true;
 }
+
 export default vd;

@@ -1,14 +1,14 @@
-export default class Lang {
+export default  {
     // 判断字符串是否为空
-    static isEmpty(str) {
+    isEmpty(str) {
       return str == '' || str == null || str == 'null';
-    }
+    },
     // 判断字符串是否不为空
-    static isNotEmpty(str) {
+    isNotEmpty(str) {
       return !this.isEmpty(str);
-    }
+    },
     // 浮点求和
-    static sum(numbers, toFixed = 2) {
+    sum(numbers, toFixed = 2) {
       let sum = 0;
       for (const str of numbers) {
         if (!this.isNumber(str)) {
@@ -21,29 +21,28 @@ export default class Lang {
         sum += num;
       }
       return sum.toFixed(toFixed);
-    }
+    },
     // 数字判断
-    static isNumber(value) {
+    isNumber(value) {
       const patrn = /^[-+]?\d+(\.\d+)?$/;
       return patrn.test(value);
-    }
-  
+    },
     // 数字判断
-    static isPositiveNumber(value) {
+    isPositiveNumber(value) {
       const patrn = /^[1-9]\d*$|^\.\d*$|^0\.\d*$|^[1-9]\d*\.\d*$|^0$/;
       return patrn.test(value);
-    }
+    },
     // 数组判断
-    static isArray(o) {
+    isArray(o) {
       return Object.prototype.toString.call(o) === '[object Array]';
-    }
+    },
     // 时间转日期
-    static convertTimestapeToDay(timestape) {
+    convertTimestapeToDay(timestape) {
       return timestape.substring(0, timestape.indexOf(' ')).replace(/-/g, '.');
-    }
+    },
   
     // 格式化日期
-    static dateFormate (date, fmt) {
+    dateFormate (date, fmt) {
       const o = {
         'M+': date.getMonth() + 1,
         'd+': date.getDate(),
@@ -58,14 +57,12 @@ export default class Lang {
         if (new RegExp('(' + k + ')').test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)));
       }
       return fmt;
-    }
-
-    static moment (date) {
+    },
+    moment (date) {
       let time = new Date(date);
       let y = time.getFullYear();
       let m = time.getMonth()+1;
       let d = time.getDate();
-        return y+'/'+m+'/'+d;
+      return y+'/'+m+'/'+d;
     }  
-
   }

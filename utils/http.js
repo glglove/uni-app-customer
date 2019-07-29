@@ -24,7 +24,7 @@
 //-------------up is axios ---------
 
 import qs from 'qs'
-import store from '@/store/index.js'
+// import store from '@/store/index.js'
 import configs from '@/api/config.js'
 
 /**
@@ -34,7 +34,7 @@ import configs from '@/api/config.js'
 
 /*
 // 开放的接口
-import http from './interface'
+import http from './interface' 
 
 http.config.baseUrl = "http://localhost:8080/api/"
 
@@ -80,16 +80,16 @@ export default {
 		  // 将请求的参数中 默认增加 token
 		  debugger
 		  const data = config.data || {}
-		  // 主要控制 全局的属性
-		  const globalCofigs = config.globalCofigs || {}
+		  // 主要控制是否loading
+		  const loading = data.loading 
 		  // 接口中 统一加上 token 属性（根据业务需求来定）
 		  config.data = Object.assign(data, {
 			// 'token': store.getters.userToken
 			token: "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM"	 // 万能token
 		  })
 		  // 全局属性中传入的 loading 为真，则需要显示
-		  if(globalCofigs.loading){
-			let title = globalConfigs.text? globalCofigs.text : '加载中...'
+		  if(loading){
+			const title = config.loadingText
 			uni.showLoadig({
 			  title: title,
 			  mask: true,

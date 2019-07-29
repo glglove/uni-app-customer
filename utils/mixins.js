@@ -55,7 +55,8 @@ export const miniProApi = {
 
 	},
 	methods: {
-		// 检查是否登录
+		
+// 检查是否登录
 		getLoginStatus () {
 			return new Promise((resolve, reject) => {
 				// 从store 中获取 用户
@@ -90,6 +91,8 @@ export const miniProApi = {
 			  url:url
 			})
 		},
+		// 获取登录场景值（小程序）
+		getEnterType: getEnterType, 
 		//小程序官方所有接口写在这里
 		getDeviceApi: () => {
 			return {
@@ -123,7 +126,10 @@ export const miniProApi = {
 				makePhoneCall: uni.makePhoneCall,
 				pageScrollTo: uni.pageScrollTo,
 				requestPayment: uni.requestPayment,
-				setNavigationBarTitle:uni.setNavigationBarTitle
+				setNavigationBarTitle:uni.setNavigationBarTitle,
+				getUserInfo:uni.getUserInfo,
+				login: uni.login,
+				getShareInfo: uni.getShareInfo
 			}
 		},	
 		// 成功的 showToast
@@ -201,7 +207,7 @@ export const miniProApi = {
 			let _this = this;
 			this.getDeviceApi().showToast({
 				title: title,
-				image: '/assets/imgs/icon/alert.png',
+				image: '../static/imgs/icon/alert.png',
 				mask: false,
 				duration: duration
 			});
@@ -216,7 +222,7 @@ export const miniProApi = {
 			let _this = this;
 			this.getDeviceApi().showToast({
 				title: title,
-				image: '/assets/imgs/icon/error.png',
+				image: '../static/imgs/icon/error.png',
 				mask: true,
 				duration: duration
 			});
@@ -296,34 +302,34 @@ export const miniProApi = {
 				break;
 			}
     },
-    // 判断是否 isundefined
-    isUndefined(item) {
-      return typeof item === 'undefined';
-    },
-    // 判断是否是 非 undefined
-    isDefined(item) {
-      return !this.isUndefined(item);
-    },
-    // 判断是否是 string
-    isString(item) {
-      return typeof item === 'string';
-    },
-    //判断是数字
-    isNumber(item) {
-      return typeof item === 'number';
-    },
-    // 判断是数组
-    isArray(item) {
-      return Object.prototype.toString.apply(item) === '[object Array]';
-    },
-    // 判断是对象
-    isObject(item) {
-      return typeof item === 'object' && !this.isArray(item);
-    },
-    // 判断是函数
-    isFunction(item) {
-      return typeof item === 'function';
-    },     
+		// 判断是否 isundefined
+		isUndefined(item) {
+		  return typeof item === 'undefined';
+		},
+		// 判断是否是 非 undefined
+		isDefined(item) {
+		  return !this.isUndefined(item);
+		},
+		// 判断是否是 string
+		isString(item) {
+		  return typeof item === 'string';
+		},
+		//判断是数字
+		isNumber(item) {
+		  return typeof item === 'number';
+		},
+		// 判断是数组
+		isArray(item) {
+		  return Object.prototype.toString.apply(item) === '[object Array]';
+		},
+		// 判断是对象
+		isObject(item) {
+		  return typeof item === 'object' && !this.isArray(item);
+		},
+		// 判断是函数
+		isFunction(item) {
+		  return typeof item === 'function';
+		},     
 		// 授权成功后，进行登陆注册获取 token，并缓存 AuthorizeStatus ,token 等
 		async authorizeAfter_login(){
 			let that = this;
@@ -341,12 +347,12 @@ export const miniProApi = {
 				if( userInfo )  await that.removeStorage("userInfo" );      
 		  
 				// 先登陆 wx.login();
-				let {code:code} = await wepy.login();  //通过调用login获取code 判断是否开始登录
+				let {code:code} = await this.getDeviceApi.login();  //通过调用login获取code 判断是否开始登录
 		  
 				console.log("获取到的code：", code)
 		  
 				if(code){
-				  let userInfo= await wepy.getUserInfo({
+				  let userInfo= await this.getDeviceApi.getUserInfo({
 					lang: "zh_CN"
 				  });  
 				  console.log("-----授权后通过wepy.getUserInfo()获取用户信息返回的结果-----：",userInfo)
@@ -402,8 +408,6 @@ export const miniProApi = {
 					  console.log("---------调用后台login接口后返回的状态有问题-------")
 					}
 				  }).then(async ()=>{
-					  // let token = wx.getStorageSync('token');
-					  // let userInfo = wx.getStorageSync( 'userInfo' );
 					  let token = await that.getStorage( "token" ) || "";
 					  let userInfo = await that.getStorage( "userInfo" ) || "";
 					  console.log('--------缓存token成功----------')
@@ -473,369 +477,272 @@ export const miniProApi = {
 				// }							
 			})		
     },
-	  // 选择图片 在前端显示出来 params:{count,sizeType,sourceType}
-    async chooseImg ( param ) {
-      let data = {
-        count: 9, // 默认9
-        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      }
+		// 选择图片 在前端显示出来 params:{count,sizeType,sourceType}
+		async chooseImg ( param ) {
+		  let data = {
+			count: 9, // 默认9
+			sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+			sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+		  }
+		  param = Object.assign(data, param);
+		  // debugger;
+		  let tempFilePaths = [];
+		  let that = this;
 
-      param = Object.assign(data, param);
-      // debugger;
-      let tempFilePaths = [];
-      let that = this;
+		  return new Promise( (resolve , reject)=>{
+			that.getDeviceApi().chooseImage({
+			  count: param.count, // 默认9
+			  sizeType: param.sizeType, // 可以指定是原图还是压缩图，默认二者都有
+			  sourceType: param.sourceType, // 可以指定来源是相册还是相机，默认二者都有
+			  success: res => {
+				that.getDeviceApi().showToast({
+				  title: '正在上传...',
+				  icon: 'loading',
+				  mask: true,
+				  duration: 2000
+				});
+				// 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+				console.log("上传成功后后打印返回选择的图片的临时地址",res.tempFilePaths)
+				// 返回选择的图片的临时地址
+				resolve( res.tempFilePaths );
+			  },
+			  fail: res => {
+				// debugger; 
+				that.getDeviceApi().showToast({
+				  title: '取消选择',
+				  // icon: 'loading',
+				  image: '../static/imgs/icon/error.png',
+				  mask: true,
+				  duration: 2000
+				});
+				reject( res )
+			  }
+			});
+		  })
+		},
+		//   选择图片 预览 传入 urls ,index 的对象集合
+		async previewImage (  param  ) {
+		  let data = {
+			index: 0,  // 默认显示第一张开始
+			urls: [],  // 预览的图片地址的数组集合
+		  }
+		  // debugger;
+		  param = Object.assign(data, param);
+		  // let index = e.target.dataset.index;//预览图片的编号
+		  let that = this;
+		  let urls = param.urls;
+		  let current = param.urls[param.index];
+		  that.getDeviceApi.previewImage({
+			current: current,//预览图片链接
+			urls: urls,//图片预览list列表
+			success: function (res) {
+			  //console.log(res);
+			},
+			fail: function () {
+			  //console.log('fail')
+			}
+		  })
+		},
+		// 转换时间
+		switchTimeForMart( value ) {
+			if( value ) {
+				 let theTime = parseInt(value); 
+				 let middle = 0; // 分
+				 let hour = 0; //小时
+				 middle= parseInt(theTime/60);
+				 theTime = parseInt(theTime%60);
+				 if( theTime<10 ) {
+					 theTime = "0"+ theTime ;
+				 }
 
-      return new Promise( (resolve , reject)=>{
-        that.getDeviceApi().chooseImage({
-          count: param.count, // 默认9
-          sizeType: param.sizeType, // 可以指定是原图还是压缩图，默认二者都有
-          sourceType: param.sourceType, // 可以指定来源是相册还是相机，默认二者都有
-          success: res => {
-            that.getDeviceApi().showToast({
-              title: '正在上传...',
-              icon: 'loading',
-              mask: true,
-              duration: 2000
-            });
-            // that.toast("正在上传...",2000,false,'loading');
-            // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-            console.log("777----------",res.tempFilePaths)
-            // 返回选择的图片的临时地址
-            resolve( res.tempFilePaths );
-          },
-          fail: res => {
-            // debugger; 
-            that.getDeviceApi().showToast({
-              title: '取消选择',
-              // icon: 'loading',
-              image: '/assets/imgs/icon/error.png',
-              mask: true,
-              duration: 2000
-            });
-            reject( res )
-          }
-        });
-      })
-    },
-    //   选择图片 预览 传入 urls ,index 的对象集合
-    async previewImage (  param  ) {
-      let data = {
-        index: 0,  // 默认显示第一张开始
-        urls: [],  // 预览的图片地址的数组集合
-      }
-      // debugger;
-      param = Object.assign(data, param);
-      // let index = e.target.dataset.index;//预览图片的编号
-      let that = this;
-      let urls = param.urls;
-      let current = param.urls[param.index];
-      wx.previewImage({
-        current: current,//预览图片链接
-        urls: urls,//图片预览list列表
-        success: function (res) {
-          //console.log(res);
-          console.log(32444444444)
-        },
-        fail: function () {
-          //console.log('fail')
-        }
-      })
-    },
-  // 转换时间
-  switchTimeForMart( value ) {
-    if( value ) {
-     let theTime = parseInt(value); 
-     let middle = 0; // 分
-     let hour = 0; //小时
-     middle= parseInt(theTime/60);
-     theTime = parseInt(theTime%60);
-     if( theTime<10 ) {
-         theTime = "0"+ theTime ;
-     }
+				 if(middle> 60) {
+					 hour= parseInt(middle/60);
+					 middle= parseInt(middle%60);
+				 }
 
-     if(middle> 60) {
-         hour= parseInt(middle/60);
-         middle= parseInt(middle%60);
-     }
+				 if( middle<10 ) {
+					 middle = "0"+middle + ":";
+				 }
 
-     if( middle<10 ) {
-         middle = "0"+middle + ":";
-     }
-
-     if( hour<10 ){
-         if( hour ==0 ) {
-             hour = "";
-         }else {
-             hour = "0"+hour + ":";
-         }
-     }
-     var result = ""+hour + middle  + theTime;
-     return result;           
-     } 
-  },
-  //   分享給好友/群,返回一个分享的对象
-  async sharePic ( shareObj ) {
-    let that = this;
-    // debugger;
-    console.log(  shareObj.title);
-    return new Promise((resolve,reject)=>{
-      let shareObj_res = {
-        title: shareObj.title,
-        path: shareObj.path,
-        imageUrl: shareObj.imageUrl,
-        success: (res)=>{
-          console.log(res)
-          // debugger;
-
+				 if( hour<10 ){
+					 if( hour ==0 ) {
+						 hour = "";
+					 }else {
+						 hour = "0"+hour + ":";
+					 }
+				 }
+				 var result = ""+hour + middle  + theTime;
+				 return result;           
+			} 
+		},
+		//   分享給好友/群,返回一个分享的对象
+		async sharePic ( shareObj ) {
+			let that = this;
+			// debugger;
+			console.log(  shareObj.title);
+			return new Promise((resolve,reject)=>{
+			  let shareObj_res = {
+				title: shareObj.title,
+				path: shareObj.path,
+				imageUrl: shareObj.imageUrl,
+				success: (res)=>{
+					console.log(res)
+					// debugger;
 					that.getDeviceApi().showShareMenu({
 						withShareTicket: true
 					});          
 
-          if( res && res.errMsg == 'showShareMenu:ok' ) {
-            this.success("分享成功",1000,true);
-          }  
-          // 获取分享者信息
-          wx.getShareInfo({
-            shareTicket: res.shareTickets[0]||"",
-            success: (res)=>{ console.log(res) },
-            fail:  (res) => { console.log(res) },
-            complete: (res)=> { console.log(res) }
-          })    
-          // resolve( res );          
-        },
-        fail: (res)=>{
-          console.log(res)
-          // resolve( res );
-          // debugger;
-          if( res.errMsg == 'showShareMenu:cancel' ) {
-            // 取消
-            this.getDeviceApi().showToast({
-              title: "转发取消",
-              image: '/assets/imgs/icon/alert.png',
-              mask: false,
-              duration: duration
-            });
+				  if( res && res.errMsg == 'showShareMenu:ok' ) {
+					that.success("分享成功",1000,true);
+				  }  
+				  // 获取分享者信息
+				  that.getDeviceApi.getShareInfo({
+					shareTicket: res.shareTickets[0]||"",
+					success: (res)=>{ console.log(res) },
+					fail:  (res) => { console.log(res) },
+					complete: (res)=> { console.log(res) }
+				  })    
+				  // resolve( res );          
+				},
+				fail: (res)=>{
+				  console.log(res)
+				  // resolve( res );
+				  // debugger;
+				  if( res.errMsg == 'showShareMenu:cancel' ) {
+					// 取消
+					that.getDeviceApi().showToast({
+					  title: "转发取消",
+					  image: '../static/imgs/icon/alert.png',
+					  mask: false,
+					  duration: duration
+					});
 
-          }else if ( res.errMsg == 'shareAppMessage:fail' ) {
-            // 转发失败，其中 detail message为详细失败信息
-            this.alert("转发失败",1000)
-          }
-        },
-        complete: (res)=>{
-          // debugger;
-          // resolve( res );
-        }
-      };
-      
-      // if( opt.from == 'button' ) {
-      //   let eData = opt.target.dataset;
-      //   console.log( eData.name )
-      //   shareObj.path = `/pages/find/index?btn_name=${eData.name}`
-      // }
-      resolve ( shareObj_res );
-    })
-  },
-  //判断是否授权了 录音的权限
-  async getAuthorize_recorder () {
-    let that = this;
-    return new Promise( async ( resolve , reject  )=>{
-      wepy.getSetting().then((res)=>{
-        // 小程序 已经授权了获取用户信息
-        console.log(res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
-        console.log(res.authSetting)
-        if( res.authSetting['scope.record'] ) {
-          // 已经授权了 录音设置
-          resolve(true);
-          return true;
-        }else if ( !res.authSetting['scope.record'] ){
-          if( wx.openSetting ) {
-            wx.showModal({
-              title: "提示",
-              content: "使用该功能需要授权开启录音设置的权限，请点击'确定'先开启设置",
-              showCancel: false,
-              confirmTex: "录音授权",
-              confirmColor: "#52a2d8",
-              success: res =>{
-        
-                wx.authorize({
-                  scope: 'scope.record',
-                  success(){
-            
-                    // 授权成功
-                    resolve(true)
-                  },
-                  fail(){
-     
-                    // 第一次授权失败
-                    wx.showModal ({
-                      title: "提示",
-                      content: "您未开启录音授权,请开启设置",
-                      showCancel: true,
-                      confirmTex: "录音授权",
-                      confirmColor: "#52a2d8",
-                      success: function(res){
-        
-                        if( res.confirm ) {
-                          wx.openSetting({
-                            success: (res)=>{
-    
-                              console.log(res.authSetting);
-                              if( res.authSetting['scope.record'] ){
-                                // 授权成功
-                                resolve(true);
-                              }else {
-                                // 未授权开启提示授权
-
-                                wx.showModal({
-                                  title: "提示",
-                                  content: "未开启授权将无法使用录音功能,请开启设置",
-                                  showCancel: true,
-                                  confirmTex: "开启授权",
-                                  confirmColor: "#52a2d8",       
-                                  success: function(res){
-                                    if( res.confirm ) {
-                                      wx.openSetting({
-                                        success: (res)=>{
-                                          console.log(res.authSetting);
-
-                                          if( res.authSetting['scope.record'] ){
-                                            // 第二次授权才成功
-                                            resolve( true );
-                                          }else {
-                                            // 第二次授权没有成功
-
-                                            wx.showToast({
-                                              title: '授权失败',
-                                              // icon: 'loading',
-                                              image: '/assets/imgs/icon/error.png',
-                                              mask: true,
-                                              duration: 1000
-                                            });    
-                                            
-                                            resolve(false)                                            
-                                          }
-                                        }
-                                      })
-                                    }
-                                  }                           
-                                })
-                              }
-                            }
-                          })
-                        }
-                      }
-                    })
-                  }
-                })                
-              }
-            })
-          }          
-        }
-      })
-    })
-  },
-
-  //判断是否授权了地理位置的权限
-  async getAuthorize_location () {
-    let that = this;
-    return new Promise( async ( resolve , reject  )=>{
-      wepy.getSetting().then((res)=>{
-        // 小程序 已经授权了获取用户信息
-        console.log(res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
-        console.log(res.authSetting)
-        if( res.authSetting['scope.userLocation'] ) {
-          // 已经授权了 地理位置设置
-          resolve(true);
-          return true;
-        }else if ( !res.authSetting['scope.userLocation'] ){
-          if( wx.openSetting ) {
-            wx.showModal({
-              title: "提示",
-              content: "申请获取您的地理位置",
-              showCancel: false,
-              confirmTex: "地理位置授权",
-              confirmColor: "#52a2d8",
-              success: res =>{
-        
-                wx.authorize({
-                  scope: 'scope.userLocation',
-                  success(){
-            
-                    // 授权成功
-                    resolve(true)
-                  },
-                  fail(){
-     
-                    // 第一次授权失败
-                    wx.showModal ({
-                      title: "提示",
-                      content: "您未开启地理位置授权,请开启设置",
-                      showCancel: true,
-                      confirmTex: "地理位置授权",
-                      confirmColor: "#52a2d8",
-                      success: function(res){
-        
-                        if( res.confirm ) {
-                          wx.openSetting({
-                            success: (res)=>{
-    
-                              console.log(res.authSetting);
-                              if( res.authSetting['scope.userLocation'] ){
-                                // 授权成功
-                                resolve(true);
-                              }else {
-                                // 未授权开启提示授权
-
-                                wx.showModal({
-                                  title: "提示",
-                                  content: "未开启授权将无法使用位置天气功能,请开启设置",
-                                  showCancel: true,
-                                  confirmTex: "开启授权",
-                                  confirmColor: "#52a2d8",       
-                                  success: function(res){
-                                    if( res.confirm ) {
-                                      wx.openSetting({
-                                        success: (res)=>{
-                                          console.log(res.authSetting);
-
-                                          if( res.authSetting['scope.userLocation'] ){
-                                            // 第二次授权才成功
-                                            resolve( true );
-                                          }else {
-                                            // 第二次授权没有成功
-
-                                            wx.showToast({
-                                              title: '授权失败',
-                                              // icon: 'loading',
-                                              image: '/assets/imgs/icon/error.png',
-                                              mask: true,
-                                              duration: 1000
-                                            });    
-                                            
-                                            resolve(false)                                            
-                                          }
-                                        }
-                                      })
-                                    }
-                                  }                           
-                                })
-                              }
-                            }
-                          })
-                        }
-                      }
-                    })
-                  }
-                })                
-              }
-            })
-          }          
-        }
-      })
-    })
-  }   
-}
-
+				  }else if ( res.errMsg == 'shareAppMessage:fail' ) {
+					// 转发失败，其中 detail message为详细失败信息
+					that.alert("转发失败",1000)
+				  }
+				},
+				complete: (res)=>{
+				  // debugger;
+				  // resolve( res );
+				}
+			  };
+			  
+			  // if( opt.from == 'button' ) {
+			  //   let eData = opt.target.dataset;
+			  //   console.log( eData.name )
+			  //   shareObj.path = `/pages/find/index?btn_name=${eData.name}`
+			  // }
+			  resolve ( shareObj_res );
+			})
+		},
+		//判断是否开启了 ** 功能授权的权限并进行相应的授权提示操作 传入  scope.type 值
+		//type类型scope.userInfo	、scope.userLocation、scope.address、scope.invoiceTitle、scope.invoice、scope.record、scope.werun、scope.writePhotosAlbum、scope.camera	
+		async getIsAuthorize (type) {
+			let that = this;
+			if(!type){
+				that.toast("请传入scope.type!")
+				return 
+			}
+			let scopeText = {
+				"scope.userInfo":"用户信息",
+				"scope.userLocation": "地理位置",
+				"scope.address": "通讯地址",
+				"scope.invoiceTitle": "发票排头",
+				"scope.invoice": "获取发票",
+				"scope.record": "录音功能",
+				"scope.werun": "微信运动步数",
+				"scope.writePhotosAlbum": "保存到相册",
+				"scope.camera": "摄像头"
+			}
+			return new Promise( async ( resolve , reject  )=>{
+			  that.getDeviceApi.getSetting().then((res)=>{
+				// 获取用户授权信息
+				console.log(res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
+				console.log(res.authSetting)
+				if( res.authSetting[type] ) {
+				  // 自动检测到已经授过权
+				  resolve(true);
+				  return true;
+				}else if ( !res.authSetting[type] ){
+					// 检测到还未授权
+					if( that.getDeviceApi.openSetting ) {
+						that.getDeviceApi.showModal({
+						  title: "提示",
+						  content: `使用该功能需要授权开启${scopeText[type]}的权限，请点击确定先开启设置`,
+						  showCancel: false,
+						  confirmTex: "授权开启",
+						  confirmColor: "#52a2d8",
+						  success: res =>{
+							that.getDeviceApi.authorize({
+							  scope: type,
+							  success(){
+								// 授权成功
+								resolve(true)
+							  },
+							  fail(){
+								// 第一次授权失败
+								that.getDeviceApi.showModal ({
+								  title: "提示",
+								  content: `您未开启${scopeText[type]}的权限,请开启设置`,
+								  showCancel: true,
+								  confirmTex: "授权开启",
+								  confirmColor: "#52a2d8",
+								  success: function(res){
+									if( res.confirm ) {
+									  that.getDeviceApi.openSetting({
+										success: (res)=>{
+										  console.log(res.authSetting);
+										  if( res.authSetting[type] ){
+											// 第二次授权成功
+											resolve(true);
+										  }else {
+											// 第二次也未授权，再次提示开启授权
+											that.getDeviceApi.showModal({
+											  title: "提示",
+											  content: `未开启授权将无法使用${scopeText[type]}的功能,请开启设置`,
+											  showCancel: true,
+											  confirmTex: "开启授权",
+											  confirmColor: "#52a2d8",       
+											  success: function(res){
+												if( res.confirm ) {
+												  that.getDeviceApi.openSetting({
+													success: (res)=>{
+													  console.log(res.authSetting);
+													  if( res.authSetting[type] ){
+														// 第二次授权才成功
+														resolve( true );
+													  }else {
+														// 第二次授权没有成功
+														that.getDeviceApi.showToast({
+														  title: '授权失败',
+														  // icon: 'loading',
+														  image: '../static/imgs/icon/error.png',
+														  mask: true,
+														  duration: 1000
+														});    
+														resolve(false)                                            
+													  }
+													}
+												  })
+												}
+											  }                           
+											})
+										  }
+										}
+									  })
+									}
+								  }
+								})
+							  }
+							})                
+						  }
+						})
+					  }          
+					}
+				})
+			})
+		}
+	}
 }
 

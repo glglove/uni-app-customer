@@ -23,7 +23,7 @@ export function getEnterType ( typeNum ) {
       break;    
       
       
-      case 1011:          //扫描二维码
+      case 1011:         //扫描二维码
       return 2;           // 目前暂时定义 0是扫码，1是点击分享图，2.微信上搜索的，后续在调整
       break;    
       

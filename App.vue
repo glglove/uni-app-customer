@@ -1,12 +1,26 @@
+<!-- <style lang="less" src="./static/style/base.less"></style>
+<style lang="less" src="./static/style/icons.less"></style>
+<style lang="less" src="./static/style/iconfont.less"></style> -->
+<style lang="less">
+	// .container {
+	//   height: 100%;
+	//   display: flex;
+	//   flex-direction: column;
+	//   align-items: center;
+	//   justify-content: space-between;
+	//   box-sizing: border-box;
+	// }
+</style>	
+
 <script>
-	import getEnterType from '@/utils/miniProSceneType'
+	// import getEnterType from '@/utils/miniProSceneType'
 
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
 			// 小程序检查是否有版本更新 采用条件判断来编译
 			// #ifdef MP-WEIXIN
-			this.checkNewVersion()
+			// this.checkNewVersion()
 			// #endif
 		},
 		onShow: function() {
@@ -56,6 +70,3 @@
 	}
 </script>
 
-<style>
-	/*每个页面公共css */
-</style>

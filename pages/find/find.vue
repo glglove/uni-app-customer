@@ -6,7 +6,7 @@
 </template>
 
 <script>
-	// import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
+	import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
 	import findApi from '@/api/find.js'
 	export default {
         components: {
@@ -63,6 +63,6 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 
 </style>

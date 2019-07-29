@@ -24,7 +24,7 @@
 	}
 </script>
 
-<style>
+<style lang="less" scoped>
 	.content {
 		text-align: center;
 		height: 400upx;

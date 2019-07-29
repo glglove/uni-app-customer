@@ -3,26 +3,8 @@
 		{
 			"path" : "pages/login/login",
 			"style" : {
-				"navigationBarTitleText":"登陆",
+				"navigationBarTitleText":"登陆"
 				// 配置页面下拉刷新
-				// #ifdef APP-PLUS  
-				"app-plus": {
-                    "pullToRefresh": {
-                        "support": true,
-                        "color": "#ff3333",
-                        "style": "default",
-                        "contentdown": {
-                            "caption": "下拉可刷新自定义文本"
-                        },
-                        "contentover": {
-                            "caption": "释放可刷新自定义文本"
-                        },
-                        "contentrefresh": {
-                            "caption": "正在刷新自定义文本"
-                        }
-                    }
-                }
-				// #endif
 			}
 		},	
 		{
@@ -45,39 +27,39 @@
 		}
 	],
 	// 分包加载
-	"subPackages":[
-		{
-			"root": "pages/packageA",
-			"pages": [
-			  "find/lessonList/index",
-			  "find/lessonList/lessonDetail/index",
-			  "find/lessonList/lessonDetail/enterSuccess/index",
-			  "find/invitation/index",
-			  "find/invitation/shaireHaibao/index",
-			  "find/ranklist/index",
-			  "find/signUpRecord/index",
-			  "sign/immediatelySignUp/index",
-			  "sign/immediatelySignUp/submitTask/index",
-			  "sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
-			  "my/myAchievement/index",
-			  "my/myAchievement/certificate/index",
-			  "my/learnRecord/index",
-			  "my/help/index",
-			  "my/help/submitProblem/index",
-			  "my/help/submitProblem/submitProblemSuccess/index",
-			  "my/inviteFriends/index",
-			  "my/set/index"
-			]	
-		}
-	],
+	// "subPackages":[
+	// 	{
+	// 		"root": "pages/packageA",
+	// 		"pages": [
+	// 		  "find/lessonList/index",
+	// 		  "find/lessonList/lessonDetail/index",
+	// 		  "find/lessonList/lessonDetail/enterSuccess/index",
+	// 		  "find/invitation/index",
+	// 		  "find/invitation/shaireHaibao/index",
+	// 		  "find/ranklist/index",
+	// 		  "find/signUpRecord/index",
+	// 		  "sign/immediatelySignUp/index",
+	// 		  "sign/immediatelySignUp/submitTask/index",
+	// 		  "sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
+	// 		  "my/myAchievement/index",
+	// 		  "my/myAchievement/certificate/index",
+	// 		  "my/learnRecord/index",
+	// 		  "my/help/index",
+	// 		  "my/help/submitProblem/index",
+	// 		  "my/help/submitProblem/submitProblemSuccess/index",
+	// 		  "my/inviteFriends/index",
+	// 		  "my/set/index"
+	// 		]	
+	// 	}
+	// ],
 	// 条件编译（主要用于测试特定页面时使用）
-    "condition": { //模式配置，仅开发期间生效
-        "current": 0, //当前激活的模式（list 的索引项）
-        "list": [{
-            "name": "test", //模式名称
-            "path": "pages/component/view/index" //启动页面，必选
-        }]
-    },	
+    // "condition": { //模式配置，仅开发期间生效
+    //     "current": 0, //当前激活的模式（list 的索引项）
+    //     "list": [{
+    //         "name": "test", //模式名称
+    //         "path": "pages/component/view/index" //启动页面，必选
+    //     }]
+    // },	
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

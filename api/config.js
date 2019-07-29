@@ -1,5 +1,3 @@
-// import { version } from "moment";
-
  const miniproConfings = {
     miniproAppid: 'wx224bd53fdc4dd933', // 小程序appid
     miniproSecret: 'e93ec56f5785d73760577dbf4b05ab7f', // 小程序secret
