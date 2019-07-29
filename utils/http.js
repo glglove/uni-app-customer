@@ -83,10 +83,10 @@ export default {
 		  // 主要控制是否loading
 		  const loading = data.loading 
 		  // 接口中 统一加上 token 属性（根据业务需求来定）
-		  config.data = Object.assign(data, {
+		  config.data = JSON.stringify(Object.assign(data, {
 			// 'token': store.getters.userToken
 			token: "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM"	 // 万能token
-		  })
+		  }))
 		  // 全局属性中传入的 loading 为真，则需要显示
 		  if(loading){
 			const title = config.loadingText
