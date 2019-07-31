@@ -12,9 +12,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.get( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	}
 }

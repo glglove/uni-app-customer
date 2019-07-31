@@ -208,7 +208,7 @@
     <view id="immediatelySignUp">
         <view class="bgBox">
             <!-- <image class="" src="../../../../assets/imgs/tab/joinSign_bg.png"></image> -->
-            <image class="" src="{{bg.joinSign_bg}}"></image>
+            <image class="" ></image>
         </view>
         <view class="top center marginT40">
             <!-- <image class="photo" src="{{avater? avater : '../../../../assets/imgs/icon/photo.png'}}"></image> -->

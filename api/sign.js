@@ -15,9 +15,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},
 	
@@ -51,9 +52,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},	
 		
@@ -69,9 +71,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},	
 		
@@ -105,9 +108,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},	
 	
@@ -123,9 +127,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},	
 		
@@ -141,9 +146,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},	
 			
@@ -159,9 +165,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},		
 			
@@ -177,9 +184,10 @@ export default {
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},				
 }

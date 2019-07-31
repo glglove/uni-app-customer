@@ -237,7 +237,7 @@
                             <view class="userInfo clearfix">
                                 <view class="photo lt">
                                     <!-- <image class="pic" src="../../../../assets/imgs/icon/photo.png"></image> -->
-                                    <image class="pic" src="{{item.headImg}}"></image>
+                                    <image class="pic" ></image>
                                 </view>
                                 <view class="nameBox">
                                     <view class="name">{{item.nickName}}</view>

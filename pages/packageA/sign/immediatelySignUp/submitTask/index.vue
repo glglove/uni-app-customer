@@ -68,7 +68,7 @@
 <template>
     <view id="submitTask">
         <view class="contentBox">
-            <textarea class="submitTask_textarea" value="" placeholder="{{submitTask.placeholder}}" placeholder-class="placeholder" maxlength="" focus="" auto-height="" show-confirm-bar="">
+            <textarea class="submitTask_textarea" value=""  placeholder-class="placeholder" maxlength="" focus="" auto-height="" show-confirm-bar="">
                     
             </textarea>  
 

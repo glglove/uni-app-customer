@@ -5,25 +5,141 @@
 			"style" : {
 				"navigationBarTitleText":"登陆"
 			}
-		},	
-		{
-			"path": "pages/sign/sign",
-			"style": {
-				"navigationBarTitleText": "打卡"
-			}
 		},
 		{
 			"path" : "pages/find/find",
 			"style" : {
-				"navigationBarTitleText":"发现"
+				"navigationBarTitleText":"登陆"
+			}
+		},
+		{
+			"path" : "pages/sign/sign",
+			"style" : {
+				"navigationBarTitleText":"登陆"
 			}
 		},
 		{
 			"path" : "pages/my/my",
 			"style" : {
-				"navigationBarTitleText":"我的"
+				"navigationBarTitleText":"登陆"
+			}
+		},
+		{
+			"path" : "pages/packageA/find/ranklist/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}		
+		}							
+		//#ifdef APP-PLUS 
+		,{
+			"path" : "pages/packageA/find/lessonList/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},
+		{
+			"path" : "pages/packageA/find/lessonList/lessonDetail/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/find/lessonList/lessonDetail/enterSuccess/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},		
+		{
+			"path" : "pages/packageA/find/invitation/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/find/invitation/shaireHaibao/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/find/ranklist/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/find/signUpRecord/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/sign/immediatelySignUp/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/sign/immediatelySignUp/submitTask/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/my/myAchievement/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/my/myAchievement/certificate/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/my/learnRecord/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/my/help/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},		
+		{
+			"path" : "pages/packageA/my/help/submitProblem/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/my/help/submitProblem/submitProblemSuccess/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},		
+		{
+			"path" : "pages/packageA/my/inviteFriends/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		{
+			"path" : "pages/packageA/my/set/index",
+			"style" : {
+				"navigationBarTitleText":"登陆"
 			}
 		}
+		//#endif	
 	],
 	// 分包加载
 	// "subPackages":[

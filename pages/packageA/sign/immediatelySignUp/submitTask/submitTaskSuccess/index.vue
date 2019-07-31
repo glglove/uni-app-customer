@@ -161,7 +161,7 @@
 <template>
     <view id="submitTaskSuccess">
         <!-- <image class="pic" src="../../../../../../assets/imgs/tab/submitTaskSuccess.png"></image> -->
-        <image class="pic" src="{{bg.submitTaskSuccess}}"></image>
+        <image class="pic" ></image>
         <view class="top">
             <view class="imgBox">
                 <image class="top_pic" src="../../../../../../assets/imgs/icon/success01.png"></image>

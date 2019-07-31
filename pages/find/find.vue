@@ -48,6 +48,11 @@
 							duration:2000
 						})
 						this.contentData = res.data.data
+						
+						//页面跳转到
+						uni.redirectTo({
+							url:'../packageA/find/ranklist/index'
+						})
 					}else{
 						// uni.hideLoading()
 						uni.showToast({

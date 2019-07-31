@@ -11,10 +11,11 @@ export default {
 	   const url = `/app/users/register`;
 	   var data = {}
 	   params = Object.assign(data, params)
-	   return http.get( url,{
-			...params,
-			 loading,
-			 loadingText
+	   return http.post( url,{
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},
 	
@@ -31,9 +32,10 @@ export default {
 		var data = {}
 		params = Object.assign(data, params)
 		return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+		},{
+		   loading,
+		   loadingText
 		})
 	},
 
@@ -45,11 +47,12 @@ export default {
 	onlowerFresh(url, params, loading = false, loadingText = "加载中...") {
 		var data = {}
 		params = Object.assign(data, params)
-		return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
-		})
+	   return http.post( url,{
+			...params
+	   },{
+		   loading,
+		   loadingText
+	   })
 	},  
 
 	/**
@@ -60,11 +63,12 @@ export default {
 	onlowerFresh(url, params, loading = false, loadingText = "加载中...") {
 		var data = {}
 		params = Object.assign(data, params)
-		return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
-		})
+	   return http.post( url,{
+			...params
+	   },{
+		   loading,
+		   loadingText
+	   })
 	},    
 
 	/**
@@ -91,11 +95,12 @@ export default {
 		  url: url,
 		  params: data
 		}    
-		return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
-		})     
+	   return http.post( url,{
+			...params
+	   },{
+		   loading,
+		   loadingText
+	   })     
 	},
 	/**
 	* 上传资源到服务器
@@ -164,10 +169,11 @@ export default {
 		  params: params
 		}
 
-		return http.post(url, {
-			...params,
-			loading,
-			loadingText
-		}) 
+	   return http.post( url,{
+			...params
+	   },{
+		   loading,
+		   loadingText
+	   })
 	}	   
 }

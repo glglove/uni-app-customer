@@ -81,7 +81,7 @@
         <scroll-view scroll-y scroll-with-animation class="contentBox">
             <view class="item marginT60 clearfix">
                 <!-- <image class="pic" src="../../../../../assets/imgs/icon/signUp_detail_top.png"></image> -->
-                <image class="pic" src="{{bg.signUp_detail_top}}"></image>
+                <image class="pic" ></image>
             </view> 
             <view class="signInfoBox">
                 <view class="textBox">
@@ -103,7 +103,7 @@
             </view>    
             <view class="contentBox">
                 <!-- <image class="pic" src="../../../../../assets/imgs/icon/signUp_detail_content.png"></image> -->
-                <image class="pic" src="{{bg.signUp_detail_content}}"></image>
+                <image class="pic" ></image>
             </view>   
             <view class="signUpBtn center click-able" @tap.stop = "clicksignUpBtn">
                 立即报名

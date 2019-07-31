@@ -69,7 +69,7 @@
         <view class="contentBox">
             <view class="picBox">
                 <!-- <image class="pic" src="../../../../../assets/imgs/tab/certificate.png"></image> -->
-                <image class="pic" src="{{bg.certificate}}"></image>
+                <image class="pic" ></image>
             </view>
             <view class="share">立即分享</view>
         </view>

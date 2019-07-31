@@ -216,7 +216,7 @@
                 </view>
             </view> -->
             <view class="calendarBox wrap">
-                <twCalendar :isShow.sync="calendarVisible" :value.sync="time" :color="#05c8d3"></twCalendar> 
+                <twCalendar :isShow.sync="calendarVisible" :value.sync="time"></twCalendar> 
             </view>
 
             <!-- <view class="flex-center wrapper">
