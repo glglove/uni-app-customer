@@ -5,7 +5,7 @@ const app = {
   state: {
 	userName: '',// 用户名
 	userId: '', // 用户id
-    userToken: ''
+    userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM'
   },
   mutations: {
 	[types.setUserName] (state, str) {

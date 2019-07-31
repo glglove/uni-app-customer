@@ -8,6 +8,10 @@
   bottom: 0;
   margin: auto;
 }
+#login .loginBox.data-v-1fbda2ce {
+  width: 750rpx;
+  background-color: red;
+}
 #login .loginBtnBox.data-v-1fbda2ce {
   width: 100%;
   text-align: center;

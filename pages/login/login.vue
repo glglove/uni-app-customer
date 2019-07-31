@@ -1,22 +1,13 @@
 <template>
 	<view id="login">
 		<view class="loginBox">
-			<mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
-			<!-- <mt-field label="邮箱" placeholder="请输入邮箱" type="email" v-model="email"></mt-field> -->
-			<mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field>
-			<!-- <mt-field label="手机号" placeholder="请输入手机号" type="tel" v-model="phone"></mt-field> -->
+<!-- 			<mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
+			<mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field> -->
 			
-			<!--<form @submit="formSubmit" @reset="formReset">
-				<view class="section">
-					<view class="section__title">input</view>
-					<input name="input" placeholder="please input here" />
-				</view>
-				<view class="btn-area">
-					<button formType="submit">Submit</button>
-					<button formType="reset">Reset</button>
-				</view>
-			</form> -->
-			
+			<view class="loginWrap">
+				用户名：<input type="text" value="" v-model="username"/>
+				密码：<input type="text" value="" v-model="password"/>
+			</view>
 			
 		</view>
 		<view class="loginBtnBox">
@@ -32,11 +23,8 @@
 		data() {
 			return {
 				username: '',
-				email: '',
 				password: '',
-				phone: ''
 			};
-			
 		},
 		methods:{
 			login(){
@@ -97,6 +85,10 @@
 		right: 0;
 		bottom: 0;
 		margin: auto;
+		.loginBox{
+			width: 750upx;
+			background-color: red
+		}
 		.loginBtnBox {
 			width: 100%;
 			text-align: center;

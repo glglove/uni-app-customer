@@ -10,13 +10,24 @@ export default {
 	*/
 	async getRankDayData (params, loading = false, loadingText = "加载中...") {
 		debugger
+		// params 的格式如下:
+		// params = {
+		// 	params:{
+		// 		
+		// 	},
+		//  page: {
+          // pageNum: 1,
+          // pageSize: 10 
+           // }
+		// }
 	   const url = `/find/customerApp/myRank`;
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{
-			...params,
-			 loading,
-			 loadingText
+			...params
+	   },{
+		   loading,
+		   loadingText
 	   })
 	},
 	

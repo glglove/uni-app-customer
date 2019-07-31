@@ -24,7 +24,7 @@
 //-------------up is axios ---------
 
 import qs from 'qs'
-// import store from '@/store/index.js'
+import store from '@/store/index.js'
 import configs from '@/api/config.js'
 
 /**
@@ -62,11 +62,13 @@ export default {
 	config: {
 		baseUrl: configs.baseUrl,
 		header: {
-			'Content-Type':'application/json;charset=UTF-8',
-			'Content-Type':'application/x-www-form-urlencoded'
+			'Content-Type':'application/json;charset=UTF-8',  // 默认请求的content-Type 为 application/json
+			// 'Content-Type':'application/x-www-form-urlencoded'
 		},  
 		data: {},
-		method: "GET",
+		loading: false,
+		loadingText: '加载中',
+		method: "POST",  // 默认的 method
 		dataType: "json",  /* 如设为json，会对返回的数据做一次 JSON.parse */
 		responseType: "text",
 		success() {},
@@ -76,41 +78,36 @@ export default {
 	// 拦截器对象
 	interceptor: {
 		// 默认统一的请求拦截函数
-		request: (config) => {
+		request: (configs) => {
 		  // 将请求的参数中 默认增加 token
 		  debugger
-		  const data = config.data || {}
+		  const data = configs.data || {}
 		  // 主要控制是否loading
-		  const loading = data.loading 
-		  // 接口中 统一加上 token 属性（根据业务需求来定）
-		  config.data = JSON.stringify(Object.assign(data, {
-			// 'token': store.getters.userToken
-			token: "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM"	 // 万能token
-		  }))
+		  const loading = configs.loading 
+		  if( configs.url === `${configs.baseUrl}/users/register` ){
+			  
+		  }else {
+			// 非登录接口时 需要接口中 统一加上 token 属性（根据业务需求来定）
+			configs.data = JSON.stringify(Object.assign(configs.data, {
+				'token': store.getters.userToken  // 从store 中 获取userToken 
+			}))  
+		  }
 		  // 全局属性中传入的 loading 为真，则需要显示
 		  if(loading){
-			const title = config.loadingText
-			uni.showLoadig({
-			  title: title,
-			  mask: true,
-			  success: ()=> {
-				
-			  },
-			  fail: ()=>{
-
-			  },
-			  complete: ()=> {
-
-			  }
-			})
+			const title = configs.loadingText
+			// 加载loading
+			uni.showLoading({
+				title: title,
+				mask: true
+			});
 		  }
 		},
 		// 默认统一的响应拦截函数
-		response: (config) => {
+		response: (configs) => {
 			debugger
 			// 隐藏加载loading
-			// uni.hideLoading()			
-			return config
+			configs.config.loading && uni.hideLoading()
+			return configs
 		}
 	},
 	request(options) {
@@ -118,10 +115,13 @@ export default {
 		if (!options) {
 			options = {}
 		}
+		options.header = options.header || this.config.header
 		options.baseUrl = options.baseUrl || this.config.baseUrl
 		options.dataType = options.dataType || this.config.dataType
 		options.url = options.baseUrl + options.url
 		options.data = options.data || {}
+		options.loading = options.loading || this.config.loading
+		options.loadingText = options.loadingText || this.config.loadingTextloadingText
 		options.method = options.method || this.config.method
 		
 		//TODO 加密数据
@@ -140,8 +140,12 @@ export default {
 			//注意：options.complerte 这个回调函数会在 uni.request() 调用介绍后自动执行（虽然位置现在放在了 uni.request()调用 之前），
 			//且uni.request()执行后的返回的数据response会自动传给 options.complate方法
 			options.complete = (response) => {
+				// uni.require() 请求无论是失败还是成功后都会自动走这个 complete 的回调函数方法
+				console.log("请求时间" + new Date().getTime() + ":这是uni.require() 请求完成complete的回调")
 				debugger
+				// uni.require() 后返回的 状态码  statusCode 
 				let statusCode = response.statusCode
+				
 				response.config = _config
 				
 				if (process.env.NODE_ENV === 'development') {
@@ -170,9 +174,18 @@ export default {
 					reject(response)
 				}
 			}
-
+			
+			options.fail = (error) => {
+				// uni.require() 请求失败后会自动走这个 fail 的回调函数方法
+				console.log("请求时间" + new Date().getTime() + ":这是uni.require() 请求完成fail的回调")
+			}
+			
+			options.success = (response) => {
+				// uni.require() 请求成功后会自动走这个 success 的回调函数方法
+				console.log("请求时间" + new Date().getTime() + ":这是uni.require() 请求完成success的回调")
+			}
 			debugger
-			// 将传入的配置参数与默认的参数进行合并
+			// 将传入的配置参数与默认的参数进行合并 后赋值给 _config
 			_config = Object.assign({}, this.config, options)
 			_config.requestId = new Date().getTime()
 			

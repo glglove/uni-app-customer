@@ -1,6 +1,6 @@
-<!-- <style lang="less" src="./static/style/base.less"></style>
+<style lang="less" src="./static/style/base.less"></style>
 <style lang="less" src="./static/style/icons.less"></style>
-<style lang="less" src="./static/style/iconfont.less"></style> -->
+<!-- <style lang="less" src="./static/style/iconfont.less"></style> -->
 <style lang="less">
 	// .container {
 	//   height: 100%;

@@ -25,10 +25,19 @@
 			// 获取list 列表数据
 			_getRankDayData () {
 				debugger
-				uni.showLoading()
-				findApi.getRankDayData().then(res => {
+				// uni.showLoading()
+				let paramsObj = {
+					params: {
+
+					},
+					page: {
+						pageSize: 10,
+						pageNum: 1
+					}
+				}
+				findApi.getRankDayData( paramsObj, "loading", "加载中..").then(res => {
 					debugger
-					uni.hideLoading()
+					// uni.hideLoading()
 					console.log(res)
 					if(res && res.data.code === 1){
 						debugger
@@ -40,7 +49,7 @@
 						})
 						this.contentData = res.data.data
 					}else{
-						uni.hideLoading()
+						// uni.hideLoading()
 						uni.showToast({
 							title:"数据获取失败",
 							icon: 'success',
@@ -50,7 +59,7 @@
 
 					}
 				}).catch(err => {
-					uni.hideLoading()
+					// uni.hideLoading()
 					uni.showToast({
 						title:"数据获取失败,请重试",
 						icon: 'success',

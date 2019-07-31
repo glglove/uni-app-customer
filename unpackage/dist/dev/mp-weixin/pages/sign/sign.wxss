@@ -1,15 +1,14 @@
-
-.content {
-	text-align: center;
-	height: 400rpx;
+.content.data-v-61b32b1a {
+  text-align: center;
+  height: 400rpx;
 }
-.logo {
-	height: 200rpx;
-	width: 200rpx;
-	margin-top: 200rpx;
+.logo.data-v-61b32b1a {
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 200rpx;
 }
-.title {
-	font-size: 36rpx;
-	color: #8f8f94;
+.title.data-v-61b32b1a {
+  font-size: 36rpx;
+  color: #8f8f94;
 }
 

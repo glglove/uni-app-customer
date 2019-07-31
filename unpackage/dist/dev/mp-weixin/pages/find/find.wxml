@@ -1,1 +1,1 @@
-<view>这是发现页面</view>
+<view class="data-v-dd37eecc">{{'这是发现页面\n\t'+contentData.rank+''}}</view>

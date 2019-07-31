@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import App from './App'
-// import store from './store' // vuex状态管理
+import store from './store' // vuex状态管理
 
+// #ifdef APP-PLUS || H5
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-// import Axios from 'axios'
-// import './utils/http.js'
 Vue.use(MintUI);
+// #endif
 
 // 引入 uni.request()
 import http from '@/utils/http.js'
@@ -16,7 +16,7 @@ Vue.config.productionTip = false;
 
 // 挂载在 Vue实例的原型上
 Vue.prototype.$http = http
-// Vue.prototype.$store = store
+Vue.prototype.$store = store
 
 App.mpType = 'app'
 

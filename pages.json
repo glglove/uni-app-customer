@@ -4,7 +4,6 @@
 			"path" : "pages/login/login",
 			"style" : {
 				"navigationBarTitleText":"登陆"
-				// 配置页面下拉刷新
 			}
 		},	
 		{
