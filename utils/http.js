@@ -80,7 +80,7 @@ export default {
 		// 默认统一的请求拦截函数
 		request: (configs) => {
 		  // 将请求的参数中 默认增加 token
-		  debugger
+		  // debugger
 		  const data = configs.data || {}
 		  // 主要控制是否loading
 		  const loading = configs.loading 
@@ -104,14 +104,14 @@ export default {
 		},
 		// 默认统一的响应拦截函数
 		response: (configs) => {
-			debugger
+			// debugger
 			// 隐藏加载loading
 			configs.config.loading && uni.hideLoading()
 			return configs
 		}
 	},
 	request(options) {
-		debugger
+		// debugger
 		if (!options) {
 			options = {}
 		}
@@ -134,7 +134,7 @@ export default {
 		*/
 	   
 		return new Promise((resolve, reject) => {
-			debugger
+			// debugger
 			let _config = null
 			
 			//注意：options.complerte 这个回调函数会在 uni.request() 调用介绍后自动执行（虽然位置现在放在了 uni.request()调用 之前），
@@ -142,14 +142,14 @@ export default {
 			options.complete = (response) => {
 				// uni.require() 请求无论是失败还是成功后都会自动走这个 complete 的回调函数方法
 				console.log("请求时间" + new Date().getTime() + ":这是uni.require() 请求完成complete的回调")
-				debugger
+				// debugger
 				// uni.require() 后返回的 状态码  statusCode 
 				let statusCode = response.statusCode
 				
 				response.config = _config
 				
 				if (process.env.NODE_ENV === 'development') {
-					debugger
+					// debugger
 					// 开发环境
 					if (statusCode === 200) {
 						console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data))
@@ -158,7 +158,7 @@ export default {
 				
 				// 如果有响应的回调 再执行响应的回调， 相当于请求结束后的 相应拦截
 				if (this.interceptor.response) {
-					debugger
+					// debugger
 					let newResponse = this.interceptor.response(response)
 					if (newResponse) {
 						response = newResponse
@@ -168,7 +168,7 @@ export default {
 				_reslog(response)
         
 				if (statusCode === 200) { //成功
-					debugger
+					// debugger
 					resolve(response)
 				} else {
 					reject(response)
@@ -184,7 +184,7 @@ export default {
 				// uni.require() 请求成功后会自动走这个 success 的回调函数方法
 				console.log("请求时间" + new Date().getTime() + ":这是uni.require() 请求完成success的回调")
 			}
-			debugger
+			// debugger
 			// 将传入的配置参数与默认的参数进行合并 后赋值给 _config
 			_config = Object.assign({}, this.config, options)
 			_config.requestId = new Date().getTime()
@@ -206,14 +206,14 @@ export default {
 			}
 
 			// 调用 uni.request 发起请求，
-			debugger
+			// debugger
 			let a = uni.request(_config);
-			debugger
+			// debugger
 		});
 	},
 	// get 请求
 	get(url, data, options) {
-		debugger
+		// debugger
 		if (!options) {
 			options = {}
 		}
@@ -224,7 +224,7 @@ export default {
 	},
 	// post 请求
 	post(url, data, options) {
-		debugger
+		// debugger
 		if (!options) {
 			options = {}
 		}
@@ -263,9 +263,9 @@ function _reqlog(req) {
 	if (process.env.NODE_ENV === 'development') {
 		console.log("【" + req.requestId + "】 地址：" + req.url)
 		if (req.data) {
-			debugger
+			// debugger
 			console.log("【" + req.requestId + "】 请求参数：" + JSON.stringify(req.data))
-			debugger
+			// debugger
 		}
 	}
 	//TODO 调接口异步写入日志数据库

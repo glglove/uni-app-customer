@@ -9,25 +9,25 @@
 		{
 			"path" : "pages/find/find",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"发现"
 			}
 		},
 		{
 			"path" : "pages/sign/sign",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"打卡"
 			}
 		},
 		{
 			"path" : "pages/my/my",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"我的"
 			}
 		},
 		{
 			"path" : "pages/packageA/find/ranklist/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"排行测试"
 			}		
 		}							
 		//#ifdef APP-PLUS 
@@ -142,6 +142,7 @@
 		//#endif	
 	],
 	// 分包加载
+	// #ifdef MP-WEIXIN
 	// "subPackages":[
 	// 	{
 	// 		"root": "pages/packageA",
@@ -167,6 +168,7 @@
 	// 		]	
 	// 	}
 	// ],
+	//#endif
 	// 条件编译（主要用于测试特定页面时使用）
     // "condition": { //模式配置，仅开发期间生效
     //     "current": 0, //当前激活的模式（list 的索引项）
@@ -179,7 +181,7 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "rgba(38,162,255,1)",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#0799b7"
 	},
 	"tabBar": {
 		"color": "#7A7E83",

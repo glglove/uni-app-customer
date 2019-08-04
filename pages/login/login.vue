@@ -1,17 +1,19 @@
 <template>
 	<view id="login">
-		<view class="loginBox">
-<!-- 			<mt-field label="用户名" placeholder="请输入用户名" v-model="username"></mt-field>
-			<mt-field label="密码" placeholder="请输入密码" type="password" v-model="password"></mt-field> -->
-			
+		<view class="loginBox">	
 			<view class="loginWrap">
-				用户名：<input type="text" value="" v-model="username"/>
-				密码：<input type="text" value="" v-model="password"/>
+				<view class="userNameBox">
+					<span class="nameTit">用户名：</span>
+					<input class="userNameInput" type="text" value="" v-model="username"/>
+				</view>
+				<view class="passWordBox">
+					<span class="pwdTit">密码：</span>
+					<input class="passWordInput" type="text" value="" v-model="password"/>
+				</view>
 			</view>
-			
 		</view>
-		<view class="loginBtnBox">
-			<mt-button type="primary" class="loginBtn" @click='login'>登陆</mt-button>
+		<view>
+			<button class="button click-able" plain="true" @tap="login">按钮</button>
 		</view>
 	</view>
 </template>
@@ -78,21 +80,55 @@
 <style lang="less" scoped>
 	#login {
 		width: 100%;
-		height: 400px;
+		height: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		margin: auto;
+		// background: url('https://www.kaoyandaka.com/img/find_bg_gaitubao_com_350x646.png') no-repeat 0 0;
+		background-color: rgba(205,205,202,0.5);
+		background-size: cover;
 		.loginBox{
 			width: 750upx;
-			background-color: red
+			margin: 300upx 0 30upx 0;
+			// background-color: red
+			.loginWrap{
+				// box-sizing: border-box;
+				.userNameBox{
+					display: flex;
+					justify-content: flex-start;
+					height: 90upx;
+					margin-bottom: 30upx;
+					padding: 10upx 20upx;
+					.nameTit {
+						width: 150upx;
+					}
+					.userNameInput{
+						flex-grow: 1;
+						border: 1upx solid #000000;
+					}
+				}
+				.passWordBox{
+					display:flex;
+					justify-content: flex-start;
+					height: 90upx;
+					padding: 10upx 20upx;
+					.pwdTit {
+						width: 150upx;
+					}
+					.passWordInput{
+						flex-grow: 1;
+						border: 1upx solid #000000;
+					}
+				}
+			}
 		}
 		.loginBtnBox {
 			width: 100%;
 			text-align: center;
-			margin-top: 20px;
+			margin-top: 20upx;
 			.loginBtn {
 				width: 90%;
 				height: 50px;

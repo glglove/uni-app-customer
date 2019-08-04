@@ -14,7 +14,7 @@
 	//  mobile: "https://www.kaoyandaka.com",
 	//  resource: "https://www.kaoyandaka.com",
 	//  activityRoot: "https://www.kaoyandaka.com", // /marketing/activity?parentShopId=288920&activityId=2990977b-e7b0-43b8-915d-7985b2c042bb"
-	// 	pic_bg_Url: "https://www.kaoyandaka.com",
+		pic_bg_Url: "https://www.kaoyandaka.com",
  }
 
  const urlConfigs = {
@@ -84,6 +84,7 @@
  export default {
   miniproConfings: miniproConfings,  // 小程序配置（appid、secret）
   baseUrl: urls.gateway,        // 小程序入口地址
+  baseImgsUrl: urls.pic_bg_Url, // 背景图片
   baseUrlConfigs: urlConfigs,   // 接口名称
   // loginUrl: urls.gateway + "/login" ,  // 登陆接口地址
   // filesUrl: urls.gateway + "/FilesMgr" // 文件地址

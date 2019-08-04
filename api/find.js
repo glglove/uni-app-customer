@@ -9,7 +9,7 @@ export default {
 	* @param {} loadingText  loading 的文字
 	*/
 	async getRankDayData (params, loading = false, loadingText = "加载中...") {
-		debugger
+		// debugger
 		// params 的格式如下:
 		// params = {
 		// 	params:{
@@ -38,7 +38,7 @@ export default {
 	* @param {} loadingText  loading 的文字
     */
 	async getContinuitySignUpData (params, loading = false, loadingText = "加载中...") {
-		debugger
+		// debugger
 	   const url = `/find/clockInApp/pageByDate`;
 	   var data = {}
 	   params = Object.assign(data, params)
