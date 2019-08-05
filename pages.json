@@ -180,8 +180,8 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "rgba(38,162,255,1)",
-		"backgroundColor": "#0799b7"
+		"navigationBarBackgroundColor": "rgba(253,133,9,1)",
+		"backgroundColor": "rgba(254,147,82,1)"
 	},
 	"tabBar": {
 		"color": "#7A7E83",

@@ -1,7 +1,7 @@
  const miniproConfings = {
     miniproAppid: 'wx224bd53fdc4dd933', // 小程序appid
     miniproSecret: 'e93ec56f5785d73760577dbf4b05ab7f', // 小程序secret
-    version: 'v20190419', // 小程序版本号
+    version: 'v20190805', // 小程序版本号
   }
 
  const urls = {

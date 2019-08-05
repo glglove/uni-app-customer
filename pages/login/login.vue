@@ -88,10 +88,10 @@
 		bottom: 0;
 		margin: auto;
 		// background: url('https://www.kaoyandaka.com/img/find_bg_gaitubao_com_350x646.png') no-repeat 0 0;
-		background-color: rgba(205,205,202,0.5);
+		// background-color: rgba(205,205,202,0.5);
 		background-size: cover;
 		.loginBox{
-			width: 750upx;
+			width: 100%;
 			margin: 300upx 0 30upx 0;
 			// background-color: red
 			.loginWrap{
@@ -103,7 +103,7 @@
 					margin-bottom: 30upx;
 					padding: 10upx 20upx;
 					.nameTit {
-						width: 150upx;
+						width: 130upx;
 					}
 					.userNameInput{
 						flex-grow: 1;
@@ -116,7 +116,7 @@
 					height: 90upx;
 					padding: 10upx 20upx;
 					.pwdTit {
-						width: 150upx;
+						width: 130upx;
 					}
 					.passWordInput{
 						flex-grow: 1;

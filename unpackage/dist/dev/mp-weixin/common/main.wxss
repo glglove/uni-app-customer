@@ -1,7 +1,7 @@
 @charset "UTF-8";
 .button {
-  background: #FA9960;
-  border: 1rpx solid #DDDDDD;
+  background: #FA9960 !important;
+  border: 1rpx solid #DDDDDD !important;
   color: #FFFFFF;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -27,8 +27,7 @@
   background: #EB637A;
 }
 .button.highlight {
-  -webkit-border-radius: 4rpx;
-          border-radius: 4rpx;
+  border-radius: 4rpx;
   background: #FA9960;
   display: inline-block;
   color: #594A23;
@@ -44,8 +43,7 @@
 .input {
   display: inline-block;
   background: #FFFFFF;
-  -webkit-border-radius: 4rpx;
-          border-radius: 4rpx;
+  border-radius: 4rpx;
   height: 88rpx;
   line-height: 88rpx;
   padding-left: 30rpx;

@@ -1,0 +1,1 @@
+<view id="footerExplain" class="data-v-dc5a81b0"><view class="footer data-v-dc5a81b0"><text class="footText data-v-dc5a81b0">{{text}}</text><view class="version data-v-dc5a81b0">{{version}}</view></view></view>
