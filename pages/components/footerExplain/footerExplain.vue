@@ -12,7 +12,7 @@
 			text-align: center;
 			.footText {
 				font-size: 24upx;
-				background: #ffffff;
+				// background: #ffffff;
 				padding: 0 20upx;
 			}
 			.version {
@@ -28,7 +28,7 @@
 <template>
 	<view id="footerExplain">
 		<view class="footer">
-			<text class="footText">{{text}}</text>
+			<text class="footText" :style="background:bgcolor">{{text}}</text>
 			<!--版本version-->
 			<view class="version">{{version}}</view>
 		</view>	
@@ -42,6 +42,10 @@
 			
 		},
 		props: {
+			bgcolor: {
+				type: String,
+				default: "rgba(255,255,255,1)"
+			},
 			text:{
 				type: String,
 				default: '设计考研打卡助手'
@@ -52,7 +56,9 @@
 			}
 		},
 		data(){
-			
+			// footerTextBgc: {
+			// 	'background-color': this.bgcolor
+			// }
 		},
 		onLoad(){
 			
