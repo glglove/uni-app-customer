@@ -24,25 +24,25 @@
 			z-index: 1;
 			.top {
 				width: 650upx;
-				height: 470rpx;
+				height: 470upx;
+				margin: 0 auto;
 				.design {
-					width: 210upx;
 					height: 70upx;
-					font-size: 50upx;
+					font-size: 40upx;
 					color: #ffffff;
 					line-height: 70upx;					
 				}
 				.study {
 					width: 400upx;
 					height: 70upx;
-					font-size: 50upx;
+					font-size: 40upx;
 					color: #ffffff;
 					line-height: 70upx;
 				}
 			}
 			.container{
-				width: 650rpx;
-				height: 675rpx;
+				width: 650upx;
+				height: 675upx;
 				padding-top: 400upx;
 				margin: 0 auto;
 				border-radius: 20upx;
@@ -50,7 +50,152 @@
 				box-sizing: border-box;
 				border-radius: 10upx;
 				border: 2upx solid rgba(250, 235, 228, 0.2);
-				box-shadow: 0 12px 20upx rgba(252,195,165,0.2);		
+				box-shadow: 0 12px 20upx rgba(252,195,165,0.2);	
+				.contentTop {
+					width: 462upx;
+					height: 280upx;
+					.contentTopLeft{
+						width: 50%;
+						height: 255upx;
+						.signUpPicBox {
+							width: 128upx;
+							height: 128upx;
+							border-radius: 50%;
+							margin: 0 auto;
+							padding: 0;
+							.signUpPic{
+								width: 100%;
+							}
+						}
+						.signUpNum {
+							width: 85upx;
+							height: 67upx;
+							margin: 0 auto;   
+							text-align: center;                 
+							.signDay {
+								width: 50upx;
+								height: 100%;
+								color: #FA9960;
+								line-height: 67upx;
+								font-weight: 500;
+								font-size: 48upx;
+								text-align: center;
+							}
+							.signTotalDay {
+								width: 36upx;
+								height: 100%;
+								color: #FA9B64;
+								line-height: 67upx;
+								text-align: center;
+								font-size: 24upx;
+							}
+						}
+						.signUpTit {
+							width: 120upx;
+							height: 42upx;
+							text-align: center;
+							line-height: 42upx;
+							color: #000000;
+							font-size: 30upx;
+							margin: 0 auto;
+						}
+					}
+					.contentTopRight{
+						width: 50%;
+						height: 255upx;
+						.rankPicBox {
+							width: 128upx;
+							height: 128upx;
+							border-radius: 50%;
+							margin: 0 auto;
+							padding: 0;
+							.signUpPic{
+								width: 100%;
+							}
+						}
+						.rankNum {
+							width: 85upx;
+							height: 67upx;
+							margin: 0 auto;     
+							text-align: center;               
+							.rankNo {
+								width: 50upx;
+								height: 100%;
+								color: #FA9960;
+								line-height: 67upx;
+								font-weight: 500;
+								font-size: 48upx;
+								text-align: center;
+							}
+						}
+						.rankTit {
+							width: 120upx;
+							height: 42upx;
+							text-align: center;
+							line-height: 42upx;
+							color: #000000;
+							font-size: 30upx;
+							margin: 0 auto;
+						}                
+					}
+				}					
+				.signUpBtn {
+					width: 462upx;
+					height: 99upx;
+					line-height: 99upx;
+					background-color: #FA9960;
+					border-radius: 49.5upx;
+					text-align: center;
+					box-shadow: 2upx 2upx 5upx rgba(0,0,0,0.1);
+					.signUpPic {
+						width: 48upx;
+						height: 48upx;
+						vertical-align: middle;
+						position: absolute;
+						top: 50%;
+						left: 30%;
+						transform: translate(-50%,-50% );
+					}
+					.signUpTit {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%,-50%);
+						width: 141upx;
+						color: #FFFFFF;
+						font-size: 34upx;
+						margin-left: 25upx;
+					}
+				}
+				.invitationBtn {
+					width: 462upx;
+					height: 99upx;
+					background-color: #FFFFFF;
+					border-radius: 49.5upx;
+					border: 2px dashed #FA9960;
+					text-align: center;      
+					color: #FA9960; 
+					box-shadow: 2upx 2upx 5upx rgba(0,0,0,0.1);                 
+					.invitationPic {
+						width: 48upx;
+						height: 48upx;
+						vertical-align: middle;
+						position: absolute;
+						top: 50%;
+						left: 30%;                
+						transform: translate(-50%,-50% );                
+					}
+					.invitationTit {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%,-50%);
+						width: 141upx;
+						height: 100%;
+						font-size: 34upx;
+						margin-left: 25upx;
+					}
+				}				
 			}
 		}
 	}
@@ -160,7 +305,7 @@
 
 <script>
 	import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
-	import FooterExplain from '@/pages/components/footerExplain'
+	import FooterExplain from '@/pages/components/footerExplain/footerExplain'
 	import findApi from '@/api/find.js'
 	export default {
         components: {

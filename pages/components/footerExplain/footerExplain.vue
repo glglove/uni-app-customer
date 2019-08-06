@@ -11,6 +11,7 @@
 			margin: 20upx auto 40upx auto;
 			text-align: center;
 			.footText {
+				font-size: 24upx;
 				background: #ffffff;
 				padding: 0 20upx;
 			}
