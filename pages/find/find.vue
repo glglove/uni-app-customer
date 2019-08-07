@@ -207,54 +207,57 @@
 		<!-- bg.find_bg:{{bg.find_bg}} -->
 		<!-- {{$configs.baseImgsUrl + $configs.baseUrlConfigs.imgs_bg.find_bg}} -->
         <!--loading-->
-        <view class="bgBox">
-            <image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
-        </view>
-		
-		<view class="contentBox">
-			<view class="top"> 
-				<view class="design marginT30">21天设计</view>
-				<view class="study marginT10">理论手绘学习计划</view>
+		<!-- <container> -->
+			<view class="bgBox">
+			    <image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
 			</view>
+			<view class="contentBox">
+				<view class="top"> 
+					<view class="design marginT30">21天设计</view>
+					<view class="study marginT10">理论手绘学习计划</view>
+				</view>
 
-			<view class="container">
-				<view class="contentTop">
-					<view class="contentTopLeft lt">
-						<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
-							<image class="signUpPic click-able" src="../../static/imgs/icon/signUp.png" layz-load="true" @tap.stop = ""></image>
-						</button>
-						<view class="signUpNum marginT10">
-							<text class="signDay">{{signData.signDay}}</text>
-							<text class="signTotalDay">/21</text>
+				<view class="container">
+					<view class="contentTop">
+						<view class="contentTopLeft lt">
+							<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
+								<image class="signUpPic click-able" src="../../static/imgs/icon/signUp.png" layz-load="true" @tap.stop = ""></image>
+							</button>
+							<view class="signUpNum marginT10">
+								<text class="signDay">{{signData.signDay}}</text>
+								<text class="signTotalDay">/21</text>
+							</view>
+							<view class="signUpTit marginT10"><text>连续打卡</text></view>
 						</view>
-						<view class="signUpTit marginT10"><text>连续打卡</text></view>
-					</view>
 
-					<view class="contentTopRight rt">
-						<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
-							<image class="rankPic click-able" src="../../static/imgs/icon/rank.png" layz-load="true" @tap.stop = ""></image>
+						<view class="contentTopRight rt">
+							<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
+								<image class="rankPic click-able" src="../../static/imgs/icon/rank.png" layz-load="true" @tap.stop = ""></image>
+							</button>
+							<view class="rankNum marginT10">
+								<text class="rankNo">{{signData.rankNo}}</text>
+							</view>
+							<view class="rankTit marginT10"><text>排行榜</text></view>                    
+						</view>  
+									  
+						<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
+							<image class="signUpPic" src="../../static/imgs/icon/signUpPic.png"></image>
+							<text class="signUpTit click-able">立即报名</text>
 						</button>
-						<view class="rankNum marginT10">
-							<text class="rankNo">{{signData.rankNo}}</text>
-						</view>
-						<view class="rankTit marginT10"><text>排行榜</text></view>                    
-					</view>  
-								  
-					<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
-						<image class="signUpPic" src="../../static/imgs/icon/signUpPic.png"></image>
-						<text class="signUpTit click-able">立即报名</text>
-					</button>
 
-					<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
-						<image class="invitationPic" src="../../static/imgs/icon/invitationPic.png" layz-load="true"></image>
-						<text class="invitationTit click-able">邀请好友</text>               
-					</button>							  
-				</view>			
-			</view>		
-			
-			<!--引用footerCmp-->
-			<footer-explain versition="20150205"></footer-explain>
-		</view>
+						<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
+							<image class="invitationPic" src="../../static/imgs/icon/invitationPic.png" layz-load="true"></image>
+							<text class="invitationTit click-able">邀请好友</text>               
+						</button>							  
+					</view>			
+				</view>		
+				
+				<!--引用footerCmp-->
+				<footer-explain versition="20150205"></footer-explain>
+			</view>
+						
+		<!-- </container> -->
+		
 		
         <!--用于收集定时提醒的推送码-->
         <!-- <form report-submit="true" bindsubmit="formSubmit">

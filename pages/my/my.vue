@@ -177,11 +177,9 @@
 					</view>
 				</view>                                       
 			</view>	
-											
+			<!--引用footerCmp-->
+			<footer-explain versition="20150205" :bgcolor="'rgba(246,246,247,1)'"></footer-explain>								
 		</view>
-
-		<!--引用footerCmp-->
-		<footer-explain versition="20150205" :bgcolor="rgba(246,246,247,1)"></footer-explain>	
 		
 		<!--授权区-->
 		<!--<twAuthorze>

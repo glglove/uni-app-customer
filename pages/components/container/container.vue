@@ -333,70 +333,29 @@
         <image src="/assets/imgs/icons/loading.svg" />
         <text>下拉刷新</text>
     </view> -->
-	<view class="top-loadding {{topClass}}" style="{{topViewStyle}}" hidden="{{refreshTop==0&&!refreshFlag}}">
-		<text class="iconfont mykicon-d_loading_icon"></text>
-	</view>
-	<view class="container" style="{{positionStyle}}" @touchstart="ctstart"  @touchmove="ctmove" @touchend="ctend">
-		<slot></slot>
-	</view>
-	
-    <view class="bottom-loadding"  wx:if="{{more!='false'&&!showLoadingFlag}}" style="opacity:{{more!='false'&&!showLoadingFlag?'1':'0'}}">
-        <image src="../../assets/imgs/loading2.svg" wx:if="{{nomore=='false'}}" />
-        <text wx:if="{{nomore=='false'}}">{{moretext}}</text>
-        <text wx:else>沒有更多啦~</text>
-    </view>
-    <view class="ad_box"></view>
-    <!-- common mask -->
-    <view class="container_mask {{aniClass1}}" @tap="handleMaskTap" hidden="{{!maskFlag}}"></view>
-    <!-- loading -->
-    <view class="container_loading {{aniClass}}" hidden="{{!loadingFlag}}">
-        <image src="../../assets/imgs/loading.gif" />
-    </view>
-    <!-- wechat oauth with login navigation -->
-    <view class="container-oauth {{ani2Class}}" hidden="{{!oauthFlag}}">
-        <view class="container-oauth_icon">
-            <text class="iconfont mykicon-default_avatar"></text>
-        </view>
-        <text class="container-oauth_title">欢迎使用</text>
-        <text class="container-oauth_desc">为了您良好的体验小程序我们需要您</text>
-        <button class="container-oauth_btn button primary" open-type="getPhoneNumber" @getphonenumber="getPhoneNumber" @tap="tapLoading">微信用户一键登录</button>
-        <view class="container-oauth_bind" @tap="handleNavi2Login">绑定会员手机号
-            <text class="iconfont mykicon-mykindex_nav_btn"></text>
-        </view>
-    </view>
-    <!-- error content -->
-    <view class="container-error animated fast fadeIn" hidden="{{!globalErrorFlag}}">
-        <image class="container-error_icon" src="{{_imgUrl}}error_icon_bg.png" />
-        <text class="container-error_title">非常抱歉</text>
-        <text class="container-error_desc">数据请求失败，请重试</text>
-        <button class="container-error_btn button primary" @tap="handleErrorRetry">重试</button>
-    </view>
+	<view>
+		<view class="top-loadding {{topClass}}" style="{{topViewStyle}}" hidden="{{refreshTop==0&&!refreshFlag}}">
+			<text class="iconfont mykicon-d_loading_icon"></text>
+		</view>
+		
+		<view class="container" style="{{positionStyle}}" @touchstart="ctstart"  @touchmove="ctmove" @touchend="ctend">
+			<slot></slot>
+		</view>
+		
+<!-- 		<view class="bottom-loadding"  wx:if="{{more!='false'&&!showLoadingFlag}}" style="opacity:{{more!='false'&&!showLoadingFlag?'1':'0'}}">
+			<image src="../../assets/imgs/loading2.svg" wx:if="{{nomore=='false'}}" />
+			<text wx:if="{{nomore=='false'}}">{{moretext}}</text>
+			<text wx:else>沒有更多啦~</text>
+		</view> -->
+		<view class="ad_box"></view>
+		<!-- common mask -->
+		<view class="container_mask {{aniClass1}}" @tap="handleMaskTap" hidden="{{!maskFlag}}"></view>
+		<!-- loading -->
+		<view class="container_loading {{aniClass}}" hidden="{{!loadingFlag}}">
+			<image src="../../assets/imgs/loading.gif" />
+		</view>
 
-    <!-- customize picker -->
-    <view class="container-picker {{ani1Class}}" hidden="{{!pickerFlag}}">
-        <text class="container-picker_btn left" @tap.stop="handlePickerCancel">取消</text>
-        <view class="container-picker_title">{{pickerTitle}}</view>
-        <text class="container-picker_btn right" @tap.stop="handlePickerComplete">完成</text>
-        <picker-view class="container-picker_content" indicator-style="height: 40px;" value="{{pickerValue}}" @change.stop="handlePickerChange">
-            <picker-view-column>
-                <view class="container-picker_item" style="line-height: 40px" wx:for="{{pickerArr}}" wx:key="{{index}}">{{item}}</view>
-            </picker-view-column>
-        </picker-view>
-    </view>
-
-    <!-- not_found content -->
-    <view class="container-notfound animated fast fadeIn" hidden="{{!globalNotFoundFlag}}">
-        <image class="container-error_icon" src="{{_imgUrl}}not_found.png" />
-        <text class="container-error_title">非常抱歉</text>
-        <text class="container-error_desc">数据请求失败</text>
-        <button class="container-error_btn button primary" @tap="hiddenNotFound">返回</button>
-    </view>
-    <!-- not_found content -->
-    <view class="container-loading"  hidden="{{!showLoadingFlag}}">
-        <image src="../../assets/imgs/allLoading.gif" />
-        <text>正在努力加载……</text>
-        <!-- <loader width="50" bottom>正在努力加载……</loader> -->
-    </view>
+	</view>
 </template>
 <script>
 	import wepy from '@/core/MWepy.js';

@@ -1,5 +1,7 @@
 <style lang="less" scoped>
 	#footerExplain {
+		position: absolute;
+		bottom: 10upx;
 		width: 100%;
 		.footer {
 			height: 20upx;
@@ -28,7 +30,7 @@
 <template>
 	<view id="footerExplain">
 		<view class="footer">
-			<text class="footText" :style="background:bgcolor">{{text}}</text>
+			<text class="footText" :style="footerTextBgc">{{text}}</text>
 			<!--版本version-->
 			<view class="version">{{version}}</view>
 		</view>	
@@ -44,7 +46,7 @@
 		props: {
 			bgcolor: {
 				type: String,
-				default: "rgba(255,255,255,1)"
+				default: "#000000"
 			},
 			text:{
 				type: String,
@@ -52,13 +54,13 @@
 			},
 			version: {
 				type: String,
-				default: '000000'
+				default: '#000000'
 			}
 		},
 		data(){
-			// footerTextBgc: {
-			// 	'background-color': this.bgcolor
-			// }
+			footerTextBgc: {
+				background: "`${this.bgcolor}`"
+			}
 		},
 		onLoad(){
 			

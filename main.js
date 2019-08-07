@@ -3,6 +3,11 @@ import App from './App'
 import store from './store' // vuex状态管理
 import configs from './api/config.js'
 
+// 将container 组件注册为全局组件
+// import container from '@/pages/components/container/container'
+
+// Vue.component('container', container)
+
 // #ifdef APP-PLUS || H5
 // import MintUI from 'mint-ui'
 // import 'mint-ui/lib/style.css'
