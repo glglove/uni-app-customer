@@ -1,5 +1,5 @@
 <style lang="less" scoped>
-	#footerExplain {
+	.footerExplain {
 		position: absolute;
 		bottom: 10upx;
 		width: 100%;
@@ -28,9 +28,9 @@
 </style>
 
 <template>
-	<view id="footerExplain">
+	<view class="footerExplain">
 		<view class="footer">
-			<text class="footText" :style="footerTextBgc">{{text}}</text>
+			<text class="footText" :style="bgcolor">{{text}}</text>
 			<!--版本version-->
 			<view class="version">{{version}}</view>
 		</view>	
@@ -58,9 +58,7 @@
 			}
 		},
 		data(){
-			footerTextBgc: {
-				background: "`${this.bgcolor}`"
-			}
+			footerTextBgc: "background:`${this.bgcolor}`"
 		},
 		onLoad(){
 			

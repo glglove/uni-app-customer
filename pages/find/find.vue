@@ -40,7 +40,7 @@
 					line-height: 70upx;
 				}
 			}
-			.container{
+			.findContainer{
 				width: 650upx;
 				height: 675upx;
 				padding-top: 400upx;
@@ -207,7 +207,7 @@
 		<!-- bg.find_bg:{{bg.find_bg}} -->
 		<!-- {{$configs.baseImgsUrl + $configs.baseUrlConfigs.imgs_bg.find_bg}} -->
         <!--loading-->
-		<!-- <container> -->
+		<container>
 			<view class="bgBox">
 			    <image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
 			</view>
@@ -217,7 +217,7 @@
 					<view class="study marginT10">理论手绘学习计划</view>
 				</view>
 
-				<view class="container">
+				<view class="findContainer">
 					<view class="contentTop">
 						<view class="contentTopLeft lt">
 							<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
@@ -256,7 +256,7 @@
 				<footer-explain versition="20150205"></footer-explain>
 			</view>
 						
-		<!-- </container> -->
+		</container>
 		
 		
         <!--用于收集定时提醒的推送码-->
@@ -310,7 +310,10 @@
 	import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
 	import FooterExplain from '@/pages/components/footerExplain/footerExplain'
 	import findApi from '@/api/find.js'
+	import { miniProApi } from '@/utils/mixins.js'
+
 	export default {
+		mixins: [ miniProApi ],
         components: {
             uniCard,
             uniPagination,

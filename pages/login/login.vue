@@ -19,9 +19,10 @@
 </template>
 
 <script>
-	import { Indicator } from 'mint-ui';
 	import loginApi from '@/api/login.js'
+	import { miniProApi } from '@/utils/mixins.js'
 	export default {
+		mixins:[ miniProApi ],
 		data() {
 			return {
 				username: '',
@@ -30,47 +31,32 @@
 		},
 		methods:{
 			login(){
-				Indicator.open('Loading...');
+				// debugger
+				this.showLoading();
 				if(this.username && this.password){
 					// 调取注册/登录接口
 					let params = {
 						name: this.username,
 						pwd: this.password
 					}
-				
+					this.hideLoading();
 					loginApi.register(params).then((res)=>{
 						console.log("调取注册/登录接口后返回到数据-----》",res)
 						if(res && res.data.code === 1) {
 							// 成功后 
-							debugger
-							Indicator.close();
-							uni.switchTab({
-								url:'../find/find',
-								success: () => {
-									uni.showToast({
-										title:"登陆成功"
-									})
-								},
-								fail: () =>{
-									
-								}
-							}) 
+							// debugger
+							this.switchPage('../find/find').then((res) =>{
+								this.success('登录成功')
+							}).catch(()=>{
+								
+							})
 						}else {
-							Indicator.close();
+							this.hideLoading();
 						}
 					})	
 				}else {
-					Indicator.close();
-					uni.showModal({
-						title: '提示',
-						content: '用户名密码为空',
-						showCancel: true,
-						cancelText: '取消',
-						confirmText: '确定',
-						success: res => {},
-						fail: () => {},
-						complete: () => {}
-					});
+					this.hideLoading();
+					this.alert('用户名或密码不能为空')
 				}
 			}
 		}
@@ -87,6 +73,7 @@
 		right: 0;
 		bottom: 0;
 		margin: auto;
+		opacity: 1;
 		// background: url('https://www.kaoyandaka.com/img/find_bg_gaitubao_com_350x646.png') no-repeat 0 0;
 		// background-color: rgba(205,205,202,0.5);
 		background-size: cover;

@@ -200,9 +200,11 @@
 	
 	import FooterExplain from '@/pages/components/footerExplain/footerExplain'
 
+	import { miniProApi } from '@/utils/mixins.js'
 	
 	import myApi from '@/api/my.js'
 	export default {
+		mixins: [ miniProApi ],
         components: {
 			FooterExplain
         },	

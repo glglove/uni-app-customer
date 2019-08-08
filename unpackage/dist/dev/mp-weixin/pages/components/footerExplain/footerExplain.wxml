@@ -1,0 +1,1 @@
+<view class="footerExplain data-v-b6512896"><view class="footer data-v-b6512896"><text class="footText data-v-b6512896" style="{{(bgcolor)}}">{{text}}</text><view class="version data-v-b6512896">{{version}}</view></view></view>

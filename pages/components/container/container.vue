@@ -342,7 +342,7 @@
 			<slot></slot>
 		</view>
 		
-<!-- 		<view class="bottom-loadding"  wx:if="{{more!='false'&&!showLoadingFlag}}" style="opacity:{{more!='false'&&!showLoadingFlag?'1':'0'}}">
+		<!--<view class="bottom-loadding"  wx:if="{{more!='false'&&!showLoadingFlag}}" style="opacity:{{more!='false'&&!showLoadingFlag?'1':'0'}}">
 			<image src="../../assets/imgs/loading2.svg" wx:if="{{nomore=='false'}}" />
 			<text wx:if="{{nomore=='false'}}">{{moretext}}</text>
 			<text wx:else>沒有更多啦~</text>

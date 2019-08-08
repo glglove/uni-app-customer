@@ -7,7 +7,6 @@
 </template>
 
 <script>
-	import { Indicator } from 'mint-ui';
 	import loginApi from '@/api/login.js'
 	export default {
 		data() {

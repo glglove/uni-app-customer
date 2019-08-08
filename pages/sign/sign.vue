@@ -9,7 +9,9 @@
 </template>
 
 <script>
+	import { miniProApi } from '@/utils/mixins.js'
 	export default {
+		mixins: [ miniProApi ],
 		data() {
 			return {
 				title: 'Hello'

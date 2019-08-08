@@ -2,7 +2,7 @@
 import base from '@/api/base.js'
 import commApi from '@/api/comm.js'
 // import { debug } from 'utils';
-import getEnterType from '@/utils/miniProSceneType'
+import { getEnterType } from '@/utils/miniProSceneType'
 
 // 小程序页面跳转
 export const miniProApi = {
@@ -55,8 +55,7 @@ export const miniProApi = {
 
 	},
 	methods: {
-		
-// 检查是否登录
+		// 检查是否登录
 		getLoginStatus () {
 			return new Promise((resolve, reject) => {
 				// 从store 中获取 用户
@@ -72,24 +71,56 @@ export const miniProApi = {
 		},		
 		// 页面跳转
 		navigatePage ( url ) {
-			uni.navigateTo({
-			  url: url
+			return new Promise((resolve , reject) => {
+				uni.navigateTo({
+				  url:url,
+				  success: res => {
+					resolve(res)
+				  },
+				  fail: res => {
+					reject(res)
+				  }
+				})
 			})
 		},
-		swichPage ( url ) {
-			uni.switchTab({
-			  url:url
+		switchPage ( url ) {
+			return new Promise((resolve , reject) => {
+				uni.switchTab({
+				  url:url,
+				  success: res => {
+					resolve(res)
+				  },
+				  fail: res => {
+					reject(res)
+				  }
+				})
 			})
 		},
 		redirectPage ( url ) {
-			uni.redirectTo({
-			  url:url
+			return new Promise((resolve , reject) => {
+				uni.redirectTo({
+				  url:url,
+				  success: res => {
+					resolve(res)
+				  },
+				  fail: res => {
+					reject(res)
+				  }
+				})
 			})
 		},
 		reLaunchPage ( url ) {
-			uni.reLaunch({
-			  url:url
-			})
+			return new Promise((resolve , reject) => {
+				uni.reLaunch({
+				  url:url,
+				  success: res => {
+					resolve(res)
+				  },
+				  fail: res => {
+					reject(res)
+				  }
+				})
+			})			
 		},
 		// 获取登录场景值（小程序）
 		getEnterType: getEnterType, 
@@ -110,13 +141,15 @@ export const miniProApi = {
 				switchTab: uni.switchTab,
 				reLaunch: uni.reLaunch,
 				navigateBack: uni.navigateBack,
+				showLoading: uni.showLoading,
+				hideLoading: uni.hideLoading,
 				showToast: uni.showToast,
 				showModal: uni.showModal,
 				showActionSheet: uni.showActionSheet,
 				getSetting: uni.getSetting,
 				authorize: uni.authorize,
 				openSetting: uni.openSetting,
-				getSystemInfo: wepy.getSystemInfo,
+				getSystemInfo: uni.getSystemInfo,
 				getLocation: uni.getLocation,
 				openLocation: uni.openLocation,
 				redirectTo: uni.redirectTo,
@@ -132,6 +165,31 @@ export const miniProApi = {
 				getShareInfo: uni.getShareInfo
 			}
 		},	
+		
+		// 开启loading
+		showLoading(title, duration = 2000) {
+			this.getDeviceApi().showLoading({
+				title: title || '加载中',
+			})
+			if (duration > 0) {
+				return new Promise((resolve, reject) => {
+					setTimeout(() => {
+						resolve();
+					}, duration);
+				});
+			}
+		},
+		// 关闭 loading
+		hideLoading(duration = 2000 ){
+			this.getDeviceApi().hideLoading()
+			if (duration > 0) {
+				return new Promise((resolve, reject) => {
+					setTimeout(() => {
+						resolve();
+					}, duration);
+				});
+			}			
+		},
 		// 成功的 showToast
 		success(title, duration = 2000, mask) {
 			this.getDeviceApi().showToast({
