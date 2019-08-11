@@ -98,8 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
-
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js"));
 
 
 
@@ -414,7 +413,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _find = _interopRequireDefault(__webpack_require__(/*! @/api/find.js */ "../../../../../git-nodeProgram/uni-app-customer/api/find.js"));
-var _mixins = __webpack_require__(/*! @/utils/mixins.js */ "../../../../../git-nodeProgram/uni-app-customer/utils/mixins.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _uniPagination = function _uniPagination() {return __webpack_require__.e(/*! import() | node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ "node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-pagination/uni-pagination").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-pagination/uni-pagination.vue"));};var _uniCard = function _uniCard() {return __webpack_require__.e(/*! import() | node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-card/uni-card */ "node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-card/uni-card */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-card/uni-card.vue"));};var FooterExplain = function FooterExplain() {return __webpack_require__.e(/*! import() | pages/components/footerExplain/footerExplain */ "pages/components/footerExplain/footerExplain").then(__webpack_require__.bind(null, /*! @/pages/components/footerExplain/footerExplain */ "../../../../../git-nodeProgram/uni-app-customer/pages/components/footerExplain/footerExplain.vue"));};
+var _mixins = __webpack_require__(/*! @/utils/mixins.js */ "../../../../../git-nodeProgram/uni-app-customer/utils/mixins.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _uniPagination = function _uniPagination() {return __webpack_require__.e(/*! import() | node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ "node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-pagination/uni-pagination").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-pagination/uni-pagination.vue"));};var _uniCard = function _uniCard() {return __webpack_require__.e(/*! import() | node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-card/uni-card */ "node-modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-card/uni-card */ "../../../../../git-nodeProgram/uni-app-customer/node_modules/_@dcloudio_uni-ui@0.0.8@@dcloudio/uni-ui/lib/uni-card/uni-card.vue"));};var FooterExplain = function FooterExplain() {return __webpack_require__.e(/*! import() | pages/components/footerExplain/footerExplain */ "pages/components/footerExplain/footerExplain").then(__webpack_require__.bind(null, /*! @/pages/components/footerExplain/footerExplain */ "../../../../../git-nodeProgram/uni-app-customer/pages/components/footerExplain/footerExplain.vue"));};
 // import container from '@/pages/components/container1/container'
 var _default =
 {
@@ -444,10 +443,17 @@ var _default =
       loadingMore: {} };
 
   },
-  onLoad: function onLoad() {
-    console.log("find-----onload");
-    this._getRankDayData();
-  },
+  onLoad: function () {var _onLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+              debugger;
+              console.log("find-----onload");_context.t0 =
+              console;_context.next = 5;return this.getLoginStatus();case 5:_context.t1 = _context.sent;_context.t0.log.call(_context.t0, "-------find首页检查是否登陆成功----", _context.t1);_context.t2 =
+
+
+              console;_context.next = 10;return this.getAuthorizeStatus('scope.userInfo');case 10:_context.t3 = _context.sent;_context.t2.log.call(_context.t2, "----------------find首页检查是否用户授权了userInfo--------", _context.t3);_context.t4 =
+              console;_context.next = 15;return this.getAuthorizeStatus('scope.userLocation');case 15:_context.t5 = _context.sent;_context.t4.log.call(_context.t4, "----------------find首页检查是否用户授权了userLocation--------", _context.t5);
+
+              this._getRankDayData();case 18:case "end":return _context.stop();}}}, _callee, this);}));function onLoad() {return _onLoad.apply(this, arguments);}return onLoad;}(),
+
   methods: {
     onComLoad: function onComLoad() {
       debugger;

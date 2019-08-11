@@ -29,7 +29,7 @@ uni-page-wrapper.data-v-553b111c {
 }
 #findBox .contentBox .top.data-v-553b111c {
   width: 650rpx;
-  height: 470rpx;
+  height: 400rpx;
   margin: 0 auto;
 }
 #findBox .contentBox .top .design.data-v-553b111c {
@@ -47,12 +47,11 @@ uni-page-wrapper.data-v-553b111c {
 }
 #findBox .contentBox .findContainer.data-v-553b111c {
   width: 650rpx;
-  height: 675rpx;
-  padding-top: 400rpx;
+  height: 600rpx;
   margin: 0 auto;
   -webkit-border-radius: 20rpx;
           border-radius: 20rpx;
-  padding: 50rpx 95rpx 0 95rpx;
+  padding: 30rpx 95rpx 0 95rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-border-radius: 10rpx;

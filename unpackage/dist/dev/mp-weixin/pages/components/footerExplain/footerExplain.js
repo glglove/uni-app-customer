@@ -158,7 +158,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 
 
   data: function data() {
-    footerTextBgc: "background:`${this.bgcolor}`";
+    // footerTextBgc: "background-color:`${this.bgcolor}`"
   },
   onLoad: function onLoad() {
 
@@ -197,8 +197,11 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
 }), _defineProperty(_components$props$dat, "computed", _objectSpread({},
 
 (0, _vuex.mapGetters)([
-'userToken']))), _defineProperty(_components$props$dat, "watch",
+'userToken']), {
 
+  footerTextBgc: function footerTextBgc() {
+    return "background-color:".concat(this.bgcolor);
+  } })), _defineProperty(_components$props$dat, "watch",
 
 {
   //  a :{

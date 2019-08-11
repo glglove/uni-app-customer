@@ -1,7 +1,7 @@
 <style lang="less" scoped>
 	.footerExplain {
 		position: absolute;
-		bottom: 10upx;
+		bottom: 0upx;
 		width: 100%;
 		.footer {
 			height: 20upx;
@@ -30,7 +30,7 @@
 <template>
 	<view class="footerExplain">
 		<view class="footer">
-			<text class="footText" :style="bgcolor">{{text}}</text>
+			<text class="footText" :style="footerTextBgc">{{text}}</text>
 			<!--版本version-->
 			<view class="version">{{version}}</view>
 		</view>	
@@ -58,7 +58,7 @@
 			}
 		},
 		data(){
-			footerTextBgc: "background:`${this.bgcolor}`"
+			// footerTextBgc: "background-color:`${this.bgcolor}`"
 		},
 		onLoad(){
 			
@@ -96,9 +96,12 @@
 			}
 		},
 		computed:{
-		  ...mapGetters([
-			'userToken'
-		  ])			
+		  	...mapGetters([
+				'userToken'
+		 	]),
+			footerTextBgc(){
+				return `background-color:${this.bgcolor}`
+			}	
 		},
 		watch:{
 		 //  a :{

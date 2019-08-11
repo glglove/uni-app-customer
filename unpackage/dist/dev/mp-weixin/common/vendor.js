@@ -3939,7 +3939,8 @@ var getEnterType = function getEnterType(typeNum) {
 var _base = _interopRequireDefault(__webpack_require__(/*! @/api/base.js */ "../../../../../git-nodeProgram/uni-app-customer/api/base.js"));
 var _comm = _interopRequireDefault(__webpack_require__(/*! @/api/comm.js */ "../../../../../git-nodeProgram/uni-app-customer/api/comm.js"));
 
-var _miniProSceneType = __webpack_require__(/*! @/utils/miniProSceneType.js */ "../../../../../git-nodeProgram/uni-app-customer/utils/miniProSceneType.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+var _miniProSceneType = __webpack_require__(/*! @/utils/miniProSceneType.js */ "../../../../../git-nodeProgram/uni-app-customer/utils/miniProSceneType.js");
+var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 // 小程序页面跳转
 var miniProApi = {
@@ -3951,8 +3952,8 @@ var miniProApi = {
       pHeight: 0 // container 组件的 高，从系统中获取
     };
   },
-  computed: {},
-
+  computed: _objectSpread({},
+  (0, _vuex.mapGetters)(['userToken'])),
 
   watch: {},
 
@@ -4026,7 +4027,7 @@ var miniProApi = {
     getLoginStatus: function getLoginStatus() {var _this2 = this;
       return new Promise(function (resolve, reject) {
         // 从store 中获取 用户
-        var loginStatus = _this2.getStorage("token");
+        var loginStatus = _this2.userToken;
         if (loginStatus) {
           // 登陆成功
           resolve(true);
@@ -4116,6 +4117,7 @@ var miniProApi = {
         showActionSheet: uni.showActionSheet,
         getSetting: uni.getSetting,
         authorize: uni.authorize,
+        getNetworkType: uni.getNetworkType,
         openSetting: uni.openSetting,
         getSystemInfo: uni.getSystemInfo,
         getLocation: uni.getLocation,
@@ -4451,57 +4453,67 @@ var miniProApi = {
 
 
 
-    // 判断是否登录授权（主要是微信小程序）
-    getAuthorizeStatus: function () {var _getAuthorizeStatus = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:return _context6.abrupt("return",
+    // 判断是否授权（主要是微信小程序）
+    getAuthorizeStatus: function () {var _getAuthorizeStatus = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6(type) {var _this, scopeText;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+                _this = this;if (
+                type) {_context6.next = 4;break;}
+                _this.toast("请传入scope.type!");return _context6.abrupt("return");case 4:
+
+
+                scopeText = {
+                  "scope.userInfo": "用户信息",
+                  "scope.userLocation": "地理位置",
+                  "scope.address": "通讯地址",
+                  "scope.invoiceTitle": "发票排头",
+                  "scope.invoice": "获取发票",
+                  "scope.record": "录音功能",
+                  "scope.werun": "微信运动步数",
+                  "scope.writePhotosAlbum": "保存到相册",
+                  "scope.camera": "摄像头" };return _context6.abrupt("return",
+
+
                 new Promise(function (resolve, reject) {
-                  wx.getSetting({
-                    success: function success(res) {
-                      if (res) {
-                        if (res.authSetting && res.authSetting["scope.userInfo"]) {
-                          // 用户已授权
-                          resolve(true);
-                        } else {
-                          resolve(false);
-                        }
+                  _this.getDeviceApi().getSetting().then(function (res) {
+                    // 获取用户授权信息
+                    console.log("打印用户授权的情况集合------------", res); // res.userInfo 为true  res.errMsg == "authorize:ok"
+                    if (res) {
+                      if (res.authSetting && res.authSetting[type]) {
+                        // 自动检测到已经授过权
+                        console.log("--------------\u68C0\u6D4B\u5230\u5DF2\u6388\u6743\u4E86\uFF1A\u3010".concat(scopeText[type], "\u3011 \u7684\u6743\u9650---------"));
+                        resolve(true);
                       } else {
+                        // 未授权
+                        console.log("----------\u68C0\u6D4B\u5230\u672A\u6388\u6743\uFF1A\u3010".concat(scopeText[type], "\u3011 \u7684\u6743\u9650-----------"));
                         resolve(false);
                       }
-                    },
-                    fail: function fail(res) {
+                    } else {
                       // 先判断是否是网络问题造成了请求失败
                       try {
-                        wx.getNetworkType({
+                        _this.getDeviceApi().getNetworkType({
                           success: function success(res) {
                             var networkType = res.networkType;
                             if (networkType != "none") {
                               // 有网络，检查 缓存中的授权字段
-                              var AuthorizeStatus = wx.getStorageSync("AuthorizeStatus");
-                              if (AuthorizeStatus) {
-                                resolve(true);
-                              } else {
-                                resolve(false);
-                              }
+                              //   let AuthorizeStatus = _this.getDeviceApi().getStorageSync("AuthorizeStatus");
+                              //   if( AuthorizeStatus ) {
+                              // 	resolve( true ) ;
+                              //   }else {
+                              // 	resolve( false ) ;
+                              //   }  
+                              reject("--------报错了-------------");
                             } else {
                               // 无网络 返回true, 弹出 提示
-                              this.error("网络异常");
-                              resolve(true);
+                              _this.error("网络异常");
+                              reject("--------网络异常，请先检查网络------------");
                             }
                           } });
 
                       } catch (error) {
-
+                        reject("--------报错了-------");
                       }
-                    } });
-
-                  // 方法二直接通过 缓存中的 AuthorizeStatus 字段来判断
-                  // 通过 缓存中的AuthorizeStatus 字段来判断是否授权过（有个问题，授权过就会一直是授权的，因为只要登陆过缓存中一直有此值），因为直接通过wepy.getSetting()频繁的调用会出现本已经是授权但是此方法放回的数据报错问题
-                  // let auth = await this.getStorage("AuthorizeStatus");
-                  // if( auth ) {
-                  //   return true;
-                  // }else {
-                  //   return false;
-                  // }							
-                }));case 1:case "end":return _context6.stop();}}}, _callee6, this);}));function getAuthorizeStatus() {return _getAuthorizeStatus.apply(this, arguments);}return getAuthorizeStatus;}(),
+                    }
+                  });
+                }));case 6:case "end":return _context6.stop();}}}, _callee6, this);}));function getAuthorizeStatus(_x6) {return _getAuthorizeStatus.apply(this, arguments);}return getAuthorizeStatus;}(),
 
     // 选择图片 在前端显示出来 params:{count,sizeType,sourceType}
     chooseImg: function () {var _chooseImg = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(param) {var data, tempFilePaths, that;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:
@@ -4544,7 +4556,7 @@ var miniProApi = {
                       reject(res);
                     } });
 
-                }));case 5:case "end":return _context7.stop();}}}, _callee7, this);}));function chooseImg(_x6) {return _chooseImg.apply(this, arguments);}return chooseImg;}(),
+                }));case 5:case "end":return _context7.stop();}}}, _callee7, this);}));function chooseImg(_x7) {return _chooseImg.apply(this, arguments);}return chooseImg;}(),
 
     //   选择图片 预览 传入 urls ,index 的对象集合
     previewImage: function () {var _previewImage = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee8(param) {var data, that, urls, current;return _regenerator.default.wrap(function _callee8$(_context8) {while (1) {switch (_context8.prev = _context8.next) {case 0:
@@ -4566,7 +4578,7 @@ var miniProApi = {
                   },
                   fail: function fail() {
                     //console.log('fail')
-                  } });case 6:case "end":return _context8.stop();}}}, _callee8, this);}));function previewImage(_x7) {return _previewImage.apply(this, arguments);}return previewImage;}(),
+                  } });case 6:case "end":return _context8.stop();}}}, _callee8, this);}));function previewImage(_x8) {return _previewImage.apply(this, arguments);}return previewImage;}(),
 
 
     // 转换时间
@@ -4660,7 +4672,8 @@ var miniProApi = {
                   //   shareObj.path = `/pages/find/index?btn_name=${eData.name}`
                   // }
                   resolve(shareObj_res);
-                }));case 3:case "end":return _context9.stop();}}}, _callee9, this);}));function sharePic(_x8) {return _sharePic.apply(this, arguments);}return sharePic;}(),
+                }));case 3:case "end":return _context9.stop();}}}, _callee9, this);}));function sharePic(_x9) {return _sharePic.apply(this, arguments);}return sharePic;}(),
+
 
     //判断是否开启了 ** 功能授权的权限并进行相应的授权提示操作 传入  scope.type 值
     //type类型scope.userInfo	、scope.userLocation、scope.address、scope.invoiceTitle、scope.invoice、scope.record、scope.werun、scope.writePhotosAlbum、scope.camera	
@@ -4766,7 +4779,7 @@ var miniProApi = {
 
                                 }
                               }
-                            });case 1:case "end":return _context10.stop();}}}, _callee10, this);}));return function (_x10, _x11) {return _ref5.apply(this, arguments);};}()));case 6:case "end":return _context11.stop();}}}, _callee11, this);}));function getIsAuthorize(_x9) {return _getIsAuthorize.apply(this, arguments);}return getIsAuthorize;}() } };exports.miniProApi = miniProApi;
+                            });case 1:case "end":return _context10.stop();}}}, _callee10, this);}));return function (_x11, _x12) {return _ref5.apply(this, arguments);};}()));case 6:case "end":return _context11.stop();}}}, _callee11, this);}));function getIsAuthorize(_x10) {return _getIsAuthorize.apply(this, arguments);}return getIsAuthorize;}() } };exports.miniProApi = miniProApi;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))
 
 /***/ }),

@@ -3,6 +3,7 @@ import base from '@/api/base.js'
 import commApi from '@/api/comm.js'
 // import { debug } from 'utils';
 import { getEnterType } from '@/utils/miniProSceneType.js'
+import {mapGetters} from 'vuex' 
 
 // 小程序页面跳转
 export const miniProApi = {
@@ -15,7 +16,7 @@ export const miniProApi = {
 		}
 	},
 	computed: {
-
+		...mapGetters(['userToken'])
 	},
 	watch:{
 	  
@@ -89,7 +90,7 @@ export const miniProApi = {
 		getLoginStatus () {
 			return new Promise((resolve, reject) => {
 				// 从store 中获取 用户
-				let loginStatus = this.getStorage("token");
+				let loginStatus = this.userToken
 				if( loginStatus ) {
 				  // 登陆成功
 				  resolve(true);
@@ -179,6 +180,7 @@ export const miniProApi = {
 				showActionSheet: uni.showActionSheet,
 				getSetting: uni.getSetting,
 				authorize: uni.authorize,
+				getNetworkType: uni.getNetworkType,
 				openSetting: uni.openSetting,
 				getSystemInfo: uni.getSystemInfo,
 				getLocation: uni.getLocation,
@@ -514,58 +516,68 @@ export const miniProApi = {
 			  }   
 			}) 
 		},		
-		// 判断是否登录授权（主要是微信小程序）
-		async getAuthorizeStatus( ) {
+		// 判断是否授权（主要是微信小程序）
+		async getAuthorizeStatus(type) {
+			let _this = this
+			if(!type){
+				_this.toast("请传入scope.type!")
+				return 
+			}
+			let scopeText = {
+				"scope.userInfo":"用户信息",
+				"scope.userLocation": "地理位置",
+				"scope.address": "通讯地址",
+				"scope.invoiceTitle": "发票排头",
+				"scope.invoice": "获取发票",
+				"scope.record": "录音功能",
+				"scope.werun": "微信运动步数",
+				"scope.writePhotosAlbum": "保存到相册",
+				"scope.camera": "摄像头"
+			}		
+
 			return new Promise((resolve,reject)=>{
-				wx.getSetting({
-					success: (res) => {
-					  if ( res ) {
-						if( res.authSetting && res.authSetting["scope.userInfo"] ){
-						  // 用户已授权
-						  resolve( true );
+				_this.getDeviceApi().getSetting().then((res) => {
+					// 获取用户授权信息
+					console.log("打印用户授权的情况集合------------",res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
+					if( res ){
+						if(res.authSetting && res.authSetting[type]){
+							// 自动检测到已经授过权
+							console.log(`--------------检测到已授权了：【${scopeText[type]}】 的权限---------`)
+							resolve(true)
 						}else {
-						  resolve( false )
+							// 未授权
+							console.log(`----------检测到未授权：【${scopeText[type]}】 的权限-----------`)
+							resolve(false)
 						}
-					  }else {
-						resolve( false )
-					  }
-					},
-					fail:( res ) => {
-					  // 先判断是否是网络问题造成了请求失败
-					  try {
-						wx.getNetworkType({
-						  success: function (res) {
-							let  networkType = res.networkType;
-							if( networkType != "none" ) {
-							  // 有网络，检查 缓存中的授权字段
-							  let AuthorizeStatus = wx.getStorageSync("AuthorizeStatus");
-							  if( AuthorizeStatus ) {
-								resolve( true ) ;
-							  }else {
-								resolve( false ) ;
-							  }                    
-							}else {
-							  // 无网络 返回true, 弹出 提示
-							  this.error("网络异常")
-							  resolve( true ) ;
-							}
-						  }
-						})
-					  } catch (error) {
-						
-					  }
+					}else {
+						// 先判断是否是网络问题造成了请求失败
+						try {
+							_this.getDeviceApi().getNetworkType({
+								success: function (res) {
+									let  networkType = res.networkType
+									if( networkType != "none" ) {
+										// 有网络，检查 缓存中的授权字段
+										//   let AuthorizeStatus = _this.getDeviceApi().getStorageSync("AuthorizeStatus");
+										//   if( AuthorizeStatus ) {
+										// 	resolve( true ) ;
+										//   }else {
+										// 	resolve( false ) ;
+										//   }  
+										reject("--------报错了-------------")
+									}else {
+										// 无网络 返回true, 弹出 提示
+										_this.error("网络异常")
+										reject( "--------网络异常，请先检查网络------------" ) 
+									}
+								}
+							})
+						} catch (error) {
+							reject("--------报错了-------")
+						}						
 					}
 				})
-				// 方法二直接通过 缓存中的 AuthorizeStatus 字段来判断
-				// 通过 缓存中的AuthorizeStatus 字段来判断是否授权过（有个问题，授权过就会一直是授权的，因为只要登陆过缓存中一直有此值），因为直接通过wepy.getSetting()频繁的调用会出现本已经是授权但是此方法放回的数据报错问题
-				// let auth = await this.getStorage("AuthorizeStatus");
-				// if( auth ) {
-				//   return true;
-				// }else {
-				//   return false;
-				// }							
 			})		
-    },
+    	},
 		// 选择图片 在前端显示出来 params:{count,sizeType,sourceType}
 		async chooseImg ( param ) {
 		  let data = {
@@ -725,6 +737,7 @@ export const miniProApi = {
 			  resolve ( shareObj_res );
 			})
 		},
+
 		//判断是否开启了 ** 功能授权的权限并进行相应的授权提示操作 传入  scope.type 值
 		//type类型scope.userInfo	、scope.userLocation、scope.address、scope.invoiceTitle、scope.invoice、scope.record、scope.werun、scope.writePhotosAlbum、scope.camera	
 		async getIsAuthorize (type) {

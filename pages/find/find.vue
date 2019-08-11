@@ -27,7 +27,7 @@
 			z-index: 1;
 			.top {
 				width: 650upx;
-				height: 470upx;
+				height: 400upx;
 				margin: 0 auto;
 				.design {
 					height: 70upx;
@@ -45,11 +45,10 @@
 			}
 			.findContainer{
 				width: 650upx;
-				height: 675upx;
-				padding-top: 400upx;
+				height: 600upx;
 				margin: 0 auto;
 				border-radius: 20upx;
-				padding: 50upx 95upx 0 95upx;
+				padding: 30upx 95upx 0 95upx;
 				box-sizing: border-box;
 				border-radius: 10upx;
 				border: 2upx solid rgba(250, 235, 228, 0.2);
@@ -344,8 +343,15 @@
 				loadingMore: {}					
 			};
 		},	
-		onLoad () {
+		async onLoad () {
+			debugger
 			console.log("find-----onload")
+			console.log("-------find首页检查是否登陆成功----",await this.getLoginStatus())
+			// 判断是否已经授权
+			//#ifdef MP-WEIXIN
+			console.log("----------------find首页检查是否用户授权了userInfo--------", await this.getAuthorizeStatus('scope.userInfo'))
+			console.log("----------------find首页检查是否用户授权了userLocation--------", await this.getAuthorizeStatus('scope.userLocation'))
+			//#endif
 			this._getRankDayData()
 		},		
 		methods:{		
