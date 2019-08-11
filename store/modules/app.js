@@ -6,7 +6,8 @@ const app = {
   state: {
 	userName: '',// 用户名
 	userId: '', // 用户id
-    userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM',
+    // userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM',
+    userToken: '',
 	containerLoadingFlag: false, // 控制页面全屏下的外层container 容器的 loading状态显示与隐藏
 	containerMaskFlag: false, // 控制页面全屏下的外层container 容器的 遮罩状态显示与隐藏
 	pHeight: '0'  // 页面的高度，minxin 中获取后 存入了 store中
@@ -45,7 +46,7 @@ const app = {
 		commit(types.setUserId, str)
 	},	
     // 设置用户token
-    setUserToken ({ commit, state }) {
+    setUserToken ({ commit, state }, str) {
       commit(types.setUserToken, str )
     },
 	// 设置全屏 loading 状态

@@ -141,6 +141,29 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _mixins = __webpack_require__(/*! @/utils/mixins.js */ "../../../../../git-nodeProgram/uni-app-customer/utils/mixins.js");
 var _sign = _interopRequireDefault(__webpack_require__(/*! @/api/sign.js */ "../../../../../git-nodeProgram/uni-app-customer/api/sign.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
@@ -184,9 +207,32 @@ var _sign = _interopRequireDefault(__webpack_require__(/*! @/api/sign.js */ "../
 //
 //
 //
-var _default = { mixins: [_mixins.miniProApi], data: function data() {return { title: 'Hello', pageNum: 1, pageSize: 10, currentPage: 1, lessonList: [] };}, onLoad: function onLoad() {this.getLessonList();}, methods: { //onload 之前的 生命周期
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { mixins: [_mixins.miniProApi], data: function data() {return { title: 'Hello', pageNum: 1, pageSize: 10, currentPage: 1, lessonList: [], bg: { 'sign_bg': "".concat(this.$configs.baseImgsUrl + this.$configs.baseUrlConfigs.imgs_bg.sign_bg) } };}, onLoad: function onLoad() {this.getLessonList();}, methods: { //onload 之前的 生命周期
     onComLoad: function onComLoad() {}, // 获取课程列表
-    getLessonList: function getLessonList() {var _this = this;var paramObj = { params: {}, page: { pageNum: this.currentPage, pageSize: this.pageSize } };_sign.default.getLessonList(paramObj, "loading", "获取课程list").then(function (res) {debugger;if (res && res.data.code === 1) {_this.lessonList = res.data.data;}});} } };exports.default = _default;
+    getLessonList: function getLessonList() {var _this = this;var paramObj = { params: {}, page: { pageNum: this.currentPage, pageSize: this.pageSize } };_sign.default.getLessonList(paramObj, "loading", "获取课程list").then(function (res) {debugger;if (res && res.data.code === 1) {_this.lessonList = res.data.data;_this.success("课程获取成功");}});} } };exports.default = _default;
 
 /***/ }),
 

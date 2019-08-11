@@ -16,4 +16,20 @@
   font-size: 36rpx;
   color: #8f8f94;
 }
+#sign .bgBox.data-v-b49ccc1c {
+  width: 100%;
+  height: 100%;
+}
+#sign .bgBox .bgpic.data-v-b49ccc1c {
+  width: 100%;
+}
+#sign .contentBox.data-v-b49ccc1c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+}
 

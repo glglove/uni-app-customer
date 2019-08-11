@@ -3164,7 +3164,8 @@ var app = {
   state: {
     userName: '', // 用户名
     userId: '', // 用户id
-    userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM',
+    // userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM',
+    userToken: '',
     containerLoadingFlag: false, // 控制页面全屏下的外层container 容器的 loading状态显示与隐藏
     containerMaskFlag: false, // 控制页面全屏下的外层container 容器的 遮罩状态显示与隐藏
     pHeight: '0' // 页面的高度，minxin 中获取后 存入了 store中
@@ -3203,7 +3204,7 @@ var app = {
       commit(types.setUserId, str);
     },
     // 设置用户token
-    setUserToken: function setUserToken(_ref3) {var commit = _ref3.commit,state = _ref3.state;
+    setUserToken: function setUserToken(_ref3, str) {var commit = _ref3.commit,state = _ref3.state;
       commit(types.setUserToken, str);
     },
     // 设置全屏 loading 状态
@@ -3413,7 +3414,7 @@ var _config2 = _interopRequireDefault(__webpack_require__(/*! @/api/config.js */
   interceptor: { // 默认统一的请求拦截函数
     request: function request(configs) {
       // 将请求的参数中 默认增加 token
-      // debugger
+      //   debugger
       var data = configs.data || {};
       // 主要控制是否loading
       var loading = configs.loading;

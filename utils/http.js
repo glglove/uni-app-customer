@@ -80,7 +80,7 @@ export default {
 		// 默认统一的请求拦截函数
 		request: (configs) => {
 		  // 将请求的参数中 默认增加 token
-		  // debugger
+		//   debugger
 		  const data = configs.data || {}
 		  // 主要控制是否loading
 		  const loading = configs.loading 

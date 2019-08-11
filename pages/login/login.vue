@@ -105,10 +105,15 @@
 					}
 					this.hideLoading();
 					loginApi.register(params).then((res)=>{
+						debugger
 						console.log("调取注册/登录接口后返回到数据-----》",res)
 						if(res && res.data.code === 1) {
 							// 成功后 
 							// debugger
+							// 将用户信息存入到store 中
+							if(res.data.user){
+								this.$store.dispatch('setUserToken', res.data.user.token || '')								
+							}
 							this.switchPage('../find/find').then((res) =>{
 								this.success('登录成功')
 							}).catch(()=>{

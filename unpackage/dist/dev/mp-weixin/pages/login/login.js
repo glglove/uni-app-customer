@@ -270,9 +270,10 @@ var _mixins = __webpack_require__(/*! @/utils/mixins.js */ "../../../../../git-n
 //
 var _default = { mixins: [_mixins.miniProApi], data: function data() {return { username: '', password: '' };}, methods: { login: function login() {var _this = this; // debugger
       this.showLoading();if (this.username && this.password) {// 调取注册/登录接口
-        var params = { name: this.username, pwd: this.password };this.hideLoading();_login.default.register(params).then(function (res) {console.log("调取注册/登录接口后返回到数据-----》", res);if (res && res.data.code === 1) {// 成功后 
+        var params = { name: this.username, pwd: this.password };this.hideLoading();_login.default.register(params).then(function (res) {debugger;console.log("调取注册/登录接口后返回到数据-----》", res);if (res && res.data.code === 1) {// 成功后 
             // debugger
-            _this.switchPage('../find/find').then(function (res) {_this.success('登录成功');}).catch(function () {});} else {_this.hideLoading();}});} else {this.hideLoading();this.alert('用户名或密码不能为空');}} } };exports.default = _default;
+            // 将用户信息存入到store 中
+            if (res.data.user) {_this.$store.dispatch('setUserToken', res.data.user.token || '');}_this.switchPage('../find/find').then(function (res) {_this.success('登录成功');}).catch(function () {});} else {_this.hideLoading();}});} else {this.hideLoading();this.alert('用户名或密码不能为空');}} } };exports.default = _default;
 
 /***/ }),
 
