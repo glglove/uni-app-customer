@@ -11,3 +11,5 @@ export const containerLoadingFlag = state => state.app.containerLoadingFlag
 // 获取 全屏遮罩mask 状态
 export const containerMaskFlag = state => state.app.containerMaskFlag
 
+// 获取 屏幕可视区高度
+export const pHeight = state => state.app.pHeight

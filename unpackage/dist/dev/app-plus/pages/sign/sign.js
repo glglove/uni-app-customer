@@ -1,2 +1,2 @@
-setCssToHead([".",[1],"content { text-align: center; height: ",[0,400],"; }\n.",[1],"logo { height: ",[0,200],"; width: ",[0,200],"; margin-top: ",[0,200],"; }\n.",[1],"title { font-size: ",[0,36],"; color: #8f8f94; }\n",],undefined,{path:"./pages/sign/sign.wxss"})();
+setCssToHead([".",[1],"content.",[1],"data-v-b49ccc1c { text-align: center; height: ",[0,400],"; }\n.",[1],"logo.",[1],"data-v-b49ccc1c { height: ",[0,200],"; width: ",[0,200],"; margin-top: ",[0,200],"; }\n.",[1],"title.",[1],"data-v-b49ccc1c { font-size: ",[0,36],"; color: #8f8f94; }\n",],undefined,{path:"./pages/sign/sign.wxss"})();
 document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/sign/sign.wxml') } }));

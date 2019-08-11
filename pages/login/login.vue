@@ -1,3 +1,67 @@
+<style lang="less" scoped>
+	#login {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		opacity: 1;
+		// background: url('https://www.kaoyandaka.com/img/find_bg_gaitubao_com_350x646.png') no-repeat 0 0;
+		// background-color: rgba(205,205,202,0.5);
+		// background-size: cover;
+		background-color: #e8e5e5;
+		.loginBox{
+			width: 100%;
+			margin: 300upx 0 30upx 0;
+			// background-color: red
+			.loginWrap{
+				// box-sizing: border-box;
+				.userNameBox{
+					display: flex;
+					justify-content: flex-start;
+					height: 90upx;
+					margin-bottom: 30upx;
+					padding: 10upx 20upx;
+					.nameTit {
+						width: 130upx;
+					}
+					.userNameInput{
+						flex-grow: 1;
+						border: 1upx solid #000000;
+					}
+				}
+				.passWordBox{
+					display:flex;
+					justify-content: flex-start;
+					height: 90upx;
+					padding: 10upx 20upx;
+					.pwdTit {
+						width: 130upx;
+					}
+					.passWordInput{
+						flex-grow: 1;
+						border: 1upx solid #000000;
+					}
+				}
+			}
+		}
+		.loginBtnBox {
+			width: 100%;
+			text-align: center;
+			margin-top: 20upx;
+			.loginBtn {
+				width: 90%;
+				height: 50px;
+				line-height: 50px;
+				margin: 0 auto;
+			}
+		}	
+	}
+</style>
+
 <template>
 	<view id="login">
 		<view class="loginBox">	
@@ -62,66 +126,3 @@
 		}
 	}
 </script>
-
-<style lang="less" scoped>
-	#login {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		margin: auto;
-		opacity: 1;
-		// background: url('https://www.kaoyandaka.com/img/find_bg_gaitubao_com_350x646.png') no-repeat 0 0;
-		// background-color: rgba(205,205,202,0.5);
-		background-size: cover;
-		.loginBox{
-			width: 100%;
-			margin: 300upx 0 30upx 0;
-			// background-color: red
-			.loginWrap{
-				// box-sizing: border-box;
-				.userNameBox{
-					display: flex;
-					justify-content: flex-start;
-					height: 90upx;
-					margin-bottom: 30upx;
-					padding: 10upx 20upx;
-					.nameTit {
-						width: 130upx;
-					}
-					.userNameInput{
-						flex-grow: 1;
-						border: 1upx solid #000000;
-					}
-				}
-				.passWordBox{
-					display:flex;
-					justify-content: flex-start;
-					height: 90upx;
-					padding: 10upx 20upx;
-					.pwdTit {
-						width: 130upx;
-					}
-					.passWordInput{
-						flex-grow: 1;
-						border: 1upx solid #000000;
-					}
-				}
-			}
-		}
-		.loginBtnBox {
-			width: 100%;
-			text-align: center;
-			margin-top: 20upx;
-			.loginBtn {
-				width: 90%;
-				height: 50px;
-				line-height: 50px;
-				margin: 0 auto;
-			}
-		}	
-	}
-</style>

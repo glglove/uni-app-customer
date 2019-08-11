@@ -1,8 +1,11 @@
 <style lang="less" scoped src = "">
 	#my {
-		position: relative;
-		height: 100%;
-		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
 		.bgBox {
 			position: absolute;
 			top: 0;
@@ -105,87 +108,89 @@
 </style>
 
 <template>
-	<view id="my" :style="positionStyle" @touchstart=""  @touchmove="" @touchend="" >
-		<!--loading组件-->
-		<!-- <Loading type="4"></Loading> -->
+	<container>
+		<view id="my"  slot="container-slot" :style="positionStyle" @touchstart=""  @touchmove="" @touchend="" >
+			<!--loading组件-->
+			<!-- <Loading type="4"></Loading> -->
 
-		<view class="bgBox">
-			 <!-- <image class="" src="../../static/imgs/tab/my_bg_gaitubao_com_375x667.png"></image> -->
-			<image class="" :src="bg.my_bg" lazy-load="true"></image>
-		</view>
-		<view class="contentBox">
-			<view class="top clearfix marginT40">
-				<image class="photo" :src="avater? avater : photo_png" layz-load="true"></image>
-				<!-- <image class="photo" src="{{avater? avater : ''}}" layz-load="true"></image> -->
-				<text class="name">{{name? name:''}}</text>
-				<!-- <view class="setBox "> -->
-					<!-- <image class="set rt" src="../../static/imgs/icon/set.png"  @tap.stop = "clickSet"></image> -->
-				<form id="setFormBox"  class="set rt click-able" report-submit="true" bindsubmit="formSubmit">
-					<image class="set click-able" src="set_png" layz-load="true" @tap.stop = " "></image>
-					<button form-type="submit" class="btn click-able"></button>
-				</form>
-				<!-- </view> -->
+			<view class="bgBox">
+				<!-- <image class="" src="../../static/imgs/tab/my_bg_gaitubao_com_375x667.png"></image> -->
+				<image class="" :src="bg.my_bg" lazy-load="true"></image>
 			</view>
-			<view class="containerBox form">
-				<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickLessons">
-					<view class="itemBox-left form_row lt">
-						<image :src="card_png" class="pic"></image>
-						<text class="tit">报名卡片</text>
-					</view>
-					<view class="itemBox-right rt">
-						<image :src="forwardRight_png" layz-load="true" class="tip"></image>
-					</view>
-				</view> 
+			<view class="contentBox">
+				<view class="top clearfix marginT40">
+					<image class="photo" :src="avater? avater : photo_png" layz-load="true"></image>
+					<!-- <image class="photo" src="{{avater? avater : ''}}" layz-load="true"></image> -->
+					<text class="name">{{name? name:''}}</text>
+					<!-- <view class="setBox "> -->
+						<!-- <image class="set rt" src="../../static/imgs/icon/set.png"  @tap.stop = "clickSet"></image> -->
+					<form id="setFormBox"  class="set rt click-able" report-submit="true" bindsubmit="formSubmit">
+						<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = ""></image>
+						<button form-type="submit" class="btn click-able"></button>
+					</form>
+					<!-- </view> -->
+				</view>
+				<view class="containerBox form">
+					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickLessons">
+						<view class="itemBox-left form_row lt">
+							<image :src="card_png" class="pic"></image>
+							<text class="tit">报名卡片</text>
+						</view>
+						<view class="itemBox-right rt">
+							<image :src="forwardRight_png" layz-load="true" class="tip"></image>
+						</view>
+					</view> 
 
-				<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickAchivement">
-					<view class="itemBox-left form_row lt">
-						<image :src="achievement_png" layz-load="true" class="pic"></image>
-						<text class="tit">我的成就</text>
-					</view>
-					<view class="itemBox-right rt">
-						<image :src="forwardRight_png" layz-load="true" class="tip"></image>
-					</view>
-				</view> 
+					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickAchivement">
+						<view class="itemBox-left form_row lt">
+							<image :src="achievement_png" layz-load="true" class="pic"></image>
+							<text class="tit">我的成就</text>
+						</view>
+						<view class="itemBox-right rt">
+							<image :src="forwardRight_png" layz-load="true" class="tip"></image>
+						</view>
+					</view> 
 
-				<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickRecord">
-					<view class="itemBox-left form_row lt">
-						<image :src="record_png" layz-load="true" class="pic"></image>
-						<text class="tit">学习记录</text>
-					</view>
-					<view class="itemBox-right rt">
-						<image :src="forwardRight_png" layz-load="true" class="tip"></image>
-					</view>
-				</view> 
+					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickRecord">
+						<view class="itemBox-left form_row lt">
+							<image :src="record_png" layz-load="true" class="pic"></image>
+							<text class="tit">学习记录</text>
+						</view>
+						<view class="itemBox-right rt">
+							<image :src="forwardRight_png" layz-load="true" class="tip"></image>
+						</view>
+					</view> 
 
-				<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickHelp">
-					<view class="itemBox-left form_row lt">
-						<image :src="help_png" layz-load="true" class="pic"></image>
-						<text class="tit">帮助中心</text>
-					</view>
-					<view class="itemBox-right rt">
-						<image :src="forwardRight_png" layz-load="true" class="tip"></image>
-					</view>
-				</view> 
+					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickHelp">
+						<view class="itemBox-left form_row lt">
+							<image :src="help_png" layz-load="true" class="pic"></image>
+							<text class="tit">帮助中心</text>
+						</view>
+						<view class="itemBox-right rt">
+							<image :src="forwardRight_png" layz-load="true" class="tip"></image>
+						</view>
+					</view> 
 
-				<view class="itemBox clearfix marginT10 click-able"  @tap.stop = "clickInvitation">
-					<view class="itemBox-left form_row lt">
-						<image :src="invitation_png" layz-load="true" class="pic"></image>
-						<text class="tit">邀请好友</text>
-					</view>
-					<view class="itemBox-right rt">
-						<image :src="require('@/static/imgs/icon/forward-right.png')" layz-load="true" class="tip"></image>
-					</view>
-				</view>                                       
-			</view>	
-			<!--引用footerCmp-->
-			<footer-explain versition="20150205" :bgcolor="'rgba(246,246,247,1)'"></footer-explain>								
-		</view>
-		
-		<!--授权区-->
-		<!--<twAuthorze>
-			<image slot="pic" mode="aspectFit" class="pic" src="../../static/imgs/icon/twlogo.png" layz-load="true"></image>
-		</twAuthorze> -->
-	</view>		
+					<view class="itemBox clearfix marginT10 click-able"  @tap.stop = "clickInvitation">
+						<view class="itemBox-left form_row lt">
+							<image :src="invitation_png" layz-load="true" class="pic"></image>
+							<text class="tit">邀请好友</text>
+						</view>
+						<view class="itemBox-right rt">
+							<image :src="require('@/static/imgs/icon/forward-right.png')" layz-load="true" class="tip"></image>
+						</view>
+					</view>                                       
+				</view>	
+				<!--引用footerCmp-->
+				<footer-explain versition="20150205" :bgcolor="'rgba(246,246,247,1)'"></footer-explain>								
+			</view>
+			
+			<!--授权区-->
+			<!--<twAuthorze>
+				<image slot="pic" mode="aspectFit" class="pic" src="../../static/imgs/icon/twlogo.png" layz-load="true"></image>
+			</twAuthorze> -->
+		</view>	
+	</container>	
 </template>
 
 <script>
@@ -220,7 +225,7 @@
 			},
 			authorizeStatus1 () {
 				// debugger;
-				console.log(`-----my页面computed中打印 获取的notAuthorize字段值----`, this.$parent.globalData.notAuthorize)
+				// console.log(`-----my页面computed中打印 获取的notAuthorize字段值----`, this.$parent.globalData.notAuthorize)
 				// true 表示已经授权，false 表示未授权
 				// return this.$parent.globalData.notAuthorize;
 			}          

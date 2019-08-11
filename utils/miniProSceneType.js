@@ -1,5 +1,5 @@
 
-export function getEnterType ( typeNum ) {
+export const getEnterType = function( typeNum ) {
     // 判断场景值
     switch ( typeNum ) {
       case 1001:          //发现栏小程序主入口，「最近使用」列表（基础库2.2.4版本起包含「我的小程序」列表）

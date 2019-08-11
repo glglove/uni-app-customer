@@ -1,13 +1,18 @@
-.content.data-v-61b32b1a {
-  text-align: center;
-  height: 400rpx;
+#sign.data-v-b49ccc1c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow-y: scroll;
 }
-.logo.data-v-61b32b1a {
+#sign .logo.data-v-b49ccc1c {
   height: 200rpx;
   width: 200rpx;
   margin-top: 200rpx;
 }
-.title.data-v-61b32b1a {
+#sign .title.data-v-b49ccc1c {
   font-size: 36rpx;
   color: #8f8f94;
 }

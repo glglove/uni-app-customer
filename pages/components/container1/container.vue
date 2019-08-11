@@ -15,7 +15,8 @@
 		}
 	}
 	
-	.containerBox {
+	.container-box-cmp {
+		position: relative;
 		width: 100%;
 		height: 100%;
 		.top-loadding {
@@ -51,13 +52,13 @@
 	
 </style>
 <template>
-	<view class="containerBox">
+	<view class="container-box-cmp">
 	<!--<view class="top-loadding {{topClass}}" style="{{topViewStyle}}" hidden="{{refreshTop==0&&!refreshFlag}}">
 			<text class="iconfont mykicon-d_loading_icon"></text>
 		</view> -->
 		
 		<view class="container" :style="positionStyle" @touchstart=""  @touchmove="" @touchend="">
-			<slot></slot>
+			<slot name="container-slot"></slot>
 		</view>
 		
 		<!--<view class="bottom-loadding"  wx:if="{{more!='false'&&!showLoadingFlag}}" style="opacity:{{more!='false'&&!showLoadingFlag?'1':'0'}}">
@@ -67,7 +68,8 @@
 		</view> -->	
 		
 		<!-- common mask -->
-		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-show="containerMaskFlag"></view>
+		<!-- containerMaskFlag: {{containerMaskFlag}} -->
+		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-if="containerMaskFlag"></view>
 		
 		<!-- loading -->
 		<view :class="['container_loading', aniClass]" v-show="containerLoadingFlag">
@@ -78,10 +80,14 @@
 
 <script>
 	import { mapGetters, mapActions  } from 'vuex'
-	import { miniProApi } from '@/utils/mixins.js'
+	// import { miniProApi } from '@/utils/mixins.js'
 	export default {
-		mixins:[ miniProApi ],
+		// mixins:[ miniProApi ],
 		props: {
+			top: {
+				type: String,
+				default: "0"
+			},
 			bottom: {
 				type: String,
 				default:"0"
@@ -114,41 +120,29 @@
 			// 	type: String,
 			// 	default: 'false'
 			// }
-		},
+		},	
 		onLoad() {
-			debugger
-			// 获取系统的的屏幕可视高度复制
-			// this.pHeight=wx.getSystemInfoSync().windowHeight;
-			this.pHeight= this.getDeviceApi.getSystemInfoSync().windowHeight;
-			console.log("---获取到的系统屏幕高度---------",this.pHeight)
-			
-			// this.customerData.showLoadingTImes=setTimeout(() => {
-			//     if(this.customerData.showLoadingTImes){
-			//         clearTimeout(this.customerData.showLoadingTImes);
-			//         this.customerData.showLoadingTImes=null;
-			//     }
-			// 	if(this.showLoadingFlag){
-			// 		// this.$parent.toast("加载超时……")
-			// 		this.showLoadingFlag=false;
-			// 	}
-			// }, 20000);
-			
-			// 接收 slot 子组件里面 emit 过来的事件, 来控制  各种状态的显示 与 隐藏
-			// this.$bus.$emit('mask.open', () => {
-			// 	// 打开mask 
-			// 	
-			// })
-		},
+			// debugger
+			console.log("container-----onload")
+			this.pHeight= uni.getSystemInfoSync().windowHeight;
+			console.log("---获取到的系统屏幕高度---------",this.pHeight)	
+		},					
 		onShow() {
 			debugger
-			this.pHeight= this.getDeviceApi.getSystemInfoSync().windowHeight;
-			console.log("---获取到的系统屏幕高度---------",this.pHeight)			
+			console.log("container-----onShow")
+
+			this.pHeight= uni.getSystemInfoSync().windowHeight;
+			// console.log("---获取到的系统屏幕高度---------",this.pHeight)			
 		},
 		onHide() {
 			
 		},
 		computed:{
-			...mapGetters(['containerLoadingFlag', 'containerMaskFlag']),
+			...mapGetters([
+				'containerLoadingFlag', 
+				'containerMaskFlag',
+				'pHeight'
+			]),
 			positionStyle() {
                 return `background:${this.background};position:relative;padding-top:${this.top}px;padding-bottom:${this.bottom}px;
                 padding-left:${this.left}px;padding-right:${this.right}px;min-height:${this.pHeight}px;opacity:${this.containerLoadingFlag?0:1}`
@@ -176,7 +170,6 @@
 		},
 		data() {
 			return {
-				pHeight: 0, // 每个页面page的最小高度
 				// showLoadingFlag: true, 
 				// containerMaskFlag: true, //  控制container 的全屏 遮罩显示与否
 				// containerLoadingFlag: false,  // 控制container 的全屏loading状态
@@ -184,7 +177,7 @@
 				aniClass1: 'animated fast fadeIn', // mask 的动画class
 			}
 		},
-		methods:{
+		methods:{					
 			...mapActions( [ 'setContainerLoadingFlag','setContainerMaskFlag' ] ),
 			// ctstart(e){
    //              cancelAnimationFrame(this.tickID,this)
@@ -238,12 +231,15 @@
    //                  };
    //                  toTick();
    //              }
-			// },			
+			// },		
 			// 点击遮罩
 			handleMaskTap() {
+				debugger
 				console.log("点击了遮罩")
 				// 触发 
+				console.log(this)
 				if( this.containerMaskFlag ) {
+					debugger
 					this.setContainerMaskFlag(false)
 				}
 			},

@@ -1,0 +1,181 @@
+.wrap.data-v-7007b64a {
+  width: 90%;
+}
+#signUpRecord.data-v-7007b64a {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #F6F6F7;
+  padding: 25rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#signUpRecord .scrollBox.data-v-7007b64a {
+  height: 100%;
+}
+#signUpRecord .scrollBox.data-v-7007b64a::-webkit-scrollbar {
+  width: 0 !important ;
+  height: 0 !important ;
+  color: transparent !important ;
+  display: none;
+}
+#signUpRecord .scrollBox .signDayBox.data-v-7007b64a {
+  position: relative;
+  width: 90%;
+  height: 289rpx;
+  top: 0;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  background: #FFFFFF;
+  -webkit-border-radius: 28rpx;
+          border-radius: 28rpx;
+  margin-top: 30rpx;
+  padding-top: 30rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#signUpRecord .scrollBox .signDayBox .box.data-v-7007b64a {
+  width: 48%;
+}
+#signUpRecord .scrollBox .signDayBox .box .picBox.data-v-7007b64a {
+  width: 96rpx;
+  height: 96rpx;
+  margin: 0 auto;
+}
+#signUpRecord .scrollBox .signDayBox .box .tit.data-v-7007b64a {
+  height: 42rpx;
+  line-height: 42rpx;
+  color: #9C9C9C;
+  font-size: 30rpx;
+  margin: 10rpx auto;
+  text-align: center;
+}
+#signUpRecord .scrollBox .signDayBox .box .no.data-v-7007b64a {
+  height: 48rpx;
+  line-height: 48rpx;
+  color: #000000;
+  font-size: 34rpx;
+  margin: 10rpx auto;
+  text-align: center;
+  font-weight: 500;
+}
+#signUpRecord .scrollBox .calendarBox.data-v-7007b64a {
+  position: relative;
+  width: 100%;
+  height: 650rpx;
+}
+#signUpRecord .scrollBox .tipBox.data-v-7007b64a {
+  top: 0;
+  left: 50%;
+  width: 90%;
+  height: 78rpx;
+  padding-right: 25rpx;
+  text-align: right;
+  font-size: 30rpx;
+  color: #888C91;
+  line-height: 78rpx;
+  background: #FFFFFF;
+  font-weight: 700;
+  -webkit-border-radius: 28rpx;
+          border-radius: 28rpx;
+  margin: 20rpx auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#signUpRecord .scrollBox .tipBox .tit.data-v-7007b64a::before {
+  display: inline-block;
+  content: "";
+  width: 22rpx;
+  height: 22rpx;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  background: #FA9960;
+  clear: both;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+#signUpRecord .scrollBox .recordBox.data-v-7007b64a {
+  width: 90%;
+  min-height: 400rpx;
+  background: #FFFFFF;
+  -webkit-border-radius: 28rpx;
+          border-radius: 28rpx;
+  padding: 20rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+}
+#signUpRecord .scrollBox .recordBox .record_top .userInfo .photo.data-v-7007b64a {
+  width: 82rpx;
+  height: 80rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_top .userInfo .photo .pic.data-v-7007b64a {
+  width: 100%;
+}
+#signUpRecord .scrollBox .recordBox .record_top .userInfo .nameBox.data-v-7007b64a {
+  margin-left: 90rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_top .userInfo .nameBox .name.data-v-7007b64a {
+  height: 42rpx;
+  font-size: 30rpx;
+  color: #000000;
+  letter-spacing: 0.52rpx;
+  line-height: 42rpx;
+  font-weight: 500;
+}
+#signUpRecord .scrollBox .recordBox .record_top .userInfo .nameBox .time.data-v-7007b64a {
+  height: 28rpx;
+  font-size: 20rpx;
+  color: #888C91;
+  line-height: 28rpx;
+  letter-spacing: 0.21rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_top .signContentBox .content.data-v-7007b64a {
+  font-size: 24rpx;
+  color: #000000;
+  letter-spacing: 0.43rpx;
+  line-height: 33rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_top .signContentBox .picItemBox .itemPic.data-v-7007b64a {
+  width: 144.4rpx;
+  height: 194.7rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_top .thumbsUpBox.data-v-7007b64a {
+  text-align: right;
+}
+#signUpRecord .scrollBox .recordBox .record_top .thumbsUpBox .thumbsUp_pic.data-v-7007b64a {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 20rpx;
+  vertical-align: middle;
+}
+#signUpRecord .scrollBox .recordBox .record_top .thumbsUpBox .thumbsUp_tit.data-v-7007b64a {
+  font-size: 20rpx;
+  color: #000000;
+  letter-spacing: 0.21rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_top .thumbsUpBox .remark_tit.data-v-7007b64a {
+  font-size: 20rpx;
+  color: #FA9960;
+  letter-spacing: 0.21rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_bottom.data-v-7007b64a {
+  border-top: 1px dotted #AAACB0;
+}
+#signUpRecord .scrollBox .recordBox .record_bottom .remark_content_box.data-v-7007b64a {
+  font-size: 24rpx;
+  line-height: 33rpx;
+  letter-spacing: 0.43rpx;
+}
+#signUpRecord .scrollBox .recordBox .record_bottom .remark_content_box .teacherName.data-v-7007b64a {
+  color: #FF9452;
+}
+#signUpRecord .scrollBox .recordBox .record_bottom .remark_content_box .content.data-v-7007b64a {
+  color: #000000;
+}
+

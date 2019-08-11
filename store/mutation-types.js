@@ -4,4 +4,5 @@ export const setUserName = 'setUserName'
 export const setUserId = 'setUserId'
 // 设置 用户token
 export const setUserToken = 'setUserToken'
-
+// 存入 minxin 中获取的 系统的可视区高度
+export const saveWindowHeight = 'saveWindowHeight'

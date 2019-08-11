@@ -1,23 +1,70 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/sign/sign",
     "pages/find/find",
-    "pages/my/my"
+    "pages/sign/sign",
+    "pages/my/my",
+    "pages/packageA/find/ranklist/index",
+    "pages/packageA/find/lessonList/index",
+    "pages/packageA/find/lessonList/lessonDetail/index",
+    "pages/packageA/find/lessonList/lessonDetail/enterSuccess/index",
+    "pages/packageA/find/invitation/index",
+    "pages/packageA/find/invitation/shaireHaibao/index",
+    "pages/packageA/find/ranklist/index",
+    "pages/packageA/find/signUpRecord/index",
+    "pages/packageA/sign/immediatelySignUp/index",
+    "pages/packageA/sign/immediatelySignUp/submitTask/index",
+    "pages/packageA/sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
+    "pages/packageA/my/myAchievement/index",
+    "pages/packageA/my/myAchievement/certificate/index",
+    "pages/packageA/my/learnRecord/index",
+    "pages/packageA/my/help/index",
+    "pages/packageA/my/help/submitProblem/index",
+    "pages/packageA/my/help/submitProblem/submitProblemSuccess/index",
+    "pages/packageA/my/inviteFriends/index",
+    "pages/packageA/my/set/index"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "navigationBarBackgroundColor": "rgba(253,133,9,1)",
+    "backgroundColor": "rgba(254,147,82,1)"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/find/find",
+        "iconPath": "static/imgs/tab/find.png",
+        "selectedIconPath": "static/imgs/tab/find_highlight.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/sign/sign",
+        "iconPath": "static/imgs/tab/sign.png",
+        "selectedIconPath": "static/imgs/tab/sign_highlight.png",
+        "text": "打卡"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/imgs/tab/my.png",
+        "selectedIconPath": "static/imgs/tab/my_highlight.png",
+        "text": "我的"
+      }
+    ]
   },
   "nvueCompiler": "weex",
   "splashscreen": {
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "gaol-ui-app",
+  "appname": "uni-appProject",
   "compilerVersion": "2.0.1",
-  "usingComponents": {}
+  "usingComponents": {
+    "container": "/pages/components/container1/container"
+  }
 }

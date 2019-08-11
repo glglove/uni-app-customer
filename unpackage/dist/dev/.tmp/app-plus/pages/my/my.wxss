@@ -1,0 +1,108 @@
+#my.data-v-cc1aacdc {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+#my .bgBox.data-v-cc1aacdc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+#my .contentBox.data-v-cc1aacdc {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 1;
+}
+#my .contentBox .top.data-v-cc1aacdc {
+  width: 686rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  margin: 40rpx auto;
+}
+#my .contentBox .top .photo.data-v-cc1aacdc {
+  width: 108rpx;
+  height: 108rpx;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  vertical-align: middle;
+}
+#my .contentBox .top .name.data-v-cc1aacdc {
+  display: inline-block;
+  height: 48rpx;
+  margin-left: 25rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  letter-spacing: 0.59rpx;
+}
+#my .contentBox .top .set.data-v-cc1aacdc {
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 32rpx 0;
+}
+#my .contentBox .top .set image.set.data-v-cc1aacdc {
+  position: absolute;
+  top: -30rpx;
+  left: 0;
+  z-index: 1001;
+}
+#my .contentBox .top .set .btn.data-v-cc1aacdc {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  line-height: 0 !important;
+  background-color: transparent !important;
+  z-index: 1002;
+}
+#my .contentBox .containerBox.data-v-cc1aacdc {
+  width: 686rpx;
+  height: 560rpx;
+  -webkit-border-radius: 28rpx;
+          border-radius: 28rpx;
+  margin: 0 auto;
+  padding: 0 30rpx;
+  background: #FFFFFF;
+  border: 1px solid rgba(250, 235, 228, 0.2);
+  -webkit-box-shadow: 0 12px 10px rgba(252, 195, 165, 0.2);
+          box-shadow: 0 12px 10px rgba(252, 195, 165, 0.2);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#my .contentBox .containerBox .itemBox.data-v-cc1aacdc {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-left.data-v-cc1aacdc {
+  margin: 26rpx 0;
+}
+#my .contentBox .containerBox .itemBox .itemBox-left .pic.data-v-cc1aacdc {
+  width: 48rpx;
+  height: 45rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-left .tit.data-v-cc1aacdc {
+  height: 42rpx;
+  line-height: 42rpx;
+  color: #000000;
+  font-size: 30rpx;
+  letter-spacing: 0.46rpx;
+  margin-left: 30rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-right.data-v-cc1aacdc {
+  width: 15rpx;
+  height: 30rpx;
+  margin-top: 7.5rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-right .tip.data-v-cc1aacdc {
+  width: 100%;
+}
+

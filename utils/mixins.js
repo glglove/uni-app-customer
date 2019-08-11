@@ -2,7 +2,7 @@
 import base from '@/api/base.js'
 import commApi from '@/api/comm.js'
 // import { debug } from 'utils';
-import { getEnterType } from '@/utils/miniProSceneType'
+import { getEnterType } from '@/utils/miniProSceneType.js'
 
 // 小程序页面跳转
 export const miniProApi = {
@@ -11,7 +11,7 @@ export const miniProApi = {
 	},
 	data () {
 		return {
-
+			pHeight: 0, // container 组件的 高，从系统中获取
 		}
 	},
 	computed: {
@@ -20,10 +20,40 @@ export const miniProApi = {
 	watch:{
 	  
 	},
-	onLoad() {
+	async onLoad(options,data) {
+		// debugger
+		console.log(this)
+		//获取 系统的高后，由页面传给 container 组件
+		this.pHeight = uni.getSystemInfoSync().windowHeight
+		// 系统的高 存入 store中
+		this.$store.dispatch('saveWindowHeight', this.pHeight)
+		// debugger
+		try {
+			if(uni.canIUse('getSystemInfoSync.return.windowHeight')){
+				const res = uni.getSystemInfoSync()
+				console.log(res.model)
+				console.log(res.pixelRatio)
+				console.log(res.windowWidth)
+				console.log(res.windowHeight)
+				console.log(res.language)
+				console.log(res.version)
+				console.log(res.platform)
+			}				
+		} catch (error) {
+			
+		}
+		// 将页面中 写入  methods 中写入 一个 onComLoad 的方法， 如果有此方法则在 页面 onload 生命周期时，先执行 onComLoad 的方法 
+		if (typeof this.onComLoad!='undefined') await this.onComLoad(options,data);
+
+		// this.pHeight= this.getDeviceApi().getSystemInfoSync().windowHeight;
+		// console.log("---获取到的系统屏幕高度---------",this.pHeight)		
 		console.log('mixin onLoad')
 	},	
 	onShow() {
+		//获取 系统的高后，由页面传给 container 组件
+		this.pHeight = uni.getSystemInfoSync().windowHeight
+		// 系统的高 存入 store中
+		this.$store.dispatch('saveWindowHeight', this.pHeight)		
 		console.log('mixin onShow')
 	},
 	// 页面初次渲染完成
@@ -127,6 +157,7 @@ export const miniProApi = {
 		//小程序官方所有接口写在这里
 		getDeviceApi: () => {
 			return {
+				canIUse: uni.canIUse,
 				showNavigationBarLoading: uni.showNavigationBarLoading,
 				hideNavigationBarLoading: uni.hideNavigationBarLoading,
 				stopPullDownRefresh: uni.stopPullDownRefresh,
