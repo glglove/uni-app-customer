@@ -63,37 +63,102 @@
 </style>
 
 <template>
-	<view id="login">
-		<view class="loginBox">	
-			<view class="loginWrap">
-				<view class="userNameBox">
-					<span class="nameTit">用户名：</span>
-					<input class="userNameInput" type="text" value="" v-model="username"/>
+	<container>
+		<view id="login" slot="container-slot">	
+			<!--h5登录-->
+			<!-- #ifdef H5 -->
+			<view class="loginBox">	
+				<view class="loginWrap">
+					<view class="userNameBox">
+						<span class="nameTit">用户名：</span>
+						<input class="userNameInput" type="text" value="" v-model="username"/>
+					</view>
+					<view class="passWordBox">
+						<span class="pwdTit">密码：</span>
+						<input class="passWordInput" type="text" value="" v-model="password"/>
+					</view>
 				</view>
-				<view class="passWordBox">
-					<span class="pwdTit">密码：</span>
-					<input class="passWordInput" type="text" value="" v-model="password"/>
+			</view>		
+			
+			<view>
+				<button class="button click-able" plain="true" @tap="login">按钮</button>
+			</view>		
+			<!-- #endif -->
+			
+			
+			<!--小程序登录-->
+			<!-- #ifdef MP-WEIXIN -->
+			<!-- <authorize></authorize> -->
+			<!-- #endif -->
+					
+
+			<!--app-pulus--登录-->
+			<!-- #ifdef APP-PLUS-->
+			<view class="loginBox">	
+				<view class="loginWrap">
+					<view class="userNameBox">
+						<span class="nameTit">用户名：</span>
+						<input class="userNameInput" type="text" value="" v-model="username"/>
+					</view>
+					<view class="passWordBox">
+						<span class="pwdTit">密码：</span>
+						<input class="passWordInput" type="text" value="" v-model="password"/>
+					</view>
 				</view>
-			</view>
+			</view>			
+				
+			<button class="" @click="appLogin">APP微信授权登录</button>
+			<!--#endif-->	
 		</view>
-		<view>
-			<button class="button click-able" plain="true" @tap="login">按钮</button>
-		</view>
-	</view>
+	</container>
+	
+		
+		
 </template>
 
 <script>
 	import loginApi from '@/api/login.js'
 	import { miniProApi } from '@/utils/mixins.js'
+	import Authorize from '@/pages/components/authorize/authorize'
 	export default {
 		mixins:[ miniProApi ],
+		components:{
+			Authorize
+		},
 		data() {
 			return {
 				username: '',
 				password: '',
 			};
 		},
+		onLoad() {
+			console.log("----------login页面 ----onload----")
+		},
 		methods:{
+			// onComLoad
+			async onComLoad() {
+				console.log("----------login页面 ----onComLoad----")
+				// 先判断 用户是否微信授权
+				// #ifdef MP-WEIXIN
+					let isAuthorize = await this.getAuthorizeStatus("scope.userInfo", async () => {
+						this.$store.dispatch("setAuthorizeState", true)												
+						this.reLaunchPage("../find/find")
+					}, async () => {
+						// this.reLaunchPage("../find/find")												
+						this.$store.dispatch("setAuthorizeState", false)
+					})
+					
+					// if(isAuthorize){
+					// 	// 已授权
+					// 	// 页面跳转到find页面
+					// 	this.reLaunchPage("../find/find")
+					// 	this.$store.dispatch("setAuthorizeState", true)
+					// 	
+					// }else {
+					// 	// this.$store.dispatch("setAuthorizeState", false)
+					// }
+				// #endif
+			},
 			login(){
 				// debugger
 				this.showLoading();
@@ -103,7 +168,7 @@
 						name: this.username,
 						pwd: this.password
 					}
-					this.hideLoading();
+					this.hideLoading()
 					loginApi.register(params).then((res)=>{
 						debugger
 						console.log("调取注册/登录接口后返回到数据-----》",res)

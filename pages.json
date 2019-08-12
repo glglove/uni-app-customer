@@ -1,11 +1,13 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// #ifdef APP-PLUS || H5
 		{
 			"path" : "pages/login/login",
 			"style" : {
 				"navigationBarTitleText":"登陆"
 			}
 		},
+		//#endif
 		{
 			"path" : "pages/find/find",
 			"style" : {
@@ -26,6 +28,14 @@
 				"enablePullDownRefresh":true
 			}
 		},
+		// #ifdef MP-WEIXIN
+		{
+			"path" : "pages/login/login",
+			"style" : {
+				"navigationBarTitleText":"登陆"
+			}
+		},	
+		// #endif
 		{
 			"path" : "pages/packageA/find/ranklist/index",
 			"style" : {

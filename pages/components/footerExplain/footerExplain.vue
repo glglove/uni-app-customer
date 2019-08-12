@@ -58,7 +58,7 @@
 			}
 		},
 		data(){
-			// footerTextBgc: "background-color:`${this.bgcolor}`"
+
 		},
 		onLoad(){
 			

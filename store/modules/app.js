@@ -4,6 +4,7 @@ import { copyFile } from 'fs';
 
 const app = {
   state: {
+	authorizeState: true, // 小程序中 用户信息userInfo是否微信授权成功， false 未授权  true 已授权  默认 true
 	userName: '',// 用户名
 	userId: '', // 用户id
     // userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM',
@@ -13,6 +14,10 @@ const app = {
 	pHeight: '0'  // 页面的高度，minxin 中获取后 存入了 store中
   },
   mutations: {
+	 //设置 用户微信是否已授权用户信息userInfo
+	[types.setAuthorizeState] (state, flag) {
+		state.authorizeState = flag
+	},	  
 	[types.setUserName] (state, str) {
 		state.userName = str
 	},
@@ -37,6 +42,10 @@ const app = {
 	}
   },
   actions: {
+	// 设置 用户微信是否已授权用户信息userInfo
+	setAuthorizeState ({commit, state}, flag){
+		commit(types.setAuthorizeState, flag)
+	},
 	// 设置 用户姓名
 	setUserName ({commit, state}, str){
 		commit(types.setUserName, str)

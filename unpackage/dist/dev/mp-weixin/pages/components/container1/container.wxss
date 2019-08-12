@@ -1,4 +1,4 @@
-@-webkit-keyframes container_loading-data-v-ae751584 {
+@-webkit-keyframes container_loading-data-v-a4d78f34 {
 0% {
     -webkit-transform: rotate(30deg);
             transform: rotate(30deg);
@@ -16,7 +16,7 @@
             transform: translateX(-20px);
 }
 }
-@keyframes container_loading-data-v-ae751584 {
+@keyframes container_loading-data-v-a4d78f34 {
 0% {
     -webkit-transform: rotate(30deg);
             transform: rotate(30deg);
@@ -34,12 +34,12 @@
             transform: translateX(-20px);
 }
 }
-.container-box-cmp.data-v-ae751584 {
+.container-box-cmp.data-v-a4d78f34 {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.container-box-cmp .container_mask.data-v-ae751584 {
+.container-box-cmp .container_mask.data-v-a4d78f34 {
   position: fixed;
   top: 0;
   left: 0;
@@ -49,7 +49,7 @@
   opacity: 0.82;
   background: rgba(0, 0, 0, 0.75);
 }
-.container-box-cmp .container_loading.data-v-ae751584 {
+.container-box-cmp .container_loading.data-v-a4d78f34 {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -57,13 +57,22 @@
   height: 200rpx;
   margin-left: -100rpx;
   margin-top: -100rpx;
-  -webkit-border-radius: 10rpx;
-          border-radius: 10rpx;
+  border-radius: 10rpx;
   z-index: 1001;
   text-align: center;
 }
-.container-box-cmp .container_loading .loadingPic.data-v-ae751584 {
-  -webkit-animation: container_loading-data-v-ae751584 2s ease 0;
-          animation: container_loading-data-v-ae751584 2s ease 0;
+.container-box-cmp .container_loading .loadingPic.data-v-a4d78f34 {
+  -webkit-animation: container_loading-data-v-a4d78f34 2s ease 0;
+          animation: container_loading-data-v-a4d78f34 2s ease 0;
+}
+.container-box-cmp .container_authorize.data-v-a4d78f34 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1002;
 }
 

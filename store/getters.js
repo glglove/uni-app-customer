@@ -1,3 +1,5 @@
+// 获取用户信息 userInfo 是否微信授权成功
+export const authorizeState = state => state.app.authorizeState
 // 获取用户token
 export const userToken = state => state.app.userToken
 // 获取用户姓名

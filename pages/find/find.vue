@@ -344,7 +344,7 @@
 			};
 		},	
 		async onLoad () {
-			debugger
+			// debugger
 			console.log("find-----onload")
 			console.log("-------find首页检查是否登陆成功----",await this.getLoginStatus())
 			// 判断是否已经授权
@@ -356,7 +356,7 @@
 		},		
 		methods:{		
 			onComLoad () {
-				debugger
+				// debugger
 				console.log("find --------onComLoad")
 			},							
 			// 获取list 列表数据
@@ -373,7 +373,7 @@
 					}
 				}
 				findApi.getRankDayData( paramsObj, "loading", "加载中..").then(res => {
-					debugger
+					// debugger
 					// uni.hideLoading()
 					console.log(res)
 					if(res && res.data.code === 1){

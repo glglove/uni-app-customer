@@ -2,7 +2,8 @@
 import base from '@/api/base.js'
 import commApi from '@/api/comm.js'
 // import { debug } from 'utils';
-import { getEnterType } from '@/utils/miniProSceneType.js'
+import { getDeviceApi } from '@/utils/deviceApi.js'
+import getEnterType from '@/utils/miniProSceneType.js'
 import {mapGetters} from 'vuex' 
 
 // 小程序页面跳转
@@ -156,48 +157,7 @@ export const miniProApi = {
 		// 获取登录场景值（小程序）
 		getEnterType: getEnterType, 
 		//小程序官方所有接口写在这里
-		getDeviceApi: () => {
-			return {
-				canIUse: uni.canIUse,
-				showNavigationBarLoading: uni.showNavigationBarLoading,
-				hideNavigationBarLoading: uni.hideNavigationBarLoading,
-				stopPullDownRefresh: uni.stopPullDownRefresh,
-				chooseImage: uni.chooseImage,
-				getStorage: uni.getStorage,
-				getStorageSync: uni.getStorageSync,
-				getImageInfo: uni.getImageInfo,
-				setStorageSync: uni.setStorageSync,
-				clearStorage: uni.clearStorage,
-				removeStorageSync: uni.removeStorageSync,
-				navigateTo: uni.navigateTo,
-				switchTab: uni.switchTab,
-				reLaunch: uni.reLaunch,
-				navigateBack: uni.navigateBack,
-				showLoading: uni.showLoading,
-				hideLoading: uni.hideLoading,
-				showToast: uni.showToast,
-				showModal: uni.showModal,
-				showActionSheet: uni.showActionSheet,
-				getSetting: uni.getSetting,
-				authorize: uni.authorize,
-				getNetworkType: uni.getNetworkType,
-				openSetting: uni.openSetting,
-				getSystemInfo: uni.getSystemInfo,
-				getLocation: uni.getLocation,
-				openLocation: uni.openLocation,
-				redirectTo: uni.redirectTo,
-				showShareMenu: uni.showShareMenu,
-				onShareAppMessage: uni.onShareAppMessage,
-				getSystemInfoSync: uni.getSystemInfoSync,
-				makePhoneCall: uni.makePhoneCall,
-				pageScrollTo: uni.pageScrollTo,
-				requestPayment: uni.requestPayment,
-				setNavigationBarTitle:uni.setNavigationBarTitle,
-				getUserInfo:uni.getUserInfo,
-				login: uni.login,
-				getShareInfo: uni.getShareInfo
-			}
-		},	
+		getDeviceApi: getDeviceApi,	
 		
 		// 开启loading
 		showLoading(title, duration = 2000) {
@@ -421,6 +381,75 @@ export const miniProApi = {
 		isFunction(item) {
 		  return typeof item === 'function';
 		},     
+		// #ifdef MP-WEIXIN
+		chekWeixinLogin () {
+			// 微信登录状态监测	
+			return new Promise((resolve, reject) => {
+				this.getDeviceApi().checkSession({
+					success() {
+						console.log('微信登录session_key未过期，ok');
+						// session_key 未过期，并且在本生命周期一直有效
+						resolve(true)
+					},
+					fail() {
+						// 微信登录已过期
+						// session_key 已经失效，需要重新执行登录流程
+						//this.getDeviceApi().login() // 重新登录
+						this.toast("微信登录已过期,请重新授权登陆!")
+						reject("微信登录已过期")
+						console.log('expire');
+					}			
+				})
+			})
+		},
+		// #endif
+		
+		// #ifdef APP-PLUS
+		// app-plus 上面 检测 手机是否安装有微信、qq、weibo 等
+		appLogin: (type) => {
+			// type 值为 'weixin'  'qq'  'sinaweibo' 'xiaomi'
+			// 检测手机上是否安装微信、QQ、新浪微博等。
+			uni.getProvider({
+				service: 'oauth',
+				success: function(res) {
+					console.log(res.provider);
+					//支持微信、qq和微博等
+					if (~res.provider.indexOf(type)) {
+						// 有装 微信 qq  新浪微博 
+						uni.login({
+							provider: type,
+							success: function(loginRes) {
+								console.log('-------获取openid(unionid)-----');
+								console.log(JSON.stringify(loginRes));
+								// 获取用户信息
+								uni.getUserInfo({
+									provider: type,
+									success: function(infoRes) {
+										console.log(`-------获取用户 ${type}] 所有信息-----`);
+										console.log(JSON.stringify(infoRes.userInfo));
+										
+										
+									},
+									fail: function(err){
+										console.log(`-------获取用户 ${type}] 所有信息报错了-----`)
+										console.log(err);
+									}
+								})
+							}
+						})
+					}else {
+						//未装 微信  qq weibo  等
+						this.error(`手机未安装: [${type}]`)
+						console.log(`----------手机未安装: [${type}]----------`)
+					}
+				},
+				fail: function(err){
+					console.log("----------报错了------------")
+				}
+			})
+		},
+		// #endif
+		
 		// 授权成功后，进行登陆注册获取 token，并缓存 AuthorizeStatus ,token 等
 		async authorizeAfter_login(){
 			let that = this;
@@ -517,7 +546,7 @@ export const miniProApi = {
 			}) 
 		},		
 		// 判断是否授权（主要是微信小程序）
-		async getAuthorizeStatus(type) {
+		async getAuthorizeStatus(type, cb, fb) {
 			let _this = this
 			if(!type){
 				_this.toast("请传入scope.type!")
@@ -540,13 +569,17 @@ export const miniProApi = {
 					// 获取用户授权信息
 					console.log("打印用户授权的情况集合------------",res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
 					if( res ){
-						if(res.authSetting && res.authSetting[type]){
+						// debugger
+						if(res[1] && res[1]['authSetting'] && res[1]['authSetting'][type]){
 							// 自动检测到已经授过权
 							console.log(`--------------检测到已授权了：【${scopeText[type]}】 的权限---------`)
+							// 成功回调
+							cb && cb()
 							resolve(true)
 						}else {
 							// 未授权
 							console.log(`----------检测到未授权：【${scopeText[type]}】 的权限-----------`)
+							fb && fb()
 							resolve(false)
 						}
 					}else {

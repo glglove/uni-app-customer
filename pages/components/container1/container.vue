@@ -48,6 +48,16 @@
 				animation: container_loading 2s ease 0;
 			}
 		}
+		.container_authorize {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.2);
+			z-index: 1002;	
+		}
 	}
 	
 </style>
@@ -69,20 +79,32 @@
 		
 		<!-- common mask -->
 		<!-- containerMaskFlag: {{containerMaskFlag}} -->
-		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-if="containerMaskFlag"></view>
+		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-show="containerMaskFlag"></view>
 		
 		<!-- loading -->
 		<view :class="['container_loading', aniClass]" v-show="containerLoadingFlag">
 			<image class="loadingPic" :src="require('@/static/loading.png')" layz-load="true"></image>
-		</view>		
+		</view>	
+			
+		<!--authorize 授权区域------>
+		<!-- #ifdef MP-WEIXIN -->
+		<view :class="['container_authorize', aniClass]" v-show="!authorizeState">
+			<authorize></authorize>
+		</view>
+		<!--#endif-->
 	</view>
 </template>
 
 <script>
 	import { mapGetters, mapActions  } from 'vuex'
 	// import { miniProApi } from '@/utils/mixins.js'
+	import Authorize from '@/pages/components/authorize/authorize.vue'
+	
 	export default {
 		// mixins:[ miniProApi ],
+		components:{
+			Authorize
+		},
 		props: {
 			top: {
 				type: String,
@@ -139,6 +161,7 @@
 		},
 		computed:{
 			...mapGetters([
+				'authorizeState',
 				'containerLoadingFlag', 
 				'containerMaskFlag',
 				'pHeight'

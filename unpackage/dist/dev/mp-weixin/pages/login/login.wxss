@@ -1,4 +1,4 @@
-#login.data-v-5ddbbba6 {
+#login.data-v-1fbda2ce {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -10,11 +10,11 @@
   opacity: 1;
   background-color: #e8e5e5;
 }
-#login .loginBox.data-v-5ddbbba6 {
+#login .loginBox.data-v-1fbda2ce {
   width: 100%;
   margin: 300rpx 0 30rpx 0;
 }
-#login .loginBox .loginWrap .userNameBox.data-v-5ddbbba6 {
+#login .loginBox .loginWrap .userNameBox.data-v-1fbda2ce {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,17 +27,17 @@
   margin-bottom: 30rpx;
   padding: 10rpx 20rpx;
 }
-#login .loginBox .loginWrap .userNameBox .nameTit.data-v-5ddbbba6 {
+#login .loginBox .loginWrap .userNameBox .nameTit.data-v-1fbda2ce {
   width: 130rpx;
 }
-#login .loginBox .loginWrap .userNameBox .userNameInput.data-v-5ddbbba6 {
+#login .loginBox .loginWrap .userNameBox .userNameInput.data-v-1fbda2ce {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   border: 1rpx solid #000000;
 }
-#login .loginBox .loginWrap .passWordBox.data-v-5ddbbba6 {
+#login .loginBox .loginWrap .passWordBox.data-v-1fbda2ce {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,22 +49,22 @@
   height: 90rpx;
   padding: 10rpx 20rpx;
 }
-#login .loginBox .loginWrap .passWordBox .pwdTit.data-v-5ddbbba6 {
+#login .loginBox .loginWrap .passWordBox .pwdTit.data-v-1fbda2ce {
   width: 130rpx;
 }
-#login .loginBox .loginWrap .passWordBox .passWordInput.data-v-5ddbbba6 {
+#login .loginBox .loginWrap .passWordBox .passWordInput.data-v-1fbda2ce {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   border: 1rpx solid #000000;
 }
-#login .loginBtnBox.data-v-5ddbbba6 {
+#login .loginBtnBox.data-v-1fbda2ce {
   width: 100%;
   text-align: center;
   margin-top: 20rpx;
 }
-#login .loginBtnBox .loginBtn.data-v-5ddbbba6 {
+#login .loginBtnBox .loginBtn.data-v-1fbda2ce {
   width: 90%;
   height: 50px;
   line-height: 50px;
