@@ -28,14 +28,6 @@
 				"enablePullDownRefresh":true
 			}
 		},
-		// #ifdef MP-WEIXIN
-		{
-			"path" : "pages/login/login",
-			"style" : {
-				"navigationBarTitleText":"登陆"
-			}
-		},	
-		// #endif
 		{
 			"path" : "pages/packageA/find/ranklist/index",
 			"style" : {
@@ -155,36 +147,36 @@
 	],
 	// 分包加载
 	// #ifdef MP-WEIXIN
-	"subPackages":[
-		{
-			"root": "pages/packageA",
-			"pages": [
-			  "find/lessonList/index",
-			  "find/lessonList/lessonDetail/index",
-			  "find/lessonList/lessonDetail/enterSuccess/index",
-			  "find/invitation/index",
-			  "find/invitation/shaireHaibao/index",
-			  "find/ranklist/index",
-			  "find/signUpRecord/index",
-			  "sign/immediatelySignUp/index",
-			  "sign/immediatelySignUp/submitTask/index",
-			  "sign/immediatelySignUp/submitTask/submitTaskSuccess/index"
-			]	
-		},
-		{
-			"root": "pages/packageB",
-			"pages": [
-			  "my/myAchievement/index",
-			  "my/myAchievement/certificate/index",
-			  "my/learnRecord/index",
-			  "my/help/index",
-			  "my/help/submitProblem/index",
-			  "my/help/submitProblem/submitProblemSuccess/index",
-			  "my/inviteFriends/index",
-			  "my/set/index"	
-			]	
-		}
-	],
+	// "subPackages":[
+	// 	{
+	// 		"root": "pages/packageA",
+	// 		"pages": [
+	// 		  "find/lessonList/index",
+	// 		  "find/lessonList/lessonDetail/index",
+	// 		  "find/lessonList/lessonDetail/enterSuccess/index",
+	// 		  "find/invitation/index",
+	// 		  "find/invitation/shaireHaibao/index",
+	// 		  "find/ranklist/index",
+	// 		  "find/signUpRecord/index",
+	// 		  "sign/immediatelySignUp/index",
+	// 		  "sign/immediatelySignUp/submitTask/index",
+	// 		  "sign/immediatelySignUp/submitTask/submitTaskSuccess/index"
+	// 		]	
+	// 	},
+	// 	{
+	// 		"root": "pages/packageB",
+	// 		"pages": [
+	// 		  "my/myAchievement/index",
+	// 		  "my/myAchievement/certificate/index",
+	// 		  "my/learnRecord/index",
+	// 		  "my/help/index",
+	// 		  "my/help/submitProblem/index",
+	// 		  "my/help/submitProblem/submitProblemSuccess/index",
+	// 		  "my/inviteFriends/index",
+	// 		  "my/set/index"	
+	// 		]	
+	// 	}
+	// ],
 	//#endif
 	// 条件编译（主要用于测试特定页面时使用）
     // "condition": { //模式配置，仅开发期间生效
@@ -197,8 +189,14 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "rgba(253,133,9,1)",
-		"backgroundColor": "rgba(254,147,82,1)"
+		"navigationBarBackgroundColor": "rgba(253,133,9,1)"
+		//#ifdef  H5 ||APP-PLUS
+		,"backgroundColor": "rgba(254,147,82,1)"
+		//#endif
+		
+		//#ifdef MP-WEIXIN
+		,"backgroundColor": "#FFFFFF"
+		//#endif
 	},
 	"tabBar": {
 		"color": "#7A7E83",

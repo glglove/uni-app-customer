@@ -27,6 +27,7 @@ export default {
 	* @return {"code": 0, "message":"success", "content":{ "openid":"UV3osCbt8XPnq1KNm9LUDw"}}
 	*/
 	getOpenId(params, loading = false, loadingText = "加载中...") {
+		debugger
 		const url = `/app/customerApp/login`;
 		console.log( "打印获取openid时传给后端的参数---》", param );
 		var data = {}

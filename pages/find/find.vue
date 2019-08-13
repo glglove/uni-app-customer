@@ -93,7 +93,7 @@
 							}
 						}
 						.signUpTit {
-							width: 120upx;
+							// width: 120upx;
 							height: 42upx;
 							text-align: center;
 							line-height: 42upx;
@@ -315,6 +315,7 @@
 	import findApi from '@/api/find.js'
 	import { miniProApi } from '@/utils/mixins.js'
 	// import container from '@/pages/components/container1/container'
+	import {mapGetters} from 'vuex'
 
 	export default {
 		mixins: [ miniProApi ],
@@ -343,6 +344,11 @@
 				loadingMore: {}					
 			};
 		},	
+		computed:{
+			...mapGetters([
+				'userToken'
+			])
+		},
 		async onLoad () {
 			// debugger
 			console.log("find-----onload")
@@ -352,13 +358,20 @@
 			console.log("----------------find首页检查是否用户授权了userInfo--------", await this.getAuthorizeStatus('scope.userInfo'))
 			console.log("----------------find首页检查是否用户授权了userLocation--------", await this.getAuthorizeStatus('scope.userLocation'))
 			//#endif
-			this._getRankDayData()
+			
+			// 有token 时 才去 请求
+			if( this.userToken ){
+				this._getRankDayData()
+			}
 		},		
 		methods:{		
 			onComLoad () {
 				// debugger
 				console.log("find --------onComLoad")
-			},							
+			},	
+			refreshPage() {
+				this._getRankDayData()
+			},
 			// 获取list 列表数据
 			_getRankDayData () {
 				// debugger

@@ -13,6 +13,7 @@
 </style>	
 
 <script>
+	import store from '@/store/index.js'
 	import getEnterType from '@/utils/miniProSceneType'
 	import { getDeviceApi } from '@/utils/deviceApi.js'
 	export default {
@@ -39,10 +40,12 @@
 				// 	url: '../../pages/find/find'
 				// })
 				// store-app 中 存入 用户授权flag
-				this.$store.dispatch("setAuthorizeState", true)				
+				store.dispatch("setAuthorizeState", true)		
+				store.dispatch("setContainerLoadingFlag", false)
 			}, async function() {
 				// 未授权回调
-				this.$store.dispatch("setAuthorizeState", false)
+				store.dispatch("setAuthorizeState", false)
+				store.dispatch("setContainerLoadingFlag", true)
 			})
 			console.log("---------APP初始化时，onlanch中打印 是否授权--------", AuthorizeStatus_res)
 			// if( AuthorizeStatus_res ) {

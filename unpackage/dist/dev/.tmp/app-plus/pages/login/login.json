@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "登陆",
   "usingComponents": {
+    "container": "/pages/components/container1/container",
     "authorize": "/pages/components/authorize/authorize"
   }
 }

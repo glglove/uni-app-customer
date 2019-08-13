@@ -87,6 +87,10 @@ export const miniProApi = {
 
 	},
 	methods: {
+		// 页面中的刷新或者初始化方法，里面 调取页面中 统一自定义命名的 方法名称 叫做 refreshPage
+		mixin_refreshPage() {
+			this.refreshPage()
+		},
 		// 检查是否登录
 		getLoginStatus () {
 			return new Promise((resolve, reject) => {
@@ -288,7 +292,7 @@ export const miniProApi = {
 		setStorage ( key , val ) {
 			if( key ) {
 			  // 成功返回 customer
-			  this.getDeviceApi.setStorageSync({
+			  this.getDeviceApi().setStorageSync({
 				key: key,
 				data: val ,
 				success: function(res){
@@ -308,7 +312,7 @@ export const miniProApi = {
 		// 提取localstorage
 		getStorage( key ) {
 			return new Promise((resolve,reject)=>{
-			  let res = this.getDeviceApi.getStorageSync(key);
+			  let res = this.getDeviceApi().getStorageSync(key);
 			  resolve( res )
 			})
 		},
@@ -317,7 +321,7 @@ export const miniProApi = {
 			switch (type){
 				// type 1 表示 异步删除
 				case 1:
-					this.getDeviceApi.removeStorage({
+					this.getDeviceApi().removeStorage({
 					  key: key,
 					  success: function(res){
 						// success
@@ -334,7 +338,7 @@ export const miniProApi = {
 				break;
 				// type 2 表示 同步删除
 				case 2:
-					this.getDeviceApi.removeStorageSync({
+					this.getDeviceApi().removeStorageSync({
 					  key: key,
 					  success: function(res){
 						// success
@@ -453,66 +457,84 @@ export const miniProApi = {
 		
 		// 授权成功后，进行登陆注册获取 token，并缓存 AuthorizeStatus ,token 等
 		async authorizeAfter_login(){
+			debugger
 			let that = this;
 			// debugger;
 			// 登陆之前，首先将全局的授权状态notAuthrize改为 已授权(true)，并存入 localstorage中，后续判断是否授权都是看localstorage里面的这个字段
-			this.$parent.globalData.notAuthorize = true;
 			await that.setStorage( "AuthorizeStatus", true );    
 			return new Promise(async (resolve,reject)=>{
 			  try {
 				console.log('---调用login方法---')
-				let token = this.getDeviceApi.getStorageSync('token') || '';    
+				// let token = that.getDeviceApi().getStorageSync('token') || '';    
 		  
-				let userInfo = this.getDeviceApi.getStorageSync( 'userInfo' ) || '';
-				if( token )   await that.removeStorage("token" );
-				if( userInfo )  await that.removeStorage("userInfo" );      
+				// let userInfo = that.getDeviceApi().getStorageSync( 'userInfo' ) || '';
+				// if( token )   await that.removeStorage("token" );
+				// if( userInfo )  await that.removeStorage("userInfo" );      
 		  
-				// 先登陆 wx.login();
-				let {code:code} = await this.getDeviceApi.login();  //通过调用login获取code 判断是否开始登录
+				debugger
+				// 先登陆 uni.login();
+				let {code:code} = await that.getDeviceApi().login();  //通过调用uni.login()获取code 判断是否开始登录
 		  
 				console.log("获取到的code：", code)
 		  
 				if(code){
-				  let userInfo= await this.getDeviceApi.getUserInfo({
-					lang: "zh_CN"
-				  });  
-				  console.log("-----授权后通过wepy.getUserInfo()获取用户信息返回的结果-----：",userInfo)
+                    let userInfo= await that.getDeviceApi().getUserInfo({
+                        lang: "zh_CN"
+                    });  
+                    console.log("-----授权后通过uni.getUserInfo()获取用户信息返回的结果-----：",userInfo)
+                    debugger
+                    let {
+                        iv,
+                        encryptedData
+                        } = userInfo
+
+                    that.$store.dispatch("setUserName", userInfo)  // 将返回的数据赋值 存入 store 的app中  
+                 
+                    let params = {
+                        params: {
+                            code: code,
+                            encryptedData: encryptedData,
+                            iv: iv,
+                            type: '' //0是扫码，1是点击分享图，2.微信上搜索的
+                        }
+                    }
+                 
+                //  this.$parent.gloabalData.ret = userInfo;  //  将返回的数据赋值给 全局gloabalData 的ret 
+				//   console.log('---获取信息,发送网络请求，将获取到的code 传给后台获取 用户信息（openid、token等信息）---');
 		  
-				  this.$parent.globalData.ret = userInfo;  // 将返回的数据赋值給  globalData中   
-				 
-				  console.log('---获取信息,发送网络请求，将获取到的code 传给后台获取 用户信息（openid、token等信息）---');
+				//   let ret = this.$parent.globalData.ret;
 		  
-				  let ret = this.$parent.globalData.ret;
+				//   let type = "";
 		  
-				  let type = "";
+				//   console.log("----打印global中的 optionObj对象信息---：", this.$parent.globalData.optionObj );
+				//   if ( this.$parent.globalData.optionObj.scene ){
+				// 	// 场景值
+				// 	type = await that.getEnterType(this.$parent.globalData.optionObj.scene );
+				//   }
 		  
-				  console.log("----打印global中的 optionObj对象信息---：", this.$parent.globalData.optionObj );
-				  if ( this.$parent.globalData.optionObj.scene ){
-					// 场景值
-					type = await that.getEnterType(this.$parent.globalData.optionObj.scene );
-				  }
-		  
-				  let params = {
-					params: {
-					  code: code,
-					  encryptedData: ret.encryptedData,
-					  iv: ret.iv,
-					  type: type,       //0是扫码，1是点击分享图，2.微信上搜索的
-					  userId: that.$parent.globalData.optionObj.query.scene ? that.$parent.globalData.optionObj.query.scene : "",    // 用户scene唯一标识 用于邀请人数的统计
-					}
-				  }
+				//   let params = {
+				// 	params: {
+				// 	  code: code,
+				// 	  encryptedData: ret.encryptedData,
+				// 	  iv: ret.iv,
+				// 	  type: type,       //0是扫码，1是点击分享图，2.微信上搜索的
+				// 	  userId: that.$parent.globalData.optionObj.query.scene ? that.$parent.globalData.optionObj.query.scene : "",    // 用户scene唯一标识 用于邀请人数的统计
+				// 	}
+				//   }
 		  
 				  // 调用 后台注册用户信息的login接口 getOenId 方法
 				  // console.log(commApi)
 				  await commApi.getOpenId( params, true ).then(async (res)=>{
 					if ( res && res.code == 1 ) {
 					  console.log('---网络请求返回成功---')
-					  console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", res);            
+					  console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", res)          
 					  //返回成功 则 存入缓存
 					  // wx.setStorageSync(res);
-					  await that.setStorage( "token", res.data.token );
+					  await that.setStorage( "token", res.data.token )
+					  // 将token 存入 store - app中
+					  that.$store.dispatch("setUserToken", res.data.token)
 					  // 缓存 用户信息 userInfo
-					  await that.setStorage( "userInfo", res.data.customer ); 
+					  await that.setStorage( "userInfo", res.data.customer )
 					  //触发授权组件关闭弹框
 					  // debugger;
 					  // this.reLaunchPage("../blacklist/index");              
@@ -525,7 +547,7 @@ export const miniProApi = {
 					// }
 					else {
 					  // 登陆后后台返回错误
-					  this.toast("登陆失败");
+					  that.toast("登陆失败");
 					  console.log("---------调用后台login接口后返回的状态有问题-------")
 					}
 				  }).then(async ()=>{
@@ -545,9 +567,11 @@ export const miniProApi = {
 				console.log(error) 
 			  }   
 			}) 
-		},		
+		},	  
+			
 		// 判断是否授权（主要是微信小程序）
 		async getAuthorizeStatus(type, cb, fb) {
+			// type: "scope.userInfo" "scope.userLocation" "scope.address" "scope.invoiceTitle" "scope.invoice" "scope.record" "scope.werun" "scope.writePhotosAlbum" "scope.camera"
 			let _this = this
 			if(!type){
 				_this.toast("请传入scope.type!")

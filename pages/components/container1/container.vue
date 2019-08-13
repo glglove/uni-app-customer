@@ -88,6 +88,10 @@
 			
 		<!--authorize 授权区域------>
 		<!-- #ifdef MP-WEIXIN -->
+		<!-- isAuthorize: {{JSON.stringify(isAuthorize)}} -->
+		{{JSON.stringify(isAuthorize)}}
+		------
+		{{authorizeState}}
 		<view :class="['container_authorize', aniClass]" v-show="!authorizeState">
 			<authorize></authorize>
 		</view>
@@ -99,6 +103,9 @@
 	import { mapGetters, mapActions  } from 'vuex'
 	// import { miniProApi } from '@/utils/mixins.js'
 	import Authorize from '@/pages/components/authorize/authorize.vue'
+	import { getDeviceApi } from '@/utils/deviceApi.js'
+	
+	
 	
 	export default {
 		// mixins:[ miniProApi ],
@@ -145,15 +152,14 @@
 		},	
 		onLoad() {
 			// debugger
-			console.log("container-----onload")
-			this.pHeight= uni.getSystemInfoSync().windowHeight;
-			console.log("---获取到的系统屏幕高度---------",this.pHeight)	
+			// console.log("container-----onload")
+			// this.pHeight= uni.getSystemInfoSync().windowHeight;
+			// console.log("---获取到的系统屏幕高度---------",this.pHeight)	
 		},					
 		onShow() {
-			debugger
-			console.log("container-----onShow")
-
-			this.pHeight= uni.getSystemInfoSync().windowHeight;
+			// debugger
+			// console.log("container-----onShow")
+			// this.pHeight= uni.getSystemInfoSync().windowHeight;
 			// console.log("---获取到的系统屏幕高度---------",this.pHeight)			
 		},
 		onHide() {
@@ -169,7 +175,16 @@
 			positionStyle() {
                 return `background:${this.background};position:relative;padding-top:${this.top}px;padding-bottom:${this.bottom}px;
                 padding-left:${this.left}px;padding-right:${this.right}px;min-height:${this.pHeight}px;opacity:${this.containerLoadingFlag?0:1}`
-			}			
+			}
+			// 小程序上面 自动检测 是否有授权
+			// #ifdef MP-WEIXIN
+			,async isAuthorize(){
+				console.log("container组件中computed 中获得的 userInfo授权状态", await this.getAuthorizeStatus("scope.userInfo"))
+				let isAuthorize_res = await this.getAuthorizeStatus("scope.userInfo")
+				console.log('container组件中computed 中打印isAuthorize_res的值 ', isAuthorize_res)
+				return isAuthorize_res
+			}
+			//#endif
 		},
 		watch: {
 			containerLoadingFlag: {
@@ -266,6 +281,75 @@
 					this.setContainerMaskFlag(false)
 				}
 			},
+			// 获取小程序 是否授权userInfo
+			// #ifdef MP-WEIXIN
+			async getAuthorizeStatus(type, cb, fb) {
+				// type: "scope.userInfo" "scope.userLocation" "scope.address" "scope.invoiceTitle" "scope.invoice" "scope.record" "scope.werun" "scope.writePhotosAlbum" "scope.camera"
+				let _this = this
+				if(!type){
+					_this.toast("请传入scope.type!")
+					return 
+				}
+				let scopeText = {
+					"scope.userInfo":"用户信息",
+					"scope.userLocation": "地理位置",
+					"scope.address": "通讯地址",
+					"scope.invoiceTitle": "发票排头",
+					"scope.invoice": "获取发票",
+					"scope.record": "录音功能",
+					"scope.werun": "微信运动步数",
+					"scope.writePhotosAlbum": "保存到相册",
+					"scope.camera": "摄像头"
+				}		
+
+				return new Promise((resolve,reject)=>{
+					getDeviceApi().getSetting().then((res) => {
+						// 获取用户授权信息
+						console.log("打印用户授权的情况集合------------",res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
+						if( res ){
+							// debugger
+							if(res[1] && res[1]['authSetting'] && res[1]['authSetting'][type]){
+								// 自动检测到已经授过权
+								console.log(`--------------检测到已授权了：【${scopeText[type]}】 的权限---------`)
+								// 成功回调
+								cb && cb()
+								resolve(true)
+							}else {
+								// 未授权
+								console.log(`----------检测到未授权：【${scopeText[type]}】 的权限-----------`)
+								fb && fb()
+								resolve(false)
+							}
+						}else {
+							// 先判断是否是网络问题造成了请求失败
+							try {
+								getDeviceApi().getNetworkType({
+									success: function (res) {
+										let  networkType = res.networkType
+										if( networkType != "none" ) {
+											// 有网络，检查 缓存中的授权字段
+											//   let AuthorizeStatus = _this.getDeviceApi().getStorageSync("AuthorizeStatus");
+											//   if( AuthorizeStatus ) {
+											// 	resolve( true ) ;
+											//   }else {
+											// 	resolve( false ) ;
+											//   }  
+											reject("--------报错了-------------")
+										}else {
+											// 无网络 返回true, 弹出 提示
+											_this.error("网络异常")
+											reject( "--------网络异常，请先检查网络------------" ) 
+										}
+									}
+								})
+							} catch (error) {
+								reject("--------报错了-------")
+							}						
+						}
+					})
+				})		
+			},	
+			//#endif
 		}
 	}
 </script>
