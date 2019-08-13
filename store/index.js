@@ -11,7 +11,7 @@ import createLogger from 'vuex/dist/logger'
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
-// #ifdef H5 || APP-PLUS
+// #ifdef H5 
 const vuexLocal = new VuexPersistense({
   storage: localStorage,
   reducer: val => {
@@ -37,7 +37,7 @@ const store = new Vuex.Store({
 	getters,
 	// strict: debug,  // 加了严格模式动态挂载路由会报错，但不影响功能
 	// plugins: debug ? [createLogger()] : [] // 插件只有一个时
-	//#ifdef H5 || APP-PLUS
+	//#ifdef H5 
 	plugins: debug ? [createLogger(), vuexLocal] : [vuexLocal]  // 多个插件时候
 	//#endif
 	//#ifdef MP-WEIXIN 

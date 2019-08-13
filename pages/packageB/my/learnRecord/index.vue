@@ -216,7 +216,7 @@
                 </view>
             </view> -->
             <view class="calendarBox wrap">
-                <twCalendar :isShow.sync="calendarVisible" :value.sync="time"></twCalendar> 
+                <!-- <twCalendar :isShow.sync="calendarVisible" :value.sync="time"></twCalendar>  -->
             </view>
 
             <!-- <view class="flex-center wrapper">
@@ -235,7 +235,7 @@
                 <view class="record_top">
                     <view class="userInfo clearfix">
                         <view class="photo lt">
-                            <image class="pic" src="../../../../assets/imgs/icon/photo.png"></image>
+                            <image class="pic" :src="require('@/static/imgs/icon/photo.png')"></image>
                         </view>
                         <view class="nameBox">
                             <view class="name">明年上研一</view>
@@ -248,16 +248,16 @@
                             发现理论知识还有很多需要学习的地方,感谢学姐学长带我们打卡，希望自己21天可以收获满满
                         </view>
                         <view class="picItemBox">
-                            <image class="itemPic" src="../../../../assets/imgs/icon/commentPic.png"></image>
-                            <image class="itemPic" src="../../../../assets/imgs/icon/commentPic.png"></image>
-                            <image class="itemPic" src="../../../../assets/imgs/icon/commentPic.png"></image>
+                            <image class="itemPic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
+                            <image class="itemPic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
+                            <image class="itemPic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
                         </view> 
                     </view>
 
                     <view class="thumbsUpBox">
-                        <image class="thumbsUp_pic" src="../../../../assets/imgs/icon/btn_highlight_dianzan.png"></image>
+                        <image class="thumbsUp_pic" :src="require('@/static/imgs/icon/btn_highlight_dianzan.png')"></image>
                         <text class="thumbsUp_tit">点赞1</text>
-                        <image class="thumbsUp_pic" src="../../../../assets/imgs/icon/btn_highlight_dianpin.png"></image>
+                        <image class="thumbsUp_pic" :src="require('@/static/imgs/icon/btn_highlight_dianpin.png')"></image>
                         <text class="remark_tit">点评</text>
                     </view>
 
@@ -282,169 +282,9 @@
 </template>
 
 <script>
-  import wepy from 'wepy'
-  import { connect } from 'wepy-redux'
-  import moment from 'moment'
-  import base from '../../../../api/base'
-  import https from  '../../../../utils/https.js'
-  import mockData from '../../../../utils/mockData.js'
-  import tabBarBottom from '@/components/tabbar/tabbar';
-  import tabBox from '@/components/tab/index';
-  import myInfo from '@/components/panel';
-  import twCalendar from '@/components/calendar/index';
-  import twMixin from '../../../../mixins/common.js'
-
-
-
-  @connect({
-    num (state) {
-      return state.counter.num
-    },
-    asyncNum (state) {
-      return state.counter.asyncNum
-    },
-    sumNum (state) {
-      return state.counter.num + state.counter.asyncNum
+export default {
+    data () {
+        
     }
-  })
-
-  export default class gaolong extends wepy.page {
-    config = {
-        navigationBarTitleText: '学习记录',
-        "onReachBottomDistance": 10,  
-        "enablePullDownRefresh": false,
-    };
-    components = {
-        tabBox,
-        twCalendar
-    };
-    data = {
-        calendarVisible: true,
-        time: ''  
-    };
-
-
-    computed = {
-      now () {
-        return +new Date()
-      },
-    };
-
-    watch = {};  // 声明数据watcher（详见后文介绍）
-
-    mixins = [
-        twMixin,
-    ];  // 声明页面所引用的Mixin实例
-
-    onLaunch () {
-      console.log('onlanch')
-      console.log(base)
-    };
-
-    onLoad(option){
-        var self = this;
-
-        console.log(9999999999999999999999999)
-        //console.log(this.$parent.globalData.tabBar)
-
-        //  获取数据,更新数据  tabBarClickHandle()启动文件中编写的---- 0就是形参id的实参
-        // this.tabBarData = this.$parent.globalData.tabBar;
-        // this.$apply();
-        // console.log(this.tabBarData)
-
-
-    }
-
-    async onShow () {
-        console.log(2)
-        var self = this;
-        console.log('onShow')
-        console.log(this)
-        console.log(base.baseUrl)
-
-        this.time = moment().format('YYYY-MM-DD');
-        this.$apply();
-        // 向calendar 子组件 分发事件
-        this.$broadcast("initCalendar",this.time);
-    }
-
-    // 绑定的事件
-    methods = {
-        //事件处理函数
-        intoDetail: async function ( idx , item ) {
-            //进入详情页
-            console.log( idx , item );
-
-            let predata = await this.getPageData(1,this,"getListData",idx);
-            console.log( "首页中获取的单个list的详情数据",predata );
-
-            // 页面调转前 进行数据的预加载
-            this.$preload('detailData', predata);
-
-            wepy.navigateTo({
-                url: `../packageA/index/index?itemId=${idx}`
-            })
-        },
-
-        searchSelect () {
-            console.log(self)
-            wx.showActionSheet({
-                itemList: ['A', 'B', 'C'],
-                success: function(res) {
-                    if (!res.cancel) {
-                        console.log(res.tapIndex)
-                    }
-                }
-            });            
-        },
-
-
-        focusEvent( e ) {
-            this.$broadcast('foucsEvent')
-        },
-
-        blurEvent( ){
-            this.$broadcast('blurEvent')
-        },
-
-
-        openConfirm: function () {
-            wx.showModal({
-                title: '修改昵称',
-                content: '修改昵称',
-                confirmText: "确定",
-                cancelText: "取消",
-                success: function (res) {
-                    console.log(res);
-                    if (res.confirm) {
-                        console.log('用户点击主操作')
-                    }else{
-                        console.log('用户点击辅助操作')
-                    }
-                }
-            });
-        },        
-    }
-
-
-    //包括组件之间的 广播、分发等事件
-    //$broadcast：父组件触发所有子组件事件
-
-    //$emit：子组件触发父组件事件
-    
-    //$invoke：子组件触发子组件事件
-
-    events = {
-
-    }
-
-    // 自定义的 事件
-
-    async init(){
-        // 页面初始化
-        // this.getHomeData( 1 );
-        // let resHomeData = await this.getPageData(1,this,'getHomeData');
-
-    }
-}   
+}
 </script>

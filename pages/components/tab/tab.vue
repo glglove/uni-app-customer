@@ -330,13 +330,13 @@
 </style>
 <template>
 <view class="top_tab">
-    <scroll-view class="top_tab_box {{arrow!='false'?'pr':''}}" scroll-with-animation scroll-x scroll-left="{{lPostion}}" bindscroll="leftChange">
-        <view wx:for="{{list}}" wx:for-item="item"  wx:key="idx" wx:for-index="idx" class="li {{index==idx?'selected':''}}{{type=='default'?'':' two_line'}}" @tap.stop="itemTap({{idx}})">
-            <block wx:if="{{type == 'default'}}">
+    <scroll-view :class="['top_tab_box', arrow!='false'?'pr':'']" scroll-with-animation scroll-x scroll-left="lPostion" bindscroll="leftChange">
+        <view v-for="(item,idx) in list" :key="idx" :class="['li', index==idx?'selected':'', type=='default'?'':' two_line']" @tap.stop="itemTap(idx)">
+            <template v-if="type == 'default'">
               <view>{{item}}</view>
-            </block>
+            </template>
             <block wx:else>
-              <view class="text {{item[3]?'vacation':''}}">
+              <view :class="['text', item[3]?'vacation':'']">
                {{item[0]}}
               </view>
               <view class="text">
@@ -345,21 +345,18 @@
             </block>
         </view>
     </scroll-view>
-    <view wx:if="{{arrow!='false'}}" class="iconfont mykicon-yyok__arrow_icon click-able" @tap="toRight"></view>
+    <view  v-if="arrow!='false'" class="iconfont mykicon-yyok__arrow_icon click-able" @tap="toRight"></view>
 </view>
 </template>
 <script>
-import wepy from 'wepy';
-// export default class MyPage extends wepy.page {
-export default class tab extends wepy.component {
-  config = {}; // 只在Page实例中存在的配置数据，对应于原生的page.json文件
-  customerData={
-      lPostion:0
-  }
-  data = {
-      lPostion:0
-  }; // 页面所需数据均需在这里声明，可用于模板数据绑定
-  props = {
+
+export default {
+  data(){
+	  return {
+		lPostion:0
+	  }
+  },
+  props: {
       arrow:{
        type:String,
        default:'true'
@@ -375,27 +372,20 @@ export default class tab extends wepy.component {
        type:String,
        default:'default'
      }
-  };
+  },
+  components: {}, // 声明页面中所引用的组件，或声明组件中所引用的子组件
 
-  components = {}; // 声明页面中所引用的组件，或声明组件中所引用的子组件
-
-  mixins = []; // 声明页面所引用的Mixin实例
-
-  computed = {}; // 声明计算属性（详见后文介绍）
-
-  watch = {}; // 声明数据watcher（详见后文介绍）
-
-  methods = {
+  methods: {
     leftChange(e){
-        this.customerData.lPostion=e.detail.scrollLeft
+        this.lPostion=e.detail.scrollLeft
     },
     toRight(){
          this.lPostion=this.customerData.lPostion+100
     },
     itemTap(index){
       // this.index=index;
-      this.$emit("item-change",index)
+      // this.$emit("item-change",index)
     }
-  }; // 声明页面wxml中标签的事件处理函数。注意，此处只用于声明页面wxml中标签的bind、catch事件，自定义方法需以自定义方法的方式声明
+  }
 }
 </script>

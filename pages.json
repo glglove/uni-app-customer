@@ -46,19 +46,19 @@
 		,{
 			"path" : "pages/packageA/find/lessonList/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"课程"
 			}
 		},
 		{
 			"path" : "pages/packageA/find/lessonList/lessonDetail/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"课程详情"
 			}
 		},	
 		{
 			"path" : "pages/packageA/find/lessonList/lessonDetail/enterSuccess/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"报名"
 			}
 		},		
 		{
@@ -67,12 +67,12 @@
 				"navigationBarTitleText":"登陆"
 			}
 		},	
-		{
-			"path" : "pages/packageA/find/invitation/shaireHaibao/index",
-			"style" : {
-				"navigationBarTitleText":"登陆"
-			}
-		},	
+		// {
+		// 	"path" : "pages/packageA/find/invitation/shaireHaibao/index",
+		// 	"style" : {
+		// 		"navigationBarTitleText":"登陆"
+		// 	}
+		// },	
 		{
 			"path" : "pages/packageA/find/ranklist/index",
 			"style" : {
@@ -82,7 +82,7 @@
 		{
 			"path" : "pages/packageA/find/signUpRecord/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"学习"
 			}
 		},	
 		{
@@ -96,95 +96,95 @@
 			"style" : {
 				"navigationBarTitleText":"登陆"
 			}
-		},	
+		},			
 		{
 			"path" : "pages/packageA/sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"反馈"
 			}
-		},	
+		},
 		{
-			"path" : "pages/packageA/my/myAchievement/index",
+			"path" : "pages/packageB/my/myAchievement/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"我的成就"
 			}
 		},	
 		{
-			"path" : "pages/packageA/my/myAchievement/certificate/index",
+			"path" : "pages/packageB/my/myAchievement/certificate/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"证书"
 			}
 		},	
 		{
-			"path" : "pages/packageA/my/learnRecord/index",
+			"path" : "pages/packageB/my/learnRecord/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"学习"
 			}
 		},	
 		{
-			"path" : "pages/packageA/my/help/index",
+			"path" : "pages/packageB/my/help/index",
 			"style" : {
 				"navigationBarTitleText":"登陆"
 			}
 		},		
 		{
-			"path" : "pages/packageA/my/help/submitProblem/index",
+			"path" : "pages/packageB/my/help/submitProblem/index",
 			"style" : {
 				"navigationBarTitleText":"登陆"
 			}
 		},	
 		{
-			"path" : "pages/packageA/my/help/submitProblem/submitProblemSuccess/index",
+			"path" : "pages/packageB/my/help/submitProblem/submitProblemSuccess/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"提交成功"
 			}
 		},		
 		{
-			"path" : "pages/packageA/my/inviteFriends/index",
+			"path" : "pages/packageB/my/inviteFriends/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"邀请朋友"
 			}
 		},	
 		{
-			"path" : "pages/packageA/my/set/index",
+			"path" : "pages/packageB/my/set/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"设置"
 			}
 		}
 		//#endif	
 	],
 	// 分包加载
 	// #ifdef MP-WEIXIN
-	// "subPackages":[
-	// 	{
-	// 		"root": "pages/packageA",
-	// 		"pages": [
-	// 		  "find/lessonList/index",
-	// 		  "find/lessonList/lessonDetail/index",
-	// 		  "find/lessonList/lessonDetail/enterSuccess/index",
-	// 		  "find/invitation/index",
-	// 		  "find/invitation/shaireHaibao/index",
-	// 		  "find/ranklist/index",
-	// 		  "find/signUpRecord/index",
-	// 		  "sign/immediatelySignUp/index",
-	// 		  "sign/immediatelySignUp/submitTask/index",
-	// 		  "sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
-	// 		]	
-	// 	},
-	//  {
-	//      "root": "pages/packageB",
-	//      "pages": [
-	// 		  "my/myAchievement/index",
-	// 		  "my/myAchievement/certificate/index",
-	// 		  "my/learnRecord/index",
-	// 		  "my/help/index",
-	// 		  "my/help/submitProblem/index",
-	// 		  "my/help/submitProblem/submitProblemSuccess/index",
-	// 		  "my/inviteFriends/index",
-	// 		  "my/set/index"	
-	//		]	
-	//  }
-	// ],
+	"subPackages":[
+		{
+			"root": "pages/packageA",
+			"pages": [
+			  "find/lessonList/index",
+			  "find/lessonList/lessonDetail/index",
+			  "find/lessonList/lessonDetail/enterSuccess/index",
+			  "find/invitation/index",
+			  "find/invitation/shaireHaibao/index",
+			  "find/ranklist/index",
+			  "find/signUpRecord/index",
+			  "sign/immediatelySignUp/index",
+			  "sign/immediatelySignUp/submitTask/index",
+			  "sign/immediatelySignUp/submitTask/submitTaskSuccess/index"
+			]	
+		},
+		{
+			"root": "pages/packageB",
+			"pages": [
+			  "my/myAchievement/index",
+			  "my/myAchievement/certificate/index",
+			  "my/learnRecord/index",
+			  "my/help/index",
+			  "my/help/submitProblem/index",
+			  "my/help/submitProblem/submitProblemSuccess/index",
+			  "my/inviteFriends/index",
+			  "my/set/index"	
+			]	
+		}
+	],
 	//#endif
 	// 条件编译（主要用于测试特定页面时使用）
     // "condition": { //模式配置，仅开发期间生效

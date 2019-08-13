@@ -107,7 +107,10 @@
 				</view>
 			</view>			
 				
-			<button class="" @click="appLogin">APP微信授权登录</button>
+			<view>
+				<button class="button click-able" plain="true" @tap="login">按钮</button>
+			</view>					
+			<!-- <button class="" @click="appLogin">APP微信授权登录</button> -->
 			<!--#endif-->	
 		</view>
 	</container>

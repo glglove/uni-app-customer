@@ -9,22 +9,20 @@
     "pages/packageA/find/lessonList/lessonDetail/index",
     "pages/packageA/find/lessonList/lessonDetail/enterSuccess/index",
     "pages/packageA/find/invitation/index",
-    "pages/packageA/find/invitation/shaireHaibao/index",
     "pages/packageA/find/ranklist/index",
     "pages/packageA/find/signUpRecord/index",
     "pages/packageA/sign/immediatelySignUp/index",
     "pages/packageA/sign/immediatelySignUp/submitTask/index",
     "pages/packageA/sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
-    "pages/packageA/my/myAchievement/index",
-    "pages/packageA/my/myAchievement/certificate/index",
-    "pages/packageA/my/learnRecord/index",
-    "pages/packageA/my/help/index",
-    "pages/packageA/my/help/submitProblem/index",
-    "pages/packageA/my/help/submitProblem/submitProblemSuccess/index",
-    "pages/packageA/my/inviteFriends/index",
-    "pages/packageA/my/set/index"
+    "pages/packageB/my/myAchievement/index",
+    "pages/packageB/my/myAchievement/certificate/index",
+    "pages/packageB/my/learnRecord/index",
+    "pages/packageB/my/help/index",
+    "pages/packageB/my/help/submitProblem/index",
+    "pages/packageB/my/help/submitProblem/submitProblemSuccess/index",
+    "pages/packageB/my/inviteFriends/index",
+    "pages/packageB/my/set/index"
   ],
-  "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
@@ -63,7 +61,7 @@
     "autoclose": false
   },
   "appname": "uni-appProject",
-  "compilerVersion": "2.0.1",
+  "compilerVersion": "2.1.3",
   "usingComponents": {
     "container": "/pages/components/container1/container"
   }

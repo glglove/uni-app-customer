@@ -1,1 +1,0 @@
-<container vue-id="1" class="data-v-61b32b1a" bind:__l="__l" vue-slots="{{['container-slot']}}"><view class="content data-v-61b32b1a" slot="container-slot" id="sign"><view class="bgBox data-v-61b32b1a"><image class="bgpic data-v-61b32b1a" src="{{bg.sign_bg}}" lazy-load="true"></image></view><view class="contentBox data-v-61b32b1a"></view></view></container>

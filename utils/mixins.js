@@ -24,7 +24,7 @@ export const miniProApi = {
 	},
 	async onLoad(options,data) {
 		// debugger
-		console.log(this)
+		// console.log(this)
 		//获取 系统的高后，由页面传给 container 组件
 		this.pHeight = uni.getSystemInfoSync().windowHeight
 		// 系统的高 存入 store中
@@ -439,7 +439,8 @@ export const miniProApi = {
 						})
 					}else {
 						//未装 微信  qq weibo  等
-						this.error(`手机未安装: [${type}]`)
+						// this.error(`手机未安装: [${type}]`)
+						this.toast(`手机未安装: [${type}]`)
 						console.log(`----------手机未安装: [${type}]----------`)
 					}
 				},

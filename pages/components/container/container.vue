@@ -410,7 +410,7 @@
             _imgUrl:''
 		};
 		props = {
-			 : {
+			top: {
 				type: String,
 				default: "0"
 			},

@@ -27,8 +27,7 @@
   background: #EB637A;
 }
 .button.highlight {
-  -webkit-border-radius: 4rpx;
-          border-radius: 4rpx;
+  border-radius: 4rpx;
   background: #FA9960;
   display: inline-block;
   color: #594A23;
@@ -44,8 +43,7 @@
 .input {
   display: inline-block;
   background: #FFFFFF;
-  -webkit-border-radius: 4rpx;
-          border-radius: 4rpx;
+  border-radius: 4rpx;
   height: 88rpx;
   line-height: 88rpx;
   padding-left: 30rpx;

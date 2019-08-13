@@ -223,7 +223,7 @@
 						<view class="contentTop">
 							<view class="contentTopLeft lt">
 								<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
-									<image class="signUpPic click-able" src="../../static/imgs/icon/signUp.png" layz-load="true" @tap.stop = ""></image>
+									<image class="signUpPic click-able" :src="require('@/static/imgs/icon/signUp.png')" layz-load="true" @tap.stop = ""></image>
 								</button>
 								<view class="signUpNum marginT10">
 									<text class="signDay">{{signData.signDay}}</text>
@@ -234,7 +234,7 @@
 
 							<view class="contentTopRight rt">
 								<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
-									<image class="rankPic click-able" src="../../static/imgs/icon/rank.png" layz-load="true" @tap.stop = ""></image>
+									<image class="rankPic click-able" :src="require('@/static/imgs/icon/rank.png')" layz-load="true" @tap.stop = ""></image>
 								</button>
 								<view class="rankNum marginT10">
 									<text class="rankNo">{{signData.rankNo}}</text>
@@ -243,12 +243,12 @@
 							</view>  
 										
 							<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
-								<image class="signUpPic" src="../../static/imgs/icon/signUpPic.png"></image>
+								<image class="signUpPic" :src="require('@/static/imgs/icon/signUpPic.png')"></image>
 								<text class="signUpTit click-able">立即报名</text>
 							</button>
 
 							<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
-								<image class="invitationPic" src="../../static/imgs/icon/invitationPic.png" layz-load="true"></image>
+								<image class="invitationPic" :src="require('@/static/imgs/icon/invitationPic.png')" layz-load="true"></image>
 								<text class="invitationTit click-able">邀请好友</text>               
 							</button>							  
 						</view>			

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import loginApi from '@/api/login.js'
+	// import loginApi from '@/api/login.js'
 	export default {
 		data() {
 			return {

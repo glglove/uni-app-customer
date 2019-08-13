@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "authorize": "/pages/components/authorize/authorize"
-  },
-  "component": true
-}

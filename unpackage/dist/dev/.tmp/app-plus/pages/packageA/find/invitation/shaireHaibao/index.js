@@ -1,1 +1,0 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/packageA/find/invitation/shaireHaibao/index"],[],[["../../../../../git-nodeProgram/uni-app-customer/main.js?{\"page\":\"pages%2FpackageA%2Ffind%2Finvitation%2FshaireHaibao%2Findex\"}","common/runtime","common/vendor"]]]);
