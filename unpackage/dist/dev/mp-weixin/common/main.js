@@ -136,12 +136,13 @@ var _deviceApi = __webpack_require__(/*! @/utils/deviceApi.js */ 25);function _i
                         // 	url: '../../pages/find/find'
                         // })
                         // store-app 中 存入 用户授权flag
-                        _index.default.dispatch("setAuthorizeState", true);
-                        _index.default.dispatch("setContainerLoadingFlag", false);case 2:case "end":return _context.stop();}}}, _callee, this);})), /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(
+                        console.log("App------onLaunch------检测到用户信息已授权-true----");
+                        _index.default.dispatch("setAuthorizeState", true);case 2:case "end":return _context.stop();}}}, _callee, this);})), /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(
               function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
                         // 未授权回调
-                        _index.default.dispatch("setAuthorizeState", false);
-                        _index.default.dispatch("setContainerLoadingFlag", true);case 2:case "end":return _context2.stop();}}}, _callee2, this);})));case 5:AuthorizeStatus_res = _context3.sent;
+                        console.log("App------onLaunch------检测到用户信息未授权--false---");
+                        // store-app 中存入 用户未授权状态 flag
+                        _index.default.dispatch("setAuthorizeState", false);case 2:case "end":return _context2.stop();}}}, _callee2, this);})));case 5:AuthorizeStatus_res = _context3.sent;
 
               console.log("---------APP初始化时，onlanch中打印 是否授权--------", AuthorizeStatus_res);
               // if( AuthorizeStatus_res ) {

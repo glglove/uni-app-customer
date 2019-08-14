@@ -82,6 +82,8 @@
 		},
 		onLoad() {
 			this.getLessonList()
+			this.getLessonList()
+			this.getLessonList()
 		},
 		methods: {
 			//onload 之前的 生命周期

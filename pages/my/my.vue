@@ -108,7 +108,7 @@
 </style>
 
 <template>
-	<container>
+	<container :loading1="loading1">
 		<view id="my"  slot="container-slot" :style="positionStyle" @touchstart=""  @touchmove="" @touchend="" >
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->

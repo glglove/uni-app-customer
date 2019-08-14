@@ -17,6 +17,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$configs = configs
 Vue.prototype.$http = http
 Vue.prototype.$store = store
+Vue.prototype.$bus = new Vue()
 
 App.mpType = 'app'
 
