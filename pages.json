@@ -9,6 +9,18 @@
 		},
 		//#endif
 		{
+            "path": "pages/welecome/welecome",
+            "style": {
+                "navigationBarTitleText": "登录模板"
+            }
+		},
+		{
+            "path": "pages/login1/login1",
+            "style": {
+                "navigationBarTitleText": "登录"
+            }			
+		},
+		{
 			"path" : "pages/find/find",
 			"style" : {
 				"navigationBarTitleText":"发现",

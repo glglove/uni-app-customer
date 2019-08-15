@@ -1,4 +1,4 @@
-.shadBox.data-v-cc8da1e2 {
+.shadBox.data-v-5780f737 {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,19 +8,19 @@
   background: rgba(0, 0, 0, 0.2);
   z-index: 2000;
 }
-.shadBox.not_authrize.data-v-cc8da1e2 {
+.shadBox.not_authrize.data-v-5780f737 {
   -webkit-transition: all 0.1s;
   -o-transition: all 0.1s;
   transition: all 0.1s;
   opacity: 1;
 }
-.shadBox.already_authrize.data-v-cc8da1e2 {
+.shadBox.already_authrize.data-v-5780f737 {
   -webkit-transition: all 0.1s;
   -o-transition: all 0.1s;
   transition: all 0.1s;
   opacity: 0;
 }
-.shadBox .contentBox.data-v-cc8da1e2 {
+.shadBox .contentBox.data-v-5780f737 {
   position: absolute;
   width: 500rpx;
   height: 480rpx;
@@ -34,7 +34,7 @@
   padding: 20rpx 40rpx;
   z-index: 3000;
 }
-.shadBox .contentBox .header.data-v-cc8da1e2 {
+.shadBox .contentBox .header.data-v-5780f737 {
   text-align: center;
   width: 100rpx;
   height: 100rpx;
@@ -43,33 +43,33 @@
   border-radius: 50%;
   background: #edece8;
 }
-.shadBox .contentBox .header .pic.data-v-cc8da1e2 {
+.shadBox .contentBox .header .pic.data-v-5780f737 {
   width: 80%;
   height: 80%;
   margin-top: 10rpx;
 }
-.shadBox .contentBox .content.data-v-cc8da1e2 {
+.shadBox .contentBox .content.data-v-5780f737 {
   margin: 30rpx;
   font-size: 28rpx;
   height: 160rpx;
 }
-.shadBox .contentBox .content .tit.data-v-cc8da1e2 {
+.shadBox .contentBox .content .tit.data-v-5780f737 {
   color: #000000;
 }
-.shadBox .contentBox .content .text.data-v-cc8da1e2 {
+.shadBox .contentBox .content .text.data-v-5780f737 {
   display: block;
   color: #9d9d9d;
   margin-top: 40rpx;
 }
-.shadBox .contentBox .bottom.data-v-cc8da1e2 {
+.shadBox .contentBox .bottom.data-v-5780f737 {
   border-radius: 80rpx;
   margin: 20rpx 50rpx;
   font-size: 35rpx;
 }
-.shadBox .contentBox .bottom.authorizeBtn.data-v-cc8da1e2 {
+.shadBox .contentBox .bottom.authorizeBtn.data-v-5780f737 {
   background: #FA9960;
 }
-.shadBox .versitionTit.data-v-cc8da1e2 {
+.shadBox .versitionTit.data-v-5780f737 {
   position: absolute;
   top: 0;
   right: 0;
@@ -77,7 +77,7 @@
   bottom: 0;
   margin: auto;
 }
-.shadBox .versitionTit .tit.data-v-cc8da1e2 {
+.shadBox .versitionTit .tit.data-v-5780f737 {
   position: absolute;
   top: 50%;
   left: 50%;

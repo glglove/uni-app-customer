@@ -1,4 +1,4 @@
-#sign.data-v-61b32b1a {
+#sign.data-v-b49ccc1c {
   position: absolute;
   top: 0;
   left: 0;
@@ -7,23 +7,23 @@
   margin: auto;
   overflow-y: scroll;
 }
-#sign .logo.data-v-61b32b1a {
+#sign .logo.data-v-b49ccc1c {
   height: 200rpx;
   width: 200rpx;
   margin-top: 200rpx;
 }
-#sign .title.data-v-61b32b1a {
+#sign .title.data-v-b49ccc1c {
   font-size: 36rpx;
   color: #8f8f94;
 }
-#sign .bgBox.data-v-61b32b1a {
+#sign .bgBox.data-v-b49ccc1c {
   width: 100%;
   height: 100%;
 }
-#sign .bgBox .bgpic.data-v-61b32b1a {
+#sign .bgBox .bgpic.data-v-b49ccc1c {
   width: 100%;
 }
-#sign .contentBox.data-v-61b32b1a {
+#sign .contentBox.data-v-b49ccc1c {
   position: absolute;
   top: 0;
   left: 0;

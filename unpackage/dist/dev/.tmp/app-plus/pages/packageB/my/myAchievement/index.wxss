@@ -1,11 +1,11 @@
-#myAchievement.data-v-5fc4dc01 {
+#myAchievement.data-v-5af618d9 {
   position: relative;
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#myAchievement .contentBox.data-v-5fc4dc01 {
+#myAchievement .contentBox.data-v-5af618d9 {
   height: 100%;
   padding: 24rpx;
   background: #F6F6F7;
@@ -13,13 +13,13 @@
           box-sizing: border-box;
   overflow-y: auto;
 }
-#myAchievement .contentBox.data-v-5fc4dc01::-webkit-scrollbar {
+#myAchievement .contentBox.data-v-5af618d9::-webkit-scrollbar {
   width: 0 !important ;
   height: 0 !important ;
   color: transparent !important ;
   display: none;
 }
-#myAchievement .contentBox .item.data-v-5fc4dc01 {
+#myAchievement .contentBox .item.data-v-5af618d9 {
   padding: 40rpx 30rpx;
   height: 260rpx;
   width: 686rpx;
@@ -28,25 +28,25 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#myAchievement .contentBox .item .picBox.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .picBox.data-v-5af618d9 {
   width: 131rpx;
   height: 178rpx;
 }
-#myAchievement .contentBox .item .picBox .pic.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .picBox .pic.data-v-5af618d9 {
   width: 100%;
 }
-#myAchievement .contentBox .item .item-right-contentBox.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .item-right-contentBox.data-v-5af618d9 {
   position: relative;
   margin-left: 160rpx;
   height: 178rpx;
   overflow: hidden;
 }
-#myAchievement .contentBox .item .item-right-contentBox .top.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .item-right-contentBox .top.data-v-5af618d9 {
   position: absolute;
   top: 0;
   left: 0;
 }
-#myAchievement .contentBox .item .item-right-contentBox .top .tit-top.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .item-right-contentBox .top .tit-top.data-v-5af618d9 {
   font-size: 34rpx;
   letter-spacing: 0.36rpx;
   height: 48rpx;
@@ -55,33 +55,33 @@
   font-family: PingFangSC-Medium;
   font-weight: bold;
 }
-#myAchievement .contentBox .item .item-right-contentBox .top .tit-bottom.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .item-right-contentBox .top .tit-bottom.data-v-5af618d9 {
   margin-top: 10rpx;
   font-size: 24rpx;
   color: #888C91;
   letter-spacing: 0.26rpx;
 }
-#myAchievement .contentBox .item .item-right-contentBox .bottom.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .item-right-contentBox .bottom.data-v-5af618d9 {
   position: absolute;
   bottom: 20rpx;
   left: 0;
   font-size: 24rpx;
   color: #A7A7A7;
 }
-#myAchievement .contentBox .item .item-right-contentBox .bottom .signTime.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .item-right-contentBox .bottom .signTime.data-v-5af618d9 {
   height: 28rpx;
   line-height: 28rpx;
 }
-#myAchievement .contentBox .item .item-right-contentBox .bottom .signPeper.data-v-5fc4dc01 {
+#myAchievement .contentBox .item .item-right-contentBox .bottom .signPeper.data-v-5af618d9 {
   margin-top: 10rpx;
   height: 28rpx;
   line-height: 28rpx;
 }
-#myAchievement .noData.data-v-5fc4dc01 {
+#myAchievement .noData.data-v-5af618d9 {
   width: 100%;
   height: 100%;
 }
-#myAchievement .noData .noDataPic.data-v-5fc4dc01 {
+#myAchievement .noData .noDataPic.data-v-5af618d9 {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -91,7 +91,7 @@
       transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
 }
-#myAchievement .noData .noDataPic.data-v-5fc4dc01::after {
+#myAchievement .noData .noDataPic.data-v-5af618d9::after {
   display: block;
   content: "\6682\672A\83B7\5F97\7ED3\8BFE\8BC1\4E66";
   position: absolute;
@@ -99,7 +99,7 @@
   left: 0;
   margin-top: 10px;
 }
-#myAchievement .footer.data-v-5fc4dc01 {
+#myAchievement .footer.data-v-5af618d9 {
   position: absolute;
   bottom: 120rpx;
   left: 0;
@@ -111,20 +111,20 @@
   line-height: 33rpx;
   font-size: 24rpx;
 }
-#myAchievement .footer .left-line.data-v-5fc4dc01 {
+#myAchievement .footer .left-line.data-v-5af618d9 {
   display: inline-block;
   width: 80rpx;
   height: 0;
   border-top: 1px solid #979797;
   vertical-align: middle;
 }
-#myAchievement .footer .footText.data-v-5fc4dc01 {
+#myAchievement .footer .footText.data-v-5af618d9 {
   display: inline-block;
   width: 170rpx;
   height: 33rpx;
   margin: 30rpx 10rpx 0 10rpx;
 }
-#myAchievement .footer .right-line.data-v-5fc4dc01 {
+#myAchievement .footer .right-line.data-v-5af618d9 {
   display: inline-block;
   width: 80rpx;
   height: 0;
