@@ -1,6 +1,4 @@
 {
   "navigationBarTitleText": "打卡",
-  "usingComponents": {
-    "container": "/pages/components/container1/container"
-  }
+  "usingComponents": {}
 }

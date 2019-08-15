@@ -40,12 +40,13 @@
 				// 	url: '../../pages/find/find'
 				// })
 				// store-app 中 存入 用户授权flag
+				console.log("App------onLaunch------检测到用户信息已授权-true----")
 				store.dispatch("setAuthorizeState", true)		
-				store.dispatch("setContainerLoadingFlag", false)
 			}, async function() {
 				// 未授权回调
+				console.log("App------onLaunch------检测到用户信息未授权--false---")
+				// store-app 中存入 用户未授权状态 flag
 				store.dispatch("setAuthorizeState", false)
-				store.dispatch("setContainerLoadingFlag", true)
 			})
 			console.log("---------APP初始化时，onlanch中打印 是否授权--------", AuthorizeStatus_res)
 			// if( AuthorizeStatus_res ) {

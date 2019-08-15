@@ -40,5 +40,6 @@
   },
   "usingComponents": {
     "container": "/pages/components/container1/container"
-  }
+  },
+  "sitemapLocation": "sitemap82.json"
 }

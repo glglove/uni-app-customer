@@ -56,8 +56,13 @@ http.put('user/1', {status: 2}).then((res)=>{
 http.delete('user/1').then((res)=>{
 	console.log(JSON.stringify(res))
 }) 
-
 */
+
+
+
+// 设置一个 计数器, 当请求次数为0 时 才去 触发 allloading 的显示，当请求的数量 超过1时，也只触发 一次显示allloading，当请求都完成时，才触发结束 allloading 的显示
+let allloadingNum = 0
+
 export default {
 	config: {
 		baseUrl: configs.baseUrl,
@@ -80,7 +85,7 @@ export default {
 		// 默认统一的请求拦截函数
 		request: (configs) => {
 		  // 将请求的参数中 默认增加 token
-		//   debugger
+			//   debugger
 		  const data = configs.data || {}
 		  // 主要控制是否loading
 		  const loading = configs.loading 
@@ -92,21 +97,44 @@ export default {
 				'token': store.getters.userToken  // 从store 中 获取userToken 
 			}))  
 		  }
-		  // 全局属性中传入的 loading 为真，则需要显示
-		  if(loading){
-			const title = configs.loadingText
-			// 加载loading
-			uni.showLoading({
-				title: title,
-				mask: true
-			});
-		  }
+		  	// 全局属性中传入的 loading 为真，则需要显示
+			//   if(loading){
+			// 	const title = configs.loadingText
+			// 	// 加载loading
+			// 	uni.showLoading({
+			// 		title: title,
+			// 		mask: true
+			// 	});
+			//   }
+
+			if(loading){
+				// const title = configs.loadingText
+				// // 加载loading
+				// uni.showLoading({
+				// 	title: title,
+				// 	mask: true
+				// });
+				// 显示全屏的allLoading
+				++allloadingNum
+				if( allloadingNum <=1 ){
+					store.dispatch("setContainerAllloadingFlag", true)
+					console.log("https-----------【++allloadingNum】后的数量-触发了setContainerAllloadingFlag--", allloadingNum)
+				}
+			}		
 		},
 		// 默认统一的响应拦截函数
 		response: (configs) => {
 			// debugger
 			// 隐藏加载loading
-			configs.config.loading && uni.hideLoading()
+			// configs.config.loading && uni.hideLoading()
+			if( allloadingNum>1){
+				--allloadingNum
+				console.log("https-----------【--allloadingNum】后的数量-没有触发setContainerAllloadingFlag------", allloadingNum)
+			}else if( allloadingNum == 1){
+				configs.config.loading && store.dispatch("setContainerAllloadingFlag", false)
+				--allloadingNum
+				console.log("https-----------【--allloadingNum】后的数量- 触发了setContainerAllloadingFlag------", allloadingNum)
+			}
 			return configs
 		}
 	},

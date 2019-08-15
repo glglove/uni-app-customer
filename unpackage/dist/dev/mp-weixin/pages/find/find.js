@@ -441,7 +441,7 @@ __webpack_require__.r(__webpack_exports__);
 var _find = _interopRequireDefault(__webpack_require__(/*! @/api/find.js */ 50));
 var _mixins = __webpack_require__(/*! @/utils/mixins.js */ 51);
 
-var _vuex = __webpack_require__(/*! vuex */ 12);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _uniPagination = function _uniPagination() {return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ "node-modules/@dcloudio/uni-ui/lib/uni-pagination/uni-pagination").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ 126));};var _uniCard = function _uniCard() {return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-card/uni-card */ "node-modules/@dcloudio/uni-ui/lib/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-card/uni-card */ 133));};var FooterExplain = function FooterExplain() {return __webpack_require__.e(/*! import() | pages/components/footerExplain/footerExplain */ "pages/components/footerExplain/footerExplain").then(__webpack_require__.bind(null, /*! @/pages/components/footerExplain/footerExplain */ 140));};var _default =
+var _vuex = __webpack_require__(/*! vuex */ 12);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _uniPagination = function _uniPagination() {return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ "node-modules/@dcloudio/uni-ui/lib/uni-pagination/uni-pagination").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-pagination/uni-pagination */ 127));};var _uniCard = function _uniCard() {return __webpack_require__.e(/*! import() | node-modules/@dcloudio/uni-ui/lib/uni-card/uni-card */ "node-modules/@dcloudio/uni-ui/lib/uni-card/uni-card").then(__webpack_require__.bind(null, /*! @dcloudio/uni-ui/lib/uni-card/uni-card */ 134));};var FooterExplain = function FooterExplain() {return __webpack_require__.e(/*! import() | pages/components/footerExplain/footerExplain */ "pages/components/footerExplain/footerExplain").then(__webpack_require__.bind(null, /*! @/pages/components/footerExplain/footerExplain */ 141));};var _default =
 
 {
   mixins: [_mixins.miniProApi],
@@ -477,7 +477,7 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _interopRequireDefault(
 
   onLoad: function () {var _onLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
               // debugger
-              console.log("find-----onload");_context.t0 =
+              console.log("find页面------------onload");_context.t0 =
               console;_context.next = 4;return this.getLoginStatus();case 4:_context.t1 = _context.sent;_context.t0.log.call(_context.t0, "-------find首页检查是否登陆成功----", _context.t1);_context.t2 =
 
 
@@ -490,12 +490,28 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _interopRequireDefault(
                 this._getRankDayData();
               }case 17:case "end":return _context.stop();}}}, _callee, this);}));function onLoad() {return _onLoad.apply(this, arguments);}return onLoad;}(),
 
+  onShow: function onShow() {
+    console.log("find页面-----------------onShow");
+  },
+  onReady: function onReady() {
+    console.log("find页面-----------------onReady");
+  },
+  onTabItemTap: function onTabItemTap() {
+    console.log("find页面-----------onTabItemTap----");
+  },
   methods: {
-    onComLoad: function onComLoad() {
-      // debugger
-      console.log("find --------onComLoad");
-    },
+    onComLoad: function () {var _onComLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var isAuthorize;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                // debugger
+                console.log("find --------onComLoad");
+                // find 首页 判断 用户是否授权userinfo 信息
+                _context2.next = 3;return this.getAuthorizeStatus("scope.userInfo");case 3:isAuthorize = _context2.sent;
+                console.log("find --------onComLoad--获取到的用户信息授权状态----", isAuthorize);
+                // 将授权状态存入 store 中
+                this.$store.dispatch("setAuthorizeState", isAuthorize);case 6:case "end":return _context2.stop();}}}, _callee2, this);}));function onComLoad() {return _onComLoad.apply(this, arguments);}return onComLoad;}(),
+
     refreshPage: function refreshPage() {
+      this._getRankDayData();
+      this._getRankDayData();
       this._getRankDayData();
     },
     // 获取list 列表数据

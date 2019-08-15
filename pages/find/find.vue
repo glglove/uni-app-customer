@@ -203,7 +203,7 @@
 	}
 </style>
 <template>
-	<container>
+	<container :loading1="loading1">
 		<view  id="findBox" slot="container-slot">
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
@@ -351,7 +351,7 @@
 		},
 		async onLoad () {
 			// debugger
-			console.log("find-----onload")
+			console.log("find页面------------onload")
 			console.log("-------find首页检查是否登陆成功----",await this.getLoginStatus())
 			// 判断是否已经授权
 			//#ifdef MP-WEIXIN
@@ -363,13 +363,29 @@
 			if( this.userToken ){
 				this._getRankDayData()
 			}
-		},		
+		},
+		onShow(){
+			console.log("find页面-----------------onShow")
+		},	
+		onReady(){
+			console.log("find页面-----------------onReady")
+		},	
+		onTabItemTap(){
+			console.log("find页面-----------onTabItemTap----")
+		},
 		methods:{		
-			onComLoad () {
+			async onComLoad () {
 				// debugger
 				console.log("find --------onComLoad")
+				// find 首页 判断 用户是否授权userinfo 信息
+				let isAuthorize = await this.getAuthorizeStatus("scope.userInfo")
+				console.log("find --------onComLoad--获取到的用户信息授权状态----", isAuthorize)
+				// 将授权状态存入 store 中
+				this.$store.dispatch("setAuthorizeState", isAuthorize)
 			},	
 			refreshPage() {
+				this._getRankDayData()
+				this._getRankDayData()
 				this._getRankDayData()
 			},
 			// 获取list 列表数据

@@ -8,7 +8,8 @@
 			transform: translateX(20px)
 		}
 		50% {
-			transform: translateY(10px)
+			transform: translateY(10px);
+			width: 200px
 		}
 		100% {
 			transform: translateX(-20px)
@@ -32,6 +33,22 @@
 			opacity: 0.82;
 			background: rgba(0, 0, 0, .75);			
 		}
+		.container_allLoading {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			width: 128rpx;
+			height: 128rpx;
+			margin-left: -64rpx;
+			margin-top: -64rpx;
+			// background: rgba(0, 0, 0, 0.80);
+			border-radius: 10rpx;
+			z-index: 1000;
+			text-align: center;		
+			.allLoadingPic {
+				// animation: container_loading .2s ease 0;
+			}
+		}		
 		.container_loading {
 			position: fixed;
 			top: 50%;
@@ -45,7 +62,7 @@
 			z-index: 1001;
 			text-align: center;		
 			.loadingPic {
-				animation: container_loading 2s ease 0;
+				// animation: container_loading .2s ease 0;
 			}
 		}
 		.container_authorize {
@@ -80,18 +97,24 @@
 		<!-- common mask -->
 		<!-- containerMaskFlag: {{containerMaskFlag}} -->
 		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-show="containerMaskFlag"></view>
+
+		<!-- allLoading -->
+		<view :class="['container_allLoading', aniClass]" v-show="containerAllloadingFlag">
+			<image class="allLoadingPic" :src="require('@/static/allLoading.gif')" layz-load="true"></image>
+		</view>	
 		
 		<!-- loading -->
-		<view :class="['container_loading', aniClass]" v-show="containerLoadingFlag">
-			<image class="loadingPic" :src="require('@/static/loading.png')" layz-load="true"></image>
+		loading1: {{loading1}}
+		<view :class="['container_loading', aniClass]" v-show="loading1">
+			<image class="loadingPic" :src="require('@/static/loading.gif')" layz-load="true"></image>
 		</view>	
 			
 		<!--authorize 授权区域------>
 		<!-- #ifdef MP-WEIXIN -->
 		<!-- isAuthorize: {{JSON.stringify(isAuthorize)}} -->
-		{{JSON.stringify(isAuthorize)}}
+		<!-- {{JSON.stringify(isAuthorize)}}
 		------
-		{{authorizeState}}
+		{{authorizeState}} -->
 		<view :class="['container_authorize', aniClass]" v-show="!authorizeState">
 			<authorize></authorize>
 		</view>
@@ -108,7 +131,6 @@
 	
 	
 	export default {
-		// mixins:[ miniProApi ],
 		components:{
 			Authorize
 		},
@@ -133,6 +155,10 @@
 				type: String,
 				default: 'transparent'
 			},
+			loading1: {
+				type: Boolean,
+				default: false
+			}
 			// more: {
 			// 	type: String,
 			// 	default: 'false'
@@ -152,29 +178,36 @@
 		},	
 		onLoad() {
 			// debugger
-			// console.log("container-----onload")
+			console.log("container-----onload")
 			// this.pHeight= uni.getSystemInfoSync().windowHeight;
 			// console.log("---获取到的系统屏幕高度---------",this.pHeight)	
 		},					
 		onShow() {
 			// debugger
-			// console.log("container-----onShow")
+			console.log("container-----onShow")		
 			// this.pHeight= uni.getSystemInfoSync().windowHeight;
 			// console.log("---获取到的系统屏幕高度---------",this.pHeight)			
 		},
+		onReady(){
+			console.log("container----------onReady")				
+		},
+		onUnload() {
+		
+		},
 		onHide() {
-			
+
 		},
 		computed:{
 			...mapGetters([
 				'authorizeState',
+				'containerAllloadingFlag',
 				'containerLoadingFlag', 
 				'containerMaskFlag',
 				'pHeight'
 			]),
 			positionStyle() {
                 return `background:${this.background};position:relative;padding-top:${this.top}px;padding-bottom:${this.bottom}px;
-                padding-left:${this.left}px;padding-right:${this.right}px;min-height:${this.pHeight}px;opacity:${this.containerLoadingFlag?0:1}`
+                padding-left:${this.left}px;padding-right:${this.right}px;min-height:${this.pHeight}px;opacity:${this.containerAllloadingFlag?0:1}`
 			}
 			// 小程序上面 自动检测 是否有授权
 			// #ifdef MP-WEIXIN
@@ -188,22 +221,24 @@
 		},
 		watch: {
 			containerLoadingFlag: {
-				hanler(newValue, oldValue){
+				handler(newValue, oldValue){
 					if(newValue){
 						this.aniClass = 'animated fast fadeIn'
 					}else {
 						this.aniClass = 'animated fast fadeOut'
 					}
-				}
+				},
+				deep: true
 			},
 			containerMaskFlag: {
-				hanler(newValue, oldValue){
+				handler(newValue, oldValue){
 					if(newValue){
 						this.aniClass1 = 'animated fast fadeIn'
 					}else {
 						this.aniClass1 = 'animated fast fadeOut'
 					}
-				}				
+				},
+				deep: true				
 			}
 		},
 		data() {

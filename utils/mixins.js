@@ -14,6 +14,7 @@ export const miniProApi = {
 	data () {
 		return {
 			pHeight: 0, // container 组件的 高，从系统中获取
+			loading1: false
 		}
 	},
 	computed: {
@@ -33,13 +34,13 @@ export const miniProApi = {
 		try {
 			if(uni.canIUse('getSystemInfoSync.return.windowHeight')){
 				const res = uni.getSystemInfoSync()
-				console.log(res.model)
-				console.log(res.pixelRatio)
-				console.log(res.windowWidth)
-				console.log(res.windowHeight)
-				console.log(res.language)
-				console.log(res.version)
-				console.log(res.platform)
+				console.log('mixins---------------机型',res.model)
+				console.log('mixins---------------像素密度比',res.pixelRatio)
+				console.log('mixins---------------设备宽',res.windowWidth)
+				console.log('mixins---------------设备窗口高（除去tabbar高度后的）',res.windowHeight)
+				console.log('mixins---------------设备语言',res.language)
+				console.log('mixins---------------设备版本',res.version)
+				console.log('mixins---------------设备型号',res.platform)
 			}				
 		} catch (error) {
 			
@@ -52,10 +53,17 @@ export const miniProApi = {
 		console.log('mixin onLoad')
 	},	
 	onShow() {
+		this.$bus.$on("loading", () => {
+			console.log("minxin中 onShow 触发了 this.$bus.$on")
+			this.loading1 = !this.loadingFlag
+			setTimeout(()=>{
+				this.loading1 = false				
+			},2000) 
+		})			
 		//获取 系统的高后，由页面传给 container 组件
-		this.pHeight = uni.getSystemInfoSync().windowHeight
+		// this.pHeight = uni.getSystemInfoSync().windowHeight
 		// 系统的高 存入 store中
-		this.$store.dispatch('saveWindowHeight', this.pHeight)		
+		// this.$store.dispatch('saveWindowHeight', this.pHeight)		
 		console.log('mixin onShow')
 	},
 	// 页面初次渲染完成
@@ -63,6 +71,8 @@ export const miniProApi = {
 		console.log('mixin onReady')
 	},
 	onHide(){
+		this.$bus.$off("loading")
+		console.log("mixin中 onHide取消了 this.$bus.$off")
 		console.log('mixin onHide')
 	},
 	onUnload (){
@@ -81,10 +91,9 @@ export const miniProApi = {
 		console.log('mixin onPageScroll')
 	},
 	onTabItemTap(){
-		console.log('mixin onTabItemTap')
-	},
-	created () {
-
+		this.$bus.$emit("loading")
+		console.log('mixin onTabItemTap 触发了 this.$bus.$emit')
+		console.log('mixin onTabItemTap')	
 	},
 	methods: {
 		// 页面中的刷新或者初始化方法，里面 调取页面中 统一自定义命名的 方法名称 叫做 refreshPage
@@ -461,7 +470,7 @@ export const miniProApi = {
 			let that = this;
 			// debugger;
 			// 登陆之前，首先将全局的授权状态notAuthrize改为 已授权(true)，并存入 localstorage中，后续判断是否授权都是看localstorage里面的这个字段
-			await that.setStorage( "AuthorizeStatus", true );    
+			// await that.setStorage( "AuthorizeStatus", true );    
 			return new Promise(async (resolve,reject)=>{
 			  try {
 				console.log('---调用login方法---')
@@ -473,12 +482,12 @@ export const miniProApi = {
 		  
 				debugger
 				// 先登陆 uni.login();
-				let {code:code} = await that.getDeviceApi().login();  //通过调用uni.login()获取code 判断是否开始登录
-		  
+				let {code } = await uni.login();  //通过调用uni.login()获取code 判断是否开始登录
+				debugger
 				console.log("获取到的code：", code)
 		  
 				if(code){
-                    let userInfo= await that.getDeviceApi().getUserInfo({
+                    let userInfo= await uni.getUserInfo({
                         lang: "zh_CN"
                     });  
                     console.log("-----授权后通过uni.getUserInfo()获取用户信息返回的结果-----：",userInfo)
@@ -590,6 +599,7 @@ export const miniProApi = {
 			}		
 
 			return new Promise((resolve,reject)=>{
+				debugger
 				_this.getDeviceApi().getSetting().then((res) => {
 					// 获取用户授权信息
 					console.log("打印用户授权的情况集合------------",res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
