@@ -1,22 +1,16 @@
 
 import * as types from '../mutation-types'
-import { copyFile } from 'fs';
+// import { copyFile } from 'fs';
 
 const app = {
   state: {
-<<<<<<< HEAD
 	/**
 	 * 是否需要强制登录
 	 */
 	forcedLogin: false,
-	hasLogin: false,
-	userName: "",	  
-
+	hasLogin: false,  // 是否已经登陆
 	authorizeState: false, // 小程序中 用户信息userInfo是否微信授权成功， false 未授权  true 已授权  默认 true
-=======
-	authorizeState: true, // 小程序中 用户信息userInfo是否微信授权成功， false 未授权  true 已授权  默认 true
->>>>>>> a700d776268dfae37c57e3c02f623ff598723dd0
-	userName: '',// 用户名
+	78: '',// 用户名
 	userId: '', // 用户id
     // userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM',
 	userToken: '',
@@ -34,7 +28,7 @@ const app = {
 		state.hasLogin = true;
 	},
 	// 登出
-	logout(state) {
+	logingOut(state) {
 		state.userName = "";
 		state.hasLogin = false;
 	},	  

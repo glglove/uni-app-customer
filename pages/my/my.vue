@@ -21,7 +21,7 @@
 			right: 0;
 			bottom: 0;
 			margin: auto;
-			z-index: 1;			
+			z-index: 100;			
 			.top {
 				width: 686upx;
 				height: 108upx;
@@ -104,12 +104,17 @@
 				}  
 			}
 		}
+		.contentLoginBox {
+			position: absolute;
+			left: 200upx;
+			z-index: 101;
+		}
 	}
 </style>
 
 <template>
-	<container :loading1="loading1">
-		<view id="my"  slot="container-slot" :style="positionStyle" @touchstart=""  @touchmove="" @touchend="" >
+	<container>
+		<view id="my"  slot="container-slot"  @touchstart=""  @touchmove="" @touchend="" >
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
 
@@ -185,10 +190,14 @@
 				<footer-explain versition="20150205" :bgcolor="'rgba(246,246,247,1)'"></footer-explain>								
 			</view>
 			
-			<!--授权区-->
-			<!--<twAuthorze>
-				<image slot="pic" mode="aspectFit" class="pic" src="../../static/imgs/icon/twlogo.png" layz-load="true"></image>
-			</twAuthorze> -->
+
+			<!--登陆/退出登陆-->
+			<view class="contentLoginBox">
+				<view class="btn-row">
+					<button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
+					<button v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
+				</view>
+			</view>
 		</view>	
 	</container>	
 </template>
@@ -207,6 +216,10 @@
 
 	import { miniProApi } from '@/utils/mixins.js'
 	
+	import {
+        mapState,
+        mapMutations
+    } from 'vuex'
 	import myApi from '@/api/my.js'
 	export default {
 		mixins: [ miniProApi ],
@@ -214,37 +227,11 @@
 			FooterExplain
         },	
 		computed: {
-			now () {
-				return +new Date()
-			}, 
-			positionStyle () {
-				// return `background:${this.background};position:relative;padding-top:${this.top}upx;padding-bottom:${this.bottom }upx;
-				// padding-left:${this.left}upx;padding-right:${this.right}upx;min-height:${this.pHeight}px;opacity:${this.showLoadingFlag?0:1}`
-				// console.log("实时滚动的距离------》", this.scrollTop_refresh)
-				// return `background:red;transform:translateY(${this.scrollTop_refresh}upx)`
-			},
-			authorizeStatus1 () {
-				// debugger;
-				// console.log(`-----my页面computed中打印 获取的notAuthorize字段值----`, this.$parent.globalData.notAuthorize)
-				// true 表示已经授权，false 表示未授权
-				// return this.$parent.globalData.notAuthorize;
-			}          
+			...mapState(['hasLogin', 'forcedLogin'])
 		},
 		watch:{
-			// authorizeStatus1:(newVal,oldVal)=>{
-			//     // debugger;
-			//     if( newVal ) {
-			//         // 已授权
-			//         this.$broadcast("already_authorize");
-			//     }else {
-			//         // 未授权
-			//         this.$broadcast("not_authorize");
-			//     }
-			// }
-		},
-		mixins: {
-			// twMixin
-		},		
+
+		},	
 		data() {
 			return {
 				flag: false, // 控制首次加载时的 onload 和 onshow 的重复加载
@@ -297,6 +284,25 @@
 			
 		},
 		methods:{
+			...mapMutations(['logout']),
+			// 登陆
+			bindLogin () {
+                uni.navigateTo({
+                    url: '../login1/login1',
+                });
+			},	
+			// 退出登陆
+			bindLoginOut () {
+                this.logout();
+                /**
+                 * 如果需要强制登录跳转回登录页面
+                 */
+                // if (this.forcedLogin) {
+                //     uni.reLaunch({
+                //         url: '../login/login',
+                //     });
+                // }				
+			},	
 			// 点击 我的成就
 			async clickAchivement () {
 				// let token = await this.getStorage("token");

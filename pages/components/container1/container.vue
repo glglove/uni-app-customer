@@ -104,8 +104,8 @@
 		</view>	
 		
 		<!-- loading -->
-		loading1: {{loading1}}
-		<view :class="['container_loading', aniClass]" v-show="loading1">
+		<!-- loading1: {{loading1}} -->
+		<view :class="['container_loading', aniClass]" v-show="containerLoadingFlag">
 			<image class="loadingPic" :src="require('@/static/loading.gif')" layz-load="true"></image>
 		</view>	
 			

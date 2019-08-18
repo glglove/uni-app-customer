@@ -1,27 +1,68 @@
+<style lang="less" scoped>
+    #welecome {
+        width: 100%;
+        height: 100%;
+        .welecome-logined {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            .title {
+                color: #8f8f94;
+                margin-top: 50upx;
+            }  
+            .ul {
+                font-size: 30upx;
+                color: #8f8f94;
+                margin-top: 50upx;
+                view {
+                    line-height: 50upx;
+                }
+            }                      
+        }
+        .welecome-loginOut {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            .title {
+                color: #8f8f94;
+                margin-top: 50upx;
+            } 
+            .ul {
+                font-size: 30upx;
+                color: #8f8f94;
+                margin-top: 50upx;
+                view {
+                    line-height: 50upx;
+                }
+            }           
+        }
+    }
+</style>
+
 <template>
-    <view class="content">
-		
-        <view v-if="hasLogin" class="hello">
-            <view class="title">
-                您好 {{userName}}，您已成功登录。
+    <container :loading1="loading1">
+        <view id="welecome" slot="container-slot">
+			<view v-if="hasLogin" class="welecome-logined">
+                <view class="title">
+                    您好 {{userName}}，您已成功登录。
+                </view>
+                <view class="ul">
+                    <view>这是 uni-app 带登录模板的示例App首页。</view>
+                    <view>在 “我的” 中点击 “退出” 可以 “注销当前账户”</view>
+                </view>
             </view>
-            <view class="ul">
-                <view>这是 uni-app 带登录模板的示例App首页。</view>
-                <view>在 “我的” 中点击 “退出” 可以 “注销当前账户”</view>
+            
+			<view v-if="!hasLogin" class="welecome-loginOut">
+                <view class="title">
+                    您好 游客。
+                </view>
+                <view class="ul">
+                    <view>这是 uni-app 带登录模板的示例App首页。</view>
+                    <view>在 “我的” 中点击 “登录” 可以 “登录您的账户”</view>
+                </view>
             </view>
         </view>
-		
-        <view v-if="!hasLogin" class="hello">
-            <view class="title">
-                您好 游客。
-            </view>
-            <view class="ul">
-                <view>这是 uni-app 带登录模板的示例App首页。</view>
-                <view>在 “我的” 中点击 “登录” 可以 “登录您的账户”</view>
-            </view>
-        </view>
-		
-    </view>
+    </container>
 </template>
 
 <script>
@@ -29,7 +70,9 @@
         mapState
     } from 'vuex'
 
+	import { miniProApi } from '@/utils/mixins.js'
     export default {
+		mixins: [ miniProApi ],
         computed: mapState(['forcedLogin', 'hasLogin', 'userName']),
         onLoad() {
             if (!this.hasLogin) {
@@ -47,11 +90,11 @@
 							 */
                             if (this.forcedLogin) {
                                 uni.reLaunch({
-                                    url: '../login/login'
+                                    url: '../login1/login1'
                                 });
                             } else {
                                 uni.navigateTo({
-                                    url: '../login/login'
+                                    url: '../login1/login1'
                                 });
                             }
                         }
@@ -62,25 +105,3 @@
     }
 </script>
 
-<style>
-    .hello {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-    }
-
-    .title {
-        color: #8f8f94;
-        margin-top: 25px;
-    }
-
-    .ul {
-        font-size: 15px;
-        color: #8f8f94;
-        margin-top: 25px;
-    }
-
-    .ul>view {
-        line-height: 25px;
-    }
-</style>

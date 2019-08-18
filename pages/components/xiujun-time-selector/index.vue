@@ -2,14 +2,14 @@
 	<view class="container">
 		<!-- tab栏 -->
 		<scroll-view class="scroll-view_H b-t b-b" scroll-x>
-			<block v-for="(item,index) in dateArr" :key="index">
+			<template v-for="(item,index) in dateArr" :key="index">
 				<div class="flex-box" @click="selectDateEvent(index,item)" :style="{'box-shadow':index==dateActive ? 'inset 0 -2px 0 0 ' + selectedTabColor : ''}">
 					<view class="date-box">
 						<text class="days" :style="{color:index==dateActive?selectedTabColor:'#333'}">{{item.week}}</text>
 						<text class="date" :style="{color:index==dateActive?selectedTabColor:'#333'}">{{item.date}}</text>
 					</view>
 				</div>
-			</block>
+			</template>
 		</scroll-view>
 		<!-- 时间选项 -->
 		<view class="time-box">

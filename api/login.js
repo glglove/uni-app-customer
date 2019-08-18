@@ -9,7 +9,10 @@ export default {
 	async register (params, loading = false, loadingText = "加载中...") {
 		debugger
 	   const url = `/users/register`;
-	   var data = {}
+	   var data = {
+			name: '',
+			pwd: ''		   
+		}
 	   params = Object.assign(data, params)
 	   return http.get( url,{
 			...params

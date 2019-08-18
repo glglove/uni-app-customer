@@ -1,13 +1,5 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		// #ifdef APP-PLUS || H5
-		{
-			"path" : "pages/login/login",
-			"style" : {
-				"navigationBarTitleText":"登陆"
-			}
-		},
-		//#endif
 		{
             "path": "pages/welecome/welecome",
             "style": {
@@ -18,6 +10,18 @@
             "path": "pages/login1/login1",
             "style": {
                 "navigationBarTitleText": "登录"
+            }			
+		},
+		{
+			"path": "pages/register/register",
+			"style":{
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/pwd/pwd",
+            "style": {
+                "navigationBarTitleText": "找回密码"
             }			
 		},
 		{
@@ -46,7 +50,6 @@
 				"navigationBarTitleText":"排行测试"
 			}		
 		}							
-		//#ifdef APP-PLUS 
 		,{
 			"path" : "pages/packageA/find/lessonList/index",
 			"style" : {
@@ -68,7 +71,7 @@
 		{
 			"path" : "pages/packageA/find/invitation/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"邀请"
 			}
 		},	
 		// {
@@ -80,7 +83,7 @@
 		{
 			"path" : "pages/packageA/find/ranklist/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"排行榜"
 			}
 		},	
 		{
@@ -92,13 +95,13 @@
 		{
 			"path" : "pages/packageA/sign/immediatelySignUp/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"立即打卡"
 			}
 		},	
 		{
 			"path" : "pages/packageA/sign/immediatelySignUp/submitTask/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"提交反馈"
 			}
 		},			
 		{
@@ -128,13 +131,13 @@
 		{
 			"path" : "pages/packageB/my/help/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"帮助"
 			}
 		},		
 		{
 			"path" : "pages/packageB/my/help/submitProblem/index",
 			"style" : {
-				"navigationBarTitleText":"登陆"
+				"navigationBarTitleText":"反馈"
 			}
 		},	
 		{
@@ -151,11 +154,10 @@
 		},	
 		{
 			"path" : "pages/packageB/my/set/index",
-			"style" : {
+			"style" : {      
 				"navigationBarTitleText":"设置"
 			}
 		}
-		//#endif	
 	],
 	// 分包加载
 	// #ifdef MP-WEIXIN
@@ -217,7 +219,7 @@
 		"backgroundColor": "#ffffff",
     "list": [
 		{
-		  "pagePath": "pages/find/find",
+		  "pagePath": "pages/welecome/welecome",
 		  "iconPath": "static/imgs/tab/find.png",
 		  "selectedIconPath": "static/imgs/tab/find_highlight.png",
 		  "text": "发现"

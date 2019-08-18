@@ -28,6 +28,7 @@ export const miniProApi = {
 		// console.log(this)
 		//获取 系统的高后，由页面传给 container 组件
 		this.pHeight = uni.getSystemInfoSync().windowHeight
+		this.loading1 = true
 		// 系统的高 存入 store中
 		this.$store.dispatch('saveWindowHeight', this.pHeight)
 		// debugger
