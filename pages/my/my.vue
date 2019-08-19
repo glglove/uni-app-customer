@@ -23,6 +23,7 @@
 			margin: auto;
 			z-index: 100;			
 			.top {
+				position: relative;
 				width: 686upx;
 				height: 108upx;
 				line-height: 108upx;
@@ -64,6 +65,17 @@
 						z-index: 1002;
 					}            
 				}
+				.contentLoginBox {
+					position: absolute;
+					left: 100upx;
+					top: 0;
+					.btn-row {
+						.loginBtn {
+							font-size: 32upx;
+							background-color: #FA9A60
+						}
+					}
+				}				
 			}
 			.containerBox {
 				width: 686upx;
@@ -104,11 +116,6 @@
 				}  
 			}
 		}
-		.contentLoginBox {
-			position: absolute;
-			left: 200upx;
-			z-index: 101;
-		}
 	}
 </style>
 
@@ -133,6 +140,14 @@
 						<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = ""></image>
 						<button form-type="submit" class="btn click-able"></button>
 					</form>
+					
+					<!--登陆/退出登陆-->
+					<view class="contentLoginBox">
+						<view class="btn-row">
+							<button class="loginBtn" v-if="!hasLogin" type="primary"  @tap="bindLogin">您还未登录</button>
+							<button class="loginBtn" v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
+						</view>
+					</view>
 					<!-- </view> -->
 				</view>
 				<view class="containerBox form">
@@ -190,14 +205,6 @@
 				<footer-explain versition="20150205" :bgcolor="'rgba(246,246,247,1)'"></footer-explain>								
 			</view>
 			
-
-			<!--登陆/退出登陆-->
-			<view class="contentLoginBox">
-				<view class="btn-row">
-					<button v-if="!hasLogin" type="primary" class="primary" @tap="bindLogin">登录</button>
-					<button v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
-				</view>
-			</view>
 		</view>	
 	</container>	
 </template>
