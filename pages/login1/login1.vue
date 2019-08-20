@@ -1,72 +1,135 @@
-<style>
-    .action-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .action-row navigator {
-        color: #007aff;
-        padding: 0 10px;
-    }
-
-    .oauth-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-
-    .oauth-image {
-        width: 50px;
-        height: 50px;
-        border: 1px solid #dddddd;
-        border-radius: 50px;
-        margin: 0 20px;
-        background-color: #ffffff;
-    }
-
-    .oauth-image image {
-        width: 30px;
-        height: 30px;
-        margin: 10px;
-    }
+<style lang="less" scoped>	
+	#login {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+ 		.input-group {
+			background-color: #ffffff;
+			margin-top: 40upx;
+			position: relative;
+			&::before {
+				position: absolute;
+				right: 0;
+				top: 0;
+				left: 0;
+				height: 2upx;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #c8c7cc;				
+			}
+			&::after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 2upx;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #c8c7cc;				
+			}
+			.input-row {
+				display: flex;
+				flex-direction: row;
+				position: relative;
+				font-size: 36upx;
+				line-height: 80upx;	
+				&.border::before{
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					left: 16upx;
+					height: 2upx;
+					content: '';
+					-webkit-transform: scaleY(.5);
+					transform: scaleY(.5);
+					background-color: #c8c7cc;					
+				}
+				.title {
+					width: 144upx;
+					padding-left: 30upx;					
+				}
+			}
+		} 
+		.btn-row {
+			margin-top: 50upx;
+			padding: 20upx;
+			button {
+				&.primary {
+					background-color: #0faeff;
+				}
+			}
+		}
+		.action-row {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			navigator {
+				color: #007aff;
+				padding: 0 20upx;
+			}
+		}
+		.oauth-row {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			.oauth-image {
+				width: 100upx;
+				height: 100px;
+				border: 2upx solid #dddddd;
+				border-radius: 100upx;
+				margin: 0 40upx;
+				background-color: #ffffff;
+				image {
+					width: 60upx;
+					height: 60upx;
+					margin: 20upx;
+				}
+			}
+		}
+	}
+	
 </style>
 
 <template>
 	<container>
-    <view id="login-content" slot="container-slot">
-        <view class="input-group">
-            <view class="input-row border">
-                <text class="title">账号：</text>
-                <m-input class="m-input" type="text" clearable focus v-model="name" placeholder="请输入账号"></m-input>
-            </view>
-            <view class="input-row">
-                <text class="title">密码：</text>
-                <m-input type="password" displayable v-model="password" placeholder="请输入密码"></m-input>
-            </view>
-        </view>
-		
-        <view class="btn-row">
-            <button type="primary" class="primary" @tap="bindLogin">登录</button>
-        </view>
-		
-        <view class="action-row">
-            <navigator url="../register/register">注册账号</navigator>
-            <text>|</text>
-            <navigator url="../pwd/pwd">忘记密码</navigator>
-        </view>
-		
-        <!--授权登陆区域-->
-        <view class="oauth-row" v-if="hasProvider" :style="{top: positionTop + 'px'}">
-            <view class="oauth-image" v-for="provider in providerList" :key="provider.value">
-                <image :src="provider.image" @tap="oauth(provider.value)"></image>
-            </view>
-        </view>
-    </view>
+		<view id="login" slot="container-slot">
+			<view class="input-group">
+				<view class="input-row border">
+					<text class="title">账号：</text>
+					<m-input class="m-input" type="text" clearable focus v-model="name" placeholder="请输入账号"></m-input>
+				</view>
+				<view class="input-row">
+					<text class="title">密码：</text>
+					<m-input type="password" displayable v-model="password" placeholder="请输入密码"></m-input>
+				</view>
+			</view>
+			
+			<view class="btn-row">
+				<button type="primary" class="primary" @tap="bindLogin">登录</button>
+			</view>
+			
+			<view class="action-row">
+				<navigator url="../register/register">注册账号</navigator>
+				<text>|</text>
+				<navigator url="../pwd/pwd">忘记密码</navigator>
+			</view>
+			
+			<!--授权登陆区域-->
+			<view class="oauth-row" v-if="hasProvider" :style="{top: positionTop + 'px'}">
+				<view class="oauth-image" v-for="provider in providerList" :key="provider.value">
+					<image :src="provider.image" @tap="oauth(provider.value)"></image>
+				</view>
+			</view>
+		</view>
 	</container>
 </template>
 
@@ -83,9 +146,9 @@
         components: {
             mInput
         },
-        mixins:{
+        mixins:[
             miniProApi
-        },
+        ],
         data() {
             return {
                 providerList: [],  // 授权的服务商的信息
@@ -136,6 +199,7 @@
                 this.positionTop = uni.getSystemInfoSync().windowHeight - 100;
             },
             bindLogin() {
+				let _this = this
                 /**
                  * 客户端对账号信息进行一些必要的校验。
                  * 实际开发中，根据业务需要进行处理，这里仅做示例。
@@ -163,7 +227,7 @@
                     name: this.name,
                     pwd: this.password
                 };
-                loginApi.register().then((res) => {
+                loginApi.register(data).then((res) => {
                     if(res && res.data.code === 1) {
                         this.success('登录成功')
                         // 成功后 

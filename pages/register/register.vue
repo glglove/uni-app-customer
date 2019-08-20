@@ -1,10 +1,77 @@
 /** 
 *注册页面
 */
-
+<style lang="less" scoped>
+	#register {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+ 		.input-group {
+			background-color: #ffffff;
+			margin-top: 40upx;
+			position: relative;
+			&::before {
+				position: absolute;
+				right: 0;
+				top: 0;
+				left: 0;
+				height: 2upx;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #c8c7cc;				
+			}
+			&::after {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 2upx;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #c8c7cc;				
+			}
+			.input-row {
+				display: flex;
+				flex-direction: row;
+				position: relative;
+				font-size: 36upx;
+				line-height: 80upx;	
+				&.border::before{
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					left: 16upx;
+					height: 2upx;
+					content: '';
+					-webkit-transform: scaleY(.5);
+					transform: scaleY(.5);
+					background-color: #c8c7cc;					
+				}
+				.title {
+					width: 144upx;
+					padding-left: 30upx;					
+				}
+			}
+		} 
+		.btn-row {
+			margin-top: 50upx;
+			padding: 20upx;
+			button {
+				&.primary {
+					background-color: #0faeff;
+				}
+			}
+		}		
+	}
+</style>
 <template>
 	<container>
-		<view id="content-register" slot="container-slot">
+		<view id="register" slot="container-slot">
 			<view class="input-group">
 				<view class="input-row border">
 					<text class="title">账号：</text>
@@ -85,6 +152,3 @@
     }
 </script>
 
-<style>
-
-</style>

@@ -2,14 +2,8 @@
 <style lang="less" src="./static/style/icons.less"></style>
 <!-- <style lang="less" src="./static/style/iconfont.less"></style> -->
 <style lang="less">
-	// .container {
-	//   height: 100%;
-	//   display: flex;
-	//   flex-direction: column;
-	//   align-items: center;
-	//   justify-content: space-between;
-	//   box-sizing: border-box;
-	// }
+	/* 头条小程序需要把 iconfont 样式放到组件外 */
+	@import "pages/components/m-icon/m-icon.css";
 </style>	
 
 <script>

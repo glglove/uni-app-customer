@@ -46,6 +46,7 @@ const app = {
 	},	
     [types.setUserToken] (state, str) {
 		state.userToken = str
+		state.hasLogin = true
     },
 	// 设置 loading状态
 	[types.setContainerLoadingFlag] (state, flag ) {
