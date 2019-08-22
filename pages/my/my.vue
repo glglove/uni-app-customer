@@ -224,7 +224,7 @@
 	import { miniProApi } from '@/utils/mixins.js'
 	
 	import {
-        mapState,
+        mapGetters,
         mapMutations
     } from 'vuex'
 	import myApi from '@/api/my.js'
@@ -234,7 +234,7 @@
 			FooterExplain
         },	
 		computed: {
-			...mapState(['hasLogin', 'forcedLogin'])
+			...mapGetters(['hasLogin', 'forcedLogin'])
 		},
 		watch:{
 
@@ -291,16 +291,14 @@
 			
 		},
 		methods:{
-			...mapMutations(['logout']),
+			...mapMutations(['loginOut']),
 			// 登陆
 			bindLogin () {
-                uni.navigateTo({
-                    url: '../login1/login1',
-                });
+                this.navigatePage("../login1/login1");
 			},	
 			// 退出登陆
-			bindLoginOut () {
-                this.logout();
+			bindLogout () {
+                this.loginOut();
                 /**
                  * 如果需要强制登录跳转回登录页面
                  */

@@ -34,14 +34,14 @@ const store = new Vuex.Store({
 		sign,
 		my
 	},
-	getters,
+	getters
 	// strict: debug,  // 加了严格模式动态挂载路由会报错，但不影响功能
 	// plugins: debug ? [createLogger()] : [] // 插件只有一个时
 	//#ifdef H5 
-	plugins: debug ? [createLogger(), vuexLocal] : [vuexLocal]  // 多个插件时候
+	,plugins: debug ? [createLogger(), vuexLocal] : [vuexLocal]  // 多个插件时候
 	//#endif
 	//#ifdef MP-WEIXIN 
-	plugins: debug ? [createLogger()] : []  // 多个插件时候
+	,plugins: debug ? [createLogger()] : []  // 多个插件时候
 	//#endif
 })
 

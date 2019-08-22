@@ -46,7 +46,8 @@
 <template>
     <container :loading1="loading1">
         <view id="welecome" slot="container-slot">
-			<view v-if="hasLogin" class="welecome-logined">
+			<!-- hasLogin: {{hasLogin}} -->
+<!-- 			<view v-if="hasLogin" class="welecome-logined">
                 <view class="title">
                     您好 {{userName}}，您已成功登录。
                 </view>
@@ -54,7 +55,7 @@
                     <view>这是 uni-app 带登录模板的示例App首页。</view>
                     <view>在 “我的” 中点击 “退出” 可以 “注销当前账户”</view>
                 </view>
-            </view>
+            </view> -->
             
 			<view v-if="!hasLogin" class="welecome-loginOut">
                 <view class="title">
@@ -71,14 +72,17 @@
 
 <script>
     import {
-        mapState
+        mapGetters
     } from 'vuex'
 
 	import { miniProApi } from '@/utils/mixins.js'
     export default {
 		mixins: [ miniProApi ],
-        computed: mapState(['forcedLogin', 'hasLogin', 'userName']),
+        computed: {
+			...mapGetters(['forcedLogin', 'hasLogin', 'userName'])
+		},
         onLoad() {
+			console.log("----",this.hasLogin)
             if (!this.hasLogin) {
                 uni.showModal({
                     title: '未登录',
@@ -104,7 +108,9 @@
                         }
                     }
                 });
-            }
+            }else {
+				// this.navigatePage("../find/find")
+			}
         }
     }
 </script>

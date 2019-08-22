@@ -10,195 +10,216 @@
 		bottom: 0;
 		margin: auto;
 		overflow-y: scroll;
-		.bgBox{
-			width: 100%;
+		.find-hasLogin {
 			height: 100%;
-			.bgpic{
+			width: 100%;
+			.bgBox{
 				width: 100%;
-			}
-		}
-		.contentBox{
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			margin: auto;
-			z-index: 1;
-			.top {
-				width: 650upx;
-				height: 400upx;
-				margin: 0 auto;
-				.design {
-					height: 70upx;
-					font-size: 40upx;
-					color: #ffffff;
-					line-height: 70upx;					
+				height: 100%;
+				.bgpic{
+					width: 100%;
 				}
-				.study {
-					width: 400upx;
-					height: 70upx;
-					font-size: 40upx;
-					color: #ffffff;
-					line-height: 70upx;
+			}			
+			.contentBox{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+				z-index: 1;
+				.top {
+					width: 650upx;
+					height: 400upx;
+					margin: 0 auto;
+					.design {
+						height: 70upx;
+						font-size: 40upx;
+						color: #ffffff;
+						line-height: 70upx;					
+					}
+					.study {
+						width: 400upx;
+						height: 70upx;
+						font-size: 40upx;
+						color: #ffffff;
+						line-height: 70upx;
+					}
 				}
-			}
-			.findContainer{
-				width: 650upx;
-				height: 600upx;
-				margin: 0 auto;
-				border-radius: 20upx;
-				padding: 30upx 95upx 0 95upx;
-				box-sizing: border-box;
-				border-radius: 10upx;
-				border: 2upx solid rgba(250, 235, 228, 0.2);
-				box-shadow: 0 12px 20upx rgba(252,195,165,0.2);	
-				.contentTop {
-					width: 462upx;
-					height: 280upx;
-					.contentTopLeft{
-						width: 50%;
-						height: 255upx;
-						.signUpPicBox {
-							width: 128upx;
-							height: 128upx;
-							border-radius: 50%;
-							margin: 0 auto;
-							padding: 0;
-							.signUpPic{
-								width: 100%;
+				.findContainer{
+					width: 650upx;
+					height: 600upx;
+					margin: 0 auto;
+					border-radius: 20upx;
+					padding: 30upx 95upx 0 95upx;
+					box-sizing: border-box;
+					border-radius: 10upx;
+					border: 2upx solid rgba(250, 235, 228, 0.2);
+					box-shadow: 0 12px 20upx rgba(252,195,165,0.2);	
+					.contentTop {
+						width: 462upx;
+						height: 280upx;
+						.contentTopLeft{
+							width: 50%;
+							height: 255upx;
+							.signUpPicBox {
+								width: 128upx;
+								height: 128upx;
+								border-radius: 50%;
+								margin: 0 auto;
+								padding: 0;
+								.signUpPic{
+									width: 100%;
+								}
+							}
+							.signUpNum {
+								width: 85upx;
+								height: 67upx;
+								margin: 0 auto;   
+								text-align: center;                 
+								.signDay {
+									width: 50upx;
+									height: 100%;
+									color: #FA9960;
+									line-height: 67upx;
+									font-weight: 500;
+									font-size: 48upx;
+									text-align: center;
+								}
+								.signTotalDay {
+									width: 36upx;
+									height: 100%;
+									color: #FA9B64;
+									line-height: 67upx;
+									text-align: center;
+									font-size: 24upx;
+								}
+							}
+							.signUpTit {
+								// width: 120upx;
+								height: 42upx;
+								text-align: center;
+								line-height: 42upx;
+								color: #000000;
+								font-size: 30upx;
+								margin: 0 auto;
 							}
 						}
-						.signUpNum {
-							width: 85upx;
-							height: 67upx;
-							margin: 0 auto;   
-							text-align: center;                 
-							.signDay {
-								width: 50upx;
-								height: 100%;
-								color: #FA9960;
-								line-height: 67upx;
-								font-weight: 500;
-								font-size: 48upx;
-								text-align: center;
+						.contentTopRight{
+							width: 50%;
+							height: 255upx;
+							.rankPicBox {
+								width: 128upx;
+								height: 128upx;
+								border-radius: 50%;
+								margin: 0 auto;
+								padding: 0;
+								.signUpPic{
+									width: 100%;
+								}
 							}
-							.signTotalDay {
-								width: 36upx;
-								height: 100%;
-								color: #FA9B64;
-								line-height: 67upx;
-								text-align: center;
-								font-size: 24upx;
+							.rankNum {
+								width: 85upx;
+								height: 67upx;
+								margin: 0 auto;     
+								text-align: center;               
+								.rankNo {
+									width: 50upx;
+									height: 100%;
+									color: #FA9960;
+									line-height: 67upx;
+									font-weight: 500;
+									font-size: 48upx;
+									text-align: center;
+								}
 							}
+							.rankTit {
+								width: 120upx;
+								height: 42upx;
+								text-align: center;
+								line-height: 42upx;
+								color: #000000;
+								font-size: 30upx;
+								margin: 0 auto;
+							}                
+						}
+					}					
+					.signUpBtn {
+						width: 462upx;
+						height: 99upx;
+						line-height: 99upx;
+						background-color: #FA9960;
+						border-radius: 49.5upx;
+						text-align: center;
+						box-shadow: 2upx 2upx 5upx rgba(0,0,0,0.1);
+						.signUpPic {
+							width: 48upx;
+							height: 48upx;
+							vertical-align: middle;
+							position: absolute;
+							top: 50%;
+							left: 30%;
+							transform: translate(-50%,-50% );
 						}
 						.signUpTit {
-							// width: 120upx;
-							height: 42upx;
-							text-align: center;
-							line-height: 42upx;
-							color: #000000;
-							font-size: 30upx;
-							margin: 0 auto;
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%,-50%);
+							width: 141upx;
+							color: #FFFFFF;
+							font-size: 34upx;
+							margin-left: 25upx;
 						}
 					}
-					.contentTopRight{
-						width: 50%;
-						height: 255upx;
-						.rankPicBox {
-							width: 128upx;
-							height: 128upx;
-							border-radius: 50%;
-							margin: 0 auto;
-							padding: 0;
-							.signUpPic{
-								width: 100%;
-							}
+					.invitationBtn {
+						width: 462upx;
+						height: 99upx;
+						background-color: #FFFFFF;
+						border-radius: 49.5upx;
+						border: 2px dashed #FA9960;
+						text-align: center;      
+						color: #FA9960; 
+						box-shadow: 2upx 2upx 5upx rgba(0,0,0,0.1);                 
+						.invitationPic {
+							width: 48upx;
+							height: 48upx;
+							vertical-align: middle;
+							position: absolute;
+							top: 50%;
+							left: 30%;                
+							transform: translate(-50%,-50% );                
 						}
-						.rankNum {
-							width: 85upx;
-							height: 67upx;
-							margin: 0 auto;     
-							text-align: center;               
-							.rankNo {
-								width: 50upx;
-								height: 100%;
-								color: #FA9960;
-								line-height: 67upx;
-								font-weight: 500;
-								font-size: 48upx;
-								text-align: center;
-							}
+						.invitationTit {
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%,-50%);
+							width: 141upx;
+							height: 100%;
+							font-size: 34upx;
+							margin-left: 25upx;
 						}
-						.rankTit {
-							width: 120upx;
-							height: 42upx;
-							text-align: center;
-							line-height: 42upx;
-							color: #000000;
-							font-size: 30upx;
-							margin: 0 auto;
-						}                
-					}
-				}					
-				.signUpBtn {
-					width: 462upx;
-					height: 99upx;
-					line-height: 99upx;
-					background-color: #FA9960;
-					border-radius: 49.5upx;
-					text-align: center;
-					box-shadow: 2upx 2upx 5upx rgba(0,0,0,0.1);
-					.signUpPic {
-						width: 48upx;
-						height: 48upx;
-						vertical-align: middle;
-						position: absolute;
-						top: 50%;
-						left: 30%;
-						transform: translate(-50%,-50% );
-					}
-					.signUpTit {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%,-50%);
-						width: 141upx;
-						color: #FFFFFF;
-						font-size: 34upx;
-						margin-left: 25upx;
-					}
+					}				
 				}
-				.invitationBtn {
-					width: 462upx;
-					height: 99upx;
-					background-color: #FFFFFF;
-					border-radius: 49.5upx;
-					border: 2px dashed #FA9960;
-					text-align: center;      
-					color: #FA9960; 
-					box-shadow: 2upx 2upx 5upx rgba(0,0,0,0.1);                 
-					.invitationPic {
-						width: 48upx;
-						height: 48upx;
-						vertical-align: middle;
-						position: absolute;
-						top: 50%;
-						left: 30%;                
-						transform: translate(-50%,-50% );                
-					}
-					.invitationTit {
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%,-50%);
-						width: 141upx;
-						height: 100%;
-						font-size: 34upx;
-						margin-left: 25upx;
-					}
-				}				
 			}
+		}	
+		.find-notLogin {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            .title {
+                color: #8f8f94;
+                margin-top: 50upx;
+            } 
+            .ul {
+                font-size: 30upx;
+                color: #8f8f94;
+                margin-top: 50upx;
+                view {
+                    line-height: 50upx;
+                }
+            }  			
 		}
 	}
 </style>
@@ -210,6 +231,7 @@
 			<!-- bg.find_bg:{{bg.find_bg}} -->
 			<!-- {{$configs.baseImgsUrl + $configs.baseUrlConfigs.imgs_bg.find_bg}} -->
 			<!--loading-->
+			<div v-if="hasLogin" class="find-hasLogin">
 				<view class="bgBox">
 					<image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
 				</view>
@@ -257,53 +279,60 @@
 					<!--引用footerCmp-->
 					<footer-explain versition="20150205"></footer-explain>
 				</view>
-							
-			
-			
-			<!--用于收集定时提醒的推送码-->
-			<!-- <form report-submit="true" bindsubmit="formSubmit">
-				<view class="contentBox">
-					<view class="contentTop">
-						<view class="contentTopLeft lt">
-							<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
-								<image class="signUpPic click-able" src="../../static/imgs/icon/signUp.png" layz-load="true" @tap.stop = ""></image>
-							</button>
-							<view class="signUpNum marginT10">
-								<text class="signDay">{{signData.signDay}}</text>
-								<text class="signTotalDay">/21</text>
+								
+				
+				
+				<!--用于收集定时提醒的推送码-->
+				<!-- <form report-submit="true" bindsubmit="formSubmit">
+					<view class="contentBox">
+						<view class="contentTop">
+							<view class="contentTopLeft lt">
+								<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
+									<image class="signUpPic click-able" src="../../static/imgs/icon/signUp.png" layz-load="true" @tap.stop = ""></image>
+								</button>
+								<view class="signUpNum marginT10">
+									<text class="signDay">{{signData.signDay}}</text>
+									<text class="signTotalDay">/21</text>
+								</view>
+								<view class="signUpTit marginT10"><text>连续打卡</text></view>
 							</view>
-							<view class="signUpTit marginT10"><text>连续打卡</text></view>
+
+							<view class="contentTopRight rt">
+								<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
+									<image class="rankPic click-able" src="../../static/imgs/icon/rank.png" layz-load="true" @tap.stop = ""></image>
+								</button>
+								<view class="rankNum marginT10">
+									<text class="rankNo">{{signData.rankNo}}</text>
+								</view>
+								<view class="rankTit marginT10"><text>排行榜</text></view>                    
+							</view>                
 						</view>
+						
 
-						<view class="contentTopRight rt">
-							<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
-								<image class="rankPic click-able" src="../../static/imgs/icon/rank.png" layz-load="true" @tap.stop = ""></image>
-							</button>
-							<view class="rankNum marginT10">
-								<text class="rankNo">{{signData.rankNo}}</text>
-							</view>
-							<view class="rankTit marginT10"><text>排行榜</text></view>                    
-						</view>                
+						<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
+							<image class="signUpPic" src="../../static/imgs/icon/signUpPic.png"></image>
+							<text class="signUpTit click-able">立即报名</text>
+						</button>
+
+						<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
+							<image class="invitationPic" src="../../static/imgs/icon/invitationPic.png" layz-load="true"></image>
+							<text class="invitationTit click-able">邀请好友</text>               
+						</button>
 					</view>
-					
-
-					<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
-						<image class="signUpPic" src="../../static/imgs/icon/signUpPic.png"></image>
-						<text class="signUpTit click-able">立即报名</text>
-					</button>
-
-					<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
-						<image class="invitationPic" src="../../static/imgs/icon/invitationPic.png" layz-load="true"></image>
-						<text class="invitationTit click-able">邀请好友</text>               
-					</button>
-				</view>
-			</form>
-			-->
-
-			<!--授权区-->
-			<!--<twAuthorze>
-				<image slot="pic" mode="scallToFill" class="pic"  src="../../static/imgs/icon/twlogo.png" layz-load="true"></image>
-			</twAuthorze> -->
+				</form>
+				-->
+			</div>
+			
+			<!---未登录-------->
+			<view v-if="!hasLogin" class="find-notLogin">
+                <view class="title">
+                    您好 游客。
+                </view>
+                <view class="ul">
+                    <view>这是 uni-app 带登录模板的示例App首页。</view>
+                    <view>在 “我的” 中点击 “登录” 可以 “登录您的账户”</view>
+                </view>
+            </view>
 		</view>
 	</container>
 
@@ -346,7 +375,10 @@
 		},	
 		computed:{
 			...mapGetters([
-				'userToken'
+				'userToken',
+				'forcedLogin', 
+				'hasLogin', 
+				'userName'
 			])
 		},
 		async onLoad () {
@@ -359,16 +391,17 @@
 			console.log("----------------find首页检查是否用户授权了userLocation--------", await this.getAuthorizeStatus('scope.userLocation'))
 			//#endif
 			
-			// 有token 时 才去 请求
-			if( this.userToken ){
-				this._getRankDayData()
-			}
 		},
 		onShow(){
 			console.log("find页面-----------------onShow")
+			// 有token 时 才去 请求
+			if( this.userToken ){
+				debugger
+				this._getRankDayData()
+			}	
 		},	
 		onReady(){
-			console.log("find页面-----------------onReady")
+			console.log("find页面-----------------onReady")		
 		},	
 		onTabItemTap(){
 			console.log("find页面-----------onTabItemTap----")
@@ -382,6 +415,30 @@
 				console.log("find --------onComLoad--获取到的用户信息授权状态----", isAuthorize)
 				// 将授权状态存入 store 中
 				this.$store.dispatch("setAuthorizeState", isAuthorize)
+				
+				// 判断是否登陆
+				if(!this.hasLogin){
+					this.getDevice().showModal({
+						title: '未登录',
+						content: '您未登录，需要登录后才能继续',
+						/**
+						 * 如果需要强制登录，不显示取消按钮
+						 */
+						showCancel: !this.forcedLogin,
+						success: (res) => {
+							if (res.confirm) {
+								/**
+								 * 如果需要强制登录，使用reLaunch方式
+								 */
+								if (this.forcedLogin) {
+									this.reLaunchPage("../login1/login1");
+								} else {
+									this.navigatePage("../login1/login1");
+								}
+							}
+						}
+					})				
+				}				
 			},	
 			refreshPage() {
 				this._getRankDayData()
@@ -401,13 +458,13 @@
 						pageNum: 1
 					}
 				}
-				findApi.getRankDayData( paramsObj, "loading", "加载中..").then(res => {
+				findApi.getRankDayData( paramsObj ).then(res => {
 					// debugger
 					// uni.hideLoading()
 					console.log(res)
 					if(res && res.data.code === 1){
 						// debugger
-						uni.showToast({
+						this.getDevice().showToast({
 							title:"数据获取成功",
 							icon: 'success',
 							mask: true,
@@ -430,7 +487,7 @@
 						// })
 					}else{
 						// uni.hideLoading()
-						uni.showToast({
+						this.getDevice().showToast({
 							title:"数据获取失败",
 							icon: 'success',
 							mask: true,	
@@ -440,7 +497,7 @@
 					}
 				}).catch(err => {
 					// uni.hideLoading()
-					uni.showToast({
+					this.getDevice().showToast({
 						title:"数据获取失败,请重试",
 						icon: 'success',
 						mask:true,

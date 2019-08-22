@@ -228,6 +228,7 @@
                     pwd: this.password
                 };
                 loginApi.register(data).then((res) => {
+					debugger
                     if(res && res.data.code === 1) {
                         this.success('登录成功')
                         // 成功后 
@@ -236,7 +237,8 @@
                         if(res.data.user){
                             this.$store.dispatch('setUserToken', res.data.user.token || '')								
                         }
-                        this.switchPage('../welecome/welecome').then((res) =>{
+						debugger
+                        this.switchPage('../find/find').then((res) =>{
                             
                         }).catch(()=>{
                             

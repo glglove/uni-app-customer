@@ -28,7 +28,7 @@ const app = {
 		state.hasLogin = true;
 	},
 	// 登出
-	logingOut(state) {
+	loginOut(state) {
 		state.userName = "";
 		state.hasLogin = false;
 	},	  
@@ -45,6 +45,7 @@ const app = {
 		state.userId = str
 	},	
     [types.setUserToken] (state, str) {
+		debugger
 		state.userToken = str
 		state.hasLogin = true
     },

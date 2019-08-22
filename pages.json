@@ -1,6 +1,13 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path" : "pages/find/find",
+			"style" : {
+				"navigationBarTitleText":"发现",
+				"enablePullDownRefresh":true
+			}
+		},
+		{
             "path": "pages/welecome/welecome",
             "style": {
                 "navigationBarTitleText": "登录模板"
@@ -23,13 +30,6 @@
             "style": {
                 "navigationBarTitleText": "找回密码"
             }			
-		},
-		{
-			"path" : "pages/find/find",
-			"style" : {
-				"navigationBarTitleText":"发现",
-				"enablePullDownRefresh":true
-			}
 		},
 		{
 			"path" : "pages/sign/sign",
@@ -219,7 +219,7 @@
 		"backgroundColor": "#ffffff",
     "list": [
 		{
-		  "pagePath": "pages/welecome/welecome",
+		  "pagePath": "pages/find/find",
 		  "iconPath": "static/imgs/tab/find.png",
 		  "selectedIconPath": "static/imgs/tab/find_highlight.png",
 		  "text": "发现"
