@@ -11,6 +11,7 @@ export const hasLogin = state => state.app.hasLogin
 // 获取是否强制登陆 forcedLogin
 export const forcedLogin = state => state.app.forcedLogin
 
+
 // 获取 loading状态
 export const containerLoadingFlag = state => state.app.containerLoadingFlag
 
