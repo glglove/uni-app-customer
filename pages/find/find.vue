@@ -323,7 +323,7 @@
 				-->
 			</div>
 			
-			<!---未登录-------->
+			<!---未登录-->
 			<view v-if="!hasLogin" class="find-notLogin">
                 <view class="title">
                     您好 游客。
@@ -411,14 +411,16 @@
 				// debugger
 				console.log("find --------onComLoad")
 				// find 首页 判断 用户是否授权userinfo 信息
+				// #ifdef MP-WEIXIN
 				let isAuthorize = await this.getAuthorizeStatus("scope.userInfo")
 				console.log("find --------onComLoad--获取到的用户信息授权状态----", isAuthorize)
 				// 将授权状态存入 store 中
 				this.$store.dispatch("setAuthorizeState", isAuthorize)
+				//#endif
 				
 				// 判断是否登陆
 				if(!this.hasLogin){
-					this.getDevice().showModal({
+					this.getDeviceApi().showModal({
 						title: '未登录',
 						content: '您未登录，需要登录后才能继续',
 						/**

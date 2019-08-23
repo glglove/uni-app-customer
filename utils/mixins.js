@@ -702,7 +702,7 @@ export const miniProApi = {
 		  let that = this;
 		  let urls = param.urls;
 		  let current = param.urls[param.index];
-		  that.getDeviceApi.previewImage({
+		  that.getDeviceApi().previewImage({
 			current: current,//预览图片链接
 			urls: urls,//图片预览list列表
 			success: function (res) {
@@ -766,7 +766,7 @@ export const miniProApi = {
 					that.success("分享成功",1000,true);
 				  }  
 				  // 获取分享者信息
-				  that.getDeviceApi.getShareInfo({
+				  that.getDeviceApi().getShareInfo({
 					shareTicket: res.shareTickets[0]||"",
 					success: (res)=>{ console.log(res) },
 					fail:  (res) => { console.log(res) },
@@ -827,7 +827,7 @@ export const miniProApi = {
 				"scope.camera": "摄像头"
 			}
 			return new Promise( async ( resolve , reject  )=>{
-			  that.getDeviceApi.getSetting().then((res)=>{
+			  that.getDeviceApi().getSetting().then((res)=>{
 				// 获取用户授权信息
 				console.log(res)   // res.userInfo 为true  res.errMsg == "authorize:ok"
 				console.log(res.authSetting)
@@ -837,15 +837,15 @@ export const miniProApi = {
 				  return true;
 				}else if ( !res.authSetting[type] ){
 					// 检测到还未授权
-					if( that.getDeviceApi.openSetting ) {
-						that.getDeviceApi.showModal({
+					if( that.getDeviceApi().openSetting ) {
+						that.getDeviceApi().showModal({
 						  title: "提示",
 						  content: `使用该功能需要授权开启${scopeText[type]}的权限，请点击确定先开启设置`,
 						  showCancel: false,
 						  confirmTex: "授权开启",
 						  confirmColor: "#52a2d8",
 						  success: res =>{
-							that.getDeviceApi.authorize({
+							that.getDeviceApi().authorize({
 							  scope: type,
 							  success(){
 								// 授权成功
@@ -853,7 +853,7 @@ export const miniProApi = {
 							  },
 							  fail(){
 								// 第一次授权失败
-								that.getDeviceApi.showModal ({
+								that.getDeviceApi().showModal ({
 								  title: "提示",
 								  content: `您未开启${scopeText[type]}的权限,请开启设置`,
 								  showCancel: true,
@@ -861,7 +861,7 @@ export const miniProApi = {
 								  confirmColor: "#52a2d8",
 								  success: function(res){
 									if( res.confirm ) {
-									  that.getDeviceApi.openSetting({
+									  that.getDeviceApi().openSetting({
 										success: (res)=>{
 										  console.log(res.authSetting);
 										  if( res.authSetting[type] ){
@@ -869,7 +869,7 @@ export const miniProApi = {
 											resolve(true);
 										  }else {
 											// 第二次也未授权，再次提示开启授权
-											that.getDeviceApi.showModal({
+											that.getDeviceApi().showModal({
 											  title: "提示",
 											  content: `未开启授权将无法使用${scopeText[type]}的功能,请开启设置`,
 											  showCancel: true,
@@ -877,7 +877,7 @@ export const miniProApi = {
 											  confirmColor: "#52a2d8",       
 											  success: function(res){
 												if( res.confirm ) {
-												  that.getDeviceApi.openSetting({
+												  that.getDeviceApi().openSetting({
 													success: (res)=>{
 													  console.log(res.authSetting);
 													  if( res.authSetting[type] ){
@@ -885,7 +885,7 @@ export const miniProApi = {
 														resolve( true );
 													  }else {
 														// 第二次授权没有成功
-														that.getDeviceApi.showToast({
+														that.getDeviceApi().showToast({
 														  title: '授权失败',
 														  // icon: 'loading',
 														  image: '../static/imgs/icon/error.png',
