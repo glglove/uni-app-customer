@@ -108,8 +108,7 @@
               transform-origin: 0 0;
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
-      -webkit-border-radius: 12rpx;
-              border-radius: 12rpx;
+      border-radius: 12rpx;
 }
 .uni-pagination__num {
     width: 100rpx;

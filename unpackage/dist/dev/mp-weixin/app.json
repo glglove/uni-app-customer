@@ -2,10 +2,37 @@
   "pages": [
     "pages/find/find",
     "pages/sign/sign",
-    "pages/my/my",
-    "pages/packageA/find/ranklist/index"
+    "pages/my/my"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "pages/packageA",
+      "pages": [
+        "find/lessonList/index",
+        "find/lessonList/lessonDetail/index",
+        "find/lessonList/lessonDetail/enterSuccess/index",
+        "find/invitation/index",
+        "find/ranklist/index",
+        "find/signUpRecord/index",
+        "sign/immediatelySignUp/index",
+        "sign/immediatelySignUp/submitTask/index",
+        "sign/immediatelySignUp/submitTask/submitTaskSuccess/index"
+      ]
+    },
+    {
+      "root": "pages/packageB",
+      "pages": [
+        "my/myAchievement/index",
+        "my/myAchievement/certificate/index",
+        "my/learnRecord/index",
+        "my/help/index",
+        "my/help/submitProblem/index",
+        "my/help/submitProblem/submitProblemSuccess/index",
+        "my/inviteFriends/index",
+        "my/set/index"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
@@ -40,6 +67,5 @@
   },
   "usingComponents": {
     "container": "/pages/components/container1/container"
-  },
-  "sitemapLocation": "sitemap82.json"
+  }
 }

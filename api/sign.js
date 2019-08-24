@@ -10,7 +10,7 @@ export default {
 	* 
 	*/
 	async getLessonList (params, loading = false, loadingText = "加载中...") {
-		debugger
+		// debugger
 	   const url = `/sign/classesApp/myPage`;
 	   var data = {}
 	   params = Object.assign(data, params)

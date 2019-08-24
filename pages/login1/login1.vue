@@ -137,7 +137,7 @@
     import loginApi from '@/api/login.js'
 	import { miniProApi } from '@/utils/mixins.js'
     import {
-        mapState,
+        mapGetters,
         mapMutations
     } from 'vuex'
     import mInput from '../components/m-input/m-input.vue'
@@ -158,7 +158,9 @@
                 positionTop: 0  
             }
         },
-        computed: mapState(['forcedLogin']),
+        computed: {
+			...mapGetters(['forcedLogin'])
+		},
         onReady() {
             // 获取 设备屏幕的可视区高度
             this.initPosition();

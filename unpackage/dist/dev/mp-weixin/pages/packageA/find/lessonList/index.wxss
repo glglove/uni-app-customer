@@ -1,0 +1,79 @@
+#lessBox.data-v-35574ca8 {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#lessBox .contentBox.data-v-35574ca8 {
+  height: 100%;
+  padding: 24rpx;
+  background: #F6F6F7;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-y: auto;
+}
+#lessBox .contentBox.data-v-35574ca8::-webkit-scrollbar {
+  width: 0 !important ;
+  height: 0 !important ;
+  color: transparent !important ;
+  display: none;
+}
+#lessBox .contentBox .item.data-v-35574ca8 {
+  padding: 40rpx 30rpx;
+  height: 260rpx;
+  width: 686rpx;
+  background: #FFFFFF;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#lessBox .contentBox .item .picBox.data-v-35574ca8 {
+  width: 131rpx;
+  height: 178rpx;
+}
+#lessBox .contentBox .item .picBox .pic.data-v-35574ca8 {
+  width: 100%;
+}
+#lessBox .contentBox .item .item-right-contentBox.data-v-35574ca8 {
+  position: relative;
+  margin-left: 160rpx;
+  height: 178rpx;
+  overflow: hidden;
+}
+#lessBox .contentBox .item .item-right-contentBox .top.data-v-35574ca8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#lessBox .contentBox .item .item-right-contentBox .top .tit-top.data-v-35574ca8 {
+  font-size: 34rpx;
+  letter-spacing: 0.36rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  color: #000000;
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+}
+#lessBox .contentBox .item .item-right-contentBox .top .tit-bottom.data-v-35574ca8 {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #888C91;
+  letter-spacing: 0.26rpx;
+}
+#lessBox .contentBox .item .item-right-contentBox .bottom.data-v-35574ca8 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 20rpx;
+  color: #000000;
+  letter-spacing: 0.21rpx;
+}
+#lessBox .contentBox .item .item-right-contentBox .bottom .signTime.data-v-35574ca8 {
+  height: 28rpx;
+  line-height: 28rpx;
+}
+#lessBox .contentBox .item .item-right-contentBox .bottom .signPeper.data-v-35574ca8 {
+  margin-top: 10rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+}
+

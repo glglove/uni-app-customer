@@ -102,7 +102,7 @@
 					}					
 				}
 				signApi.getLessonList(paramObj, "loading", "获取课程list").then((res) => {
-					debugger
+					// debugger
 					if(res && res.data.code === 1){
 						this.lessonList = res.data.data
 						this.success("课程获取成功")

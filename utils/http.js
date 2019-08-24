@@ -93,9 +93,34 @@ export default {
 			  
 		  }else {
 			// 非登录接口时 需要接口中 统一加上 token 属性（根据业务需求来定）
-			configs.data = JSON.stringify(Object.assign(configs.data, {
-				'token': store.getters.userToken  // 从store 中 获取userToken 
-			}))  
+			let token = store.getters.userToken
+			if(token){
+				// token 存在 则 统一添加 token属性
+				configs.data = JSON.stringify(Object.assign(configs.data, {
+					'token': store.getters.userToken  // 从store 中 获取userToken 
+				}))  
+			}else {
+				// 没有token 页面跳转到 到登陆页面
+				uni.uni.showModal({
+					title: '提示',
+					content: '您暂未登陆,请先登陆',
+					showCancel: true,
+					cancelText: '取消',
+					confirmText: '登陆',
+					success: res => {
+						uni.navigateTo({
+							url: '../pages/login1/login1.vue',
+							success: res => {
+								console.log("调转到了登陆页面")
+							},
+							fail: () => {},
+							complete: () => {}
+						});
+					},
+					fail: () => {},
+					complete: () => {}
+				});
+			}
 		  }
 		  	// 全局属性中传入的 loading 为真，则需要显示
 			//   if(loading){

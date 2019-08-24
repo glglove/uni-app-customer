@@ -8,6 +8,20 @@
 			}
 		},
 		{
+			"path" : "pages/sign/sign",
+			"style" : {
+				"navigationBarTitleText":"打卡"
+			}
+		},
+		{
+			"path" : "pages/my/my",
+			"style" : {
+				"navigationBarTitleText":"我的",
+				"enablePullDownRefresh":true
+			}
+		}		
+		// #ifdef H5 || APP-PLUS
+		,{
             "path": "pages/welecome/welecome",
             "style": {
                 "navigationBarTitleText": "登录模板"
@@ -32,25 +46,6 @@
             }			
 		},
 		{
-			"path" : "pages/sign/sign",
-			"style" : {
-				"navigationBarTitleText":"打卡"
-			}
-		},
-		{
-			"path" : "pages/my/my",
-			"style" : {
-				"navigationBarTitleText":"我的",
-				"enablePullDownRefresh":true
-			}
-		},
-		{
-			"path" : "pages/packageA/find/ranklist/index",
-			"style" : {
-				"navigationBarTitleText":"排行测试"
-			}		
-		}							
-		,{
 			"path" : "pages/packageA/find/lessonList/index",
 			"style" : {
 				"navigationBarTitleText":"课程"
@@ -158,39 +153,130 @@
 				"navigationBarTitleText":"设置"
 			}
 		}
+		//#endif
 	],
 	// 分包加载
-	// #ifdef MP-WEIXIN
-	// "subPackages":[
-	// 	{
-	// 		"root": "pages/packageA",
-	// 		"pages": [
-	// 		  "find/lessonList/index",
-	// 		  "find/lessonList/lessonDetail/index",
-	// 		  "find/lessonList/lessonDetail/enterSuccess/index",
-	// 		  "find/invitation/index",
-	// 		  "find/invitation/shaireHaibao/index",
-	// 		  "find/ranklist/index",
-	// 		  "find/signUpRecord/index",
-	// 		  "sign/immediatelySignUp/index",
-	// 		  "sign/immediatelySignUp/submitTask/index",
-	// 		  "sign/immediatelySignUp/submitTask/submitTaskSuccess/index"
-	// 		]	
-	// 	},
-	// 	{
-	// 		"root": "pages/packageB",
-	// 		"pages": [
-	// 		  "my/myAchievement/index",
-	// 		  "my/myAchievement/certificate/index",
-	// 		  "my/learnRecord/index",
-	// 		  "my/help/index",
-	// 		  "my/help/submitProblem/index",
-	// 		  "my/help/submitProblem/submitProblemSuccess/index",
-	// 		  "my/inviteFriends/index",
-	// 		  "my/set/index"	
-	// 		]	
-	// 	}
-	// ],
+	//#ifdef MP-WEIXIN
+	"subPackages":[
+		{
+			"root": "pages/packageA",
+			"pages": [
+				{
+					"path":"find/lessonList/index",
+					"style": {
+						"navigationBarTitleText":"课程"
+					}
+				},
+				{
+					"path":"find/lessonList/lessonDetail/index",
+					"style": {
+						"navigationBarTitleText":"课程列表"
+					}
+				},	
+				{
+					"path":"find/lessonList/lessonDetail/enterSuccess/index",
+					"style": {
+						"navigationBarTitleText":"课程详情"
+					}
+				},	
+				{
+					"path":"find/invitation/index",
+					"style": {
+						"navigationBarTitleText":"邀请"
+					}
+				},
+				// {
+				// 	"path":"find/invitation/shaireHaibao/index",
+				// 	"style": {
+				// 		"navigationBarTitleText":"分享"
+				// 	}
+				// },	
+				{
+					"path":"find/ranklist/index",
+					"style": {
+						"navigationBarTitleText":"排行榜"
+					}
+				},	
+				{
+					"path":"find/signUpRecord/index",
+					"style": {
+						"navigationBarTitleText":"学习记录"
+					}
+				},		
+				{
+					"path":"sign/immediatelySignUp/index",
+					"style": {
+						"navigationBarTitleText":"报名课程"
+					}
+				},	
+				{
+					"path":"sign/immediatelySignUp/submitTask/index",
+					"style": {
+						"navigationBarTitleText":"学习打卡"
+					}
+				},
+				{
+					"path":"sign/immediatelySignUp/submitTask/submitTaskSuccess/index",
+					"style": {
+						"navigationBarTitleText":"打卡成功"
+					}
+				}																																				
+			]	
+		},
+		{
+			"root": "pages/packageB",
+			"pages": [
+			  {
+				"path": "my/myAchievement/index",
+				"style":{
+					"navigationBarTitleText":"我的成就"
+				}
+			  },				  
+			  {
+				"path": "my/myAchievement/certificate/index",
+				"style":{
+					"navigationBarTitleText":"我的成就"
+				}
+			  },				  
+			  {
+				"path": "my/learnRecord/index",
+				"style":{
+					"navigationBarTitleText":"学习记录"
+				}
+			  },				  
+			  {
+				"path": "my/help/index",
+				"style":{
+					"navigationBarTitleText":"帮助中心"
+				}
+			  },			  
+			  {
+				"path": "my/help/submitProblem/index",
+				"style":{
+					"navigationBarTitleText":"反馈"
+				}
+			  },				  
+			  {
+				"path": "my/help/submitProblem/submitProblemSuccess/index",
+				"style":{
+					"navigationBarTitleText":"反馈"
+				}
+			  },			  
+			  {
+				"path": "my/inviteFriends/index",
+				"style":{
+					"navigationBarTitleText":"邀请"
+				}
+			  },			  
+			  {
+				"path": "my/set/index",
+				"style":{
+					"navigationBarTitleText":"设置"
+				}
+			  }
+			]	
+		}
+	],
 	//#endif
 	// 条件编译（主要用于测试特定页面时使用）
     // "condition": { //模式配置，仅开发期间生效
@@ -207,7 +293,6 @@
 		//#ifdef  H5 ||APP-PLUS
 		,"backgroundColor": "rgba(254,147,82,1)"
 		//#endif
-		
 		//#ifdef MP-WEIXIN
 		,"backgroundColor": "#FFFFFF"
 		//#endif

@@ -120,11 +120,6 @@
                 </view>
             </view>            
         </view>
-        <!-- <view class="footer">
-            <view class="left-line"></view>
-            <view class="footText">突围打卡小助手</view>
-            <view class="right-line"></view>
-        </view>       -->
     </view>
 </template>
 

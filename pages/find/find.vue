@@ -396,7 +396,7 @@
 			console.log("find页面-----------------onShow")
 			// 有token 时 才去 请求
 			if( this.userToken ){
-				debugger
+				// debugger
 				this._getRankDayData()
 			}	
 		},	
@@ -466,12 +466,12 @@
 					console.log(res)
 					if(res && res.data.code === 1){
 						// debugger
-						this.getDevice().showToast({
-							title:"数据获取成功",
-							icon: 'success',
-							mask: true,
-							duration:2000
-						})
+						// this.getDeviceApi().showToast({
+						// 	title:"数据获取成功",
+						// 	icon: 'success',
+						// 	mask: true,
+						// 	duration:2000
+						// })
 						this.contentData = res.data.data
 				
 						let {
@@ -489,9 +489,9 @@
 						// })
 					}else{
 						// uni.hideLoading()
-						this.getDevice().showToast({
+						this.getDeviceApi().showToast({
 							title:"数据获取失败",
-							icon: 'success',
+							icon: 'error',
 							mask: true,	
 							duration:2000
 						})
@@ -499,9 +499,9 @@
 					}
 				}).catch(err => {
 					// uni.hideLoading()
-					this.getDevice().showToast({
+					this.getDeviceApi().showToast({
 						title:"数据获取失败,请重试",
-						icon: 'success',
+						icon: 'error',
 						mask:true,
 						duration:2000
 					})

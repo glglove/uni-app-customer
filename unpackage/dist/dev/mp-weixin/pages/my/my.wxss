@@ -1,4 +1,4 @@
-#my.data-v-487b0eba {
+#my.data-v-cc1aacdc {
   position: absolute;
   top: 0;
   left: 0;
@@ -6,7 +6,7 @@
   bottom: 0;
   margin: auto;
 }
-#my .bgBox.data-v-487b0eba {
+#my .bgBox.data-v-cc1aacdc {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,28 +14,29 @@
   bottom: 0;
   margin: 0 auto;
 }
-#my .contentBox.data-v-487b0eba {
+#my .contentBox.data-v-cc1aacdc {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  z-index: 1;
+  z-index: 100;
 }
-#my .contentBox .top.data-v-487b0eba {
+#my .contentBox .top.data-v-cc1aacdc {
+  position: relative;
   width: 686rpx;
   height: 108rpx;
   line-height: 108rpx;
   margin: 40rpx auto;
 }
-#my .contentBox .top .photo.data-v-487b0eba {
+#my .contentBox .top .photo.data-v-cc1aacdc {
   width: 108rpx;
   height: 108rpx;
   border-radius: 50%;
   vertical-align: middle;
 }
-#my .contentBox .top .name.data-v-487b0eba {
+#my .contentBox .top .name.data-v-cc1aacdc {
   display: inline-block;
   height: 48rpx;
   margin-left: 25rpx;
@@ -45,19 +46,19 @@
   color: #FFFFFF;
   letter-spacing: 0.59rpx;
 }
-#my .contentBox .top .set.data-v-487b0eba {
+#my .contentBox .top .set.data-v-cc1aacdc {
   position: relative;
   width: 50rpx;
   height: 50rpx;
   margin: 32rpx 0;
 }
-#my .contentBox .top .set image.set.data-v-487b0eba {
+#my .contentBox .top .set image.set.data-v-cc1aacdc {
   position: absolute;
   top: -30rpx;
   left: 0;
   z-index: 1001;
 }
-#my .contentBox .top .set .btn.data-v-487b0eba {
+#my .contentBox .top .set .btn.data-v-cc1aacdc {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -66,7 +67,16 @@
   background-color: transparent !important;
   z-index: 1002;
 }
-#my .contentBox .containerBox.data-v-487b0eba {
+#my .contentBox .top .contentLoginBox.data-v-cc1aacdc {
+  position: absolute;
+  left: 100rpx;
+  top: 0;
+}
+#my .contentBox .top .contentLoginBox .btn-row .loginBtn.data-v-cc1aacdc {
+  font-size: 32rpx;
+  background-color: #FA9A60;
+}
+#my .contentBox .containerBox.data-v-cc1aacdc {
   width: 686rpx;
   height: 560rpx;
   border-radius: 28rpx;
@@ -79,18 +89,18 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#my .contentBox .containerBox .itemBox.data-v-487b0eba {
+#my .contentBox .containerBox .itemBox.data-v-cc1aacdc {
   height: 100rpx;
   line-height: 100rpx;
 }
-#my .contentBox .containerBox .itemBox .itemBox-left.data-v-487b0eba {
+#my .contentBox .containerBox .itemBox .itemBox-left.data-v-cc1aacdc {
   margin: 26rpx 0;
 }
-#my .contentBox .containerBox .itemBox .itemBox-left .pic.data-v-487b0eba {
+#my .contentBox .containerBox .itemBox .itemBox-left .pic.data-v-cc1aacdc {
   width: 48rpx;
   height: 45rpx;
 }
-#my .contentBox .containerBox .itemBox .itemBox-left .tit.data-v-487b0eba {
+#my .contentBox .containerBox .itemBox .itemBox-left .tit.data-v-cc1aacdc {
   height: 42rpx;
   line-height: 42rpx;
   color: #000000;
@@ -98,12 +108,12 @@
   letter-spacing: 0.46rpx;
   margin-left: 30rpx;
 }
-#my .contentBox .containerBox .itemBox .itemBox-right.data-v-487b0eba {
+#my .contentBox .containerBox .itemBox .itemBox-right.data-v-cc1aacdc {
   width: 15rpx;
   height: 30rpx;
   margin-top: 7.5rpx;
 }
-#my .contentBox .containerBox .itemBox .itemBox-right .tip.data-v-487b0eba {
+#my .contentBox .containerBox .itemBox .itemBox-right .tip.data-v-cc1aacdc {
   width: 100%;
 }
 

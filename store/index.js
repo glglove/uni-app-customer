@@ -21,6 +21,7 @@ const vuexLocal = new VuexPersistense({
         userId: val.app.userId,
         userName: val.app.userName,
         userToken: val.app.userToken,
+		hasLogin: val.app.hasLogin
       }
     }
   }
