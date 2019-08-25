@@ -144,11 +144,11 @@
 				// 先判断 用户是否微信授权
 				// #ifdef MP-WEIXIN
 					let isAuthorize = await this.getAuthorizeStatus("scope.userInfo", async () => {
-						this.$store.dispatch("setAuthorizeState", true)												
+						this.$store.dispatch("setAuthorizeState", {authorizeState: true})												
 						this.reLaunchPage("../find/find")
 					}, async () => {
 						// this.reLaunchPage("../find/find")												
-						this.$store.dispatch("setAuthorizeState", false)
+						this.$store.dispatch("setAuthorizeState", {authorizeState: false})
 					})
 				// #endif
 			},

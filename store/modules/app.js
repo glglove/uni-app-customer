@@ -10,8 +10,10 @@ const app = {
 	forcedLogin: false,
 	hasLogin: false,  // 是否已经登陆
 	authorizeState: false, // 小程序中 用户信息userInfo是否微信授权成功， false 未授权  true 已授权  默认 true
-	78: '',// 用户名
+	userInfo: {}, // 用户信息
 	userId: '', // 用户id
+	userName: '',// 用户名
+	userAvatarUrl: '', // 用户头像
     // userToken: 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1NSIsInJvbGVzIjoiY3VzdG9tZXIiLCJpYXQiOjE1NTUzMDQyMzl9.Pznwe4fyBDXb0JIQOKZbMvca3P6a7REvHyYDbdnieSM',
 	userToken: '',
 	//containerAllloadingFlag 控制 外层 container 容器的 allLoading 状态的显示与隐藏 （ 一般allloading、loading、content的层级关系是loading在最上一层，allloading在中间，最下面就是页面内容显示了）
@@ -34,16 +36,24 @@ const app = {
 	},	  
 	
 	 //设置 用户微信是否已授权用户信息userInfo
-	[types.setAuthorizeState] (state, flag) {
-		// debugger
-		state.authorizeState = flag
+	[types.setAuthorizeState] (state, {authorizeState, userInfo}) {
+		debugger
+		state.authorizeState = authorizeState
+		if( userInfo ){
+			state.userInfo = userInfo 
+			state.userName = userInfo.nickName 
+			state.userAvatarUrl = userInfo.avatarUrl 
+		}
 	},	  
+	// 设置用户姓名
 	[types.setUserName] (state, str) {
 		state.userName = str
 	},
+	// 设置用户id
 	[types.setUserId] (state, str) {
 		state.userId = str
 	},	
+	// 设置用户 token
     [types.setUserToken] (state, str) {
 		debugger
 		state.userToken = str
@@ -71,9 +81,9 @@ const app = {
   },
   actions: {
 	// 设置 用户微信是否已授权用户信息userInfo
-	setAuthorizeState ({commit, state}, flag){
+	setAuthorizeState ({commit, state}, {authorizeState, userInfo}){
 		// debugger
-		commit(types.setAuthorizeState, flag)
+		commit(types.setAuthorizeState, {authorizeState, userInfo})
 	},
 	// 设置 用户姓名
 	setUserName ({commit, state}, str){

@@ -101,7 +101,8 @@ export default {
 				}))  
 			}else {
 				// 没有token 页面跳转到 到登陆页面
-				uni.uni.showModal({
+				//#ifdef H5 || APP-PLUS
+				uni.showModal({
 					title: '提示',
 					content: '您暂未登陆,请先登陆',
 					showCancel: true,
@@ -120,6 +121,7 @@ export default {
 					fail: () => {},
 					complete: () => {}
 				});
+				//#endif
 			}
 		  }
 		  	// 全局属性中传入的 loading 为真，则需要显示

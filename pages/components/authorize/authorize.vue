@@ -158,20 +158,20 @@ export default {
 		},
 		async getUserInfo_miniPro(e) {
 			debugger;
-			console.log(e);
 			if(e){
 				if (e.detail.userInfo) {
 					//用户按了允许授权按钮
-					console.log(  e.detail.userInfo )
+					console.log("用户按了允许授权按钮后获取的用户信息e.detail.userInfo------", e.detail.userInfo);
 					// 修改全局中的notAuthorize 为true（已授权）
 					// debugger;
 					//将 授权状态存入到 全局store-app 的 authorizeState中
-                    this.$store.dispatch('setAuthorizeState', true)
+                    this.$store.dispatch('setAuthorizeState', {authorizeState: true, userInfo: e.detail.userInfo})
                     // 授权后登陆
                     this.authorizeAfter_login().then(res => {
                         if(res){
-                            //登录成功 刷新页面
-                            this.mixin_refreshPage()
+                            //登录成功 后触发 刷新页面
+                            debugger
+                            this.$bus.$emit("emitRefreshPage")
                         }
                     })
 					// 关闭授权的弹框

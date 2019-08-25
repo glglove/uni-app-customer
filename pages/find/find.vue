@@ -382,6 +382,12 @@
 			])
 		},
 		async onLoad () {
+			//#ifdef MP-WEIXIN
+			this.$bus.$on("emitRefreshPage", () => {
+				debugger
+				this.refreshPage()
+			})
+			//#endif			
 			// debugger
 			console.log("find页面------------onload")
 			console.log("-------find首页检查是否登陆成功----",await this.getLoginStatus())
@@ -402,6 +408,9 @@
 		},	
 		onReady(){
 			console.log("find页面-----------------onReady")		
+		},
+		onHide () {
+			this.$bus.$off("emitRefreshPage")			
 		},	
 		onTabItemTap(){
 			console.log("find页面-----------onTabItemTap----")
@@ -415,9 +424,10 @@
 				let isAuthorize = await this.getAuthorizeStatus("scope.userInfo")
 				console.log("find --------onComLoad--获取到的用户信息授权状态----", isAuthorize)
 				// 将授权状态存入 store 中
-				this.$store.dispatch("setAuthorizeState", isAuthorize)
+				this.$store.dispatch("setAuthorizeState", {authorizeState: isAuthorize})
 				//#endif
 				
+				//#ifdef H5 || APP-PLUS
 				// 判断是否登陆
 				if(!this.hasLogin){
 					this.getDeviceApi().showModal({
@@ -440,11 +450,11 @@
 							}
 						}
 					})				
-				}				
+				}	
+				//#endif
 			},	
 			refreshPage() {
-				this._getRankDayData()
-				this._getRankDayData()
+				debugger
 				this._getRankDayData()
 			},
 			// 获取list 列表数据

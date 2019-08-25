@@ -22,14 +22,14 @@ export default {
 	/**
 	* 获取openId
 	* 
-	* @param {code: 微信登录码} param
+	* @param {code: 微信登录码code}  通过 uni.login() 获取code码后，通过uni.getUserInfo() 获取用户信息，然后 通过将 code码 和 getUserInfo 返回的的结果 作为 参数 调用此方法 获取token
 	* 
-	* @return {"code": 0, "message":"success", "content":{ "openid":"UV3osCbt8XPnq1KNm9LUDw"}}
+	* @return {"code": 1, "message":"success", "data":{ "token":"UV3osCbt8XPnq1KNm9LUDw"}}
 	*/
 	getOpenId(params, loading = false, loadingText = "加载中...") {
 		debugger
 		const url = `/app/customerApp/login`;
-		console.log( "打印获取openid时传给后端的参数---》", param );
+		console.log( "打印获取openid时传给后端的参数---》", params );
 		var data = {}
 		params = Object.assign(data, params)
 		return http.post( url,{

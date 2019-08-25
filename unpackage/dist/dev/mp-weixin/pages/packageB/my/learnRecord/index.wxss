@@ -1,7 +1,7 @@
-.wrap.data-v-2ecd3a2a {
+.wrap.data-v-350ed013 {
   width: 90%;
 }
-#learnRecord.data-v-2ecd3a2a {
+#learnRecord.data-v-350ed013 {
   position: relative;
   width: 100%;
   height: 100%;
@@ -10,22 +10,22 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#learnRecord .scrollBox.data-v-2ecd3a2a {
+#learnRecord .scrollBox.data-v-350ed013 {
   height: 100%;
 }
-#learnRecord .scrollBox.data-v-2ecd3a2a::-webkit-scrollbar {
+#learnRecord .scrollBox.data-v-350ed013::-webkit-scrollbar {
   width: 0 !important ;
   height: 0 !important ;
   color: transparent !important ;
   display: none;
 }
-#learnRecord .scrollBox .calendarBox.data-v-2ecd3a2a {
+#learnRecord .scrollBox .calendarBox.data-v-350ed013 {
   position: absolute;
   left: 0;
   width: 100%;
   height: 670rpx;
 }
-#learnRecord .scrollBox .tipBox.data-v-2ecd3a2a {
+#learnRecord .scrollBox .tipBox.data-v-350ed013 {
   position: absolute;
   top: 700rpx;
   left: 50%;
@@ -45,7 +45,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#learnRecord .scrollBox .tipBox .tit.data-v-2ecd3a2a::before {
+#learnRecord .scrollBox .tipBox .tit.data-v-350ed013::before {
   display: inline-block;
   content: "";
   width: 22rpx;
@@ -56,7 +56,7 @@
   vertical-align: middle;
   margin-right: 20rpx;
 }
-#learnRecord .scrollBox .recordBox.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox.data-v-350ed013 {
   position: absolute;
   top: 780rpx;
   left: 50%;
@@ -70,19 +70,19 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#learnRecord .scrollBox .recordBox .record_top .userInfo .photo.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .userInfo .photo.data-v-350ed013 {
   width: 82rpx;
   height: 80rpx;
 }
-#learnRecord .scrollBox .recordBox .record_top .userInfo .photo .pic.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .userInfo .photo .pic.data-v-350ed013 {
   width: 100%;
 }
-#learnRecord .scrollBox .recordBox .record_top .userInfo .nameBox.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .userInfo .nameBox.data-v-350ed013 {
   margin-left: 90rpx;
   height: 80rpx;
   line-height: 80rpx;
 }
-#learnRecord .scrollBox .recordBox .record_top .userInfo .nameBox .name.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .userInfo .nameBox .name.data-v-350ed013 {
   height: 42rpx;
   font-size: 30rpx;
   color: #000000;
@@ -90,55 +90,55 @@
   line-height: 42rpx;
   font-weight: 500;
 }
-#learnRecord .scrollBox .recordBox .record_top .userInfo .nameBox .time.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .userInfo .nameBox .time.data-v-350ed013 {
   height: 28rpx;
   font-size: 20rpx;
   color: #888C91;
   line-height: 28rpx;
   letter-spacing: 0.21rpx;
 }
-#learnRecord .scrollBox .recordBox .record_top .signContentBox .content.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .signContentBox .content.data-v-350ed013 {
   font-size: 24rpx;
   color: #000000;
   letter-spacing: 0.43rpx;
   line-height: 33rpx;
 }
-#learnRecord .scrollBox .recordBox .record_top .signContentBox .picItemBox .itemPic.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .signContentBox .picItemBox .itemPic.data-v-350ed013 {
   width: 144.4rpx;
   height: 194.7rpx;
 }
-#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox.data-v-350ed013 {
   text-align: right;
 }
-#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox .thumbsUp_pic.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox .thumbsUp_pic.data-v-350ed013 {
   display: inline-block;
   width: 30rpx;
   height: 30rpx;
   margin: 0 20rpx;
   vertical-align: middle;
 }
-#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox .thumbsUp_tit.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox .thumbsUp_tit.data-v-350ed013 {
   font-size: 20rpx;
   color: #000000;
   letter-spacing: 0.21rpx;
 }
-#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox .remark_tit.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_top .thumbsUpBox .remark_tit.data-v-350ed013 {
   font-size: 20rpx;
   color: #FA9960;
   letter-spacing: 0.21rpx;
 }
-#learnRecord .scrollBox .recordBox .record_bottom.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_bottom.data-v-350ed013 {
   border-top: 1px dotted #AAACB0;
 }
-#learnRecord .scrollBox .recordBox .record_bottom .remark_content_box.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_bottom .remark_content_box.data-v-350ed013 {
   font-size: 24rpx;
   line-height: 33rpx;
   letter-spacing: 0.43rpx;
 }
-#learnRecord .scrollBox .recordBox .record_bottom .remark_content_box .teacherName.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_bottom .remark_content_box .teacherName.data-v-350ed013 {
   color: #FF9452;
 }
-#learnRecord .scrollBox .recordBox .record_bottom .remark_content_box .content.data-v-2ecd3a2a {
+#learnRecord .scrollBox .recordBox .record_bottom .remark_content_box .content.data-v-350ed013 {
   color: #000000;
 }
 

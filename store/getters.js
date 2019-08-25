@@ -6,6 +6,8 @@ export const userToken = state => state.app.userToken
 export const userName = state => state.app.userName
 // 获取用户id
 export const userId = state => state.app.userId
+// 获取用户id
+export const userInfo = state => state.app.userInfo
 // 获取用户 hasLogin
 export const hasLogin = state => state.app.hasLogin
 // 获取是否强制登陆 forcedLogin

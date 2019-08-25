@@ -1,2 +1,0 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/packageA/find/invitation/shaireHaibao/index"],[],[[270,"common/runtime","common/vendor"]]]);
-//# sourceMappingURL=../../../../../../.sourcemap/mp-weixin/pages/packageA/find/invitation/shaireHaibao/index.js.map
