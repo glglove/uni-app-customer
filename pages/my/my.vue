@@ -131,8 +131,9 @@
 			</view>
 			<view class="contentBox">
 				<view class="top clearfix marginT40">
-					<image class="photo" :src="avater? avater : photo_png" layz-load="true"></image>
-					<!-- <image class="photo" src="{{avater? avater : ''}}" layz-load="true"></image> -->
+					<!-- avaterPic: {{avaterPic}} -->
+					<image class="photo" :src="avaterPic? avaterPic : photo_png" layz-load="true"></image>
+					<!-- <image class="photo" src="{{userAvatarUrl? userAvatarUrl : ''}}" layz-load="true"></image> -->
 					<text class="name">{{name? name:''}}</text>
 					<!-- <view class="setBox "> -->
 						<!-- <image class="set rt" src="../../static/imgs/icon/set.png"  @tap.stop = "clickSet"></image> -->
@@ -144,8 +145,10 @@
 					<!--登陆/退出登陆-->
 					<view class="contentLoginBox">
 						<view class="btn-row">
-							<button class="loginBtn" v-if="!hasLogin" type="primary"  @tap="bindLogin">您还未登录</button>
+							<button class="loginBtn" v-if="!hasLogin" type="primary"  @tap="bindLogin">{{hasLogin?'已登陆': '您还未登录'}}</button>
+							<!--#ifdef H5 || APP-PLUS-->
 							<button class="loginBtn" v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
+							<!--#endif-->
 						</view>
 					</view>
 					<!-- </view> -->
@@ -234,7 +237,7 @@
 			FooterExplain
         },	
 		computed: {
-			...mapGetters(['hasLogin', 'forcedLogin'])
+			...mapGetters(['hasLogin', 'forcedLogin','userAvatarUrl','userInfo']),
 		},
 		watch:{
 
@@ -243,10 +246,10 @@
 			return {
 				flag: false, // 控制首次加载时的 onload 和 onshow 的重复加载
 				name: '',
-				avater: '',
 				bg: {
 					my_bg: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.my_bg}`
 				},
+				avaterPic: '',
 				photo_png: photoPng,
 				set_png: setPng,
 				card_png: cardPng,
@@ -261,7 +264,7 @@
 			}
 		},
 		onLoad() {
-			
+			this.avaterPic = this.getAvaterPic()
 		},
 		onShow() {
 			
@@ -292,13 +295,28 @@
 		},
 		methods:{
 			...mapMutations(['loginOut']),
+			//
+			onComLoad () {
+
+			},
+			// 刷新页面
+			refreshPage () {
+				
+			},
 			// 登陆
 			bindLogin () {
-                this.navigatePage("../login1/login1");
+                this.navigatePage("../login/login");
 			},	
 			// 退出登陆
 			bindLogout () {
+				//#ifdef H5 || APP-PLUS
                 this.loginOut();
+				//#endif
+				
+				//#ifdef MP-WEIXIN
+				
+				//#endif
+				
                 /**
                  * 如果需要强制登录跳转回登录页面
                  */
@@ -308,6 +326,15 @@
                 //     });
                 // }				
 			},	
+			// 获取头像
+			async getAvaterPic() {
+				debugger
+				console.log(this.getStorage("userInfo"))
+				this.getStorage("userInfo").then(res => {
+					this.avaterPic = JSON.parse(res).headImg
+					// console.log("------------",res)
+				})
+			},
 			// 点击 我的成就
 			async clickAchivement () {
 				// let token = await this.getStorage("token");

@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "打卡",
+  "onReachBottomDistance": 0,
   "usingComponents": {}
 }

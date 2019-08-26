@@ -103,40 +103,6 @@
 
         }
     }
-
-    .footer {
-        position: absolute;
-        // top: 1155rpx;
-        bottom: 120rpx;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 33rpx;
-        text-align: center;
-        color: #888C91;
-        line-height: 33rpx;
-        font-size: 24rpx;
-        .left-line {
-            display: inline-block;
-            width: 80rpx;
-            height: 0;
-            border-top: 1px solid #979797;
-            vertical-align: middle;
-        }
-        .footText {
-            display: inline-block;
-            width: 170rpx;
-            height: 33rpx;   
-            margin: 30rpx 10rpx 0 10rpx;         
-        }
-        .right-line {
-            display: inline-block;
-            width: 80rpx;
-            height: 0;
-            border-top: 1px solid #979797;
-            vertical-align: middle;                                     
-        }
-    }
 }
 
 </style>
@@ -149,7 +115,9 @@
 <script>
 export default {
     data(){
-        
+        return {
+			
+		}
     }
 }
 </script>

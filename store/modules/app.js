@@ -37,7 +37,7 @@ const app = {
 	
 	 //设置 用户微信是否已授权用户信息userInfo
 	[types.setAuthorizeState] (state, {authorizeState, userInfo}) {
-		debugger
+		// debugger
 		state.authorizeState = authorizeState
 		if( userInfo ){
 			state.userInfo = userInfo 
@@ -55,7 +55,7 @@ const app = {
 	},	
 	// 设置用户 token
     [types.setUserToken] (state, str) {
-		debugger
+		// debugger
 		state.userToken = str
 		state.hasLogin = true
     },

@@ -14,7 +14,10 @@ export const miniProApi = {
 	data () {
 		return {
 			pHeight: 0, // container 组件的 高，从系统中获取
-			loading1: false
+			loading1: false,
+			total: 0, // 总页数
+			pageSize: 10, // 每页数目
+			pageNum: 1  // 页码
 		}
 	},
 	computed: {
@@ -80,9 +83,19 @@ export const miniProApi = {
 		console.log('mixin onUnload')
 	},
 	onPullDownRefresh(){
+		// 下拉刷新
+		this.refreshPage()
 		console.log('mixin onPullDownRefresh')
 	},
 	onReachBottom (){
+		// 上拉加载
+		debugger
+		if(this.pageSize*this.pageNum < this.total){
+			this.pageNum +=1
+			this.refreshPage()
+		}else {
+			this.toast("到底了~~~~")
+		}
 		console.log('mixin onReachBottom')
 	},
 	onShareAppMessage(){
@@ -324,8 +337,12 @@ export const miniProApi = {
 		// 提取localstorage
 		getStorage( key ) {
 			return new Promise((resolve,reject)=>{
-			  let res = uni.getStorageSync(key);
-			  resolve( res )
+				try{
+					let res = uni.getStorageSync(key);
+					resolve( res )
+				}catch(e){
+					//TODO handle the exception
+				}
 			})
 		},
 		// 删除localstorage 
@@ -481,13 +498,13 @@ export const miniProApi = {
 					// let userInfo = that.getDeviceApi().getStorageSync( 'userInfo' ) || '';
 					// if( token )   await that.removeStorage("token" );
 					// if( userInfo )  await that.removeStorage("userInfo" );      
-					debugger
+					// debugger
 					// 先登陆 uni.login();
 					// let {code } = await uni.login();  //通过调用uni.login()获取code 判断是否开始登录
 					let code = ''
 					await that.getDeviceApi().login({
 						success: async(res) => {
-							debugger
+							// debugger
 							console.log("-----打印uni.login()登录后返回的code------",res.code)
 							code = res.code
 
@@ -497,7 +514,7 @@ export const miniProApi = {
 								})
 								
 								console.log("-----授权后通过uni.getUserInfo()获取用户信息返回的结果-----：", userInfo[1])
-								debugger
+								// debugger
 								let {
 									iv,
 									encryptedData,
@@ -542,12 +559,12 @@ export const miniProApi = {
 								// 调用 后台注册用户信息的login接口 getOenId 方法
 								// console.log(commApi)
 								commApi.getOpenId( params, true ).then((res)=>{
-									debugger
+									// debugger
 									console.log("------------------",res)
 									if(res && res.statusCode == 200){
 										let resData = res.data
 										if( resData && resData.code == 1){
-											debugger
+											// debugger
 											console.log('---网络请求返回成功---')
 											console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", resData)          
 
@@ -567,7 +584,7 @@ export const miniProApi = {
 											//   console.log("---------调用后台login接口后返回的状态有问题-------")											
 										}
 										else {
-											debugger
+											// debugger
 											// 登陆后后台返回错误
 											that.toast("登陆失败");
 											reject("-----调用后台login接口后返回的状态有问题-----")
@@ -588,7 +605,7 @@ export const miniProApi = {
 							}
 						},
 						fail: (error) => {
-							debugger
+							// debugger
 							console.log("-----打印登录后------", error)
 						}
 					})
@@ -620,7 +637,7 @@ export const miniProApi = {
 			}		
 
 			return new Promise((resolve,reject)=>{
-				debugger
+				// debugger
 				_this.getDeviceApi().getSetting().then((res) => {
 					// 获取用户授权信息
 					console.log("打印用户授权的情况集合------------",res)   // res.userInfo 为true  res.errMsg == "authorize:ok"

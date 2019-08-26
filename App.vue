@@ -10,8 +10,12 @@
 	import store from '@/store/index.js'
 	import getEnterType from '@/utils/miniProSceneType'
 	import { getDeviceApi } from '@/utils/deviceApi.js'
+	import commApi  from '@/api/comm.js'
+
+	let self = ''
 	export default {
 		onLaunch: async function() {
+			self = this
 			// debugger
 			console.log('App Launch')
 			// 小程序检查是否有版本更新 采用条件判断来编译
@@ -35,7 +39,11 @@
 				// })
 				// store-app 中 存入 用户授权flag
 				console.log("App------onLaunch------检测到用户信息已授权-true----")
-				store.dispatch("setAuthorizeState", {authorizeState: true})		
+				store.dispatch("setAuthorizeState", {authorizeState: true})	
+				// 重新登陆
+				this.authorizeAfter_login().then(() => {
+					console.log("APP onLaunch 登陆成功")
+				})
 			}, async function() {
 				// 未授权回调
 				console.log("App------onLaunch------检测到用户信息未授权--false---")
@@ -207,7 +215,139 @@
 						}
 					})
 				})		
-			},						
+			},	
+			// 授权后登陆 （主要是微信小程序）	
+			// 授权成功后，进行登陆注册获取 token，并缓存 AuthorizeStatus ,token 等
+			async authorizeAfter_login(){
+				// debugger
+				// debugger;
+				// 登陆之前，首先将全局的授权状态notAuthrize改为 已授权(true)，并存入 localstorage中，后续判断是否授权都是看localstorage里面的这个字段
+				return new Promise(async (resolve,reject)=>{
+					try{
+						console.log('---调用login方法---')
+						// let token = that.getDeviceApi().getStorageSync('token') || '';    
+						// let userInfo = that.getDeviceApi().getStorageSync( 'userInfo' ) || '';
+						// if( token )   await that.removeStorage("token" );
+						// if( userInfo )  await that.removeStorage("userInfo" );      
+						// debugger
+						// 先登陆 uni.login();
+						// let {code } = await uni.login();  //通过调用uni.login()获取code 判断是否开始登录
+						let code = ''
+						await uni.login({
+							success: async(res) => {
+								// debugger
+								console.log("-----打印uni.login()登录后返回的code------",res.code)
+								code = res.code
+
+								if(code){
+									let userInfo= await uni.getUserInfo({
+										lang: "zh_CN"
+									})
+									
+									console.log("-----授权后通过uni.getUserInfo()获取用户信息返回的结果-----：", userInfo[1])
+									// debugger
+									let {
+										iv,
+										encryptedData,
+										signature,
+										rawData
+										} = userInfo[1]
+
+										// self.$store.dispatch("setUserName", userInfo[1].userInfo)  // 将返回的数据赋值 存入 store 的app中  
+								
+									let params = {
+										params: {
+											code: code,
+											encryptedData: encryptedData,
+											iv: iv,
+											type: '' //0是扫码，1是点击分享图，2.微信上搜索的
+										}
+									}
+									
+									//  this.$parent.gloabalData.ret = userInfo;  //  将返回的数据赋值给 全局gloabalData 的ret 
+									//   console.log('---获取信息,发送网络请求，将获取到的code 传给后台获取 用户信息（openid、token等信息）---');
+							
+									//   let ret = this.$parent.globalData.ret;
+							
+									//   let type = "";
+							
+									//   console.log("----打印global中的 optionObj对象信息---：", this.$parent.globalData.optionObj );
+									//   if ( this.$parent.globalData.optionObj.scene ){
+									// 	// 场景值
+									// 	type = await self.getEnterType(this.$parent.globalData.optionObj.scene );
+									//   }
+							
+									//   let params = {
+									// 	params: {
+									// 	  code: code,
+									// 	  encryptedData: ret.encryptedData,
+									// 	  iv: ret.iv,
+									// 	  type: type,       //0是扫码，1是点击分享图，2.微信上搜索的
+									// 	  userId: self.$parent.globalData.optionObj.query.scene ? self.$parent.globalData.optionObj.query.scene : "",    // 用户scene唯一标识 用于邀请人数的统计
+									// 	}
+									//   }
+							
+									// 调用 后台注册用户信息的login接口 getOenId 方法
+									// console.log(commApi)
+									commApi.getOpenId( params, true ).then((res)=>{
+										// debugger
+										console.log("------------------",res)
+										if(res && res.statusCode == 200){
+											let resData = res.data
+											if( resData && resData.code == 1){
+												debugger
+												console.log('---网络请求返回成功---')
+												console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", resData)          
+
+												// uni.setStorage( "token", resData.data.token )
+												// 将token 存入 store - app中
+												store.dispatch("setUserToken", resData.data.token)
+												// 将 userInfo 存入 store -app 中
+												// store.dispatch("")
+												// 将userId 存入 store-app 中
+												store.dispatch("setUserId", resData.data.customer.id)
+												// 缓存 用户信息 userInfo
+												// uni.setStorage( "userInfo", JSON.stringify(resData.data.customer) )          
+												resolve(true);  
+											}else if( resData.code == 1018){
+												// 发现是黑名单用户，跳转至黑名单页面
+												//   this.reLaunchPage("../blacklist/index");
+												//   console.log("---------调用后台login接口后返回的状态有问题-------")											
+											}
+											else {
+												debugger
+												// 登陆后后台返回错误
+												uni.showToast({
+													title: '登陆失败'
+												})
+												reject("-----调用后台login接口后返回的状态有问题-----")
+												console.log("---------调用后台login接口后返回的状态有问题-------")
+											}
+										}
+									}).then(async ()=>{
+										// let token = await that.getStorage( "token" ) || "";
+										// let userInfo = await that.getStorage( "userInfo" ) || "";
+										// console.log('--------缓存token成功----------')
+										// console.log( "缓存成功后读取缓存中的token：", token )
+										// console.log('----------缓存userInfo成功--------')
+										// console.log( "缓存成功后读取缓存中的userInfo：", userInfo ) 
+									})						
+								}else{
+									reject("---登陆微信后台 wx.login() 接口返回异常---");
+									console.log('---登陆微信后台 wx.login() 接口返回异常---')
+								}
+							},
+							fail: (error) => {
+								debugger
+								console.log("-----打印登录后------", error)
+							}
+						})
+					}catch (error) {
+						console.log(error)
+						reject(error)
+					}
+				}) 
+			}			
 		}
 	}
 </script>

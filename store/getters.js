@@ -8,6 +8,8 @@ export const userName = state => state.app.userName
 export const userId = state => state.app.userId
 // 获取用户id
 export const userInfo = state => state.app.userInfo
+// 获取用户头像
+export const userAvatarUrl = state => state.app.userAvatarUrl
 // 获取用户 hasLogin
 export const hasLogin = state => state.app.hasLogin
 // 获取是否强制登陆 forcedLogin

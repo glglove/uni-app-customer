@@ -98,11 +98,11 @@
 							 */
                             if (this.forcedLogin) {
                                 uni.reLaunch({
-                                    url: '../login1/login1'
+                                    url: '../login/login'
                                 });
                             } else {
                                 uni.navigateTo({
-                                    url: '../login1/login1'
+                                    url: '../login/login'
                                 });
                             }
                         }

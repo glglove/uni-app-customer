@@ -1,35 +1,16 @@
-#sign.data-v-61b32b1a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  overflow-y: scroll;
+#sign .bgBox.data-v-b49ccc1c {
+  width: 100%;
+  height: 400rpx;
 }
-#sign .logo.data-v-61b32b1a {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
+#sign .bgBox .bgpic.data-v-b49ccc1c {
+  width: 100%;
 }
-#sign .title.data-v-61b32b1a {
-  font-size: 36rpx;
-  color: #8f8f94;
-}
-#sign .bgBox.data-v-61b32b1a {
+#sign .contentBox .scroll-view-y.data-v-b49ccc1c {
   width: 100%;
   height: 100%;
 }
-#sign .bgBox .bgpic.data-v-61b32b1a {
+#sign .contentBox .itemBox.data-v-b49ccc1c {
   width: 100%;
-}
-#sign .contentBox.data-v-61b32b1a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  z-index: 1;
+  height: 200rpx;
 }
 

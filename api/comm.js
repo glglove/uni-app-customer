@@ -7,7 +7,7 @@ export default {
 	* 
 	*/
 	async register (params, loading = false, loadingText = "加载中...") {
-		debugger
+		// debugger
 	   const url = `/app/users/register`;
 	   var data = {}
 	   params = Object.assign(data, params)
@@ -27,7 +27,7 @@ export default {
 	* @return {"code": 1, "message":"success", "data":{ "token":"UV3osCbt8XPnq1KNm9LUDw"}}
 	*/
 	getOpenId(params, loading = false, loadingText = "加载中...") {
-		debugger
+		// debugger
 		const url = `/app/customerApp/login`;
 		console.log( "打印获取openid时传给后端的参数---》", params );
 		var data = {}

@@ -10,7 +10,9 @@
 		{
 			"path" : "pages/sign/sign",
 			"style" : {
-				"navigationBarTitleText":"打卡"
+				"navigationBarTitleText":"打卡",
+				// "enablePullDownRefresh":true,
+				"onReachBottomDistance": 0
 			}
 		},
 		{
@@ -28,7 +30,7 @@
             }
 		},
 		{
-            "path": "pages/login1/login1",
+            "path": "pages/login/login",
             "style": {
                 "navigationBarTitleText": "登录"
             }			

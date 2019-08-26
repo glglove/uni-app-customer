@@ -1,8 +1,8 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
 /* 0 */
-/*!********************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js ***!
-  \********************************************/
+/*!***************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19,7 +19,7 @@ var _config = _interopRequireDefault(__webpack_require__(/*! ./api/config.js */ 
 
 
 
-var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http.js */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var container = function container() {return Promise.all(/*! import() | pages/components/container1/container */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/container1/container")]).then(__webpack_require__.bind(null, /*! @/pages/components/container1/container */ 245));};_vue.default.component('container', container); // 引入 uni.request()
+var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http.js */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var container = function container() {return Promise.all(/*! import() | pages/components/container1/container */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/container1/container")]).then(__webpack_require__.bind(null, /*! @/pages/components/container1/container */ 245));};_vue.default.component('container', container); // 引入 uni.request()
 
 _vue.default.config.productionTip = false;
 
@@ -47,7 +47,7 @@ createApp(app).$mount();
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createPage = createPage;exports.createComponent = createComponent;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}
+Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance");}function _iterableToArrayLimit(arr, i) {var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}
 
 var _toString = Object.prototype.toString;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -610,8 +610,6 @@ function $emit() {
   return apply(getEmitter(), '$emit', Array.prototype.slice.call(arguments));
 }
 
-
-
 var eventApi = /*#__PURE__*/Object.freeze({
   $on: $on,
   $off: $off,
@@ -730,14 +728,14 @@ function initHooks(mpOptions, hooks, vueOptions) {
   });
 }
 
-function initVueComponent(Vue$$1, vueOptions) {
+function initVueComponent(Vue, vueOptions) {
   vueOptions = vueOptions.default || vueOptions;
   var VueComponent;
   if (isFn(vueOptions)) {
     VueComponent = vueOptions;
     vueOptions = VueComponent.extendOptions;
   } else {
-    VueComponent = Vue$$1.extend(vueOptions);
+    VueComponent = Vue.extend(vueOptions);
   }
   return [VueComponent, vueOptions];
 }
@@ -904,7 +902,7 @@ function initProperties(props) {var isBehavior = arguments.length > 1 && argumen
           value = value();
         }
 
-        opts.type = parsePropType(key, opts.type, value, file);
+        opts.type = parsePropType(key, opts.type);
 
         properties[key] = {
           type: PROP_TYPES.indexOf(opts.type) !== -1 ? opts.type : null,
@@ -912,7 +910,7 @@ function initProperties(props) {var isBehavior = arguments.length > 1 && argumen
           observer: createObserver(key) };
 
       } else {// content:String
-        var type = parsePropType(key, opts, null, file);
+        var type = parsePropType(key, opts);
         properties[key] = {
           type: PROP_TYPES.indexOf(type) !== -1 ? type : null,
           observer: createObserver(key) };
@@ -987,16 +985,16 @@ function processEventExtra(vm, extra, event) {
 
   if (Array.isArray(extra) && extra.length) {
     /**
-                                                  *[
-                                                  *    ['data.items', 'data.id', item.data.id],
-                                                  *    ['metas', 'id', meta.id]
-                                                  *],
-                                                  *[
-                                                  *    ['data.items', 'data.id', item.data.id],
-                                                  *    ['metas', 'id', meta.id]
-                                                  *],
-                                                  *'test'
-                                                  */
+                                              *[
+                                              *    ['data.items', 'data.id', item.data.id],
+                                              *    ['metas', 'id', meta.id]
+                                              *],
+                                              *[
+                                              *    ['data.items', 'data.id', item.data.id],
+                                              *    ['metas', 'id', meta.id]
+                                              *],
+                                              *'test'
+                                              */
     extra.forEach(function (dataPath, index) {
       if (typeof dataPath === 'string') {
         if (!dataPath) {// model,prop.sync
@@ -1099,6 +1097,9 @@ function handleEvent(event) {var _this = this;
 
   // [['handle',[1,2,a]],['handle1',[1,2,a]]]
   var eventType = event.type;
+
+  var ret = [];
+
   eventOpts.forEach(function (eventOpt) {
     var type = eventOpt[0];
     var eventsArray = eventOpt[1];
@@ -1130,18 +1131,26 @@ function handleEvent(event) {var _this = this;
             }
             handler.once = true;
           }
-          handler.apply(handlerCtx, processEventArgs(
+          ret.push(handler.apply(handlerCtx, processEventArgs(
           _this.$vm,
           event,
           eventArray[1],
           eventArray[2],
           isCustom,
-          methodName));
+          methodName)));
 
         }
       });
     }
   });
+
+  if (
+  eventType === 'input' &&
+  ret.length === 1 &&
+  typeof ret[0] !== 'undefined')
+  {
+    return ret[0];
+  }
 }
 
 var hooks = [
@@ -1303,7 +1312,7 @@ function createApp(vm) {
 function parseBaseComponent(vueComponentOptions)
 
 
-{var _ref5 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},isPage$$1 = _ref5.isPage,initRelation$$1 = _ref5.initRelation;var _initVueComponent =
+{var _ref5 = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},isPage = _ref5.isPage,initRelation = _ref5.initRelation;var _initVueComponent =
   initVueComponent(_vue.default, vueComponentOptions),_initVueComponent2 = _slicedToArray(_initVueComponent, 2),VueComponent = _initVueComponent2[0],vueOptions = _initVueComponent2[1];
 
   var componentOptions = {
@@ -1319,7 +1328,7 @@ function parseBaseComponent(vueComponentOptions)
         var properties = this.properties;
 
         var options = {
-          mpType: isPage$$1.call(this) ? 'page' : 'component',
+          mpType: isPage.call(this) ? 'page' : 'component',
           mpInstance: this,
           propsData: properties };
 
@@ -1327,7 +1336,7 @@ function parseBaseComponent(vueComponentOptions)
         initVueIds(properties.vueId, this);
 
         // 处理父子关系
-        initRelation$$1.call(this, {
+        initRelation.call(this, {
           vuePid: this._$vuePid,
           vueOptions: options });
 
@@ -1371,7 +1380,7 @@ function parseBaseComponent(vueComponentOptions)
 
 
 
-  if (isPage$$1) {
+  if (isPage) {
     return componentOptions;
   }
   return [componentOptions, VueComponent];
@@ -1396,10 +1405,7 @@ function parseBasePage(vuePageOptions, _ref6)
 
 
 {var isPage = _ref6.isPage,initRelation = _ref6.initRelation;
-  var pageOptions = parseComponent(vuePageOptions, {
-    isPage: isPage,
-    initRelation: initRelation });
-
+  var pageOptions = parseComponent(vuePageOptions);
 
   initHooks(pageOptions.methods, hooks$1, vuePageOptions);
 
@@ -7487,9 +7493,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!***********************************************!*\
-  !*** F:/git-uni-app/node-customer/pages.json ***!
-  \***********************************************/
+/*!******************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/pages.json ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8290,9 +8296,9 @@ if (hadRuntime) {
 
 /***/ }),
 /* 11 */
-/*!***************************************************!*\
-  !*** F:/git-uni-app/node-customer/store/index.js ***!
-  \***************************************************/
+/*!**********************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/store/index.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9299,9 +9305,9 @@ var index_esm = {
 
 /***/ }),
 /* 13 */
-/*!*******************************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/_vuex-persistedstate@2.5.4@vuex-persistedstate/dist/vuex-persistedstate.es.js ***!
-  \*******************************************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/vuex-persistedstate/dist/vuex-persistedstate.es.js ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9418,9 +9424,9 @@ module.exports = deepmerge_1;
 
 /***/ }),
 /* 15 */
-/*!**********************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/_shvl@1.3.1@shvl/dist/shvl.es.js ***!
-  \**********************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/shvl/dist/shvl.es.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9429,9 +9435,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.get = t;ex
 
 /***/ }),
 /* 16 */
-/*!*********************************************************!*\
-  !*** F:/git-uni-app/node-customer/store/modules/app.js ***!
-  \*********************************************************/
+/*!****************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/store/modules/app.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9475,7 +9481,7 @@ var app = {
 
 
   types.setAuthorizeState, function (state, _ref) {var authorizeState = _ref.authorizeState,userInfo = _ref.userInfo;
-    debugger;
+    // debugger
     state.authorizeState = authorizeState;
     if (userInfo) {
       state.userInfo = userInfo;
@@ -9493,7 +9499,7 @@ var app = {
   }), _defineProperty(_mutations,
 
   types.setUserToken, function (state, str) {
-    debugger;
+    // debugger
     state.userToken = str;
     state.hasLogin = true;
   }), _defineProperty(_mutations,
@@ -9558,9 +9564,9 @@ app;exports.default = _default;
 
 /***/ }),
 /* 17 */
-/*!************************************************************!*\
-  !*** F:/git-uni-app/node-customer/store/mutation-types.js ***!
-  \************************************************************/
+/*!*******************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/store/mutation-types.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9582,9 +9588,9 @@ exports.setContainerLoadingFlag = setContainerLoadingFlag;var setContainerAllloa
 
 /***/ }),
 /* 18 */
-/*!**********************************************************!*\
-  !*** F:/git-uni-app/node-customer/store/modules/find.js ***!
-  \**********************************************************/
+/*!*****************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/store/modules/find.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9608,9 +9614,9 @@ find;exports.default = _default;
 
 /***/ }),
 /* 19 */
-/*!**********************************************************!*\
-  !*** F:/git-uni-app/node-customer/store/modules/sign.js ***!
-  \**********************************************************/
+/*!*****************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/store/modules/sign.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9633,9 +9639,9 @@ sign;exports.default = _default;
 
 /***/ }),
 /* 20 */
-/*!********************************************************!*\
-  !*** F:/git-uni-app/node-customer/store/modules/my.js ***!
-  \********************************************************/
+/*!***************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/store/modules/my.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9658,14 +9664,14 @@ my;exports.default = _default;
 
 /***/ }),
 /* 21 */
-/*!*****************************************************!*\
-  !*** F:/git-uni-app/node-customer/store/getters.js ***!
-  \*****************************************************/
+/*!************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/store/getters.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.pHeight = exports.containerMaskFlag = exports.containerAllloadingFlag = exports.containerLoadingFlag = exports.forcedLogin = exports.hasLogin = exports.userInfo = exports.userId = exports.userName = exports.userToken = exports.authorizeState = void 0; // 获取用户信息 userInfo 是否微信授权成功
+Object.defineProperty(exports, "__esModule", { value: true });exports.pHeight = exports.containerMaskFlag = exports.containerAllloadingFlag = exports.containerLoadingFlag = exports.forcedLogin = exports.hasLogin = exports.userAvatarUrl = exports.userInfo = exports.userId = exports.userName = exports.userToken = exports.authorizeState = void 0; // 获取用户信息 userInfo 是否微信授权成功
 var authorizeState = function authorizeState(state) {return state.app.authorizeState;};
 // 获取用户token
 exports.authorizeState = authorizeState;var userToken = function userToken(state) {return state.app.userToken;};
@@ -9675,8 +9681,10 @@ exports.userToken = userToken;var userName = function userName(state) {return st
 exports.userName = userName;var userId = function userId(state) {return state.app.userId;};
 // 获取用户id
 exports.userId = userId;var userInfo = function userInfo(state) {return state.app.userInfo;};
+// 获取用户头像
+exports.userInfo = userInfo;var userAvatarUrl = function userAvatarUrl(state) {return state.app.userAvatarUrl;};
 // 获取用户 hasLogin
-exports.userInfo = userInfo;var hasLogin = function hasLogin(state) {return state.app.hasLogin;};
+exports.userAvatarUrl = userAvatarUrl;var hasLogin = function hasLogin(state) {return state.app.hasLogin;};
 // 获取是否强制登陆 forcedLogin
 exports.hasLogin = hasLogin;var forcedLogin = function forcedLogin(state) {return state.app.forcedLogin;};
 
@@ -9826,9 +9834,9 @@ return createLogger;
 
 /***/ }),
 /* 23 */
-/*!**************************************************************!*\
-  !*** F:/git-uni-app/node-customer/utils/miniProSceneType.js ***!
-  \**************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/utils/miniProSceneType.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10119,9 +10127,9 @@ function getEnterType(typeNum) {
 
 /***/ }),
 /* 24 */
-/*!*******************************************************!*\
-  !*** F:/git-uni-app/node-customer/utils/deviceApi.js ***!
-  \*******************************************************/
+/*!**************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/utils/deviceApi.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10174,269 +10182,199 @@ function getEnterType(typeNum) {
 
 /***/ }),
 /* 25 */
-/*!*********************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/style/base.less?vue&type=style&index=0&lang=less& ***!
-  \*********************************************************************************************/
+/*!*******************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/api/comm.js ***!
+  \*******************************************************/
 /*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--10-oneOf-1-2!../../../../HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--10-oneOf-1-3!../../../../HBuilderX/plugins/uniapp-cli/node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./base.less?vue&type=style&index=0&lang=less& */ 26);
-/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
+var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));var _register$getOpenId$o;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default = (_register$getOpenId$o = {
+
+  /*
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 注册登录接口
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
+  register: function () {var _register = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(params) {var loading,loadingText,url,data,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:loading = _args.length > 1 && _args[1] !== undefined ? _args[1] : false;loadingText = _args.length > 2 && _args[2] !== undefined ? _args[2] : "加载中...";
+              // debugger
+              url = "/app/users/register";
+              data = {};
+              params = Object.assign(data, params);return _context.abrupt("return",
+              _http.default.post(url, _objectSpread({},
+              params),
+              {
+                loading: loading,
+                loadingText: loadingText }));case 6:case "end":return _context.stop();}}}, _callee, this);}));function register(_x) {return _register.apply(this, arguments);}return register;}(),
+
+
+
+  /**
+                                                                                                                                                                                                   * 获取openId
+                                                                                                                                                                                                   * 
+                                                                                                                                                                                                   * @param {code: 微信登录码code}  通过 uni.login() 获取code码后，通过uni.getUserInfo() 获取用户信息，然后 通过将 code码 和 getUserInfo 返回的的结果 作为 参数 调用此方法 获取token
+                                                                                                                                                                                                   * 
+                                                                                                                                                                                                   * @return {"code": 1, "message":"success", "data":{ "token":"UV3osCbt8XPnq1KNm9LUDw"}}
+                                                                                                                                                                                                   */
+  getOpenId: function getOpenId(params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var loadingText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "加载中...";
+    // debugger
+    var url = "/app/customerApp/login";
+    console.log("打印获取openid时传给后端的参数---》", params);
+    var data = {};
+    params = Object.assign(data, params);
+    return _http.default.post(url, _objectSpread({},
+    params),
+    {
+      loading: loading,
+      loadingText: loadingText });
+
+  },
+
+  /**
+     * 下拉刷新
+     * 
+     *
+     */
+  onlowerFresh: function onlowerFresh(url, params) {var loading = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var loadingText = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "加载中...";
+    var data = {};
+    params = Object.assign(data, params);
+    return _http.default.post(url, _objectSpread({},
+    params),
+    {
+      loading: loading,
+      loadingText: loadingText });
+
+  } }, _defineProperty(_register$getOpenId$o, "onlowerFresh", function onlowerFresh(
+
+
+
+
+
+
+url, params) {var loading = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var loadingText = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "加载中...";
+  var data = {};
+  params = Object.assign(data, params);
+  return _http.default.post(url, _objectSpread({},
+  params),
+  {
+    loading: loading,
+    loadingText: loadingText });
+
+}), _defineProperty(_register$getOpenId$o, "saveFormIds", function saveFormIds(
+
+
+
+
+params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var loadingText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "加载中...";
+
+  // let formIds = wepy.$instance.globalData.gloabalFormIds;//获取全局数据中的推送码gloabalFomIds数组
+  // if (!formIds) formIds = [];
+  var data = {
+    params: {
+      formId: params.formId,
+      deadTime: parseInt(new Date().getTime() / 1000) + 604800 //计算7天后的过期时间时间戳
+    }
+
+    // formIds.push(data);//将data添加到数组的末尾
+    // wepy.$instance.globalData.gloabalFormIds = formIds; //保存推送码并赋值给全局变量   
+    // console.log(`gloabal中存放的gloabalFormIds----:`, wepy.$instance.globalData.gloabalFormIds )
+
+
+    // 准备提交服务器保存formid
+  };var url = "/app/wxApp/addFormId";
+  params = {
+    url: url,
+    params: data };
+
+  return _http.default.post(url, _objectSpread({},
+  params),
+  {
+    loading: loading,
+    loadingText: loadingText });
+
+}), _defineProperty(_register$getOpenId$o, "upLoad", function () {var _upLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(
+
+
+
+  params) {var _this = this;var loading,loadingText,_args3 = arguments;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:loading = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : false;loadingText = _args3.length > 2 && _args3[2] !== undefined ? _args3[2] : "上传中...";return _context3.abrupt("return",
+            new Promise( /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(resolve, reject) {var resInfo, data, i, paramsObj, resData;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                        resInfo = []; // 存放上传成功后返回来的数据的集合
+                        data = {
+                          url: "/app/fileMappedApp/upload",
+                          tempFilePath: [] };
+
+                        params = Object.assign(data, params);if (!(
+
+                        params && params.tempFilePaths && params.tempFilePaths.length)) {_context2.next = 21;break;}
+                        i = 0;case 5:if (!(i < params.tempFilePaths.length)) {_context2.next = 16;break;}
+                        paramsObj = {
+                          url: params.url,
+                          tempFilePath: params.tempFilePaths[i],
+                          totaltempFilePaths: params.tempFilePaths.length };
+
+                        console.log("上传图片/音频的接口地址 和单个图片的临时地址------------", paramsObj);
+                        // 调用 上传的 方法
+                        _context2.next = 10;return _this.upload('file', paramsObj, loading);case 10:resData = _context2.sent;
+                        // 返回结果放入 resInfo 数组中
+                        console.log(JSON.parse(resData));
+                        if (resData && JSON.parse(resData).code == 1 && JSON.parse(resData).data) {
+                          resInfo.push(JSON.parse(resData).data);
+                        } else {
+                          reject("\u7B2C ".concat(i + 1, " \u5F20\u56FE\u4E0A\u4F20\u5931\u8D25\uFF0C\u540E\u53F0\u8FD4\u56DE\u7ED3\u679C\u51FA\u9519"));
+                          uni.showToast({
+                            title: '上传失败',
+                            icon: 'none',
+                            image: '',
+                            duration: 1500,
+                            mask: false,
+                            success: function success(result) {
+
+                            },
+                            fail: function fail() {},
+                            complete: function complete() {} });
+
+                        }case 13:i++;_context2.next = 5;break;case 16:
+
+                        resolve(resInfo);
+                        console.log("全部上传后打印后台返回的结果----------》", resInfo);return _context2.abrupt("return",
+                        resInfo);case 21:
+
+                        resolve(resInfo);return _context2.abrupt("return",
+                        resInfo);case 23:case "end":return _context2.stop();}}}, _callee2, this);}));return function (_x3, _x4) {return _ref.apply(this, arguments);};}()));case 3:case "end":return _context3.stop();}}}, _callee3, this);}));function upLoad(_x2) {return _upLoad.apply(this, arguments);}return upLoad;}()), _defineProperty(_register$getOpenId$o, "shairePic", function shairePic(
+
+
+
+
+
+
+params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var loadingText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "上传中...";
+
+  var url = "/app/customerApp/shareImg";
+  var data = {};
+
+
+  params = Object.assign(data, params);
+  console.log(params);
+  var paramsObj = {
+    url: url,
+    params: params };
+
+
+  return _http.default.post(url, _objectSpread({},
+  params),
+  {
+    loading: loading,
+    loadingText: loadingText });
+
+}), _register$getOpenId$o);exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 26 */
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!./node_modules/css-loader??ref--10-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!F:/git-uni-app/node-customer/static/style/base.less?vue&type=style&index=0&lang=less& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 27 */
-/*!**********************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/style/icons.less?vue&type=style&index=1&lang=less& ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--10-oneOf-1-2!../../../../HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--10-oneOf-1-3!../../../../HBuilderX/plugins/uniapp-cli/node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!../../../../HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./icons.less?vue&type=style&index=1&lang=less& */ 28);
-/* harmony import */ var _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 28 */
-/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!./node_modules/css-loader??ref--10-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!F:/git-uni-app/node-customer/static/style/icons.less?vue&type=style&index=1&lang=less& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-/* 29 */,
-/* 30 */,
-/* 31 */
-/*!********************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 32 */
-/*!**************************************************!*\
-  !*** F:/git-uni-app/node-customer/api/config.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _urlConfigs;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var miniproConfings = {
-  miniproAppid: 'wx224bd53fdc4dd933', // 小程序appid
-  miniproSecret: 'e93ec56f5785d73760577dbf4b05ab7f', // 小程序secret
-  version: 'v20190805' // 小程序版本号
-};
-
-var urls = {
-  //生产
-  //  gateway: "https://locally.uieee.com",
-  //  gateway: "https://service.yaya91.com:8495",
-  //  gateway: "http://daka.natapp1.cc",
-  // gateway: "http://localhost:5000",
-  gateway: "http://192.168.1.108:5000", // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-  // gateway: "https://www.kaoyandaka.com",
-  //  mobile: "https://www.kaoyandaka.com",
-  //  resource: "https://www.kaoyandaka.com",
-  //  activityRoot: "https://www.kaoyandaka.com", // /marketing/activity?parentShopId=288920&activityId=2990977b-e7b0-43b8-915d-7985b2c042bb"
-  pic_bg_Url: "https://www.kaoyandaka.com" };
-
-
-var urlConfigs = (_urlConfigs = {
-  // login: '/categories',  // 登陆
-  // loginOut: '/categories',  // 登出
-  // getHomeData: '/categories',  // 获取home首页数据
-  // getListData: '/categories', // 获取home页面下面一级list数据
-  // getDetailData: '/categories', // 获取list下一级的所有数据
-  // getGraphData: '/categories', // 获取曲线图数据
-  // gettacticsData: '/categories', // 获取策略list 的数据
-
-  // 网络背景图片地址
-  imgs_bg: {
-    // find_bg: '/img/find_bg.png',  // find 首页背景地址
-    find_bg: '/img/find_bg_gaitubao_com_350x646.png', // find 首页背景地址 压缩了的
-    // sign_bg: '/img/sign_bg.png',  // sign 首页背景地址
-    sign_bg: '/img/sign_bg_gaitubao_com_375x667.png', // sign 首页背景地址
-    // my_bg: '/img/my_bg.png',  // my 首页背景地址
-    my_bg: '/img/my_bg_gaitubao_com_375x667.png', // my 首页背景地址
-    notData: '/img/notData.png', // 无数据的图片
-    // certificate: '/img/certificate.png', // 证书图片
-    certificate: '/img/certificate_gaitubao_com_343x497.png', // 证书图片
-    // joinSign_bg: '/img/joinSign_bg.png',   // 立即打卡页面背景图片
-    joinSign_bg: '/img/joinSign_bg_gaitubao_com_375x667.png', // 立即打卡页面背景图片
-    submitTaskSuccess: '/img/submitTaskSuccess.png', // 提交作业成功后的背景图片
-    signUp_detail_content: '/img/signUp_detail_content.png', // 报名课程详情页中的内容图片02
-    signUp_detail_top: '/img/signUp_detail_top.png', // 报名课程详情页中的内容图片01
-    sharePic_bg01: '/img/sharePic_bg01.png', // 分享页海报图1
-    sharePic_bg02: '/img/sharePic_bg02.png', // 分享页海报图2
-    jiantou_share: '/img/jiantou_share.png', // 分享页箭头
-    share_tishi: '/img/share_tishi.png' // 分享页箭头页面
-  },
-
-  // tuweing—— find 页面接口
-  login: '/customerApp/login', // 登陆
-  getLessonsData: '/classesApp/page', // 获取报名课程list数据
-  getLesson_detailData: '/classesApp/get', // 获取课程的详情信息
-  getLesson_detail_signUpPic: '/classesApp/join', //获取 课程详情下面的报名获取一张报名的图片url
-  getContinuitySignUp: '/clockInApp/pageByDate', // 获取 学习日历/学习记录 
-  getTotalRank: '/customerApp/myRank', // 获取 总排名和打卡天数
-
-
-  // tuweing—— sign 页面接口
-  getSignLessonsList: '/classesApp/myPage', // 点击 打卡的 tabbar  获取 可以打卡的list数据
-  getItemLessonRankDay: '/customerApp/myRank', //  点击 排行榜图标 获取 此课程的天数 和总排名
-  getItemLessonRankList: '/customerApp/rank', // 点击 排行榜图标 获取 此课程打卡的 list 信息列表 
-  getAppointDayRankList: '/clockInApp/PageByClass', //点击课程上的学习日历,获取该学生对这门课程打卡的所有记录（分页）
-  getQuestion: '/questionsApp/get', //点击课程上的“去打卡”，获取该门课程的 今日试题
-  signUpQuestion: '/clockInApp/save', //点击 今日试题的  立即打卡 按钮
-  getSignUpQuestionContent: '/clockInApp/allPage', //今日试题 页面 获取所有的学生对该门课程的打卡内容（分页）只有打卡了之后才能看到
-  addCollect: '/customerApp/addCollect', //对打卡点赞
-  addComment: '/customerApp/addComment', //对打卡点评
-
-  // tuweing -- my 页面接口
-  getmyAchivementList: '/classesApp/certificatePage', //我的成就，分页列表
-  getmylearnList: '/clockInApp/pageByDate' }, _defineProperty(_urlConfigs, "getmylearnList",
-'/clockInApp/pageByDate'), _defineProperty(_urlConfigs, "getHelpList",
-'/feedBackApp/page'), _defineProperty(_urlConfigs, "addQuestion",
-'/feedBackApp/save'), _defineProperty(_urlConfigs, "uploadSound",
-
-
-
-
-'/fileMappedApp/upload'), _defineProperty(_urlConfigs, "shareImg",
-'/customerApp/shareImg'), _urlConfigs);var _default =
-
-{
-  miniproConfings: miniproConfings, // 小程序配置（appid、secret）
-  baseUrl: urls.gateway, // 小程序入口地址
-  baseImgsUrl: urls.pic_bg_Url, // 背景图片
-  baseUrlConfigs: urlConfigs // 接口名称
-  // loginUrl: urls.gateway + "/login" ,  // 登陆接口地址
-  // filesUrl: urls.gateway + "/FilesMgr" // 文件地址
-};exports.default = _default;
-
-/***/ }),
-/* 33 */
-/*!**************************************************!*\
-  !*** F:/git-uni-app/node-customer/utils/http.js ***!
-  \**************************************************/
+/*!*********************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/utils/http.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10466,7 +10404,7 @@ var urlConfigs = (_urlConfigs = {
 
 
 
-var _qs = _interopRequireDefault(__webpack_require__(/*! qs */ 34));
+var _qs = _interopRequireDefault(__webpack_require__(/*! qs */ 27));
 var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 11));
 var _config2 = _interopRequireDefault(__webpack_require__(/*! @/api/config.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import axios from 'axios'
 // // 创建axios实例
@@ -10796,7 +10734,7 @@ function _reslog(res) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 34 */
+/* 27 */
 /*!**************************************!*\
   !*** ./node_modules/qs/lib/index.js ***!
   \**************************************/
@@ -10806,9 +10744,9 @@ function _reslog(res) {
 "use strict";
 
 
-var stringify = __webpack_require__(/*! ./stringify */ 35);
-var parse = __webpack_require__(/*! ./parse */ 38);
-var formats = __webpack_require__(/*! ./formats */ 37);
+var stringify = __webpack_require__(/*! ./stringify */ 28);
+var parse = __webpack_require__(/*! ./parse */ 31);
+var formats = __webpack_require__(/*! ./formats */ 30);
 
 module.exports = {
     formats: formats,
@@ -10818,7 +10756,7 @@ module.exports = {
 
 
 /***/ }),
-/* 35 */
+/* 28 */
 /*!******************************************!*\
   !*** ./node_modules/qs/lib/stringify.js ***!
   \******************************************/
@@ -10828,8 +10766,8 @@ module.exports = {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./utils */ 36);
-var formats = __webpack_require__(/*! ./formats */ 37);
+var utils = __webpack_require__(/*! ./utils */ 29);
+var formats = __webpack_require__(/*! ./formats */ 30);
 
 var arrayPrefixGenerators = {
     brackets: function brackets(prefix) { // eslint-disable-line func-name-matching
@@ -11039,7 +10977,7 @@ module.exports = function (object, opts) {
 
 
 /***/ }),
-/* 36 */
+/* 29 */
 /*!**************************************!*\
   !*** ./node_modules/qs/lib/utils.js ***!
   \**************************************/
@@ -11263,7 +11201,7 @@ module.exports = {
 
 
 /***/ }),
-/* 37 */
+/* 30 */
 /*!****************************************!*\
   !*** ./node_modules/qs/lib/formats.js ***!
   \****************************************/
@@ -11292,7 +11230,7 @@ module.exports = {
 
 
 /***/ }),
-/* 38 */
+/* 31 */
 /*!**************************************!*\
   !*** ./node_modules/qs/lib/parse.js ***!
   \**************************************/
@@ -11302,7 +11240,7 @@ module.exports = {
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./utils */ 36);
+var utils = __webpack_require__(/*! ./utils */ 29);
 
 var has = Object.prototype.hasOwnProperty;
 
@@ -11477,10 +11415,270 @@ module.exports = function (str, opts) {
 
 
 /***/ }),
+/* 32 */
+/*!*********************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/api/config.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _urlConfigs;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var miniproConfings = {
+  miniproAppid: 'wx224bd53fdc4dd933', // 小程序appid
+  miniproSecret: 'e93ec56f5785d73760577dbf4b05ab7f', // 小程序secret
+  version: 'v20190805' // 小程序版本号
+};
+
+var urls = {
+  //生产
+  //  gateway: "https://locally.uieee.com",
+  //  gateway: "https://service.yaya91.com:8495",
+  //  gateway: "http://daka.natapp1.cc",
+  // gateway: "http://localhost:5000",
+  gateway: "http://192.168.1.109:5000", // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
+  // gateway: "https://www.kaoyandaka.com",
+  //  mobile: "https://www.kaoyandaka.com",
+  //  resource: "https://www.kaoyandaka.com",
+  //  activityRoot: "https://www.kaoyandaka.com", // /marketing/activity?parentShopId=288920&activityId=2990977b-e7b0-43b8-915d-7985b2c042bb"
+  pic_bg_Url: "https://www.kaoyandaka.com" };
+
+
+var urlConfigs = (_urlConfigs = {
+  // login: '/categories',  // 登陆
+  // loginOut: '/categories',  // 登出
+  // getHomeData: '/categories',  // 获取home首页数据
+  // getListData: '/categories', // 获取home页面下面一级list数据
+  // getDetailData: '/categories', // 获取list下一级的所有数据
+  // getGraphData: '/categories', // 获取曲线图数据
+  // gettacticsData: '/categories', // 获取策略list 的数据
+
+  // 网络背景图片地址
+  imgs_bg: {
+    // find_bg: '/img/find_bg.png',  // find 首页背景地址
+    find_bg: '/img/find_bg_gaitubao_com_350x646.png', // find 首页背景地址 压缩了的
+    // sign_bg: '/img/sign_bg.png',  // sign 首页背景地址
+    sign_bg: '/img/sign_bg_gaitubao_com_375x667.png', // sign 首页背景地址
+    // my_bg: '/img/my_bg.png',  // my 首页背景地址
+    my_bg: '/img/my_bg_gaitubao_com_375x667.png', // my 首页背景地址
+    notData: '/img/notData.png', // 无数据的图片
+    // certificate: '/img/certificate.png', // 证书图片
+    certificate: '/img/certificate_gaitubao_com_343x497.png', // 证书图片
+    // joinSign_bg: '/img/joinSign_bg.png',   // 立即打卡页面背景图片
+    joinSign_bg: '/img/joinSign_bg_gaitubao_com_375x667.png', // 立即打卡页面背景图片
+    submitTaskSuccess: '/img/submitTaskSuccess.png', // 提交作业成功后的背景图片
+    signUp_detail_content: '/img/signUp_detail_content.png', // 报名课程详情页中的内容图片02
+    signUp_detail_top: '/img/signUp_detail_top.png', // 报名课程详情页中的内容图片01
+    sharePic_bg01: '/img/sharePic_bg01.png', // 分享页海报图1
+    sharePic_bg02: '/img/sharePic_bg02.png', // 分享页海报图2
+    jiantou_share: '/img/jiantou_share.png', // 分享页箭头
+    share_tishi: '/img/share_tishi.png' // 分享页箭头页面
+  },
+
+  // tuweing—— find 页面接口
+  login: '/customerApp/login', // 登陆
+  getLessonsData: '/classesApp/page', // 获取报名课程list数据
+  getLesson_detailData: '/classesApp/get', // 获取课程的详情信息
+  getLesson_detail_signUpPic: '/classesApp/join', //获取 课程详情下面的报名获取一张报名的图片url
+  getContinuitySignUp: '/clockInApp/pageByDate', // 获取 学习日历/学习记录 
+  getTotalRank: '/customerApp/myRank', // 获取 总排名和打卡天数
+
+
+  // tuweing—— sign 页面接口
+  getSignLessonsList: '/classesApp/myPage', // 点击 打卡的 tabbar  获取 可以打卡的list数据
+  getItemLessonRankDay: '/customerApp/myRank', //  点击 排行榜图标 获取 此课程的天数 和总排名
+  getItemLessonRankList: '/customerApp/rank', // 点击 排行榜图标 获取 此课程打卡的 list 信息列表 
+  getAppointDayRankList: '/clockInApp/PageByClass', //点击课程上的学习日历,获取该学生对这门课程打卡的所有记录（分页）
+  getQuestion: '/questionsApp/get', //点击课程上的“去打卡”，获取该门课程的 今日试题
+  signUpQuestion: '/clockInApp/save', //点击 今日试题的  立即打卡 按钮
+  getSignUpQuestionContent: '/clockInApp/allPage', //今日试题 页面 获取所有的学生对该门课程的打卡内容（分页）只有打卡了之后才能看到
+  addCollect: '/customerApp/addCollect', //对打卡点赞
+  addComment: '/customerApp/addComment', //对打卡点评
+
+  // tuweing -- my 页面接口
+  getmyAchivementList: '/classesApp/certificatePage', //我的成就，分页列表
+  getmylearnList: '/clockInApp/pageByDate' }, _defineProperty(_urlConfigs, "getmylearnList",
+'/clockInApp/pageByDate'), _defineProperty(_urlConfigs, "getHelpList",
+'/feedBackApp/page'), _defineProperty(_urlConfigs, "addQuestion",
+'/feedBackApp/save'), _defineProperty(_urlConfigs, "uploadSound",
+
+
+
+
+'/fileMappedApp/upload'), _defineProperty(_urlConfigs, "shareImg",
+'/customerApp/shareImg'), _urlConfigs);var _default =
+
+{
+  miniproConfings: miniproConfings, // 小程序配置（appid、secret）
+  baseUrl: urls.gateway, // 小程序入口地址
+  baseImgsUrl: urls.pic_bg_Url, // 背景图片
+  baseUrlConfigs: urlConfigs // 接口名称
+  // loginUrl: urls.gateway + "/login" ,  // 登陆接口地址
+  // filesUrl: urls.gateway + "/FilesMgr" // 文件地址
+};exports.default = _default;
+
+/***/ }),
+/* 33 */
+/*!****************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/style/base.less?vue&type=style&index=0&lang=less& ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--10-oneOf-1-2!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--10-oneOf-1-3!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./base.less?vue&type=style&index=0&lang=less& */ 34);
+/* harmony import */ var _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_base_less_vue_type_style_index_0_lang_less___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 34 */
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!./node_modules/css-loader??ref--10-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!D:/git-nodeProgram/uni-app-customer/static/style/base.less?vue&type=style&index=0&lang=less& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 35 */
+/*!*****************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/style/icons.less?vue&type=style&index=1&lang=less& ***!
+  \*****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/css-loader??ref--10-oneOf-1-2!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/postcss-loader/src??ref--10-oneOf-1-3!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!./icons.less?vue&type=style&index=1&lang=less& */ 36);
+/* harmony import */ var _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_1_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_10_oneOf_1_2_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_HBuilderX_1_9_9_20190522_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_10_oneOf_1_5_icons_less_vue_type_style_index_1_lang_less___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 36 */
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--10-oneOf-1-0!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-1!./node_modules/css-loader??ref--10-oneOf-1-2!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--10-oneOf-1-3!./node_modules/less-loader/dist/cjs.js??ref--10-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--10-oneOf-1-5!D:/git-nodeProgram/uni-app-customer/static/style/icons.less?vue&type=style&index=1&lang=less& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+/* 37 */,
+/* 38 */,
 /* 39 */
-/*!***************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2Ffind%2Ffind"} ***!
-  \***************************************************************************/
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 40 */
+/*!**********************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2Ffind%2Ffind"} ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11488,66 +11686,66 @@ module.exports = function (str, opts) {
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _find = _interopRequireDefault(__webpack_require__(/*! ./pages/find/find.vue */ 40));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _find = _interopRequireDefault(__webpack_require__(/*! ./pages/find/find.vue */ 41));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_find.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 40 */,
 /* 41 */,
 /* 42 */,
-/* 43 */
-/*!****************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/signUp.png ***!
-  \****************************************************************/
+/* 43 */,
+/* 44 */
+/*!***********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/signUp.png ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 44 */
-/*!**************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/rank.png ***!
-  \**************************************************************/
+/* 45 */
+/*!*********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/rank.png ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 45 */
-/*!*******************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/signUpPic.png ***!
-  \*******************************************************************/
+/* 46 */
+/*!**************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/signUpPic.png ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 46 */
-/*!***********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/invitationPic.png ***!
-  \***********************************************************************/
+/* 47 */
+/*!******************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/invitationPic.png ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
 
 /***/ }),
-/* 47 */,
 /* 48 */,
-/* 49 */
-/*!************************************************!*\
-  !*** F:/git-uni-app/node-customer/api/find.js ***!
-  \************************************************/
+/* 49 */,
+/* 50 */
+/*!*******************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/api/find.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
+var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 
 {
   /*
@@ -11730,17 +11928,17 @@ var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 33));
                 loadingText: loadingText }));case 7:case "end":return _context9.stop();}}}, _callee9, this);}));function getShareData(_x9) {return _getShareData.apply(this, arguments);}return getShareData;}() };exports.default = _default;
 
 /***/ }),
-/* 50 */
-/*!****************************************************!*\
-  !*** F:/git-uni-app/node-customer/utils/mixins.js ***!
-  \****************************************************/
+/* 51 */
+/*!***********************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/utils/mixins.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.miniProApi = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-var _base = _interopRequireDefault(__webpack_require__(/*! @/api/base.js */ 51));
-var _comm = _interopRequireDefault(__webpack_require__(/*! @/api/comm.js */ 80));
+var _base = _interopRequireDefault(__webpack_require__(/*! @/api/base.js */ 52));
+var _comm = _interopRequireDefault(__webpack_require__(/*! @/api/comm.js */ 25));
 
 var _deviceApi = __webpack_require__(/*! @/utils/deviceApi.js */ 24);
 var _miniProSceneType = _interopRequireDefault(__webpack_require__(/*! @/utils/miniProSceneType.js */ 23));
@@ -11754,8 +11952,11 @@ var miniProApi = {
   data: function data() {
     return {
       pHeight: 0, // container 组件的 高，从系统中获取
-      loading1: false };
-
+      loading1: false,
+      total: 0, // 总页数
+      pageSize: 10, // 每页数目
+      pageNum: 1 // 页码
+    };
   },
   computed: _objectSpread({},
   (0, _vuex.mapGetters)(['userToken'])),
@@ -11820,9 +12021,19 @@ var miniProApi = {
     console.log('mixin onUnload');
   },
   onPullDownRefresh: function onPullDownRefresh() {
+    // 下拉刷新
+    this.refreshPage();
     console.log('mixin onPullDownRefresh');
   },
   onReachBottom: function onReachBottom() {
+    // 上拉加载
+    debugger;
+    if (this.pageSize * this.pageNum < this.total) {
+      this.pageNum += 1;
+      this.refreshPage();
+    } else {
+      this.toast("到底了~~~~");
+    }
     console.log('mixin onReachBottom');
   },
   onShareAppMessage: function onShareAppMessage() {
@@ -12064,8 +12275,12 @@ var miniProApi = {
     // 提取localstorage
     getStorage: function getStorage(key) {
       return new Promise(function (resolve, reject) {
-        var res = uni.getStorageSync(key);
-        resolve(res);
+        try {
+          var res = uni.getStorageSync(key);
+          resolve(res);
+        } catch (e) {
+          //TODO handle the exception
+        }
       });
     },
     // 删除localstorage 
@@ -12221,24 +12436,24 @@ var miniProApi = {
                             // let userInfo = that.getDeviceApi().getStorageSync( 'userInfo' ) || '';
                             // if( token )   await that.removeStorage("token" );
                             // if( userInfo )  await that.removeStorage("userInfo" );      
-                            debugger;
+                            // debugger
                             // 先登陆 uni.login();
                             // let {code } = await uni.login();  //通过调用uni.login()获取code 判断是否开始登录
-                            code = '';_context4.next = 6;return (
+                            code = '';_context4.next = 5;return (
                               that.getDeviceApi().login({
                                 success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(res) {var userInfo, _userInfo$, iv, encryptedData, signature, rawData, params;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
-                                            debugger;
+                                            // debugger
                                             console.log("-----打印uni.login()登录后返回的code------", res.code);
                                             code = res.code;if (!
 
-                                            code) {_context3.next = 14;break;}_context3.next = 6;return (
+                                            code) {_context3.next = 12;break;}_context3.next = 5;return (
                                               uni.getUserInfo({
-                                                lang: "zh_CN" }));case 6:userInfo = _context3.sent;
+                                                lang: "zh_CN" }));case 5:userInfo = _context3.sent;
 
 
                                             console.log("-----授权后通过uni.getUserInfo()获取用户信息返回的结果-----：", userInfo[1]);
-                                            debugger;_userInfo$ =
-
+                                            // debugger
+                                            _userInfo$ =
 
 
 
@@ -12282,12 +12497,12 @@ var miniProApi = {
                                               // 调用 后台注册用户信息的login接口 getOenId 方法
                                               // console.log(commApi)
                                             };_comm.default.getOpenId(params, true).then(function (res) {
-                                              debugger;
+                                              // debugger
                                               console.log("------------------", res);
                                               if (res && res.statusCode == 200) {
                                                 var resData = res.data;
                                                 if (resData && resData.code == 1) {
-                                                  debugger;
+                                                  // debugger
                                                   console.log('---网络请求返回成功---');
                                                   console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", resData);
 
@@ -12305,14 +12520,14 @@ var miniProApi = {
 
 
 
-                                                } else // 发现是黑名单用户，跳转至黑名单页面
-                                                  //   this.reLaunchPage("../blacklist/index");
-                                                  //   console.log("---------调用后台login接口后返回的状态有问题-------")											
-                                                  {debugger; // 登陆后后台返回错误
-                                                    that.toast("登陆失败");
-                                                    reject("-----调用后台login接口后返回的状态有问题-----");
-                                                    console.log("---------调用后台login接口后返回的状态有问题-------");
-                                                  }
+                                                } else
+                                                {
+                                                  // debugger
+                                                  // 登陆后后台返回错误
+                                                  that.toast("登陆失败");
+                                                  reject("-----调用后台login接口后返回的状态有问题-----");
+                                                  console.log("---------调用后台login接口后返回的状态有问题-------");
+                                                }
                                               }
                                             }).then( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var token, userInfo;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
                                                         that.getStorage("token"));case 2:_context2.t0 = _context2.sent;if (_context2.t0) {_context2.next = 5;break;}_context2.t0 = "";case 5:token = _context2.t0;_context2.next = 8;return (
@@ -12320,21 +12535,21 @@ var miniProApi = {
                                                       console.log('--------缓存token成功----------');
                                                       console.log("缓存成功后读取缓存中的token：", token);
                                                       console.log('----------缓存userInfo成功--------');
-                                                      console.log("缓存成功后读取缓存中的userInfo：", userInfo);case 16:case "end":return _context2.stop();}}}, _callee2, this);})));_context3.next = 16;break;case 14:
+                                                      console.log("缓存成功后读取缓存中的userInfo：", userInfo);case 16:case "end":return _context2.stop();}}}, _callee2, this);})));_context3.next = 14;break;case 12:
 
 
                                             reject("---登陆微信后台 wx.login() 接口返回异常---");
-                                            console.log('---登陆微信后台 wx.login() 接口返回异常---');case 16:case "end":return _context3.stop();}}}, _callee3, this);}));function success(_x5) {return _success.apply(this, arguments);}return success;}(),
+                                            console.log('---登陆微信后台 wx.login() 接口返回异常---');case 14:case "end":return _context3.stop();}}}, _callee3, this);}));function success(_x5) {return _success.apply(this, arguments);}return success;}(),
 
 
                                 fail: function fail(error) {
-                                  debugger;
+                                  // debugger
                                   console.log("-----打印登录后------", error);
-                                } }));case 6:_context4.next = 12;break;case 8:_context4.prev = 8;_context4.t0 = _context4["catch"](0);
+                                } }));case 5:_context4.next = 11;break;case 7:_context4.prev = 7;_context4.t0 = _context4["catch"](0);
 
 
                             console.log(_context4.t0);
-                            reject(_context4.t0);case 12:case "end":return _context4.stop();}}}, _callee4, this, [[0, 8]]);}));return function (_x3, _x4) {return _ref.apply(this, arguments);};}()));case 3:case "end":return _context5.stop();}}}, _callee5, this);}));function authorizeAfter_login() {return _authorizeAfter_login.apply(this, arguments);}return authorizeAfter_login;}(),
+                            reject(_context4.t0);case 11:case "end":return _context4.stop();}}}, _callee4, this, [[0, 7]]);}));return function (_x3, _x4) {return _ref.apply(this, arguments);};}()));case 3:case "end":return _context5.stop();}}}, _callee5, this);}));function authorizeAfter_login() {return _authorizeAfter_login.apply(this, arguments);}return authorizeAfter_login;}(),
 
 
 
@@ -12360,7 +12575,7 @@ var miniProApi = {
 
 
                 new Promise(function (resolve, reject) {
-                  debugger;
+                  // debugger
                   _this.getDeviceApi().getSetting().then(function (res) {
                     // 获取用户授权信息
                     console.log("打印用户授权的情况集合------------", res); // res.userInfo 为true  res.errMsg == "authorize:ok"
@@ -12675,16 +12890,16 @@ var miniProApi = {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 51 */
-/*!************************************************!*\
-  !*** F:/git-uni-app/node-customer/api/base.js ***!
-  \************************************************/
+/* 52 */
+/*!*******************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/api/base.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _config = _interopRequireDefault(__webpack_require__(/*! ./config */ 32));
-var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ 52));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _axios = _interopRequireDefault(__webpack_require__(/*! axios */ 53));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 // 创建axios实例
 var http = _axios.default.create({
@@ -12794,32 +13009,32 @@ _config.default.baseUrlConfigs);_defineProperty(base, "$http",
 http);
 
 /***/ }),
-/* 52 */
-/*!****************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/index.js ***!
-  \****************************************************************/
+/* 53 */
+/*!***********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/index.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-module.exports = __webpack_require__(/*! ./lib/axios */ 53);
+module.exports = __webpack_require__(/*! ./lib/axios */ 54);
 
 /***/ }),
-/* 53 */
-/*!********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/axios.js ***!
-  \********************************************************************/
+/* 54 */
+/*!***************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/axios.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./utils */ 54);
-var bind = __webpack_require__(/*! ./helpers/bind */ 55);
-var Axios = __webpack_require__(/*! ./core/Axios */ 57);
-var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ 76);
-var defaults = __webpack_require__(/*! ./defaults */ 63);
+var utils = __webpack_require__(/*! ./utils */ 55);
+var bind = __webpack_require__(/*! ./helpers/bind */ 56);
+var Axios = __webpack_require__(/*! ./core/Axios */ 58);
+var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ 77);
+var defaults = __webpack_require__(/*! ./defaults */ 64);
 
 /**
                                        * Create an instance of Axios
@@ -12852,15 +13067,15 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 77);
-axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 78);
-axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 62);
+axios.Cancel = __webpack_require__(/*! ./cancel/Cancel */ 78);
+axios.CancelToken = __webpack_require__(/*! ./cancel/CancelToken */ 79);
+axios.isCancel = __webpack_require__(/*! ./cancel/isCancel */ 63);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(/*! ./helpers/spread */ 79);
+axios.spread = __webpack_require__(/*! ./helpers/spread */ 80);
 
 module.exports = axios;
 
@@ -12868,18 +13083,18 @@ module.exports = axios;
 module.exports.default = axios;
 
 /***/ }),
-/* 54 */
-/*!********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/utils.js ***!
-  \********************************************************************/
+/* 55 */
+/*!***************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/utils.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var bind = __webpack_require__(/*! ./helpers/bind */ 55);
-var isBuffer = __webpack_require__(/*! is-buffer */ 56);
+var bind = __webpack_require__(/*! ./helpers/bind */ 56);
+var isBuffer = __webpack_require__(/*! is-buffer */ 57);
 
 /*global toString:true*/
 
@@ -13211,10 +13426,10 @@ module.exports = {
   trim: trim };
 
 /***/ }),
-/* 55 */
-/*!***************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/bind.js ***!
-  \***************************************************************************/
+/* 56 */
+/*!**********************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/bind.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13232,7 +13447,7 @@ module.exports = function bind(fn, thisArg) {
 };
 
 /***/ }),
-/* 56 */
+/* 57 */
 /*!*****************************************!*\
   !*** ./node_modules/is-buffer/index.js ***!
   \*****************************************/
@@ -13263,21 +13478,21 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 57 */
-/*!*************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/Axios.js ***!
-  \*************************************************************************/
+/* 58 */
+/*!********************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/Axios.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
-var buildURL = __webpack_require__(/*! ../helpers/buildURL */ 58);
-var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 59);
-var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 60);
-var mergeConfig = __webpack_require__(/*! ./mergeConfig */ 76);
+var utils = __webpack_require__(/*! ./../utils */ 55);
+var buildURL = __webpack_require__(/*! ../helpers/buildURL */ 59);
+var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ 60);
+var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ 61);
+var mergeConfig = __webpack_require__(/*! ./mergeConfig */ 77);
 
 /**
                                              * Create a new instance of Axios
@@ -13359,17 +13574,17 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 module.exports = Axios;
 
 /***/ }),
-/* 58 */
-/*!*******************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/buildURL.js ***!
-  \*******************************************************************************/
+/* 59 */
+/*!**************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/buildURL.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
+var utils = __webpack_require__(/*! ./../utils */ 55);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -13440,17 +13655,17 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 };
 
 /***/ }),
-/* 59 */
-/*!**************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/InterceptorManager.js ***!
-  \**************************************************************************************/
+/* 60 */
+/*!*********************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/InterceptorManager.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
+var utils = __webpack_require__(/*! ./../utils */ 55);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -13502,22 +13717,22 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 module.exports = InterceptorManager;
 
 /***/ }),
-/* 60 */
-/*!***********************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/dispatchRequest.js ***!
-  \***********************************************************************************/
+/* 61 */
+/*!******************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/dispatchRequest.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
-var transformData = __webpack_require__(/*! ./transformData */ 61);
-var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 62);
-var defaults = __webpack_require__(/*! ../defaults */ 63);
-var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ 74);
-var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ 75);
+var utils = __webpack_require__(/*! ./../utils */ 55);
+var transformData = __webpack_require__(/*! ./transformData */ 62);
+var isCancel = __webpack_require__(/*! ../cancel/isCancel */ 63);
+var defaults = __webpack_require__(/*! ../defaults */ 64);
+var isAbsoluteURL = __webpack_require__(/*! ./../helpers/isAbsoluteURL */ 75);
+var combineURLs = __webpack_require__(/*! ./../helpers/combineURLs */ 76);
 
 /**
                                                         * Throws a `Cancel` if cancellation has been requested.
@@ -13598,17 +13813,17 @@ module.exports = function dispatchRequest(config) {
 };
 
 /***/ }),
-/* 61 */
-/*!*********************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/transformData.js ***!
-  \*********************************************************************************/
+/* 62 */
+/*!****************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/transformData.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
+var utils = __webpack_require__(/*! ./../utils */ 55);
 
 /**
                                     * Transform the data for a request or a response
@@ -13628,10 +13843,10 @@ module.exports = function transformData(data, headers, fns) {
 };
 
 /***/ }),
-/* 62 */
-/*!******************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/cancel/isCancel.js ***!
-  \******************************************************************************/
+/* 63 */
+/*!*************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/isCancel.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13643,18 +13858,18 @@ module.exports = function isCancel(value) {
 };
 
 /***/ }),
-/* 63 */
-/*!***********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/defaults.js ***!
-  \***********************************************************************/
+/* 64 */
+/*!******************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/defaults.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(/*! ./utils */ 54);
-var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 66);
+var utils = __webpack_require__(/*! ./utils */ 55);
+var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ 67);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded' };
@@ -13671,10 +13886,10 @@ function getDefaultAdapter() {
   // Only Node.JS has a process variable that is of [[Class]] process
   if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(/*! ./adapters/http */ 67);
+    adapter = __webpack_require__(/*! ./adapters/http */ 68);
   } else if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(/*! ./adapters/xhr */ 67);
+    adapter = __webpack_require__(/*! ./adapters/xhr */ 68);
   }
   return adapter;
 }
@@ -13749,10 +13964,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 });
 
 module.exports = defaults;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 64)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../软件安装包/HBuilderX.1.9.9.20190522.full/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 65)))
 
 /***/ }),
-/* 64 */
+/* 65 */
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -13779,7 +13994,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 65);
+        if (!path) path = __webpack_require__(/*! path */ 66);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -13792,7 +14007,7 @@ exports.features = {};
 
 
 /***/ }),
-/* 65 */
+/* 66 */
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -14024,20 +14239,20 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 64)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 65)))
 
 /***/ }),
-/* 66 */
-/*!******************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
-  \******************************************************************************************/
+/* 67 */
+/*!*************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ 54);
+var utils = __webpack_require__(/*! ../utils */ 55);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -14049,22 +14264,22 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 };
 
 /***/ }),
-/* 67 */
-/*!***************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/adapters/xhr.js ***!
-  \***************************************************************************/
+/* 68 */
+/*!**********************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/adapters/xhr.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
-var settle = __webpack_require__(/*! ./../core/settle */ 68);
-var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 58);
-var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 71);
-var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 72);
-var createError = __webpack_require__(/*! ../core/createError */ 69);
+var utils = __webpack_require__(/*! ./../utils */ 55);
+var settle = __webpack_require__(/*! ./../core/settle */ 69);
+var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ 59);
+var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ 72);
+var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ 73);
+var createError = __webpack_require__(/*! ../core/createError */ 70);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -14156,7 +14371,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(/*! ./../helpers/cookies */ 73);
+      var cookies = __webpack_require__(/*! ./../helpers/cookies */ 74);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -14233,17 +14448,17 @@ module.exports = function xhrAdapter(config) {
 };
 
 /***/ }),
-/* 68 */
-/*!**************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/settle.js ***!
-  \**************************************************************************/
+/* 69 */
+/*!*********************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/settle.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var createError = __webpack_require__(/*! ./createError */ 69);
+var createError = __webpack_require__(/*! ./createError */ 70);
 
 /**
                                              * Resolve or reject a Promise based on response status.
@@ -14268,17 +14483,17 @@ module.exports = function settle(resolve, reject, response) {
 };
 
 /***/ }),
-/* 69 */
-/*!*******************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/createError.js ***!
-  \*******************************************************************************/
+/* 70 */
+/*!**************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/createError.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var enhanceError = __webpack_require__(/*! ./enhanceError */ 70);
+var enhanceError = __webpack_require__(/*! ./enhanceError */ 71);
 
 /**
                                                * Create an Error with the specified message, config, error code, request and response.
@@ -14296,10 +14511,10 @@ module.exports = function createError(message, config, code, request, response) 
 };
 
 /***/ }),
-/* 70 */
-/*!********************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/enhanceError.js ***!
-  \********************************************************************************/
+/* 71 */
+/*!***************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/enhanceError.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14348,17 +14563,17 @@ module.exports = function enhanceError(error, config, code, request, response) {
 };
 
 /***/ }),
-/* 71 */
-/*!***********************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/parseHeaders.js ***!
-  \***********************************************************************************/
+/* 72 */
+/*!******************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/parseHeaders.js ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
+var utils = __webpack_require__(/*! ./../utils */ 55);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -14411,17 +14626,17 @@ module.exports = function parseHeaders(headers) {
 };
 
 /***/ }),
-/* 72 */
-/*!**************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
-  \**************************************************************************************/
+/* 73 */
+/*!*********************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
+var utils = __webpack_require__(/*! ./../utils */ 55);
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -14488,17 +14703,17 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 73 */
-/*!******************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/cookies.js ***!
-  \******************************************************************************/
+/* 74 */
+/*!*************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/cookies.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ./../utils */ 54);
+var utils = __webpack_require__(/*! ./../utils */ 55);
 
 module.exports =
 utils.isStandardBrowserEnv() ?
@@ -14550,10 +14765,10 @@ function nonStandardBrowserEnv() {
 }();
 
 /***/ }),
-/* 74 */
-/*!************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
-  \************************************************************************************/
+/* 75 */
+/*!*******************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14574,10 +14789,10 @@ module.exports = function isAbsoluteURL(url) {
 };
 
 /***/ }),
-/* 75 */
-/*!**********************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/combineURLs.js ***!
-  \**********************************************************************************/
+/* 76 */
+/*!*****************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/combineURLs.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14598,17 +14813,17 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 };
 
 /***/ }),
-/* 76 */
-/*!*******************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/core/mergeConfig.js ***!
-  \*******************************************************************************/
+/* 77 */
+/*!**************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/core/mergeConfig.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(/*! ../utils */ 54);
+var utils = __webpack_require__(/*! ../utils */ 55);
 
 /**
                                   * Config-specific merge-function which creates a new config-object
@@ -14659,10 +14874,10 @@ module.exports = function mergeConfig(config1, config2) {
 };
 
 /***/ }),
-/* 77 */
-/*!****************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/cancel/Cancel.js ***!
-  \****************************************************************************/
+/* 78 */
+/*!***********************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/Cancel.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14688,17 +14903,17 @@ Cancel.prototype.__CANCEL__ = true;
 module.exports = Cancel;
 
 /***/ }),
-/* 78 */
-/*!*********************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/cancel/CancelToken.js ***!
-  \*********************************************************************************/
+/* 79 */
+/*!****************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/cancel/CancelToken.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var Cancel = __webpack_require__(/*! ./Cancel */ 77);
+var Cancel = __webpack_require__(/*! ./Cancel */ 78);
 
 /**
                                    * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -14755,10 +14970,10 @@ CancelToken.source = function source() {
 module.exports = CancelToken;
 
 /***/ }),
-/* 79 */
-/*!*****************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/node_modules/axios/lib/helpers/spread.js ***!
-  \*****************************************************************************/
+/* 80 */
+/*!************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/node_modules/axios/lib/helpers/spread.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14792,202 +15007,12 @@ module.exports = function spread(callback) {
 };
 
 /***/ }),
-/* 80 */
-/*!************************************************!*\
-  !*** F:/git-uni-app/node-customer/api/comm.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 33));var _register$getOpenId$o;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default = (_register$getOpenId$o = {
-
-  /*
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 注册登录接口
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
-  register: function () {var _register = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(params) {var loading,loadingText,url,data,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:loading = _args.length > 1 && _args[1] !== undefined ? _args[1] : false;loadingText = _args.length > 2 && _args[2] !== undefined ? _args[2] : "加载中...";
-              debugger;
-              url = "/app/users/register";
-              data = {};
-              params = Object.assign(data, params);return _context.abrupt("return",
-              _http.default.post(url, _objectSpread({},
-              params),
-              {
-                loading: loading,
-                loadingText: loadingText }));case 7:case "end":return _context.stop();}}}, _callee, this);}));function register(_x) {return _register.apply(this, arguments);}return register;}(),
-
-
-
-  /**
-                                                                                                                                                                                                   * 获取openId
-                                                                                                                                                                                                   * 
-                                                                                                                                                                                                   * @param {code: 微信登录码code}  通过 uni.login() 获取code码后，通过uni.getUserInfo() 获取用户信息，然后 通过将 code码 和 getUserInfo 返回的的结果 作为 参数 调用此方法 获取token
-                                                                                                                                                                                                   * 
-                                                                                                                                                                                                   * @return {"code": 1, "message":"success", "data":{ "token":"UV3osCbt8XPnq1KNm9LUDw"}}
-                                                                                                                                                                                                   */
-  getOpenId: function getOpenId(params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var loadingText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "加载中...";
-    debugger;
-    var url = "/app/customerApp/login";
-    console.log("打印获取openid时传给后端的参数---》", params);
-    var data = {};
-    params = Object.assign(data, params);
-    return _http.default.post(url, _objectSpread({},
-    params),
-    {
-      loading: loading,
-      loadingText: loadingText });
-
-  },
-
-  /**
-     * 下拉刷新
-     * 
-     *
-     */
-  onlowerFresh: function onlowerFresh(url, params) {var loading = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var loadingText = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "加载中...";
-    var data = {};
-    params = Object.assign(data, params);
-    return _http.default.post(url, _objectSpread({},
-    params),
-    {
-      loading: loading,
-      loadingText: loadingText });
-
-  } }, _defineProperty(_register$getOpenId$o, "onlowerFresh", function onlowerFresh(
-
-
-
-
-
-
-url, params) {var loading = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;var loadingText = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "加载中...";
-  var data = {};
-  params = Object.assign(data, params);
-  return _http.default.post(url, _objectSpread({},
-  params),
-  {
-    loading: loading,
-    loadingText: loadingText });
-
-}), _defineProperty(_register$getOpenId$o, "saveFormIds", function saveFormIds(
-
-
-
-
-params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var loadingText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "加载中...";
-
-  // let formIds = wepy.$instance.globalData.gloabalFormIds;//获取全局数据中的推送码gloabalFomIds数组
-  // if (!formIds) formIds = [];
-  var data = {
-    params: {
-      formId: params.formId,
-      deadTime: parseInt(new Date().getTime() / 1000) + 604800 //计算7天后的过期时间时间戳
-    }
-
-    // formIds.push(data);//将data添加到数组的末尾
-    // wepy.$instance.globalData.gloabalFormIds = formIds; //保存推送码并赋值给全局变量   
-    // console.log(`gloabal中存放的gloabalFormIds----:`, wepy.$instance.globalData.gloabalFormIds )
-
-
-    // 准备提交服务器保存formid
-  };var url = "/app/wxApp/addFormId";
-  params = {
-    url: url,
-    params: data };
-
-  return _http.default.post(url, _objectSpread({},
-  params),
-  {
-    loading: loading,
-    loadingText: loadingText });
-
-}), _defineProperty(_register$getOpenId$o, "upLoad", function () {var _upLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(
-
-
-
-  params) {var _this = this;var loading,loadingText,_args3 = arguments;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:loading = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : false;loadingText = _args3.length > 2 && _args3[2] !== undefined ? _args3[2] : "上传中...";return _context3.abrupt("return",
-            new Promise( /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(resolve, reject) {var resInfo, data, i, paramsObj, resData;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-                        resInfo = []; // 存放上传成功后返回来的数据的集合
-                        data = {
-                          url: "/app/fileMappedApp/upload",
-                          tempFilePath: [] };
-
-                        params = Object.assign(data, params);if (!(
-
-                        params && params.tempFilePaths && params.tempFilePaths.length)) {_context2.next = 21;break;}
-                        i = 0;case 5:if (!(i < params.tempFilePaths.length)) {_context2.next = 16;break;}
-                        paramsObj = {
-                          url: params.url,
-                          tempFilePath: params.tempFilePaths[i],
-                          totaltempFilePaths: params.tempFilePaths.length };
-
-                        console.log("上传图片/音频的接口地址 和单个图片的临时地址------------", paramsObj);
-                        // 调用 上传的 方法
-                        _context2.next = 10;return _this.upload('file', paramsObj, loading);case 10:resData = _context2.sent;
-                        // 返回结果放入 resInfo 数组中
-                        console.log(JSON.parse(resData));
-                        if (resData && JSON.parse(resData).code == 1 && JSON.parse(resData).data) {
-                          resInfo.push(JSON.parse(resData).data);
-                        } else {
-                          reject("\u7B2C ".concat(i + 1, " \u5F20\u56FE\u4E0A\u4F20\u5931\u8D25\uFF0C\u540E\u53F0\u8FD4\u56DE\u7ED3\u679C\u51FA\u9519"));
-                          uni.showToast({
-                            title: '上传失败',
-                            icon: 'none',
-                            image: '',
-                            duration: 1500,
-                            mask: false,
-                            success: function success(result) {
-
-                            },
-                            fail: function fail() {},
-                            complete: function complete() {} });
-
-                        }case 13:i++;_context2.next = 5;break;case 16:
-
-                        resolve(resInfo);
-                        console.log("全部上传后打印后台返回的结果----------》", resInfo);return _context2.abrupt("return",
-                        resInfo);case 21:
-
-                        resolve(resInfo);return _context2.abrupt("return",
-                        resInfo);case 23:case "end":return _context2.stop();}}}, _callee2, this);}));return function (_x3, _x4) {return _ref.apply(this, arguments);};}()));case 3:case "end":return _context3.stop();}}}, _callee3, this);}));function upLoad(_x2) {return _upLoad.apply(this, arguments);}return upLoad;}()), _defineProperty(_register$getOpenId$o, "shairePic", function shairePic(
-
-
-
-
-
-
-params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var loadingText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "上传中...";
-
-  var url = "/app/customerApp/shareImg";
-  var data = {};
-
-
-  params = Object.assign(data, params);
-  console.log(params);
-  var paramsObj = {
-    url: url,
-    params: params };
-
-
-  return _http.default.post(url, _objectSpread({},
-  params),
-  {
-    loading: loading,
-    loadingText: loadingText });
-
-}), _register$getOpenId$o);exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
 /* 81 */,
 /* 82 */,
 /* 83 */
-/*!***************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2Fsign%2Fsign"} ***!
-  \***************************************************************************/
+/*!**********************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2Fsign%2Fsign"} ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15006,15 +15031,15 @@ createPage(_sign.default);
 /* 87 */,
 /* 88 */,
 /* 89 */
-/*!************************************************!*\
-  !*** F:/git-uni-app/node-customer/api/sign.js ***!
-  \************************************************/
+/*!*******************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/api/sign.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 33));var _getLessonList$getTod;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default = (_getLessonList$getTod = {
+var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));var _getLessonList$getTod;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default = (_getLessonList$getTod = {
 
 
   /*
@@ -15208,9 +15233,9 @@ var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 33));
 /* 90 */,
 /* 91 */,
 /* 92 */
-/*!***********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2Fmy%2Fmy"} ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15227,9 +15252,9 @@ createPage(_my.default);
 /* 94 */,
 /* 95 */,
 /* 96 */
-/*!***********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/forward-right.png ***!
-  \***********************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/forward-right.png ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15239,9 +15264,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAfCAYAAAFP
 /* 97 */,
 /* 98 */,
 /* 99 */
-/*!***************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/photo.png ***!
-  \***************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/photo.png ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15249,9 +15274,9 @@ module.exports = __webpack_require__.p + "static/img/photo.5f5f10af.png";
 
 /***/ }),
 /* 100 */
-/*!*************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/set.png ***!
-  \*************************************************************/
+/*!********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/set.png ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15259,9 +15284,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAYAAADF
 
 /***/ }),
 /* 101 */
-/*!**************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/card.png ***!
-  \**************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/card.png ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15269,9 +15294,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw
 
 /***/ }),
 /* 102 */
-/*!*********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/achievement.png ***!
-  \*********************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/achievement.png ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15279,9 +15304,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAAEg
 
 /***/ }),
 /* 103 */
-/*!****************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/record.png ***!
-  \****************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/record.png ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15289,9 +15314,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAxCAYAAAHr
 
 /***/ }),
 /* 104 */
-/*!**************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/help.png ***!
-  \**************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/help.png ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15299,9 +15324,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAAEg
 
 /***/ }),
 /* 105 */
-/*!********************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/invitation.png ***!
-  \********************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/invitation.png ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15309,15 +15334,15 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAA2CAYAAAB5
 
 /***/ }),
 /* 106 */
-/*!**********************************************!*\
-  !*** F:/git-uni-app/node-customer/api/my.js ***!
-  \**********************************************/
+/*!*****************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/api/my.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 33));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
+var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default =
 
 {
   /*
@@ -15530,9 +15555,9 @@ var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 33));
 /* 107 */,
 /* 108 */,
 /* 109 */
-/*!****************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FlessonList%2Findex"} ***!
-  \****************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FlessonList%2Findex"} ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15549,9 +15574,9 @@ createPage(_index.default);
 /* 111 */,
 /* 112 */,
 /* 113 */
-/*!****************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/twlogo.png ***!
-  \****************************************************************/
+/*!***********************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/twlogo.png ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15563,9 +15588,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKIAAACnCAYAAACS
 /* 116 */,
 /* 117 */,
 /* 118 */
-/*!*******************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FlessonList%2FlessonDetail%2Findex"} ***!
-  \*******************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FlessonList%2FlessonDetail%2Findex"} ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15586,9 +15611,9 @@ createPage(_index.default);
 /* 124 */,
 /* 125 */,
 /* 126 */
-/*!**********************************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FlessonList%2FlessonDetail%2FenterSuccess%2Findex"} ***!
-  \**********************************************************************************************************************************/
+/*!*****************************************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FlessonList%2FlessonDetail%2FenterSuccess%2Findex"} ***!
+  \*****************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15609,9 +15634,9 @@ createPage(_index.default);
 /* 132 */,
 /* 133 */,
 /* 134 */
-/*!****************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2Finvitation%2Findex"} ***!
-  \****************************************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2Finvitation%2Findex"} ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15628,9 +15653,9 @@ createPage(_index.default);
 /* 136 */,
 /* 137 */,
 /* 138 */
-/*!******************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/sendLink.png ***!
-  \******************************************************************/
+/*!*************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/sendLink.png ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15638,9 +15663,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAAByCAYAAAH4
 
 /***/ }),
 /* 139 */
-/*!*******************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/sendPaper.png ***!
-  \*******************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/sendPaper.png ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15652,9 +15677,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAAByCAYAAAH4
 /* 142 */,
 /* 143 */,
 /* 144 */
-/*!**************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2Franklist%2Findex"} ***!
-  \**************************************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2Franklist%2Findex"} ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15675,9 +15700,9 @@ createPage(_index.default);
 /* 150 */,
 /* 151 */,
 /* 152 */
-/*!******************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FsignUpRecord%2Findex"} ***!
-  \******************************************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Ffind%2FsignUpRecord%2Findex"} ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15696,9 +15721,9 @@ createPage(_index.default);
 /* 156 */,
 /* 157 */,
 /* 158 */
-/*!***********************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Fsign%2FimmediatelySignUp%2Findex"} ***!
-  \***********************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Fsign%2FimmediatelySignUp%2Findex"} ***!
+  \******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15719,9 +15744,9 @@ createPage(_index.default);
 /* 164 */,
 /* 165 */,
 /* 166 */
-/*!************************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Fsign%2FimmediatelySignUp%2FsubmitTask%2Findex"} ***!
-  \************************************************************************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Fsign%2FimmediatelySignUp%2FsubmitTask%2Findex"} ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15740,9 +15765,9 @@ createPage(_index.default);
 /* 170 */,
 /* 171 */,
 /* 172 */
-/*!********************************************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageA%2Fsign%2FimmediatelySignUp%2FsubmitTask%2FsubmitTaskSuccess%2Findex"} ***!
-  \********************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageA%2Fsign%2FimmediatelySignUp%2FsubmitTask%2FsubmitTaskSuccess%2Findex"} ***!
+  \***************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15759,9 +15784,9 @@ createPage(_index.default);
 /* 174 */,
 /* 175 */,
 /* 176 */
-/*!*******************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/success01.png ***!
-  \*******************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/success01.png ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15773,9 +15798,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALkAAAC5CAYAAAB0
 /* 179 */,
 /* 180 */,
 /* 181 */
-/*!*****************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FmyAchievement%2Findex"} ***!
-  \*****************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FmyAchievement%2Findex"} ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15796,9 +15821,9 @@ createPage(_index.default);
 /* 187 */,
 /* 188 */,
 /* 189 */
-/*!*******************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FmyAchievement%2Fcertificate%2Findex"} ***!
-  \*******************************************************************************************************************/
+/*!**************************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FmyAchievement%2Fcertificate%2Findex"} ***!
+  \**************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15819,9 +15844,9 @@ createPage(_index.default);
 /* 195 */,
 /* 196 */,
 /* 197 */
-/*!***************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FlearnRecord%2Findex"} ***!
-  \***************************************************************************************************/
+/*!**********************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FlearnRecord%2Findex"} ***!
+  \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15838,9 +15863,9 @@ createPage(_index.default);
 /* 199 */,
 /* 200 */,
 /* 201 */
-/*!*******************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/btn_highlight_dianzan.png ***!
-  \*******************************************************************************/
+/*!**************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/btn_highlight_dianzan.png ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15848,9 +15873,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAAEE
 
 /***/ }),
 /* 202 */
-/*!*******************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/imgs/icon/btn_highlight_dianpin.png ***!
-  \*******************************************************************************/
+/*!**************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/imgs/icon/btn_highlight_dianpin.png ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -15862,9 +15887,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAAEE
 /* 205 */,
 /* 206 */,
 /* 207 */
-/*!********************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fhelp%2Findex"} ***!
-  \********************************************************************************************/
+/*!***************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fhelp%2Findex"} ***!
+  \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15885,9 +15910,9 @@ createPage(_index.default);
 /* 213 */,
 /* 214 */,
 /* 215 */
-/*!************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fhelp%2FsubmitProblem%2Findex"} ***!
-  \************************************************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fhelp%2FsubmitProblem%2Findex"} ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15908,9 +15933,9 @@ createPage(_index.default);
 /* 221 */,
 /* 222 */,
 /* 223 */
-/*!***********************************************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fhelp%2FsubmitProblem%2FsubmitProblemSuccess%2Findex"} ***!
-  \***********************************************************************************************************************************/
+/*!******************************************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fhelp%2FsubmitProblem%2FsubmitProblemSuccess%2Findex"} ***!
+  \******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15929,9 +15954,9 @@ createPage(_index.default);
 /* 227 */,
 /* 228 */,
 /* 229 */
-/*!*****************************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FinviteFriends%2Findex"} ***!
-  \*****************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2FinviteFriends%2Findex"} ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15952,9 +15977,9 @@ createPage(_index.default);
 /* 235 */,
 /* 236 */,
 /* 237 */
-/*!*******************************************************************************************!*\
-  !*** F:/git-uni-app/node-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fset%2Findex"} ***!
-  \*******************************************************************************************/
+/*!**************************************************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/main.js?{"page":"pages%2FpackageB%2Fmy%2Fset%2Findex"} ***!
+  \**************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15978,9 +16003,9 @@ createPage(_index.default);
 /* 246 */,
 /* 247 */,
 /* 248 */
-/*!**********************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/allLoading.gif ***!
-  \**********************************************************/
+/*!*****************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/allLoading.gif ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15988,9 +16013,9 @@ module.exports = __webpack_require__.p + "static/img/allLoading.a6125b37.gif";
 
 /***/ }),
 /* 249 */
-/*!*******************************************************!*\
-  !*** F:/git-uni-app/node-customer/static/loading.gif ***!
-  \*******************************************************/
+/*!**************************************************************!*\
+  !*** D:/git-nodeProgram/uni-app-customer/static/loading.gif ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

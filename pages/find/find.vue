@@ -9,7 +9,6 @@
 		right: 0;
 		bottom: 0;
 		margin: auto;
-		overflow-y: scroll;
 		.find-hasLogin {
 			height: 100%;
 			width: 100%;
@@ -28,6 +27,7 @@
 				bottom: 0;
 				margin: auto;
 				z-index: 1;
+				overflow-y: auto;
 				.top {
 					width: 650upx;
 					height: 400upx;
@@ -335,7 +335,6 @@
             </view>
 		</view>
 	</container>
-
 </template>
 
 <script>
@@ -380,6 +379,15 @@
 				'hasLogin', 
 				'userName'
 			])
+		},
+		watch: {
+			userToken: {
+				handler(newValue, oldValue){
+					if(newValue){
+						this.refreshPage()
+					}
+				}
+			}
 		},
 		async onLoad () {
 			//#ifdef MP-WEIXIN
@@ -443,9 +451,9 @@
 								 * 如果需要强制登录，使用reLaunch方式
 								 */
 								if (this.forcedLogin) {
-									this.reLaunchPage("../login1/login1");
+									this.reLaunchPage("../login/login");
 								} else {
-									this.navigatePage("../login1/login1");
+									this.navigatePage("../login/login");
 								}
 							}
 						}

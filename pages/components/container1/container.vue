@@ -23,9 +23,15 @@
 		.top-loadding {
 			
 		}
+		.container {
+			position: relative;
+			overflow: hidden;
+			box-sizing: border-box;
+			opacity: 0;
+		}
 		.container_mask {
 			position: fixed;
-			top: 0;
+			top: 0;  
 			left: 0;
 			right: 0;
 			bottom: 0;
@@ -37,15 +43,16 @@
 			position: fixed;
 			top: 50%;
 			left: 50%;
-			width: 128rpx;
-			height: 128rpx;
-			margin-left: -64rpx;
-			margin-top: -64rpx;
+			width: 64upx;
+			height: 64upx;
+			margin-left: -32upx;
+			margin-top: -32upx;
 			// background: rgba(0, 0, 0, 0.80);
-			border-radius: 10rpx;
+			border-radius: 5upx;
 			z-index: 1000;
 			text-align: center;		
 			.allLoadingPic {
+				width: 100%;
 				// animation: container_loading .2s ease 0;
 			}
 		}		
