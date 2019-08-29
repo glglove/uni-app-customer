@@ -1,7 +1,6 @@
 {
-  "navigationBarTitleText": "登陆",
+  "navigationBarTitleText": "登录",
   "usingComponents": {
-    "container": "/pages/components/container1/container",
-    "authorize": "/pages/components/authorize/authorize"
+    "m-input": "/pages/components/m-input/m-input"
   }
 }

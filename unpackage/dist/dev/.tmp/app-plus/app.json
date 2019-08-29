@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/find/find",
     "pages/sign/sign",
     "pages/my/my",
-    "pages/packageA/find/ranklist/index",
+    "pages/welecome/welecome",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/pwd/pwd",
     "pages/packageA/find/lessonList/index",
     "pages/packageA/find/lessonList/lessonDetail/index",
     "pages/packageA/find/lessonList/lessonDetail/enterSuccess/index",

@@ -1,73 +1,126 @@
 #login.data-v-5ddbbba6 {
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  opacity: 1;
-  background-color: #e8e5e5;
 }
-#login .loginBox.data-v-5ddbbba6 {
-  width: 100%;
-  margin: 300rpx 0 30rpx 0;
+#login .input-group.data-v-5ddbbba6 {
+  background-color: #ffffff;
+  margin-top: 40rpx;
+  position: relative;
 }
-#login .loginBox .loginWrap .userNameBox.data-v-5ddbbba6 {
+#login .input-group.data-v-5ddbbba6::before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  height: 2rpx;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+  background-color: #c8c7cc;
+}
+#login .input-group.data-v-5ddbbba6::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2rpx;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+  background-color: #c8c7cc;
+}
+#login .input-group .input-row.data-v-5ddbbba6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: 90rpx;
-  margin-bottom: 30rpx;
-  padding: 10rpx 20rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  font-size: 36rpx;
+  line-height: 80rpx;
 }
-#login .loginBox .loginWrap .userNameBox .nameTit.data-v-5ddbbba6 {
-  width: 130rpx;
+#login .input-group .input-row.border.data-v-5ddbbba6::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 16rpx;
+  height: 2rpx;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+  background-color: #c8c7cc;
 }
-#login .loginBox .loginWrap .userNameBox .userNameInput.data-v-5ddbbba6 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  border: 1rpx solid #000000;
+#login .input-group .input-row .title.data-v-5ddbbba6 {
+  width: 144rpx;
+  padding-left: 30rpx;
 }
-#login .loginBox .loginWrap .passWordBox.data-v-5ddbbba6 {
+#login .btn-row.data-v-5ddbbba6 {
+  margin-top: 50rpx;
+  padding: 20rpx;
+}
+#login .btn-row button.primary.data-v-5ddbbba6 {
+  background-color: #0faeff;
+}
+#login .action-row.data-v-5ddbbba6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  height: 90rpx;
-  padding: 10rpx 20rpx;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-#login .loginBox .loginWrap .passWordBox .pwdTit.data-v-5ddbbba6 {
-  width: 130rpx;
+#login .action-row navigator.data-v-5ddbbba6 {
+  color: #007aff;
+  padding: 0 20rpx;
 }
-#login .loginBox .loginWrap .passWordBox .passWordInput.data-v-5ddbbba6 {
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  border: 1rpx solid #000000;
-}
-#login .loginBtnBox.data-v-5ddbbba6 {
+#login .oauth-row.data-v-5ddbbba6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  text-align: center;
-  margin-top: 20rpx;
 }
-#login .loginBtnBox .loginBtn.data-v-5ddbbba6 {
-  width: 90%;
-  height: 50px;
-  line-height: 50px;
-  margin: 0 auto;
+#login .oauth-row .oauth-image.data-v-5ddbbba6 {
+  width: 100rpx;
+  height: 100px;
+  border: 2rpx solid #dddddd;
+  border-radius: 100rpx;
+  margin: 0 40rpx;
+  background-color: #ffffff;
+}
+#login .oauth-row .oauth-image image.data-v-5ddbbba6 {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx;
 }
 

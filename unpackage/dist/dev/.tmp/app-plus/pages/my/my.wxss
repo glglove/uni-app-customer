@@ -21,9 +21,10 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  z-index: 1;
+  z-index: 100;
 }
 #my .contentBox .top.data-v-cc1aacdc {
+  position: relative;
   width: 686rpx;
   height: 108rpx;
   line-height: 108rpx;
@@ -65,6 +66,15 @@
   line-height: 0 !important;
   background-color: transparent !important;
   z-index: 1002;
+}
+#my .contentBox .top .contentLoginBox.data-v-cc1aacdc {
+  position: absolute;
+  left: 100rpx;
+  top: 0;
+}
+#my .contentBox .top .contentLoginBox .btn-row .loginBtn.data-v-cc1aacdc {
+  font-size: 32rpx;
+  background-color: #FA9A60;
 }
 #my .contentBox .containerBox.data-v-cc1aacdc {
   width: 686rpx;

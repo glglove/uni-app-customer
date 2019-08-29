@@ -18,6 +18,8 @@
     "url": ""
   },
   "permissions": {
+    "OAuth": {},
+    "Share": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }
@@ -53,6 +55,7 @@
           "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
           "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
           "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\"/>",
+          "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
           "<uses-permission android:name=\"android.permission.READ_CONTACTS\"/>",
           "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
           "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
@@ -62,8 +65,18 @@
       },
       "apple": {},
       "plugins": {
-        "oauth": {},
+        "oauth": {
+          "weixin": {
+            "appid": "wxf6ba170ba8c559b2",
+            "appsecret": "15224f60ba37011d182a400466292ebc"
+          }
+        },
         "maps": {},
+        "share": {
+          "weixin": {
+            "appid": "wxf6ba170ba8c559b2"
+          }
+        },
         "audio": {
           "mp3": {
             "description": "Android平台录音支持MP3格式文件"
@@ -87,7 +100,10 @@
     "secondwebview": {
       "id": "1",
       "launch_path": "__uniappview.html",
-      "kernel": "WKWebview"
+      "kernel": "WKWebview",
+      "mode": "child",
+      "top": 0,
+      "bottom": 56
     }
   }
 }

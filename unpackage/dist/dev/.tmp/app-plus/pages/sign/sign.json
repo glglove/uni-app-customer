@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "打卡",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
   "usingComponents": {}
 }
