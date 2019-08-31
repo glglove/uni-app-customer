@@ -224,14 +224,14 @@
 	}
 </style>
 <template>
-	<container :loading1="loading1">
+	<container :containerLoading="containerLoading">
 		<view  id="findBox" slot="container-slot">
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
 			<!-- bg.find_bg:{{bg.find_bg}} -->
 			<!-- {{$configs.baseImgsUrl + $configs.baseUrlConfigs.imgs_bg.find_bg}} -->
 			<!--loading-->
-			<div v-if="hasLogin" class="find-hasLogin">
+			<div v-if="userToken" class="find-hasLogin">
 				<view class="bgBox">
 					<image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
 				</view>
@@ -324,7 +324,7 @@
 			</div>
 			
 			<!---未登录-->
-			<view v-if="!hasLogin" class="find-notLogin">
+			<view v-if="!userToken" class="find-notLogin">
                 <view class="title">
                     您好 游客。
                 </view>
@@ -392,8 +392,8 @@
 		async onLoad () {
 			//#ifdef MP-WEIXIN
 			this.$bus.$on("emitRefreshPage", () => {
-				debugger
-				this.refreshPage()
+				// debugger
+				// this.refreshPage()
 			})
 			//#endif			
 			// debugger
@@ -462,13 +462,14 @@
 				//#endif
 			},	
 			refreshPage() {
-				debugger
+				// debugger
 				this._getRankDayData()
 			},
 			// 获取list 列表数据
 			_getRankDayData () {
 				// debugger
 				// uni.showLoading()
+				this.containerLoading = true
 				let paramsObj = {
 					params: {
 
@@ -481,6 +482,7 @@
 				findApi.getRankDayData( paramsObj ).then(res => {
 					// debugger
 					// uni.hideLoading()
+					this.containerLoading = false
 					console.log(res)
 					if(res && res.data.code === 1){
 						// debugger

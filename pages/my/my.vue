@@ -120,7 +120,7 @@
 </style>
 
 <template>
-	<container>
+	<container :containerLoading="containerLoading">
 		<view id="my"  slot="container-slot"  @touchstart=""  @touchmove="" @touchend="" >
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
@@ -328,7 +328,7 @@
 			},	
 			// 获取头像
 			async getAvaterPic() {
-				debugger
+				// debugger
 				console.log(this.getStorage("userInfo"))
 				this.getStorage("userInfo").then(res => {
 					this.avaterPic = JSON.parse(res).headImg
@@ -337,26 +337,6 @@
 			},
 			// 点击 我的成就
 			async clickAchivement () {
-				// let token = await this.getStorage("token");
-				// 预加载数据
-				let paramsObj = {
-					page: {
-						pageNum: 1,
-						pageSize: 6
-					},
-					params: {
-						
-					}
-					// 'token': "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwicm9sZXMiOiJjdXN0b21lciIsImlhdCI6MTU0OTk2NTY3NH0.8R4zpdfGo_vao8yReVJG3j1U1jkWA5Re11j0QVUwhV0",             
-					// token: token,
-				}
-
-				//预加载
-				
-				// let achivementData = await myApi.getAchivementList( params , false );
-				// this.$preload("achivementData", achivementData);
-				let achivementData = myApi.getAchivementList( paramsObj , "loading", "加载数据" );
-				debugger
 				this.navigatePage('../packageB/my/myAchievement/index')
 			}			
 		}

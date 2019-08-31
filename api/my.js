@@ -10,7 +10,7 @@ export default {
 	* 
 	*/
 	async getAchivementList (params, loading = false, loadingText = "加载中...") {
-		debugger
+		// debugger
 	   const url = `/my/certificateLogApp/page`;
 	   var data = {}
 	   params = Object.assign(data, params)

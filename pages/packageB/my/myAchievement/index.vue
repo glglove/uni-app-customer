@@ -107,17 +107,50 @@
 
 </style>
 <template>
-    <view id="myAchievement" class="marginT30">
-     
-    </view>
+	<container :containerAllloading="containerAllloading">
+		<view id="myAchievement" slot="container-slot" class="marginT30">
+			<!-- containerAllloading: {{containerAllloading}} -->
+			我的成就页面
+		</view>
+	</container>
 </template>
 
 <script>
-export default {
-    data(){
-        return {
-			
+	import  myApi from '@/api/my.js'
+	import { miniProApi } from '@/utils/mixins.js'
+	export default {
+		mixins:[miniProApi],
+		data(){
+			return {
+				
+			}
+		},
+		onLoad() {
+			debugger
+			this._getAchivementList()
+		},
+		methods: {
+			_getAchivementList () {
+				debugger
+				this.containerAllloading = true
+				let paramsObj = {
+					page: {
+						pageNum: 1,
+						pageSize: 6
+					},
+					params: {
+						
+					},
+				}
+				myApi.getAchivementList( paramsObj , "loading", "加载数据" ).then((res)=>{
+					debugger
+					this.containerAllloading = false
+					if(res.data.code === 1){
+					}else {
+						this.toast("数据获取失败")
+					}
+				})
+			}
 		}
-    }
-}
+	}
 </script>

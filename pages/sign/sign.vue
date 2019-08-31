@@ -21,6 +21,7 @@
 		// bottom: 0;
 		// margin: auto;
 		// z-index: 1;
+		background-color: rgba(251,250,249,1);
 		.scroll-view-y {
 			// position: absolute;
 			// top: 0;
@@ -33,7 +34,7 @@
 		}
 		.itemBox {
 			width: 100%;
-			height: 200upx;
+			// height: 200upx;
 		}
 	}
 
@@ -42,7 +43,7 @@
 </style>
 
 <template>
-	<container>
+	<container :containerLoading="containerLoading">
 		<view id="sign" class="content" slot="container-slot">
 			<!-- <image class="logo" src="/static/logo.png"></image>
 			<view>
@@ -52,20 +53,42 @@
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
 
-			<view class="bgBox">
+<!-- 			<view class="bgBox">
 				<image :src="bg.sign_bg" class="bgpic" lazy-load="true"></image>            
-			</view>
+			</view> -->
 
+			<view class="uni-swiper-msg">
+<!-- 				<view class="uni-swiper-msg-icon">
+					<image :src="bg.sign_bg" mode="widthFix"></image>
+				</view> -->
+				<swiper  autoplay="true" circular="true" interval="3000">
+					<swiper-item>
+						<navigator>
+							消息1
+							<image :src="bg.sign_bg" mode="widthFix"></image>
+						</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator>消息2</navigator>
+					</swiper-item>
+					<swiper-item>
+						<navigator>消息3</navigator>
+					</swiper-item>
+				</swiper>
+			</view>
+			
 			<view class="contentBox">
-<!--                <scroll-view 
+				<!--<scroll-view 
 					:scroll-top="scrollTop" 
 					scroll-y="true" 
 					class="scroll-view-y" 
 					@scrolltoupper="upper" 
 					@scrolltolower="lower"
 					@scroll="scroll"> -->
-					<view class="itemBox" v-for="(lessonItem,key) in arrData" :key="key">
-						<p class="scroll-view-item">打卡开始时间：{{lessonItem.clockEndDate}}</p>																																			
+					<view class="itemBox" >
+						<p class="scroll-view-item" v-for="(lessonItem,key) in arrData" :key="key">打卡开始时间：{{lessonItem.clockEndDate}}</p>	
+						<!--loadMore-->
+						<load-more :loadingType="1"></load-more>																																
 					</view>
                 <!-- </scroll-view>				 -->
 			</view>
@@ -76,9 +99,13 @@
 
 <script>
 	import { miniProApi } from '@/utils/mixins.js'
+	import LoadMore from '@/pages/components/uni-load-more/uni-load-more'
 	import signApi from '@/api/sign.js'
 	export default {
 		mixins: [ miniProApi ],
+		components:{
+			LoadMore
+		},
 		data() {
 			return {
 				lessonList: [],
@@ -210,8 +237,8 @@
 			},
 			// 获取课程列表
 			getLessonList () {
-				debugger
-				
+				this.containerLoading = true
+				// debugger
 				let paramObj = {
 					params:{
 
@@ -221,10 +248,12 @@
                         pageSize: this.pageSize,
 					}					
 				}
-				signApi.getLessonList(paramObj, "loading", "获取课程list").then((res) => {
+				signApi.getLessonList(paramObj, false, "获取课程list").then((res) => {
 					// debugger
+					this.containerLoading = false
 					this.getDeviceApi().stopPullDownRefresh()
 					if(res && res.data.code === 1){
+						// this.$bus.$emit("loading1_end")
 						// 总页数赋值给 total
 						this.total = res.data.data.total
 						let resDataLength = res.data.data.list

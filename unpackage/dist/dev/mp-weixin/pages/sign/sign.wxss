@@ -5,12 +5,14 @@
 #sign .bgBox .bgpic.data-v-b49ccc1c {
   width: 100%;
 }
+#sign .contentBox.data-v-b49ccc1c {
+  background-color: #fbfaf9;
+}
 #sign .contentBox .scroll-view-y.data-v-b49ccc1c {
   width: 100%;
   height: 100%;
 }
 #sign .contentBox .itemBox.data-v-b49ccc1c {
   width: 100%;
-  height: 200rpx;
 }
 

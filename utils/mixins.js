@@ -14,7 +14,8 @@ export const miniProApi = {
 	data () {
 		return {
 			pHeight: 0, // container 组件的 高，从系统中获取
-			loading1: false,
+			containerAllloading: false,
+			containerLoading: false,
 			total: 0, // 总页数
 			pageSize: 10, // 每页数目
 			pageNum: 1  // 页码
@@ -29,9 +30,9 @@ export const miniProApi = {
 	async onLoad(options,data) {
 		// debugger
 		// console.log(this)
+		
 		//获取 系统的高后，由页面传给 container 组件
 		this.pHeight = uni.getSystemInfoSync().windowHeight
-		this.loading1 = true
 		// 系统的高 存入 store中
 		this.$store.dispatch('saveWindowHeight', this.pHeight)
 		// debugger
@@ -58,11 +59,11 @@ export const miniProApi = {
 	},	
 	onShow() {
 		this.$bus.$on("loading", () => {
-			console.log("minxin中 onShow 触发了 this.$bus.$on")
-			this.loading1 = !this.loadingFlag
-			setTimeout(()=>{
-				this.loading1 = false				
-			},2000) 
+			// console.log("minxin中 onShow 触发了 this.$bus.$on")
+			// this.loading1 = !this.loadingFlag
+			// setTimeout(()=>{
+			// 	this.loading1 = false				
+			// },2000) 
 		})			
 		//获取 系统的高后，由页面传给 container 组件
 		// this.pHeight = uni.getSystemInfoSync().windowHeight
@@ -90,11 +91,31 @@ export const miniProApi = {
 	onReachBottom (){
 		// 上拉加载
 		debugger
+		// uni.onNetworkStatusChange(function(res){
+		// 	debugger
+		// 	console.log("网络类型:" + res.networkType + ",网络连接:" + res.isConnected);
+		// 	if(!res.isConnected){
+		// 		// 无网络
+		// 		uni.showToast({
+		// 			title:"网络未连接"
+		// 		});
+		// 		return;	
+		// 	}else {
+		// 		// 有网络
+		// 		if(this.pageSize*this.pageNum < this.total){
+		// 			this.pageNum +=1
+		// 			this.refreshPage()
+		// 		}else {
+		// 			this.toast("没有更多了~~~~")
+		// 		}					
+		// 	}		
+		// })
+		
 		if(this.pageSize*this.pageNum < this.total){
 			this.pageNum +=1
 			this.refreshPage()
 		}else {
-			this.toast("到底了~~~~")
+			this.toast("没有更多了~~~~")
 		}
 		console.log('mixin onReachBottom')
 	},

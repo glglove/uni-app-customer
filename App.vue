@@ -1,6 +1,6 @@
 <style lang="less" src="./static/style/base.less"></style>
 <style lang="less" src="./static/style/icons.less"></style>
-<!-- <style lang="less" src="./static/style/iconfont.less"></style> -->
+<style lang="less" src="./static/style/iconfont.less"></style>
 <style lang="less">
 	/* 头条小程序需要把 iconfont 样式放到组件外 */
 	@import "pages/components/m-icon/m-icon.css";
@@ -295,7 +295,7 @@
 										if(res && res.statusCode == 200){
 											let resData = res.data
 											if( resData && resData.code == 1){
-												debugger
+												// debugger
 												console.log('---网络请求返回成功---')
 												console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", resData)          
 

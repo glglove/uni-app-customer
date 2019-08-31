@@ -171,7 +171,7 @@ export default {
                         if(res){
                             //登录成功 后触发 刷新页面
                             debugger
-                            this.$bus.$emit("emitRefreshPage")
+                            // this.$bus.$emit("emitRefreshPage")
                         }
                     })
 					// 关闭授权的弹框

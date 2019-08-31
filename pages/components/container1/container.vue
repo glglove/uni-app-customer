@@ -19,7 +19,7 @@
 	.container-box-cmp {
 		position: relative;
 		width: 100%;
-		height: 100%;
+		// height: 100%;
 		.top-loadding {
 			
 		}
@@ -106,13 +106,15 @@
 		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-show="containerMaskFlag"></view>
 
 		<!-- allLoading -->
-		<view :class="['container_allLoading', aniClass]" v-show="containerAllloadingFlag">
+		<!-- <view :class="['container_allLoading', aniClass]" v-show="containerAllloadingFlag"> -->
+		<view :class="['container_allLoading', aniClass]" v-show="containerAllloading">
 			<image class="allLoadingPic" :src="require('@/static/allLoading.gif')" layz-load="true"></image>
 		</view>	
 		
 		<!-- loading -->
 		<!-- loading1: {{loading1}} -->
-		<view :class="['container_loading', aniClass]" v-show="containerLoadingFlag">
+		<!-- <view :class="['container_loading', aniClass]" v-show="containerLoadingFlag"> -->
+		<view :class="['container_loading', aniClass]" v-show="containerLoading">
 			<image class="loadingPic" :src="require('@/static/loading.gif')" layz-load="true"></image>
 		</view>	
 			
@@ -162,7 +164,11 @@
 				type: String,
 				default: 'transparent'
 			},
-			loading1: {
+			containerLoading: {
+				type: Boolean,
+				default: false
+			},
+			containerAllloading: {
 				type: Boolean,
 				default: false
 			}
@@ -196,13 +202,14 @@
 			// console.log("---获取到的系统屏幕高度---------",this.pHeight)			
 		},
 		onReady(){
+			// debugger
 			console.log("container----------onReady")				
 		},
 		onUnload() {
-		
+			
 		},
 		onHide() {
-
+			
 		},
 		computed:{
 			...mapGetters([
@@ -250,6 +257,7 @@
 		},
 		data() {
 			return {
+				loading2: false,
 				// showLoadingFlag: true, 
 				// containerMaskFlag: true, //  控制container 的全屏 遮罩显示与否
 				// containerLoadingFlag: false,  // 控制container 的全屏loading状态

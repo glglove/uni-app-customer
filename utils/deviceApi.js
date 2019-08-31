@@ -39,6 +39,7 @@ export const getDeviceApi = () => {
 		checkSession: uni.checkSession, // 监测微信登录状态
 		getUserInfo:uni.getUserInfo,
 		login: uni.login,
-		getShareInfo: uni.getShareInfo
+		getShareInfo: uni.getShareInfo,
+		onNetworkStatusChange: uni.onNetworkStatusChange  // 监测网络状态
 	}
 } 
