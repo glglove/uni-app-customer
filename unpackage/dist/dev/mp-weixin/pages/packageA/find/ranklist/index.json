@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "排行榜",
-  "usingComponents": {}
+  "usingComponents": {
+    "calendar": "/pages/components/uni-calendar/w-calendar"
+  }
 }

@@ -105,24 +105,75 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
 
-// import loginApi from '@/api/login.js'
-var _default = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _find = _interopRequireDefault(__webpack_require__(/*! @/api/find.js */ 52));
+var _mixins = __webpack_require__(/*! @/utils/mixins.js */ 53);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var calendar = function calendar() {return Promise.all(/*! import() | pages/components/uni-calendar/w-calendar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/components/uni-calendar/w-calendar")]).then(__webpack_require__.bind(null, /*! @/pages/components/uni-calendar/w-calendar.vue */ 284));};var _default =
+
+{
+  mixins: [_mixins.miniProApi],
+  components: {
+    calendar: calendar },
+
   data: function data() {
     return {
-      username: '',
-      password: '' };
+      result: {} };
 
   },
-  methods: {} };exports.default = _default;
+  onLoad: function onLoad() {
+    this._getRankList();
+    // this.showCalendar()
+    // this.getResult()
+  },
+  methods: {
+    showCalendar: function showCalendar() {
+      this.$refs.calendar.show();
+    },
+    getResult: function getResult(res) {
+      console.log(res);
+      this.result = res;
+    },
+    _getRankList: function () {var _getRankList2 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var params, signList_day, params_list, rankList;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                this.containerAllloading = true;
+                params = {};_context.next = 4;return (
+
+
+                  _find.default.getRankDayData(params));case 4:signList_day = _context.sent;
+
+                params_list = {
+                  params: {
+                    id: "", //课程ID  
+                    type: 1 //1:总排名  2.点赞排名   3.邀请排名   
+                  },
+                  page: {
+                    pageNum: this.pageNum,
+                    pageSize: this.pageSize }
+
+
+
+                  // 排行榜的list列表
+                };_context.next = 8;return _find.default.getRankListData(params_list);case 8:rankList = _context.sent;
+
+                if (signList_day && rankList) {
+                  this.containerAllloading = false;
+                }case 10:case "end":return _context.stop();}}}, _callee, this);}));function _getRankList() {return _getRankList2.apply(this, arguments);}return _getRankList;}() } };exports.default = _default;
 
 /***/ }),
 

@@ -427,45 +427,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var _find = _interopRequireDefault(__webpack_require__(/*! @/api/find.js */ 52));
 var _mixins = __webpack_require__(/*! @/utils/mixins.js */ 53);
 
@@ -483,7 +444,6 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _interopRequireDefault(
       contentData: [],
       version: this.$configs.miniproConfings.version,
       shairePic_clickable: false, // 控制邀请好友的disable状态
-      // loading_show: false, // 控制页面loading的状态
       type: 1, // 1 总排名  2 点赞排名  3 邀请排名  
       bg: {
         'find_bg': "".concat(this.$configs.baseImgsUrl + this.$configs.baseUrlConfigs.imgs_bg.find_bg) },
@@ -652,7 +612,90 @@ var _vuex = __webpack_require__(/*! vuex */ 12);function _interopRequireDefault(
           duration: 2000 });
 
       });
-    } } };exports.default = _default;
+    },
+    clickRank: function () {var _clickRank = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                // 点击排行榜的icon
+                this.navigatePage("../packageA/find/ranklist/index");case 1:case "end":return _context3.stop();}}}, _callee3, this);}));function clickRank() {return _clickRank.apply(this, arguments);}return clickRank;}(),
+
+
+    // 邀请好友
+    invitateFriends: function () {var _invitateFriends = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(e) {var token, userInfo, params, haibaoData, shareData, haibaoPicObj, pages, currentPage, url, options, url1;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
+
+                console.log("邀请好友 生成海报分享------", e);
+                // 未生成海报前 禁止再次点击  邀请好友
+                this.shairePic_clickable = true;
+                this.$apply();_context4.next = 5;return (
+
+                  this.getStorage("token"));case 5:token = _context4.sent;_context4.next = 8;return (
+
+                  this.getStorage("userInfo"));case 8:userInfo = _context4.sent;
+
+                // let userId = userInfo.id;
+                console.log("用户id----", userInfo.id);
+                params = {
+                  userId: userInfo.id
+                  // token:token
+                };
+
+
+                // 获取 海报的信息
+                _context4.next = 13;return _find.default.getShareData(params, false);case 13:haibaoData = _context4.sent;
+
+                shareData = {};
+                if (haibaoData && haibaoData.code == 1) {
+                  if (haibaoData.data) {
+                    shareData.headImg = haibaoData.data.headImg;
+                    shareData.realName = haibaoData.data.realName;
+                    shareData.time = haibaoData.data.time;
+                    shareData.title = haibaoData.data.title;
+                    shareData.days = haibaoData.data.days;
+                    shareData.qrcode = haibaoData.data.qrcode;
+                  }
+                  // let picUrl = base.baseUrl + base.imgs_bg.sharePic_bg02; // 底图
+                  haibaoPicObj = {
+                    picUrl_bg: base.baseUrl + base.imgs_bg.sharePic_bg02, // 底图
+                    avertor_bg: '../../../../../assets/imgs/icon/logo_1.png',
+                    headImg: shareData.headImg,
+                    title: shareData.title,
+                    name: shareData.realName,
+                    dayNum: shareData.days,
+                    time: shareData.time,
+                    codePic: shareData.qrcode
+
+
+                    // this.toast("正在生成分享图片...");
+                    //setTimeout(()=>{
+                    // },500)
+
+                    // 预加载
+                  };this.$preload("data", JSON.stringify(haibaoPicObj));
+
+                  // debugger;
+                  //获取当前页面URL
+                  pages = getCurrentPages();
+                  currentPage = pages[pages.length - 1];
+                  url = currentPage;
+                  options = currentPage.options; //获取参数
+                  url1 = currentPage.route; //获取地址
+
+
+                  // 页面跳转
+                  // this.navigatePage(`./shaireHaibao/index?picUrl=${haibaoPicObj}`)
+                  this.navigatePage("../packageA/find/invitation/shaireHaibao/index");
+
+                  this.shairePic_clickable = false;
+                  this.$apply();
+                  // wepy.showToast({
+                  //     title: "海报生成中...",
+                  //     image: '/assets/imgs/icon/alert.png',
+                  //     mask: false,
+                  //     duration: 1000
+                  // })
+                } else {
+                  this.toast("网络走神了~~", 1000);
+
+                  // this.navigatePage(`./shaireHaibao/index`)
+                }case 16:case "end":return _context4.stop();}}}, _callee4, this);}));function invitateFriends(_x) {return _invitateFriends.apply(this, arguments);}return invitateFriends;}() } };exports.default = _default;
 
 /***/ }),
 

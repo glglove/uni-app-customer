@@ -235,92 +235,53 @@
 				<view class="bgBox">
 					<image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
 				</view>
-				<view class="contentBox">
-					<view class="top"> 
-						<view class="design marginT30">21天设计</view>
-						<view class="study marginT10">理论手绘学习计划</view>
-					</view>
-
-					<view class="findContainer">
-						<view class="contentTop">
-							<view class="contentTopLeft lt">
-								<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
-									<image class="signUpPic click-able" :src="require('@/static/imgs/icon/signUp.png')" layz-load="true" @tap.stop = ""></image>
-								</button>
-								<view class="signUpNum marginT10">
-									<text class="signDay">{{signData.signDay}}</text>
-									<text class="signTotalDay">/21</text>
-								</view>
-								<view class="signUpTit marginT10"><text>连续打卡</text></view>
-							</view>
-
-							<view class="contentTopRight rt">
-								<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
-									<image class="rankPic click-able" :src="require('@/static/imgs/icon/rank.png')" layz-load="true" @tap.stop = ""></image>
-								</button>
-								<view class="rankNum marginT10">
-									<text class="rankNo">{{signData.rankNo}}</text>
-								</view>
-								<view class="rankTit marginT10"><text>排行榜</text></view>                    
-							</view>  
-										
-							<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
-								<image class="signUpPic" :src="require('@/static/imgs/icon/signUpPic.png')"></image>
-								<text class="signUpTit click-able">立即报名</text>
-							</button>
-
-							<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
-								<image class="invitationPic" :src="require('@/static/imgs/icon/invitationPic.png')" layz-load="true"></image>
-								<text class="invitationTit click-able">邀请好友</text>               
-							</button>							  
-						</view>			
-					</view>		
-					
-					<!--引用footerCmp-->
-					<footer-explain versition="20150205"></footer-explain>
-				</view>
-								
-				
-				
 				<!--用于收集定时提醒的推送码-->
-				<!-- <form report-submit="true" bindsubmit="formSubmit">
+				<form report-submit="true" bindsubmit="formSubmit">				
 					<view class="contentBox">
-						<view class="contentTop">
-							<view class="contentTopLeft lt">
-								<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
-									<image class="signUpPic click-able" src="../../static/imgs/icon/signUp.png" layz-load="true" @tap.stop = ""></image>
-								</button>
-								<view class="signUpNum marginT10">
-									<text class="signDay">{{signData.signDay}}</text>
-									<text class="signTotalDay">/21</text>
-								</view>
-								<view class="signUpTit marginT10"><text>连续打卡</text></view>
-							</view>
-
-							<view class="contentTopRight rt">
-								<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
-									<image class="rankPic click-able" src="../../static/imgs/icon/rank.png" layz-load="true" @tap.stop = ""></image>
-								</button>
-								<view class="rankNum marginT10">
-									<text class="rankNo">{{signData.rankNo}}</text>
-								</view>
-								<view class="rankTit marginT10"><text>排行榜</text></view>                    
-							</view>                
+						<view class="top"> 
+							<view class="design marginT30">21天设计</view>
+							<view class="study marginT10">理论手绘学习计划</view>
 						</view>
+
+						<view class="findContainer">
+							<view class="contentTop">
+								<view class="contentTopLeft lt">
+									<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
+										<image class="signUpPic click-able" :src="require('@/static/imgs/icon/signUp.png')" layz-load="true" @tap.stop = "clickRank"></image>
+									</button>
+									<view class="signUpNum marginT10">
+										<text class="signDay">{{signData.signDay}}</text>
+										<text class="signTotalDay">/21</text>
+									</view>
+									<view class="signUpTit marginT10"><text>连续打卡</text></view>
+								</view>
+
+								<view class="contentTopRight rt">
+									<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
+										<image class="rankPic click-able" :src="require('@/static/imgs/icon/rank.png')" layz-load="true" @tap.stop = ""></image>
+									</button>
+									<view class="rankNum marginT10">
+										<text class="rankNo">{{signData.rankNo}}</text>
+									</view>
+									<view class="rankTit marginT10"><text>排行榜</text></view>                    
+								</view>  
+											
+								<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
+									<image class="signUpPic" :src="require('@/static/imgs/icon/signUpPic.png')"></image>
+									<text class="signUpTit click-able">立即报名</text>
+								</button>
+
+								<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
+									<image class="invitationPic" :src="require('@/static/imgs/icon/invitationPic.png')" layz-load="true"></image>
+									<text class="invitationTit click-able">邀请好友</text>               
+								</button>							  
+							</view>			
+						</view>		
 						
-
-						<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
-							<image class="signUpPic" src="../../static/imgs/icon/signUpPic.png"></image>
-							<text class="signUpTit click-able">立即报名</text>
-						</button>
-
-						<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
-							<image class="invitationPic" src="../../static/imgs/icon/invitationPic.png" layz-load="true"></image>
-							<text class="invitationTit click-able">邀请好友</text>               
-						</button>
+						<!--引用footerCmp-->
+						<footer-explain versition="20150205"></footer-explain>
 					</view>
-				</form>
-				-->
+				</form>				
 			</div>
 			
 			<!---未登录-->
@@ -329,7 +290,7 @@
                     您好 游客。
                 </view>
                 <view class="ul">
-                    <view>这是 uni-app 带登录模板的示例App首页。</view>
+                    <view>这是 小助手App首页。</view>
                     <view>在 “我的” 中点击 “登录” 可以 “登录您的账户”</view>
                 </view>
             </view>
@@ -357,7 +318,6 @@
 				contentData: [],
 				version: this.$configs.miniproConfings.version,
 				shairePic_clickable: false,  // 控制邀请好友的disable状态
-				// loading_show: false, // 控制页面loading的状态
 				type: 1, // 1 总排名  2 点赞排名  3 邀请排名  
 				bg: {
 					'find_bg': `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.find_bg}`
@@ -526,7 +486,91 @@
 						duration:2000
 					})
 				})
-			}
+			},
+			async clickRank () {
+				// 点击排行榜的icon
+				this.navigatePage(`../packageA/find/ranklist/index`);
+			},  
+
+			// 邀请好友
+			async invitateFriends (e) {
+
+				console.log("邀请好友 生成海报分享------", e)
+				// 未生成海报前 禁止再次点击  邀请好友
+				this.shairePic_clickable = true;
+				this.$apply();
+
+				let token = await this.getStorage("token");
+
+				let userInfo = await this.getStorage("userInfo");
+				
+				// let userId = userInfo.id;
+				console.log("用户id----",userInfo.id);
+				let params = {
+					userId: userInfo.id,
+					// token:token
+				};
+
+
+				// 获取 海报的信息
+				let haibaoData = await findApi.getShareData(params,false);
+				
+				let shareData = {};
+				if( haibaoData && haibaoData.code ==1 ){
+					if( haibaoData.data ) {
+						shareData.headImg = haibaoData.data.headImg;
+						shareData.realName = haibaoData.data.realName;
+						shareData.time = haibaoData.data.time;
+						shareData.title = haibaoData.data.title;
+						shareData.days = haibaoData.data.days;
+						shareData.qrcode = haibaoData.data.qrcode;
+					}
+					// let picUrl = base.baseUrl + base.imgs_bg.sharePic_bg02; // 底图
+					let haibaoPicObj = {
+						picUrl_bg: base.baseUrl + base.imgs_bg.sharePic_bg02, // 底图
+						avertor_bg: '../../../../../assets/imgs/icon/logo_1.png',
+						headImg: shareData.headImg,
+						title:shareData.title,
+						name:shareData.realName,
+						dayNum: shareData.days,
+						time: shareData.time,
+						codePic: shareData.qrcode,
+					}
+
+					// this.toast("正在生成分享图片...");
+					//setTimeout(()=>{
+					// },500)
+
+					// 预加载
+					this.$preload("data",JSON.stringify(haibaoPicObj));
+
+					// debugger;
+					//获取当前页面URL
+					var pages = getCurrentPages();
+					var currentPage = pages[pages.length - 1];
+					var url = currentPage;
+					var options = currentPage.options; //获取参数
+					var url1 = currentPage.route; //获取地址
+					
+
+					// 页面跳转
+					// this.navigatePage(`./shaireHaibao/index?picUrl=${haibaoPicObj}`)
+					this.navigatePage(`../packageA/find/invitation/shaireHaibao/index`)
+
+					this.shairePic_clickable = false;
+					this.$apply();
+					// wepy.showToast({
+					//     title: "海报生成中...",
+					//     image: '/assets/imgs/icon/alert.png',
+					//     mask: false,
+					//     duration: 1000
+					// })
+				}else {
+					this.toast("网络走神了~~",1000);
+
+					// this.navigatePage(`./shaireHaibao/index`)
+				}                  
+			}   		
 		}
 	}
 </script>

@@ -58,7 +58,7 @@ export default {
     */
 	async getRankListData (params, loading = false, loadingText = "加载中...") {
 		debugger
-	   const url = `/find/customerApp/rank`;
+	   const url = `/find/customerApp/myRank`;
 	   var data = {}
 	   params = Object.assign(data, params)
 	   return http.post( url,{

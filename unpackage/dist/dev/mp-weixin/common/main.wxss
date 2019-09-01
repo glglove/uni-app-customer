@@ -126,6 +126,10 @@ page {
 button::after {
   border: none;
 }
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgba(254, 148, 84, 0.3);
+}
 .clearfix::after {
   display: block;
   content: "";

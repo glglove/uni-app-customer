@@ -293,7 +293,7 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "rgba(253,133,9,1)"
 		//#ifdef  H5 ||APP-PLUS
-		,"backgroundColor": "rgba(254,147,82,1)"
+		,"backgroundColor": "rgba(254,147,82,.01)"
 		//#endif
 		//#ifdef MP-WEIXIN
 		,"backgroundColor": "#FFFFFF"

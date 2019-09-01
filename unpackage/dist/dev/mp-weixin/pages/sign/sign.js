@@ -205,6 +205,161 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _mixins = __webpack_require__(/*! @/utils/mixins.js */ 53);
 
 var _sign = _interopRequireDefault(__webpack_require__(/*! @/api/sign.js */ 91));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
@@ -306,78 +461,171 @@ var _sign = _interopRequireDefault(__webpack_require__(/*! @/api/sign.js */ 91))
 //
 //
 //
-var LoadMore = function LoadMore() {return __webpack_require__.e(/*! import() | pages/components/uni-load-more/uni-load-more */ "pages/components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/pages/components/uni-load-more/uni-load-more */ 277));};var _default = { mixins: [_mixins.miniProApi], components: { LoadMore: LoadMore }, data: function data() {return { lessonList: [], bg: { 'sign_bg': "".concat(this.$configs.baseImgsUrl + this.$configs.baseUrlConfigs.imgs_bg.sign_bg) }, arrData: [{ clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" },
-      {
-        clockEndDate: "2019-09-09" },
-
-      {
-        clockEndDate: "2019-09-09" },
-
-      {
-        clockEndDate: "2019-09-09" },
-
-      {
-        clockEndDate: "2019-09-09" },
-
-      {
-        clockEndDate: "2019-09-09" },
-
-      {
-        clockEndDate: "2019-09-09" }] };
-
-
-
-  },
-  onLoad: function onLoad() {
-    this.getLessonList();
-  },
-  methods: {
-    //onload 之前的 生命周期
-    onComLoad: function onComLoad() {
-
-    },
-    // 刷新页面
-    refreshPage: function refreshPage() {
-      console.log("页面刷新");
-      debugger;
-      this.getLessonList();
-    },
-    // 获取课程列表
-    getLessonList: function getLessonList() {var _this = this;
-      this.containerLoading = true;
-      // debugger
-      var paramObj = {
-        params: {},
-
-
-        page: {
-          pageNum: this.pageNum,
-          pageSize: this.pageSize } };
-
-
-      _sign.default.getLessonList(paramObj, false, "获取课程list").then(function (res) {
-        // debugger
-        _this.containerLoading = false;
-        _this.getDeviceApi().stopPullDownRefresh();
-        if (res && res.data.code === 1) {
-          // this.$bus.$emit("loading1_end")
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var LoadMore = function LoadMore() {return __webpack_require__.e(/*! import() | pages/components/uni-load-more/uni-load-more */ "pages/components/uni-load-more/uni-load-more").then(__webpack_require__.bind(null, /*! @/pages/components/uni-load-more/uni-load-more */ 277));};var _default = { mixins: [_mixins.miniProApi], components: { LoadMore: LoadMore }, data: function data() {return { lessonList: [], bg: { 'sign_bg': "".concat(this.$configs.baseImgsUrl + this.$configs.baseUrlConfigs.imgs_bg.sign_bg) }, arrData: [{ clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }, { clockEndDate: "2019-09-09" }] };}, onLoad: function onLoad() {this.getLessonList();}, methods: { //onload 之前的 生命周期
+    onComLoad: function onComLoad() {}, // 刷新页面
+    refreshPage: function refreshPage() {console.log("页面刷新");debugger;this.getLessonList();}, // 获取课程列表
+    getLessonList: function getLessonList() {var _this = this;this.containerLoading = true; // debugger
+      var paramObj = { params: {}, page: { pageNum: this.pageNum, pageSize: this.pageSize } };_sign.default.getLessonList(paramObj, false, "获取课程list").then(function (res) {// debugger
+        _this.containerLoading = false;_this.getDeviceApi().stopPullDownRefresh();if (res && res.data.code === 1) {// this.$bus.$emit("loading1_end")
           // 总页数赋值给 total
-          _this.total = res.data.data.total;
-          var resDataLength = res.data.data.list;
-          if (resDataLength) {
-            _this.lessonList = _this.lessonList.concat(res.data.data.list);
-            _this.success("课程获取成功");
-          } else {
-            debugger;
-            // 没有数据了
+          _this.total = res.data.data.total;var resDataLength = res.data.data.list;if (resDataLength) {_this.lessonList = _this.lessonList.concat(res.data.data.list);_this.success("课程获取成功");} else {debugger; // 没有数据了
             // 显示 loadingMore 到底的 文字
-            _this.toast("已经到底了!~~~~");
-          }
-        } else {
-          _this.toast("数据获取失败");
-        }
-      });
-    } } };exports.default = _default;
+            _this.toast("已经到底了!~~~~");}} else {_this.toast("数据获取失败");}});} } };exports.default = _default;
 
 /***/ }),
 
