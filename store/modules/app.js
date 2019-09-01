@@ -33,6 +33,7 @@ const app = {
 	loginOut(state) {
 		state.userName = "";
 		state.hasLogin = false;
+		state.userToken = false;
 	},	  
 	
 	 //设置 用户微信是否已授权用户信息userInfo

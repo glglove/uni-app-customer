@@ -145,9 +145,9 @@
 					<!--登陆/退出登陆-->
 					<view class="contentLoginBox">
 						<view class="btn-row">
-							<button class="loginBtn" v-if="!hasLogin" type="primary"  @tap="bindLogin">{{hasLogin?'已登陆': '您还未登录'}}</button>
+							<button class="loginBtn" v-if="!userToken" type="primary"  @tap="bindLogin">{{userToken?'已登陆': '您还未登录'}}</button>
 							<!--#ifdef H5 || APP-PLUS-->
-							<button class="loginBtn" v-if="hasLogin" type="default" @tap="bindLogout">退出登录</button>
+							<button class="loginBtn" v-if="userToken" type="default" @tap="loginOut">退出登录</button>
 							<!--#endif-->
 						</view>
 					</view>
@@ -237,7 +237,7 @@
 			FooterExplain
         },	
 		computed: {
-			...mapGetters(['hasLogin', 'forcedLogin','userAvatarUrl','userInfo']),
+			...mapGetters(['hasLogin', 'forcedLogin','userToken','userAvatarUrl','userInfo']),
 		},
 		watch:{
 
@@ -308,7 +308,7 @@
                 this.navigatePage("../login/login");
 			},	
 			// 退出登陆
-			bindLogout () {
+			loginOut () {
 				//#ifdef H5 || APP-PLUS
                 this.loginOut();
 				//#endif
@@ -331,8 +331,10 @@
 				// debugger
 				console.log(this.getStorage("userInfo"))
 				this.getStorage("userInfo").then(res => {
-					this.avaterPic = JSON.parse(res).headImg
 					// console.log("------------",res)
+					if(res){
+						this.avaterPic = JSON.parse(res).headImg
+					}
 				})
 			},
 			// 点击 我的成就

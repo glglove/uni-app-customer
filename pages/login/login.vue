@@ -123,6 +123,8 @@
 				<navigator url="../pwd/pwd">忘记密码</navigator>
 			</view>
 			
+			
+			<!-- hasProvider: {{hasProvider}} -->
 			<!--授权登陆区域-->
 			<view class="oauth-row" v-if="hasProvider" :style="{top: positionTop + 'px'}">
 				<view class="oauth-image" v-for="provider in providerList" :key="provider.value">
@@ -171,10 +173,12 @@
             // ...mapMutations(['login']),
             // 获取服务供应商
             initProvider() {
+				debugger
                 const filters = ['weixin', 'qq', 'sinaweibo'];
                 uni.getProvider({
                     service: 'oauth', //服务类型  登录授权
                     success: (res) => {
+						debugger
                         if (res.provider && res.provider.length) {
                             for (let i = 0; i < res.provider.length; i++) {
                                 if (~filters.indexOf(res.provider[i])) {
@@ -184,6 +188,7 @@
                                     });
                                 }
                             }
+							debugger
                             // 设置 是否有授权的服务商
                             this.hasProvider = true;
                         }
@@ -201,6 +206,7 @@
                 this.positionTop = uni.getSystemInfoSync().windowHeight - 100;
             },
             bindLogin() {
+				debugger
 				let _this = this
                 /**
                  * 客户端对账号信息进行一些必要的校验。
@@ -229,27 +235,46 @@
                     name: this.name,
                     pwd: this.password
                 };
-                loginApi.register(data).then((res) => {
-					debugger
-                    if(res && res.data.code === 1) {
-                        this.success('登录成功')
-                        // 成功后 
-                        // debugger
-                        // 将用户信息存入到store 中
-                        if(res.data.user){
-                            this.$store.dispatch('setUserToken', res.data.user.token || '')								
-                        }
+				
+				//#ifdef APP-PLUS
+				uni.login({
+					success(res) {
 						debugger
-                        this.switchPage('../find/find').then((res) =>{
-                            
-                        }).catch(()=>{
-                            
-                        })
-                    }else {
-                        this.hideLoading();
-                        this.toast("用户账号或密码不正确")
-                    }
-                })
+						uni.getUserInfo({
+							success(res) {
+								debugger
+							},
+							fail(res) {
+								debugger
+							}
+						})
+					},
+					fail(res) {
+						debugger
+					}
+				})
+				//#endif
+     //            loginApi.register(data).then((res) => {
+					// debugger
+     //                if(res && res.data.code === 1) {
+     //                    this.success('登录成功')
+     //                    // 成功后 
+     //                    // debugger
+     //                    // 将用户信息存入到store 中
+     //                    if(res.data.user){
+     //                        this.$store.dispatch('setUserToken', res.data.user.token || '')								
+     //                    }
+					// 	debugger
+     //                    this.switchPage('../find/find').then((res) =>{
+     //                        
+     //                    }).catch(()=>{
+     //                        
+     //                    })
+     //                }else {
+     //                    this.hideLoading();
+     //                    this.toast("用户账号或密码不正确")
+     //                }
+     //            })
             },
             oauth(value) {
                 this.getDevice().login({
