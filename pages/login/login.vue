@@ -50,7 +50,7 @@
 					background-color: #c8c7cc;					
 				}
 				.title {
-					width: 144upx;
+					min-width: 144upx;
 					padding-left: 30upx;					
 				}
 			}
@@ -124,13 +124,34 @@
 			</view>
 			
 			
-			<!-- hasProvider: {{hasProvider}} -->
+			<!--#ifdef APP-PLUS-->
+			hasProvider: {{hasProvider}}
+			----
+			providerList: {{providerList[0].value}}
+			providerList: {{providerList[0].image}}
+			<!--#endif-->
 			<!--授权登陆区域-->
-			<view class="oauth-row" v-if="hasProvider" :style="{top: positionTop + 'px'}">
+			<view class="oauth-row" v-if="hasProvider" :style="'top:' + positionTop + 'px'">
 				<view class="oauth-image" v-for="provider in providerList" :key="provider.value">
 					<image :src="provider.image" @tap="oauth(provider.value)"></image>
 				</view>
 			</view>
+			
+			<!--#ifdef H5-->
+			<view class="oauth-row"  :style="'top:' + positionTop + 'px'">
+				<view class="oauth-image" >
+					<image :src="require('@/static/weixin.png')" @tap="oauth()"></image>
+				</view>
+				
+				<view class="oauth-image" >
+					<image :src="require('@/static/qq.png')" @tap="oauth()"></image>
+				</view>
+								
+				<view class="oauth-image" >
+					<image :src="require('@/static/sinaweibo.png')" @tap="oauth()"></image>
+				</view>								
+			</view>
+			<!--#endif-->
 		</view>
 	</container>
 </template>
@@ -184,7 +205,7 @@
                                 if (~filters.indexOf(res.provider[i])) {
                                     this.providerList.push({
                                         value: res.provider[i],
-                                        image: '../../static/img/' + res.provider[i] + '.png'
+                                        image: '../../static/' + res.provider[i] + '.png'
                                     });
                                 }
                             }
@@ -277,7 +298,7 @@
      //            })
             },
             oauth(value) {
-                this.getDevice().login({
+                this.getDeviceApi().login({
                     provider: value,
                     success: (res) => {
                         uni.getUserInfo({

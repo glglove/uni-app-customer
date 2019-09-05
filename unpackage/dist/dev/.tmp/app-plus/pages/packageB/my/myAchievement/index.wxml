@@ -1,1 +1,1 @@
-<view class="marginT30 data-v-5af618d9" id="myAchievement"></view>
+<container vue-id="1" containerAllloading="{{containerAllloading}}" class="data-v-5fc4dc01" bind:__l="__l" vue-slots="{{['container-slot']}}"><view class="marginT30 data-v-5fc4dc01" slot="container-slot" id="myAchievement">我的成就页面</view></container>

@@ -415,6 +415,8 @@
 								} else {
 									this.navigatePage("../login/login");
 								}
+							}else {
+								// 取消
 							}
 						}
 					})				

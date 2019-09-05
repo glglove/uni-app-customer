@@ -1,4 +1,4 @@
-#login.data-v-42a7be3c {
+#ranklist.data-v-8e87e7d8 {
   width: 100%;
   height: 400px;
   position: absolute;
@@ -8,19 +8,8 @@
   bottom: 0;
   margin: auto;
 }
-#login .loginBox.data-v-42a7be3c {
-  width: 750rpx;
-  background-color: red;
-}
-#login .loginBtnBox.data-v-42a7be3c {
+#ranklist .calendarBox.data-v-8e87e7d8 {
+  height: 100%;
   width: 100%;
-  text-align: center;
-  margin-top: 20px;
-}
-#login .loginBtnBox .loginBtn.data-v-42a7be3c {
-  width: 90%;
-  height: 50px;
-  line-height: 50px;
-  margin: 0 auto;
 }
 

@@ -107,7 +107,7 @@
 	}
 </script>
 
-<style>
+<style lang="less" scoped>
 	.m-input-view {
 		display: inline-flex;
 		flex-direction: row;
@@ -115,20 +115,23 @@
 		/* width: 100%; */
 		flex: 1;
 		padding: 0 10px;
-	}
-
-	.m-input-input {
-		flex: 1;
-		width: 100%;
-		min-height: 100%;
-		line-height: inherit;
-		background-color: rgba(0, 0, 0, 0);
-	}
-
-	.m-input-icon {
-		width: 20px;
-		font-size: 20px;
-		line-height: 20px;
-		color: #666666;
+		.m-input-input {
+			flex: 1;
+			width: 100%;
+			min-height: 100%;
+			line-height: inherit;
+			background-color: rgba(0, 0, 0, 0);
+			.uni-input-wrapper {
+				.uni-input-placeholder {
+					font-size: 12px !important
+				}
+			}
+		}
+		.m-input-icon {
+			width: 20px;
+			font-size: 20px;
+			line-height: 20px;
+			color: #666666;
+		}		
 	}
 </style>

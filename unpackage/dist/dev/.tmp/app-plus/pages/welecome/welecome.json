@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "登录模板",
-  "usingComponents": {}
+  "usingComponents": {
+    "container": "/pages/components/container1/container"
+  }
 }
