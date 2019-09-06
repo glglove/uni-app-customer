@@ -83,7 +83,7 @@
 			width: 100%;
 			.oauth-image {
 				width: 100upx;
-				height: 100px;
+				height: 100upx;
 				border: 2upx solid #dddddd;
 				border-radius: 100upx;
 				margin: 0 40upx;
