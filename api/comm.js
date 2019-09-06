@@ -3,7 +3,7 @@ import http from '@/utils/http'
 export default {
 	/*
 	*
-	* 注册登录接口
+	* 注册登录接口（test）
 	* 
 	*/
 	async register (params, loading = false, loadingText = "加载中...") {
@@ -19,6 +19,26 @@ export default {
 	   })
 	},
 	
+	/*
+	*
+	* app端 登录/注册接口
+	* 
+	*/
+	async appLoginAndRegister (params, loading = false, loadingText = "加载中...") {
+		// debugger
+	   const url = `/app/customerApp/appLoginAndRegister`;
+	   var data = {}
+	   params = Object.assign(data, params)
+	   return http.post( url,{
+			...params
+	   },{
+		   loading,
+		   loadingText
+	   })
+	},	
+
+	 
+	 
 	/**
 	* 获取openId
 	* 

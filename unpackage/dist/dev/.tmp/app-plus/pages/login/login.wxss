@@ -112,7 +112,7 @@
 }
 #login .oauth-row .oauth-image.data-v-1fbda2ce {
   width: 100rpx;
-  height: 100px;
+  height: 100rpx;
   border: 2rpx solid #dddddd;
   border-radius: 100rpx;
   margin: 0 40rpx;

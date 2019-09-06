@@ -772,7 +772,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6976,7 +6976,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -6997,14 +6997,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7080,7 +7080,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -10186,11 +10186,11 @@ function getEnterType(typeNum) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 8));
-var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));var _register$getOpenId$o;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default = (_register$getOpenId$o = {
+var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));var _register$appLoginAnd;function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var _default = (_register$appLoginAnd = {
 
   /*
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             *
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 注册登录接口
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * 注册登录接口（test）
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             * 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             */
   register: function () {var _register = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(params) {var loading,loadingText,url,data,_args = arguments;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:loading = _args.length > 1 && _args[1] !== undefined ? _args[1] : false;loadingText = _args.length > 2 && _args[2] !== undefined ? _args[2] : "加载中...";
@@ -10206,13 +10206,33 @@ var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));
 
 
 
-  /**
-                                                                                                                                                                                                   * 获取openId
+  /*
+                                                                                                                                                                                                   *
+                                                                                                                                                                                                   * app端 登录/注册接口
                                                                                                                                                                                                    * 
-                                                                                                                                                                                                   * @param {code: 微信登录码code}  通过 uni.login() 获取code码后，通过uni.getUserInfo() 获取用户信息，然后 通过将 code码 和 getUserInfo 返回的的结果 作为 参数 调用此方法 获取token
-                                                                                                                                                                                                   * 
-                                                                                                                                                                                                   * @return {"code": 1, "message":"success", "data":{ "token":"UV3osCbt8XPnq1KNm9LUDw"}}
                                                                                                                                                                                                    */
+  appLoginAndRegister: function () {var _appLoginAndRegister = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(params) {var loading,loadingText,url,data,_args2 = arguments;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:loading = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : false;loadingText = _args2.length > 2 && _args2[2] !== undefined ? _args2[2] : "加载中...";
+              // debugger
+              url = "/app/customerApp/appLoginAndRegister";
+              data = {};
+              params = Object.assign(data, params);return _context2.abrupt("return",
+              _http.default.post(url, _objectSpread({},
+              params),
+              {
+                loading: loading,
+                loadingText: loadingText }));case 6:case "end":return _context2.stop();}}}, _callee2, this);}));function appLoginAndRegister(_x2) {return _appLoginAndRegister.apply(this, arguments);}return appLoginAndRegister;}(),
+
+
+
+
+
+  /**
+                                                                                                                                                                                                                                       * 获取openId
+                                                                                                                                                                                                                                       * 
+                                                                                                                                                                                                                                       * @param {code: 微信登录码code}  通过 uni.login() 获取code码后，通过uni.getUserInfo() 获取用户信息，然后 通过将 code码 和 getUserInfo 返回的的结果 作为 参数 调用此方法 获取token
+                                                                                                                                                                                                                                       * 
+                                                                                                                                                                                                                                       * @return {"code": 1, "message":"success", "data":{ "token":"UV3osCbt8XPnq1KNm9LUDw"}}
+                                                                                                                                                                                                                                       */
   getOpenId: function getOpenId(params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;var loadingText = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "加载中...";
     // debugger
     var url = "/app/customerApp/login";
@@ -10241,7 +10261,7 @@ var _http = _interopRequireDefault(__webpack_require__(/*! @/utils/http */ 26));
       loading: loading,
       loadingText: loadingText });
 
-  } }, _defineProperty(_register$getOpenId$o, "onlowerFresh", function onlowerFresh(
+  } }, _defineProperty(_register$appLoginAnd, "onlowerFresh", function onlowerFresh(
 
 
 
@@ -10257,7 +10277,7 @@ url, params) {var loading = arguments.length > 2 && arguments[2] !== undefined ?
     loading: loading,
     loadingText: loadingText });
 
-}), _defineProperty(_register$getOpenId$o, "saveFormIds", function saveFormIds(
+}), _defineProperty(_register$appLoginAnd, "saveFormIds", function saveFormIds(
 
 
 
@@ -10289,12 +10309,12 @@ params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? argu
     loading: loading,
     loadingText: loadingText });
 
-}), _defineProperty(_register$getOpenId$o, "upLoad", function () {var _upLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(
+}), _defineProperty(_register$appLoginAnd, "upLoad", function () {var _upLoad = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4(
 
 
 
-  params) {var _this = this;var loading,loadingText,_args3 = arguments;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:loading = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : false;loadingText = _args3.length > 2 && _args3[2] !== undefined ? _args3[2] : "上传中...";return _context3.abrupt("return",
-            new Promise( /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(resolve, reject) {var resInfo, data, i, paramsObj, resData;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+  params) {var _this = this;var loading,loadingText,_args4 = arguments;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:loading = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : false;loadingText = _args4.length > 2 && _args4[2] !== undefined ? _args4[2] : "上传中...";return _context4.abrupt("return",
+            new Promise( /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3(resolve, reject) {var resInfo, data, i, paramsObj, resData;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
                         resInfo = []; // 存放上传成功后返回来的数据的集合
                         data = {
                           url: "/app/fileMappedApp/upload",
@@ -10302,8 +10322,8 @@ params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? argu
 
                         params = Object.assign(data, params);if (!(
 
-                        params && params.tempFilePaths && params.tempFilePaths.length)) {_context2.next = 21;break;}
-                        i = 0;case 5:if (!(i < params.tempFilePaths.length)) {_context2.next = 16;break;}
+                        params && params.tempFilePaths && params.tempFilePaths.length)) {_context3.next = 21;break;}
+                        i = 0;case 5:if (!(i < params.tempFilePaths.length)) {_context3.next = 16;break;}
                         paramsObj = {
                           url: params.url,
                           tempFilePath: params.tempFilePaths[i],
@@ -10311,7 +10331,7 @@ params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? argu
 
                         console.log("上传图片/音频的接口地址 和单个图片的临时地址------------", paramsObj);
                         // 调用 上传的 方法
-                        _context2.next = 10;return _this.upload('file', paramsObj, loading);case 10:resData = _context2.sent;
+                        _context3.next = 10;return _this.upload('file', paramsObj, loading);case 10:resData = _context3.sent;
                         // 返回结果放入 resInfo 数组中
                         console.log(JSON.parse(resData));
                         if (resData && JSON.parse(resData).code == 1 && JSON.parse(resData).data) {
@@ -10330,14 +10350,14 @@ params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? argu
                             fail: function fail() {},
                             complete: function complete() {} });
 
-                        }case 13:i++;_context2.next = 5;break;case 16:
+                        }case 13:i++;_context3.next = 5;break;case 16:
 
                         resolve(resInfo);
-                        console.log("全部上传后打印后台返回的结果----------》", resInfo);return _context2.abrupt("return",
+                        console.log("全部上传后打印后台返回的结果----------》", resInfo);return _context3.abrupt("return",
                         resInfo);case 21:
 
-                        resolve(resInfo);return _context2.abrupt("return",
-                        resInfo);case 23:case "end":return _context2.stop();}}}, _callee2, this);}));return function (_x3, _x4) {return _ref.apply(this, arguments);};}()));case 3:case "end":return _context3.stop();}}}, _callee3, this);}));function upLoad(_x2) {return _upLoad.apply(this, arguments);}return upLoad;}()), _defineProperty(_register$getOpenId$o, "shairePic", function shairePic(
+                        resolve(resInfo);return _context3.abrupt("return",
+                        resInfo);case 23:case "end":return _context3.stop();}}}, _callee3, this);}));return function (_x4, _x5) {return _ref.apply(this, arguments);};}()));case 3:case "end":return _context4.stop();}}}, _callee4, this);}));function upLoad(_x3) {return _upLoad.apply(this, arguments);}return upLoad;}()), _defineProperty(_register$appLoginAnd, "shairePic", function shairePic(
 
 
 
@@ -10363,7 +10383,7 @@ params) {var loading = arguments.length > 1 && arguments[1] !== undefined ? argu
     loading: loading,
     loadingText: loadingText });
 
-}), _register$getOpenId$o);exports.default = _default;
+}), _register$appLoginAnd);exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
@@ -10452,8 +10472,9 @@ var _config2 = _interopRequireDefault(__webpack_require__(/*! @/api/config.js */
     */ // 设置一个 计数器, 当请求次数为0 时 才去 触发 allloading 的显示，当请求的数量 超过1时，也只触发 一次显示allloading，当请求都完成时，才触发结束 allloading 的显示
 var allloadingNum = 0;var _default = { config: { baseUrl: _config2.default.baseUrl, header: { 'Content-Type': 'application/json;charset=UTF-8' // 默认请求的content-Type 为 application/json
       // 'Content-Type':'application/x-www-form-urlencoded'
-    }, data: {}, loading: false, loadingText: '加载中', method: "POST", // 默认的 method
-    dataType: "json", /* 如设为json，会对返回的数据做一次 JSON.parse */responseType: "text", success: function success() {},
+    }, timeout: 30000, data: {}, loading: false, loadingText: '加载中', method: "POST", // 默认的 method
+    dataType: "json", /* 如设为json，会对返回的数据做一次 JSON.parse */responseType: "text",
+    success: function success() {},
     fail: function fail() {},
     complete: function complete() {} },
 
@@ -10550,6 +10571,7 @@ var allloadingNum = 0;var _default = { config: { baseUrl: _config2.default.baseU
     options.header = options.header || this.config.header;
     options.baseUrl = options.baseUrl || this.config.baseUrl;
     options.dataType = options.dataType || this.config.dataType;
+    options.timeout = options.timeout || this.config.timeout;
     options.url = options.baseUrl + options.url;
     options.data = options.data || {};
     options.loading = options.loading || this.config.loading;
