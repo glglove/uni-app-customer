@@ -383,6 +383,9 @@
             }
             var ZOOM = 13
             window.__chooseLocation__ = function(params) {
+				if(params && params.keyword) {
+					searchWordElem.value = params.keyword;
+				}
                 plusReady(function() {
                     serviceWebview = plus.webview.getWebviewById('__W2A_CONTEXT_') ||
                         plus.webview
@@ -418,7 +421,7 @@
                         }, function(err) {
                             console.log(err);
                         });
-                        searchNearbyPoi.poiSearchNearBy('', point, 1000);
+                        searchNearbyPoi.poiSearchNearBy(searchWordElem.value || '', point, 1000);
                     }, 10)
 
 

@@ -411,9 +411,9 @@
 								 * 如果需要强制登录，使用reLaunch方式
 								 */
 								if (this.forcedLogin) {
-									this.reLaunchPage("../login/login");
+									// this.reLaunchPage("../login/login");
 								} else {
-									this.navigatePage("../login/login");
+									// this.navigatePage("../login/login");
 								}
 							}else {
 								// 取消

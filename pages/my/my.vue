@@ -310,7 +310,8 @@
 			// 退出登陆
 			loginOut () {
 				//#ifdef H5 || APP-PLUS
-                this.loginOut();
+                // this.loginOut();
+				this.$store.dispatch("setUserToken", '')
 				//#endif
 				
 				//#ifdef MP-WEIXIN

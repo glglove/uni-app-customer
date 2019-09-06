@@ -100,7 +100,7 @@
 </style>
 
 <template>
-	<view id="login" slot="container-slot">
+	<view id="login">
 		<view class="input-group">
 			<view class="input-row border">
 				<text class="title">账号：</text>
@@ -250,10 +250,10 @@
                  * 检测用户账号密码是否在已注册的用户列表中
                  * 实际开发中，使用 uni.request 将账号信息发送至服务端，客户端在回调函数中获取结果信息。
                  */
-                const data = {
-					loginAccount: this.name,
-					password: this.password	
-                };
+     //            const data = {
+					// loginAccount: this.name,
+					// password: this.password	
+     //            };
 				
 				console.log("手机号码、密码注册登录时的 data",data)
 				//#ifdef APP-PLUS
@@ -321,10 +321,23 @@
      //            })
 	 
 	 
+				 let data = {
+					params: {
+						loginAccount: this.name,
+						password: this.password	 
+					}
+				 }
+	 
 				commApi.appLoginAndRegister( data ).then(res => {
 					debugger
-					if(res && res.code === 1){
+					console.log("app登陆成功后打印 res", res)
+					if(res.statusCode === 200 && res.data.code === 1){
+						let token = res.data.data.token
+						let customer = res.data.data.customer
+						// token 存入store 中
+						this.$store.dispatch("setUserToken", token)
 						this.toast("app登录成功")
+						this.switchPage("../find/find")
 					}
 				})
 				
