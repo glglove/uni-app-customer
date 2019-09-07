@@ -70,7 +70,7 @@ export default {
 			'Content-Type':'application/json;charset=UTF-8',  // 默认请求的content-Type 为 application/json
 			// 'Content-Type':'application/x-www-form-urlencoded'
 		},  
-		timeout: 30000,
+		timeout: 3000,
 		data: {},
 		loading: false,
 		loadingText: '加载中',
@@ -90,7 +90,7 @@ export default {
 		  const data = configs.data || {}
 		  // 主要控制是否loading
 		  const loading = configs.loading 
-		  if( configs.url === `${configs.baseUrl}/users/register` ){
+		  if( configs.url === `${configs.baseUrl}/users/register` || configs.url === `${configs.baseUrl}/app/customerApp/loginAndRegister` ){
 			  
 		  }else {
 			// 非登录接口时 需要接口中 统一加上 token 属性（根据业务需求来定）
