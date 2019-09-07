@@ -397,7 +397,7 @@
 				
 				//#ifdef H5 || APP-PLUS
 				// 判断是否登陆
-				if(!this.hasLogin){
+				if(!this.userToken){
 					this.getDeviceApi().showModal({
 						title: '未登录',
 						content: '您未登录，需要登录后才能继续',
