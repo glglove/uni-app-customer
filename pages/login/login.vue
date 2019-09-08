@@ -180,7 +180,18 @@
             }
         },
         computed: {
-			...mapGetters(['forcedLogin'])
+			...mapGetters(['forcedLogin','userToken'])
+		},
+		watch: {
+			userToken: {
+				handler(newValue, oldValue){
+					if(newValue){
+						// 页面调转到首页
+						this.switchPage("../find/find")
+					}
+				},
+				immediate: true
+			}
 		},
         onReady() {
             // 获取 设备屏幕的可视区高度
@@ -255,7 +266,7 @@
 					// password: this.password	
      //            };
 				
-				console.log("手机号码、密码注册登录时的 data",data)
+				// console.log("手机号码、密码注册登录时的 data",data)
 				//#ifdef APP-PLUS
 				uni.login({
 					success(res) {
@@ -320,26 +331,32 @@
      //                }
      //            })
 	 
+	 			let data = {
+					name: this.name,
+					password: this.password
+				}
+				console.log("手机号码、密码注册登录时的 data",data)
+				this.$store.dispatch("login", data)
+				 
+				// let data = {
+				// 	params: {
+				// 		loginAccount: this.name,
+				// 		password: this.password	 
+				// 	}
+				// }
 	 
-				 let data = {
-					params: {
-						loginAccount: this.name,
-						password: this.password	 
-					}
-				 }
-	 
-				commApi.appLoginAndRegister( data ).then(res => {
-					debugger
-					console.log("app登陆成功后打印 res", res)
-					if(res.statusCode === 200 && res.data.code === 1){
-						let token = res.data.data.token
-						let customer = res.data.data.customer
-						// token 存入store 中
-						this.$store.dispatch("setUserToken", token)
-						this.toast("app登录成功")
-						this.switchPage("../find/find")
-					}
-				})
+				// commApi.appLoginAndRegister( data ).then(res => {
+				// 	debugger
+				// 	console.log("app登陆成功后打印 res", res)
+				// 	if(res.statusCode === 200 && res.data.code === 1){
+				// 		let token = res.data.data.token
+				// 		let customer = res.data.data.customer
+				// 		// token 存入store 中
+				// 		this.$store.dispatch("setUserToken", token)
+				// 		this.toast("app登录成功")
+				// 		this.switchPage("../find/find")
+				// 	}
+				// })
 				
             },
 			// 授权登陆（微信、qq、微博）

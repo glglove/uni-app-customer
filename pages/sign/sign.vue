@@ -167,21 +167,23 @@
 				<swiper  autoplay="true" circular="true" interval="3000">
 					<swiper-item>
 						<navigator>
-							<!-- <image :src="require('@/static/imgs/icon/carousel_01.png')" mode="widthFix"></image> -->
-							<image 
+							<image :src="require('@/pages/packageA/static/imgs/carousel/carousel_01.png')" mode="widthFix"></image>
+<!-- 							<image 
 								:src="bg.sign_bg"
 								mode="widthFix">
-							</image>
+							</image> -->
 						</navigator>
 					</swiper-item>
 					<swiper-item>
 						<navigator>
-							图2
+							<!-- <image :src="require('@/pages/packageA/static/imgs/carousel/carousel_02.jpg')" mode="widthFix"></image> -->
+							图二
 						</navigator>
 					</swiper-item>		
 					<swiper-item>
 						<navigator>
-							图3
+							<!-- <image :src="require('@/pages/packageA/static/imgs/carousel/carousel_03.jpg')" mode="widthFix"></image> -->
+							图三
 						</navigator>
 					</swiper-item>						
 				</swiper>

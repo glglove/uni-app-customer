@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/welecome/welecome",
     "pages/find/find",
     "pages/sign/sign",
     "pages/my/my",
-    "pages/welecome/welecome",
     "pages/login/login",
     "pages/register/register",
     "pages/pwd/pwd",

@@ -47,6 +47,7 @@
     <container :loading1="loading1">
         <view id="welecome" slot="container-slot">
 			<!-- hasLogin: {{hasLogin}} -->
+			isHasLogin: {{isHasLogin}}
 <!-- 			<view v-if="hasLogin" class="welecome-logined">
                 <view class="title">
                     您好 {{userName}}，您已成功登录。
@@ -57,7 +58,7 @@
                 </view>
             </view> -->
             
-			<view v-if="!hasLogin" class="welecome-loginOut">
+			<view v-if="!isHasLogin" class="welecome-loginOut">
                 <view class="title">
                     您好 游客。
                 </view>
@@ -81,37 +82,56 @@
         computed: {
 			...mapGetters(['forcedLogin', 'hasLogin', 'userName'])
 		},
+		data(){
+			return {
+				isHasLogin: false
+			}
+		},
         onLoad() {
 			console.log("----",this.hasLogin)
-            if (!this.hasLogin) {
-                uni.showModal({
-                    title: '未登录',
-                    content: '您未登录，需要登录后才能继续',
-                    /**
-                     * 如果需要强制登录，不显示取消按钮
-                     */
-                    showCancel: !this.forcedLogin,
-                    success: (res) => {
-                        if (res.confirm) {
-							/**
-							 * 如果需要强制登录，使用reLaunch方式
-							 */
-                            if (this.forcedLogin) {
-                                uni.reLaunch({
-                                    url: '../login/login'
-                                });
-                            } else {
-                                uni.navigateTo({
-                                    url: '../login/login'
-                                });
-                            }
-                        }
-                    }
-                });
-            }else {
-				// this.navigatePage("../find/find")
+   //          if (!this.hasLogin) {
+   //              uni.showModal({
+   //                  title: '未登录',
+   //                  content: '您未登录，需要登录后才能继续',
+   //                  /**
+   //                   * 如果需要强制登录，不显示取消按钮
+   //                   */
+   //                  showCancel: !this.forcedLogin,
+   //                  success: (res) => {
+   //                      if (res.confirm) {
+			// 				/**
+			// 				 * 如果需要强制登录，使用reLaunch方式
+			// 				 */
+   //                          if (this.forcedLogin) {
+   //                              uni.reLaunch({
+   //                                  url: '../login/login'
+   //                              });
+   //                          } else {
+   //                              uni.navigateTo({
+   //                                  url: '../login/login'
+   //                              });
+   //                          }
+   //                      }
+   //                  }
+   //              });
+   //          }else {
+			// 	// this.navigatePage("../find/find")
+			// }
+        },
+		methods:{
+			onComLoad(){
+                // 判断 localStorage 中是否有 userToken 没有就跳到 登陆页面 
+                let userToken = this.getStorage("userToken")
+                if(userToken){
+					this.isHasLogin = true
+                    //跳到 find 首页
+                    this.switchPage("../find/find")
+                }else {
+                    // 跳到 登陆页面
+                    this.navigatePage("../login/login")
+                }
 			}
-        }
+		}
     }
 </script>
 

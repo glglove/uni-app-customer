@@ -1,6 +1,5 @@
 {
-  "navigationBarTitleText": "登录模板",
-  "usingComponents": {
-    "container": "/pages/components/container1/container"
-  }
+  "navigationBarTitleText": "欢迎页面",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
 }

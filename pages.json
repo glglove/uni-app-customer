@@ -1,5 +1,14 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// #ifdef APP-PLUS
+		{
+			"path" : "pages/welecome/welecome",
+			"style" : {
+				"navigationBarTitleText":"欢迎页面",
+				"enablePullDownRefresh":true
+			}
+		},
+		//#endif
 		{
 			"path" : "pages/find/find",
 			"style" : {
@@ -24,12 +33,6 @@
 		}		
 		// #ifdef H5 || APP-PLUS
 		,{
-            "path": "pages/welecome/welecome",
-            "style": {
-                "navigationBarTitleText": "登录模板"
-            }
-		},
-		{
             "path": "pages/login/login",
             "style": {
                 "navigationBarTitleText": "登录"
