@@ -122,9 +122,9 @@
 			onComLoad(){
 				debugger
                 // 判断 localStorage 中是否有 userToken 没有就跳到 登陆页面
-                let userToken = this.getStorage("userToken")
+                let userToken = uni.getStorageSync("userToken")
 				console.log("app 中的 welecome 页面onComLoad 中localStorage 中获取到的 userToken", userToken)
-                if(userToken){
+                if(userToken ){
 					this.isHasLogin = true
 					// 将userToken 赋值给 store-app 中存储
 					this.$store.dispatch("setUserToken", userToken)

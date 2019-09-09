@@ -105,6 +105,9 @@ const app = {
 					data: token,
 					success: function(res) {
 						console.log(`app中'userToken' 存入localstorage成功`)
+						let res_token = uni.getStorageSync("userToken")
+						debugger
+						console.log("-----------",res_token)
 					},
 					fail: function(){
 						console.log(`app 中 'userToken'存入localStorge失败 `)
