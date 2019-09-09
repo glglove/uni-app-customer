@@ -1,4 +1,4 @@
-#welecome.data-v-f830b49c {
+#welecome.data-v-c70ce24c {
   position: absolute;
   top: 0;
   left: 0;
@@ -6,7 +6,7 @@
   bottom: 0;
   margin: auto;
 }
-#welecome .welecome-logined.data-v-f830b49c {
+#welecome .welecome-logined.data-v-c70ce24c {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -21,19 +21,19 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-#welecome .welecome-logined .title.data-v-f830b49c {
+#welecome .welecome-logined .title.data-v-c70ce24c {
   color: #8f8f94;
   margin-top: 50rpx;
 }
-#welecome .welecome-logined .ul.data-v-f830b49c {
+#welecome .welecome-logined .ul.data-v-c70ce24c {
   font-size: 30rpx;
   color: #8f8f94;
   margin-top: 50rpx;
 }
-#welecome .welecome-logined .ul view.data-v-f830b49c {
+#welecome .welecome-logined .ul view.data-v-c70ce24c {
   line-height: 50rpx;
 }
-#welecome .welecome-loginOut.data-v-f830b49c {
+#welecome .welecome-loginOut.data-v-c70ce24c {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -48,16 +48,16 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-#welecome .welecome-loginOut .title.data-v-f830b49c {
+#welecome .welecome-loginOut .title.data-v-c70ce24c {
   color: #8f8f94;
   margin-top: 50rpx;
 }
-#welecome .welecome-loginOut .ul.data-v-f830b49c {
+#welecome .welecome-loginOut .ul.data-v-c70ce24c {
   font-size: 30rpx;
   color: #8f8f94;
   margin-top: 50rpx;
 }
-#welecome .welecome-loginOut .ul view.data-v-f830b49c {
+#welecome .welecome-loginOut .ul view.data-v-c70ce24c {
   line-height: 50rpx;
 }
 

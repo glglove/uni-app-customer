@@ -131,8 +131,9 @@
 			</view>
 			<view class="contentBox">
 				<view class="top clearfix marginT40">
-					<!-- avaterPic: {{avaterPic}} -->
-					<image class="photo" :src="avaterPic? avaterPic : photo_png" layz-load="true"></image>
+					<!-- photo_png: {{photo_png}}
+					set_png: {{set_png}} -->
+					<image class="photo" :src="photo_png" layz-load="true"></image>
 					<!-- <image class="photo" src="{{userAvatarUrl? userAvatarUrl : ''}}" layz-load="true"></image> -->
 					<text class="name">{{name? name:''}}</text>
 					<!-- <view class="setBox "> -->
@@ -231,6 +232,7 @@
         mapMutations
     } from 'vuex'
 	import myApi from '@/api/my.js'
+
 	export default {
 		mixins: [ miniProApi ],
         components: {
@@ -249,7 +251,6 @@
 				bg: {
 					my_bg: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.my_bg}`
 				},
-				avaterPic: '',
 				photo_png: photoPng,
 				set_png: setPng,
 				card_png: cardPng,
@@ -304,7 +305,7 @@
 				
 			},
 			// 登陆
-			bindLogin () {
+			bindLogin () {	
                 this.navigatePage("../login/login");
 			},	
 			// 退出登陆
@@ -312,6 +313,8 @@
 				//#ifdef H5 || APP-PLUS
                 // this.loginOut();
 				this.$store.dispatch("setUserToken", '')
+				// 清空locaStorage 中的 userToken
+				this.setStorage("userToken", "")
 				//#endif
 				
 				//#ifdef MP-WEIXIN
@@ -330,11 +333,11 @@
 			// 获取头像
 			async getAvaterPic() {
 				// debugger
-				console.log(this.getStorage("userInfo"))
+				// console.log(this.getStorage("userInfo"))
 				this.getStorage("userInfo").then(res => {
 					// console.log("------------",res)
 					if(res){
-						this.avaterPic = JSON.parse(res).headImg
+						this.photo_png = JSON.parse(res).headImg
 					}
 				})
 			},

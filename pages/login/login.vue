@@ -268,46 +268,46 @@
 				
 				// console.log("手机号码、密码注册登录时的 data",data)
 				//#ifdef APP-PLUS
-				uni.login({
-					success(res) {
-						debugger
-						console.log("app登录通过 uni.login 获取到的返回结果 res", res)
-						uni.getUserInfo({
-							success(res) {
-								debugger
-								console.log("app登录后通过 uni.getUerInfo 获取到的 返回结果res", res)
-								// 成功之后 进行 手机号、密码注册登录  
-								loginApi.register(data).then((res) => {
-									debugger
-									if(res && res.data.code === 1) {
-										this.success('登录成功')
-										// 成功后 
-										// debugger
-										// 将用户信息存入到store 中
-										if(res.data.user){
-											this.$store.dispatch('setUserToken', res.data.user.token || '')								
-										}
-										debugger
-										this.switchPage('../find/find').then((res) =>{
+				// uni.login({
+				// 	success(res) {
+				// 		debugger
+				// 		console.log("app登录通过 uni.login 获取到的返回结果 res", res)
+				// 		uni.getUserInfo({
+				// 			success(res) {
+				// 				debugger
+				// 				console.log("app登录后通过 uni.getUerInfo 获取到的 返回结果res", res)
+				// 				// 成功之后 进行 手机号、密码注册登录  
+				// 				loginApi.register(data).then((res) => {
+				// 					debugger
+				// 					if(res && res.data.code === 1) {
+				// 						this.success('登录成功')
+				// 						// 成功后 
+				// 						// debugger
+				// 						// 将用户信息存入到store 中
+				// 						if(res.data.user){
+				// 							this.$store.dispatch('setUserToken', res.data.user.token || '')								
+				// 						}
+				// 						debugger
+				// 						this.switchPage('../find/find').then((res) =>{
 											
-										}).catch(()=>{
+				// 						}).catch(()=>{
 											
-										})
-									}else {
-										this.hideLoading();
-										this.toast("用户账号或密码不正确")
-									}
-								})								
-							},
-							fail(res) {
-								debugger
-							}
-						})
-					},
-					fail(res) {
-						debugger
-					}
-				})
+				// 						})
+				// 					}else {
+				// 						this.hideLoading();
+				// 						this.toast("用户账号或密码不正确")
+				// 					}
+				// 				})								
+				// 			},
+				// 			fail(res) {
+				// 				debugger
+				// 			}
+				// 		})
+				// 	},
+				// 	fail(res) {
+				// 		debugger
+				// 	}
+				// })
 				//#endif
      //            loginApi.register(data).then((res) => {
 					// // debugger

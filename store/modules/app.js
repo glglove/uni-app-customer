@@ -58,6 +58,7 @@ const app = {
 	// 设置用户 token
     [types.setUserToken] (state, str) {
 		// debugger
+		debugger
 		state.userToken = str
 		state.hasLogin = true
     },
@@ -82,6 +83,7 @@ const app = {
 	},
 	// 登陆
 	[types.LOGIN] ( state, opt ) {
+		debugger
 		let data = {
 			params: {
 				loginAccount: opt.name,
@@ -89,6 +91,7 @@ const app = {
 			}
 		}
 		commApi.appLoginAndRegister(data).then(res => {
+			debugger
 			console.log("store中 app登陆后返回的res", res)
 			if(res.statusCode === 200 && res.data.code === 1){
 				let token = res.data.data.token
@@ -98,13 +101,13 @@ const app = {
 				state.userId = customer.id
 				// token 存入 localStorage 中 后续 app 启动后 通过 判断 localStorage 中是否有 这个 token 来判断是进入到 登陆页面还是 首页
 				uni.setStorage({
-					key: userToken,
+					key: 'userToken',
 					data: token,
 					success: function(res) {
-						console.log(`app中${userToken} 存入localstorage成功`)
+						console.log(`app中'userToken' 存入localstorage成功`)
 					},
 					fail: function(){
-						console.log(`app 中 ${userToken}存入localStorge失败 `)
+						console.log(`app 中 'userToken'存入localStorge失败 `)
 					}
 				})
 			}			
@@ -128,6 +131,7 @@ const app = {
 	// 登陆
 	login({commit, state}, opt = {}){
 		// return new Promise((resolve, reject) => {
+			debugger
 			commit( types.LOGIN, opt )
 		// })
 	},
