@@ -6,7 +6,7 @@
 	// right: 0;
 	// bottom: 0;
 	// margin: auto;	
-	min-height: 1110upx;
+	// min-height: 1110upx;
 	background-color: rgba(251,250,249,1);
 	.bgBox {
 		width: 100%;
@@ -31,7 +31,7 @@
 			width: 100%;
 			height: 100%;
 		}
-		.itemBox {
+		.itemListBox {
 			width: 100%;
 			// height: 200upx;
 			.itemlist {
@@ -189,7 +189,8 @@
 				</swiper>
 			</view>
 			
-			<view class="contentBox">
+			<view :class="['contentBox', !lessonList.length? 'not_found' : '']" :style="signContentBoxHeight">
+				<!-- signContentBoxHeight: {{signContentBoxHeight}} -->
 				<!--<scroll-view 
 					:scroll-top="scrollTop" 
 					scroll-y="true" 
@@ -197,7 +198,7 @@
 					@scrolltoupper="upper" 
 					@scrolltolower="lower"
 					@scroll="scroll"> -->
-					<view class="itemBox" >
+					<view class="itemListBox" >
 						<!-- <p class="scroll-view-item" v-for="(lessonItem,key) in arrData" :key="key">打卡开始时间：{{lessonItem.clockEndDate}}</p>	 -->
 						<view>
 							<form id="item_formId" report-submit="true" bindsubmit="formSubmit">
@@ -245,7 +246,9 @@
 											
 											
 						<!--loadMore-->
-						<load-more :loadingType="1"></load-more>																																
+						<view class="loadingMore" v-if="loadingMoreShow">
+							<load-more :loadingType="1" :status="loadingStatus"></load-more>																																
+						</view>
 					</view>
                 <!-- </scroll-view>				 -->
 			</view>
@@ -258,17 +261,22 @@
 	import { miniProApi } from '@/utils/mixins.js'
 	import LoadMore from '@/pages/components/uni-load-more/uni-load-more'
 	import signApi from '@/api/sign.js'
+	import {mapGetters} from 'vuex'
 	export default {
 		mixins: [ miniProApi ],
 		components:{
 			LoadMore
 		},
+		computed: {
+
+		},
 		data() {
 			return {
-				lessonList: [],
+				lessonList: [],  // 课程列表集合
 				bg: {
 					'sign_bg': `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.sign_bg}`
 				},
+				loadingStatus: "loading", // 上拉的状态：more-loading前；loading-loading中；noMore-没有更多了 
 				arrData: [
 					{
 						clockEndDate:"2019-09-09"
@@ -379,6 +387,7 @@
 			}
 		},
 		onLoad() {
+			this.signContentBoxHeight = `min-height: ${this.pHeight - 150}px`
 			this.getLessonList()
 		},
 		methods: {

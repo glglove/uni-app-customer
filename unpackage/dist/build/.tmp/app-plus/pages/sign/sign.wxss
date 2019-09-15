@@ -1,0 +1,140 @@
+#sign.data-v-38519334 {
+  background-color: #fbfaf9;
+}
+#sign .bgBox.data-v-38519334 {
+  width: 100%;
+  height: 400rpx;
+}
+#sign .bgBox .bgpic.data-v-38519334 {
+  width: 100%;
+}
+#sign .contentBox.data-v-38519334 {
+  width: 686rpx;
+  padding: 45rpx 30rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 1rpx;
+  margin: 0 auto;
+}
+#sign .contentBox .scroll-view-y.data-v-38519334 {
+  width: 100%;
+  height: 100%;
+}
+#sign .contentBox .itemListBox.data-v-38519334 {
+  width: 100%;
+}
+#sign .contentBox .itemListBox .itemlist.data-v-38519334 {
+  height: 270rpx;
+  border: 1px solid rgba(252, 213, 190, 0.3);
+  border-top-left-radius: 28rpx;
+  border-top-right-radius: 28rpx;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  -webkit-box-shadow: 0 4rpx 20rpx 4rpx rgba(255, 0, 0, 0.1);
+          box-shadow: 0 4rpx 20rpx 4rpx rgba(255, 0, 0, 0.1);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#sign .contentBox .itemListBox .itemlist.shadow.data-v-38519334 {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#000));
+  background: -o-linear-gradient(top, #ccc, #000);
+  background: linear-gradient(top, #ccc, #000);
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top.data-v-38519334 {
+  position: relative;
+  width: 100%;
+  height: 150rpx;
+  border-bottom: 1px dashed rgba(250, 160, 107, 0.7);
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .lessonTit.data-v-38519334 {
+  height: 48rpx;
+  font-size: 34rpx;
+  color: #000000;
+  line-height: 48rpx;
+  font-weight: blod;
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signTimeZone.data-v-38519334 {
+  height: 33rpx;
+  font-size: 24rpx;
+  color: #888C91;
+  line-height: 33rpx;
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signTimes.data-v-38519334 {
+  height: 33rpx;
+  font-size: 24rpx;
+  color: #888C91;
+  line-height: 33rpx;
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn.data-v-38519334 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 164rpx;
+  height: 70rpx;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.data-v-38519334 {
+  height: 100%;
+  width: 100%;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(250, 153, 96, 0.4)), to(#fa9960));
+  background: -o-linear-gradient(left, rgba(250, 153, 96, 0.4), #fa9960);
+  background: linear-gradient(to right, rgba(250, 153, 96, 0.4), #fa9960);
+  border-radius: 50rpx;
+  padding: 0 !important;
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.alreadySign.data-v-38519334 {
+  color: #000000;
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.already_end.data-v-38519334 {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.08)), to(rgba(0, 0, 0, 0.2)));
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2));
+  color: #000000;
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.not_begin.data-v-38519334 {
+  color: #242F42;
+}
+#sign .contentBox .itemListBox .itemlist .listBoxBottom.data-v-38519334 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30rpx 0;
+}
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item.data-v-38519334 {
+  text-align: center;
+  padding: 0;
+  background-color: transparent;
+  line-height: 0;
+}
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item.border-right.data-v-38519334 {
+  border-right: 1rpx solid silver;
+  border-radius: 0;
+  width: 33%;
+  text-align: left;
+}
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item .flex_item_pic.data-v-38519334 {
+  display: inline-block;
+  width: 40rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item .flex_item_tit.data-v-38519334 {
+  display: inline-block;
+  height: 33rpx;
+  line-height: 33rpx;
+  text-align: center;
+  color: #000000;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+

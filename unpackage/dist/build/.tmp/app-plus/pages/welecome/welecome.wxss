@@ -1,0 +1,63 @@
+#welecome.data-v-65e7035f {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+#welecome .welecome-logined.data-v-65e7035f {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#welecome .welecome-logined .title.data-v-65e7035f {
+  color: #8f8f94;
+  margin-top: 50rpx;
+}
+#welecome .welecome-logined .ul.data-v-65e7035f {
+  font-size: 30rpx;
+  color: #8f8f94;
+  margin-top: 50rpx;
+}
+#welecome .welecome-logined .ul view.data-v-65e7035f {
+  line-height: 50rpx;
+}
+#welecome .welecome-loginOut.data-v-65e7035f {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#welecome .welecome-loginOut .title.data-v-65e7035f {
+  color: #8f8f94;
+  margin-top: 50rpx;
+}
+#welecome .welecome-loginOut .ul.data-v-65e7035f {
+  font-size: 30rpx;
+  color: #8f8f94;
+  margin-top: 50rpx;
+}
+#welecome .welecome-loginOut .ul view.data-v-65e7035f {
+  line-height: 50rpx;
+}
+
