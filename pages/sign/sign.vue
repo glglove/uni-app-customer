@@ -163,7 +163,7 @@
 			<view class="uni-swiper-msg">
 				<!--<view class="uni-swiper-msg-icon">
 					<image :src="bg.sign_bg" mode="widthFix"></image>
-				</view> -->
+				</view> -->			
 				<swiper  autoplay="true" circular="true" interval="3000">
 					<swiper-item>
 						<navigator>
@@ -267,7 +267,9 @@
 			LoadMore
 		},
 		computed: {
-
+			signContentBoxHeight() {
+				return `height: ${this.pHeight - 150}px`
+			}
 		},
 		data() {
 			return {
@@ -389,13 +391,17 @@
 			}
 		},
 		onLoad() {
-			this.signContentBoxHeight = `min-height: ${this.pHeight - 150}px`
+			// this.signContentBoxHeight = `height: ${this.pHeight - 150}px`
+			console.log("-------------sign.vue中signContentBoxHeight",this.signContentBoxHeight)
 			this.getLessonList()
+		},
+		onShow() {
+			
 		},
 		methods: {
 			//onload 之前的 生命周期
 			onComLoad () {
-
+				
 			},
 			// 刷新页面
 			refreshPage() {

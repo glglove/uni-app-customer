@@ -106,9 +106,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 11));
-var _miniProSceneType = _interopRequireDefault(__webpack_require__(/*! @/utils/miniProSceneType */ 23));
-var _deviceApi = __webpack_require__(/*! @/utils/deviceApi.js */ 24);
-var _comm = _interopRequireDefault(__webpack_require__(/*! @/api/comm.js */ 25));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
+var _miniProSceneType = _interopRequireDefault(__webpack_require__(/*! @/utils/miniProSceneType */ 31));
+var _deviceApi = __webpack_require__(/*! @/utils/deviceApi.js */ 32);
+var _comm = _interopRequireDefault(__webpack_require__(/*! @/api/comm.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
 
 var self = '';var _default =
 {
@@ -175,13 +175,17 @@ var self = '';var _default =
               // })
             case 8:case "end":return _context3.stop();}}}, _callee3, this);}));function onLaunch() {return _onLaunch.apply(this, arguments);}return onLaunch;}(),
 
+
+
+
+
+
   onShow: function onShow() {
     console.log('App Show');
 
   },
   onHide: function onHide() {
     console.log('App Hide');
-
   },
   methods: {
     // 检查是否有版本更新
@@ -442,7 +446,19 @@ var self = '';var _default =
 
 
                             console.log(_context7.t0);
-                            reject(_context7.t0);case 11:case "end":return _context7.stop();}}}, _callee7, this, [[0, 7]]);}));return function (_x4, _x5) {return _ref3.apply(this, arguments);};}()));case 1:case "end":return _context8.stop();}}}, _callee8, this);}));function authorizeAfter_login() {return _authorizeAfter_login.apply(this, arguments);}return authorizeAfter_login;}() } };exports.default = _default;
+                            reject(_context7.t0);case 11:case "end":return _context7.stop();}}}, _callee7, this, [[0, 7]]);}));return function (_x4, _x5) {return _ref3.apply(this, arguments);};}()));case 1:case "end":return _context8.stop();}}}, _callee8, this);}));function authorizeAfter_login() {return _authorizeAfter_login.apply(this, arguments);}return authorizeAfter_login;}(),
+
+
+
+    // app 检测localStorage 中是否有userToken
+    appCheckLocalStorageToken: function appCheckLocalStorageToken() {
+      return new Promise(function (resolve, reject) {
+        var res_localStorage = uni.getStorageSync("userToken");
+        if (res_localStorage) {
+          _index.default.dispatch("setUserToken", res_localStorage);
+        }
+      });
+    } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })

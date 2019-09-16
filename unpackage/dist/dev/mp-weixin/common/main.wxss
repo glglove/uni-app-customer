@@ -357,7 +357,7 @@ image {
 }
 .not_found {
   position: relative;
-  z-index: 1100;
+  z-index: 1;
 }
 .not_found::before {
   content: '';
