@@ -76,14 +76,18 @@
 			// 	}
 			// })
 			// #endif
+			
+			// #ifdef APP-PLUS
+			// app 检测 localstorage 中是否有 userToken
+			this.appCheckLocalStorageToken()
+			//#endif
 		},
 		onShow: function() {
 			console.log('App Show')
 				
 		},
 		onHide: function() {
-			console.log('App Hide')
-			
+			console.log('App Hide')	
 		},
 		methods:{
 			// 检查是否有版本更新
@@ -347,7 +351,16 @@
 						reject(error)
 					}
 				}) 
-			}			
+			},
+			// app 检测localStorage 中是否有userToken
+			appCheckLocalStorageToken() {
+				return new Promise((resolve, reject) => {
+					let res_localStorage = uni.getStorageSync("userToken")
+					if(res_localStorage){
+						store.dispatch("setUserToken", res_localStorage)
+					}
+				})
+			}
 		}
 	}
 </script>
