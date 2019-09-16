@@ -39,6 +39,9 @@
         // certificate: '/img/certificate.png', // 证书图片
         certificate: '/img/certificate_gaitubao_com_343x497.png', // 证书图片
         // joinSign_bg: '/img/joinSign_bg.png',   // 立即打卡页面背景图片
+		carousel_01: '/carousel_01.png', // 打卡页面的轮播图01
+		carousel_02: '/carousel_02.jpg', // 打卡页面的轮播图02
+		carousel_03: '/carousel_03.jpg', // 打卡页面的轮播图03
         joinSign_bg: '/img/joinSign_bg_gaitubao_com_375x667.png',   // 立即打卡页面背景图片
         submitTaskSuccess: '/img/submitTaskSuccess.png', // 提交作业成功后的背景图片
         signUp_detail_content: '/img/signUp_detail_content.png', // 报名课程详情页中的内容图片02

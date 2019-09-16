@@ -167,7 +167,7 @@
 				<swiper  autoplay="true" circular="true" interval="3000">
 					<swiper-item>
 						<navigator>
-							<image :src="require('@/pages/packageA/static/imgs/carousel/carousel_01.png')" mode="widthFix"></image>
+							<image :src="carousel_01" mode="widthFix"></image>
 <!-- 							<image 
 								:src="bg.sign_bg"
 								mode="widthFix">
@@ -175,15 +175,14 @@
 						</navigator>
 					</swiper-item>
 					<swiper-item>
+						
 						<navigator>
-							<!-- <image :src="require('@/pages/packageA/static/imgs/carousel/carousel_02.jpg')" mode="widthFix"></image> -->
-							图二
+							<image :src="carousel_02" mode="widthFix"></image>
 						</navigator>
 					</swiper-item>		
 					<swiper-item>
 						<navigator>
-							<!-- <image :src="require('@/pages/packageA/static/imgs/carousel/carousel_03.jpg')" mode="widthFix"></image> -->
-							图三
+							<image :src="carousel_03" mode="widthFix"></image>
 						</navigator>
 					</swiper-item>						
 				</swiper>
@@ -276,6 +275,9 @@
 				bg: {
 					'sign_bg': `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.sign_bg}`
 				},
+				carousel_01: `${this.$configs.baseImgsUrl + this.$configs.baseUrlConfigs.imgs_bg.carousel_01}`,
+				carousel_02: `${this.$configs.baseImgsUrl + this.$configs.baseUrlConfigs.imgs_bg.carousel_02}`,
+				carousel_03: `${this.$configs.baseImgsUrl + this.$configs.baseUrlConfigs.imgs_bg.carousel_03}`,
 				loadingStatus: "loading", // 上拉的状态：more-loading前；loading-loading中；noMore-没有更多了 
 				arrData: [
 					{

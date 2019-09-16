@@ -70,7 +70,7 @@ export default {
 			'Content-Type':'application/json;charset=UTF-8',  // 默认请求的content-Type 为 application/json
 			// 'Content-Type':'application/x-www-form-urlencoded'
 		},  
-		timeout: 3000,
+		timeout: 30000,
 		data: {},
 		loading: false,
 		loadingText: '加载中',
