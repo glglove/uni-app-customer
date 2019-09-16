@@ -15,7 +15,8 @@ export const miniProApi = {
 		return {
 			pHeight: 0, // container 组件的 高，从系统中获取
 			containerAllloading: false,
-			containerLoading: false,
+			containerLoading: false,  
+			loadingMoreShow: false, // 控制 loadingMore 组件的显示/隐藏
 			total: 0, // 总页数
 			pageSize: 10, // 每页数目
 			pageNum: 1  // 页码

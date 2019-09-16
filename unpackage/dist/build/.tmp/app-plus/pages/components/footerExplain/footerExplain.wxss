@@ -1,0 +1,26 @@
+.footerExplain.data-v-1fc1d6fc {
+  position: absolute;
+  bottom: 0rpx;
+  width: 100%;
+}
+.footerExplain .footer.data-v-1fc1d6fc {
+  height: 20rpx;
+  width: 90%;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #ccc;
+  border-bottom: 1rpx solid #ddd;
+  margin: 20rpx auto 40rpx auto;
+  text-align: center;
+}
+.footerExplain .footer .footText.data-v-1fc1d6fc {
+  font-size: 24rpx;
+  padding: 0 20rpx;
+}
+.footerExplain .footer .version.data-v-1fc1d6fc {
+  font-size: 20rpx;
+  color: #ccc;
+  text-align: right;
+  opacity: 0.3;
+}
+

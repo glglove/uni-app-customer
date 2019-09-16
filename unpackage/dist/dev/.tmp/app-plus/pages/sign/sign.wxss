@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 #sign.data-v-61b32b1a {
   min-height: 1110rpx;
+=======
+#sign.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   background-color: #fbfaf9;
 }
 #sign .bgBox.data-v-61b32b1a {
@@ -21,10 +25,17 @@
   width: 100%;
   height: 100%;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox.data-v-61b32b1a {
   width: 100%;
 }
 #sign .contentBox .itemBox .itemlist.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox.data-v-b49ccc1c {
+  width: 100%;
+}
+#sign .contentBox .itemListBox .itemlist.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   height: 270rpx;
   border: 1px solid rgba(252, 213, 190, 0.3);
   border-top-left-radius: 28rpx;
@@ -36,37 +47,61 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist.shadow.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist.shadow.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#000));
   background: -o-linear-gradient(top, #ccc, #000);
   background: linear-gradient(top, #ccc, #000);
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   position: relative;
   width: 100%;
   height: 150rpx;
   border-bottom: 1px dashed rgba(250, 160, 107, 0.7);
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top .lessonTit.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top .lessonTit.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   height: 48rpx;
   font-size: 34rpx;
   color: #000000;
   line-height: 48rpx;
   font-weight: blod;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top .signTimeZone.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top .signTimeZone.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   height: 33rpx;
   font-size: 24rpx;
   color: #888C91;
   line-height: 33rpx;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top .signTimes.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top .signTimes.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   height: 33rpx;
   font-size: 24rpx;
   color: #888C91;
   line-height: 33rpx;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top .signBtn.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   position: absolute;
   top: 50%;
   right: 0;
@@ -76,7 +111,11 @@
       transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top .signBtn .sign-button.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   height: 100%;
   width: 100%;
   line-height: 70rpx;
@@ -88,19 +127,33 @@
   border-radius: 50rpx;
   padding: 0 !important;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top .signBtn .sign-button.alreadySign.data-v-61b32b1a {
   color: #000000;
 }
 #sign .contentBox .itemBox .itemlist .listBox-top .signBtn .sign-button.already_end.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.alreadySign.data-v-b49ccc1c {
+  color: #000000;
+}
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.already_end.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.08)), to(rgba(0, 0, 0, 0.2)));
   background: -o-linear-gradient(left, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2));
   background: linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2));
   color: #000000;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBox-top .signBtn .sign-button.not_begin.data-v-61b32b1a {
   color: #242F42;
 }
 #sign .contentBox .itemBox .itemlist .listBoxBottom.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBox-top .signBtn .sign-button.not_begin.data-v-b49ccc1c {
+  color: #242F42;
+}
+#sign .contentBox .itemListBox .itemlist .listBoxBottom.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,25 +164,41 @@
           justify-content: space-between;
   margin: 30rpx 0;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBoxBottom .flex_item.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   text-align: center;
   padding: 0;
   background-color: transparent;
   line-height: 0;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBoxBottom .flex_item.border-right.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item.border-right.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   border-right: 1rpx solid silver;
   border-radius: 0;
   width: 33%;
   text-align: left;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBoxBottom .flex_item .flex_item_pic.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item .flex_item_pic.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   display: inline-block;
   width: 40rpx;
   height: 30rpx;
   vertical-align: middle;
 }
+<<<<<<< HEAD
 #sign .contentBox .itemBox .itemlist .listBoxBottom .flex_item .flex_item_tit.data-v-61b32b1a {
+=======
+#sign .contentBox .itemListBox .itemlist .listBoxBottom .flex_item .flex_item_tit.data-v-b49ccc1c {
+>>>>>>> 53ddc29ee50e707450392a6d3e1b14bffec00224
   display: inline-block;
   height: 33rpx;
   line-height: 33rpx;

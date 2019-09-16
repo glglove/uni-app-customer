@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "打卡",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "container": "/pages/components/container1/container",
+    "load-more": "/pages/components/uni-load-more/uni-load-more"
+  }
+}

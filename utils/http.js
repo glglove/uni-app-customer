@@ -111,7 +111,7 @@ export default {
 					confirmText: '登陆',
 					success: res => {
 						uni.navigateTo({
-							url: '../pages/login/login.vue',
+							url: '../login/login',
 							success: res => {
 								console.log("调转到了登陆页面")
 							},

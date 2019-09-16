@@ -132,7 +132,7 @@
                     this.switchPage("../find/find")
                 }else {
                     // 跳到 登陆页面
-                    this.navigatePage("../login/login")
+                    this.reLaunchPage("../login/login")
                 }
 			}
 		}

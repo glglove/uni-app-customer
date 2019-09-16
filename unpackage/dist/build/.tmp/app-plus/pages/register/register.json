@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "注册",
+  "usingComponents": {
+    "container": "/pages/components/container1/container",
+    "m-input": "/pages/components/m-input/m-input"
+  }
+}
