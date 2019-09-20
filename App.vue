@@ -236,20 +236,20 @@
 						// debugger
 						// 先登陆 uni.login();
 						// let {code } = await uni.login();  //通过调用uni.login()获取code 判断是否开始登录
-						let code = ''
+						let code_loginRes = ''
 						await uni.login({
 							success: async(res) => {
-								// debugger
+								debugger
 								console.log("-----打印uni.login()登录后返回的code------",res.code)
-								code = res.code
+								code_loginRes = res.code
 
-								if(code){
+								if(code_loginRes){
 									let userInfo= await uni.getUserInfo({
 										lang: "zh_CN"
 									})
 									
 									console.log("-----授权后通过uni.getUserInfo()获取用户信息返回的结果-----：", userInfo[1])
-									// debugger
+									debugger
 									let {
 										iv,
 										encryptedData,
@@ -261,7 +261,7 @@
 								
 									let params = {
 										params: {
-											code: code,
+											code: code_loginRes,
 											encryptedData: encryptedData,
 											iv: iv,
 											type: '' //0是扫码，1是点击分享图，2.微信上搜索的

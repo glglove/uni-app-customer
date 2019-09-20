@@ -324,7 +324,7 @@ var self = '';var _default =
 
 
 
-                new Promise( /*#__PURE__*/function () {var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(resolve, reject) {var code;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:_context7.prev = 0;
+                new Promise( /*#__PURE__*/function () {var _ref3 = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee7(resolve, reject) {var code_loginRes;return _regenerator.default.wrap(function _callee7$(_context7) {while (1) {switch (_context7.prev = _context7.next) {case 0:_context7.prev = 0;
 
                             console.log('---调用login方法---');
                             // let token = that.getDeviceApi().getStorageSync('token') || '';    
@@ -334,21 +334,21 @@ var self = '';var _default =
                             // debugger
                             // 先登陆 uni.login();
                             // let {code } = await uni.login();  //通过调用uni.login()获取code 判断是否开始登录
-                            code = '';_context7.next = 5;return (
+                            code_loginRes = '';_context7.next = 5;return (
                               uni.login({
                                 success: function () {var _success = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6(res) {var userInfo, _userInfo$, iv, encryptedData, signature, rawData, params;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
-                                            // debugger
+                                            debugger;
                                             console.log("-----打印uni.login()登录后返回的code------", res.code);
-                                            code = res.code;if (!
+                                            code_loginRes = res.code;if (!
 
-                                            code) {_context6.next = 12;break;}_context6.next = 5;return (
+                                            code_loginRes) {_context6.next = 14;break;}_context6.next = 6;return (
                                               uni.getUserInfo({
-                                                lang: "zh_CN" }));case 5:userInfo = _context6.sent;
+                                                lang: "zh_CN" }));case 6:userInfo = _context6.sent;
 
 
                                             console.log("-----授权后通过uni.getUserInfo()获取用户信息返回的结果-----：", userInfo[1]);
-                                            // debugger
-                                            _userInfo$ =
+                                            debugger;_userInfo$ =
+
 
 
 
@@ -359,7 +359,7 @@ var self = '';var _default =
 
                                             params = {
                                               params: {
-                                                code: code,
+                                                code: code_loginRes,
                                                 encryptedData: encryptedData,
                                                 iv: iv,
                                                 type: '' //0是扫码，1是点击分享图，2.微信上搜索的
@@ -426,7 +426,7 @@ var self = '';var _default =
                                                     console.log("---------调用后台login接口后返回的状态有问题-------");
                                                   }
                                               }
-                                            }).then( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:case "end":return _context5.stop();}}}, _callee5, this);})));_context6.next = 14;break;case 12:
+                                            }).then( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:case "end":return _context5.stop();}}}, _callee5, this);})));_context6.next = 16;break;case 14:
 
 
 
@@ -436,7 +436,7 @@ var self = '';var _default =
 
 
                                             reject("---登陆微信后台 wx.login() 接口返回异常---");
-                                            console.log('---登陆微信后台 wx.login() 接口返回异常---');case 14:case "end":return _context6.stop();}}}, _callee6, this);}));function success(_x6) {return _success.apply(this, arguments);}return success;}(),
+                                            console.log('---登陆微信后台 wx.login() 接口返回异常---');case 16:case "end":return _context6.stop();}}}, _callee6, this);}));function success(_x6) {return _success.apply(this, arguments);}return success;}(),
 
 
                                 fail: function fail(error) {

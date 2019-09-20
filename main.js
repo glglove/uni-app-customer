@@ -18,6 +18,18 @@ Vue.prototype.$configs = configs
 Vue.prototype.$http = http
 Vue.prototype.$store = store
 Vue.prototype.$bus = new Vue()
+// 原型上面 添加一个 监测登陆的方法
+Vue.prototype.$isLogined = function(toPageUrl, jumpType){
+	// toPageUrl 为 需要跳转的地址   jumpType 为跳转的方式： switch   redirect  relanch navigate
+	let token = uni.getStorageSync("userToken")
+	if(token){
+		// 已登陆
+	}else {
+		// 未登陆
+		
+	}
+}
+
 
 App.mpType = 'app'
 
