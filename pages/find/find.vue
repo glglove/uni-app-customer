@@ -1,6 +1,6 @@
 <style lang="less" scoped>
 	uni-page-wrapper{
-		height: calc(100% - 50px);
+		// height: calc(100% - 50px);
 	}
 	#findBox{
 		position: absolute;

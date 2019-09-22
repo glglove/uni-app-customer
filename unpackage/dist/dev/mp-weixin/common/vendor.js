@@ -29,15 +29,22 @@ _vue.default.prototype.$http = _http.default;
 _vue.default.prototype.$store = _store.default;
 _vue.default.prototype.$bus = new _vue.default();
 // 原型上面 添加一个 监测登陆的方法
-_vue.default.prototype.$isLogined = function (toPageUrl, jumpType) {
-  // toPageUrl 为 需要跳转的地址   jumpType 为跳转的方式： switch   redirect  relanch navigate
+_vue.default.prototype.checkLogin = function (toPageUrl, jumpType) {
+  // toPageUrl 为 需要跳转的地址   jumpType 为跳转的方式： 1:switch   2:redirect  3:relanch 4:navigate
   var token = uni.getStorageSync("userToken");
   if (token) {
     // 已登陆
   } else {
-      // 未登陆
+    // 未登陆
+    uni.redirectTo({
+      url: "'./pages/login/login?toPageUrl=' + toPageUrl + '?jumpType=' + jumpType" });
 
-    }
+    return false;
+  }
+  // 最终可以返回 token等
+  return {
+    token: token };
+
 };
 
 
@@ -782,7 +789,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -6994,7 +7001,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7015,14 +7022,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7098,7 +7105,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -9953,12 +9960,13 @@ var allloadingNum = 0;var _default = { config: { baseUrl: _config2.default.baseU
     // 默认统一的请求拦截函数
     request: function request(configs) {
       // 将请求的参数中 默认增加 token
-      //   debugger
+      // debugger
+      console.log(configs);
       var data = configs.data || {};
       // 主要控制是否loading
       var loading = configs.loading;
       if (configs.url === "".concat(configs.baseUrl, "/users/register") || configs.url === "".concat(configs.baseUrl, "/app/customerApp/loginAndRegister")) {
-
+        // 小程序登陆接口 和app 注册登陆接口
       } else {
         // 非登录接口时 需要接口中 统一加上 token 属性（根据业务需求来定）
         var token = _index.default.getters.userToken;
@@ -10091,11 +10099,19 @@ var allloadingNum = 0;var _default = { config: { baseUrl: _config2.default.baseU
         // 统一的响应日志记录
         _reslog(response);
 
+        console.log("打印请求完成后的相应状态statusCode", statusCode);
         if (statusCode === 200) {//成功
           // debugger
           resolve(response);
         } else {
+          // 失败
           reject(response);
+          uni.showToast({
+            title: '网络请求失败，请检查网络',
+            image: '../static/imgs/icon/error.png',
+            mask: true,
+            duration: 5000 });
+
         }
       };
 
@@ -10923,7 +10939,7 @@ var urls = {
   //  gateway: "https://service.yaya91.com:8495",
   //  gateway: "http://daka.natapp1.cc",
   // gateway: "http://localhost:5000",
-  gateway: "http://192.168.1.104:5000", // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
+  gateway: "http://192.168.1.106:5000", // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
   // gateway: "https://www.kaoyandaka.com",
   //  mobile: "https://www.kaoyandaka.com",
   //  resource: "https://www.kaoyandaka.com",

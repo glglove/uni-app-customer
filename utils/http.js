@@ -86,12 +86,13 @@ export default {
 		// 默认统一的请求拦截函数
 		request: (configs) => {
 		  // 将请求的参数中 默认增加 token
-			//   debugger
+		  // debugger
+		  console.log(configs)
 		  const data = configs.data || {}
 		  // 主要控制是否loading
 		  const loading = configs.loading 
 		  if( configs.url === `${configs.baseUrl}/users/register` || configs.url === `${configs.baseUrl}/app/customerApp/loginAndRegister` ){
-			  
+			  // 小程序登陆接口 和app 注册登陆接口
 		  }else {
 			// 非登录接口时 需要接口中 统一加上 token 属性（根据业务需求来定）
 			let token = store.getters.userToken
@@ -223,12 +224,20 @@ export default {
 				}
 				// 统一的响应日志记录
 				_reslog(response)
-        
+				
+				console.log("打印请求完成后的相应状态statusCode", statusCode)
 				if (statusCode === 200) { //成功
 					// debugger
 					resolve(response)
 				} else {
+					// 失败
 					reject(response)
+					uni.showToast({
+						title: '网络请求失败，请检查网络',
+						image: '../static/imgs/icon/error.png',
+						mask: true,
+						duration: 5000
+					});
 				}
 			}
 			

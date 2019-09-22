@@ -187,8 +187,8 @@
 					</swiper-item>						
 				</swiper>
 			</view>
-			
-			<view :class="['contentBox', !lessonList.length? 'not_found' : '']" :style="signContentBoxHeight">
+			<!-- lessonList.length:{{lessonList.length}} -->
+			<view :class="['contentBox', lessonList.length<=0? 'not_found' : '']" :style="signContentBoxHeight">
 				<!-- signContentBoxHeight: {{signContentBoxHeight}} -->
 				<!--<scroll-view 
 					:scroll-top="scrollTop" 

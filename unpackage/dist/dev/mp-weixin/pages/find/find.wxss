@@ -1,6 +1,3 @@
-uni-page-wrapper.data-v-553b111c {
-  height: calc(100% - 50px);
-}
 #findBox.data-v-553b111c {
   position: absolute;
   top: 0;

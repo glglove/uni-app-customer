@@ -176,7 +176,9 @@
                 hasProvider: false,  // 是否有 授权的服务商
                 name: '',  // 用户名
                 password: '', //密码
-                positionTop: 0  
+                positionTop: 0,
+				toUrl: '../find/find', // 登陆成功后需要跳转的页面地址 默认是跳转至 find首页
+				jumpType: 2 // jumpType 为跳转的方式： 1:switch   2:redirect  3:relanch 4:navigate
             }
         },
         computed: {
@@ -191,6 +193,14 @@
 					}
 				},
 				immediate: true
+			}
+		},
+		onLoad(options) {
+			try{
+				this.toUrl = options.toPageUrl
+				this.jumpType = options.jumpType
+			}catch(e){
+				//TODO handle the exception
 			}
 		},
         onReady() {
@@ -331,32 +341,54 @@
      //                }
      //            })
 	 
-	 			let data = {
-					name: this.name,
-					password: this.password
-				}
-				console.log("手机号码、密码注册登录时的 data",data)
-				this.$store.dispatch("login", data)
-				 
-				// let data = {
-				// 	params: {
-				// 		loginAccount: this.name,
-				// 		password: this.password	 
-				// 	}
+	 		// 	let data = {
+				// 	name: this.name,
+				// 	password: this.password
 				// }
+				// console.log("手机号码、密码注册登录时的 data",data)
+				// this.$store.dispatch("login", data)
+				 
+				let data = {
+					params: {
+						loginAccount: this.name,
+						password: this.password	 
+					}
+				}
 	 
-				// commApi.appLoginAndRegister( data ).then(res => {
-				// 	debugger
-				// 	console.log("app登陆成功后打印 res", res)
-				// 	if(res.statusCode === 200 && res.data.code === 1){
-				// 		let token = res.data.data.token
-				// 		let customer = res.data.data.customer
-				// 		// token 存入store 中
-				// 		this.$store.dispatch("setUserToken", token)
-				// 		this.toast("app登录成功")
-				// 		this.switchPage("../find/find")
-				// 	}
-				// })
+				commApi.appLoginAndRegister( data ).then(res => {
+					debugger
+					console.log("app登陆成功后打印 res", res)
+					if(res.statusCode === 200 && res.data.code === 1){
+						let token = res.data.data.token
+						let customer = res.data.data.customer
+						// tokn 存入 缓存中
+						this.setStorage("userToken")
+						// token 存入store 中
+						this.$store.dispatch("setUserToken", token)
+						this.toast("app登录成功")
+						// 登陆成功后 页面进行跳转
+						switch(this.jumpType){
+							case 1:
+								this.switchPage(this.toUrl)
+							break;
+							
+							case 2:
+								this.redirectPage(this.toUrl)
+							break;
+							
+							case 3:
+								this.reLauchPage(this.toUrl)
+							break;
+							
+							case 4:
+								this.navigatePage(this.toUrl)
+							break
+							
+							default:
+								this.switchPage('../find/find')
+						}
+					}
+				})
 				
             },
 			// 授权登陆（微信、qq、微博）
