@@ -1,11 +1,11 @@
-#submitTaskSuccess.data-v-6b4e1e3b {
+#submitTaskSuccess.data-v-d4dd6bda {
   position: relative;
   width: 100%;
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-#submitTaskSuccess .top.data-v-6b4e1e3b {
+#submitTaskSuccess .top.data-v-d4dd6bda {
   position: absolute;
   top: 0;
   left: 50%;
@@ -17,7 +17,7 @@
   padding: 30rpx 25rpx;
   z-index: 1001;
 }
-#submitTaskSuccess .top .imgBox.data-v-6b4e1e3b {
+#submitTaskSuccess .top .imgBox.data-v-d4dd6bda {
   position: absolute;
   top: 100rpx;
   left: 50%;
@@ -31,7 +31,7 @@
   border-radius: 50%;
   z-index: 1001;
 }
-#submitTaskSuccess .top .tit.data-v-6b4e1e3b {
+#submitTaskSuccess .top .tit.data-v-d4dd6bda {
   position: absolute;
   top: 300rpx;
   left: 50%;
@@ -45,7 +45,7 @@
   font-size: 34rpx;
   text-align: center;
 }
-#submitTaskSuccess .contentBox.data-v-6b4e1e3b {
+#submitTaskSuccess .contentBox.data-v-d4dd6bda {
   position: absolute;
   top: 230px;
   left: 50%;
@@ -62,7 +62,7 @@
           box-sizing: border-box;
   z-index: 1001;
 }
-#submitTaskSuccess .contentBox .mark.data-v-6b4e1e3b {
+#submitTaskSuccess .contentBox .mark.data-v-d4dd6bda {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -75,7 +75,7 @@
   height: 134rpx;
   border-bottom: 1px dotted #FBB78F;
 }
-#submitTaskSuccess .contentBox .mark .day.data-v-6b4e1e3b {
+#submitTaskSuccess .contentBox .mark .day.data-v-d4dd6bda {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -87,7 +87,7 @@
   color: #FA9960;
   margin-left: 50rpx;
 }
-#submitTaskSuccess .contentBox .mark .day.data-v-6b4e1e3b::before {
+#submitTaskSuccess .contentBox .mark .day.data-v-d4dd6bda::before {
   display: inline-block;
   position: absolute;
   top: 50%;
@@ -103,7 +103,7 @@
   vertical-align: middle;
   clear: both;
 }
-#submitTaskSuccess .contentBox .mark .tit.data-v-6b4e1e3b {
+#submitTaskSuccess .contentBox .mark .tit.data-v-d4dd6bda {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
       -ms-flex: 1;
@@ -114,7 +114,7 @@
   font-size: 24rpx;
   text-align: right;
 }
-#submitTaskSuccess .contentBox .content-tit.data-v-6b4e1e3b {
+#submitTaskSuccess .contentBox .content-tit.data-v-d4dd6bda {
   color: #FA9960;
   font-size: 34rpx;
   height: 48rpx;
@@ -122,7 +122,7 @@
   margin: 30rpx;
   font-weight: 400;
 }
-#submitTaskSuccess .contentBox .content-tit-mingci.data-v-6b4e1e3b {
+#submitTaskSuccess .contentBox .content-tit-mingci.data-v-d4dd6bda {
   color: #000000;
   font-size: 24rpx;
   height: 33rpx;
@@ -130,7 +130,7 @@
   margin: 30rpx;
   font-weight: 400;
 }
-#submitTaskSuccess .contentBox .content-tit-jianda.data-v-6b4e1e3b {
+#submitTaskSuccess .contentBox .content-tit-jianda.data-v-d4dd6bda {
   color: #000000;
   font-size: 24rpx;
   min-height: 66rpx;
@@ -138,7 +138,7 @@
   margin: 30rpx;
   font-weight: 400;
 }
-#submitTaskSuccess .inSignBox.data-v-6b4e1e3b {
+#submitTaskSuccess .inSignBox.data-v-d4dd6bda {
   position: absolute;
   bottom: 100rpx;
   left: 50%;
@@ -152,13 +152,13 @@
   font-weight: 500;
   z-index: 1001;
 }
-#submitTaskSuccess .inSignBox .signBtn.data-v-6b4e1e3b {
+#submitTaskSuccess .inSignBox .signBtn.data-v-d4dd6bda {
   width: 100%;
   height: 100%;
   background: #FA9960;
   color: #FFFFFF;
 }
-#submitTaskSuccess .inSignBox .signTip.data-v-6b4e1e3b {
+#submitTaskSuccess .inSignBox .signTip.data-v-d4dd6bda {
   position: absolute;
   bottom: -30rpx;
   width: 100%;

@@ -21,7 +21,13 @@
 			"style" : {
 				"navigationBarTitleText":"打卡",
 				"enablePullDownRefresh":true,
-				"onReachBottomDistance": 50
+				"onReachBottomDistance": 50,
+				// 此设置属性是针对某一个具体的页面进行的 自定义导航栏设置
+				// "navigationStyle":"custom" 
+				"app-plus":{
+					"titleNView":false,
+					"navigationBarBackgroundColor": "transparent"
+				}
 			}
 		},
 		{
