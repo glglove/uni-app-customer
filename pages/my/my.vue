@@ -138,11 +138,20 @@
 					<text class="name">{{name? name:''}}</text>
 					<!-- <view class="setBox "> -->
 						<!-- <image class="set rt" src="../../static/imgs/icon/set.png"  @tap.stop = "clickSet"></image> -->
+						
+					<!--#ifdef MP-WEIXIN-->
 					<form id="setFormBox"  class="set rt click-able" report-submit="true" bindsubmit="formSubmit">
-						<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = ""></image>
+						<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = "clickSetBtn"></image>
 						<button form-type="submit" class="btn click-able"></button>
 					</form>
+					<!--#endif-->
 					
+					<!--#ifdef H5 || APP-PLUS-->
+					<span >
+						<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = "clickSetBtn"></image>
+						<button form-type="submit" class="btn click-able"></button>						
+					</span>
+					<!--#endif-->
 					<!--登陆/退出登陆-->
 					<view class="contentLoginBox">
 						<view class="btn-row">
@@ -155,7 +164,7 @@
 					<!-- </view> -->
 				</view>
 				<view class="containerBox form">
-					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickLessons">
+					<view class="itemBox line clearfix marginT10 click-able u-f u-f-jsb" @tap.stop = "clickLessons">
 						<view class="itemBox-left form_row lt">
 							<image :src="card_png" class="pic"></image>
 							<text class="tit">报名卡片</text>
@@ -165,7 +174,7 @@
 						</view>
 					</view> 
 
-					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickAchivement">
+					<view class="itemBox line clearfix marginT10 click-able u-f u-f-jsb" @tap.stop = "clickAchivement">
 						<view class="itemBox-left form_row lt">
 							<image :src="achievement_png" layz-load="true" class="pic"></image>
 							<text class="tit">我的成就</text>
@@ -175,7 +184,7 @@
 						</view>
 					</view> 
 
-					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickRecord">
+					<view class="itemBox line clearfix marginT10 click-able u-f u-f-jsb" @tap.stop = "clickRecord">
 						<view class="itemBox-left form_row lt">
 							<image :src="record_png" layz-load="true" class="pic"></image>
 							<text class="tit">学习记录</text>
@@ -185,7 +194,7 @@
 						</view>
 					</view> 
 
-					<view class="itemBox line clearfix marginT10 click-able" @tap.stop = "clickHelp">
+					<view class="itemBox line clearfix marginT10 click-able u-f u-f-jsb" @tap.stop = "clickHelp">
 						<view class="itemBox-left form_row lt">
 							<image :src="help_png" layz-load="true" class="pic"></image>
 							<text class="tit">帮助中心</text>
@@ -195,7 +204,7 @@
 						</view>
 					</view> 
 
-					<view class="itemBox clearfix marginT10 click-able"  @tap.stop = "clickInvitation">
+					<view class="itemBox line clearfix marginT10 click-able u-f u-f-jsb"  @tap.stop = "clickInvitation">
 						<view class="itemBox-left form_row lt">
 							<image :src="invitation_png" layz-load="true" class="pic"></image>
 							<text class="tit">邀请好友</text>
@@ -249,7 +258,8 @@
 				flag: false, // 控制首次加载时的 onload 和 onshow 的重复加载
 				name: '',
 				bg: {
-					my_bg: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.my_bg}`
+					// my_bg: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.my_bg}`
+					my_bg: ''
 				},
 				photo_png: photoPng,
 				set_png: setPng,
@@ -264,6 +274,7 @@
 				scrollTop_refresh: 0, // 滑动的距离				
 			}
 		},
+
 		onLoad() {
 			this.avaterPic = this.getAvaterPic()
 		},
@@ -296,10 +307,29 @@
 		},
 		methods:{
 			...mapMutations(['loginOut']),
-			//
-			onComLoad () {
-
-			},
+			onComLoad(){
+				// 异步下载 首页的背景图片存入 缓存中 后续就不用再次加载
+				if( !this.bg.my_bg ){
+					uni.downloadFile({
+						url: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.my_bg}`,
+						success: (res) => {
+								if(res.statusCode === 200 && res.tempFilePath){
+									console.log("99999999999",res)
+									// res.tempFilePath
+									this.bg.my_bg = res.tempFilePath
+									// uni.saveFile({
+									// 	 
+									// }) 
+								}
+						},
+						fail: (error) => {
+								
+						}
+					})	
+				}else {
+					console.log("find首页背景图片已经下载过了")
+				}			
+			},			
 			// 刷新页面
 			refreshPage () {
 				
@@ -341,10 +371,34 @@
 					}
 				})
 			},
+			// 点击设置
+			clickSetBtn(){
+				this.navigatePage("../packageB/my/set/index")
+			},
+			// 点击报名卡片
+			clickLessons () {
+				this.navigatePage('../packageB/my/signUpCard/signUpCard')
+			},
+			// 
 			// 点击 我的成就
 			async clickAchivement () {
 				this.navigatePage('../packageB/my/myAchievement/index')
-			}			
+			},
+			// 学习记录
+			clickRecord(){
+				this.navigatePage('../packageB/my/learnRecord/index')
+			},
+			//帮助中心
+			clickHelp(){
+				this.navigatePage('../packageB/my/help/index')
+			},
+			// 邀请好友
+			clickInvitation() {
+				this.navigatePage('../packageB/my/inviteFriends/index')
+			},
+			formSubmit(){
+				
+			}
 		}
 	}
 </script>

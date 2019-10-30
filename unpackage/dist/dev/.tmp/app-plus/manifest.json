@@ -40,7 +40,7 @@
       "render": "always"
     },
     "statusbar": {
-      "immersed": "supportedDevice",
+      "immersed": false,
       "style": "dark",
       "background": "rgba(253,133,9,1)"
     },

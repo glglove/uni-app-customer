@@ -122,8 +122,8 @@
 
             }
         },
-        onLoad() {
-
+        onLoad(data) {
+			console.log(data.detailItem)
         },
         onShow() {
 

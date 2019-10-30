@@ -19,7 +19,7 @@ const app = {
 	userToken: '',
 	//containerAllloadingFlag 控制 外层 container 容器的 allLoading 状态的显示与隐藏 （ 一般allloading、loading、content的层级关系是loading在最上一层，allloading在中间，最下面就是页面内容显示了）
 	// 一般 可以设置 container 页面的 onReady 后 可以 关闭 containerLoadingFlag,  在 minxin中的 on
-	containerAllloadingFlag: false, 
+	containerAllloadingFlag: false,  
 	containerLoadingFlag: false, // 控制外层container 容器的 loading状态显示与隐藏
 	containerMaskFlag: false, // 控制页面全屏下的外层container 容器的 遮罩状态显示与隐藏
 	pHeight: '0'  // 页面的高度，minxin 中获取后 存入了 store中

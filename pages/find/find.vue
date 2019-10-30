@@ -231,8 +231,9 @@
 			<!-- bg.find_bg:{{bg.find_bg}} -->
 			<!-- {{$configs.baseImgsUrl + $configs.baseUrlConfigs.imgs_bg.find_bg}} -->
 			<!--loading-->
+			<!--已登录-->
 			<div v-if="userToken" class="find-hasLogin">
-				<view class="bgBox">
+				<view class="bgBox animated fadeIn">
 					<image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
 				</view>
 				<!--用于收集定时提醒的推送码-->
@@ -245,6 +246,7 @@
 
 						<view class="findContainer">
 							<view class="contentTop">
+								<!---连续打卡-->
 								<view class="contentTopLeft lt">
 									<button class="signUpPicBox" id="signUp_top" name="signUp_top" form-type="submit">
 										<image class="signUpPic click-able" :src="require('@/static/imgs/icon/signUp.png')" layz-load="true" @tap.stop = "clickRank"></image>
@@ -256,9 +258,10 @@
 									<view class="signUpTit marginT10"><text>连续打卡</text></view>
 								</view>
 
+								<!---排行榜-->
 								<view class="contentTopRight rt">
 									<button class="rankPicBox" id="rank_top" name="rank_top" form-type="submit">
-										<image class="rankPic click-able" :src="require('@/static/imgs/icon/rank.png')" layz-load="true" @tap.stop = ""></image>
+										<image class="rankPic click-able" :src="require('@/static/imgs/icon/rank.png')" layz-load="true" @tap.stop = "clicKRankList"></image>
 									</button>
 									<view class="rankNum marginT10">
 										<text class="rankNo">{{signData.rankNo}}</text>
@@ -266,12 +269,12 @@
 									<view class="rankTit marginT10"><text>排行榜</text></view>                    
 								</view>  
 											
-								<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "">
+								<button class="signUpBtn click-able" form-type="submit" id = "signUp" name="siginBtn" @tap.stop = "immediateSignUp">
 									<image class="signUpPic" :src="require('@/static/imgs/icon/signUpPic.png')"></image>
 									<text class="signUpTit click-able">立即报名</text>
 								</button>
 
-								<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  disabled="shairePic_clickable" @tap.stop = "">
+								<button class="invitationBtn marginT40 click-able" id = "invitate" form-type="submit" name="invitateBtn"  :disabled="shairePic_clickable" @tap.stop = "invitateFriends">
 									<image class="invitationPic" :src="require('@/static/imgs/icon/invitationPic.png')" layz-load="true"></image>
 									<text class="invitationTit click-able">邀请好友</text>               
 								</button>							  
@@ -294,23 +297,25 @@
                     <view>在 “我的” 中点击 “登录” 可以 “登录您的账户”</view>
                 </view>
             </view>
+			
 		</view>
 	</container>
 </template>
 
 <script>
-	import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
+	// import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
 	import FooterExplain from '@/pages/components/footerExplain/footerExplain'
 	import findApi from '@/api/find.js'
 	import { miniProApi } from '@/utils/mixins.js'
+	// import { REQ_OK } from '@/api/config'
 	// import container from '@/pages/components/container1/container'
-	import {mapGetters} from 'vuex'
+	import { mapGetters } from 'vuex'
 
 	export default {
 		mixins: [ miniProApi ],
         components: {
-            uniCard,
-            uniPagination,
+            // uniCard,
+            // uniPagination,
 			FooterExplain
 		},			
 		data() {
@@ -320,7 +325,8 @@
 				shairePic_clickable: false,  // 控制邀请好友的disable状态
 				type: 1, // 1 总排名  2 点赞排名  3 邀请排名  
 				bg: {
-					'find_bg': `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.find_bg}`
+					// 'find_bg': `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.find_bg}`
+					'find_bg': ''
 				},
 				loadingMoreIsShow: false,
 				authorzeIsShow: "",
@@ -344,7 +350,7 @@
 			userToken: {
 				handler(newValue, oldValue){
 					if(newValue){
-						this.refreshPage()
+						// this.refreshPage()
 					}
 				}
 			}
@@ -368,11 +374,6 @@
 		},
 		onShow(){
 			console.log("find页面-----------------onShow")
-			// 有token 时 才去 请求
-			if( this.userToken ){
-				// debugger
-				this._getRankDayData()
-			}	
 		},	
 		onReady(){
 			console.log("find页面-----------------onReady")		
@@ -413,7 +414,7 @@
 								if (this.forcedLogin) {
 									// this.reLaunchPage("../login/login");
 								} else {
-									// this.navigatePage("../login/login");
+									this.navigatePage("../login/login");
 								}
 							}else {
 								// 取消
@@ -422,6 +423,28 @@
 					})				
 				}	
 				//#endif
+				
+				// 异步下载 首页的背景图片存入 缓存中 后续就不用再次加载
+				if( !this.bg.find_bg ){
+					uni.downloadFile({
+						url: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.find_bg}`,
+						success: (res) => {
+								if(res.statusCode === 200 && res.tempFilePath){
+									console.log("99999999999",res)
+									// res.tempFilePath
+									this.bg.find_bg = res.tempFilePath
+									// uni.saveFile({
+									// 	
+									// }) 
+								}
+						},
+						fail: (error) => {
+								
+						}
+					})	
+				}else {
+					console.log("find首页背景图片已经下载过了")
+				}
 			},	
 			refreshPage() {
 				// debugger
@@ -443,7 +466,6 @@
 				}
 				findApi.getRankDayData( paramsObj ).then(res => {
 					// debugger
-					// uni.hideLoading()
 					this.containerLoading = false
 					console.log(res)
 					if(res && res.data.code === 1){
@@ -480,6 +502,7 @@
 
 					}
 				}).catch(err => {
+					this.containerLoading = false
 					// uni.hideLoading()
 					this.getDeviceApi().showToast({
 						title:"数据获取失败,请重试",
@@ -489,89 +512,31 @@
 					})
 				})
 			},
+			// 点击连续打卡btn
 			async clickRank () {
-				// 点击排行榜的icon
-				this.navigatePage(`../packageA/find/ranklist/index`);
+				this.navigatePage(`../packageA/find/ranklist/index`)
 			},  
-
+			// 点击 排行榜btn
+			clicKRankList(){
+				this.navigatePage('../packageA/find/signUpRecord/index')
+			},
+			// 立即报名
+			immediateSignUp(){
+				this.navigatePage("../packageA/find/lessonList/index")
+			},
 			// 邀请好友
 			async invitateFriends (e) {
-
-				console.log("邀请好友 生成海报分享------", e)
+				debugger
+				console.log("点击了 邀请好友的 button")
 				// 未生成海报前 禁止再次点击  邀请好友
-				this.shairePic_clickable = true;
-				this.$apply();
-
-				let token = await this.getStorage("token");
-
-				let userInfo = await this.getStorage("userInfo");
+				this.shairePic_clickable = true
+											
+				// 页面调转至 邀请页面
+				this.navigatePage(`../packageA/find/invitation/index`)	
 				
-				// let userId = userInfo.id;
-				console.log("用户id----",userInfo.id);
-				let params = {
-					userId: userInfo.id,
-					// token:token
-				};
-
-
-				// 获取 海报的信息
-				let haibaoData = await findApi.getShareData(params,false);
+				this.shairePic_clickable = false
 				
-				let shareData = {};
-				if( haibaoData && haibaoData.code ==1 ){
-					if( haibaoData.data ) {
-						shareData.headImg = haibaoData.data.headImg;
-						shareData.realName = haibaoData.data.realName;
-						shareData.time = haibaoData.data.time;
-						shareData.title = haibaoData.data.title;
-						shareData.days = haibaoData.data.days;
-						shareData.qrcode = haibaoData.data.qrcode;
-					}
-					// let picUrl = base.baseUrl + base.imgs_bg.sharePic_bg02; // 底图
-					let haibaoPicObj = {
-						picUrl_bg: base.baseUrl + base.imgs_bg.sharePic_bg02, // 底图
-						avertor_bg: '../../../../../assets/imgs/icon/logo_1.png',
-						headImg: shareData.headImg,
-						title:shareData.title,
-						name:shareData.realName,
-						dayNum: shareData.days,
-						time: shareData.time,
-						codePic: shareData.qrcode,
-					}
-
-					// this.toast("正在生成分享图片...");
-					//setTimeout(()=>{
-					// },500)
-
-					// 预加载
-					this.$preload("data",JSON.stringify(haibaoPicObj));
-
-					// debugger;
-					//获取当前页面URL
-					var pages = getCurrentPages();
-					var currentPage = pages[pages.length - 1];
-					var url = currentPage;
-					var options = currentPage.options; //获取参数
-					var url1 = currentPage.route; //获取地址
-					
-
-					// 页面跳转
-					// this.navigatePage(`./shaireHaibao/index?picUrl=${haibaoPicObj}`)
-					this.navigatePage(`../packageA/find/invitation/shaireHaibao/index`)
-
-					this.shairePic_clickable = false;
-					this.$apply();
-					// wepy.showToast({
-					//     title: "海报生成中...",
-					//     image: '/assets/imgs/icon/alert.png',
-					//     mask: false,
-					//     duration: 1000
-					// })
-				}else {
-					this.toast("网络走神了~~",1000);
-
-					// this.navigatePage(`./shaireHaibao/index`)
-				}                  
+				
 			}   		
 		}
 	}

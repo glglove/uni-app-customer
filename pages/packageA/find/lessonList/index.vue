@@ -81,113 +81,91 @@
 }
 </style>
 <template>
-    <view id="lessBox">
-        <!--tab-->
-        <tabBox :list.sync = "tabBox" :index.sync = "tabCurrentIndex"></tabBox>
-        <!--list-->
-        <scroll-view scroll-y scroll-with-animation class="contentBox">
-            <view class="item marginT60 clearfix" @tap.stop = "intoDetail(1)">
-                <view class="picBox lt">
-                    <image class="pic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
-                </view>
-                <view class="item-right-contentBox">
-                    <view class="top">
-                        <view class="tit-top">视觉传达|手绘基础</view>
-                        <view class="tit-bottom">巩固绘画基础,脱离手绘小白</view>
-                    </view>
-                    <view class="bottom">
-                        <view class="signTime">打卡时间： 2019.3.21-2019.4.12</view>
-                        <view class="signPeper">参与人数： 30人</view>
-                    </view>
-                </view>
-            </view>
-            <view class="item marginT60 clearfix">
-                <view class="picBox lt">
-                    <image class="pic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
-                </view>
-                <view class="item-right-contentBox">
-                    <view class="top">
-                        <view class="tit-top">视觉传达|手绘基础</view>
-                        <view class="tit-bottom">巩固绘画基础,脱离手绘小白</view>
-                    </view>
-                    <view class="bottom">
-                        <view class="signTime">打卡时间： 2019.3.21-2019.4.12</view>
-                        <view class="signPeper">参与人数： 30人</view>
-                    </view>
-                </view>
-            </view>
-            <view class="item marginT60 clearfix">
-                <view class="picBox lt">
-                    <image class="pic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
-                </view>
-                <view class="item-right-contentBox">
-                    <view class="top">
-                        <view class="tit-top">视觉传达|手绘基础</view>
-                        <view class="tit-bottom">巩固绘画基础,脱离手绘小白</view>
-                    </view>
-                    <view class="bottom">
-                        <view class="signTime">打卡时间： 2019.3.21-2019.4.12</view>
-                        <view class="signPeper">参与人数： 30人</view>
-                    </view>
-                </view>
-            </view>
-            <view class="item marginT60 clearfix">
-                <view class="picBox lt">
-                    <image class="pic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
-                </view>
-                <view class="item-right-contentBox">
-                    <view class="top">
-                        <view class="tit-top">视觉传达|手绘基础</view>
-                        <view class="tit-bottom">巩固绘画基础,脱离手绘小白</view>
-                    </view>
-                    <view class="bottom">
-                        <view class="signTime">打卡时间： 2019.3.21-2019.4.12</view>
-                        <view class="signPeper">参与人数： 30人</view>
-                    </view>
-                </view>
-            </view>
-            <view class="item marginT60 clearfix">
-                <view class="picBox lt">
-                    <image class="pic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
-                </view>
-                <view class="item-right-contentBox">
-                    <view class="top">
-                        <view class="tit-top">视觉传达|手绘基础</view>
-                        <view class="tit-bottom">巩固绘画基础,脱离手绘小白</view>
-                    </view>
-                    <view class="bottom">
-                        <view class="signTime">打卡时间： 2019.3.21-2019.4.12</view>
-                        <view class="signPeper">参与人数： 30人</view>
-                    </view>
-                </view>
-            </view>
-            <view class="item marginT60 clearfix">
-                <view class="picBox lt">
-                    <image class="pic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
-                </view>
-                <view class="item-right-contentBox">
-                    <view class="top">
-                        <view class="tit-top">视觉传达|手绘基础</view>
-                        <view class="tit-bottom">巩固绘画基础,脱离手绘小白</view>
-                    </view>
-                    <view class="bottom">
-                        <view class="signTime">打卡时间： 2019.3.21-2019.4.12</view>
-                        <view class="signPeper">参与人数： 30人</view>
-                    </view>
-                </view>
-            </view>                                                            
-        </scroll-view>
-    </view>
+	<container>
+		<view id="lessBox">
+			<!--tab-->
+			<tabbox :list.sync = "tabBox" :index.sync = "tabCurrentIndex"></tabbox>
+			
+			<!--list-->
+			<scroll-view scroll-y scroll-with-animation class="contentBox">
+				<block v-for="(item, key) in lesssonList" :key="key">
+					<view class="item marginT60 clearfix" @tap.stop = "intoDetail(item)">
+						<view class="picBox lt">
+							<image class="pic" :src="require('@/static/imgs/icon/twlogo.png')"></image>
+						</view>
+						<view class="item-right-contentBox">
+							<view class="top">
+								<view class="tit-top">{{item.tit}}</view>
+								<view class="tit-bottom">{{item.tip}}</view>
+							</view>
+							<view class="bottom">
+								<view class="signTime">打卡时间： {{item.signTime}}</view>
+								<view class="signPeper">参与人数： {{item.joinNum}}人</view>
+							</view>
+						</view>
+					</view>				
+				</block>    
+			</scroll-view>
+		</view>
+	</container>
 </template>
 
 <script>
+	import Tabbox from '@/pages/components/tab/tab'
+	import { miniProApi } from '@/utils/mixins.js'
     export default {
+		mixins:[
+			miniProApi
+		],
         components: {
-
+			Tabbox
         },
         data(){
             return {
-
+				tabCurrentIndex: 0,
+				tabBox: [
+					{
+						
+					}
+				],
+				lesssonList: [
+					{
+						tit: '视觉传达|手绘基础',
+						tip: '巩固绘画基础,脱离手绘小白',
+						signTime: '2019.3.21-2019.4.12',
+						joinNum: 30
+					},
+					{
+						tit: '视觉传达|手绘基础',
+						tip: '巩固绘画基础,脱离手绘小白',
+						signTime: '2019.3.21-2019.5.12',
+						joinNum: 40						
+					},
+					{
+						tit: '视觉传达|手绘基础',
+						tip: '巩固绘画基础,脱离手绘小白',
+						signTime: '2019.3.21-2019.6.12',
+						joinNum: 50						
+					},
+					{
+						tit: '视觉传达|手绘基础',
+						tip: '巩固绘画基础,脱离手绘小白',
+						signTime: '2019.3.21-2019.4.12',
+						joinNum: 30
+					},
+					{
+						tit: '视觉传达|手绘基础',
+						tip: '巩固绘画基础,脱离手绘小白',
+						signTime: '2019.3.21-2019.5.12',
+						joinNum: 40						
+					},
+					{
+						tit: '视觉传达|手绘基础',
+						tip: '巩固绘画基础,脱离手绘小白',
+						signTime: '2019.3.21-2019.6.12',
+						joinNum: 50						
+					}					
+				]
             }
         },
         onLoad() {
@@ -203,7 +181,11 @@
 
         },
         methods: {
-
+			// 进入详情页
+			intoDetail(item){
+				let detailItem = JSON.stringify(item)
+				this.navigatePage(`./lessonDetail/index?detailItem=${detailItem}`)
+			}
         }
     }
 </script>

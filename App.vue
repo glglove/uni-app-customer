@@ -50,6 +50,7 @@
 				// store-app 中存入 用户未授权状态 flag
 				store.dispatch("setAuthorizeState", {authorizeState: false})
 			})
+			
 			console.log("---------APP初始化时，onlanch中打印 是否授权--------", AuthorizeStatus_res)
 			// if( AuthorizeStatus_res ) {
 			// 	// 已授权

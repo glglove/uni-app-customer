@@ -19,7 +19,6 @@
 	.container-box-cmp {
 		position: relative;
 		width: 100%;
-		// height: 100%;
 		.top-loadding {
 			
 		}
@@ -91,39 +90,41 @@
 			<text class="iconfont mykicon-d_loading_icon"></text>
 		</view> -->
 		
+		<!--page页面部分-->
 		<view class="container" :style="positionStyle" @touchstart=""  @touchmove="" @touchend="">
 			<slot name="container-slot"></slot>
 		</view>
 		
-		<!--<view class="bottom-loadding"  wx:if="{{more!='false'&&!showLoadingFlag}}" style="opacity:{{more!='false'&&!showLoadingFlag?'1':'0'}}">
-			<image src="../../assets/imgs/loading2.svg" wx:if="{{nomore=='false'}}" />
-			<text wx:if="{{nomore=='false'}}">{{moretext}}</text>
-			<text wx:else>沒有更多啦~</text>
-		</view> -->	
+		<!---loadingMore 区域-->
+		<!--<view class="container-bottom-loading"  v-if="more!='false'&&!showLoadingFlag" style="opacity:more!='false'&&!showLoadingFlag ? '1':'0'">
+			<image src="../../assets/imgs/loading2.svg" v-show="nomore=='false'"/>
+			<text v-if="nomore=='false'">{{moretext}}</text>
+			<text v-else>沒有更多啦~</text>
+		</view>	 -->
 		
-		<!-- common mask -->
+		<!-- common mask 遮挡层-->
 		<!-- containerMaskFlag: {{containerMaskFlag}} -->
-		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-show="containerMaskFlag"></view>
+<!-- 		<view :class="['container_mask', aniClass1]" @tap="handleMaskTap" v-show="containerMaskFlag"></view> -->
 
-		<!-- allLoading -->
+		<!-- allLoading（全屏的loading层）-->
 		<!-- <view :class="['container_allLoading', aniClass]" v-show="containerAllloadingFlag"> -->
 		<view :class="['container_allLoading', aniClass]" v-show="containerAllloading">
 			<image class="allLoadingPic" :src="require('@/static/allLoading.gif')" layz-load="true"></image>
 		</view>	
 		
-		<!-- loading -->
+		<!-- loading (请求loading层)-->
 		<!-- loading1: {{loading1}} -->
 		<!-- <view :class="['container_loading', aniClass]" v-show="containerLoadingFlag"> -->
 		<view :class="['container_loading', aniClass]" v-show="containerLoading">
 			<image class="loadingPic" :src="require('@/static/loading.gif')" layz-load="true"></image>
 		</view>	
 			
-		<!--authorize 授权区域------>
-		<!-- #ifdef MP-WEIXIN -->
+		<!--authorize 授权区域(层级最高)------>
 		<!-- isAuthorize: {{JSON.stringify(isAuthorize)}} -->
 		<!-- {{JSON.stringify(isAuthorize)}}
 		------
 		{{authorizeState}} -->
+		<!-- #ifdef MP-WEIXIN -->
 		<view :class="['container_authorize', aniClass]" v-show="!authorizeState">
 			<authorize></authorize>
 		</view>
@@ -133,11 +134,8 @@
 
 <script>
 	import { mapGetters, mapActions  } from 'vuex'
-	// import { miniProApi } from '@/utils/mixins.js'
 	import Authorize from '@/pages/components/authorize/authorize.vue'
 	import { getDeviceApi } from '@/utils/deviceApi.js'
-	
-	
 	
 	export default {
 		components:{
@@ -226,7 +224,7 @@
 			// 小程序上面 自动检测 是否有授权
 			// #ifdef MP-WEIXIN
 			,async isAuthorize(){
-				console.log("container组件中computed 中获得的 userInfo授权状态", await this.getAuthorizeStatus("scope.userInfo"))
+				// console.log("container组件中computed 中获得的 userInfo授权状态", await this.getAuthorizeStatus("scope.userInfo"))
 				let isAuthorize_res = await this.getAuthorizeStatus("scope.userInfo")
 				console.log('container组件中computed 中打印isAuthorize_res的值 ', isAuthorize_res)
 				return isAuthorize_res

@@ -100,57 +100,59 @@
 </style>
 
 <template>
-	<view id="login">
-		<view class="input-group">
-			<view class="input-row border">
-				<text class="title">账号：</text>
-				<m-input class="m-input" type="text" clearable focus v-model="name" placeholder="请输入账号"></m-input>
-			</view>
-			<view class="input-row">
-				<text class="title">密码：</text>
-				<m-input type="password" displayable v-model="password" placeholder="请输入密码"></m-input>
-			</view>
-		</view>
-		
-		<view class="btn-row">
-			<button type="primary" class="primary" @tap="bindLogin">登录</button>
-		</view>
-		
-		<view class="action-row">
-			<navigator url="../register/register">注册账号</navigator>
-			<text>|</text>
-			<navigator url="../pwd/pwd">忘记密码</navigator>
-		</view>
-		
-		
-		<!--#ifdef APP-PLUS-->
-<!-- 			hasProvider: {{hasProvider}}
-		providerList: {{providerList[0].value}}
-		providerList: {{providerList[0].image}} -->
-		<!--#endif-->
-		<!--授权登陆区域-->
-		<view class="oauth-row" v-if="hasProvider" :style="'top:' + positionTop + 'px'">
-			<view class="oauth-image" v-for="provider in providerList" :key="provider.value">
-				<image :src="provider.image" @tap="oauth(provider.value)"></image>
-			</view>
-		</view>
-		
-		<!--#ifdef H5-->
-		<view class="oauth-row"  :style="'top:' + positionTop + 'px'">
-			<view class="oauth-image" >
-				<image :src="require('@/static/weixin.png')" @tap="oauth()"></image>
+	<container>
+		<view id="login" slot="container-slot">
+			<view class="input-group">
+				<view class="input-row border">
+					<text class="title">账号：</text>
+					<m-input class="m-input" type="text" clearable focus v-model="name" placeholder="请输入账号"></m-input>
+				</view>
+				<view class="input-row">
+					<text class="title">密码：</text>
+					<m-input type="password" displayable v-model="password" placeholder="请输入密码"></m-input>
+				</view>
 			</view>
 			
-			<view class="oauth-image" >
-				<image :src="require('@/static/qq.png')" @tap="oauth()"></image>
+			<view class="btn-row">
+				<button type="primary" class="primary" @tap="bindLogin">登录</button>
 			</view>
-							
-			<view class="oauth-image" >
-				<image :src="require('@/static/sinaweibo.png')" @tap="oauth()"></image>
-			</view>								
+			
+			<view class="action-row">
+				<navigator url="../register/register">注册账号</navigator>
+				<text>|</text>
+				<navigator url="../pwd/pwd">忘记密码</navigator>
+			</view>
+			
+			
+			<!--#ifdef APP-PLUS-->
+	<!-- 			hasProvider: {{hasProvider}}
+			providerList: {{providerList[0].value}}
+			providerList: {{providerList[0].image}} -->
+			<!--#endif-->
+			<!--授权登陆区域-->
+			<view class="oauth-row" v-if="hasProvider" :style="'top:' + positionTop + 'px'">
+				<view class="oauth-image" v-for="provider in providerList" :key="provider.value">
+					<image :src="provider.image" @tap="oauth(provider.value)"></image>
+				</view>
+			</view>
+			
+			<!--#ifdef H5-->
+			<view class="oauth-row"  :style="'top:' + positionTop + 'px'">
+				<view class="oauth-image" >
+					<image :src="require('@/static/weixin.png')" @tap="oauth()"></image>
+				</view>
+				
+				<view class="oauth-image" >
+					<image :src="require('@/static/qq.png')" @tap="oauth()"></image>
+				</view>
+								
+				<view class="oauth-image" >
+					<image :src="require('@/static/sinaweibo.png')" @tap="oauth()"></image>
+				</view>								
+			</view>
+			<!--#endif-->
 		</view>
-		<!--#endif-->
-	</view>
+	</container>
 </template>
 
 <script>
@@ -359,10 +361,12 @@
 					debugger
 					console.log("app登陆成功后打印 res", res)
 					if(res.statusCode === 200 && res.data.code === 1){
+						// console.log("--------",res.data.data.token)
 						let token = res.data.data.token
 						let customer = res.data.data.customer
 						// tokn 存入 缓存中
-						this.setStorage("userToken")
+						this.setStorage("userToken", token)
+						console.log("welecome中打印冲localstorage中获取到的userToken",uni.getStorageSync("userToken"))
 						// token 存入store 中
 						this.$store.dispatch("setUserToken", token)
 						this.toast("app登录成功")
@@ -401,7 +405,7 @@
                             provider: value,
                             success: (infoRes) => {
                                 /**
-                                 * 实际开发中，获取用户信息后，需要将信息上报至服务端。
+                                 * 实际开发中，获取用户信息后，需要将信息上报至服务端。 
                                  * 服务端可以用 userInfo.openId 作为用户的唯一标识新增或绑定用户信息。
                                  */
 								console.log(`[${value}]授权登录后 通过uni.getUserInfo获取到的返回结果infoRes`, JSON.stringify(infoRes))
@@ -431,7 +435,7 @@
                 // this.login(userName);
                 /**
                  * 强制登录时使用reLaunch方式跳转过来
-                 * 返回首页也使用reLaunch方式
+                 * 返回首页也使用reLaunch方式 
                  */
                 if (this.forcedLogin) {
                     uni.reLaunch({

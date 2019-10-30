@@ -8,6 +8,9 @@
     "app-plus" : {
         /* 5+App特有相关 */
         "usingComponents" : true,
+        "statusbar": {
+            "immersed": false    // 关闭沉浸式
+        },
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
             "waiting" : true,
