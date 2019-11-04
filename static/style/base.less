@@ -18,7 +18,7 @@ page {
 }
 
 /* flex布局 */
-.u-f,.u-f-ac,.u-f-ajc{
+.u-f,.u-f-ac,.u-f-jc,.u-f-ajc{
 	display: flex;
 }
 /* 垂直居中 */
@@ -26,7 +26,7 @@ page {
 	align-items: center;
 }
 /* 水平居中 */
-.u-f-ajc{
+.u-f-jc,.u-f-ajc{
 	justify-content: center;
 }
 
@@ -37,6 +37,11 @@ page {
 .u-f1{
 	flex: 1;
 }
+.u-f0 {
+	// 不压缩
+	flex-shrink: 0
+}
+
 .u-f-column{
 	flex-direction: column;
 }

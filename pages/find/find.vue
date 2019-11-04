@@ -349,10 +349,12 @@
 		watch: {
 			userToken: {
 				handler(newValue, oldValue){
+					debugger
 					if(newValue){
-						// this.refreshPage()
+						this.refreshPage()
 					}
-				}
+				},
+				immediate: true
 			}
 		},
 		async onLoad () {
@@ -429,14 +431,14 @@
 					uni.downloadFile({
 						url: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.find_bg}`,
 						success: (res) => {
-								if(res.statusCode === 200 && res.tempFilePath){
-									console.log("99999999999",res)
-									// res.tempFilePath
-									this.bg.find_bg = res.tempFilePath
-									// uni.saveFile({
-									// 	
-									// }) 
-								}
+							if(res.statusCode === 200 && res.tempFilePath){
+								console.log("99999999999",res)
+								// res.tempFilePath
+								this.bg.find_bg = res.tempFilePath
+								// uni.saveFile({
+								// 	
+								// }) 
+							}
 						},
 						fail: (error) => {
 								

@@ -44,6 +44,7 @@
 				this.result=res;
 			},			
 			async _getRankList() {
+				debugger
 				this.containerAllloading = true
 				let params = {
 					
@@ -63,7 +64,7 @@
 
 				// 排行榜的list列表
 				let rankList = await findApi.getRankListData ( params_list );
-				
+				debugger
 				if( signList_day && rankList ){
 					this.containerAllloading = false
 				}

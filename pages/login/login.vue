@@ -391,7 +391,10 @@
 							default:
 								this.switchPage('../find/find')
 						}
-					}
+					}else if( res.statusCode === 200 && res.data.code === 1000){
+						// 密码错误
+						this.toast("登录密码不正确,请重新输入")
+					} 
 				})
 				
             },

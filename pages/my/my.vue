@@ -309,18 +309,20 @@
 			...mapMutations(['loginOut']),
 			onComLoad(){
 				// 异步下载 首页的背景图片存入 缓存中 后续就不用再次加载
+				debugger
 				if( !this.bg.my_bg ){
 					uni.downloadFile({
 						url: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.my_bg}`,
 						success: (res) => {
-								if(res.statusCode === 200 && res.tempFilePath){
-									console.log("99999999999",res)
-									// res.tempFilePath
-									this.bg.my_bg = res.tempFilePath
-									// uni.saveFile({
-									// 	 
-									// }) 
-								}
+							debugger
+							if(res.statusCode === 200 && res.tempFilePath){
+								console.log("99999999999",res)
+								// res.tempFilePath
+								this.bg.my_bg = res.tempFilePath
+								// uni.saveFile({
+								// 	 
+								// }) 
+							}
 						},
 						fail: (error) => {
 								
