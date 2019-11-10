@@ -179,8 +179,8 @@
                 name: '',  // 用户名
                 password: '', //密码
                 positionTop: 0,
-				toUrl: '../find/find', // 登陆成功后需要跳转的页面地址 默认是跳转至 find首页
-				jumpType: 2 // jumpType 为跳转的方式： 1:switch   2:redirect  3:relanch 4:navigate
+				toPageUrl: '../find/find', // 登陆成功后需要跳转的页面地址 默认是跳转至 find首页
+				jumpType: '2' // jumpType 为跳转的方式： 1:switch   2:redirect  3:relanch 4:navigate
             }
         },
         computed: {
@@ -198,8 +198,9 @@
 			}
 		},
 		onLoad(options) {
+			debugger
 			try{
-				this.toUrl = options.toPageUrl
+				this.toPageUrl = options.toPageUrl
 				this.jumpType = options.jumpType
 			}catch(e){
 				//TODO handle the exception
@@ -371,21 +372,22 @@
 						this.$store.dispatch("setUserToken", token)
 						this.toast("app登录成功")
 						// 登陆成功后 页面进行跳转
+						debugger
 						switch(this.jumpType){
-							case 1:
-								this.switchPage(this.toUrl)
+							case '1':
+								this.switchPage(this.toPageUrl)
 							break;
 							
-							case 2:
-								this.redirectPage(this.toUrl)
+							case '2':
+								this.redirectPage(this.toPageUrl)
 							break;
 							
-							case 3:
-								this.reLauchPage(this.toUrl)
+							case '3':
+								this.reLauchPage(this.toPageUrl)
 							break;
 							
-							case 4:
-								this.navigatePage(this.toUrl)
+							case '4':
+								this.navigatePage(this.toPageUrl)
 							break
 							
 							default:

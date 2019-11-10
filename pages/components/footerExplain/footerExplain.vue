@@ -1,7 +1,7 @@
 <style lang="less" scoped>
 	.footerExplain {
 		position: absolute;
-		bottom: 0upx;
+		bottom: 20upx;
 		width: 100%;
 		.footer {
 			height: 20upx;

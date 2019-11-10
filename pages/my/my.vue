@@ -28,54 +28,57 @@
 				height: 108upx;
 				line-height: 108upx;
 				margin: 40upx auto;
-				.photo {
-					width: 108upx;
-					height: 108upx;
-					border-radius: 50%;
-					vertical-align: middle;
-				}
-				.name {
-					display: inline-block;
-					height: 48upx;
-					margin-left: 25upx;
-					line-height: 48upx;
-					text-align: center;
-					font-size: 34upx;
-					color: #FFFFFF;
-					letter-spacing: 0.59upx;
-				}
-				.set {
-					position: relative;
-					width: 50upx;
-					height: 50upx;  
-					margin: 32upx 0;
-					image.set {
-					  position: absolute;
-					  top: -30upx;
-					  left: 0;  
-					  z-index: 1001;
-					}
-					.btn {
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						padding: 0 !important;
-						line-height: 0 !important;
-						background-color: transparent !important; 
-						z-index: 1002;
-					}            
-				}
-				.contentLoginBox {
-					position: absolute;
-					left: 100upx;
-					top: 0;
-					.btn-row {
-						.loginBtn {
-							font-size: 32upx;
-							background-color: #FA9A60
+				.leftInfoBox {
+					.avatarBox {
+						.photo {
+							width: 108upx;
+							height: 108upx;
+							border-radius: 50%;
+							vertical-align: middle;
 						}
+						.name {
+							display: inline-block;
+							height: 48upx;
+							margin-left: 25upx;
+							line-height: 48upx;
+							text-align: center;
+							font-size: 34upx;
+							color: #FFFFFF;
+							letter-spacing: 0.59upx;
+						}	
 					}
-				}				
+					.contentLoginBox {
+						.btn-row {
+							.loginBtn {
+								font-size: 32upx;
+								background-color: #FA9A60
+							}
+						}
+					}						
+				}
+				.setBtnBox {
+					.set {
+						position: relative;
+						width: 50upx;
+						height: 50upx;  
+						margin: 32upx 0;
+						image.set {
+						  position: absolute;
+						  top: -30upx;
+						  left: 0;  
+						  z-index: 1001;
+						}
+						.btn {
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							padding: 0 !important;
+							line-height: 0 !important;
+							background-color: transparent !important; 
+							z-index: 1002;
+						}            
+					}
+				}							
 			}
 			.containerBox {
 				width: 686upx;
@@ -126,42 +129,48 @@
 			<!-- <Loading type="4"></Loading> -->
 
 			<view class="bgBox">
-				<!-- <image class="" src="../../static/imgs/tab/my_bg_gaitubao_com_375x667.png"></image> -->
 				<image class="" :src="bg.my_bg" lazy-load="true"></image>
 			</view>
+			
 			<view class="contentBox">
-				<view class="top clearfix marginT40">
+				<view class="top marginT40 u-f u-f-jsb">
 					<!-- photo_png: {{photo_png}}
 					set_png: {{set_png}} -->
-					<image class="photo" :src="photo_png" layz-load="true"></image>
-					<!-- <image class="photo" src="{{userAvatarUrl? userAvatarUrl : ''}}" layz-load="true"></image> -->
-					<text class="name">{{name? name:''}}</text>
-					<!-- <view class="setBox "> -->
-						<!-- <image class="set rt" src="../../static/imgs/icon/set.png"  @tap.stop = "clickSet"></image> -->
-						
-					<!--#ifdef MP-WEIXIN-->
-					<form id="setFormBox"  class="set rt click-able" report-submit="true" bindsubmit="formSubmit">
-						<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = "clickSetBtn"></image>
-						<button form-type="submit" class="btn click-able"></button>
-					</form>
-					<!--#endif-->
-					
-					<!--#ifdef H5 || APP-PLUS-->
-					<span >
-						<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = "clickSetBtn"></image>
-						<button form-type="submit" class="btn click-able"></button>						
-					</span>
-					<!--#endif-->
-					<!--登陆/退出登陆-->
-					<view class="contentLoginBox">
-						<view class="btn-row">
-							<button class="loginBtn" v-if="!userToken" type="primary"  @tap="bindLogin">{{userToken?'已登陆': '您还未登录'}}</button>
-							<!--#ifdef H5 || APP-PLUS-->
-							<button class="loginBtn" v-if="userToken" type="default" @tap="loginOut">退出登录</button>
-							<!--#endif-->
+					<!--头像、姓名区域-->
+					<view class="leftInfoBox u-f-ajc">
+						<view class="avatarBox u-f-ac">
+							<image class="photo" :src="photo_png" layz-load="true"></image>
+							<text class="name">{{name? name:''}}</text>
 						</view>
+													
+						
+						<!--登陆/退出登陆-->
+						<!--#ifdef H5 || APP-PLUS-->
+						<view class="contentLoginBox">
+							<view class="btn-row">
+								<button class="loginBtn" v-if="!userToken" type="primary"  @tap="bindLogin">{{userToken?'已登陆': '您还未登录'}}</button>
+								<button class="loginBtn" v-if="userToken" type="default" @tap="loginOut">退出登录</button>
+							</view>
+						</view>
+						<!--#endif-->
 					</view>
-					<!-- </view> -->
+					
+					<!--设置区域-->
+					<view class="setBtnBox">
+						<!--#ifdef MP-WEIXIN-->
+						<form id="setFormBox"  class="set rt click-able" report-submit="true" bindsubmit="formSubmit">
+							<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = "clickSetBtn"></image>
+							<button form-type="submit" class="btn click-able"></button>
+						</form>
+						<!--#endif-->
+						
+						<!--#ifdef H5 || APP-PLUS-->
+						<span class="setBtn">
+							<image class="set click-able" :src="set_png" layz-load="true" @tap.stop = "clickSetBtn"></image>
+							<button form-type="submit" class="btn click-able"></button>						
+						</span>
+						<!--#endif-->
+					</view>					
 				</view>
 				<view class="containerBox form">
 					<view class="itemBox line clearfix marginT10 click-able u-f u-f-jsb" @tap.stop = "clickLessons">
@@ -338,7 +347,7 @@
 			},
 			// 登陆
 			bindLogin () {	
-                this.navigatePage("../login/login");
+                this.navigatePage("../login/login?toPageUrl=../my/my&jumpType=1");
 			},	
 			// 退出登陆
 			loginOut () {
@@ -367,6 +376,7 @@
 				// debugger
 				// console.log(this.getStorage("userInfo"))
 				this.getStorage("userInfo").then(res => {
+					debugger
 					// console.log("------------",res)
 					if(res){
 						this.photo_png = JSON.parse(res).headImg
