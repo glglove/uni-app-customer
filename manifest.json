@@ -8,8 +8,8 @@
     "app-plus" : {
         /* 5+App特有相关 */
         "usingComponents" : true,
-        "statusbar": {
-            "immersed": false    // 关闭沉浸式
+        "statusbar" : {
+            "immersed" : false // 关闭沉浸式
         },
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
@@ -19,7 +19,8 @@
         },
         "modules" : {
             "OAuth" : {},
-            "Share" : {}
+            "Share" : {},
+            "Push" : {}
         },
         /* 模块配置 */
         "distribute" : {
@@ -56,6 +57,41 @@
                     "weixin" : {
                         "appid" : "wxf6ba170ba8c559b2"
                     }
+                },
+                "push" : {
+                    "unipush" : {}
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "F:/git-uni-app/uni-logo/lo72.png",
+                    "xhdpi" : "F:/git-uni-app/uni-logo/lo96.png",
+                    "xxhdpi" : "F:/git-uni-app/uni-logo/lo144.png",
+                    "xxxhdpi" : "F:/git-uni-app/uni-logo/lo192.png"
+                },
+                "ios" : {
+                    "appstore" : "F:/git-uni-app/uni-logo/lo1024.png",
+                    "iphone" : {
+                        "app@2x" : "F:/git-uni-app/uni-logo/lo120.png",
+                        "app@3x" : "F:/git-uni-app/uni-logo/lo180.png",
+                        "spotlight@2x" : "F:/git-uni-app/uni-logo/lo80.png",
+                        "spotlight@3x" : "F:/git-uni-app/uni-logo/lo120.png",
+                        "settings@2x" : "F:/git-uni-app/uni-logo/lo58.png",
+                        "settings@3x" : "F:/git-uni-app/uni-logo/lo87.png",
+                        "notification@2x" : "F:/git-uni-app/uni-logo/lo40.png",
+                        "notification@3x" : "F:/git-uni-app/uni-logo/lo60.png"
+                    },
+                    "ipad" : {
+                        "app" : "F:/git-uni-app/uni-logo/lo76.png",
+                        "app@2x" : "F:/git-uni-app/uni-logo/lo152.png",
+                        "proapp@2x" : "F:/git-uni-app/uni-logo/lo167.png",
+                        "spotlight" : "F:/git-uni-app/uni-logo/lo40.png",
+                        "spotlight@2x" : "F:/git-uni-app/uni-logo/lo80.png",
+                        "settings" : "F:/git-uni-app/uni-logo/lo29.png",
+                        "settings@2x" : "F:/git-uni-app/uni-logo/lo58.png",
+                        "notification" : "F:/git-uni-app/uni-logo/lo20.png",
+                        "notification@2x" : "F:/git-uni-app/uni-logo/lo40.png"
+                    }
                 }
             }
         }
@@ -70,5 +106,9 @@
             "urlCheck" : false
         },
         "usingComponents" : true
+    },
+    "h5" : {
+        "title" : "uni-appProject",
+        "domain" : "www.gaolongweb.cn"
     }
 }

@@ -16,8 +16,8 @@
 		}		
 	}
 	.contentBox {
-		width: 686upx;
-		padding: 45upx 30upx;
+		width: 100%;
+		padding: 90upx 60upx;
 		box-sizing: border-box;
 		letter-spacing: 1upx;
 		margin: 0 auto;
@@ -140,7 +140,6 @@
 			}  
 		}
 	}
-
 }
 
 </style>
@@ -149,18 +148,11 @@
 	<container :containerLoading="containerLoading">
 		<view id="sign" class="content" slot="container-slot">
 			<!--轮播图-->
-			<view class="uni-swiper-msg">
-				<!--<view class="uni-swiper-msg-icon">
-					<image :src="bg.sign_bg" mode="widthFix"></image>
-				</view> -->			
+			<view class="uni-swiper-msg">		
 				<swiper  autoplay="true" circular="true" interval="3000">
 					<swiper-item>
 						<navigator>
 							<image :src="carousel_01" mode="widthFix"></image>
-							<!--<image 
-								:src="bg.sign_bg"
-								mode="widthFix">
-							</image> -->
 						</navigator>
 					</swiper-item>
 					<swiper-item>
@@ -180,66 +172,61 @@
 			<!-- lessonList.length:{{lessonList.length}} -->
 			
 			<view :class="['contentBox', lessonList.length<=0? 'not_found' : '']" :style="signContentBoxHeight">
-				<!-- signContentBoxHeight: {{signContentBoxHeight}} -->
-				<!--<scroll-view 
-					:scroll-top="scrollTop" 
-					scroll-y="true" 
-					class="scroll-view-y" 
-					@scrolltoupper="upper" 
-					@scrolltolower="lower"
-					@scroll="scroll"> -->
-					<view class="itemListBox" >
-						<!-- <p class="scroll-view-item" v-for="(lessonItem,key) in arrData" :key="key">打卡开始时间：{{lessonItem.clockEndDate}}</p>-->
-						<view>
-							<form id="item_formId" report-submit="true" bindsubmit="formSubmit">
-								<scroll-view scroll-y animated fadeIn :style="signContentBoxHeight">
-									<block v-for="(item,index) in lessonList" :key="index"  :data-index="index">
-										<view 
-											:class="['itemlist', (index+1) == idx ? 'shadow':'']"  
-											@tap.stop = "clickLesson" 
-											data-id = "item.id" 
-											data-name="itemBox">
-											<view class="listBox-top click-able ">
-												<view class="lessonTit">{{item.title}}</view>
-												<view class="signTimeZone marginT10">打卡时间 {{item.clockStartDate}}-{{item.clockEndDate}}</view>
-												<view class="signTimes marginT10">共进行21天,已打卡{{item.days}}次</view>
-												<view class="signBtn click-able">
-													<!-- <button class="sign-button {{item.flag?'alreadySign':''}} click-able" data-name="gotoSignBtn" data-item="{{item}}" form-type="submit">{{item.flag?"已打卡":"去打卡"}}</button>     -->
-													<!-- <button class="sign-button {{item.titStatus=='已结束'? 'already_end':''}} {{item.titStatus=='未开始'? 'not_begin':''}} {{item.flag?'alreadySign':''}} click-able" data-name="gotoSignBtn" data-item="{{item}}" form-type="submit">{{item.titStatus}}</button>     -->
-													<button 
-														:class="['sign-button', item.titStatus=='已结束'? 'already_end':'',item.titStatus=='未开始'? 'not_begin':'',item.flag?'alreadySign':'','click-able']"
-														:data-name="gotoSignBtn" 
-														:data-item="item" 
-														form-type="submit"
-													>
-													{{item.titStatus}}
-													</button>    
-												</view> 
+				<view class="itemListBox">
+					<!-- <p class="scroll-view-item" v-for="(lessonItem,key) in arrData" :key="key">打卡开始时间：{{lessonItem.clockEndDate}}</p>-->
+					<view>
+						<form id="item_formId" report-submit="true" bindsubmit="formSubmit">
+							<scroll-view scroll-y animated fadeIn :style="signContentBoxHeight">
+								<block v-for="(item,index) in lessonList" :key="index"  :data-index="index">
+									
+									<view 
+										:class="['itemlist', (index+1) == idx ? 'shadow':'']"  
+										@tap.stop = "clickLesson" 
+										data-id = "item.id" 
+										data-name="itemBox"
+									>
+										<view class="listBox-top click-able ">
+											<view class="lessonTit">{{item.title}}</view>
+											<view class="signTimeZone marginT10">打卡时间 {{item.clockStartDate}}-{{item.clockEndDate}}</view>
+											<view class="signTimes marginT10">共进行21天,已打卡{{item.days}}次</view>
+											<view class="signBtn click-able">
+												<!-- <button class="sign-button {{item.flag?'alreadySign':''}} click-able" data-name="gotoSignBtn" data-item="{{item}}" form-type="submit">{{item.flag?"已打卡":"去打卡"}}</button>     -->
+												<!-- <button class="sign-button {{item.titStatus=='已结束'? 'already_end':''}} {{item.titStatus=='未开始'? 'not_begin':''}} {{item.flag?'alreadySign':''}} click-able" data-name="gotoSignBtn" data-item="{{item}}" form-type="submit">{{item.titStatus}}</button>     -->
+												<button 
+													:class="['sign-button', item.titStatus=='已结束'? 'already_end':'',item.titStatus=='未开始'? 'not_begin':'',item.flag?'alreadySign':'','click-able']"
+													:data-name="gotoSignBtn" 
+													:data-item="item" 
+													form-type="submit"
+												>
+												{{item.titStatus}}
+												</button>    
 											</view> 
-											<view class="listBoxBottom">
-												<button class="flex_item border-right click-able"  form-type="submit" :data-name="ranklistBtn" :data-item="item">
-													<image src="../../static/imgs/icon/ranklist.png" layz-load="true" class="flex_item_pic"></image>
-													<text class="flex_item_tit">排行榜</text>
-												</button>
-												<button class="flex_item border-right click-able"  form-type="submit" :data-name="learnBtn" :data-item="item">
-													<image src="../../static/imgs/icon/canlendar.png"  layz-load="true" class="flex_item_pic"></image>
-													<text class="flex_item_tit">学习日历</text>                        
-												</button>
-												<button class="flex_item click-able"  form-type="submit" :data-name="invitateBtn" :data-item="item">
-													<image src="../../static/imgs/icon/invitation.png"  layz-load="true" class="flex_item_pic"></image>
-													<text class="flex_item_tit">邀请人数</text>                        
-												</button>
-											</view>                        
-										</view>                
-									</block>   	
-									<!--加载更多-->
-									<view class="loadingMore" v-if="loadingMoreShow">
-										<load-more :loadingType="1" :status="loadingStatus"></load-more>	
-									</view>
-								</scroll-view>                
-							</form>          
-						</view>	
-					</view>
+										</view> 
+										
+										<view class="listBoxBottom">
+											<button class="flex_item border-right click-able"  form-type="submit" :data-name="ranklistBtn" :data-item="item">
+												<image src="../../static/imgs/icon/ranklist.png" layz-load="true" class="flex_item_pic"></image>
+												<text class="flex_item_tit">排行榜</text>
+											</button>
+											<button class="flex_item border-right click-able"  form-type="submit" :data-name="learnBtn" :data-item="item">
+												<image src="../../static/imgs/icon/canlendar.png"  layz-load="true" class="flex_item_pic"></image>
+												<text class="flex_item_tit">学习日历</text>                        
+											</button>
+											<button class="flex_item click-able"  form-type="submit" :data-name="invitateBtn" :data-item="item">
+												<image src="../../static/imgs/icon/invitation.png"  layz-load="true" class="flex_item_pic"></image>
+												<text class="flex_item_tit">邀请人数</text>                        
+											</button>
+										</view>   
+															 
+									</view>                
+								</block>   	
+								<!--加载更多-->
+								<view class="loadingMore" v-if="loadingMoreShow">
+									<load-more :loadingType="1" :status="loadingStatus"></load-more>	
+								</view>
+							</scroll-view>                
+						</form>          
+					</view>	
 				</view>
 			</view>
 		</view>

@@ -111,14 +111,15 @@ export const miniProApi = {
 		// 		}					
 		// 	}		
 		// })
-		
-		if(this.pageSize*this.pageNum < this.total){
-			this.pageNum +=1
-			this.refreshPage()
-		}else {
-			this.toast("没有更多了~~~~")
-		}
-		console.log('mixin onReachBottom')
+			
+			
+		// if(this.pageSize*this.pageNum < this.total){
+		// 	this.pageNum +=1
+		// 	this.refreshPage()
+		// }else {
+		// 	this.toast("没有更多了~~~~")
+		// }
+		// console.log('mixin onReachBottom')
 	},
 	onShareAppMessage(){
 		console.log('mixin onShareAppMessage')

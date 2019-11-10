@@ -121,7 +121,7 @@
 
 <template>
 	<container :containerLoading="containerLoading">
-		<view id="my"  slot="container-slot"  @touchstart=""  @touchmove="" @touchend="" >
+		<view id="my"  slot="container-slot"  @touchstart=""  @touchmove="" @touchend="">
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
 

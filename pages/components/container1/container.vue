@@ -218,8 +218,10 @@
 				'pHeight'
 			]),
 			positionStyle() {
+                // return `background:${this.background};position:relative;padding-top:${this.top}px;padding-bottom:${this.bottom}px;
+                // padding-left:${this.left}px;padding-right:${this.right}px;min-height:${this.pHeight}px;opacity:${this.containerAllloadingFlag?0:1}`
                 return `background:${this.background};position:relative;padding-top:${this.top}px;padding-bottom:${this.bottom}px;
-                padding-left:${this.left}px;padding-right:${this.right}px;min-height:${this.pHeight}px;opacity:${this.containerAllloadingFlag?0:1}`
+                padding-left:${this.left}px;padding-right:${this.right}px;height:${this.pHeight}px;opacity:${this.containerAllloadingFlag?0:1}`				
 			}
 			// 小程序上面 自动检测 是否有授权
 			// #ifdef MP-WEIXIN

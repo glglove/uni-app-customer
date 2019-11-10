@@ -233,7 +233,7 @@
 			<!--loading-->
 			<!--已登录-->
 			<div v-if="userToken" class="find-hasLogin">
-				<view class="bgBox animated fadeIn">
+				<view class="bgBox">
 					<image :src="bg.find_bg" class="bgpic" lazy-load="true"></image>            
 				</view>
 				<!--用于收集定时提醒的推送码-->
@@ -537,7 +537,6 @@
 				this.navigatePage(`../packageA/find/invitation/index`)	
 				
 				this.shairePic_clickable = false
-				
 				
 			}   		
 		}
