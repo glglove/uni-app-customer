@@ -121,6 +121,7 @@ page {
 /* flex布局 */
 .u-f,
 .u-f-ac,
+.u-f-jc,
 .u-f-ajc {
   display: -webkit-box;
   display: -webkit-flex;
@@ -136,6 +137,7 @@ page {
           align-items: center;
 }
 /* 水平居中 */
+.u-f-jc,
 .u-f-ajc {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
@@ -153,6 +155,11 @@ page {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+.u-f0 {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
 }
 .u-f-column {
   -webkit-box-orient: vertical;

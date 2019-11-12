@@ -9,8 +9,8 @@
   width: 100%;
 }
 #sign .contentBox.data-v-61b32b1a {
-  width: 686rpx;
-  padding: 45rpx 30rpx;
+  width: 100%;
+  padding: 90rpx 60rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   letter-spacing: 1rpx;

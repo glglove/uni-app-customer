@@ -196,5 +196,28 @@ export default {
 		   loading,
 		   loadingText
 	   })
-	}	   
+	},
+
+	/**
+	 * 调取个推接口
+	*/
+	getuiPush ( params, loading = false, loadingText = "请求中...") {
+		const url = `/app/getuiApp/tuisong`
+		var data = {
+
+		}
+		params = Object.assign(data, params);
+		console.log( params );
+		const paramsObj = {
+		  url: url,
+		  params: params
+		}
+
+	   return http.post( url,{
+		...params
+	   },{
+		loading,
+		loadingText
+	   })		
+	}
 }

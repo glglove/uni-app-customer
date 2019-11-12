@@ -306,6 +306,7 @@
 	// import {uniCard, uniPagination} from '@dcloudio/uni-ui'	
 	import FooterExplain from '@/pages/components/footerExplain/footerExplain'
 	import findApi from '@/api/find.js'
+	import commApi from '@/api/comm.js'
 	import { miniProApi } from '@/utils/mixins.js'
 	// import { REQ_OK } from '@/api/config'
 	// import container from '@/pages/components/container1/container'
@@ -524,6 +525,10 @@
 			},
 			// 立即报名
 			immediateSignUp(){
+				commApi.getuiPush().then(res => {
+					debugger
+					console.log(res)
+				})
 				this.navigatePage("../packageA/find/lessonList/index")
 			},
 			// 邀请好友

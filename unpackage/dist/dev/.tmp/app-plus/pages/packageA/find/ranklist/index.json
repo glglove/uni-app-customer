@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "排行榜",
   "usingComponents": {
+    "container": "/pages/components/container1/container",
     "calendar": "/pages/components/uni-calendar/w-calendar"
   }
 }

@@ -2,6 +2,7 @@
   "navigationBarTitleText": "发现",
   "enablePullDownRefresh": true,
   "usingComponents": {
+    "container": "/pages/components/container1/container",
     "footer-explain": "/pages/components/footerExplain/footerExplain"
   }
 }

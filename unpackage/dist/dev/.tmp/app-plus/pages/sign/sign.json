@@ -29,6 +29,7 @@
   },
   "navigationBarBackgroundColor": "transparent",
   "usingComponents": {
+    "container": "/pages/components/container1/container",
     "load-more": "/pages/components/uni-load-more/uni-load-more"
   }
 }

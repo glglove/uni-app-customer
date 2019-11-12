@@ -81,6 +81,9 @@
 			// #ifdef APP-PLUS
 			// app 检测 localstorage 中是否有 userToken
 			this.appCheckLocalStorageToken()
+			
+			// 获取clientid
+			this.getAppCid()
 			//#endif
 		},
 		onShow: function() {
@@ -91,6 +94,53 @@
 			console.log('App Hide')	
 		},
 		methods:{
+			// app-plus获取应用的clientid
+			getAppCid() {
+				// app-plus 登录成功后 获取 设备的 clientid
+				let clientid = plus.push.getClientInfo().clientid
+				console.log("获取到的应用clientid", clientid)
+				if (!clientid) { //如果获取的clientid为空，说明客户端向推送服务器注册还未完成，可以使用setTimeout延时重试。
+					setTimeout(() => {
+						clientid = plus.push.getClientInfo().clientid
+						console.log("setTimeOut后打印的clientid", clientid)
+					}, 4000)
+				}else {
+					// 存入用户的clientid 到storage 中
+					uni.setStorage({
+						key: 'clientid',
+						data: clientid,
+						success: function () {
+							console.log('clientid 存储success');
+						}						
+					})
+				}
+			 
+				// 首先是获取cid，cid是每个设备向个推服务器注册以后生成的设备id，获取到cid后要在登录的时候把cid传给服务端和用户绑定起来，就可以实现特定用户的推送。
+				// 两个监听click很明显，就是点击时候出触发的。
+				// receive有两种情况会触发
+				// 1.ios应用已经打开的情况，这种情况通知栏不会有消息。可以自己写这种情况的处理逻辑，一般会弹出一个弹窗问需不需要跳转，我的方式是用plus.push.createMessage本地创建一条消息。
+				// 2.android接收到不符合格式的推送（不符合{title:"xxxx",content:"xxxx",payload:"xxxxx"}），这个是服务端来控制的
+
+				plus.push.addEventListener('click', (message) => {
+					// 客户端注册点击事件
+					this.pushCallBack("click事件", message)
+				})
+			 
+				plus.push.addEventListener('receive', (message) => {
+					// 客户端注册receive事件
+					this.pushCallBack("reciive事件", message)
+				})
+			},
+
+			pushCallBack(str, message){
+				// 收到推送注册的 click 或者 receive事件后的 回调函数
+				debugger
+				uni.showToast({
+					title: `${str},消息内容：${message}`
+				})
+			},	
+			
+					
 			// 检查是否有版本更新
 			checkNewVersion () {
 				console.log("-------检查小程序是否有新版本-------checkNewVersion----------")
