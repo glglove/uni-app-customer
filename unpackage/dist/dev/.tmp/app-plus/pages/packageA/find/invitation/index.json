@@ -1,6 +1,4 @@
 {
   "navigationBarTitleText": "邀请",
-  "usingComponents": {
-    "container": "/pages/components/container1/container"
-  }
+  "usingComponents": {}
 }

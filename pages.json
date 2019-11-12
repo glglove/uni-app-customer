@@ -102,6 +102,12 @@
             }			
 		},
 		{
+			"path": "pages/webSocket/testWebSocket",
+			"style": {
+				"navigationBarTitleText": "webSocket测试"
+			}
+		},
+		{
 			"path" : "pages/packageA/find/lessonList/index",
 			"style" : {
 				"navigationBarTitleText":"课程"

@@ -1,7 +1,5 @@
 {
   "navigationBarTitleText": "欢迎页面",
   "enablePullDownRefresh": true,
-  "usingComponents": {
-    "container": "/pages/components/container1/container"
-  }
+  "usingComponents": {}
 }

@@ -2304,6 +2304,25 @@ if( __WXML_GLOBAL__.ops_cached.$gwx_33)return __WXML_GLOBAL__.ops_cached.$gwx_33
 __WXML_GLOBAL__.ops_cached.$gwx_33=[];
 (function(z){var a=11;function Z(ops){z.push(ops)}
 Z([3,'__l'])
+Z([3,'1'])
+Z([[4],[[5],[1,'container-slot']]])
+Z([3,'websockets'])
+Z([3,'container-slot'])
+Z([3,'__e'])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'clickRequest']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z([3,'primary'])
+Z([3,'点击发送请求'])
+Z(z[5])
+Z([[4],[[5],[[4],[[5],[[5],[1,'tap']],[[4],[[5],[[4],[[5],[[5],[1,'leave']],[[4],[[5],[1,'$event']]]]]]]]]]])
+Z(z[7])
+Z([3,'离开页面'])
+})(__WXML_GLOBAL__.ops_cached.$gwx_33);return __WXML_GLOBAL__.ops_cached.$gwx_33
+}
+function gz$gwx_34(){
+if( __WXML_GLOBAL__.ops_cached.$gwx_34)return __WXML_GLOBAL__.ops_cached.$gwx_34
+__WXML_GLOBAL__.ops_cached.$gwx_34=[];
+(function(z){var a=11;function Z(ops){z.push(ops)}
+Z([3,'__l'])
 Z([3,'data-v-c70ce24c'])
 Z([[7],[3,'loading1']])
 Z([3,'1'])
@@ -2321,13 +2340,13 @@ Z(z[1])
 Z([3,'这是 uni-app 带登录模板的示例App首页。'])
 Z(z[1])
 Z([3,'在 “我的” 中点击 “登录” 可以 “登录您的账户”'])
-})(__WXML_GLOBAL__.ops_cached.$gwx_33);return __WXML_GLOBAL__.ops_cached.$gwx_33
+})(__WXML_GLOBAL__.ops_cached.$gwx_34);return __WXML_GLOBAL__.ops_cached.$gwx_34
 }
 __WXML_GLOBAL__.ops_set.$gwx=z;
 __WXML_GLOBAL__.ops_init.$gwx=true;
 var nv_require=function(){var nnm={};var nom={};return function(n){return function(){if(!nnm[n]) return undefined;try{if(!nom[n])nom[n]=nnm[n]();return nom[n];}catch(e){e.message=e.message.replace(/nv_/g,'');var tmp = e.stack.substring(0,e.stack.lastIndexOf(n));e.stack = tmp.substring(0,tmp.lastIndexOf('\n'));e.stack = e.stack.replace(/\snv_/g,' ');e.stack = $gstack(e.stack);e.stack += '\n    at ' + n.substring(2);console.error(e);}
 }}}()
-var x=['./pages/components/authorize/authorize.wxml','./pages/components/container1/container.wxml','./pages/components/footerExplain/footerExplain.wxml','./pages/components/m-icon/m-icon.wxml','./pages/components/m-input/m-input.wxml','./pages/components/tab/tab.wxml','./pages/components/uni-calendar/w-calendar.wxml','./pages/components/uni-load-more/uni-load-more.wxml','./pages/find/find.wxml','./pages/login/login.wxml','./pages/my/my.wxml','./pages/packageA/find/invitation/index.wxml','./pages/packageA/find/lessonList/index.wxml','./pages/packageA/find/lessonList/lessonDetail/enterSuccess/index.wxml','./pages/packageA/find/lessonList/lessonDetail/index.wxml','./pages/packageA/find/ranklist/index.wxml','./pages/packageA/find/signUpRecord/index.wxml','./pages/packageA/sign/immediatelySignUp/index.wxml','./pages/packageA/sign/immediatelySignUp/submitTask/index.wxml','./pages/packageA/sign/immediatelySignUp/submitTask/submitTaskSuccess/index.wxml','./pages/packageB/my/help/index.wxml','./pages/packageB/my/help/submitProblem/index.wxml','./pages/packageB/my/help/submitProblem/submitProblemSuccess/index.wxml','./pages/packageB/my/inviteFriends/index.wxml','./pages/packageB/my/learnRecord/index.wxml','./pages/packageB/my/myAchievement/certificate/index.wxml','./pages/packageB/my/myAchievement/index.wxml','./pages/packageB/my/set/index.wxml','./pages/packageB/my/signUpCard/signUpCard.wxml','./pages/pwd/pwd.wxml','./pages/register/register.wxml','./pages/sign/sign.wxml','./pages/welecome/welecome.wxml'];d_[x[0]]={}
+var x=['./pages/components/authorize/authorize.wxml','./pages/components/container1/container.wxml','./pages/components/footerExplain/footerExplain.wxml','./pages/components/m-icon/m-icon.wxml','./pages/components/m-input/m-input.wxml','./pages/components/tab/tab.wxml','./pages/components/uni-calendar/w-calendar.wxml','./pages/components/uni-load-more/uni-load-more.wxml','./pages/find/find.wxml','./pages/login/login.wxml','./pages/my/my.wxml','./pages/packageA/find/invitation/index.wxml','./pages/packageA/find/lessonList/index.wxml','./pages/packageA/find/lessonList/lessonDetail/enterSuccess/index.wxml','./pages/packageA/find/lessonList/lessonDetail/index.wxml','./pages/packageA/find/ranklist/index.wxml','./pages/packageA/find/signUpRecord/index.wxml','./pages/packageA/sign/immediatelySignUp/index.wxml','./pages/packageA/sign/immediatelySignUp/submitTask/index.wxml','./pages/packageA/sign/immediatelySignUp/submitTask/submitTaskSuccess/index.wxml','./pages/packageB/my/help/index.wxml','./pages/packageB/my/help/submitProblem/index.wxml','./pages/packageB/my/help/submitProblem/submitProblemSuccess/index.wxml','./pages/packageB/my/inviteFriends/index.wxml','./pages/packageB/my/learnRecord/index.wxml','./pages/packageB/my/myAchievement/certificate/index.wxml','./pages/packageB/my/myAchievement/index.wxml','./pages/packageB/my/set/index.wxml','./pages/packageB/my/signUpCard/signUpCard.wxml','./pages/pwd/pwd.wxml','./pages/register/register.wxml','./pages/sign/sign.wxml','./pages/webSocket/testWebSocket.wxml','./pages/welecome/welecome.wxml'];d_[x[0]]={}
 var m0=function(e,s,r,gg){
 var z=gz$gwx_1()
 var oB=_mz(z,'view',['class',0,'hidden',1,'id',1],[],e,s,gg)
@@ -4213,41 +4232,59 @@ e_[x[31]]={f:m31,j:[],i:[],ti:[],ic:[]}
 d_[x[32]]={}
 var m32=function(e,s,r,gg){
 var z=gz$gwx_33()
-var f9T=_mz(z,'container',['bind:__l',0,'class',1,'loading1',1,'vueId',2,'vueSlots',3],[],e,s,gg)
-var c0T=_mz(z,'view',['class',5,'id',1,'slot',2],[],e,s,gg)
+var f9T=_mz(z,'container',['bind:__l',0,'vueId',1,'vueSlots',1],[],e,s,gg)
+var c0T=_mz(z,'view',['id',3,'slot',1],[],e,s,gg)
+var hAU=_mz(z,'button',['bindtap',5,'data-event-opts',1,'type',2],[],e,s,gg)
 var oBU=_oz(z,8,e,s,gg)
-_(c0T,oBU)
-var hAU=_v()
+_(hAU,oBU)
 _(c0T,hAU)
-if(_oz(z,9,e,s,gg)){hAU.wxVkey=1
-var cCU=_n('view')
-_rz(z,cCU,'class',10,e,s,gg)
-var oDU=_n('view')
-_rz(z,oDU,'class',11,e,s,gg)
-var lEU=_oz(z,12,e,s,gg)
-_(oDU,lEU)
+var cCU=_mz(z,'button',['bindtap',9,'data-event-opts',1,'type',2],[],e,s,gg)
+var oDU=_oz(z,12,e,s,gg)
 _(cCU,oDU)
-var aFU=_n('view')
-_rz(z,aFU,'class',13,e,s,gg)
-var tGU=_n('view')
-_rz(z,tGU,'class',14,e,s,gg)
-var eHU=_oz(z,15,e,s,gg)
-_(tGU,eHU)
-_(aFU,tGU)
-var bIU=_n('view')
-_rz(z,bIU,'class',16,e,s,gg)
-var oJU=_oz(z,17,e,s,gg)
-_(bIU,oJU)
-_(aFU,bIU)
-_(cCU,aFU)
-_(hAU,cCU)
-}
-hAU.wxXCkey=1
+_(c0T,cCU)
 _(f9T,c0T)
 _(r,f9T)
 return r
 }
 e_[x[32]]={f:m32,j:[],i:[],ti:[],ic:[]}
+d_[x[33]]={}
+var m33=function(e,s,r,gg){
+var z=gz$gwx_34()
+var aFU=_mz(z,'container',['bind:__l',0,'class',1,'loading1',1,'vueId',2,'vueSlots',3],[],e,s,gg)
+var tGU=_mz(z,'view',['class',5,'id',1,'slot',2],[],e,s,gg)
+var bIU=_oz(z,8,e,s,gg)
+_(tGU,bIU)
+var eHU=_v()
+_(tGU,eHU)
+if(_oz(z,9,e,s,gg)){eHU.wxVkey=1
+var oJU=_n('view')
+_rz(z,oJU,'class',10,e,s,gg)
+var xKU=_n('view')
+_rz(z,xKU,'class',11,e,s,gg)
+var oLU=_oz(z,12,e,s,gg)
+_(xKU,oLU)
+_(oJU,xKU)
+var fMU=_n('view')
+_rz(z,fMU,'class',13,e,s,gg)
+var cNU=_n('view')
+_rz(z,cNU,'class',14,e,s,gg)
+var hOU=_oz(z,15,e,s,gg)
+_(cNU,hOU)
+_(fMU,cNU)
+var oPU=_n('view')
+_rz(z,oPU,'class',16,e,s,gg)
+var cQU=_oz(z,17,e,s,gg)
+_(oPU,cQU)
+_(fMU,oPU)
+_(oJU,fMU)
+_(eHU,oJU)
+}
+eHU.wxXCkey=1
+_(aFU,tGU)
+_(r,aFU)
+return r
+}
+e_[x[33]]={f:m33,j:[],i:[],ti:[],ic:[]}
 if(path&&e_[path]){
 window.__wxml_comp_version__=0.02
 return function(env,dd,global){$gwxc=0;var root={"tag":"wx-page"};root.children=[]
@@ -4467,6 +4504,9 @@ __wxAppCode__['pages/register/register.wxml']=$gwx('./pages/register/register.wx
 
 __wxAppCode__['pages/sign/sign.wxss']=setCssToHead(["#sign.data-v-61b32b1a { background-color: #fbfaf9; }\n#sign .",[1],"bgBox.",[1],"data-v-61b32b1a { width: 100%; height: ",[0,400],"; }\n#sign .",[1],"bgBox .",[1],"bgpic.",[1],"data-v-61b32b1a { width: 100%; }\n#sign .",[1],"contentBox.",[1],"data-v-61b32b1a { width: 100%; padding: ",[0,90]," ",[0,60],"; -webkit-box-sizing: border-box; box-sizing: border-box; letter-spacing: ",[0,1],"; margin: 0 auto; }\n#sign .",[1],"contentBox .",[1],"scroll-view-y.",[1],"data-v-61b32b1a { width: 100%; height: 100%; }\n#sign .",[1],"contentBox .",[1],"itemListBox.",[1],"data-v-61b32b1a { width: 100%; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist.",[1],"data-v-61b32b1a { height: ",[0,270],"; border: 1px solid rgba(252, 213, 190, 0.3); border-top-left-radius: ",[0,28],"; border-top-right-radius: ",[0,28],"; margin-top: ",[0,20],"; padding: ",[0,20],"; -webkit-box-shadow: 0 ",[0,4]," ",[0,20]," ",[0,4]," rgba(255, 0, 0, 0.1); box-shadow: 0 ",[0,4]," ",[0,20]," ",[0,4]," rgba(255, 0, 0, 0.1); -webkit-box-sizing: border-box; box-sizing: border-box; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist.",[1],"shadow.",[1],"data-v-61b32b1a { background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#000)); background: -o-linear-gradient(top, #ccc, #000); background: linear-gradient(top, #ccc, #000); }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top.",[1],"data-v-61b32b1a { position: relative; width: 100%; height: ",[0,150],"; border-bottom: 1px dashed rgba(250, 160, 107, 0.7); }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"lessonTit.",[1],"data-v-61b32b1a { height: ",[0,48],"; font-size: ",[0,34],"; color: #000000; line-height: ",[0,48],"; font-weight: blod; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"signTimeZone.",[1],"data-v-61b32b1a { height: ",[0,33],"; font-size: ",[0,24],"; color: #888C91; line-height: ",[0,33],"; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"signTimes.",[1],"data-v-61b32b1a { height: ",[0,33],"; font-size: ",[0,24],"; color: #888C91; line-height: ",[0,33],"; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"signBtn.",[1],"data-v-61b32b1a { position: absolute; top: 50%; right: 0; width: ",[0,164],"; height: ",[0,70],"; -ms-transform: translateY(-50%); transform: translateY(-50%); -webkit-transform: translateY(-50%); }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"signBtn .",[1],"sign-button.",[1],"data-v-61b32b1a { height: 100%; width: 100%; line-height: ",[0,70],"; font-size: ",[0,34],"; color: #FFFFFF; background: -webkit-gradient(linear, left top, right top, from(rgba(250, 153, 96, 0.4)), to(#fa9960)); background: -o-linear-gradient(left, rgba(250, 153, 96, 0.4), #fa9960); background: linear-gradient(to right, rgba(250, 153, 96, 0.4), #fa9960); border-radius: ",[0,50],"; padding: 0 !important; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"signBtn .",[1],"sign-button.",[1],"alreadySign.",[1],"data-v-61b32b1a { color: #000000; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"signBtn .",[1],"sign-button.",[1],"already_end.",[1],"data-v-61b32b1a { background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.08)), to(rgba(0, 0, 0, 0.2))); background: -o-linear-gradient(left, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2)); background: linear-gradient(to right, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.2)); color: #000000; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBox-top .",[1],"signBtn .",[1],"sign-button.",[1],"not_begin.",[1],"data-v-61b32b1a { color: #242F42; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBoxBottom.",[1],"data-v-61b32b1a { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -webkit-justify-content: space-between; -ms-flex-pack: justify; justify-content: space-between; margin: ",[0,30]," 0; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBoxBottom .",[1],"flex_item.",[1],"data-v-61b32b1a { text-align: center; padding: 0; background-color: transparent; line-height: 0; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBoxBottom .",[1],"flex_item.",[1],"border-right.",[1],"data-v-61b32b1a { border-right: ",[0,1]," solid silver; border-radius: 0; width: 33%; text-align: left; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBoxBottom .",[1],"flex_item .",[1],"flex_item_pic.",[1],"data-v-61b32b1a { display: inline-block; width: ",[0,40],"; height: ",[0,30],"; vertical-align: middle; }\n#sign .",[1],"contentBox .",[1],"itemListBox .",[1],"itemlist .",[1],"listBoxBottom .",[1],"flex_item .",[1],"flex_item_tit.",[1],"data-v-61b32b1a { display: inline-block; height: ",[0,33],"; line-height: ",[0,33],"; text-align: center; color: #000000; font-size: ",[0,24],"; margin-left: ",[0,20],"; }\n",],"Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors.(./pages/sign/sign.wxss:131:1)",{path:"./pages/sign/sign.wxss"});    
 __wxAppCode__['pages/sign/sign.wxml']=$gwx('./pages/sign/sign.wxml');
+
+__wxAppCode__['pages/webSocket/testWebSocket.wxss']=undefined;    
+__wxAppCode__['pages/webSocket/testWebSocket.wxml']=$gwx('./pages/webSocket/testWebSocket.wxml');
 
 __wxAppCode__['pages/welecome/welecome.wxss']=setCssToHead(["#welecome.data-v-c70ce24c { position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; }\n#welecome .",[1],"welecome-logined.",[1],"data-v-c70ce24c { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }\n#welecome .",[1],"welecome-logined .",[1],"title.",[1],"data-v-c70ce24c { color: #8f8f94; margin-top: ",[0,50],"; }\n#welecome .",[1],"welecome-logined .",[1],"ul.",[1],"data-v-c70ce24c { font-size: ",[0,30],"; color: #8f8f94; margin-top: ",[0,50],"; }\n#welecome .",[1],"welecome-logined .",[1],"ul wx-view.",[1],"data-v-c70ce24c { line-height: ",[0,50],"; }\n#welecome .",[1],"welecome-loginOut.",[1],"data-v-c70ce24c { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; }\n#welecome .",[1],"welecome-loginOut .",[1],"title.",[1],"data-v-c70ce24c { color: #8f8f94; margin-top: ",[0,50],"; }\n#welecome .",[1],"welecome-loginOut .",[1],"ul.",[1],"data-v-c70ce24c { font-size: ",[0,30],"; color: #8f8f94; margin-top: ",[0,50],"; }\n#welecome .",[1],"welecome-loginOut .",[1],"ul wx-view.",[1],"data-v-c70ce24c { line-height: ",[0,50],"; }\n",],"Some selectors are not allowed in component wxss, including tag name selectors, ID selectors, and attribute selectors.(./pages/welecome/welecome.wxss:60:1)",{path:"./pages/welecome/welecome.wxss"});    
 __wxAppCode__['pages/welecome/welecome.wxml']=$gwx('./pages/welecome/welecome.wxml');

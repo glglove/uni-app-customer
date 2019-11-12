@@ -525,11 +525,13 @@
 			},
 			// 立即报名
 			immediateSignUp(){
-				commApi.getuiPush().then(res => {
-					debugger
-					console.log(res)
-				})
-				this.navigatePage("../packageA/find/lessonList/index")
+				//测试unipush
+				// commApi.getuiPush().then(res => {
+				// 	debugger
+				// 	console.log(res)
+				// })
+				// this.navigatePage("../packageA/find/lessonList/index")
+				this.navigatePage("../webSocket/testWebSocket")
 			},
 			// 邀请好友
 			async invitateFriends (e) {

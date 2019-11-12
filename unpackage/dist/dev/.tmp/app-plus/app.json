@@ -7,6 +7,7 @@
     "pages/login/login",
     "pages/register/register",
     "pages/pwd/pwd",
+    "pages/webSocket/testWebSocket",
     "pages/packageA/find/lessonList/index",
     "pages/packageA/find/lessonList/lessonDetail/index",
     "pages/packageA/find/lessonList/lessonDetail/enterSuccess/index",
