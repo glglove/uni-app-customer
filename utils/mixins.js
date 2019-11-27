@@ -461,7 +461,7 @@ export const miniProApi = {
 		},
 		// #endif
 
-		// #ifdef APP-PlUS
+		// #ifdef APP-PLUS
 		getAppCid() {
 			// app-plus 登录成功后 获取 设备的 clientid
 
@@ -493,7 +493,9 @@ export const miniProApi = {
 				this.pushCallBack("reciive事件", message)
 			})
 		},
-
+		// #endif
+		
+		// #ifdef APP-PLUS
 		pushCallBack(str, message){
 			// 收到推送注册的 click 或者 receive事件后的 回调函数
 			debugger

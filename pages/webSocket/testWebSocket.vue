@@ -85,7 +85,7 @@
 			},
 			leave() {
                 debugger
-				this.$uniReLaunch("/pages/tabbar/wallet/wallet")
+				// this.$uniReLaunch("/pages/tabbar/wallet/wallet")
 			}
 		}
 	}

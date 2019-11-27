@@ -15,9 +15,10 @@
 	//  gateway: "https://service.yaya91.com:8495",
 	//  gateway: "http://daka.natapp1.cc",
 		// gateway: "http://localhost:5000",
-		gateway: "http://192.168.1.105:5000",      // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-		// gateway: "http://47.105.141.184:5000",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-		// gateway: "http://www.gaolongweb.cn:5000",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
+		// gateway: "http://192.168.1.105:5000",      // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
+		// gateway: "https://www.gaolongweb.cn:5000",
+		// gateway: "https://47.105.141.184",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
+		gateway: "https://www.gaolongweb.cn",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
 		// gateway: "https://www.kaoyandaka.com",
 	//  mobile: "https://www.kaoyandaka.com",
 	//  resource: "https://www.kaoyandaka.com",
@@ -92,7 +93,7 @@
       uploadSound: '/fileMappedApp/upload', //上传音频文件
       shareImg: '/customerApp/shareImg',  // 分享
 }
- export default {
+ module.exports = {
   miniproConfings: miniproConfings,  // 小程序配置（appid、secret）
   baseUrl: urls.gateway,        // 小程序入口地址
   baseImgsUrl: urls.pic_bg_Url, // 背景图片

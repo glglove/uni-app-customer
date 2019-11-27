@@ -1,7 +1,7 @@
 {
     "name" : "uni-appProject",
     "appid" : "__UNI__98AA649",
-    "description" : "",
+    "description" : "gaolong-uniapp",
     "versionName" : "1.0.0",
     "versionCode" : "100",
     "transformPx" : false,
@@ -108,7 +108,15 @@
         "usingComponents" : true
     },
     "h5" : {
-        "title" : "uni-appProject",
-        "domain" : "www.gaolongweb.cn"
+        "title" : "gaolong-uniapp",
+        "domain" : "www.gaolongweb.cn",
+        "publicPath" : "./",
+        "router" : {
+            "mode" : "hash"
+        },
+        "devServer" : {
+            "port" : 5000,
+            "https" : false
+        }
     }
 }

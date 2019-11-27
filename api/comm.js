@@ -25,7 +25,7 @@ export default {
 	* 
 	*/
 	async appLoginAndRegister (params, loading = false, loadingText = "加载中...") {
-		// debugger
+		debugger
 	   const url = `/app/customerApp/loginAndRegister`;
 	   var data = {}
 	   params = Object.assign(data, params)
