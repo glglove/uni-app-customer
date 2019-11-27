@@ -1,9 +1,9 @@
-.footerExplain.data-v-1fc1d6fc {
+.footerExplain.data-v-93b2a644 {
   position: absolute;
-  bottom: 0rpx;
+  bottom: 20rpx;
   width: 100%;
 }
-.footerExplain .footer.data-v-1fc1d6fc {
+.footerExplain .footer.data-v-93b2a644 {
   height: 20rpx;
   width: 90%;
   line-height: 40rpx;
@@ -13,11 +13,11 @@
   margin: 20rpx auto 40rpx auto;
   text-align: center;
 }
-.footerExplain .footer .footText.data-v-1fc1d6fc {
+.footerExplain .footer .footText.data-v-93b2a644 {
   font-size: 24rpx;
   padding: 0 20rpx;
 }
-.footerExplain .footer .version.data-v-1fc1d6fc {
+.footerExplain .footer .version.data-v-93b2a644 {
   font-size: 20rpx;
   color: #ccc;
   text-align: right;

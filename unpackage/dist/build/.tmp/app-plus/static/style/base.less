@@ -1,6 +1,7 @@
 @import './variable.less';
 @import './button.less';
 @import './form.less';
+
 html,
 body,
 page {
@@ -15,11 +16,36 @@ page {
     // background-color: silver;
     font-size: 16px;
 }
-html,
-body{
-    width: 100%;
-    height: 100%;
+
+/* flex布局 */
+.u-f,.u-f-ac,.u-f-jc,.u-f-ajc{
+	display: flex;
 }
+/* 垂直居中 */
+.u-f-ac,.u-f-ajc{
+	align-items: center;
+}
+/* 水平居中 */
+.u-f-jc,.u-f-ajc{
+	justify-content: center;
+}
+
+.u-f-jsb{
+	justify-content: space-between;
+}
+
+.u-f1{
+	flex: 1;
+}
+.u-f0 {
+	// 不压缩
+	flex-shrink: 0
+}
+
+.u-f-column{
+	flex-direction: column;
+}
+
 button{
     &::after{
         border: none;

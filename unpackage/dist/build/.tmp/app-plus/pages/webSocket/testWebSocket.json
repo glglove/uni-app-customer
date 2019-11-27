@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "webSocket测试",
+  "usingComponents": {
+    "container": "/pages/components/container1/container"
+  }
+}

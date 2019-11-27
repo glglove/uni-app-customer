@@ -1,7 +1,33 @@
 {
   "navigationBarTitleText": "打卡",
-  "enablePullDownRefresh": true,
   "onReachBottomDistance": 50,
+  "titleNView": {
+    "autoBackButton": "fasle",
+    "backgroundcolor": "red",
+    "titletext": "iflower",
+    "titlecolor": "#000000",
+    "type": "transparent",
+    "searchInput": {
+      "autoFocus": false,
+      "align": "left",
+      "backgroundColor": "rgba(255,255,255,0.5)",
+      "borderRadius": "5px",
+      "placeholder": "请输入",
+      "placeholderColor": "#CCCCCC",
+      "disabled": false
+    },
+    "buttons": [
+      {
+        "text": "",
+        "fontStc": "/static/font/iconfont.ttf",
+        "fontSize": "22px",
+        "float": "right",
+        "id": "xiaoxi",
+        "redDot": true
+      }
+    ]
+  },
+  "navigationBarBackgroundColor": "transparent",
   "usingComponents": {
     "container": "/pages/components/container1/container",
     "load-more": "/pages/components/uni-load-more/uni-load-more"

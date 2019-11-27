@@ -18,6 +18,55 @@
 			self = this
 			// debugger
 			console.log('App Launch')
+			
+	// 		// 连接 socket
+	// 		// 1. 与服务器端建立连接
+	// 		const socket = io.connect("http://localhost:3000");
+	// 
+	// 		// 2. 监听send按钮点击的事件
+	// 		$("#send").click(function(){
+	// 			// 获取输入的信息
+	// 			let message = $("#message").val().trim();
+	// 			// 向服务器端发送信息
+	// 			socket.emit("sentToServer", message);
+	// 		});
+	// 
+	// 		// 3. 获取服务端发送过来的信息
+	// 		socket.on("sendToClient", message => {
+	// 			console.log(message);
+	// 		});
+	// 		/**
+	// 		 * 发布订阅(广播), 一端发布, 可以让多端触发
+	// 		 */
+	
+			uni.connectSocket({
+	          url: "wss://www.gaolongweb.cn:5000",
+	          success:function(r){
+	            console.log("ok")
+	          },
+	          fail:function(r){
+	            console.log("fail")
+	          },complete:function(r){
+	            console.log("complete")
+	          }
+	        })
+	        uni.onSocketOpen(function(res) {
+	          console.log("websocket连接已打开")
+	          uni.sendSocketMessage({
+	            data: 'hhhh:'+Math.round(Math.random()*0xFFFFFF).toString()           
+	          })
+	        })
+	 
+	        uni.onSocketMessage(function(data) {
+	          console.log('收到服务器内容：'+data)
+	        })
+	        uni.onSocketClose(function() {
+	          console.log("websocket连接已关闭")
+	        })
+	        uni.onSocketError(function(res){
+	            console.log('WebSocket连接打开失败，请检查！')
+	        })
+			
 			// 小程序检查是否有版本更新 采用条件判断来编译
 			// #ifdef MP-WEIXIN
 			this.checkNewVersion()

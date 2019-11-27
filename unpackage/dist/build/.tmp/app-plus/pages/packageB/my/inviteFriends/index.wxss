@@ -1,9 +1,9 @@
-#invitation.data-v-f5c6aeaa {
+#invitation.data-v-87191de8 {
   position: relative;
   width: 100%;
   height: 100%;
 }
-#invitation .sendBox.data-v-f5c6aeaa {
+#invitation .sendBox.data-v-87191de8 {
   width: 686rpx;
   height: 236rpx;
   margin: 0 auto;
@@ -13,20 +13,20 @@
           box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.11);
   border-radius: 28rpx;
 }
-#invitation .sendBox.sendPaper.data-v-f5c6aeaa {
+#invitation .sendBox.sendPaper.data-v-87191de8 {
   margin-top: 30px;
 }
-#invitation .sendBox .picBox.data-v-f5c6aeaa {
+#invitation .sendBox .picBox.data-v-87191de8 {
   width: 114rpx;
   height: 114rpx;
   margin: 0 auto;
   padding: 40rpx 0;
 }
-#invitation .sendBox .picBox .pic.data-v-f5c6aeaa {
+#invitation .sendBox .picBox .pic.data-v-87191de8 {
   width: 100%;
   height: 100%;
 }
-#invitation .sendBox .tit.data-v-f5c6aeaa {
+#invitation .sendBox .tit.data-v-87191de8 {
   width: 100%;
   height: 48rpx;
   line-height: 48rpx;
@@ -34,12 +34,12 @@
   color: #000000;
   text-align: center;
 }
-#invitation .sendBox .tit button.data-v-f5c6aeaa {
+#invitation .sendBox .tit button.data-v-87191de8 {
   width: 100%;
   background-color: #ffffff;
   line-height: 48rpx;
 }
-#invitation .footer.data-v-f5c6aeaa {
+#invitation .footer.data-v-87191de8 {
   position: absolute;
   bottom: 120rpx;
   left: 0;
@@ -51,20 +51,20 @@
   line-height: 33rpx;
   font-size: 24rpx;
 }
-#invitation .footer .left-line.data-v-f5c6aeaa {
+#invitation .footer .left-line.data-v-87191de8 {
   display: inline-block;
   width: 80rpx;
   height: 0;
   border-top: 1px solid #979797;
   vertical-align: middle;
 }
-#invitation .footer .footText.data-v-f5c6aeaa {
+#invitation .footer .footText.data-v-87191de8 {
   display: inline-block;
   width: 170rpx;
   height: 33rpx;
   margin: 30rpx 10rpx 0 10rpx;
 }
-#invitation .footer .right-line.data-v-f5c6aeaa {
+#invitation .footer .right-line.data-v-87191de8 {
   display: inline-block;
   width: 80rpx;
   height: 0;

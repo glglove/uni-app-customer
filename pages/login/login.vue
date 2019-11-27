@@ -367,7 +367,7 @@
 						let customer = res.data.data.customer
 						// tokn 存入 缓存中
 						this.setStorage("userToken", token)
-						console.log("welecome中打印冲localstorage中获取到的userToken",uni.getStorageSync("userToken"))
+						console.log("login页面中打印冲localstorage中获取到的userToken",uni.getStorageSync("userToken"))
 						// token 存入store 中
 						this.$store.dispatch("setUserToken", token)
 						this.toast("app登录成功")

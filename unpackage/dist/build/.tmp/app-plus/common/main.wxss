@@ -118,10 +118,55 @@ page {
   background-color: #FFFFFF;
   font-size: 16px;
 }
-page,
-page {
-  width: 100%;
-  height: 100%;
+/* flex布局 */
+.u-f,
+.u-f-ac,
+.u-f-jc,
+.u-f-ajc {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+/* 垂直居中 */
+.u-f-ac,
+.u-f-ajc {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/* 水平居中 */
+.u-f-jc,
+.u-f-ajc {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.u-f-jsb {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.u-f1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.u-f0 {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+.u-f-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 button::after {
   border: none;

@@ -7,6 +7,7 @@
     "pages/login/login",
     "pages/register/register",
     "pages/pwd/pwd",
+    "pages/webSocket/testWebSocket",
     "pages/packageA/find/lessonList/index",
     "pages/packageA/find/lessonList/lessonDetail/index",
     "pages/packageA/find/lessonList/lessonDetail/enterSuccess/index",
@@ -22,6 +23,7 @@
     "pages/packageB/my/help/index",
     "pages/packageB/my/help/submitProblem/index",
     "pages/packageB/my/help/submitProblem/submitProblemSuccess/index",
+    "pages/packageB/my/signUpCard/signUpCard",
     "pages/packageB/my/inviteFriends/index",
     "pages/packageB/my/set/index"
   ],

@@ -1,1 +1,1 @@
-<view class="footerExplain data-v-1fc1d6fc"><view class="footer data-v-1fc1d6fc"><text class="footText data-v-1fc1d6fc" style="{{(footerTextBgc)}}">{{text}}</text><view class="version data-v-1fc1d6fc">{{version}}</view></view></view>
+<view class="footerExplain data-v-93b2a644"><view class="footer data-v-93b2a644"><text class="footText data-v-93b2a644" style="{{(footerTextBgc)}}">{{text}}</text><view class="version data-v-93b2a644">{{version}}</view></view></view>

@@ -20,6 +20,7 @@
   "permissions": {
     "OAuth": {},
     "Share": {},
+    "Push": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }
@@ -40,12 +41,44 @@
       "render": "always"
     },
     "statusbar": {
-      "immersed": "supportedDevice",
+      "immersed": false,
       "style": "dark",
       "background": "rgba(253,133,9,1)"
     },
     "usingComponents": true,
     "distribute": {
+      "icons": {
+        "android": {
+          "hdpi": "F:/git-uni-app/uni-logo/lo72.png",
+          "xhdpi": "F:/git-uni-app/uni-logo/lo96.png",
+          "xxhdpi": "F:/git-uni-app/uni-logo/lo144.png",
+          "xxxhdpi": "F:/git-uni-app/uni-logo/lo192.png"
+        },
+        "ios": {
+          "appstore": "F:/git-uni-app/uni-logo/lo1024.png",
+          "iphone": {
+            "app@2x": "F:/git-uni-app/uni-logo/lo120.png",
+            "app@3x": "F:/git-uni-app/uni-logo/lo180.png",
+            "spotlight@2x": "F:/git-uni-app/uni-logo/lo80.png",
+            "spotlight@3x": "F:/git-uni-app/uni-logo/lo120.png",
+            "settings@2x": "F:/git-uni-app/uni-logo/lo58.png",
+            "settings@3x": "F:/git-uni-app/uni-logo/lo87.png",
+            "notification@2x": "F:/git-uni-app/uni-logo/lo40.png",
+            "notification@3x": "F:/git-uni-app/uni-logo/lo60.png"
+          },
+          "ipad": {
+            "app": "F:/git-uni-app/uni-logo/lo76.png",
+            "app@2x": "F:/git-uni-app/uni-logo/lo152.png",
+            "proapp@2x": "F:/git-uni-app/uni-logo/lo167.png",
+            "spotlight": "F:/git-uni-app/uni-logo/lo40.png",
+            "spotlight@2x": "F:/git-uni-app/uni-logo/lo80.png",
+            "settings": "F:/git-uni-app/uni-logo/lo29.png",
+            "settings@2x": "F:/git-uni-app/uni-logo/lo58.png",
+            "notification": "F:/git-uni-app/uni-logo/lo20.png",
+            "notification@2x": "F:/git-uni-app/uni-logo/lo40.png"
+          }
+        }
+      },
       "google": {
         "permissions": [
           "<uses-feature android:name=\"android.hardware.camera\"/>",
@@ -76,6 +109,9 @@
           "weixin": {
             "appid": "wxf6ba170ba8c559b2"
           }
+        },
+        "push": {
+          "unipush": {}
         },
         "audio": {
           "mp3": {

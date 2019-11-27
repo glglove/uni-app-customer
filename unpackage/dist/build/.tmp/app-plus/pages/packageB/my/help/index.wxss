@@ -1,22 +1,22 @@
-#help.data-v-f78c38fe {
+#help.data-v-8e52757c {
   width: 100%;
   height: 100%;
 }
-#help .contentBox.data-v-f78c38fe {
+#help .contentBox.data-v-8e52757c {
   height: 550px;
 }
-#help .contentBox.data-v-f78c38fe::-webkit-scrollbar {
+#help .contentBox.data-v-8e52757c::-webkit-scrollbar {
   width: 0 !important ;
   height: 0 !important ;
   color: transparent !important ;
   display: none;
 }
-#help .contentBox .listBox.data-v-f78c38fe {
+#help .contentBox .listBox.data-v-8e52757c {
   height: 95rpx;
   line-height: 95rpx;
   padding: 0 20rpx;
 }
-#help .contentBox .listBox .no.data-v-f78c38fe {
+#help .contentBox .listBox .no.data-v-8e52757c {
   display: inline-block;
   width: 45rpx;
   height: 45rpx;
@@ -27,14 +27,14 @@
   text-align: center;
   line-height: 45rpx;
 }
-#help .contentBox .listBox .tit.data-v-f78c38fe {
+#help .contentBox .listBox .tit.data-v-8e52757c {
   height: 33rpx;
   line-height: 33rpx;
   color: #000000;
   font-size: 24rpx;
   margin-left: 20rpx;
 }
-#help .tickBtnBox.data-v-f78c38fe {
+#help .tickBtnBox.data-v-8e52757c {
   position: fixed;
   bottom: 128rpx;
   right: 50rpx;
