@@ -14,18 +14,8 @@
 	//  gateway: "https://locally.uieee.com",
 	//  gateway: "https://service.yaya91.com:8495",
 	//  gateway: "http://daka.natapp1.cc",
-		// gateway: "http://localhost:5000",
-<<<<<<< Updated upstream
-		// gateway: "http://192.168.1.105:5000",      // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-		// gateway: "https://www.gaolongweb.cn:5000",
 		// gateway: "https://47.105.141.184",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
 		gateway: "https://www.gaolongweb.cn",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-=======
-		// gateway: "http://192.168.1.106:5000",      // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-		gateway: "http://192.168.1.106:5000",      // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-		// gateway: "http://47.105.141.184:5000",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-		// gateway: "http://www.gaolongweb.cn",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
->>>>>>> Stashed changes
 		// gateway: "https://www.kaoyandaka.com",
 	//  mobile: "https://www.kaoyandaka.com",
 	//  resource: "https://www.kaoyandaka.com",
