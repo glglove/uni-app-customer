@@ -7,31 +7,35 @@
 </style>	
 
 <script>
+	import Vue from 'vue'
 	import store from '@/store/index.js'
 	import getEnterType from '@/utils/miniProSceneType'
 	import { getDeviceApi } from '@/utils/deviceApi.js'
 	import commApi  from '@/api/comm.js'
-	
-	let io = require('./utils/weapp.socket.io.js')
-	
-// 1. 与服务器端建立连接
-        const socket = io.connect("http://localhost:3000");
 
-        // 2. 监听send按钮点击的事件
-        $("#send").click(function(){
-            // 获取输入的信息
-            let message = $("#message").val().trim();
-            // 向服务器端发送信息
-            socket.emit("sentToServer", message);
-        });
+	import configs from '@/api/config.js'
+	import io from 'socket.io-client'   // 客户端引入socket.io-client
+	
+	// let io = require('./utils/weapp.socket.io.js')
+	
+	// // 1. 与服务器端建立连接
+	// const socket = io.connect("http://localhost:3000");
 
-        // 3. 获取服务端发送过来的信息
-        socket.on("sendToClient", message => {
-            console.log(message);
-        });
-        /**
-         * 发布订阅(广播), 一端发布, 可以让多端触发
-         */	
+	// // 2. 监听send按钮点击的事件
+	// $("#send").click(function(){
+	// 	// 获取输入的信息
+	// 	let message = $("#message").val().trim();
+	// 	// 向服务器端发送信息
+	// 	socket.emit("sentToServer", message);
+	// });
+
+	// // 3. 获取服务端发送过来的信息
+	// socket.on("sendToClient", message => {
+	// 	console.log(message);
+	// });
+	// /**
+	// 	* 发布订阅(广播), 一端发布, 可以让多端触发
+	// 	*/	
 
 	let self = ''
 	export default {
@@ -39,6 +43,18 @@
 			self = this
 			// debugger
 			console.log('App Launch')
+			
+			// 建立socket 连接 此时会自动触发 后台的connection 事件
+			let socket = io(`${configs.wsUrl}`)
+			// 将socket 对象挂载在 Vue实例的原型上
+			Vue.prototype.$socket = socket			
+				
+			// 监听后台传过来的消息
+			socket.on("connectionSuccess",function(data){
+				console.log("app onLaunch 中 ----------------socket已成功连接！")
+				// 连接成功后 store 中存放
+				store.dispatch("setSocketStatus", true)
+			})			
 			
 	// 		// 连接 socket
 	// 		// 1. 与服务器端建立连接
@@ -60,33 +76,6 @@
 	// 		 * 发布订阅(广播), 一端发布, 可以让多端触发
 	// 		 */
 	
-			uni.connectSocket({
-	          url: "wss://www.gaolongweb.cn:5000",
-	          success:function(r){
-	            console.log("ok")
-	          },
-	          fail:function(r){
-	            console.log("fail")
-	          },complete:function(r){
-	            console.log("complete")
-	          }
-	        })
-	        uni.onSocketOpen(function(res) {
-	          console.log("websocket连接已打开")
-	          uni.sendSocketMessage({
-	            data: 'hhhh:'+Math.round(Math.random()*0xFFFFFF).toString()           
-	          })
-	        })
-	 
-	        uni.onSocketMessage(function(data) {
-	          console.log('收到服务器内容：'+data)
-	        })
-	        uni.onSocketClose(function() {
-	          console.log("websocket连接已关闭")
-	        })
-	        uni.onSocketError(function(res){
-	            console.log('WebSocket连接打开失败，请检查！')
-	        })
 			
 			// 小程序检查是否有版本更新 采用条件判断来编译
 			// #ifdef MP-WEIXIN

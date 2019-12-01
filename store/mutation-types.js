@@ -14,3 +14,5 @@ export const saveWindowHeight = 'saveWindowHeight'
 export const setContainerLoadingFlag = 'setContainerLoadingFlag'
 // 设置container 的全屏 loading 状态
 export const setContainerAllloadingFlag = 'setContainerAllloadingFlag'
+// 设置 socket 连接状态
+export const SET_SOCKET_STATUS = 'SET_SOCKET_STATUS'

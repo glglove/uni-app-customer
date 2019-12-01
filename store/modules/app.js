@@ -22,7 +22,8 @@ const app = {
 	containerAllloadingFlag: false,  
 	containerLoadingFlag: false, // 控制外层container 容器的 loading状态显示与隐藏
 	containerMaskFlag: false, // 控制页面全屏下的外层container 容器的 遮罩状态显示与隐藏
-	pHeight: '0'  // 页面的高度，minxin 中获取后 存入了 store中
+	pHeight: '0',  // 页面的高度，minxin 中获取后 存入了 store中
+	socketStatus: false, // socket 连接状态
   },
   mutations: {
 	// 登陆
@@ -115,7 +116,11 @@ const app = {
 				})
 			}			
 		})
-	}
+	},
+	// 设置socket 连接状态
+	[types.SET_SOCKET_STATUS](state, flag){
+		state.socketStatus = flag
+	},
   },
   actions: {
 	// 设置 用户微信是否已授权用户信息userInfo
@@ -157,6 +162,10 @@ const app = {
 	// 存储 获取到的系统的可视区高度
 	saveWindowHeight ({commit, state}, pHeight){
 		commit(types.saveWindowHeight, pHeight)
+	},
+	// 设置 socket 连接状态
+	setSocketStatus ({ commit, state}, flag) {
+			commit(types.SET_SOCKET_STATUS, flag)
 	}
   }
 }

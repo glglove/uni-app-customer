@@ -27,3 +27,6 @@ export const containerMaskFlag = state => state.app.containerMaskFlag
 
 // 获取 屏幕可视区高度
 export const pHeight = state => state.app.pHeight
+
+// 获取socket 连接状态
+export const socketStatus = state => state.app.socketStatus

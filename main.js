@@ -2,10 +2,15 @@ import Vue from 'vue'
 import App from './App'
 import store from './store' // vuex状态管理
 import configs from './api/config.js'
+import io from 'socket.io-client'   // 客户端引入socket.io-client
+// 建立socket 连接
+let socket = io(`${configs.wsUrl}`)
+// 将socket 对象挂载在 Vue实例的原型上
+Vue.prototype.$socket = socket
+
 
 // 将container 组件注册为全局组件
 import container from '@/pages/components/container1/container'
-
 Vue.component('container', container)
 
 // 引入 uni.request()
@@ -36,6 +41,8 @@ Vue.prototype.checkLogin = function(toPageUrl, jumpType){
 		token
 	}
 }
+
+
 
 
 App.mpType = 'app'
