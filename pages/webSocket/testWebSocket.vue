@@ -22,6 +22,7 @@
 		},
 		computed:{
 			...mapGetters([
+				'userId',
 				'userInfo',
 				'userToken',
 				'socketStatus'
@@ -38,13 +39,19 @@
 				if(!res){
 					// 未登陆
 				}else {
+					debugger
 					// 已登陆
 					if(this.socketStatus){
 						// socket已经连接
 						// 向socket 服务器发送 一个消息
 						this.$socket.emit("testMsg", {
+							userId: this.userId,
+							from_Id: 123,
+							from_Token: 'oh_g55CR__hDw53k1WHjDfoCGZh0',
 							userInfo: this.userInfo,
-							userToken: this.userToken
+							userToken: this.userToken, // oh_g55CR__hDw53k1WHjDfoCGZh0  
+							to_Id: 124,
+							to_Token: 'oh_g55LwPbFhIpOqPYaaUz5i3VNc'  // fengsheng 的token
 						})		
 						console.log("客户端向socket服务器 发送用户信息成功")						
 					}else {
