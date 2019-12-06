@@ -374,7 +374,9 @@
 
 						// 登录成功后  获取app的cid 后 发送给 后台 和对应的 用户 进行绑定 到时 需要给特定用户进行推送时，只需客户端将 引用的 cid 一并传给后端 到时后端根据cid给特定的用户进行下发推送即可
 						// 获取 用户应用clientid 
-						this.getAppCid()
+						//#ifdef APP-PLUS
+						// this.getAppCid()
+						//#endif
 						// ....调取存入 clientid 的接口 将clientid 与账号进行绑定
 						
 						debugger

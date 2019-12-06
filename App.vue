@@ -15,27 +15,6 @@
 
 	import configs from '@/api/config.js'
 	import io from 'socket.io-client'   // 客户端引入socket.io-client
-	
-	// let io = require('./utils/weapp.socket.io.js')
-	
-	// // 1. 与服务器端建立连接
-	// const socket = io.connect("http://localhost:3000");
-
-	// // 2. 监听send按钮点击的事件
-	// $("#send").click(function(){
-	// 	// 获取输入的信息
-	// 	let message = $("#message").val().trim();
-	// 	// 向服务器端发送信息
-	// 	socket.emit("sentToServer", message);
-	// });
-
-	// // 3. 获取服务端发送过来的信息
-	// socket.on("sendToClient", message => {
-	// 	console.log(message);
-	// });
-	// /**
-	// 	* 发布订阅(广播), 一端发布, 可以让多端触发
-	// 	*/	
 
 	let self = ''
 	export default {
@@ -54,7 +33,21 @@
 				console.log("app onLaunch 中 ----------------socket已成功连接！")
 				// 连接成功后 store 中存放
 				store.dispatch("setSocketStatus", true)
-			})			
+				// 发送一个 bindId 的事件
+				socket.emit("bindId",{
+					// userId: store.app.userId
+					userId: '57',
+					token: 'oh_g55CR__hDw53k1WHjDfoCGZh0'
+				})
+				console.log("客户端 发送bindId事件")
+			})	
+			
+			socket.on("emitFixed", function(data){
+				console.log("接受服务端给特定客户端发送的消息")
+				getDeviceApi().showToast({
+					title: JSON.stringify(data)
+				})
+			})
 			
 	// 		// 连接 socket
 	// 		// 1. 与服务器端建立连接
