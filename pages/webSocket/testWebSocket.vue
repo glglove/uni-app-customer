@@ -46,12 +46,13 @@
 						// 向socket 服务器发送 一个消息
 						this.$socket.emit("testMsg", {
 							userId: this.userId,
-							from_Id: 123,
+							from_Id: 57,
 							from_Token: 'oh_g55CR__hDw53k1WHjDfoCGZh0',
 							userInfo: this.userInfo,
 							userToken: this.userToken, // oh_g55CR__hDw53k1WHjDfoCGZh0  
 							to_Id: 124,
-							to_Token: 'oh_g55LwPbFhIpOqPYaaUz5i3VNc'  // fengsheng 的token
+							to_Token: 'oh_g55LwPbFhIpOqPYaaUz5i3VNc',  // fengsheng 的token
+							to_msg: `这是发送给用户id：57的消息`
 						})		
 						console.log("客户端向socket服务器 发送用户信息成功")						
 					}else {
@@ -63,9 +64,9 @@
                 debugger
 				// this.$uniReLaunch("/pages/tabbar/wallet/wallet")
 				// 离开此页面时 关闭socket
-				this.$socket.close()
-				this.$store.dispatch("setSocketStatus", false)
-				console.log("主动关闭socket 服务器成功")
+				// this.$socket.close()
+				// this.$store.dispatch("setSocketStatus", false)
+				// console.log("主动关闭socket 服务器成功")
 			}
 		}
 	}

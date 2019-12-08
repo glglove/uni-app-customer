@@ -39,7 +39,10 @@
 					userId: '57',
 					token: 'oh_g55CR__hDw53k1WHjDfoCGZh0'
 				})
-				console.log("客户端 发送bindId事件")
+				console.log("客户端 发送bindId事件", JSON.stringify({
+					userId: '57',
+					token: 'oh_g55CR__hDw53k1WHjDfoCGZh0'
+				}))
 			})	
 			
 			socket.on("emitFixed", function(data){
