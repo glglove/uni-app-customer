@@ -23,11 +23,11 @@
 			//吸顶容器距离顶部距离 px
 			stickyTop: {
 				type: [Number, String]
-					// #ifdef APP-PLUS || MP
+				// #ifdef APP-PLUS || MP
 					,
 				default: 0
-					// #endif
-					// #ifdef H5
+				// #endif
+				// #ifdef H5
 					,
 				default: 60
 				// #endif
@@ -71,6 +71,7 @@
 		},
 		methods: {
 			updateStickyChange() {
+				// debugger
 				const top = this.top;
 				const height = this.height;
 				// 滚动的距离
@@ -78,7 +79,7 @@
 				// 吸顶容器距离顶部的距离
 				let stickyTop = this.stickyTop
 				// #ifdef H5
-				stickyTop = stickyTop - 60
+				stickyTop = stickyTop -60
 				stickyTop = stickyTop < 0 ? 0 : stickyTop
 				// #endif
 				this.isFixed = (scrollTop + stickyTop >= top && scrollTop + stickyTop < top + height) ? true : false
@@ -95,7 +96,7 @@
 						      dataset: true,
 						      size: true,
 					},function(res){
-						debugger
+						// debugger
 						console.log("----------", res)
 					})
 					query.select(className).boundingClientRect((res) => {

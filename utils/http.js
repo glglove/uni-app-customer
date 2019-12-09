@@ -28,7 +28,7 @@ import store from '@/store/index.js'
 // import { configs } from '@/api/config'
 let configs = require('@/api/config')
 console.log(configs)
-debugger
+// debugger
 /**
  * 通用uni-app网络请求
  * 基于 Promise 对象实现更简单的 request 使用方式，支持请求和响应拦截
@@ -88,7 +88,7 @@ export default {
 		// 默认统一的请求拦截函数
 		request: (configs) => {
 		  // 将请求的参数中 默认增加 token
-		  debugger
+		  // debugger
 		  console.log(configs)
 		  const data = configs.data || {}
 		  // 主要控制是否loading
@@ -170,7 +170,7 @@ export default {
 		}
 	},
 	request(options) {
-		debugger
+		// debugger
 		if (!options) {
 			options = {}
 		}
@@ -194,7 +194,7 @@ export default {
 		*/
 	   
 		return new Promise((resolve, reject) => {
-			debugger
+			// debugger
 			let _config = null
 			
 			//注意：options.complete 这个回调函数会在 uni.request() 调用结束后自动执行（虽然位置现在放在了 uni.request()调用 之前），
@@ -252,7 +252,7 @@ export default {
 				// uni.require() 请求成功后会自动走这个 success 的回调函数方法
 				console.log("请求时间" + new Date().getTime() + ":这是uni.require() 请求完成success的回调")
 			}
-			debugger
+			// debugger
 			// 将传入的配置参数与默认的参数进行合并 后赋值给 _config
 			_config = Object.assign({}, this.config, options)
 			_config.requestId = new Date().getTime()
@@ -280,10 +280,10 @@ export default {
 			}
 
 			// 调用 uni.request 发起请求，
-			debugger
+			// debugger
 			console.log("--------------------------------",_config)
 			let a = uni.request(_config);
-			debugger
+			// debugger
 		});
 	},
 	// get 请求
