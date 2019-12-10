@@ -1,6 +1,6 @@
 .footerExplain.data-v-b6512896 {
   position: absolute;
-  bottom: 0rpx;
+  bottom: 20rpx;
   width: 100%;
 }
 .footerExplain .footer.data-v-b6512896 {

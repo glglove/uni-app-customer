@@ -11,7 +11,11 @@
  
 <script>
 	import { mapGetters } from 'vuex'	
+	import { miniProApi } from '@/utils/mixins.js'
 	export default {
+		mixins:[
+			miniProApi
+		],
 		onLoad() {
 
 		},
@@ -34,6 +38,7 @@
 		},
 		methods: {
 			clickRequest(){
+				debugger
 				// 先监测是否已经登陆
 				let res = this.checkLogin()
 				if(!res){
@@ -52,10 +57,13 @@
 							userToken: this.userToken, // oh_g55CR__hDw53k1WHjDfoCGZh0  
 							to_Id: 124,
 							to_Token: 'oh_g55LwPbFhIpOqPYaaUz5i3VNc',  // fengsheng 的token
-							to_msg: `这是发送给用户id：57的消息`
+							to_msg: `这是发送给用户id：57的消息`,
+							to_url: '/pages/my/my',
+							to_url_type: 'switchTab', //  "switchTab"  "redirectTo"  "navigateTo" "reLaunch"
 						})		
 						console.log("客户端向socket服务器 发送用户信息成功")						
 					}else {
+						this.toast("当前socket 连接是断开的")
 						console.log("当前socket 连接是断开的")
 					}
 				}

@@ -81,15 +81,21 @@
 				"navigationBarTitleText":"我的",
 				"enablePullDownRefresh":true
 			}
-		}		
-		// #ifdef H5 || APP-PLUS
-		,{
+		},
+		{
+			"path": "pages/webSocket/testWebSocket",
+			"style": {
+				"navigationBarTitleText": "webSocket测试"
+			}
+		},
+		{
             "path": "pages/login/login",
             "style": {
                 "navigationBarTitleText": "登录"
-            }			
-		},
-		{
+            }				
+		}
+		// #ifdef H5 || APP-PLUS 
+		,{
 			"path": "pages/register/register",
 			"style":{
 				"navigationBarTitleText": "注册"
@@ -100,12 +106,6 @@
             "style": {
                 "navigationBarTitleText": "找回密码"
             }			
-		},
-		{
-			"path": "pages/webSocket/testWebSocket",
-			"style": {
-				"navigationBarTitleText": "webSocket测试"
-			}
 		},
 		{
 			"path" : "pages/packageA/find/lessonList/index",
@@ -270,7 +270,7 @@
 					"style": {
 						"navigationBarTitleText":"学习记录"
 					}
-				},		
+				},						
 				{
 					"path":"sign/immediatelySignUp/index",
 					"style": {
@@ -288,62 +288,62 @@
 					"style": {
 						"navigationBarTitleText":"打卡成功"
 					}
-				}																																				
+				}																																							
 			]	
 		},
 		{
 			"root": "pages/packageB",
 			"pages": [
 				{
-					"path" : "pages/packageB/my/myAchievement/index",
+					"path" : "my/myAchievement/index",
 					"style" : {
 						"navigationBarTitleText":"我的成就"
 					}
 				},	
 				{
-					"path" : "pages/packageB/my/myAchievement/certificate/index",
+					"path" : "my/myAchievement/certificate/index",
 					"style" : {
 						"navigationBarTitleText":"证书"
 					}
 				},	
 				{
-					"path" : "pages/packageB/my/learnRecord/index",
+					"path" : "my/learnRecord/index",
 					"style" : {
 						"navigationBarTitleText":"学习"
 					}
 				},	
 				{
-					"path" : "pages/packageB/my/help/index",
+					"path" : "my/help/index",
 					"style" : {
 						"navigationBarTitleText":"帮助"
 					}
 				},		
 				{
-					"path" : "pages/packageB/my/help/submitProblem/index",
+					"path" : "my/help/submitProblem/index",
 					"style" : {
 						"navigationBarTitleText":"反馈"
 					}
 				},	
 				{
-					"path" : "pages/packageB/my/help/submitProblem/submitProblemSuccess/index",
+					"path" : "my/help/submitProblem/submitProblemSuccess/index",
 					"style" : {
 						"navigationBarTitleText":"提交成功"
 					}
 				},		
+				// {
+				// 	"path": "my/signUpCard/signUpCard",
+				// 	"style": {
+				// 		"navigationBarText":"报名卡片"
+				// 	}
+				// },
 				{
-					"path": "pages/packageB/my/signUpCard/signUpCard",
-					"style": {
-						"navigationBarText":"报名卡片"
-					}
-				},
-				{
-					"path" : "pages/packageB/my/inviteFriends/index",
+					"path" : "my/inviteFriends/index",
 					"style" : {
 						"navigationBarTitleText":"邀请朋友"
 					}
 				},	
 				{
-					"path" : "pages/packageB/my/set/index",
+					"path" : "my/set/index",
 					"style" : {      
 						"navigationBarTitleText":"设置"
 					}

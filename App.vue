@@ -12,67 +12,13 @@
 	import getEnterType from '@/utils/miniProSceneType'
 	import { getDeviceApi } from '@/utils/deviceApi.js'
 	import commApi  from '@/api/comm.js'
-
-	import configs from '@/api/config.js'
-	import io from 'socket.io-client'   // 客户端引入socket.io-client
-
 	let self = ''
 	export default {
 		onLaunch: async function() {
 			self = this
 			// debugger
 			console.log('App Launch')
-			
-			// 建立socket 连接 此时会自动触发 后台的connection 事件
-			let socket = io(`${configs.wsUrl}`)
-			// 将socket 对象挂载在 Vue实例的原型上
-			Vue.prototype.$socket = socket			
 				
-			// 监听后台传过来的消息
-			socket.on("connectionSuccess",function(data){
-				console.log("app onLaunch 中 ----------------socket已成功连接！")
-				// 连接成功后 store 中存放
-				store.dispatch("setSocketStatus", true)
-				// 发送一个 bindId 的事件
-				socket.emit("bindId",{
-					// userId: store.app.userId
-					userId: '57',
-					token: 'oh_g55CR__hDw53k1WHjDfoCGZh0'
-				})
-				console.log("客户端 发送bindId事件", JSON.stringify({
-					userId: '57',
-					token: 'oh_g55CR__hDw53k1WHjDfoCGZh0'
-				}))
-			})	
-			
-			socket.on("emitFixed", function(data){
-				console.log("接受服务端给特定客户端发送的消息")
-				getDeviceApi().showToast({
-					title: JSON.stringify(data)
-				})
-			})
-			
-	// 		// 连接 socket
-	// 		// 1. 与服务器端建立连接
-	// 		const socket = io.connect("http://localhost:3000");
-	// 
-	// 		// 2. 监听send按钮点击的事件
-	// 		$("#send").click(function(){
-	// 			// 获取输入的信息
-	// 			let message = $("#message").val().trim();
-	// 			// 向服务器端发送信息
-	// 			socket.emit("sentToServer", message);
-	// 		});
-	// 
-	// 		// 3. 获取服务端发送过来的信息
-	// 		socket.on("sendToClient", message => {
-	// 			console.log(message);
-	// 		});
-	// 		/**
-	// 		 * 发布订阅(广播), 一端发布, 可以让多端触发
-	// 		 */
-	
-			
 			// 小程序检查是否有版本更新 采用条件判断来编译
 			// #ifdef MP-WEIXIN
 			this.checkNewVersion()

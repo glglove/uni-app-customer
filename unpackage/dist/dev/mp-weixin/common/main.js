@@ -105,17 +105,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 11));
 var _miniProSceneType = _interopRequireDefault(__webpack_require__(/*! @/utils/miniProSceneType */ 31));
 var _deviceApi = __webpack_require__(/*! @/utils/deviceApi.js */ 32);
 var _comm = _interopRequireDefault(__webpack_require__(/*! @/api/comm.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}
-
 var self = '';var _default =
 {
   onLaunch: function () {var _onLaunch = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _this2 = this;var AuthorizeStatus_res;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
               self = this;
               // debugger
               console.log('App Launch');
+
               // 小程序检查是否有版本更新 采用条件判断来编译
 
               this.checkNewVersion();
@@ -181,6 +182,9 @@ var self = '';var _default =
 
 
 
+
+
+
   onShow: function onShow() {
     console.log('App Show');
 
@@ -189,6 +193,53 @@ var self = '';var _default =
     console.log('App Hide');
   },
   methods: {
+    // app-plus获取应用的clientid
+    getAppCid: function getAppCid() {var _this3 = this;
+      // app-plus 登录成功后 获取 设备的 clientid
+      var clientid = plus.push.getClientInfo().clientid;
+      console.log("获取到的应用clientid", clientid);
+      if (!clientid) {//如果获取的clientid为空，说明客户端向推送服务器注册还未完成，可以使用setTimeout延时重试。
+        setTimeout(function () {
+          clientid = plus.push.getClientInfo().clientid;
+          console.log("setTimeOut后打印的clientid", clientid);
+        }, 4000);
+      } else {
+        // 存入用户的clientid 到storage 中
+        uni.setStorage({
+          key: 'clientid',
+          data: clientid,
+          success: function success() {
+            console.log('clientid 存储success');
+          } });
+
+      }
+
+      // 首先是获取cid，cid是每个设备向个推服务器注册以后生成的设备id，获取到cid后要在登录的时候把cid传给服务端和用户绑定起来，就可以实现特定用户的推送。
+      // 两个监听click很明显，就是点击时候出触发的。
+      // receive有两种情况会触发
+      // 1.ios应用已经打开的情况，这种情况通知栏不会有消息。可以自己写这种情况的处理逻辑，一般会弹出一个弹窗问需不需要跳转，我的方式是用plus.push.createMessage本地创建一条消息。
+      // 2.android接收到不符合格式的推送（不符合{title:"xxxx",content:"xxxx",payload:"xxxxx"}），这个是服务端来控制的
+
+      plus.push.addEventListener('click', function (message) {
+        // 客户端注册点击事件
+        _this3.pushCallBack("click事件", message);
+      });
+
+      plus.push.addEventListener('receive', function (message) {
+        // 客户端注册receive事件
+        _this3.pushCallBack("reciive事件", message);
+      });
+    },
+
+    pushCallBack: function pushCallBack(str, message) {
+      // 收到推送注册的 click 或者 receive事件后的 回调函数
+      debugger;
+      uni.showToast({
+        title: "".concat(str, ",\u6D88\u606F\u5185\u5BB9\uFF1A").concat(message) });
+
+    },
+
+
     // 检查是否有版本更新
     checkNewVersion: function checkNewVersion() {
       console.log("-------检查小程序是否有新版本-------checkNewVersion----------");

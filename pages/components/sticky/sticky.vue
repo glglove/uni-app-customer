@@ -23,11 +23,11 @@
 			//吸顶容器距离顶部距离 px
 			stickyTop: {
 				type: [Number, String]
-				// #ifdef APP-PLUS || MP
+				// #ifdef APP-PLUS || MP-WEIXIN
 					,
 				default: 0
 				// #endif
-				// #ifdef H5
+				// #ifdef H5 
 					,
 				default: 60
 				// #endif
@@ -53,7 +53,7 @@
 				this.updateStickyChange();
 			}
 		},
-		// #ifdef H5
+		// #ifdef H5 || MP-WEIXIN
 		mounted() {
 			this.updateScrollChange();
 		},
@@ -78,8 +78,8 @@
 				const scrollTop = this.scrollTop
 				// 吸顶容器距离顶部的距离
 				let stickyTop = this.stickyTop
-				// #ifdef H5
-				stickyTop = stickyTop -60
+				//#ifdef H5 || MP-WEIXIN
+				stickyTop = stickyTop - 60
 				stickyTop = stickyTop < 0 ? 0 : stickyTop
 				// #endif
 				this.isFixed = (scrollTop + stickyTop >= top && scrollTop + stickyTop < top + height) ? true : false

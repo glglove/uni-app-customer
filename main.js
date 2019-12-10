@@ -2,11 +2,16 @@ import Vue from 'vue'
 import App from './App'
 import store from './store' // vuex状态管理
 import configs from './api/config.js'
-import io from 'socket.io-client'   // 客户端引入socket.io-client
+
+// import io from 'socket.io-client'   // 客户端引入socket.io-client
+// 引入 socket.js 文件
+import SocketObj from './utils/socket.js'
 // 建立socket 连接
-let socket = io(`${configs.wsUrl}`)
+// let socket = io(`${configs.wsUrl}`)
 // 将socket 对象挂载在 Vue实例的原型上
-Vue.prototype.$socket = socket
+// Vue.prototype.$socket = socket
+// socket 执行监听
+// SocketObj.onConnect(socket)
 
 
 // 将container 组件注册为全局组件
@@ -30,10 +35,11 @@ Vue.prototype.checkLogin = function(toPageUrl, jumpType){
 	if(token){
 		// 已登陆
 	}else {
-		// 未登陆
+		// 未登陆 直接调到 登录页面
 		uni.redirectTo({
-			url:"'./pages/login/login?toPageUrl=' + toPageUrl + '?jumpType=' + jumpType"
+			url:'/pages/login/login?toPageUrl=' + toPageUrl + '?jumpType=' + jumpType
 		})
+			
 		return false
 	}
 	// 最终可以返回 token等

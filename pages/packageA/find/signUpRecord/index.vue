@@ -15,7 +15,7 @@
 				scroll-y="true" 
 				@scroll="scrollViewScroll">
 				
-				<tui-sticky :scrollTop="scrollTop" stickyHeight="104rpx" :stickyTop="150">
+				<tui-sticky :scrollTop="scrollTop" stickyHeight="104rpx" :stickyTop="stickyTop">
 					
 					<template v-slot:header>
 						<view class="sticky-item">
@@ -93,7 +93,7 @@
 					</template>
 				</tui-sticky>	
 				
-				<tui-sticky :scrollTop="scrollTop" stickyHeight="104rpx" :stickyTop="150">
+				<tui-sticky :scrollTop="scrollTop" stickyHeight="104rpx" :stickyTop="stickyTop">
 					<template v-slot:header>
 						<view class="sticky-item ">
 							<view class="date">5月</view>
@@ -169,7 +169,7 @@
 					</template>
 				</tui-sticky>
 				
-				<tui-sticky :scrollTop="scrollTop" stickyHeight="104rpx" :stickyTop="150">
+				<tui-sticky :scrollTop="scrollTop" stickyHeight="104rpx" :stickyTop="stickyTop">
 					<template v-slot:header>
 						<view class="sticky-item ">
 							<view class="date">4月</view>
@@ -319,6 +319,15 @@
 		computed:{
 			scrollContentHeight(){
 				return (this.pHeight - 113)
+			},
+			stickyTop(){
+				//#ifdef H5 || APP-PLUS
+				return 150
+				//#endif
+				
+				//#ifdef MP-WEIXIN
+				return 110
+				//#endif
 			}
 		},
 		methods: {

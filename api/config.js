@@ -14,16 +14,17 @@
 	//  gateway: "https://locally.uieee.com",
 	//  gateway: "https://service.yaya91.com:8495",
 	//  gateway: "http://daka.natapp1.cc",
-		gateway: "http://192.168.1.105:5000",
+		// gateway: "http://192.168.1.105:5000",
 		// gateway: "https://47.105.141.184",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
-		// gateway: "https://www.gaolongweb.cn",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
+		gateway: "https://www.gaolongweb.cn",    // 这个为本机的ip 地址 端口号 设置的是 5000  主要是 app-plus 进行真机调试时 用 http://localhost:5000 调取接口时会请求失败
 		// gateway: "https://www.kaoyandaka.com",
 	//  mobile: "https://www.kaoyandaka.com",
 	//  resource: "https://www.kaoyandaka.com",
 	//  activityRoot: "https://www.kaoyandaka.com", // /marketing/activity?parentShopId=288920&activityId=2990977b-e7b0-43b8-915d-7985b2c042bb"
-    pic_bg_Url: "https://www.kaoyandaka.com",
-    wsUrl: "ws://127.0.0.1:5000",   // socket 本地服务器地址
-    // wsUrl: "wss://47.105.141.184:5000",   // socket 生产环境服务器地址
+		pic_bg_Url: "https://www.kaoyandaka.com",
+    // wsUrl: "ws://127.0.0.1:5000",   // socket 本地服务器地址
+    // wsUrl: "wss://47.105.141.184",   // socket 生产环境服务器地址
+    wsUrl: "wss://www.gaolongweb.cn",   // socket 生产环境服务器地址
  }
 
  const urlConfigs = {
@@ -47,9 +48,9 @@
         // certificate: '/img/certificate.png', // 证书图片
         certificate: '/img/certificate_gaitubao_com_343x497.png', // 证书图片
         // joinSign_bg: '/img/joinSign_bg.png',   // 立即打卡页面背景图片
-		carousel_01: '/carousel_01.png', // 打卡页面的轮播图01
-		carousel_02: '/carousel_02.jpg', // 打卡页面的轮播图02
-		carousel_03: '/carousel_03.jpg', // 打卡页面的轮播图03
+        carousel_01: '/carousel_01.png', // 打卡页面的轮播图01
+        carousel_02: '/carousel_02.jpg', // 打卡页面的轮播图02
+        carousel_03: '/carousel_03.jpg', // 打卡页面的轮播图03
         joinSign_bg: '/img/joinSign_bg_gaitubao_com_375x667.png',   // 立即打卡页面背景图片
         submitTaskSuccess: '/img/submitTaskSuccess.png', // 提交作业成功后的背景图片
         signUp_detail_content: '/img/signUp_detail_content.png', // 报名课程详情页中的内容图片02
