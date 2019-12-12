@@ -1,0 +1,127 @@
+#submitProblem.data-v-ed948fca {
+  width: 100%;
+  height: 100%;
+  padding: 20rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#submitProblem .problemBox.data-v-ed948fca,
+#submitProblem .problemScreenshots.data-v-ed948fca,
+#submitProblem .contactBox.data-v-ed948fca {
+  height: 495rpx;
+  border-bottom: 1px dotted #979797;
+}
+#submitProblem .problemBox .tit.data-v-ed948fca,
+#submitProblem .problemScreenshots .tit.data-v-ed948fca,
+#submitProblem .contactBox .tit.data-v-ed948fca {
+  position: relative;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 34rpx;
+  color: #000000;
+  padding-left: 53rpx;
+}
+#submitProblem .problemBox .tit.data-v-ed948fca::before,
+#submitProblem .problemScreenshots .tit.data-v-ed948fca::before,
+#submitProblem .contactBox .tit.data-v-ed948fca::before {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  background: -o-linear-gradient(339deg, #FDC999 3%, #FA9960 100%);
+  background: linear-gradient(-249deg, #FDC999 3%, #FA9960 100%);
+  clear: both;
+}
+#submitProblem .problemBox .problemContent.data-v-ed948fca,
+#submitProblem .problemScreenshots .problemContent.data-v-ed948fca,
+#submitProblem .contactBox .problemContent.data-v-ed948fca {
+  height: 374rpx;
+  margin-top: 30rpx;
+}
+#submitProblem .problemBox .problemContent .submitProblem_textarea.data-v-ed948fca,
+#submitProblem .problemScreenshots .problemContent .submitProblem_textarea.data-v-ed948fca,
+#submitProblem .contactBox .problemContent .submitProblem_textarea.data-v-ed948fca {
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  background: #F4F4F4;
+  text-indent: 28rpx;
+  font-size: 24rpx;
+  color: #6B6B6B;
+  line-height: 33rpx;
+  padding: 30rpx 40rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#submitProblem .problemScreenshots.data-v-ed948fca {
+  height: 277rpx;
+  margin-top: 25rpx;
+}
+#submitProblem .problemScreenshots .addProblem.data-v-ed948fca {
+  position: relative;
+  width: 150.6rpx;
+  height: 150.6rpx;
+  background: #F4F4F4;
+  margin-top: 30rpx;
+}
+#submitProblem .problemScreenshots .addProblem .transverseLine.data-v-ed948fca {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%);
+      transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  width: 41rpx;
+  height: 0rpx;
+  background: #9B9B9B;
+  border: 2rpx solid #9B9B9B;
+}
+#submitProblem .problemScreenshots .addProblem .verticalLine.data-v-ed948fca {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 41rpx;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  background: #9B9B9B;
+  border: 2rpx solid #9B9B9B;
+}
+#submitProblem .contactBox.data-v-ed948fca {
+  margin-top: 30rpx;
+  height: 240rpx;
+  border: 0;
+}
+#submitProblem .contactBox .problemContent.data-v-ed948fca {
+  height: 81rpx;
+  line-height: 81rpx;
+  background: #F4F4F4;
+  border-radius: 28rpx;
+}
+#submitProblem .contactBox .problemContent .contact_textarea.data-v-ed948fca {
+  width: 100%;
+  height: 100%;
+  padding-top: 28rpx;
+  text-indent: 28rpx;
+  font-size: 24rpx;
+  color: #6B6B6B;
+}
+#submitProblem .submitBtn.data-v-ed948fca {
+  width: 100%;
+  height: 99rpx;
+  background: #FA9960;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 99rpx;
+}
+

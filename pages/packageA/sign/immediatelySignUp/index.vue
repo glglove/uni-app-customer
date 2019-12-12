@@ -205,7 +205,7 @@
 }
 </style>
 <template>
-    <view id="immediatelySignUp">
+    <view id="immediatelySignUp" class="page">
         <view class="bgBox">
             <!-- <image class="" src="../../../../assets/imgs/tab/joinSign_bg.png"></image> -->
             <image class=""></image>

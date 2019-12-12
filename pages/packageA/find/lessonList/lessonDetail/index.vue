@@ -74,7 +74,7 @@
 }
 </style>
 <template>
-    <view id="lessBox">
+    <view id="lessBox" class="page">
         <!--tab-->
         <!-- <tabBox :list.sync = "tabBox" :index.sync = "tabCurrentIndex"></tabBox> -->
         <!--list-->

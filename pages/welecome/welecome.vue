@@ -45,10 +45,10 @@
 
 <template>
     <container :loading1="loading1">
-        <view id="welecome" slot="container-slot">
+        <view id="welecome" class="page" slot="container-slot">
 			<!-- hasLogin: {{hasLogin}} -->
-			isHasLogin: {{isHasLogin}}
-<!-- 			<view v-if="hasLogin" class="welecome-logined">
+			<!-- isHasLogin: {{isHasLogin}} -->
+            <!-- <view v-if="hasLogin" class="welecome-logined">
                 <view class="title">
                     您好 {{userName}}，您已成功登录。
                 </view>

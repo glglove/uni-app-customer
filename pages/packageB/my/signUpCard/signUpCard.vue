@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view id="signUpCard" class="page">
 		报名卡片
 	</view>
 </template>

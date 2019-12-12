@@ -2,7 +2,7 @@
 
 </style>
 <template>
-    <view id="submitTask">
+    <view id="submitTask" class="page">
 
     </view>
 </template>

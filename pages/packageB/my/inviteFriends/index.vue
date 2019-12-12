@@ -76,7 +76,7 @@
 
 </style>
 <template>
-    <view id="inviteFriends" class="marginT30">
+    <view id="inviteFriends" class="page marginT30">
         <view>inviteFriends</view>
 
         <view class="footer">

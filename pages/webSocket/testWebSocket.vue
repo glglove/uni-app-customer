@@ -2,7 +2,7 @@
 
 <template>
     <container>
-        <view id="websockets" slot="container-slot">
+        <view id="websockets" class="page" slot="container-slot">
             <button type="primary" @tap="clickRequest">点击发送请求</button>
             <button type="primary" @tap="leave">离开页面</button>
         </view>

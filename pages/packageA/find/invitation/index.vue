@@ -77,7 +77,7 @@
 </style>
 <template>
 	<container :containerLoading="containerLoading">
-		<view id="invitation" class="marginT30" slot="container-slot">
+		<view id="invitation" class="page marginT30" slot="container-slot">
 			<view class="sendBox">
 				<view class="picBox">
 					<image class="pic" :src="require('@/static/imgs/icon/sendLink.png')"></image>

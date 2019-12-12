@@ -1,0 +1,94 @@
+.shadBox.data-v-8b085e98 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2000;
+}
+.shadBox.not_authrize.data-v-8b085e98 {
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  opacity: 1;
+}
+.shadBox.already_authrize.data-v-8b085e98 {
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+  opacity: 0;
+}
+.shadBox .contentBox.data-v-8b085e98 {
+  position: absolute;
+  width: 500rpx;
+  height: 480rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  border-radius: 20px;
+  background: #FFFFFF;
+  padding: 20rpx 40rpx;
+  z-index: 3000;
+}
+.shadBox .contentBox .header.data-v-8b085e98 {
+  text-align: center;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx auto;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #edece8;
+}
+.shadBox .contentBox .header .pic.data-v-8b085e98 {
+  width: 80%;
+  height: 80%;
+  margin-top: 10rpx;
+}
+.shadBox .contentBox .content.data-v-8b085e98 {
+  margin: 30rpx;
+  font-size: 28rpx;
+  height: 160rpx;
+}
+.shadBox .contentBox .content .tit.data-v-8b085e98 {
+  color: #000000;
+}
+.shadBox .contentBox .content .text.data-v-8b085e98 {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+}
+.shadBox .contentBox .bottom.data-v-8b085e98 {
+  border-radius: 80rpx;
+  margin: 20rpx 50rpx;
+  font-size: 35rpx;
+}
+.shadBox .contentBox .bottom.authorizeBtn.data-v-8b085e98 {
+  background: #FA9960;
+}
+.shadBox .versitionTit.data-v-8b085e98 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+.shadBox .versitionTit .tit.data-v-8b085e98 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform: -webkit-translate(-50%, -50%);
+          transform: -webkit-translate(-50%, -50%);
+  width: 250rpx;
+  height: 250rpx;
+  line-height: 200rpx;
+  text-align: center;
+}
+

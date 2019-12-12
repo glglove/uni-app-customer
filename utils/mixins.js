@@ -634,7 +634,7 @@ export const miniProApi = {
 											console.log('---网络请求返回成功---')
 											console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", resData)          
 
-											that.setStorage( "token", resData.data.token )
+											that.setStorage( "userToken", resData.data.token )
 											// 将token 存入 store - app中
 											that.$store.dispatch("setUserToken", resData.data.token)
 											// 将 userInfo 存入 store -app 中
@@ -658,7 +658,7 @@ export const miniProApi = {
 										}
 									}
 								}).then(async ()=>{
-									let token = await that.getStorage( "token" ) || "";
+									let token = await that.getStorage( "userToken" ) || "";
 									let userInfo = await that.getStorage( "userInfo" ) || "";
 									console.log('--------缓存token成功----------')
 									console.log( "缓存成功后读取缓存中的token：", token )

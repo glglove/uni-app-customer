@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发现",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "footer-explain": "/pages/components/footerExplain/footerExplain"
+  }
+}

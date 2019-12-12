@@ -114,7 +114,7 @@
 }
 </style>
 <template>
-    <view id="submitProblem">
+    <view id="submitProblem" class="page">
         <view class="problemBox">
             <view class="tit">遇到的问题</view>
             <view class="problemContent">

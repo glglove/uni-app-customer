@@ -71,7 +71,7 @@
 </style>
 <template>
 	<container>
-		<view id="pwd" slot="container-slot">
+		<view id="pwd" class="page" slot="container-slot">
 			<view class="input-group">
 				<view class="input-row">
 					<text class="title">邮箱：</text>

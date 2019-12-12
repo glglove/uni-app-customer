@@ -65,7 +65,7 @@
 
 </style>
 <template>
-    <view id="certificate" class="marginT30">
+    <view id="certificate" class="page marginT30">
         <view class="contentBox">
             <view class="picBox">
                 <!-- <image class="pic" src="../../../../../assets/imgs/tab/certificate.png"></image> -->

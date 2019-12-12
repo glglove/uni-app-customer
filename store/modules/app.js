@@ -165,7 +165,7 @@ const app = {
 	},
 	// 设置 socket 连接状态
 	setSocketStatus ({ commit, state}, flag) {
-			commit(types.SET_SOCKET_STATUS, flag)
+		commit(types.SET_SOCKET_STATUS, flag)
 	}
   }
 }

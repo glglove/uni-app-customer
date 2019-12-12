@@ -124,7 +124,7 @@
 
 <template>
 	<container :containerLoading="containerLoading">
-		<view id="my"  slot="container-slot"  @touchstart=""  @touchmove="" @touchend="">
+		<view id="my" class="page" slot="container-slot"  @touchstart=""  @touchmove="" @touchend="">
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
 
@@ -318,12 +318,12 @@
 			...mapMutations(['loginOut']),
 			onComLoad(){
 				// 异步下载 首页的背景图片存入 缓存中 后续就不用再次加载
-				debugger
+				// debugger
 				if( !this.bg.my_bg ){
 					uni.downloadFile({
 						url: `${this.$configs.baseImgsUrl+this.$configs.baseUrlConfigs.imgs_bg.my_bg}`,
 						success: (res) => {
-							debugger
+							// debugger
 							if(res.statusCode === 200 && res.tempFilePath){
 								console.log("99999999999",res)
 								// res.tempFilePath
@@ -376,7 +376,7 @@
 				// debugger
 				// console.log(this.getStorage("userInfo"))
 				this.getStorage("userInfo").then(res => {
-					debugger
+					// debugger
 					// console.log("------------",res)
 					if(res){
 						this.photo_png = JSON.parse(res).headImg

@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/find/find",
+    "pages/sign/sign",
+    "pages/my/my",
+    "pages/webSocket/testWebSocket",
+    "pages/login/login"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/packageA",
+      "pages": [
+        "find/lessonList/index",
+        "find/lessonList/lessonDetail/index",
+        "find/lessonList/lessonDetail/enterSuccess/index",
+        "find/invitation/index",
+        "find/ranklist/index",
+        "find/signUpRecord/index",
+        "sign/immediatelySignUp/index",
+        "sign/immediatelySignUp/submitTask/index",
+        "sign/immediatelySignUp/submitTask/submitTaskSuccess/index"
+      ]
+    },
+    {
+      "root": "pages/packageB",
+      "pages": [
+        "my/myAchievement/index",
+        "my/myAchievement/certificate/index",
+        "my/learnRecord/index",
+        "my/help/index",
+        "my/help/submitProblem/index",
+        "my/help/submitProblem/submitProblemSuccess/index",
+        "my/inviteFriends/index",
+        "my/set/index"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "rgba(253,133,9,1)",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/find/find",
+        "iconPath": "static/imgs/tab/find.png",
+        "selectedIconPath": "static/imgs/tab/find_highlight.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/sign/sign",
+        "iconPath": "static/imgs/tab/sign.png",
+        "selectedIconPath": "static/imgs/tab/sign_highlight.png",
+        "text": "打卡"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/imgs/tab/my.png",
+        "selectedIconPath": "static/imgs/tab/my_highlight.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "container": "/pages/components/container1/container"
+  },
+  "sitemapLocation": "sitemap.json"
+}

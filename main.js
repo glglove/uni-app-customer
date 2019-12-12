@@ -2,17 +2,18 @@ import Vue from 'vue'
 import App from './App'
 import store from './store' // vuex状态管理
 import configs from './api/config.js'
-
 // import io from 'socket.io-client'   // 客户端引入socket.io-client
 // 引入 socket.js 文件
 import SocketObj from './utils/socket.js'
 // 建立socket 连接
-// let socket = io(`${configs.wsUrl}`)
-// 将socket 对象挂载在 Vue实例的原型上
-// Vue.prototype.$socket = socket
-// socket 执行监听
-// SocketObj.onConnect(socket)
 
+//#ifndef MP-WEIXIN
+SocketObj.connect(Vue)
+//#endif
+
+//#ifdef MP-WEIXIN
+SocketObj.connectMiniPro(Vue)
+//#endif
 
 // 将container 组件注册为全局组件
 import container from '@/pages/components/container1/container'

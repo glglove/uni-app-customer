@@ -159,7 +159,7 @@
 }
 </style>
 <template>
-    <view id="submitTaskSuccess">
+    <view id="submitTaskSuccess" class="page">
         <!-- <image class="pic" src="../../../../../../assets/imgs/tab/submitTaskSuccess.png"></image> -->
         <image class="pic"></image>
         <view class="top">

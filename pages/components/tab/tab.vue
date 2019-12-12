@@ -9,6 +9,7 @@
             <template v-if="type == 'default'">
               <view>{{item}}</view>
             </template>
+			
             <block wx:else>
               <view :class="['text', item[3]?'vacation':'']">
                {{item[0]}}
@@ -17,6 +18,7 @@
                {{item[1]}}
               </view>
             </block>
+			
         </view>
     </scroll-view>
     <view  v-if="arrow!='false'" class="iconfont mykicon-yyok__arrow_icon click-able" @tap="toRight"></view>
@@ -57,7 +59,7 @@ export default {
         this.lPostion=e.detail.scrollLeft
     },
     toRight(){
-         this.lPostion=this.customerData.lPostion+100
+         // this.lPostion=this.customerData.lPostion+100
     },
     itemTap(index){
       // this.index=index;

@@ -1,0 +1,114 @@
+#my.data-v-2b63f8c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+#my .bgBox.data-v-2b63f8c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+#my .contentBox.data-v-2b63f8c3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 100;
+}
+#my .contentBox .top.data-v-2b63f8c3 {
+  position: relative;
+  width: 686rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  margin: 40rpx auto;
+}
+#my .contentBox .top .leftInfoBox .avatarBox .photo.data-v-2b63f8c3 {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+#my .contentBox .top .leftInfoBox .avatarBox .name.data-v-2b63f8c3 {
+  display: inline-block;
+  height: 48rpx;
+  margin-left: 25rpx;
+  line-height: 48rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  letter-spacing: 0.59rpx;
+}
+#my .contentBox .top .leftInfoBox .contentLoginBox .btn-row .loginBtn.data-v-2b63f8c3 {
+  font-size: 32rpx;
+  background-color: #FA9A60;
+}
+#my .contentBox .top .setBtnBox .set.data-v-2b63f8c3 {
+  position: relative;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 32rpx 0;
+}
+#my .contentBox .top .setBtnBox .set image.set.data-v-2b63f8c3 {
+  position: absolute;
+  top: -30rpx;
+  left: 0;
+  z-index: 1001;
+}
+#my .contentBox .top .setBtnBox .set .btn.data-v-2b63f8c3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  line-height: 0 !important;
+  background-color: transparent !important;
+  z-index: 1002;
+}
+#my .contentBox .containerBox.data-v-2b63f8c3 {
+  width: 686rpx;
+  height: 560rpx;
+  border-radius: 28rpx;
+  margin: 0 auto;
+  padding: 0 30rpx;
+  background: #FFFFFF;
+  border: 1px solid rgba(250, 235, 228, 0.2);
+  -webkit-box-shadow: 0 12px 10px rgba(252, 195, 165, 0.2);
+          box-shadow: 0 12px 10px rgba(252, 195, 165, 0.2);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+#my .contentBox .containerBox .itemBox.data-v-2b63f8c3 {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-left.data-v-2b63f8c3 {
+  margin: 26rpx 0;
+}
+#my .contentBox .containerBox .itemBox .itemBox-left .pic.data-v-2b63f8c3 {
+  width: 48rpx;
+  height: 45rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-left .tit.data-v-2b63f8c3 {
+  height: 42rpx;
+  line-height: 42rpx;
+  color: #000000;
+  font-size: 30rpx;
+  letter-spacing: 0.46rpx;
+  margin-left: 30rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-right.data-v-2b63f8c3 {
+  width: 15rpx;
+  height: 30rpx;
+  margin-top: 7.5rpx;
+}
+#my .contentBox .containerBox .itemBox .itemBox-right .tip.data-v-2b63f8c3 {
+  width: 100%;
+}
+

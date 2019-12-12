@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "课程",
+  "usingComponents": {
+    "tabbox": "/pages/components/tab/tab"
+  }
+}

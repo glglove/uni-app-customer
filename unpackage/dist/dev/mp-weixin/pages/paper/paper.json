@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "小纸条",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tabbar-cmp": "/pages/components/tab/tab"
+  }
+}

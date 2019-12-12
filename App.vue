@@ -1,6 +1,8 @@
 <style lang="less" src="./static/style/base.less"></style>
 <style lang="less" src="./static/style/icons.less"></style>
 <style lang="less" src="./static/style/iconfont.less"></style>
+<style lang="css" src="./static/style/uni.css"></style>  //引入uni 的样式文件
+<style lang="css" src="./static/font/iconfont.css"></style>  //引入的阿里字体图标
 <style lang="less">
 	/* 头条小程序需要把 iconfont 样式放到组件外 */
 	@import "pages/components/m-icon/m-icon.css";
@@ -21,17 +23,20 @@
 				
 			// 小程序检查是否有版本更新 采用条件判断来编译
 			// #ifdef MP-WEIXIN
+			// 检查版本
 			this.checkNewVersion()
+			// 检查微信是否登录状态
 			this.chekWeixinLogin().then(res => {
 				console.log("---打印检查微信是否登录返回的res---------", res)
 				if(res){
 					// weixin 登录未过期 页面跳转到 find 首页
-					
+					console.log("微信是登录状态")
 				}else {
 					// weixin登录已经过期  需要 弹出 微信登录的页面
-					
+					console.log("微信没有登录")
 				}
 			})
+			
 			// 检查 是否微信已授权用户信息
 			let AuthorizeStatus_res = await this.getAuthorizeStatus("scope.userInfo", async ()=>{
 				// 已经授权回调
@@ -355,13 +360,15 @@
 												console.log('---网络请求返回成功---')
 												console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", resData)          
 
-												// uni.setStorage( "token", resData.data.token )
+												uni.setStorageSync( "userToken", resData.data.token )
+												uni.setStorageSync( "customer", JSON.stringify(resData.data.customer))
 												// 将token 存入 store - app中
 												store.dispatch("setUserToken", resData.data.token)
 												// 将 userInfo 存入 store -app 中
 												// store.dispatch("")
 												// 将userId 存入 store-app 中
 												store.dispatch("setUserId", resData.data.customer.id)
+												
 												// 缓存 用户信息 userInfo
 												// uni.setStorage( "userInfo", JSON.stringify(resData.data.customer) )          
 												resolve(true);  

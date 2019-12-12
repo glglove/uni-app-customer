@@ -82,7 +82,7 @@
 </style>
 <template>
 	<container>
-		<view id="lessBox">
+		<view id="lessBox" class="page">
 			<!--tab-->
 			<tabbox :list.sync = "tabBox" :index.sync = "tabCurrentIndex"></tabbox>
 			

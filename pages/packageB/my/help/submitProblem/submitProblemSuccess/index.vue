@@ -2,7 +2,7 @@
 
 </style>
 <template>
-    <view id="submitProblemSuccess">
+    <view id="submitProblemSuccess" class="page">
 
     </view>
 </template>

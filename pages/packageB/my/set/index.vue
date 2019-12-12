@@ -86,7 +86,7 @@
 
 </style>
 <template>
-    <view id="set">
+    <view id="set" class="page">
         <view class="top">
             <view class="picBox">
                 <image :src="require('@/static/imgs/icon/photo.png')" class="pic"></image>

@@ -71,7 +71,7 @@
 </style>
 <template>
 	<container>
-		<view id="register" slot="container-slot">
+		<view id="register" class="page" slot="container-slot">
 			<view class="input-group">
 				<view class="input-row border">
 					<text class="title">账号：</text>

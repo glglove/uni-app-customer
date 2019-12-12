@@ -13,20 +13,26 @@
 			"path" : "pages/find/find",
 			"style" : {
 				"navigationBarTitleText":"发现",
-				"enablePullDownRefresh":true
+				"enablePullDownRefresh":false,
+				"app-plus":{
+					//#ifdef H5
+					"titleNView": false  // 设置为 false 不启用 原生导航
+					//#endif	
+				}				
 			}
 		},
 		{
 			"path" : "pages/sign/sign",
 			"style" : {
 				"navigationBarTitleText":"打卡",
-				// "enablePullDownRefresh":true,
-				"onReachBottomDistance": 50,
+				"enablePullDownRefresh":false,				
+				// "onReachBottomDistance": 50,
 				// 此设置属性是针对某一个具体的页面进行的 自定义导航栏设置
 				// "navigationStyle":"custom",   // 设置为 "custom" 后 将取消 原生导航栏，此时app 上会默认出现沉浸式 即通过打开应用的manifest.json文件，切换到代码视图，在app-plus -> statusbar 下添加immersed节点并设置值为false 可取消沉浸式
 				// 以下为 原生导航栏在app 端中 5+规范里webview页面的原生导航窗体规范（可配置导航的 一些样式）
 				"app-plus":{
-					// "titleView": false,  // 设置为 false 不启用 原生导航
+					"scrollIndicator": "none",//app页面不显示滚动条	
+					"navigationBarBackgroundColor": "transparent",  
 					"titleNView":{
 						"autoBackButton": "fasle", // 设置为 false 可取消 返回按钮
 						"backgroundcolor": "red",
@@ -55,7 +61,7 @@
 							// 	"type":"none"  // 按钮的样式
 							// },
 							{
-								"text": "\ue63c",
+								"text": "\ue627",
 								"fontStc": "/static/font/iconfont.ttf",
 								"fontSize": "22px",
 								"float": "right", //靠右一个
@@ -63,24 +69,87 @@
 								"redDot":true //默认图标按钮右上角有红色点状标志	
 							}
 							// {
-							// 	"text": "\ue642",
+							// 	"text": "\ue614",
 							// 	"fontStc": "/static/font/iconfont.ttf",
 							// 	"fontSize": "22px",
 							// 	"float": "left", //靠左第一个
 							// 	"id":"shezhi" //自定义字段，用于以后对按钮事件处理
 							// },								
 						]					
-					},
-					"navigationBarBackgroundColor": "transparent"
+					}
+					//#ifdef H5												
+					,"titleNView": false  // 设置为 false 不启用 原生导航
+					//#endif					
 				}
+			}
+		},
+		{
+			"path":"pages/paper/paper",
+			"style": {
+				"navigationBarTitleText":"小纸条",
+				"enablePullDownRefresh": true,
+				// 此设置属性是针对某一个具体的页面进行的 自定义导航栏设置
+				// "navigationStyle":"custom",   // 设置为 "custom" 后 将取消 原生导航栏，此时app 上会默认出现沉浸式 即通过打开应用的manifest.json文件，切换到代码视图，在app-plus -> statusbar 下添加immersed节点并设置值为false 可取消沉浸式
+				// 以下为 原生导航栏在app 端中 5+规范里webview页面的原生导航窗体规范（可配置导航的 一些样式）
+				"app-plus":{
+					"scrollIndicator": "none",//app页面不显示滚动条		
+					"navigationBarBackgroundColor": "transparent",  // 导航栏背景渐变	
+					"titleNView":{
+						"autoBackButton": "fasle", // 设置为 false 可取消 返回按钮
+						"backgroundcolor": "red",
+						"titletext": "iflower",  
+						"titlecolor": "#000000",	
+						"type": "transparent", // 页面上滑时 导航栏会有透明渐变效果
+						"searchInput": {
+							"autoFocus": false,
+							"align":"left",
+							"backgroundColor": "rgba(255,255,255,0.5)",
+							"borderRadius": "5px",
+							"placeholder": "请输入",
+							"placeholderColor": "#CCCCCC",
+							"disabled": false
+						},
+						"buttons": [  
+							//添加自定义按钮入口
+							//此处引用阿里图标库图标//（请参考https://www.jianshu.com/p/5347eabff1e4）
+							// 左边
+							{
+								 "color":"#000000",
+								 "colorPressed":"#BBBBBB",
+								 "float":"left",
+								 "fontSize":"22px",
+								 "fontSrc":"/static/font/icon.ttf",
+								 "text":"\ue627"
+							},
+							// 右边
+							{
+								 "color":"#000000",								 
+								 "colorPressed":"#BBBBBB",
+								 "float":"right",
+								 "fontSize":"22px",
+								 "fontSrc":"/static/font/icon.ttf",
+								 "text":"\ue614",
+								 "redDot":true //默认图标按钮右上角有红色点状标志
+							}	
+						]					
+					}
+					// //#ifdef H5
+					// ,"titleNView": false  // 设置为 false 不启用 原生导航
+					// //#endif					
+				}				
 			}
 		},
 		{
 			"path" : "pages/my/my",
 			"style" : {
 				"navigationBarTitleText":"我的",
-				"enablePullDownRefresh":true
-			}
+				"enablePullDownRefresh":true,
+				"app-plus":{
+					//#ifdef H5
+					"titleNView": false  // 设置为 false 不启用 原生导航
+					//#endif	
+				}
+			}		
 		},
 		{
 			"path": "pages/webSocket/testWebSocket",
@@ -388,6 +457,12 @@
 		  "iconPath": "static/imgs/tab/sign.png",
 		  "selectedIconPath": "static/imgs/tab/sign_highlight.png",
 		  "text": "打卡"
+		},
+		{
+			"pagePath":"pages/paper/paper",
+			"iconPath":"static/logo.png",
+			"selectedIconPath":"static/weixin.png",
+			"text":"小纸条"
 		},
 		{
 			"pagePath": "pages/my/my",

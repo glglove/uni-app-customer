@@ -225,7 +225,7 @@
 </style>
 <template>
 	<container :containerLoading="containerLoading">
-		<view  id="findBox" slot="container-slot">
+		<view  id="findBox" class="page" slot="container-slot">
 			<!--loading组件-->
 			<!-- <Loading type="4"></Loading> -->
 			<!-- bg.find_bg:{{bg.find_bg}} -->
@@ -350,7 +350,7 @@
 		watch: {
 			userToken: {
 				handler(newValue, oldValue){
-					debugger
+					// debugger
 					if(newValue){
 						this.refreshPage()
 					}
@@ -535,7 +535,7 @@
 			},
 			// 邀请好友
 			async invitateFriends (e) {
-				debugger
+				// debugger
 				console.log("点击了 邀请好友的 button")
 				// 未生成海报前 禁止再次点击  邀请好友
 				this.shairePic_clickable = true

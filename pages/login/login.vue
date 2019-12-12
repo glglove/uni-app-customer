@@ -365,7 +365,9 @@
 						// console.log("--------",res.data.data.token)
 						let token = res.data.data.token
 						let customer = res.data.data.customer
-						// tokn 存入 缓存中
+						// userInfo 存入缓存中
+						this.setStorage("userInfo", JSON.stringify(customer))
+						// token 存入 缓存中
 						this.setStorage("userToken", token)
 						console.log("login页面中打印冲localstorage中获取到的userToken",uni.getStorageSync("userToken"))
 						// token 存入store 中

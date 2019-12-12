@@ -1,155 +1,10 @@
-<style lang="less" scoped>
-#sign {
-	// position: absolute;
-	// top: 0;
-	// left: 0;
-	// right: 0;
-	// bottom: 0;
-	// margin: auto;	
-	// min-height: 1110upx;
-	background-color: rgba(251,250,249,1);
-	.bgBox {
-		width: 100%;
-		height: 400upx;
-		.bgpic{
-			width: 100%;
-		}		
-	}
-	.contentBox {
-		width: 100%;
-		padding: 90upx 60upx;
-		box-sizing: border-box;
-		letter-spacing: 1upx;
-		margin: 0 auto;
-		.scroll-view-y {
-			// position: absolute;
-			// top: 0;
-			// left: 0;
-			// right: 0;
-			// bottom: 0;
-			// margin: auto;
-			width: 100%;
-			height: 100%;
-		}
-		.itemListBox {
-			width: 100%;
-			// height: 200upx;
-			.itemlist {
-				height: 270rpx;
-				border: 1px solid rgba(252,213,190,0.3);
-				border-top-left-radius: 28rpx;
-				border-top-right-radius: 28rpx;    
-				margin-top: 20rpx; 
-				padding: 20rpx;   
-				// background-color: #FFFFFF;
-				box-shadow: 0 4rpx 20rpx 4rpx rgba(255,0,0,0.1);
-				box-sizing: border-box; 
-				&.shadow {
-					background: linear-gradient(top,#ccc,#000);
-				}            
-				.listBox-top {
-					position: relative;
-					width: 100%;
-					height: 150rpx;
-					border-bottom: 1px dashed rgba(250,160,107,0.7);
-					.lessonTit {
-						// width: 310rpx;
-						height: 48rpx;
-						font-size: 34rpx;
-						color: #000000;
-						line-height: 48rpx;
-						font-weight: blod;
-					}
-					.signTimeZone {
-						height: 33rpx;
-						font-size: 24rpx;
-						color: #888C91;
-						line-height: 33rpx;
-					}
-					.signTimes {
-						height: 33rpx;
-						font-size: 24rpx;
-						color: #888C91;
-						line-height: 33rpx;
-					}
-					.signBtn {
-						position: absolute;
-						top: 50%;
-						right: 0;
-						width: 164rpx;
-						height: 70rpx;
-						transform: translateY(-50%);
-						-webkit-transform: translateY(-50%);
-						.sign-button {
-							height: 100%;
-							width: 100%;
-							line-height: 70rpx;
-							font-size: 34rpx;
-							color: #FFFFFF;
-							background: linear-gradient(to right,rgba(250,153,96,0.4),rgba(250,153,96,1));
-							border-radius: 50rpx;
-							padding: 0 !important;
-							&.alreadySign {
-								color: #000000;
-							}
-							&.already_end {
-								background: linear-gradient(to right,rgba(0,0,0,0.08),rgba(0,0,0,0.2));
-								color: #000000;
-							}
-							&.not_begin {
-								color: #242F42;
-							}
-						}
-
-					}
-				}  
-				.listBoxBottom {
-					display: flex;
-					justify-content: space-between;
-					margin: 30rpx 0;
-					.flex_item {
-						// flex: 1;
-						text-align: center;
-						padding: 0;
-						background-color: transparent;
-						line-height: 0;
-						&.border-right {
-							border-right: 1rpx solid silver;
-							border-radius: 0;
-							// margin: 0 10rpx;
-							width: 33%;
-							text-align: left;
-						}
-						.flex_item_pic {
-							display: inline-block;
-							width: 40rpx;
-							height: 30rpx;
-							vertical-align: middle;
-						}
-						.flex_item_tit {
-							display: inline-block;
-							height: 33rpx;
-							line-height: 33rpx;
-							text-align: center;
-							color: #000000;
-							font-size: 24rpx;
-							margin-left: 20rpx;
-						}
-					}
-				}
-			}  
-		}
-	}
-}
-
-</style>
-
 <template>
 	<container :containerLoading="containerLoading">
-		<view id="sign" class="content" slot="container-slot">
+		<view id="sign" class="page content" slot="container-slot">
+			
 			<!--轮播图-->
-			<view class="uni-swiper-msg">		
-				<swiper  autoplay="true" circular="true" interval="3000">
+			<view class="box">		
+				<swiper  class="swiper-box" autoplay="true" circular="true" interval="3000">
 					<swiper-item>
 						<navigator>
 							<image :src="carousel_01" mode="widthFix"></image>
@@ -510,4 +365,149 @@
 		}
 	}
 </script>
+
+<style lang="less" scoped>
+#sign {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// right: 0;
+	// bottom: 0;
+	// margin: auto;	
+	// min-height: 1110upx;
+	background-color: rgba(251,250,249,1);
+	.bgBox {
+		width: 100%;
+		height: 400upx;
+		.bgpic{
+			width: 100%;
+		}		
+	}
+	.contentBox {
+		width: 100%;
+		padding: 90upx 60upx;
+		box-sizing: border-box;
+		letter-spacing: 1upx;
+		margin: 0 auto;
+		.scroll-view-y {
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			// right: 0;
+			// bottom: 0;
+			// margin: auto;
+			width: 100%;
+			height: 100%;
+		}
+		.itemListBox {
+			width: 100%;
+			// height: 200upx;
+			.itemlist {
+				height: 270rpx;
+				border: 1px solid rgba(252,213,190,0.3);
+				border-top-left-radius: 28rpx;
+				border-top-right-radius: 28rpx;    
+				margin-top: 20rpx; 
+				padding: 20rpx;   
+				// background-color: #FFFFFF;
+				box-shadow: 0 4rpx 20rpx 4rpx rgba(255,0,0,0.1);
+				box-sizing: border-box; 
+				&.shadow {
+					background: linear-gradient(top,#ccc,#000);
+				}            
+				.listBox-top {
+					position: relative;
+					width: 100%;
+					height: 150rpx;
+					border-bottom: 1px dashed rgba(250,160,107,0.7);
+					.lessonTit {
+						// width: 310rpx;
+						height: 48rpx;
+						font-size: 34rpx;
+						color: #000000;
+						line-height: 48rpx;
+						font-weight: blod;
+					}
+					.signTimeZone {
+						height: 33rpx;
+						font-size: 24rpx;
+						color: #888C91;
+						line-height: 33rpx;
+					}
+					.signTimes {
+						height: 33rpx;
+						font-size: 24rpx;
+						color: #888C91;
+						line-height: 33rpx;
+					}
+					.signBtn {
+						position: absolute;
+						top: 50%;
+						right: 0;
+						width: 164rpx;
+						height: 70rpx;
+						transform: translateY(-50%);
+						-webkit-transform: translateY(-50%);
+						.sign-button {
+							height: 100%;
+							width: 100%;
+							line-height: 70rpx;
+							font-size: 34rpx;
+							color: #FFFFFF;
+							background: linear-gradient(to right,rgba(250,153,96,0.4),rgba(250,153,96,1));
+							border-radius: 50rpx;
+							padding: 0 !important;
+							&.alreadySign {
+								color: #000000;
+							}
+							&.already_end {
+								background: linear-gradient(to right,rgba(0,0,0,0.08),rgba(0,0,0,0.2));
+								color: #000000;
+							}
+							&.not_begin {
+								color: #242F42;
+							}
+						}
+
+					}
+				}  
+				.listBoxBottom {
+					display: flex;
+					justify-content: space-between;
+					margin: 30rpx 0;
+					.flex_item {
+						// flex: 1;
+						text-align: center;
+						padding: 0;
+						background-color: transparent;
+						line-height: 0;
+						&.border-right {
+							border-right: 1rpx solid silver;
+							border-radius: 0;
+							// margin: 0 10rpx;
+							width: 33%;
+							text-align: left;
+						}
+						.flex_item_pic {
+							display: inline-block;
+							width: 40rpx;
+							height: 30rpx;
+							vertical-align: middle;
+						}
+						.flex_item_tit {
+							display: inline-block;
+							height: 33rpx;
+							line-height: 33rpx;
+							text-align: center;
+							color: #000000;
+							font-size: 24rpx;
+							margin-left: 20rpx;
+						}
+					}
+				}
+			}  
+		}
+	}
+}
+</style>
 

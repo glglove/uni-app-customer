@@ -54,7 +54,7 @@
 
 </style>
 <template>
-    <view id="help">
+    <view id="help" class="page">
         <scroll-view scroll-y class="contentBox">
             <view class="listBox line">
                 <text class="no">1</text>

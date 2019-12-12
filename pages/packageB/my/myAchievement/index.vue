@@ -108,7 +108,7 @@
 </style>
 <template>
 	<container :containerAllloading="containerAllloading">
-		<view id="myAchievement" slot="container-slot" class="marginT30">
+		<view id="myAchievement" class="page marginT30" slot="container-slot">
 			<!-- containerAllloading: {{containerAllloading}} -->
 			我的成就页面
 		</view>

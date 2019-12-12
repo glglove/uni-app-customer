@@ -1,6 +1,6 @@
 <template>
 	<container :containerAllloading = "containerAllloading">
-		<view id="ranklist" slot="container-slot">
+		<view id="ranklist" class="page" slot="container-slot">
 			ranklist 页面
 			<view class="btn" @tap="showCalendar">选择日期：{{result.fullDate}} {{result.week}}</view>
 			<view class="calendarBox">

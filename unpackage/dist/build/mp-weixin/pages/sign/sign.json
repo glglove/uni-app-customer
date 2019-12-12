@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "打卡",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "load-more": "/pages/components/uni-load-more/uni-load-more"
+  }
+}

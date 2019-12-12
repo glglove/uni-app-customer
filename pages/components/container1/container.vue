@@ -19,6 +19,7 @@
 	.container-box-cmp {
 		position: relative;
 		width: 100%;
+		height: 100%;
 		.top-loadding {
 			
 		}
@@ -85,7 +86,7 @@
 	
 </style>
 <template>
-	<view class="container-box-cmp">
+	<view class="container-box-cmp animated fadeIn fast">
 	<!--<view class="top-loadding {{topClass}}" style="{{topViewStyle}}" hidden="{{refreshTop==0&&!refreshFlag}}">
 			<text class="iconfont mykicon-d_loading_icon"></text>
 		</view> -->
@@ -220,8 +221,14 @@
 			positionStyle() {
                 // return `background:${this.background};position:relative;padding-top:${this.top}px;padding-bottom:${this.bottom}px;
                 // padding-left:${this.left}px;padding-right:${this.right}px;min-height:${this.pHeight}px;opacity:${this.containerAllloadingFlag?0:1}`
-                return `background:${this.background};position:relative;padding-top:${this.top}px;padding-bottom:${this.bottom}px;
-                padding-left:${this.left}px;padding-right:${this.right}px;height:${this.pHeight}px;opacity:${this.containerAllloadingFlag?0:1}`				
+				return `background:${this.background};
+						position:relative;
+						padding-top:${this.top}px;
+						padding-bottom:${this.bottom}px;
+						padding-left:${this.left}px;
+						padding-right:${this.right}px;
+						height:${this.pHeight}px;
+						opacity:${this.containerAllloadingFlag?0:1}`				
 			}
 			// 小程序上面 自动检测 是否有授权
 			// #ifdef MP-WEIXIN

@@ -197,7 +197,7 @@
 
 </style>
 <template>
-    <view id="learnRecord">
+    <view id="learnRecord" class="page">
         <scroll-view scroll-y class="scrollBox">
             <!-- <view class="signDayBox clearfix wrap">
                 <view class="lt box">

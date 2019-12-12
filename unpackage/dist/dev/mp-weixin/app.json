@@ -2,6 +2,7 @@
   "pages": [
     "pages/find/find",
     "pages/sign/sign",
+    "pages/paper/paper",
     "pages/my/my",
     "pages/webSocket/testWebSocket",
     "pages/login/login"
@@ -58,6 +59,12 @@
         "iconPath": "static/imgs/tab/sign.png",
         "selectedIconPath": "static/imgs/tab/sign_highlight.png",
         "text": "打卡"
+      },
+      {
+        "pagePath": "pages/paper/paper",
+        "iconPath": "static/logo.png",
+        "selectedIconPath": "static/weixin.png",
+        "text": "小纸条"
       },
       {
         "pagePath": "pages/my/my",

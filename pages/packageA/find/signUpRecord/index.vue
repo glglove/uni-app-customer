@@ -1,6 +1,6 @@
 <template>
 	<container>
-		<view id="signUpRecord" slot="container-slot">
+		<view id="signUpRecord" class="page" slot="container-slot">
 			<view class="tips">
 				<view>1、判断平台，ios可直接使用position: sticky</view>
 				<view>2、对sticky-item容器进行绝对定位，底部内容部分使用外边距撑开sticky-item高度，减缓页面抖动</view>
