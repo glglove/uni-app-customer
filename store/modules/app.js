@@ -100,6 +100,7 @@ const app = {
 				// token 存入store 中
 				state.userToken = token
 				state.userId = customer.id
+				state.hasLogin = true
 				// token 存入 localStorage 中 后续 app 启动后 通过 判断 localStorage 中是否有 这个 token 来判断是进入到 登陆页面还是 首页
 				uni.setStorage({
 					key: 'userToken',
