@@ -369,6 +369,10 @@
 						this.setStorage("userInfo", JSON.stringify(customer))
 						// token 存入 缓存中
 						this.setStorage("userToken", token)
+						// id 存入缓存中
+						this.setStorage("userId", customer.id)
+						this.$store.dispatch("setUserId", customer.id)
+
 						console.log("login页面中打印冲localstorage中获取到的userToken",uni.getStorageSync("userToken"))
 						// token 存入store 中
 						this.$store.dispatch("setUserToken", token)

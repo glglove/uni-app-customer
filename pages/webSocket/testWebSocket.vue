@@ -51,13 +51,13 @@
 						// 向socket 服务器发送 一个消息
 						this.$socket.emit("testMsg", {
 							userId: this.userId,
-							from_Id: 57,
+							from_Id: this.userId,
 							from_Token: 'oh_g55CR__hDw53k1WHjDfoCGZh0',
 							userInfo: this.userInfo,
 							userToken: this.userToken, // oh_g55CR__hDw53k1WHjDfoCGZh0  
-							to_Id: 124,
+							to_Id: 258,
 							to_Token: 'oh_g55LwPbFhIpOqPYaaUz5i3VNc',  // fengsheng 的token
-							to_msg: `这是发送给用户id：57的消息`,
+							to_msg: `这是发送给用户id：258的消息`,
 							to_url: '/pages/my/my',
 							to_url_type: 'switchTab', //  "switchTab"  "redirectTo"  "navigateTo" "reLaunch"
 						})		

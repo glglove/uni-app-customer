@@ -21,9 +21,10 @@ export default {
             store.dispatch("setSocketStatus", true)
             // 发送一个 bindId 的事件
             socket.emit("bindId",{
-                // userId: store.getters.userId
-                userId: '57',
-                token: 'oh_g55CR__hDw53k1WHjDfoCGZh0'
+                // userId: '57',
+				// token: 'oh_g55CR__hDw53k1WHjDfoCGZh0'
+				userId: store.getters.userId,
+				token: store.getters.userToken
             })
             console.log("客户端 发送bindId事件", JSON.stringify({
                 userId: store.getters.userId,
@@ -40,7 +41,7 @@ export default {
             // })
             getDeviceApi().showModal({
 				 title: '提示',
-				 content: '您有新消息？',
+				 content: `您有由id:【${data.from_id}】发过来的新消息:[${data.to_msg}]`,
 				 showCancel: true,//是否显示取消按钮
 				 cancelText:"取消",//默认是“取消”
 				 cancelColor:'skyblue',//取消文字的颜色
