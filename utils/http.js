@@ -249,7 +249,7 @@ export default {
 			}
 			
 			options.success = (response) => {
-				// uni.require() 请求成功后会自动走这个 success 的回调函数方法
+				// uni.request() 请求成功后会自动走这个 success 的回调函数方法
 				console.log("请求时间" + new Date().getTime() + ":这是uni.require() 请求完成success的回调")
 			}
 			// debugger
