@@ -637,10 +637,12 @@ export const miniProApi = {
 											that.setStorage( "userToken", resData.data.token )
 											// 将token 存入 store - app中
 											that.$store.dispatch("setUserToken", resData.data.token)
-											// 将 userInfo 存入 store -app 中
-											// that.$store.dispatch("")
+
+											// id 存入缓存中
+											this.setStorage("userId", resData.data.customer.id)
 											// 将userId 存入 store-app 中
 											that.$store.dispatch("setUserId", resData.data.customer.id)
+
 											// 缓存 用户信息 userInfo
 											that.setStorage( "userInfo", JSON.stringify(resData.data.customer) )          
 											resolve(true);  

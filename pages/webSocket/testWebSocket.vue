@@ -55,9 +55,9 @@
 							from_Token: 'oh_g55CR__hDw53k1WHjDfoCGZh0',
 							userInfo: this.userInfo,
 							userToken: this.userToken, // oh_g55CR__hDw53k1WHjDfoCGZh0  
-							to_Id: 258,
+							to_Id: 180,
 							to_Token: 'oh_g55LwPbFhIpOqPYaaUz5i3VNc',  // fengsheng 的token
-							to_msg: `这是发送给用户id：258的消息`,
+							to_msg: `这是发送给用户id：180(17607178201)的消息`,
 							to_url: '/pages/my/my',
 							to_url_type: 'switchTab', //  "switchTab"  "redirectTo"  "navigateTo" "reLaunch"
 						})		

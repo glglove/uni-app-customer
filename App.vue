@@ -25,6 +25,7 @@
 			// #ifdef MP-WEIXIN
 			// 检查版本
 			this.checkNewVersion()
+
 			// 检查微信是否登录状态
 			this.chekWeixinLogin().then(res => {
 				console.log("---打印检查微信是否登录返回的res---------", res)
@@ -85,7 +86,7 @@
 			// #endif
 			
 			// #ifdef APP-PLUS
-			// app 检测 localstorage 中是否有 userToken
+			// app 检测 localstorage 中是否有 userToken 来判断是否已经登陆
 			this.appCheckLocalStorageToken()
 			
 			// 获取clientid
@@ -356,12 +357,16 @@
 										if(res && res.statusCode == 200){
 											let resData = res.data
 											if( resData && resData.code == 1){
-												// debugger
+												debugger
 												console.log('---网络请求返回成功---')
 												console.log("-----调取后台login接口注册用户信息成功后获取openid成功------：", resData)          
 
 												uni.setStorageSync( "userToken", resData.data.token )
 												uni.setStorageSync( "customer", JSON.stringify(resData.data.customer))
+												// id 存入缓存中
+												uni.setStorage("userId", resData.data.customer.id)
+												//id 存入 store中
+												this.$store.dispatch("setUserId", resData.data.customer.id)
 												// 将token 存入 store - app中
 												store.dispatch("setUserToken", resData.data.token)
 												// 将 userInfo 存入 store -app 中

@@ -34,6 +34,12 @@
         "my/inviteFriends/index",
         "my/set/index"
       ]
+    },
+    {
+      "root": "pages/packageC",
+      "pages": [
+        "paper/chat/chat"
+      ]
     }
   ],
   "window": {

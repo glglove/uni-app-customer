@@ -289,6 +289,12 @@
 			"style" : {      
 				"navigationBarTitleText":"设置"
 			}
+		},
+		{
+			"path": "pages/packageC/paper/chat/chat",
+			"style": {
+				"navigationBarTitleText":"小纸条"
+			}
 		}
 		//#endif
     ],
@@ -418,6 +424,17 @@
 					}
 				}			 
 			]	
+		},
+		{
+			"root": "pages/packageC",
+			"pages":[
+				{
+					"path":"paper/chat/chat",
+					"style":{
+						"navigationBarTitleText":"小纸条"						
+					}
+				}
+			]
 		}
 	],
 	//#endif
