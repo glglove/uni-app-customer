@@ -69,6 +69,7 @@
 <script>
 	import TabbarCmp from '../components/tab/tab'
 	import { miniProApi } from '@/utils/mixins.js'
+	import socketObj from '@/utils/socket.js'
 	import {
 		getMessage
 	} from '@/api/paper.js'
@@ -226,18 +227,19 @@
 			// 获取小字条未读消息
 			_getMessage(data){
 				// debugger
-				getMessage(data).then(res => {
-					// debugger
-					console.log(res)
-					if(res.statusCode == 200){
-						this.messageData = res.data
-						this.toast("获取未读消息成功",JSON.stringify(data))
-					}else {
-						
-					} 
-				}).catch(() => {
-					
-				})
+				// getMessage(data).then(res => {
+				// 	// debugger
+				// 	console.log(res)
+				// 	if(res.statusCode == 200){
+				// 		this.messageData = res.data
+				// 		this.toast("获取未读消息成功",JSON.stringify(data))
+				// 	}else {
+				// 		
+				// 	} 
+				// }).catch(() => {
+				// 	
+				// })
+				socketObj.refreshListStorage()
 			},
 			toChat(chat){
 				uni.navigateTo({
