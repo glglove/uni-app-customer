@@ -1,10 +1,29 @@
+<style lang="less" scoped>
+	.search>i{
+		color: red
+	}
+	.chat-list {
+		padding-top: 100upx;
+		box-sizing: border-box
+	}
+	.row {
+		padding: 10px
+	}
+	.leftBox {
+		height: 120upx;
+		width:120upx
+	}
+	.rightBox {
+		font-size:24upx
+	}	
+</style>
 <template>
 	<container>
 		<view id="paper" class="page" slot="container-slot">
 			<!-- <tabbar-cmp :list="tabbarList"></tabbar-cmp> -->
 			<view class="search"><i class="daka_iconfont icon-ali-sousu"></i>搜索</view>
-			
-			<view class="chat-list">
+			<!-- messageData: {{messageData}} -->
+			<!-- <view class="chat-list">
 				<view class="chat" v-for="(chat,index) in chatList" :key="index">
 					<view class="row" @tap="toChat(chat)">
 						<view class="left">
@@ -22,21 +41,57 @@
 						</view>
 					</view>
 				</view>
-			</view>		
-				
+			</view>	 -->
+			
+			<view class="chat-list"> 
+				<view class="chat" v-for="(chat,index) in messageData" :key="index">
+					<view class="row u-f-ac u-f-jsb" @tap="toChat(chat)">
+						<view class="leftBox">
+							<image :src="chat.from_headPic"></image>
+						</view>
+						<view class="rightBox u-f1">
+							<view class="top u-f u-f-jsb">
+								<view class="username">{{chat.from_name}}</view>
+								<view class="time">{{chat.from_time}}</view>
+							</view>
+							<view class="bottom u-f u-f-jsb">
+								<view class="msg">{{chat.from_msg}}</view>
+								<view class="tis" >2</view>
+							</view>
+						</view>
+					</view>
+				</view>				
+			</view>
 		</view>
 	</container>
 </template>
 
 <script>
 	import TabbarCmp from '../components/tab/tab'
+	import { miniProApi } from '@/utils/mixins.js'
+	import {
+		getMessage
+	} from '@/api/paper.js'
 	export default {
+		mixins:[miniProApi],
 		components:{
 			TabbarCmp
 		},
 		data(){
 			return {
 				tabbarList:["",""],
+				messageData: [
+					{
+						"id":57,
+						"userId":57,
+						"from_id":265,
+						"from_name":"张三",
+						"from_msg":"您好",
+						"from_phone":"18000000001",
+						"from_headPic":"https://c-ssl.duitang.com/uploads/item/201511/13/20151113110434_kyReJ.thumb.700_0.jpeg",
+						"from_time":"1577090242906"						
+					}
+				],
 				chatList:[
 					{
 						uid:1,
@@ -161,21 +216,35 @@
 				]				
 			}
 		},
+		onLoad(){
+			let paramsObj = {
+				id: '57'
+			}
+			this._getMessage(paramsObj)
+		},
 		methods:{
+			// 获取小字条未读消息
+			_getMessage(data){
+				// debugger
+				getMessage(data).then(res => {
+					// debugger
+					console.log(res)
+					if(res.statusCode == 200){
+						this.messageData = res.data
+						this.toast("获取未读消息成功",JSON.stringify(data))
+					}else {
+						
+					} 
+				}).catch(() => {
+					
+				})
+			},
 			toChat(chat){
 				uni.navigateTo({
-					// url:"chat/chat?name="+chat.username
-					url: "../packageC/paper/chat/chat?name=" + chat.username
+					url: "../packageC/paper/chat/chat?name=" + chat.from_name
 				})
 			}			
 		}
 	}
 </script>
 
-<style lang="less" scoped>
-	.search>i{
-		color: red
-	}
-	
-	
-</style>

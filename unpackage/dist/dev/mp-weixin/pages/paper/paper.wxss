@@ -1,4 +1,19 @@
-.search > ._i.data-v-7ace26ac {
+.search > ._i.data-v-3cb00dd4 {
   color: red;
+}
+.chat-list.data-v-3cb00dd4 {
+  padding-top: 100rpx;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.row.data-v-3cb00dd4 {
+  padding: 10px;
+}
+.leftBox.data-v-3cb00dd4 {
+  height: 120rpx;
+  width: 120rpx;
+}
+.rightBox.data-v-3cb00dd4 {
+  font-size: 24rpx;
 }
 
