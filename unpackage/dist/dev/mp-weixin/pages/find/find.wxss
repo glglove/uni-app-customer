@@ -1,4 +1,4 @@
-#findBox.data-v-dd37eecc {
+#findBox.data-v-553b111c {
   position: absolute;
   top: 0;
   left: 0;
@@ -6,18 +6,18 @@
   bottom: 0;
   margin: auto;
 }
-#findBox .find-hasLogin.data-v-dd37eecc {
+#findBox .find-hasLogin.data-v-553b111c {
   height: 100%;
   width: 100%;
 }
-#findBox .find-hasLogin .bgBox.data-v-dd37eecc {
+#findBox .find-hasLogin .bgBox.data-v-553b111c {
   width: 100%;
   height: 100%;
 }
-#findBox .find-hasLogin .bgBox .bgpic.data-v-dd37eecc {
+#findBox .find-hasLogin .bgBox .bgpic.data-v-553b111c {
   width: 100%;
 }
-#findBox .find-hasLogin .contentBox.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox.data-v-553b111c {
   position: absolute;
   top: 0;
   left: 0;
@@ -27,25 +27,25 @@
   z-index: 1;
   overflow-y: auto;
 }
-#findBox .find-hasLogin .contentBox .top.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .top.data-v-553b111c {
   width: 650rpx;
   height: 400rpx;
   margin: 0 auto;
 }
-#findBox .find-hasLogin .contentBox .top .design.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .top .design.data-v-553b111c {
   height: 70rpx;
   font-size: 40rpx;
   color: #ffffff;
   line-height: 70rpx;
 }
-#findBox .find-hasLogin .contentBox .top .study.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .top .study.data-v-553b111c {
   width: 400rpx;
   height: 70rpx;
   font-size: 40rpx;
   color: #ffffff;
   line-height: 70rpx;
 }
-#findBox .find-hasLogin .contentBox .findContainer.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer.data-v-553b111c {
   width: 650rpx;
   height: 600rpx;
   margin: 0 auto;
@@ -58,31 +58,31 @@
   -webkit-box-shadow: 0 12px 20rpx rgba(252, 195, 165, 0.2);
           box-shadow: 0 12px 20rpx rgba(252, 195, 165, 0.2);
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop.data-v-553b111c {
   width: 462rpx;
   height: 280rpx;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft.data-v-553b111c {
   width: 50%;
   height: 255rpx;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpPicBox.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpPicBox.data-v-553b111c {
   width: 128rpx;
   height: 128rpx;
   border-radius: 50%;
   margin: 0 auto;
   padding: 0;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpPicBox .signUpPic.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpPicBox .signUpPic.data-v-553b111c {
   width: 100%;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpNum.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpNum.data-v-553b111c {
   width: 85rpx;
   height: 67rpx;
   margin: 0 auto;
   text-align: center;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpNum .signDay.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpNum .signDay.data-v-553b111c {
   width: 50rpx;
   height: 100%;
   color: #FA9960;
@@ -91,7 +91,7 @@
   font-size: 48rpx;
   text-align: center;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpNum .signTotalDay.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpNum .signTotalDay.data-v-553b111c {
   width: 36rpx;
   height: 100%;
   color: #FA9B64;
@@ -99,7 +99,7 @@
   text-align: center;
   font-size: 24rpx;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpTit.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopLeft .signUpTit.data-v-553b111c {
   height: 42rpx;
   text-align: center;
   line-height: 42rpx;
@@ -107,27 +107,27 @@
   font-size: 30rpx;
   margin: 0 auto;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight.data-v-553b111c {
   width: 50%;
   height: 255rpx;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankPicBox.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankPicBox.data-v-553b111c {
   width: 128rpx;
   height: 128rpx;
   border-radius: 50%;
   margin: 0 auto;
   padding: 0;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankPicBox .signUpPic.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankPicBox .signUpPic.data-v-553b111c {
   width: 100%;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankNum.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankNum.data-v-553b111c {
   width: 85rpx;
   height: 67rpx;
   margin: 0 auto;
   text-align: center;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankNum .rankNo.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankNum .rankNo.data-v-553b111c {
   width: 50rpx;
   height: 100%;
   color: #FA9960;
@@ -136,7 +136,7 @@
   font-size: 48rpx;
   text-align: center;
 }
-#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankTit.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .contentTop .contentTopRight .rankTit.data-v-553b111c {
   width: 120rpx;
   height: 42rpx;
   text-align: center;
@@ -145,7 +145,7 @@
   font-size: 30rpx;
   margin: 0 auto;
 }
-#findBox .find-hasLogin .contentBox .findContainer .signUpBtn.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .signUpBtn.data-v-553b111c {
   width: 462rpx;
   height: 99rpx;
   line-height: 99rpx;
@@ -155,7 +155,7 @@
   -webkit-box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, 0.1);
           box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, 0.1);
 }
-#findBox .find-hasLogin .contentBox .findContainer .signUpBtn .signUpPic.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .signUpBtn .signUpPic.data-v-553b111c {
   width: 48rpx;
   height: 48rpx;
   vertical-align: middle;
@@ -166,7 +166,7 @@
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-#findBox .find-hasLogin .contentBox .findContainer .signUpBtn .signUpTit.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .signUpBtn .signUpTit.data-v-553b111c {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -178,7 +178,7 @@
   font-size: 34rpx;
   margin-left: 25rpx;
 }
-#findBox .find-hasLogin .contentBox .findContainer .invitationBtn.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .invitationBtn.data-v-553b111c {
   width: 462rpx;
   height: 99rpx;
   background-color: #FFFFFF;
@@ -189,7 +189,7 @@
   -webkit-box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, 0.1);
           box-shadow: 2rpx 2rpx 5rpx rgba(0, 0, 0, 0.1);
 }
-#findBox .find-hasLogin .contentBox .findContainer .invitationBtn .invitationPic.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .invitationBtn .invitationPic.data-v-553b111c {
   width: 48rpx;
   height: 48rpx;
   vertical-align: middle;
@@ -200,7 +200,7 @@
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-#findBox .find-hasLogin .contentBox .findContainer .invitationBtn .invitationTit.data-v-dd37eecc {
+#findBox .find-hasLogin .contentBox .findContainer .invitationBtn .invitationTit.data-v-553b111c {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -212,7 +212,7 @@
   font-size: 34rpx;
   margin-left: 25rpx;
 }
-#findBox .find-notLogin.data-v-dd37eecc {
+#findBox .find-notLogin.data-v-553b111c {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -227,16 +227,16 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-#findBox .find-notLogin .title.data-v-dd37eecc {
+#findBox .find-notLogin .title.data-v-553b111c {
   color: #8f8f94;
   margin-top: 50rpx;
 }
-#findBox .find-notLogin .ul.data-v-dd37eecc {
+#findBox .find-notLogin .ul.data-v-553b111c {
   font-size: 30rpx;
   color: #8f8f94;
   margin-top: 50rpx;
 }
-#findBox .find-notLogin .ul view.data-v-dd37eecc {
+#findBox .find-notLogin .ul view.data-v-553b111c {
   line-height: 50rpx;
 }
 

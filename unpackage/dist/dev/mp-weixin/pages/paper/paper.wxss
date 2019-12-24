@@ -1,19 +1,19 @@
-.search > ._i.data-v-3cb00dd4 {
+.search > ._i.data-v-7ace26ac {
   color: red;
 }
-.chat-list.data-v-3cb00dd4 {
+.chat-list.data-v-7ace26ac {
   padding-top: 100rpx;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-.row.data-v-3cb00dd4 {
+.row.data-v-7ace26ac {
   padding: 10px;
 }
-.leftBox.data-v-3cb00dd4 {
+.leftBox.data-v-7ace26ac {
   height: 120rpx;
   width: 120rpx;
 }
-.rightBox.data-v-3cb00dd4 {
+.rightBox.data-v-7ace26ac {
   font-size: 24rpx;
 }
 

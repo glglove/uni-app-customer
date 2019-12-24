@@ -208,13 +208,6 @@ export default {
 				
 				response.config = _config
 				
-				if (process.env.NODE_ENV === 'development') {
-					// debugger
-					// 开发环境
-					if (statusCode === 200) {
-						console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data))
-					}
-				}
 				
 				// 如果有响应的回调 再执行响应的回调， 相当于请求结束后的 相应拦截
 				if (this.interceptor.response) {
@@ -228,19 +221,40 @@ export default {
 				_reslog(response)
 				
 				console.log("打印请求完成后的相应状态statusCode", statusCode)
-				if (statusCode === 200) { //成功
+				
+				if (process.env.NODE_ENV === 'development') {
 					// debugger
-					resolve(response)
-				} else {
-					// 失败
-					reject(response)
-					uni.showToast({
-						title: '网络请求失败，请检查网络',
-						image: '../static/imgs/icon/error.png',
-						mask: true,
-						duration: 5000
-					});
-				}
+					// 开发环境
+					if (statusCode === 200) {
+						console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data))
+						resolve(response)
+					}else {
+						// 失败
+						// uni.showToast({
+						// 	title: '网络请求失败，请检查网络(未启动本地服务器)',
+						// 	image: '../static/imgs/icon/error.png',
+						// 	mask: true,
+						// 	duration: 5000
+						// });
+						reject(response)
+					}
+				}else if(process.env.NODE_ENV === 'production'){
+					// 生产环境
+					
+					if (statusCode === 200) {
+						console.log("【" + _config.requestId + "】 结果：" + JSON.stringify(response.data))
+						resolve(response)
+					}else {
+						// 失败
+						// uni.showToast({
+						// 	title: '网络请求失败，请检查服务器或者网络',
+						// 	image: '../static/imgs/icon/error.png',
+						// 	mask: true,
+						// 	duration: 5000
+						// });
+						reject(response)
+					}					
+				}		
 			}
 			
 			options.fail = (error) => {

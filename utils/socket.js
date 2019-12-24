@@ -201,26 +201,26 @@ export default {
 		userId = 57
 		data = [
 			{
-				"id":57,
+				"id":1,
 				"userId":57,
 				"from_id": 265,
 				"from_name":"张三",
 				"from_msg":"https://c-ssl.duitang.com/uploads/item/201511/13/20151113110434_kyReJ.thumb.700_0.jpeg",
 				"from_phone":"18000000001",
-				"msg_type": 2, // 1代表 text 2 代表 pic 3 代表sound 4 代表 vedio
+				"msg_type": "pic", // text , pic ,sound , video
 				"from_headPic":"https://c-ssl.duitang.com/uploads/item/201511/13/20151113110434_kyReJ.thumb.700_0.jpeg",
 				"from_time":"1577090242906"	,
 				"isRead": false, // 是否已读  false 为未读 true 为 已读
 				"num": 0, // 未读的条数					
 			},
 			{
-				"id":57,
+				"id":2,
 				"userId":57,
 				"from_id":265,
 				"from_name":"张三",
-				"from_msg":"您好,在吗???",
+				"from_msg":"zaizaizai",
 				"from_phone":"18000000001",
-				"msg_type": 1, // 1代表 text 2 代表 pic 3 代表sound 4 代表 vedio
+				"msg_type": "text", // text , pic ,sound , video
 				"from_headPic":"https://c-ssl.duitang.com/uploads/item/201511/13/20151113110434_kyReJ.thumb.700_0.jpeg",
 				"from_time":"1577090242906"	,
 				"isRead": false, // 是否已读  false 为未读 true 为 已读
@@ -232,14 +232,21 @@ export default {
 		if(!msgArrStr){
 			debugger
 			if(data && data.length){
+				let newData = []
+				let num = 0
 				try{
-					uni.setStorage({
-						key:"msgList" + userId,
-						data: JSON.stringify(data),
-						success() {
-							console.log("msgList"+userId+ "消息存入缓存成功")
+					data.forEach((val, index) => {
+						if(val.userId == userId ){
+							num += 1
+							val.num = num
+							newData.push(val)
+							uni.setStorage({
+								key:"msgList" + userId,		
+								data: JSON.stringify(data),						
+								success() {console.log("msgList"+userId+ "缓存更新存入成功")						}
+							})
 						}
-					})
+					})					
 				}catch(e){
 					//TODO handle the exception
 				}
@@ -250,15 +257,15 @@ export default {
 			if(data && data.length){
 				debugger
 				msgArr.forEach((item, key) => {
-					let num = item.num
+					let num = item.num || 0
 					data.forEach((val, index) => {
-						if(item.id == val.id && item.from_id == val.from_id){
+						if(item.userId == val.userId && (item.id != val.id)){
 							num += 1
-							item = val
 							item.num = num
+							msgArr.push(val)
 							uni.setStorage({
 								key:"msgList" + userId,		
-								data: JSON.stringify(data),						
+								data: JSON.stringify(msgArr),						
 								success() {console.log("msgList"+userId+ "缓存更新存入成功")						}
 							})
 						}

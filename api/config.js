@@ -20,8 +20,8 @@
 	//  resource: "https://www.kaoyandaka.com",
 	//  activityRoot: "https://www.kaoyandaka.com", // /marketing/activity?parentShopId=288920&activityId=2990977b-e7b0-43b8-915d-7985b2c042bb"
 		pic_bg_Url: "https://www.kaoyandaka.com",
-        // wsUrl: "ws://127.0.0.1:5000",   // socket 本地服务器地址
-		wsUrl: "wss://www.gaolongweb.cn",   // socket 生产环境服务器地址
+        wsUrl: "ws://127.0.0.1:5000",   // socket 本地服务器地址
+		// wsUrl: "wss://www.gaolongweb.cn",   // socket 生产环境服务器地址
  }
 
  const urlConfigs = {
