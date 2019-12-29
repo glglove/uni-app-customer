@@ -256,20 +256,13 @@ export default {
 			let msgArr = JSON.parse(msgArrStr)
 			if(data && data.length){
 				debugger
-				msgArr.forEach((item, key) => {
-					let num = item.num || 0
-					data.forEach((val, index) => {
-						if(item.userId == val.userId && (item.id != val.id)){
-							num += 1
-							item.num = num
-							msgArr.push(val)
-							uni.setStorage({
-								key:"msgList" + userId,		
-								data: JSON.stringify(msgArr),						
-								success() {console.log("msgList"+userId+ "缓存更新存入成功")						}
-							})
-						}
-					})
+				data.forEach((val, index) => {
+					msgArr.push(val)
+					uni.setStorage({
+						key:"msgList" + userId,		
+						data: JSON.stringify(msgArr),						
+						success() {console.log("msgList"+userId+ "缓存更新存入成功")						}
+					})						
 				})
 			}
 		}

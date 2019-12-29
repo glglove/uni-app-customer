@@ -43,7 +43,7 @@
 				</view>
 			</view>	 -->
 			
-			<view class="chat-list"> 
+			<scroll-view scroll-y :scroll-with-animation="true" class="chat-list"> 
 				<view class="chat" v-for="(chat,index) in messageData" :key="index">
 					<view class="row u-f-ac u-f-jsb" @tap="toChat(chat)">
 						<view class="leftBox">
@@ -61,7 +61,7 @@
 						</view>
 					</view>
 				</view>				
-			</view>
+			</scroll-view>
 		</view>
 	</container>
 </template>
@@ -70,6 +70,7 @@
 	import TabbarCmp from '../components/tab/tab'
 	import { miniProApi } from '@/utils/mixins.js'
 	import socketObj from '@/utils/socket.js'
+	import { mapGetters } from 'vuex'
 	import {
 		getMessage
 	} from '@/api/paper.js'
@@ -223,6 +224,11 @@
 			}
 			this._getMessage(paramsObj)
 		},
+		computed:{
+			...mapGetters([
+				'userId'
+			])
+		},
 		methods:{
 			// 获取小字条未读消息
 			_getMessage(data){
@@ -240,6 +246,8 @@
 				// 	
 				// })
 				socketObj.refreshListStorage()
+				let res = this.getStorage(`msgList${this.userId}`)
+				debugger
 			},
 			toChat(chat){
 				uni.navigateTo({

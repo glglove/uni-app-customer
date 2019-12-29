@@ -45,6 +45,7 @@
 				</view>
 			</scroll-view>
 		</view>
+		
 		<!-- 表情栏 -->
 		<view class="emoji-box" :class="showEmji" @touchmove.stop.prevent="discard">
 			<swiper class="swiper" indicator-dots="true" duration="150">
@@ -55,6 +56,7 @@
 				</swiper-item>
 			</swiper>
 		</view>
+		
 		<!-- 底部输入栏 -->
 		<view class="input-box" :class="showEmji" @touchmove.stop.prevent="discard">
 			<!-- H5下不能录音，输入栏布局改动一下 -->
@@ -92,12 +94,14 @@
 			</view>
 			</label>
 		</view>
+		
 		<!-- 录音效果(上滑取消) -->
 		<view class="record" :class="recording?'':'hidden'">
 			<view class="ing" :class="willStop?'hidden':''"><view class="icon luyin2" ></view></view>
 			<view class="cancel" :class="willStop?'':'hidden'"><view class="icon chehui" ></view></view>
 			<view class="tis" :class="willStop?'change':''">{{recordTis}}</view>
 		</view>
+		
 	</view>
 </template>
 
