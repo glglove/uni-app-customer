@@ -11,10 +11,10 @@
 	}
 	.leftBox {
 		height: 120upx;
-		width:120upx
+		width: 120upx
 	}
 	.rightBox {
-		font-size:24upx
+		font-size: 24upx
 	}	
 </style>
 <template>
@@ -83,16 +83,16 @@
 			return {
 				tabbarList:["",""],
 				messageData: [
-					{
-						"id":57,
-						"userId":57,
-						"from_id":265,
-						"from_name":"张三",
-						"from_msg":"您好",
-						"from_phone":"18000000001",
-						"from_headPic":"https://c-ssl.duitang.com/uploads/item/201511/13/20151113110434_kyReJ.thumb.700_0.jpeg",
-						"from_time":"1577090242906"						
-					}
+					// {
+					// 	"id":57,
+					// 	"userId":57,
+					// 	"from_id":265,
+					// 	"from_name":"张三",
+					// 	"from_msg":"您好",
+					// 	"from_phone":"18000000001",
+					// 	"from_headPic":"https://c-ssl.duitang.com/uploads/item/201511/13/20151113110434_kyReJ.thumb.700_0.jpeg",
+					// 	"from_time":"1577090242906"						
+					// }
 				],
 				chatList:[
 					{
@@ -220,7 +220,7 @@
 		},
 		onLoad(){
 			let paramsObj = {
-				id: '57'
+				to_userId: this.userId
 			}
 			this._getMessage(paramsObj)
 		},
@@ -232,21 +232,22 @@
 		methods:{
 			// 获取小字条未读消息
 			_getMessage(data){
-				// debugger
-				// getMessage(data).then(res => {
-				// 	// debugger
-				// 	console.log(res)
-				// 	if(res.statusCode == 200){
-				// 		this.messageData = res.data
-				// 		this.toast("获取未读消息成功",JSON.stringify(data))
-				// 	}else {
-				// 		
-				// 	} 
-				// }).catch(() => {
-				// 	
-				// })
-				socketObj.refreshListStorage()
-				let res = this.getStorage(`msgList${this.userId}`)
+				debugger
+				getMessage(data).then(res => {
+					debugger
+					console.log(res)
+					if(res.statusCode == 200){
+						this.messageData = res.data
+						// console.log(JSON.stringify(data))
+						this.toast("获取未读消息成功")
+					}else {
+						
+					} 
+				}).catch(() => {
+					
+				})
+				// socketObj.refreshListStorage()
+				// let res = this.getStorage(`msgList${this.userId}`)
 				debugger
 			},
 			toChat(chat){

@@ -1,6 +1,7 @@
 <template>
 	<view>
 		<view class="content" @touchstart="hideEmoji">
+			userId: {{userId}}
 			<scroll-view class="msg-list" scroll-y="true" :scroll-with-animation="scrollAnimation" :scroll-top="scrollTop" :scroll-into-view="scrollToView">
 				<view class="row" v-for="(row,index) in msgList" :key="index" :id="'msg'+row.id">
 					<!-- 自己发出的消息 -->
@@ -57,6 +58,7 @@
 			</swiper>
 		</view>
 		
+		textMsg:{{textMsg}}
 		<!-- 底部输入栏 -->
 		<view class="input-box" :class="showEmji" @touchmove.stop.prevent="discard">
 			<!-- H5下不能录音，输入栏布局改动一下 -->
@@ -86,12 +88,12 @@
 				<view class="icon tupian"></view>
 			</view>
 			<!-- #endif -->
-			<label for="textMsg">
-			<view class="send" :class="isVoice?'hidden':''" @tap="sendText">
-				<view class="btn">
-					发送
+			<label for="textMsg">	
+				<view class="send" :class="isVoice?'hidden':''" @tap="sendText">
+					<view class="btn">
+						发送
+					</view>
 				</view>
-			</view>
 			</label>
 		</view>
 		
@@ -106,6 +108,12 @@
 </template>
 
 <script>
+	import {mapGetters} from 'vuex'
+	import {
+		getMessage,
+		saveMessage,
+		deleteMessage
+	} from '@/api/paper.js'
 	export default {
 		data() {
 			return {
@@ -168,6 +176,11 @@
 				this.recordEnd(e);
 			})
 			// #endif
+		},
+		computed:{
+			...mapGetters([
+				'userId'
+			])
 		},
 		methods:{
 			getMsgList(){
@@ -250,10 +263,30 @@
 				if(!this.textMsg){
 					return;
 				}
+				
 				let content = this.replaceEmoji(this.textMsg);
-				let msg = {content:content}
+				let msg = {content:content};
+				
+				// 将消息 保存到数据库
+				let paramsObj = {
+					to_userId: 180,
+					from_id: this.userId,
+					from_name: null,
+					msg_type: 'text',
+					from_msg: "新增数据",
+					from_phone: null,
+					from_headPic: null,
+					from_time: new Date().getTime()
+				}
+				debugger
+				saveMessage(paramsObj).then(res => {
+					debugger
+					
+				})	
+								
 				this.sendMsg(msg,'text');
 				this.textMsg = '';
+				
 			},
 			//替换表情符号为图片
 			replaceEmoji(str){
