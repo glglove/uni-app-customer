@@ -118,7 +118,7 @@
 								 "colorPressed":"#BBBBBB",
 								 "float":"left",
 								 "fontSize":"22px",
-								 "fontSrc":"/static/font/icon.ttf",
+								 "fontSrc":"./static/font/iconfont.ttf",
 								 "text":"\ue627"
 							},
 							// 右边
@@ -127,7 +127,7 @@
 								 "colorPressed":"#BBBBBB",
 								 "float":"right",
 								 "fontSize":"22px",
-								 "fontSrc":"/static/font/icon.ttf",
+								 "fontSrc":"/static/font/iconfont.ttf",
 								 "text":"\ue614",
 								 "redDot":true //默认图标按钮右上角有红色点状标志
 							}	
